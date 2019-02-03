@@ -1,0 +1,24 @@
+# Path to your oh-my-zsh installation
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="spaceship"
+
+SPACESHIP_DOCKER_SHOW=false
+SPACESHIP_KUBECONTEXT_SHOW=false
+SPACESHIP_CHAR_SYMBOL="λ "
+
+plugins=(
+  git
+)
+
+source $ZSH/oh-my-zsh.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+autoload -U promptinit; promptinit
+prompt spaceship
+
+
+alias v="nvim"

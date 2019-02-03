@@ -1,4 +1,4 @@
-#!/usr/bin/env/ bash
+#!/bin/bash
 
 set -eu
 set -o pipefail
@@ -16,7 +16,7 @@ then
   if [ $? -ne 0 ];
   then
     echo "Homebrew not found installing..."
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
 
   # Now check for salt stack command

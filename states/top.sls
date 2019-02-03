@@ -1,2 +1,5 @@
 base:
   '*':
+    - fonts
+    - zsh
+    - node

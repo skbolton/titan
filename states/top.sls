@@ -6,3 +6,4 @@ base:
     - zsh
     - node
     - nvim
+    - tmux

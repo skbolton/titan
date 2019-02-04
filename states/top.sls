@@ -7,3 +7,4 @@ base:
     - node
     - nvim
     - tmux
+    - elixir

@@ -24,3 +24,8 @@ spaceship-prompt:
     - user: {{ grains.user }}
     - require:
       - cmd: install_node
+
+typescript:
+  cmd:
+    - run
+    - name: /bin/zsh -c "source {{ grains.homedir }}/.nvm/nvm.sh; npm i -g typescript"

@@ -8,7 +8,7 @@ let g:ale_linters = {
 \    'javascript.jsx': ['eslint', 'tsserver']
 \}
 
-let g:ale_elixir_elixir_ls_release="~/Development/elixir_ls/rel"
+let g:ale_elixir_elixir_ls_release=$HOME . "/.elixir-ls/rel"
 
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1

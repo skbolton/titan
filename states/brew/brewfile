@@ -1,0 +1,4 @@
+brew "ag"
+brew "htop"
+brew "neofetch"
+brew "tree"

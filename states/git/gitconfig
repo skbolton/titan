@@ -1,0 +1,13 @@
+[user]
+        name = Stephen Bolton
+        email = stephenkbolton@gmail.com
+        username = skbolton
+
+[alias]
+        logo = log --oneline
+        dog = log --all --decorate --oneline --graph
+        co = checkout
+        st = status
+
+[core]
+        editor = nvim

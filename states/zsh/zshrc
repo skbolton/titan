@@ -6,7 +6,7 @@ ZSH_THEME="spaceship"
 if [ ! -f $HOME/.work-zshrc ]; then
   echo "no work zsh config found"
 else
-  source $HOME/.zsh-workrc
+  source $HOME/.work-zshrc
 fi
 
 SPACESHIP_DOCKER_SHOW=false

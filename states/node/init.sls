@@ -1,5 +1,9 @@
 # Whatever you do be careful this shit took forever to work
 
+clear_nvm:
+  file.absent:
+    - name: {{ grains.homedir }}/.nvm
+
 install_nvm:
   cmd:
     - run

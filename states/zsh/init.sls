@@ -1,19 +1,23 @@
 zsh:
   pkg.installed
 
+clear-oh-my-zsh:
+  file.absent:
+    - name: {{ grains.homedir }}/.oh-my-zsh
+
+clear-zsh:
+  file.absent:
+    - name: {{ grains.homedir }}/.zshrc
 
 oh-my-zsh:
   git.cloned:
     - name: https://github.com/robbyrussell/oh-my-zsh.git
     - target: {{ grains.homedir }}/.oh-my-zsh
 
+link-zsh:
   file.symlink:
   - name: {{ grains.homedir}}/.zshrc
   - target: {{ grains.statesdir }}/zsh/zshrc
-  - force: True
-
-
-
 
 spaceship-prompt-oh-my-zsh:
   git.cloned:

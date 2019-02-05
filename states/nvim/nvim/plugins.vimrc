@@ -20,6 +20,7 @@ nnoremap <leader>ld :ALEGoToDefinition<CR>
 nnoremap <leader>lv :ALEGoToDefinitionInVSplit<CR>
 nnoremap <leader>lH :ALEGoToDefinitionInSplit<CR>
 nnoremap <leader>lh :ALEHover<CR>
+nnoremap <leader>le :echo "hi"<CR>
 
 ""let g:deoplete#enable_at_startup = 1
 ""
@@ -40,34 +41,6 @@ let g:javascript_plugin_domhtmlcss = 1
 
 " lang server
 
-" Automatically start language servers.
-""let g:LanguageClient_autoStart = 1
-""
-""" Minimal LSP configuration for JavaScript
-""let g:LanguageClient_serverCommands = {}
-""if executable('javascript-typescript-stdio')
-""  let g:LanguageClient_serverCommands.javascript = ['javascript-typescript-stdio']
-""  let g:LanguageClient_serverCommands['javascript.jsx'] = ['javascript-typescript-stdio']
-""  let g:LanguageClient_serverCommands.typescript = ['javascript-typescript-stdio']
-""endif
-""
-""
-""function SetLSPShortcuts()
-""  nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
-""  nnoremap <leader>lr :call LanguageClient#textDocument_rename()<CR>
-""  nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
-""  nnoremap <leader>lt :call LanguageClient#textDocument_typeDefinition()<CR>
-""  nnoremap <leader>lx :call LanguageClient#textDocument_references()<CR>
-""  nnoremap <leader>la :call LanguageClient_workspace_applyEdit()<CR>
-""  nnoremap <leader>lc :call LanguageClient#textDocument_completion()<CR>
-""  nnoremap <leader>lh :call LanguageClient#textDocument_hover()<CR>
-""  nnoremap <leader>ls :call LanguageClient_textDocument_documentSymbol()<CR>
-""  nnoremap <leader>lm :call LanguageClient_contextMenu()<CR>
-""endfunction()
-""
-""augroup LSP
-""  autocmd!
-""  autocmd FileType javascript,javascript.jsx,typescript call SetLSPShortcuts()
 
 "Ctrl-P stuff
 let g:ctrlp_match_window='bottom,order:ttb'

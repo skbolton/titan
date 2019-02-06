@@ -38,3 +38,18 @@ fura-code-nerd-retina:
   file.copy:
     - name: {{ grains.homedir }}/Library/Fonts/Fura Code Retina Nerd Font Complete.ttf
     - source: {{ grains.statesdir }}/fonts/fura-code-nerd/Fura Code Retina Nerd Font Complete.ttf
+
+source-code-pro-light:
+  file.copy:
+    - name: {{ grains.homedir }}/Library/Fonts/Source Code Pro Light.ttf
+    - source: {{ grains.statesdir }}/fonts/source-code-pro/SourceCodePro-Light.ttf
+
+source-code-pro-regular:
+  file.copy:
+    - name: {{ grains.homedir }}/Library/Fonts/Source Code Pro Regular.ttf
+    - source: {{ grains.statesdir }}/fonts/source-code-pro/SourceCodePro-Regular.ttf
+
+source-code-pro-bold:
+  file.copy:
+    - name: {{ grains.homedir }}/Library/Fonts/Source Code Pro Bold.ttf
+    - source: {{ grains.statesdir }}/fonts/source-code-pro/SourceCodePro-Bold.ttf

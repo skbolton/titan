@@ -3,8 +3,8 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
-# TERM variable
+env:
+  TERM: xterm-256color-italic
 #
 # This value is used to set the `$TERM` environment variable for
 # each instance of Alacritty. If it is not present, alacritty will
@@ -26,8 +26,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 2
-    y: 2
+    x: 12
+    y: 12
 
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: false
@@ -92,8 +92,9 @@ font:
   #style: Regular
 
   # Bold font face
-  #bold:
-  # Font family
+  bold:
+    Font: Source Code Pro
+    style: Regular
   #
   # If the bold family is not specified, it will fall back to the
   # value specified for the normal font.

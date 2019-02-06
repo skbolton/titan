@@ -8,3 +8,4 @@ base:
     - nvim
     - tmux
     - elixir
+    - alacritty

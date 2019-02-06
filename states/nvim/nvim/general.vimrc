@@ -2,9 +2,9 @@ set nocompatible
 set encoding=UTF-8
 " Colors and styling {{{
 colorscheme palenight
-" let ayucolor="mirage"
+let ayucolor="mirage"
 syntax enable
-set background=dark
+set background=dark 
 highlight Comment cterm=italic
 hi link xmlEndTag xmlTag
 hi htmlArg gui=italic

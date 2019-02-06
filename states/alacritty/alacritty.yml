@@ -81,7 +81,7 @@ font:
   # Normal (roman) font face
   normal:
      family: Source Code Pro
-     style: Light
+     style: ExtraLight
   # Default:
   #   - (macOS) Menlo
   #   - (Linux) monospace
@@ -114,7 +114,7 @@ font:
   #style: Italic
 
   # Point size
-  size: 16.0
+  size: 14.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.

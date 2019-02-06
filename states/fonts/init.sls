@@ -53,3 +53,8 @@ source-code-pro-bold:
   file.copy:
     - name: {{ grains.homedir }}/Library/Fonts/Source Code Pro Bold.ttf
     - source: {{ grains.statesdir }}/fonts/source-code-pro/SourceCodePro-Bold.ttf
+
+source-code-pro-extra-light:
+  file.copy:
+    - name: {{ grains.homedir }}/Library/Fonts/Source Code Pro ExtraLight.ttf
+    - source: {{ grains.statesdir }}/fonts/source-code-pro/SourceCodePro-ExtraLight.ttf

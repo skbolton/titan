@@ -20,3 +20,5 @@ nnoremap <leader>av :AV<CR>
 nnoremap <leader>as :AS<CR>
 nnoremap <leader>a :A<CR>
 
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>

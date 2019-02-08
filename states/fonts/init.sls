@@ -58,3 +58,13 @@ source-code-pro-extra-light:
   file.copy:
     - name: {{ grains.homedir }}/Library/Fonts/Source Code Pro ExtraLight.ttf
     - source: {{ grains.statesdir }}/fonts/source-code-pro/SourceCodePro-ExtraLight.ttf
+
+sauce-code-pro-regular:
+  file.copy:
+    - name: {{ grains.homedir }}/Library/Fonts/Sauce Code Pro Nerd Font Complete.ttf
+    - source: {{ grains.statesdir }}/fonts/sauce-code-pro/SauceCodePro-Regular.ttf
+
+sauce-code-pro-light:
+  file.copy:
+    - name: {{ grains.homedir }}/Library/Fonts/Sauce Code Pro Nerd Light Font Complete.ttf
+    - source: {{ grains.statesdir }}/fonts/sauce-code-pro/SauceCodePro-Light.ttf

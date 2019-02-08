@@ -15,3 +15,8 @@ nnoremap <C-\> :NERDTreeToggle<CR>
 nnoremap <leader>r :source $MYVIMRC<CR>
 
 nnoremap <leader>, :nohlsearch<CR>
+
+nnoremap <leader>av :AV<CR>
+nnoremap <leader>as :AS<CR>
+nnoremap <leader>a :A<CR>
+

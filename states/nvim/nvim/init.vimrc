@@ -7,6 +7,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-projectionist'
 Plugin 'saltstack/salt-vim'
 " Themes
 Plugin 'ayu-theme/ayu-vim'

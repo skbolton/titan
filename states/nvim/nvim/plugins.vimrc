@@ -22,6 +22,47 @@ nnoremap <leader>lH :ALEGoToDefinitionInSplit<CR>
 nnoremap <leader>lh :ALEHover<CR>
 nnoremap <leader>le :echo "hi"<CR>
 
+
+let g:projectionist_heuristics = {
+      \   '*': {
+      \     '*.ts': {
+      \       'alternate': [
+      \         '{dirname}/{basename}.test.ts',
+      \         '{dirname}/__tests__/{basename}-test.ts'
+      \       ],
+      \       'type': 'source'
+      \     },
+      \     '*.test.ts': {
+      \       'alternate': '{basename}.ts',
+      \       'type': 'test',
+      \     },
+      \     '**/__tests__/*test.ts': {
+      \       'alternate': '{dirname}/{basename}.ts',
+      \       'type': 'test'
+      \     },
+      \
+      \     '*.js': {
+      \       'alternate': [
+      \         '{dirname}/{basename}.test.js',
+      \         '{dirname}/__tests__/{basename}.test.js',
+      \       ],
+      \       'type': 'source'
+      \     },
+      \     '*.test.js': {
+      \       'alternate': '{basename}.js',
+      \       'type': 'test',
+      \     },
+      \     '**/__tests__/*-mocha.js': {
+      \       'alternate': '{dirname}/{basename}.js',
+      \       'type': 'test'
+      \     },
+      \     '**/__tests__/*-test.js': {
+      \       'alternate': '{dirname}/{basename}.js',
+      \       'type': 'test'
+      \     }
+      \   }
+      \ }
+
 ""let g:deoplete#enable_at_startup = 1
 ""
 ""call deoplete#custom#source('omni', 'functions', {

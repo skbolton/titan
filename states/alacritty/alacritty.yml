@@ -80,8 +80,8 @@ tabspaces: 8
 font:
   # Normal (roman) font face
   normal:
-     family: Source Code Pro
-     style: ExtraLight
+     family: SauceCodePro Nerd Font
+     style: Light
   # Default:
   #   - (macOS) Menlo
   #   - (Linux) monospace
@@ -115,7 +115,7 @@ font:
   #style: Italic
 
   # Point size
-  size: 14.0
+  size: 16.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.

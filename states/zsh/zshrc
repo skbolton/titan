@@ -28,4 +28,19 @@ prompt spaceship
 
 
 alias v="nvim"
-alias titan="cd ~/titan"
+
+# Dotfiles utility functions
+# If simply titan is called go to titan directory
+# If called with apply then run ./bin/run.sh
+titan() {
+  if [ "$1" = "apply" ]; then
+    pwd=$(pwd)
+    cd ~/titan
+    sh ./bin/run.sh
+    cd "${pwd}"
+  elif [ "$1" = "edit" ]; then
+    cd ~/titan && v
+  else
+    cd ~/titan
+  fi
+}

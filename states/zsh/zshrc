@@ -44,3 +44,38 @@ titan() {
     cd ~/titan
   fi
 }
+
+# Tmux shenanigans
+dv-react() {
+  tmux has-session -t DVReact
+  if [ $? != 0 ]
+  then
+    cd ~/Work/designView-react-polarisPlatform
+    tmux new-session -s DVReact -n editor -d
+    tmux send-keys -t DVReact 'v' C-m
+    tmux new-window -t DVReact -n console
+    tmux split-window -h -t DVReact:2
+    tmux split-window -v -t DVReact:2.2
+    tmux send-keys -t DVReact:2.1 'npm test' C-m
+    tmux send-keys -t DVReact:2.2 'npm start' C-m
+    tmux send-keys -t DVReact:2.3 'git st' C-m
+  fi
+  tmux attach -t DVReact:1
+}
+
+dv-node() {
+  tmux has-session -t DVNode
+  if [ $? != 0 ]
+  then
+    cd ~/Work/designView-react-polarisPlatform
+    tmux new-session -s DVNode -n editor -d
+    tmux send-keys -t DVNode 'v' C-m
+    tmux new-window -t DVNode -n console
+    tmux split-window -h -t DVNode:2
+    tmux split-window -v -t DVNode:2.2
+    tmux send-keys -t DVNode:2.1 'make test' C-m
+    tmux send-keys -t DVNode:2.2 'make' C-m
+    tmux send-keys -t DVNode:2.3 'git st' C-m
+  fi
+  tmux attach -t DVNode:1
+}

@@ -1,5 +1,5 @@
 set nocompatible
-set encoding=UTF-8
+
 " Colors and styling {{{
 colorscheme palenight
 let ayucolor="mirage"
@@ -62,5 +62,6 @@ set history=100
 set path+=**
 set nolist
 set splitbelow
+set splitright
 
 set completeopt=menu,menuone,preview,noselect,noinsert

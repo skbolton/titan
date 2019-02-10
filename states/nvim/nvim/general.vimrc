@@ -39,7 +39,7 @@ set wildmenu
 set lazyredraw
 set showmatch
 set noshowmode " lightline shows the status not vim
-set showcmd
+"set showcmd
 "}}}
 
 " Searching {{{

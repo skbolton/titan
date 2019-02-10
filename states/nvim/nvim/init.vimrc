@@ -36,7 +36,6 @@ Plugin 'itchyny/lightline.vim'
 
 " Git Stuff
 Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
 
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'jiangmiao/auto-pairs'

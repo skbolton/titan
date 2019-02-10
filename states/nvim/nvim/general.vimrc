@@ -45,6 +45,7 @@ set showcmd
 " Searching {{{
 set incsearch
 set hlsearch
+set smartcase
 " }}}
 
 " Folding {{{
@@ -60,5 +61,6 @@ set hidden
 set history=100
 set path+=**
 set nolist
+set splitbelow
 
 set completeopt=menu,menuone,preview,noselect,noinsert

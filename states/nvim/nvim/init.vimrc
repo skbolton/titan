@@ -16,7 +16,6 @@ Plugin 'arcticicestudio/nord-vim'
 Plugin 'rakr/vim-one'
 Plugin 'dracula/vim'
 Plugin 'tpope/vim-sensible'
-Plugin 'Yggdroot/indentLine'
 Plugin 'shime/vim-livedown'
 " Syntax stuff and autocomplete
 Plugin 'jparise/vim-graphql'

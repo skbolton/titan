@@ -24,23 +24,7 @@ nnoremap <leader>le :echo "hi"<CR>
 
 
 let g:projectionist_heuristics = {
-      \   '*': {
-      \     '*.ts': {
-      \       'alternate': [
-      \         '{dirname}/{basename}.test.ts',
-      \         '{dirname}/__tests__/{basename}-test.ts'
-      \       ],
-      \       'type': 'source'
-      \     },
-      \     '*.test.ts': {
-      \       'alternate': '{basename}.ts',
-      \       'type': 'test',
-      \     },
-      \     '**/__tests__/*test.ts': {
-      \       'alternate': '{dirname}/{basename}.ts',
-      \       'type': 'test'
-      \     },
-      \
+      \   'src/*': {
       \     '*.js': {
       \       'alternate': [
       \         '{dirname}/{basename}.test.js',
@@ -165,9 +149,6 @@ function! LightlineFilename()
        \ ('' != expand('%:t') ? WebDevIconsGetFileTypeSymbol() . ' ' . expand('%:t') : '[No Name]') .
        \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
 endfunction
-
-let g:indentLine_enabled = 1
-let g:indentLine_char = '|'
 
 let g:NERDTreeHighlightFolders = 1
 let g:NERDTreeHighlightFoldersFullName = 1

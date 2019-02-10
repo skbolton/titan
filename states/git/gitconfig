@@ -17,3 +17,6 @@
 
 [core]
         editor = nvim
+
+[blame]
+        date = relative

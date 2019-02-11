@@ -1,17 +1,6 @@
  set -g default-terminal 'tmux-256color'
  set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
  set-option -g mouse on
- set -g status-position bottom
- set -g status-bg colour234
- set -g status-fg colour137
- set -g status-attr dim
- set -g status-left ''
- set -g status-right '#[fg=colour233,bg=colour237,bold] %d/%m #[fg=colour233,bg=colour244,bold] %H:%M:%S '
- set -g status-right-length 50
- set -g status-left-length 20
- setw -g window-status-bell-attr bold
- setw -g window-status-bell-fg colour255
- setw -g window-status-bell-bg colour1
  
  set -s escape-time 1
  set -g base-index 1
@@ -26,6 +15,13 @@
  bind J resize-pane -D 5
  bind K resize-pane -U 5
  bind L resize-pane -R 5
+
+#-------------------------------------
+# Pane Colors
+#-------------------------------------
+# active pane
+setw -g pane-active-border-style bg=default
+setw -g pane-active-border-style fg=cyan
  
  set-option -g status-position bottom
  set-window-option -g xterm-keys on

@@ -33,3 +33,8 @@ typescript:
   cmd:
     - run
     - name: /bin/zsh -c "source {{ grains.homedir }}/.nvm/nvm.sh; npm i -g typescript"
+
+livedown:
+  cmd:
+    - run
+    - name: /bin/zsh -c "source {{ grains.homedir }}/.nvm/nvm.sh; npm i -g livedown"

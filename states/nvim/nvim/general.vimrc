@@ -64,4 +64,6 @@ set nolist
 set splitbelow
 set splitright
 
+set diffopt=vertical
+
 set completeopt=menu,menuone,preview,noselect,noinsert

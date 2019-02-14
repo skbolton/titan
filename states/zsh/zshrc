@@ -68,14 +68,14 @@ dv-node() {
   tmux has-session -t DVNode
   if [ $? != 0 ]
   then
-    cd ~/Work/designView-react-polarisPlatform
+    cd ~/Work/designView-nodejs-polarisPlatform
     tmux new-session -s DVNode -n editor -d
     tmux send-keys -t DVNode 'v' C-m
     tmux new-window -t DVNode -n console
     tmux split-window -h -t DVNode:2
     tmux split-window -v -t DVNode:2.2
     tmux send-keys -t DVNode:2.1 'make test' C-m
-    tmux send-keys -t DVNode:2.2 'make' C-m
+    tmux send-keys -t DVNode:2.2 'make start' C-m
     tmux send-keys -t DVNode:2.3 'git st' C-m
   fi
   tmux attach -t DVNode:1

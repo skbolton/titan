@@ -8,11 +8,19 @@ nnoremap : ;
 nnoremap n nzz
 nnoremap N Nzz
 
+nnoremap <leader>f :vim<SPACE>
+
 " Open a quickfix window for last search
 nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>
 " Open and close quickfix menu
 nnoremap <leader>co :cw<CR>
 nnoremap <leader>cc :ccl<CR>
+nnoremap <silent> <UP> :cope<CR>
+nnoremap <silent> <DOWN> :cclose<CR>
+nnoremap <silent> <leader>cn :cnext<CR>
+nnoremap <silent> <leader>cp :cprev<CR>
+nnoremap <silent> <RIGHT> :cnext<CR>
+nnoremap <silent> <LEFT> :cprev<CR>
 
 nnoremap <C-\> :NERDTreeToggle<CR>
 nnoremap <leader>r :source $MYVIMRC<CR>

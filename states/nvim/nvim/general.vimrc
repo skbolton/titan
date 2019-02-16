@@ -46,6 +46,7 @@ set noshowmode " lightline shows the status not vim
 set incsearch
 set hlsearch
 set smartcase
+set ignorecase
 " }}}
 
 " Folding {{{

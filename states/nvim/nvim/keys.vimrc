@@ -4,7 +4,7 @@ nnoremap ; :
 nnoremap : ;
 
 " Searching goodies
-nnoremap / /\v
+" Center search result line in screen
 nnoremap n nzz
 nnoremap N Nzz
 
@@ -17,7 +17,7 @@ nnoremap <leader>cc :ccl<CR>
 nnoremap <C-\> :NERDTreeToggle<CR>
 nnoremap <leader>r :source $MYVIMRC<CR>
 
-nnoremap <leader>, :nohlsearch<CR>
+nnoremap <CR> :nohlsearch<CR>
 
 nnoremap <leader>av :AV<CR>
 nnoremap <leader>as :AS<CR>

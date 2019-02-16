@@ -55,6 +55,9 @@ let g:projectionist_heuristics = {
 ""
 ""call deoplete#custom#source('_', 'sorters', [])
 
+let g:test#javascript#jest#options = '--reporters jest-vim-reporter'
+let g:test#strategy = 'neomake'
+
 let g:livedown_autorun = 0
 " Open the browser window upon previewing
 let g:livedown_open = 1
@@ -69,7 +72,7 @@ let g:javascript_plugin_domhtmlcss = 1
 
 "Ctrl-P stuff
 let g:ctrlp_match_window='bottom,order:ttb'
-let g:ctrlp_user_command='ag %s -l --nocolor --hidden -g ""'
+let g:ctrlp_user_command='ag %s -l --nocolor --ignore ".git/" --hidden -g ""'
 let g:ctrlp_by_filename=1
 let g:ctrlp_custom_ignore = {
 \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',

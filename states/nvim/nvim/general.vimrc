@@ -70,6 +70,5 @@ set diffopt=vertical
 set completeopt=menu,menuone,preview,noselect,noinsert
 if executable('ag') 
     " Note we extract the column as well as the file and line number
-    set grepprg=ag\ --nogroup\ --nocolor\ --column
-    set grepformat=%:%:%%
+    set grepprg=ag\ --nogroup\ --nocolor\ --column\ --vimgrep
 endif

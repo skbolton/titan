@@ -25,7 +25,7 @@ nnoremap <silent> <LEFT> :cprev<CR>
 nnoremap <C-\> :NERDTreeToggle<CR>
 nnoremap <leader>r :source $MYVIMRC<CR>
 
-nnoremap <CR> :nohlsearch<CR>
+nnoremap <leader>, :nohlsearch<CR>
 
 nnoremap <leader>av :AV<CR>
 nnoremap <leader>as :AS<CR>
@@ -34,7 +34,12 @@ nnoremap <leader>a :A<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 
+" Git mappings
 nnoremap <leader>gs :G<CR>
 nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gb :Gblame<CR>
+
+" vim-test mappings
+nnoremap <leader>tt :TestFile<CR>
+nnoremap <leader>tn :TestNearest<CR>

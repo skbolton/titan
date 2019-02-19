@@ -20,8 +20,6 @@ nnoremap <leader>ld :ALEGoToDefinition<CR>
 nnoremap <leader>lv :ALEGoToDefinitionInVSplit<CR>
 nnoremap <leader>lH :ALEGoToDefinitionInSplit<CR>
 nnoremap <leader>lh :ALEHover<CR>
-nnoremap <leader>le :echo "hi"<CR>
-
 
 let g:projectionist_heuristics = {
       \   'src/*': {
@@ -56,7 +54,18 @@ let g:projectionist_heuristics = {
 ""call deoplete#custom#source('_', 'sorters', [])
 
 let g:test#javascript#jest#options = '--reporters jest-vim-reporter'
+let g:neomake_open_list = 2
 let g:test#strategy = 'neomake'
+let g:neomake_warning_sign = {
+  \   'text': '◉'
+  \ }
+
+let g:neomake_error_sign = {
+  \   'text': '◉'
+  \ }
+
+" autocmd QuickFixCmdPost [^l]* cwindow
+" autocmd QuickFixCmdPost l* lwindow
 
 let g:livedown_autorun = 0
 " Open the browser window upon previewing

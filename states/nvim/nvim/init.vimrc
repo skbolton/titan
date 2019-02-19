@@ -8,6 +8,8 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-projectionist'
+Plugin 'tpope/vim-dispatch'
+Plugin 'neomake/neomake'
 Plugin 'saltstack/salt-vim'
 " Themes
 Plugin 'ayu-theme/ayu-vim'
@@ -24,6 +26,7 @@ Plugin 'moll/vim-node'
 Plugin 'vim-scripts/SyntaxComplete'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'ervandew/supertab'
+Plugin 'janko/vim-test'
 
 " Typescript
 Plugin 'HerringtonDarkholme/yats.vim'

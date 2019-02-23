@@ -15,3 +15,10 @@ nvim-config:
 nvim-packages-installed:
   cmd.run:
     - name: nvim +PluginInstall +qall
+
+coc-settings:
+  file.managed:
+    - name: {{grains.homedir}}/.config/nvim/coc-settings.json
+    - source: {{ grains.statesdir }}/nvim/coc-settings.json
+    - template: jinja
+

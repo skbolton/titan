@@ -11,6 +11,7 @@ Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-dispatch'
 Plugin 'neomake/neomake'
 Plugin 'saltstack/salt-vim'
+Plugin 'neoclide/coc.nvim'
 " Themes
 Plugin 'ayu-theme/ayu-vim'
 Plugin 'drewtempelmeyer/palenight.vim'

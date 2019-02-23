@@ -41,5 +41,5 @@ nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gb :Gblame<CR>
 
 " vim-test mappings
-nnoremap <leader>tt :TestFile<CR>
-nnoremap <leader>tn :TestNearest<CR>
+nnoremap <silent> <leader>tt :TestFile<CR>
+nnoremap <silent> <leader>tn :TestNearest<CR>

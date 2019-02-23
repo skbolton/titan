@@ -4,22 +4,25 @@ let g:ale_fixers = {
 \ 'elixir':  ['mix_format']
 \}
 let g:ale_linters = {
-\    'javascript': ['eslint', 'tsserver'],
-\    'javascript.jsx': ['eslint', 'tsserver']
+\    'javascript': ['eslint'],
+\    'javascript.jsx': ['eslint']
 \}
 
-let g:ale_elixir_elixir_ls_release=$HOME . "/.elixir-ls/rel"
-
 let g:ale_fix_on_save = 1
-let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 0
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_javascript_eslint_use_local_config = 1
 let g:ale_sign_error = '●'
 
-nnoremap <leader>ld :ALEGoToDefinition<CR>
-nnoremap <leader>lv :ALEGoToDefinitionInVSplit<CR>
-nnoremap <leader>lH :ALEGoToDefinitionInSplit<CR>
-nnoremap <leader>lh :ALEHover<CR>
+" nnoremap <leader>ld :ALEGoToDefinition<CR>
+" nnoremap <leader>lv :ALEGoToDefinitionInVSplit<CR>
+" nnoremap <leader>lH :ALEGoToDefinitionInSplit<CR>
+" nnoremap <leader>lh :ALEHover<CR>
+
+nmap <leader>lh <Plug>(coc-diagnostic-info)
+nmap <leader>ld <Plug>(coc-definition)
+nmap <leader>la <Plug>(coc-references)
+nmap <leader>lr <Plug>(coc-rename)
 
 let g:projectionist_heuristics = {
       \   'src/*': {
@@ -48,16 +51,8 @@ let g:projectionist_heuristics = {
       \   }
       \ }
 
-""let g:deoplete#enable_at_startup = 1
-""
-""call deoplete#custom#source('omni', 'functions', {
-""		    \ 'javascript': ['LanguageClient#complete', 'jspc#omni']
-""\})
-""
-""call deoplete#custom#source('_', 'sorters', [])
-
 let g:test#javascript#jest#options = '--reporters jest-vim-reporter'
-let g:neomake_open_list = 2
+let g:neomake_open_list = 1
 let g:test#strategy = 'neomake'
 let g:neomake_warning_sign = {
   \   'text': '◉'
@@ -172,3 +167,24 @@ let g:DevIconsEnableFoldersOpenClose = 1
 let g:DevIconsEnableFolderExtensionPatternMatching = 1
 let g:webdevicons_conceal_nerdtree_brackets = 1
 
+" Show message that tests have started
+function! MyOnNeomakeJobStarted() abort
+  echom printf('🔮 Running tests...')
+endfunction
+
+" Show message when all tests are passing
+function! MyOnNeomakeJobFinished() abort
+  let context = g:neomake_hook_context
+  if context.jobinfo.exit_code == 0
+    echom printf('🧙 All tests passed ')
+  endif
+  if context.jobinfo.exit_code == 1
+    echom printf('🤬 Failing tests')
+  endif
+endfunction
+
+augroup my_neomake_hooks
+  au!
+  autocmd User NeomakeJobFinished call MyOnNeomakeJobFinished()
+  autocmd User NeomakeJobStarted call MyOnNeomakeJobStarted()
+augroup END

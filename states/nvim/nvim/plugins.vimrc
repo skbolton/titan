@@ -14,11 +14,6 @@ let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_javascript_eslint_use_local_config = 1
 let g:ale_sign_error = '●'
 
-" nnoremap <leader>ld :ALEGoToDefinition<CR>
-" nnoremap <leader>lv :ALEGoToDefinitionInVSplit<CR>
-" nnoremap <leader>lH :ALEGoToDefinitionInSplit<CR>
-" nnoremap <leader>lh :ALEHover<CR>
-
 nmap <leader>lh <Plug>(coc-diagnostic-info)
 nmap <leader>ld <Plug>(coc-definition)
 nmap <leader>la <Plug>(coc-references)
@@ -50,6 +45,8 @@ let g:projectionist_heuristics = {
       \     }
       \   }
       \ }
+
+au FileType elixir let b:AutoPairs = AutoPairsDefine({'do': 'end//n'})
 
 let g:test#javascript#jest#options = '--reporters jest-vim-reporter'
 let g:neomake_open_list = 1

@@ -29,12 +29,8 @@ spaceship-prompt:
     - require:
       - cmd: install_node
 
-typescript:
+dependencies:
   cmd:
     - run
-    - name: /bin/zsh -c "source {{ grains.homedir }}/.nvm/nvm.sh; npm i -g typescript"
+    - name: /bin/zsh -c "source {{ grains.homedir }}/.nvm/nvm.sh; npm i -g typescript livedown prettier npmr"
 
-livedown:
-  cmd:
-    - run
-    - name: /bin/zsh -c "source {{ grains.homedir }}/.nvm/nvm.sh; npm i -g livedown"

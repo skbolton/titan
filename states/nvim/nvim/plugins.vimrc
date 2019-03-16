@@ -82,6 +82,7 @@ let g:ctrlp_custom_ignore = {
 \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
 \ 'file': '\.so$\|\.dat$|\.DS_Store$'
 \ }
+let g:ctrolp_use_caching=0
 
 "Emmet
 let g:user_emmet_settings = {

@@ -51,6 +51,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'heavenshell/vim-jsdoc'
 
 " Elixir Stuff
+Plugin 'rhysd/vim-crystal'
 Plugin 'slashmili/alchemist.vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'mhinz/vim-mix-format'

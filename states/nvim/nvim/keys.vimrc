@@ -43,3 +43,7 @@ nnoremap <leader>gb :Gblame<CR>
 " vim-test mappings
 nnoremap <silent> <leader>tt :TestFile<CR>
 nnoremap <silent> <leader>tn :TestNearest<CR>
+
+nnoremap <leader>rn :! node %<CR>
+nnoremap <leader>rc :! crystal %<CR>
+

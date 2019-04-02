@@ -1,10 +1,10 @@
 set nocompatible
 
 " Colors and styling {{{
-colorscheme palenight
-let ayucolor="mirage"
+colorscheme ayu
+let ayucolor="light"
 syntax enable
-set background=dark 
+set background=light 
 highlight Comment cterm=italic
 hi link xmlEndTag xmlTag
 hi htmlArg gui=italic

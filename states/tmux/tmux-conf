@@ -16,13 +16,6 @@
  bind K resize-pane -U 5
  bind L resize-pane -R 5
 
-#-------------------------------------
-# Pane Colors
-#-------------------------------------
-# active pane
-setw -g pane-active-border-style bg=default
-setw -g pane-active-border-style fg=cyan
- 
  set-option -g status-position bottom
  set-window-option -g xterm-keys on
  bind-key -n S-Up set-option -g status
@@ -30,11 +23,26 @@ setw -g pane-active-border-style fg=cyan
  bind-key -n S-Left previous-window
  bind-key -n S-Right next-window
 
-set-window-option -g xterm-keys on
+#set -g @plugin 'arcticicestudio/nord-tmux'
 
-set -g @plugin 'arcticicestudio/nord-tmux'
+#run-shell '~/.tmux/themes/nord-tmux/nord.tmux'
 
-run-shell '~/.tmux/themes/nord-tmux/nord.tmux'
+#---------------------------------------
+# Theme
+#---------------------------------------
+# Status line
+set -g status-style bg=black
+
+# Bars ---------------------------------
+set -g status-left "#[fg=white,bg=magenta,bold] #S #[fg=magenta,bg=black,nobold,noitalics,nounderscore]#[fg=black,bg=black]"
+
+set -g status-right "#[fg=brightwhite,bg=black]#[fg=brightwhite,bg=brightwhite]#[fg=brightblack] %Y-%m-%d %l:%M #[fg=magenta,bg=brightwhite]#[fg=black,bg=magenta] #(whoami) "
+
+# Windows ------------------------------
+set -g status-justify centre
+set -g window-status-format "#[fg=brightblack,bg=black] (#I)#W"
+set -g window-status-current-format "#[fg=magenta,bg=black] #W"
+set -g window-status-separator "" 
 
 # instantiate plugin manager for tmux
 run -b '~/.tmux/plugins/tpm/tpm'

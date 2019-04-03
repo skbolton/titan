@@ -19,6 +19,10 @@ nmap <leader>ld <Plug>(coc-definition)
 nmap <leader>la <Plug>(coc-references)
 nmap <leader>lr <Plug>(coc-rename)
 
+" supertab completions
+let g:SuperTabMappingForward = '<s-tab>'
+let g:SuperTabMappingBackward = '<tab>'
+
 let g:projectionist_heuristics = {
       \   'src/*': {
       \     '*.js': {
@@ -76,7 +80,7 @@ let g:javascript_plugin_domhtmlcss = 1
 
 "Ctrl-P stuff
 let g:ctrlp_match_window='bottom,order:ttb'
-let g:ctrlp_user_command='ag %s -l --nocolor --ignore ".git/" --hidden -g ""'
+let g:ctrlp_user_command='ag %s -l --nocolor --ignore ".git/" --ignore "node_modules" --hidden -g ""'
 let g:ctrlp_by_filename=1
 let g:ctrlp_custom_ignore = {
 \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',

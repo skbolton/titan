@@ -50,8 +50,6 @@ let g:projectionist_heuristics = {
       \   }
       \ }
 
-au FileType elixir let b:AutoPairs = AutoPairsDefine({'do': 'end//n'})
-
 let g:test#javascript#jest#options = '--reporters jest-vim-reporter'
 let g:neomake_open_list = 1
 let g:test#strategy = 'neomake'

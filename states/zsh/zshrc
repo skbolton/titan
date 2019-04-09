@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh installation
 export ZSH="$HOME/.oh-my-zsh"
 
+bindkey -v
+export KEYTIMEOUT=1
+
 ZSH_THEME="spaceship"
 
 if [ ! -f $HOME/.work-zshrc ]; then

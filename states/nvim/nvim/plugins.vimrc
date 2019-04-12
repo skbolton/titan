@@ -28,7 +28,7 @@ function! s:show_documentation()
 endfunction
 
 " Vim wiki stuff
-let g:vimwiki_list = [{'path': '~/Dropbox/notes/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{'path': '~/Drive/notes/', 'syntax': 'markdown', 'ext': '.md'}]
 
 
 " supertab completions

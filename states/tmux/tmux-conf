@@ -35,14 +35,14 @@
 set -g status-style bg=black
 
 # Bars ---------------------------------
-set -g status-left "#[fg=white,bg=magenta,bold] #S #[fg=magenta,bg=black,nobold,noitalics,nounderscore]#[fg=black,bg=black]"
+set -g status-left "#[fg=black,bg=green,bold] #S #[fg=green,bg=black,nobold,noitalics,nounderscore]#[fg=black,bg=black]"
 
-set -g status-right "#[fg=brightwhite,bg=black]#[fg=brightwhite,bg=brightwhite]#[fg=brightblack] %Y-%m-%d %l:%M #[fg=magenta,bg=brightwhite]#[fg=black,bg=magenta] #(whoami) "
+set -g status-right "#[fg=blue,bg=black]#[fg=cyan,bg=blue]#[fg=brightblack] %Y-%m-%d %l:%M #[fg=yellow]#[fg=black,bg=yellow] #(whoami) "
 
 # Windows ------------------------------
-set -g status-justify centre
-set -g window-status-format "#[fg=brightblack,bg=black] (#I)#W"
-set -g window-status-current-format "#[fg=magenta,bg=black] #W"
+set -g status-justify left
+set -g window-status-format "#[fg=brightblack,bg=black] #W"
+set -g window-status-current-format "#[fg=yellow,bg=black] ● #W"
 set -g window-status-separator "" 
 
 # instantiate plugin manager for tmux

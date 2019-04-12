@@ -29,6 +29,7 @@ Plugin 'vim-scripts/SyntaxComplete'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'ervandew/supertab'
 Plugin 'janko/vim-test'
+Plugin 'vimwiki/vimwiki'
 
 " Typescript
 Plugin 'HerringtonDarkholme/yats.vim'

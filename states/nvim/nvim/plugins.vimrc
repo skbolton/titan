@@ -14,10 +14,22 @@ let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_javascript_eslint_use_local_config = 1
 let g:ale_sign_error = '●'
 
-nmap <leader>lh <Plug>(coc-diagnostic-info)
 nmap <leader>ld <Plug>(coc-definition)
 nmap <leader>la <Plug>(coc-references)
 nmap <leader>lr <Plug>(coc-rename)
+nmap <leader>lh :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Vim wiki stuff
+let g:vimwiki_list = [{'path': '~/Dropbox/notes/', 'syntax': 'markdown', 'ext': '.md'}]
+
 
 " supertab completions
 let g:SuperTabMappingForward = '<s-tab>'

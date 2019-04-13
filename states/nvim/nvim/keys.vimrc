@@ -20,7 +20,8 @@ nnoremap <silent> <leader>tt :TestFile<CR>
 nnoremap <silent> <leader>tn :TestNearest<CR>
 
 " Open up todoist
-nnoremap <silent> <leader>- :! open -a Todoist<CR>
+nnoremap <silent> <leader>- :silent !open -a Todoist<CR>
+
 nnoremap <leader>rn :! node %<CR>
 nnoremap <leader>rc :! crystal %<CR>
 

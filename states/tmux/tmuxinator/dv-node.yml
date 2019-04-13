@@ -1,0 +1,10 @@
+name: DVNode
+root: ~/Work/designView-nodejs-polarisPlatform
+
+windows:
+  - editor: v
+  - console:
+      layout: main-vertical
+      panes:
+        - make start
+        - git status

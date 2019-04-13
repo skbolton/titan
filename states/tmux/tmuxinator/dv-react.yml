@@ -1,0 +1,11 @@
+name: DVReact
+root: ~/Work/designView-react-polarisPlatform
+
+windows:
+  - editor: v
+  - console:
+      layout: main-horizontal
+      panes:
+        - npm t
+        - npm start
+        - git status

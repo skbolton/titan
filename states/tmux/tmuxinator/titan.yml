@@ -1,0 +1,7 @@
+name: Titan
+root: ~/titan/
+
+windows:
+  - editor: v
+  - console:
+      layout: main-horizontal

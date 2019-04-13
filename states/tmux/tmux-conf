@@ -23,6 +23,9 @@
  bind-key -n S-Down set-option -g status
  bind-key -n S-Left previous-window
  bind-key -n S-Right next-window
+ bind-key Tab switch-client -l
+ bind-key W switch-client -t Notes
+ bind-key T switch-client -t Titan
 
 #set -g @plugin 'arcticicestudio/nord-tmux'
 

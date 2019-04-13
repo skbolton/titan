@@ -1,0 +1,5 @@
+name: Notes
+root: ~/Drive/notes/
+
+windows:
+  - editor: v

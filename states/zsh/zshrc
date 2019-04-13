@@ -1,8 +1,6 @@
 # Path to your oh-my-zsh installation
 export ZSH="$HOME/.oh-my-zsh"
-
-bindkey -v
-export KEYTIMEOUT=1
+export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.6.0/bin:$PATH"
 
 ZSH_THEME="spaceship"
 
@@ -31,6 +29,7 @@ prompt spaceship
 
 
 alias v="nvim"
+alias mux="tmuxinator"
 alias aqua="Asciiquarium"
 
 # Dotfiles utility functions
@@ -42,44 +41,20 @@ titan() {
     cd ~/titan
     sh ./bin/run.sh
     cd "${pwd}"
-  elif [ "$1" = "edit" ]; then
-    cd ~/titan && v
   else
-    cd ~/titan
+    mux start titan
   fi
+}
+
+notes() {
+  mux start notes
 }
 
 # Tmux shenanigans
 dv-react() {
-  tmux has-session -t DVReact
-  if [ $? != 0 ]
-  then
-    cd ~/Work/designView-react-polarisPlatform
-    tmux new-session -s DVReact -n editor -d
-    tmux send-keys -t DVReact 'v' C-m
-    tmux new-window -t DVReact -n console
-    tmux split-window -h -t DVReact:2
-    tmux split-window -v -t DVReact:2.2
-    tmux send-keys -t DVReact:2.1 'npm test' C-m
-    tmux send-keys -t DVReact:2.2 'npm start' C-m
-    tmux send-keys -t DVReact:2.3 'git st' C-m
-  fi
-  tmux attach -t DVReact:1
+  mux start dv-react
 }
 
 dv-node() {
-  tmux has-session -t DVNode
-  if [ $? != 0 ]
-  then
-    cd ~/Work/designView-nodejs-polarisPlatform
-    tmux new-session -s DVNode -n editor -d
-    tmux send-keys -t DVNode 'v' C-m
-    tmux new-window -t DVNode -n console
-    tmux split-window -h -t DVNode:2
-    tmux split-window -v -t DVNode:2.2
-    tmux send-keys -t DVNode:2.1 'make test' C-m
-    tmux send-keys -t DVNode:2.2 'make start' C-m
-    tmux send-keys -t DVNode:2.3 'git st' C-m
-  fi
-  tmux attach -t DVNode:1
+  mux start dv-node
 }

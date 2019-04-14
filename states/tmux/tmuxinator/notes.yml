@@ -2,4 +2,12 @@ name: Notes
 root: ~/Drive/notes/
 
 windows:
-  - editor: v
+  - work:
+    - v
+    - 2 ww
+  - coding:
+    - v
+    - 3 ww
+  - personal:
+    - v
+    - 4 ww

@@ -39,6 +39,7 @@ Plugin 'quramy/tsuquyomi'
 " Airline and style stuff
 Plugin 'scrooloose/nerdtree'
 Plugin 'itchyny/lightline.vim'
+Plugin 'itchyny/calendar.vim'
 
 " Git Stuff
 Plugin 'tpope/vim-fugitive'

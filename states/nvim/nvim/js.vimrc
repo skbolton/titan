@@ -24,3 +24,4 @@ function! Docs(name)
 endfunction
 
 nnoremap <leader>dc :call Docs("")<left><left>
+nnoremap <leader>jj :JsDoc<CR>

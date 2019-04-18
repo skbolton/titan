@@ -1,5 +1,6 @@
 name: Notes
 root: ~/Drive/wiki/
+attach: false
 
 windows:
   - coding:

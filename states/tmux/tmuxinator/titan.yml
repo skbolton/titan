@@ -1,5 +1,6 @@
 name: Titan
 root: ~/titan/
+attach: false
 
 windows:
   - editor: v

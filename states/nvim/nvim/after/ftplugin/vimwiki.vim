@@ -13,3 +13,6 @@ nnoremap <buffer> <localleader>dd :VimwikiMakeDiaryNote<CR>
 nnoremap <buffer> <localleader>di :VimwikiDiaryGenerateLinks<CR>
 nnoremap <buffer> <localleader><DOWN> :VimwikiDiaryNextDay<CR>
 nnoremap <buffer> <localleader><UP> :VimwikiDiaryPrevDay<CR>
+
+" Search tags
+nnoremap <buffer> <localleader>/ :VimwikiSearchTags<SPACE>

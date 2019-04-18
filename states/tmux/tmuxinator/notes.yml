@@ -2,21 +2,13 @@ name: Notes
 root: ~/Drive/wiki/
 
 windows:
-  - work:
-      root: ~/Drive/wiki/Work/
+  - coding:
+      panes:
+        - vim:
+          - v
+          - 1 ww
+  - personal:
       panes:
         - vim:
           - v
           - 2 ww
-  - coding:
-      root: ~/Drive/wiki/Coding/
-      panes:
-        - vim:
-          - v
-          - 3 ww
-  - personal:
-      root: ~/Drive/wiki/Personal/
-      panes:
-        - vim:
-          - v
-          - 4 ww

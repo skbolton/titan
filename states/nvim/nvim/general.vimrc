@@ -28,6 +28,9 @@ set expandtab
 " }}}
 
 " UI Config {{{
+set encoding=utf8
+set list
+set lcs=eol:¬,extends:❯,precedes:❮
 set number
 set relativenumber
 set ruler
@@ -62,7 +65,6 @@ set noswapfile
 set hidden
 set history=100
 set path+=**
-set nolist
 set splitbelow
 set splitright
 

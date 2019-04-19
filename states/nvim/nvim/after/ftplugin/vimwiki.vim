@@ -16,3 +16,12 @@ nnoremap <buffer> <localleader><UP> :VimwikiDiaryPrevDay<CR>
 
 " Search tags
 nnoremap <buffer> <localleader>/ :VimwikiSearchTags<SPACE>
+
+" Pop open calendar
+nnoremap <buffer> <localleader>C :Calendar<CR>
+
+" Create meeting notes template
+function! Meeting()
+ :read ~/.config/nvim/templates/meeting.md 
+endfunction
+

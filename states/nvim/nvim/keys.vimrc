@@ -26,3 +26,5 @@ nnoremap <silent> <leader>- :silent !open -a Todoist<CR>
 nnoremap <leader>rn :! node %<CR>
 nnoremap <leader>rc :! crystal %<CR>
 
+nnoremap <leader>Tp :put =strftime('%b %d, %Y')<CR>
+

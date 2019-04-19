@@ -31,6 +31,7 @@ Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'ervandew/supertab'
 Plugin 'janko/vim-test'
 Plugin 'vimwiki/vimwiki'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " Typescript
 Plugin 'HerringtonDarkholme/yats.vim'

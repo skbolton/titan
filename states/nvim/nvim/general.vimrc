@@ -1,7 +1,8 @@
 set nocompatible
 
 " Colors and styling {{{
-colorscheme palenight
+colorscheme material
+let g:material_theme_style='palenight'
 let ayucolor="light"
 syntax enable
 set background=dark 

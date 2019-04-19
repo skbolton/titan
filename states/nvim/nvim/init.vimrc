@@ -21,6 +21,7 @@ Plugin 'rakr/vim-one'
 Plugin 'dracula/vim'
 Plugin 'tpope/vim-sensible'
 Plugin 'shime/vim-livedown'
+Plugin 'kaicataldo/material.vim'
 " Syntax stuff and autocomplete
 Plugin 'jparise/vim-graphql'
 Plugin 'othree/yajs.vim'

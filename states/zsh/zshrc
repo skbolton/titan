@@ -1,6 +1,7 @@
 # Path to your oh-my-zsh installation
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.6.0/bin:$PATH"
+export EDITOR="nvim"
 
 ZSH_THEME="spaceship"
 

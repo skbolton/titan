@@ -25,3 +25,5 @@ function! Meeting()
  :read ~/.config/nvim/templates/meeting.md 
 endfunction
 
+" live preview of markdown in brower
+nnoremap <buffer> <localleader>ld :LivedownPreview<CR>

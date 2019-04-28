@@ -2,6 +2,7 @@ set -g default-terminal 'tmux-256color'
 set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
 set-option -g mouse on
 set-window-option -g automatic-rename off
+set-window-option -g status-interval 5
 
 set -s escape-time 1
 set -g base-index 1

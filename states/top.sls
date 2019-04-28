@@ -9,3 +9,4 @@ base:
     - tmux
     - elixir
     - alacritty
+    - task-warrior

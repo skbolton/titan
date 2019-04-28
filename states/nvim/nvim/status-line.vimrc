@@ -1,5 +1,5 @@
 let g:lightline = {
-      \ 'colorscheme': 'material_vim',
+      \ 'colorscheme': 'one',
       \ 'active': {
       \   'left': [
       \     [ 'mode', 'paste' ],

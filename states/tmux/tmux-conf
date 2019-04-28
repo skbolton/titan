@@ -62,6 +62,8 @@ set -g status-left "#[fg=white,bg=red] #S #[fg=red,bg=black,nobold,noitalics,nou
 
 set -g status-right "#[fg=blue,bg=black]#[fg=cyan,bg=blue]#[fg=brightblack] %Y-%m-%d %l:%M #[fg=red]#{tasks_status}#[fg=red,bg=yellow]#[fg=white,bg=red] #(whoami) "
 
+set -g status-right-length 80
+
 # Windows ------------------------------
 set -g status-justify left
 set -g window-status-format "#[fg=white,bg=black] #W"

@@ -50,14 +50,14 @@ bind-key T switch-client -t Titan
 set -g status-style bg=black
 
 # Bars ---------------------------------
-set -g status-left "#[fg=black,bg=green,bold] #S #[fg=green,bg=black,nobold,noitalics,nounderscore]#[fg=black,bg=black]"
+set -g status-left "#[fg=white,bg=red] #S #[fg=red,bg=black,nobold,noitalics,nounderscore]#[fg=black,bg=black]"
 
 set -g status-right "#[fg=blue,bg=black]#[fg=cyan,bg=blue]#[fg=brightblack] %Y-%m-%d %l:%M #[fg=yellow]#[fg=black,bg=yellow] #(whoami) "
 
 # Windows ------------------------------
 set -g status-justify left
-set -g window-status-format "#[fg=brightblack,bg=black] #W"
-set -g window-status-current-format "#[fg=yellow,bg=black] ● #W"
+set -g window-status-format "#[fg=white,bg=black] #W"
+set -g window-status-current-format "#[fg=yellow,bg=black,bold] ● #W"
 set -g window-status-separator "" 
 
 # instantiate plugin manager for tmux

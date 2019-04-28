@@ -31,6 +31,8 @@ let g:ctrlp_custom_ignore = {
 \ 'file': '\.so$\|\.dat$|\.DS_Store$'
 \ }
 let g:ctrlp_use_caching=0
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 " supertab completions
 " This is how I got it so that tabbing moves down the completion list
@@ -39,7 +41,7 @@ let g:SuperTabMappingForward = '<s-tab>'
 let g:SuperTabMappingBackward = '<tab>'
 
 " -------------- NERDtree -----------------
-nnoremap <C-\> :NERDTreeToggle<CR>
+nnoremap <c-\> :NERDTreeToggle<CR>
 let g:NERDTreeHighlightFolders = 1
 let g:NERDTreeHighlightFoldersFullName = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1 " enable folder glyph flag

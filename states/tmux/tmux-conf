@@ -43,16 +43,23 @@ bind-key T switch-client -t Titan
 
 #run-shell '~/.tmux/themes/nord-tmux/nord.tmux'
 
+# Task warrior integration
+set -g @plugin 'chriszarate/tmux-tasks'
+
+set -g @tasks_manager 'taskwarrior'
+
 #---------------------------------------
 # Theme
 #---------------------------------------
 # Status line
 set -g status-style bg=black
+set -g @tasks_format_begin '#[fg=yellow,bg=blue]#[fg=black,bg=yellow]'
+set -g @tasks_format_end '#[fg=white,bg=yellow]'
 
 # Bars ---------------------------------
 set -g status-left "#[fg=white,bg=red] #S #[fg=red,bg=black,nobold,noitalics,nounderscore]#[fg=black,bg=black]"
 
-set -g status-right "#[fg=blue,bg=black]#[fg=cyan,bg=blue]#[fg=brightblack] %Y-%m-%d %l:%M #[fg=yellow]#[fg=black,bg=yellow] #(whoami) "
+set -g status-right "#[fg=blue,bg=black]#[fg=cyan,bg=blue]#[fg=brightblack] %Y-%m-%d %l:%M #[fg=red]#{tasks_status}#[fg=red,bg=yellow]#[fg=white,bg=red] #(whoami) "
 
 # Windows ------------------------------
 set -g status-justify left

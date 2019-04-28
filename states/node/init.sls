@@ -15,8 +15,8 @@ install_node:
   cmd:
     - run
     # NVM isn't actually an exectuable therefore some weird sourcing has to happen
-    - name: /bin/zsh -c "source {{ grains.homedir }}/.nvm/nvm.sh; nvm install 8.9.4 && nvm alias default 8.9.4 && nvm use 8.9.4"
-    - onlyif: /bin/bash -c "source ~/.nvm/nvm.sh; nvm ls 8.9.4 | grep 'N/A'"
+    - name: /bin/zsh -c "source {{ grains.homedir }}/.nvm/nvm.sh; nvm install 10 && nvm alias default 10"
+    - onlyif: /bin/bash -c "source ~/.nvm/nvm.sh; nvm ls 10 | grep 'N/A'"
     - user: {{ grains.user }}
     - require:
       - cmd: install_nvm
@@ -32,5 +32,5 @@ spaceship-prompt:
 dependencies:
   cmd:
     - run
-    - name: /bin/zsh -c "source {{ grains.homedir }}/.nvm/nvm.sh; npm i -g typescript livedown prettier npmr"
+    - name: /bin/zsh -c "source {{ grains.homedir }}/.nvm/nvm.sh; npm i -g yarn typescript livedown prettier npmr"
 

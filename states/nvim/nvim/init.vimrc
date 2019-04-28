@@ -30,7 +30,10 @@ Plugin 'vim-scripts/SyntaxComplete'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'ervandew/supertab'
 Plugin 'janko/vim-test'
+" Notes and tasks section
 Plugin 'vimwiki/vimwiki'
+Plugin 'tbabej/taskwiki'
+Plugin 'blindFS/vim-taskwarrior'
 Plugin 'christoomey/vim-tmux-navigator'
 
 " Typescript

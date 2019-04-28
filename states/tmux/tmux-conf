@@ -67,7 +67,7 @@ set -g status-right-length 80
 # Windows ------------------------------
 set -g status-justify left
 set -g window-status-format "#[fg=white,bg=black] #W"
-set -g window-status-current-format "#[fg=yellow,bg=black,bold] ● #W"
+set -g window-status-current-format "#[fg=yellow,bg=black] ● #W"
 set -g window-status-separator "" 
 
 # instantiate plugin manager for tmux

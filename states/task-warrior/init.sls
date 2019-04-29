@@ -1,7 +1,8 @@
 task-configs:
-  file.symlink:
+  file.managed:
     - name: {{ grains.homedir }}/.taskrc
-    - target: {{ grains.statesdir }}/task-warrior/taskrc
+    - source: {{ grains.statesdir }}/task-warrior/taskrc
+    - template: jinja
 
 tasklib:
   pip.installed:

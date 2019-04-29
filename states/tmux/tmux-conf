@@ -54,7 +54,7 @@ set -g @tasks_manager 'taskwarrior'
 #---------------------------------------
 # Status line
 set -g status-style bg=black
-set -g @tasks_format_begin '#[fg=yellow,bg=blue]#[fg=black,bg=yellow]'
+set -g @tasks_format_begin '#[fg=yellow,bg=blue]#[fg=black,bg=yellow] #(task _get rc.context)'
 set -g @tasks_format_end '#[fg=white,bg=yellow]'
 
 # Bars ---------------------------------

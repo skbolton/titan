@@ -3,9 +3,9 @@ context.personal=project:Personal -chore
 context.work=project:Work
 
 taskd.server=freecinc.com:53589
-taskd.key=\/Users\/skbolton\/Drive\/task-sync\/freecinc_6b40a4eb.key.pem
-taskd.certificate=\/Users\/skbolton\/Drive\/task-sync\/freecinc_6b40a4eb.cert.pem
-taskd.ca=\/Users\/skbolton\/Drive\/task-sync\/freecinc_6b40a4eb.ca.pem
+taskd.key=\/Users\/{{ grains.user }}\/Drive\/task-sync\/freecinc_6b40a4eb.key.pem
+taskd.certificate=\/Users\/{{ grains.user }}\/Drive\/task-sync\/freecinc_6b40a4eb.cert.pem
+taskd.ca=\/Users\/{{ grains.user }}\/Drive\/task-sync\/freecinc_6b40a4eb.ca.pem
 taskd.credentials=FreeCinc\/freecinc_6b40a4eb\/00319806-90a3-4791-a3ce-6e6c2893f817
 
 # Theme stuff

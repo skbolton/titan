@@ -33,6 +33,8 @@ alias v="nvim"
 alias mux="tmux"
 alias aqua="Asciiquarium"
 alias ta="task"
+alias tap="task context personal"
+alias taw="task context work"
 
 # Dotfiles utility functions
 # If simply titan is called go to titan directory

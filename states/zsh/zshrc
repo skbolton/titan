@@ -30,8 +30,9 @@ prompt spaceship
 
 
 alias v="nvim"
-alias mux="tmuxinator"
+alias mux="tmux"
 alias aqua="Asciiquarium"
+alias ta="task"
 
 # Dotfiles utility functions
 # If simply titan is called go to titan directory

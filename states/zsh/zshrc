@@ -30,7 +30,6 @@ prompt spaceship
 
 
 alias v="nvim"
-alias mux="tmux"
 alias aqua="Asciiquarium"
 alias ta="task"
 alias tap="task context personal"
@@ -46,19 +45,19 @@ titan() {
     sh ./bin/run.sh
     cd "${pwd}"
   else
-    mux start titan
+    tmuxinator start titan
   fi
 }
 
 notes() {
-  mux start notes
+  tmuxinator start notes
 }
 
 # Tmux shenanigans
 dv-react() {
-  mux start dv-react
+  tmuxinator start dv-react
 }
 
 dv-node() {
-  mux start dv-node
+  tmuxinator start dv-node
 }

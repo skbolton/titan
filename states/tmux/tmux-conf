@@ -54,13 +54,13 @@ set -g @tasks_manager 'taskwarrior'
 #---------------------------------------
 # Status line
 set -g status-style bg=black
-set -g @tasks_format_begin '#[fg=yellow,bg=blue]#[fg=black,bg=yellow] #(task _get rc.context)'
-set -g @tasks_format_end '#[fg=white,bg=yellow]'
+set -g @tasks_format_begin '#[fg=brightyellow,bg=blue]#[fg=black,bg=brightyellow] #(task _get rc.context)'
+set -g @tasks_format_end '#[fg=white,bg=brightyellow]'
 
 # Bars ---------------------------------
-set -g status-left "#[fg=white,bg=red] #S #[fg=red,bg=black,nobold,noitalics,nounderscore]#[fg=black,bg=black]"
+set -g status-left "#[fg=black,bg=cyan] #S #[fg=cyan,bg=black,nobold,noitalics,nounderscore]#[fg=black,bg=black]"
 
-set -g status-right "#[fg=blue,bg=black]#[fg=cyan,bg=blue]#[fg=brightblack] %Y-%m-%d %l:%M #[fg=red]#{tasks_status}#[fg=red,bg=yellow]#[fg=white,bg=red] #(whoami) "
+set -g status-right "#[fg=blue,bg=black]#[fg=cyan,bg=blue]#[fg=brightblack] %Y-%m-%d %l:%M #[fg=green]#{tasks_status}#[fg=green,bg=brightyellow]#[fg=black,bg=green] #(whoami) "
 
 set -g status-right-length 80
 

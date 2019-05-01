@@ -1,10 +1,9 @@
 set nocompatible
 syntax enable
-set background=light 
+set background=dark 
 
 " Colors and styling {{{
-colorscheme nord
-let g:material_theme_style='palenight'
+colorscheme palenight
 let ayucolor="light"
 highlight Comment cterm=italic
 hi link xmlEndTag xmlTag

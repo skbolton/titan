@@ -2,11 +2,13 @@ context.coding=+coding +oss
 context.personal=project:Personal -chore
 context.work=project:Work
 
-taskd.server=freecinc.com:53589
 taskd.key=\/Users\/{{ grains.user }}\/Drive\/task-sync\/freecinc_6b40a4eb.key.pem
-taskd.certificate=\/Users\/{{ grains.user }}\/Drive\/task-sync\/freecinc_6b40a4eb.cert.pem
-taskd.ca=\/Users\/{{ grains.user }}\/Drive\/task-sync\/freecinc_6b40a4eb.ca.pem
-taskd.credentials=FreeCinc\/freecinc_6b40a4eb\/00319806-90a3-4791-a3ce-6e6c2893f817
+taskd.server=taskwarrior.inthe.am:53589
+taskd.credentials=inthe_am/stephenkbolton/8d0ffdbb-c701-4d3b-8735-167dccf3e8ac
+taskd.trust=ignore hostname
+taskd.certificate=\/Users\/{{ grains.user }}\/Drive\/task-sync\/private.certificate.pem
+taskd.ca=\/Users\/{{ grains.user }}\/Drive\/task-sync\/ca.cert.pem
+taskd.key=\/Users\/{{ grains.user }}\/Drive\/task-sync\/private.key.pem
 
 # Theme stuff
 rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.

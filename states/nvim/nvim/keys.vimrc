@@ -28,3 +28,4 @@ nnoremap <leader>rc :! crystal %<CR>
 
 "nnoremap <leader>Tp i =strftime()<CR>
 nmap <leader>Tp a <C-R>=strftime('%b %d, %Y')<CR><Esc>
+nmap <leader>Tt a <C-R>=strftime('%Y-%m-%d')<CR><Esc>

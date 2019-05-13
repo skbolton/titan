@@ -2,13 +2,18 @@ context.coding=+coding +oss
 context.personal=project:Personal -chore
 context.work=project:Work
 
-taskd.key=\/Users\/{{ grains.user }}\/Drive\/task-sync\/freecinc_6b40a4eb.key.pem
 taskd.server=taskwarrior.inthe.am:53589
 taskd.credentials=inthe_am/stephenkbolton/8d0ffdbb-c701-4d3b-8735-167dccf3e8ac
 taskd.trust=ignore hostname
 taskd.certificate=\/Users\/{{ grains.user }}\/Drive\/task-sync\/private.certificate.pem
 taskd.ca=\/Users\/{{ grains.user }}\/Drive\/task-sync\/ca.cert.pem
 taskd.key=\/Users\/{{ grains.user }}\/Drive\/task-sync\/private.key.pem
+
+# Report for inbox things
+report.in.columns = id,description
+report.in.description = Inbox
+report.in.filter = status:pending limit:page (+in)
+report.in.labels = ID,Description
 
 # Theme stuff
 rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.
@@ -30,7 +35,7 @@ color.active=black on gray18
 color.recurring=
 color.scheduled=on gray8
 color.until=
-color.blocked=gray13
+color.blocked=cyan
 color.blocking=bold white
 
 # Project

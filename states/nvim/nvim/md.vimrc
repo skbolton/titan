@@ -13,6 +13,7 @@ let personal_wiki.ext = '.md'
 let personal_wiki.auto_diary_index = 1
 
 let g:vimwiki_list = [code_wiki, personal_wiki]
+let g:taskwiki_maplocalleader="-"
 
 " Livedown is a markdown server
 let g:livedown_autorun = 0

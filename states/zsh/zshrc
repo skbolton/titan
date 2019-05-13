@@ -31,9 +31,12 @@ prompt spaceship
 
 alias v="nvim"
 alias aqua="Asciiquarium"
+
+# Task warrior tooling
 alias ta="task"
 alias tap="task context personal"
 alias taw="task context work"
+alias in='task add +in'
 
 # Dotfiles utility functions
 # If simply titan is called go to titan directory

@@ -10,3 +10,4 @@ base:
     - elixir
     - alacritty
     - task-warrior
+    - ranger

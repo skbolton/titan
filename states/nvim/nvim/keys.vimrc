@@ -28,3 +28,8 @@ nnoremap <leader>rc :! crystal %<CR>
 
 "nnoremap <leader>Tp i =strftime()<CR>
 nmap <leader>Tp a <C-R>=strftime('%b %d, %Y')<CR><Esc>
+
+" Copy/Paste from register
+vnoremap <leader>cc "*y
+map <leader>vv "*p
+

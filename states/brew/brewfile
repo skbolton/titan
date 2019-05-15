@@ -1,4 +1,5 @@
 brew "ag"
+brew "ruby"
 brew "htop"
 brew "neofetch"
 brew "tree"

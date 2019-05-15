@@ -42,20 +42,17 @@ then
   }"
 fi
 
-# apply high state or single state
-state="state.highstate"
-
-if [ "$#" -eq 1 ]; then
-  state = "state.sls $1"
-elif [ "$#" -ge 1 ]; then
-  echo "Usage './run.sh [STATE]'"
-  exit 1
+# Either apply high states or a single state based on args passsed int
+# Ex (running only tmux setup):
+# $ ./bin/run.sh tmux
+# Ex (running all states):
+# $ ./bin/run.sh
+if [[ "$#" -eq 1 ]];
+then
+  echo "applying $1 state"
+	salt-call --local --config=./ --state-output=mixed --retcode-passthrough state.sls $1
+else
+  echo "applying high state"
+	salt-call --local --config=./ --state-output=mixed --retcode-passthrough state.highstate
 fi
 
-echo "applying $state"
-
-# call salt stating to run locally on this minion
-# we are not using the typical master minion setup
-salt-call --local --config=./ \
-    --retcode-passthrough --state-output=mixed \
-    ${state}

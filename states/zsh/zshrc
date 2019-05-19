@@ -61,3 +61,4 @@ dv-node() {
 
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
+eval "$(direnv hook zsh)"

@@ -42,6 +42,7 @@ set wildmenu
 set lazyredraw
 set showmatch
 set noshowmode " lightline shows the status not vim
+set showtabline=2
 "set showcmd
 "}}}
 

@@ -22,6 +22,8 @@ Plugin 'dracula/vim'
 Plugin 'tpope/vim-sensible'
 Plugin 'shime/vim-livedown'
 Plugin 'kaicataldo/material.vim'
+Plugin 'sainnhe/artify.vim'
+Plugin 'sainnhe/lightline_foobar.vim'
 " Syntax stuff and autocomplete
 Plugin 'jparise/vim-graphql'
 Plugin 'othree/yajs.vim'
@@ -48,6 +50,7 @@ Plugin 'itchyny/calendar.vim'
 
 " Git Stuff
 Plugin 'tpope/vim-fugitive'
+Plugin 'niklaas/lightline-gitdiff'
 
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'jiangmiao/auto-pairs'

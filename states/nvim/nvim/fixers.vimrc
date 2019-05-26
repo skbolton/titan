@@ -20,13 +20,16 @@ let g:ale_sign_error = '●'
 " Neomake & vim-test
 let g:test#javascript#jest#options = '--reporters jest-vim-reporter'
 let g:neomake_open_list = 1
-let g:test#strategy = 'neomake'
+let test#strategy = "neomake"
 let g:neomake_warning_sign = {
   \   'text': '◉'
   \ }
 let g:neomake_error_sign = {
   \   'text': '◉'
   \ }
+
+let g:dispatch_compilers = {'elixir': 'exunit'}
+
 
 " Show message that tests have started
 function! MyOnNeomakeJobStarted() abort
@@ -49,3 +52,19 @@ augroup my_neomake_hooks
   autocmd User NeomakeJobFinished call MyOnNeomakeJobFinished()
   autocmd User NeomakeJobStarted call MyOnNeomakeJobStarted()
 augroup END
+
+"""""""""""""""""""""
+" vim-test extensions
+"""""""""""""""""""""
+function! ElixirUmbrellaTransform(cmd) abort
+  if match(a:cmd, 'apps/') != -1
+    return substitute(a:cmd, 'mix test apps/\([^/]*/\)', 'cd apps/\1 \&\& mix test ', '')
+  else
+    return a:cmd
+  end
+endfunction
+
+
+let g:test#preserve_screen = 0
+let g:test#custom_transformations = {'elixir_umbrella': function('ElixirUmbrellaTransform')}
+let g:test#transformation = 'elixir_umbrella'

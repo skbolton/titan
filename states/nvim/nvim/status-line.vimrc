@@ -3,7 +3,7 @@ function! FileNameWithIcon() abort
 endfunction
 
 function! Artify_line_num() abort
-  return Artify(string(line('.')), 'bold')
+  return string(line('.'))
 endfunction
 
 function! Artify_active_tab_num(n) abort
@@ -15,11 +15,11 @@ function! Artify_inactive_tab_num(n) abort
 endfunction
 
 function! Artify_line_percent() abort
-  return Artify(string((100*line('.'))/line('$')), 'bold')
+  return string((100*line('.'))/line('$'))
 endfunction
 
 function! Artify_col_num() abort
-    return Artify(string(getcurpos()[2]), 'bold')
+    return string(getcurpos()[2])
 endfunction
 
 function! Git_branch() abort
@@ -80,7 +80,7 @@ let g:lightline.tab_component_function = {
 
 let g:lightline.component = {
         \ 'filename_with_icon': '%{FileNameWithIcon()}',
-        \ 'lineinfo': "%2{Artify_line_percent()}\uf295 %3{Artify_line_num()}:%-2{Artify_col_num()}",
+        \ 'lineinfo': "%{Artify_line_percent()}\uf8ef %{Artify_line_num()}\ue0a3%{Artify_col_num()}",
         \ 'vim_logo': "\ue62b",
         \ 'git_branch': '%{Git_branch()}',
         \ 'status_diagnostic': '%{StatusDiagnostic()}'

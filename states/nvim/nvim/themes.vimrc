@@ -18,6 +18,18 @@ function! ColorScheme()
   if g:VIM_COLOR_SCHEME ==# 'night-owl'
     colorscheme night-owl
     let g:lightline.colorscheme = 'challenger_deep'
+    hi SignColumn guifg=NONE ctermfg=NONE guibg=#011627 ctermbg=236 gui=NONE cterm=NONE
+    highlight clear ALEErrorSign
+    highlight ALEWarningSign guifg=yellow
+    highlight ALEVirtualTextWarning guifg=yellow
+  endif
+
+  if g:VIM_COLOR_SCHEME ==# 'challenger_deep'
+    colorscheme challenger_deep
+    let g:lightline.colorscheme = 'challenger_deep'
+    highlight clear ALEErrorSign
+    highlight ALEWarningSign guifg=yellow
+    highlight ALEVirtualTextWarning guifg=yellow
   endif
 
   if g:VIM_COLOR_SCHEME ==# 'nord'
@@ -53,5 +65,4 @@ endfunction
 
 " The Defaults
 let g:VIM_COLOR_SCHEME = 'night-owl'
-set background=dark
-colorscheme night-owl
+:call SwitchColorScheme('night-owl')

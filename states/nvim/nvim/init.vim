@@ -14,9 +14,9 @@ source $HOME/.config/nvim/fixers.vimrc
 source $HOME/.config/nvim/md.vimrc
 " Javascript support
 source $HOME/.config/nvim/js.vimrc
-" Theme configuration
-source $HOME/.config/nvim/themes.vimrc
 " lots of :set here
 source $HOME/.config/nvim/general.vimrc
 " Configure status line
 source $HOME/.config/nvim/status-line.vimrc
+" Theme configuration
+source $HOME/.config/nvim/themes.vimrc

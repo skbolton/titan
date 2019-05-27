@@ -15,12 +15,14 @@ let g:ale_completion_enabled = 0
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_javascript_eslint_use_local_config = 1
 let g:ale_sign_error = '●'
+let g:ale_sign_warning = "\uf49f"
+let g:ale_virtualtext_cursor = 1
 
 " Test support
 " Neomake & vim-test
 let g:test#javascript#jest#options = '--reporters jest-vim-reporter'
 let g:neomake_open_list = 1
-let test#strategy = "neomake"
+let test#strategy = "dispatch"
 let g:neomake_warning_sign = {
   \   'text': '◉'
   \ }

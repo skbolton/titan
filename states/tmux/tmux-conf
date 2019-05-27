@@ -40,35 +40,31 @@ bind-key Tab switch-client -l
 bind-key W switch-client -t Notes
 bind-key T switch-client -t Titan
 
-#set -g @plugin 'arcticicestudio/nord-tmux'
+set -g @plugin 'samoshkin/tmux-plugin-sysstat'
+set -g @sysstat_cpu_view_tmpl '#[fg=cyan]C:#[default] #[fg=#{cpu.color}]#{cpu.pused}#[default]'
+set -g @sysstat_mem_view_tmpl '#[fg=blue]M:#[default] #[fg=#{mem.color}]#{mem.pused}#[default]'
+set -g status-interval 3
 
-#run-shell '~/.tmux/themes/nord-tmux/nord.tmux'
-
-# Task warrior integration
-set -g @plugin 'chriszarate/tmux-tasks'
-
-set -g @tasks_manager 'taskwarrior'
 
 #---------------------------------------
 # Theme
 #---------------------------------------
 # Status line
 set -g status-style bg=black
-set -g @tasks_format_begin '#[fg=brightyellow,bg=blue]#[fg=black,bg=brightyellow] #(task _get rc.context)'
-set -g @tasks_format_end '#[fg=white,bg=brightyellow]'
+set -g status-right-length 80
+set -g status-left-length 100
+set -g window-status-separator "" 
 
 # Bars ---------------------------------
-set -g status-left "#[fg=black,bg=cyan] #S #[fg=cyan,bg=black,nobold,noitalics,nounderscore]#[fg=black,bg=black]"
+set -g status-left "#[fg=black,bg=cyan] #S #[fg=cyan,bg=black]\ue0bc"
 
-set -g status-right "#[fg=blue,bg=black]#[fg=cyan,bg=blue]#[fg=brightblack] %Y-%m-%d %l:%M #[fg=green]#{tasks_status}#[fg=green,bg=brightyellow]#[fg=black,bg=green] #(whoami) "
+set -g status-right "#[fg=brightcyan,bg=black]\ue0ba #[fg=black,bg=brightcyan] %Y-%m-%d \ue0bb  %l:%M#[fg=green] \ue0ba #[fg=black,bg=green] #(whoami) "
 
-set -g status-right-length 80
 
 # Windows ------------------------------
-set -g status-justify left
+set -g status-justify centre
 set -g window-status-format "#[fg=white,bg=black] #W"
-set -g window-status-current-format "#[fg=yellow,bg=black] ● #W"
-set -g window-status-separator "" 
+set -g window-status-current-format "#[fg=brightyellow,bg=black] \uf499 #W"
 
 # instantiate plugin manager for tmux
 run -b '~/.tmux/plugins/tpm/tpm'

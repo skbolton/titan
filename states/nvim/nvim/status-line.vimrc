@@ -34,7 +34,7 @@ function! Git_branch() abort
   if fugitive#head() !=# ''
     return fugitive#head() .  " " . "\ue702"
   else
-    return "\ue61b"
+    return "\uf468"
   endif
 endfunction
 

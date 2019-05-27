@@ -56,7 +56,7 @@ set -g status-left-length 100
 set -g window-status-separator "" 
 
 # Bars ---------------------------------
-set -g status-left "#[fg=black,bg=cyan] #S #[fg=cyan,bg=black]\ue0bc"
+set -g status-left "#[fg=black,bg=cyan] \uf40b #S #[fg=cyan,bg=black]\ue0bc"
 
 set -g status-right "#[fg=brightcyan,bg=black]\ue0ba #[fg=black,bg=brightcyan] %Y-%m-%d \ue0bb  %l:%M#[fg=green] \ue0ba #[fg=black,bg=green] #(whoami) "
 

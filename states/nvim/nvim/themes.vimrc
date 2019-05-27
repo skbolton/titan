@@ -23,6 +23,8 @@ function! ColorScheme()
     highlight clear ALEErrorSign
     highlight ALEWarningSign guifg=yellow
     highlight ALEVirtualTextWarning guifg=yellow
+    hi CtrlPMatch guibg=cyan guifg=black
+    hi CtrlPMode1 guibg=cyan guifg=black
   endif
 
   if g:VIM_COLOR_SCHEME ==# 'challenger_deep'
@@ -32,6 +34,8 @@ function! ColorScheme()
     highlight clear ALEErrorSign
     highlight ALEWarningSign guifg=yellow
     highlight ALEVirtualTextWarning guifg=yellow
+    hi CtrlPMatch guibg=cyan guifg=black
+    hi CtrlPMode1 guibg=cyan guifg=black
   endif
 
   if g:VIM_COLOR_SCHEME ==# 'nord'

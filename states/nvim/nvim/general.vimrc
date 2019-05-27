@@ -1,10 +1,7 @@
 set nocompatible
 syntax enable
-set background=dark 
 
 " Colors and styling {{{
-colorscheme night-owl
-let ayucolor="light"
 highlight Comment cterm=italic
 hi link xmlEndTag xmlTag
 hi htmlArg gui=italic

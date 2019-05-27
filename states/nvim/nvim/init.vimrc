@@ -21,6 +21,8 @@ Plugin 'rakr/vim-one'
 Plugin 'dracula/vim'
 Plugin 'tpope/vim-sensible'
 Plugin 'shime/vim-livedown'
+Plugin 'haishanh/night-owl.vim'
+Plugin 'challenger-deep-theme/vim', { 'name': 'challenger-deep' }
 Plugin 'kaicataldo/material.vim'
 Plugin 'sainnhe/artify.vim'
 Plugin 'sainnhe/lightline_foobar.vim'

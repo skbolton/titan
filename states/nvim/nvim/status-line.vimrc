@@ -2,23 +2,31 @@ function! FileNameWithIcon() abort
   return winwidth(0) > 70  ? " " . WebDevIconsGetFileTypeSymbol() . ' ' . expand('%:t') : '' 
 endfunction
 
-function! Artify_line_num() abort
+function! FileNameWithParent(f) abort
+  if expand('%:t') ==# ''
+    return expand('%:p:h:t')
+  else
+    return expand('%:p:h:t') . "/" . expand("%:t")
+  endif
+endfunction
+
+function! Line_num() abort
   return string(line('.'))
 endfunction
 
-function! Artify_active_tab_num(n) abort
+function! Active_tab_num(n) abort
     return " " . a:n . " \ue0bb"
 endfunction
 
-function! Artify_inactive_tab_num(n) abort
+function! Inactive_tab_num(n) abort
   return " " . a:n . " \ue0bb "
 endfunction
 
-function! Artify_line_percent() abort
+function! Line_percent() abort
   return string((100*line('.'))/line('$'))
 endfunction
 
-function! Artify_col_num() abort
+function! Col_num() abort
     return string(getcurpos()[2])
 endfunction
 
@@ -45,7 +53,7 @@ function! StatusDiagnostic() abort
 endfunction
 
 let g:lightline = {}
-let g:lightline.colorscheme = 'palenight_alter'
+let g:lightline.colorscheme = 'challenger_deep'
 let g:lightline.active = { 
       \ 'left': [ ['mode', 'readonly'], ['filename_with_icon', 'modified' ] ],
       \ 'right': [ ['lineinfo'], ['status_diagnostic'] ]
@@ -63,26 +71,28 @@ let g:lightline.tabline = {
             \ 'right': [ [ 'git_branch' ], [ 'gitdiff' ]]
             \ }
 let g:lightline.tab = {
-        \ 'active': ['artify_activetabnum', 'filename'],
+        \ 'active': ['artify_activetabnum', 'filename_with_parent'],
         \ 'inactive': ['artify_inactivetabnum', 'filename']
         \ }
 
 let g:lightline.tab_component = {}
 let g:lightline.tab_component_function = {
-            \ 'artify_activetabnum': 'Artify_active_tab_num',
-            \ 'artify_inactivetabnum': 'Artify_inactive_tab_num',
-            \ 'artify_filename': 'Artify_lightline_tab_filename',
+            \ 'artify_activetabnum': 'Active_tab_num',
+            \ 'artify_inactivetabnum': 'Inactive_tab_num',
+            \ 'artify_filename': 'lightline_tab_filename',
             \ 'filename': 'lightline#tab#filename',
             \ 'modified': 'lightline#tab#modified',
             \ 'readonly': 'lightline#tab#readonly',
-            \ 'tabnum': 'lightline#tab#tabnum'
+            \ 'tabnum': 'lightline#tab#tabnum',
+            \ 'filename_with_parent': 'FileNameWithParent'
             \ }
 
 let g:lightline.component = {
         \ 'filename_with_icon': '%{FileNameWithIcon()}',
-        \ 'lineinfo': "%{Artify_line_percent()}\uf8ef %{Artify_line_num()}\ue0a3%{Artify_col_num()}",
+        \ 'lineinfo': "%2{Line_percent()}\uf295 %3{Line_num()}:%-2{Col_num()}",
         \ 'vim_logo': "\ue62b",
         \ 'git_branch': '%{Git_branch()}',
+        \ 'filename_with_parent': '%t',
         \ 'status_diagnostic': '%{StatusDiagnostic()}'
         \ }
 

@@ -22,7 +22,7 @@ let g:ale_virtualtext_cursor = 1
 " Neomake & vim-test
 let g:test#javascript#jest#options = '--reporters jest-vim-reporter'
 let g:neomake_open_list = 1
-let test#strategy = "dispatch"
+let test#strategy = "neomake"
 let g:neomake_warning_sign = {
   \   'text': '◉'
   \ }

@@ -36,6 +36,7 @@ function! ColorScheme()
     highlight ALEVirtualTextWarning guifg=yellow
     hi CtrlPMatch guibg=cyan guifg=black
     hi CtrlPMode1 guibg=cyan guifg=black
+    hi LineNr guibg=#1e1c31
   endif
 
   if g:VIM_COLOR_SCHEME ==# 'nord'

@@ -6,5 +6,5 @@
     }
   },
   "diagnostic.virtualText": true,
-  "diagnostic.errorSign": "⊗"
+  "diagnostic.errorSign": "◉"
 }

@@ -35,6 +35,10 @@ function! ColorScheme()
     hi CtrlPMatch guibg=cyan guifg=black
     hi CtrlPMode1 guibg=cyan guifg=black
     hi LineNr guibg=#1e1c31
+    " Fix challengers horrible git diffs
+    hi DiffAdd guibg=#62d196 guifg=black
+    hi DiffDelete guibg=#ff5458 guifg=black
+    hi DiffChange guibg=#ffb378 guifg=black
   endif
 
   if g:VIM_COLOR_SCHEME ==# 'nord'

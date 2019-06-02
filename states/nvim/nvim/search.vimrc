@@ -2,6 +2,7 @@
 " Center search result in screen when jumping
 nnoremap n nzz
 nnoremap N Nzz
+
 " Get rid of search highlight after searching
 nnoremap <leader>, :nohlsearch<CR>
 nnoremap <leader>f :vim<SPACE>

@@ -35,17 +35,17 @@ let g:dispatch_compilers = {'elixir': 'exunit'}
 
 " Show message that tests have started
 function! MyOnNeomakeJobStarted() abort
-  echom printf('🔮 Running tests...')
+  let g:TESTING_STATUS = 'running'
 endfunction
 
 " Show message when all tests are passing
 function! MyOnNeomakeJobFinished() abort
   let context = g:neomake_hook_context
   if context.jobinfo.exit_code == 0
-    echom printf('🧙 All tests passed ')
+    let g:TESTING_STATUS = 'passing'
   endif
   if context.jobinfo.exit_code == 1
-    echom printf('🤬 Failing tests')
+    let g:TESTING_STATUS = 'failing'
   endif
 endfunction
 

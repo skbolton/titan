@@ -64,7 +64,7 @@ set -g status-right "#[fg=brightcyan,bg=black]\ue0ba #[fg=black,bg=brightcyan] %
 # Windows ------------------------------
 set -g status-justify centre
 set -g window-status-format "#[fg=white,bg=black] #W"
-set -g window-status-current-format "#[fg=brightyellow,bg=black] \uf499 #W"
+set -g window-status-current-format "#[fg=brightyellow,bg=black] •#W"
 
 # instantiate plugin manager for tmux
 run -b '~/.tmux/plugins/tpm/tpm'

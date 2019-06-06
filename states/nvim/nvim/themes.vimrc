@@ -29,6 +29,7 @@ function! ColorScheme()
   if g:VIM_COLOR_SCHEME ==# 'challenger_deep'
     colorscheme challenger_deep
     let g:lightline.colorscheme = 'challenger_deep'
+    hi PMenu guibg=#100e23
     highlight clear ALEErrorSign
     highlight ALEWarningSign guifg=yellow
     highlight ALEVirtualTextWarning guifg=yellow
@@ -39,6 +40,7 @@ function! ColorScheme()
     hi DiffAdd guibg=#62d196 guifg=black
     hi DiffDelete guibg=#ff5458 guifg=black
     hi DiffChange guibg=#ffb378 guifg=black
+    hi DiffText guibg=#ffe9aa guifg=black
   endif
 
   if g:VIM_COLOR_SCHEME ==# 'nord'
@@ -50,22 +52,22 @@ function! ColorScheme()
     let g:lightline.colorscheme = 'nord'
   endif
 
-  if g:VIM_COLOR_SCHEME == 'one-dark'
+  if g:VIM_COLOR_SCHEME ==# 'one-dark'
     set background=dark
     colorscheme one
     let g:lightline.colorscheme = 'one-dark'
   endif
 
-  if g:VIM_COLOR_SCHEME == 'ayu-light'
-    let ayucolor="light"
+  if g:VIM_COLOR_SCHEME ==# 'ayu-light'
+    let g:ayucolor="light"
     set background=light
     colorscheme ayu
     let g:lightline.colorscheme = 'ayu_light'
   endif
 
-  if g:VIM_COLOR_SCHEME == 'ayu-mirage'
+  if g:VIM_COLOR_SCHEME ==# 'ayu-mirage'
     set background=dark
-    let ayucolor="mirage"
+    let g:ayucolor="mirage"
     colorscheme ayu
 
     let g:lightline.colorscheme = 'ayu_mirage'

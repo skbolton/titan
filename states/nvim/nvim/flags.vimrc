@@ -9,3 +9,6 @@ endif
 let g:VIM_LSP_CLIENT = 'coc' " coc ale
 let g:VIM_COMPLETION_FRAMEWORK = 'coc' " coc ale
 
+
+let g:TESTING_STATUS = 'passing'
+

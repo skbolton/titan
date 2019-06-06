@@ -1,3 +1,13 @@
+function! TestingStatus() abort
+  if g:TESTING_STATUS == 'passing'
+    return "\ue342"
+  elseif g:TESTING_STATUS == 'running'
+    return "\uf499"
+  elseif g:TESTING_STATUS == 'failing'
+    return "\uf528"
+  endif
+endfunction
+
 function! FileNameWithIcon() abort
   return winwidth(0) > 70  ? " " . WebDevIconsGetFileTypeSymbol() . ' ' . expand('%:t') : '' 
 endfunction
@@ -56,7 +66,7 @@ let g:lightline = {}
 let g:lightline.colorscheme = 'challenger_deep'
 let g:lightline.active = { 
       \ 'left': [ ['mode', 'readonly'], ['filename_with_icon', 'modified' ] ],
-      \ 'right': [ ['lineinfo'], ['status_diagnostic'] ]
+      \ 'right': [ ['lineinfo'], ['testing_status', 'status_diagnostic'] ]
       \ }
 let g:lightline.separator = { 'left': "\ue0b8", 'right': "\ue0be " }
 let g:lightline.subseparator = { 'left': "\ue0b9", 'right': "\ue0b9" }
@@ -93,7 +103,8 @@ let g:lightline.component = {
         \ 'vim_logo': "\ue7c5",
         \ 'git_branch': '%{Git_branch()}',
         \ 'filename_with_parent': '%t',
-        \ 'status_diagnostic': '%{StatusDiagnostic()}'
+        \ 'status_diagnostic': '%{StatusDiagnostic()}',
+        \ 'testing_status': '%{TestingStatus()}'
         \ }
 
 let g:lightline.component_expand = { 'gitdiff': 'lightline#gitdiff#get' }

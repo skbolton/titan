@@ -53,6 +53,7 @@ Plugin 'itchyny/calendar.vim'
 " Git Stuff
 Plugin 'tpope/vim-fugitive'
 Plugin 'niklaas/lightline-gitdiff'
+Plugin 'rhysd/git-messenger.vim'
 
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'jiangmiao/auto-pairs'

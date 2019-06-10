@@ -33,6 +33,7 @@ function! ColorScheme()
     highlight clear ALEErrorSign
     highlight ALEWarningSign guifg=yellow
     highlight ALEVirtualTextWarning guifg=yellow
+    hi Search guibg=#ffb378 guifg=black
     hi CtrlPMatch guibg=cyan guifg=black
     hi CtrlPMode1 guibg=cyan guifg=black
     hi LineNr guibg=#1e1c31

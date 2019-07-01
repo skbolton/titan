@@ -22,9 +22,8 @@ Plugin 'dracula/vim'
 Plugin 'tpope/vim-sensible'
 Plugin 'shime/vim-livedown'
 Plugin 'haishanh/night-owl.vim'
-Plugin 'challenger-deep-theme/vim', { 'name': 'challenger-deep' }
 Plugin 'kaicataldo/material.vim'
-Plugin 'sainnhe/artify.vim'
+Plugin 'challenger-deep-theme/vim', { 'name': 'challenger-deep' }
 Plugin 'sainnhe/lightline_foobar.vim'
 " Syntax stuff and autocomplete
 Plugin 'jparise/vim-graphql'
@@ -39,11 +38,7 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'blindFS/vim-taskwarrior'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tbabej/taskwiki'
-
-" Typescript
-Plugin 'HerringtonDarkholme/yats.vim'
 Plugin 'pangloss/vim-javascript'
-Plugin 'quramy/tsuquyomi'
 
 " Airline and style stuff
 Plugin 'scrooloose/nerdtree'
@@ -66,6 +61,5 @@ Plugin 'heavenshell/vim-jsdoc'
 
 " Elixir Stuff
 Plugin 'elixir-editors/vim-elixir'
-Plugin 'mhinz/vim-mix-format'
 Plugin 'ryanoasis/vim-devicons'
 call vundle#end()

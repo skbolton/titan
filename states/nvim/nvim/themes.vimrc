@@ -29,12 +29,14 @@ function! ColorScheme()
   if g:VIM_COLOR_SCHEME ==# 'challenger_deep'
     colorscheme challenger_deep
     let g:lightline.colorscheme = 'challenger_deep'
-    hi PMenu guibg=#100e23
     highlight clear ALEErrorSign
     highlight ALEWarningSign guifg=yellow
     highlight ALEVirtualTextWarning guifg=yellow
-    hi CtrlPMatch guibg=cyan guifg=black
-    hi CtrlPMode1 guibg=cyan guifg=black
+    hi Search guibg=#ffb378 guifg=#100e23 
+    hi PMenu guibg=#100e23 guifg=#a6b3cc
+    hi PmenuSel guibg=#1E1C30 guifg=#63f2f1
+    hi CtrlPMatch guibg=#ffe9aa guifg=black
+    hi CtrlPMode1 guibg=#aaffe4 guifg=black
     hi LineNr guibg=#1e1c31
     " Fix challengers horrible git diffs
     hi DiffAdd guibg=#62d196 guifg=black

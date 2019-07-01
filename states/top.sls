@@ -7,7 +7,6 @@ base:
     - node
     - nvim
     - tmux
-    - elixir
     - alacritty
     - task-warrior
     - ranger

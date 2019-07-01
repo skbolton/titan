@@ -1,10 +1,4 @@
 {
-  "languageserver": {
-    "elixirLS": {
-      "command": "{{ grains.homedir }}/.elixir-ls/rel/language_server.sh",
-      "filetypes": ["elixir", "eelixir"]
-    }
-  },
   "diagnostic.virtualText": true,
   "diagnostic.errorSign": "◉"
 }

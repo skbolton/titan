@@ -1,7 +1,6 @@
 " Ale stuff
 let g:ale_fixers = {
-\ 'javascript': ['prettier', 'eslint'],
-\ 'elixir':  ['mix_format']
+\ 'javascript': ['prettier', 'eslint']
 \}
 let g:ale_linters = {
 \    'javascript': ['eslint'],

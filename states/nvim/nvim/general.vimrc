@@ -40,6 +40,8 @@ set lazyredraw
 set showmatch
 set noshowmode " lightline shows the status not vim
 set showtabline=2
+set shortmess+=c
+set updatetime=300
 "set showcmd
 "}}}
 

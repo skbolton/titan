@@ -1,13 +1,16 @@
 " ------- Mappings --------
-" Center search result in screen when jumping
+" Make jump commands also center view
 nnoremap n nzz
 nnoremap N Nzz
+nnoremap <C-o> <C-o>zz
+nnoremap <C-i> <C-i>zz
+nnoremap * *zz
+nnoremap # #zz
 
 " Get rid of search highlight after searching
 nnoremap <leader>, :nohlsearch<CR>
 nnoremap <leader>f :vim<SPACE>
-" Open a quickfix window for last search
-nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>
+nnoremap <leader>/ :silent grep<space>
 " Open and close quickfix menu
 nnoremap <leader>co :cw<CR>
 nnoremap <leader>cc :ccl<CR>
@@ -18,14 +21,14 @@ nnoremap <silent> <leader>cp :cprev<CR>
 nnoremap <silent> <RIGHT> :cnext<CR>
 nnoremap <silent> <LEFT> :cprev<CR>
 " set ag as the grep program
-if executable('ag') 
-    " Note we extract the column as well as the file and line number
-    set grepprg=ag\ --nogroup\ --nocolor\ --column\ --vimgrep
+if executable('rg') 
+  set grepprg=rg\ --vimgrep
 endif
 
 " ---------- Ctrl-P stuff --------------
 let g:ctrlp_match_window='bottom,order:ttb'
-let g:ctrlp_user_command='ag %s -l --nocolor --ignore ".git/" --ignore "node_modules" --hidden -g ""'
+" let g:ctrlp_user_command='ag %s -l --nocolor --ignore ".git/" --ignore "node_modules" -g ""'
+let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
 let g:ctrlp_by_filename=1
 let g:ctrlp_custom_ignore = {
 \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',

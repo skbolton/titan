@@ -1,4 +1,5 @@
 {
+  "coc.preferences.formatOnSaveFiletypes": ["elixir"],
   "diagnostic.virtualText": true,
   "diagnostic.errorSign": "◉"
 }

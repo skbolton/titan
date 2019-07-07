@@ -2,7 +2,7 @@
 " us the rest of the way!
 packadd minpac
 
-call minpac#init({'dir': '/Users/skbolton/.local/share/nvim/site'})
+call minpac#init({'dir': $HOME . '/.local/share/nvim/site'})
 
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 

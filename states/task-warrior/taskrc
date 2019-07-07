@@ -1,7 +1,3 @@
-context.coding=+coding +oss
-context.personal=project:Personal -chore
-context.work=project:Work
-
 taskd.server=taskwarrior.inthe.am:53589
 taskd.credentials=inthe_am/stephenkbolton/8d0ffdbb-c701-4d3b-8735-167dccf3e8ac
 taskd.trust=ignore hostname
@@ -15,76 +11,8 @@ report.in.description = Inbox
 report.in.filter = status:pending limit:page (+in)
 report.in.labels = ID,Description
 
-# Theme stuff
-rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.
+# burndown chart colors
+color.burndown.pending=black on blue
+color.burndown.started=black on yellow
+color.burndown.done=black on green
 
-# General decoration
-color.label=
-color.label.sort=
-color.alternate=on gray2
-color.header=color0 on gray11
-color.footnote=on gray5
-color.warning=bold red
-color.error=white on red
-color.debug=blue
-
-# Task state
-color.completed=
-color.deleted=
-color.active=black on gray18
-color.recurring=
-color.scheduled=on gray8
-color.until=
-color.blocked=cyan
-color.blocking=bold white
-
-# Project
-color.project.none=
-
-# Priority
-color.uda.priority.H=gray21
-color.uda.priority.M=gray18
-color.uda.priority.L=gray12
-
-# Tags
-color.tag.next=bold white
-color.tag.none=
-color.tagged=
-
-# Due
-color.due=on gray3
-color.due.today=on gray4
-color.overdue=on gray6
-
-# Report: burndown
-color.burndown.pending=gray15 on gray5
-color.burndown.started=black on gray10
-color.burndown.done=gray5 on gray23
-
-# Report: history
-color.history.add=gray15 on gray5
-color.history.delete=black on gray10
-color.history.done=gray5 on gray23
-
-# Report: summary
-color.summary.bar=on gray12
-color.summary.background=on gray5
-
-# Command: calendar
-color.calendar.due=on gray8
-color.calendar.due.today=black on gray15
-color.calendar.holiday=black on gray20
-color.calendar.overdue=gray2 on gray10
-color.calendar.today=bold white
-color.calendar.weekend=on gray2
-color.calendar.weeknumber=gray6
-
-# Command: sync
-color.sync.added=gray15 on gray5
-color.sync.changed=black on gray10
-color.sync.rejected=gray5 on gray23
-
-# Command: undo
-color.undo.before=white on black
-color.undo.after=black on white
-context=personal

@@ -12,9 +12,10 @@ nvim-config:
     - name: {{ grains.homedir }}/.config/nvim
     - target: {{ grains.statesdir }}/nvim/nvim
 
-nvim-packages-installed:
-  cmd.run:
-    - name: nvim +PluginInstall +qall
+minpac:
+  git.cloned:
+    - name: https://github.com/k-takata/minpac.git
+    - target: {{ grains.homedir }}/.local/share/nvim/site/pack/minpac/opt/minpac
 
 coc-settings:
   file.managed:

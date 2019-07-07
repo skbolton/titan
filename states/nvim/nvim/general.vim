@@ -1,4 +1,3 @@
-set nocompatible
 syntax enable
 
 " Colors and styling {{{
@@ -25,6 +24,8 @@ set expandtab
 
 " UI Config {{{
 set encoding=utf8
+" Give us a realtime preview of substitution before we send it
+set inccommand=nosplit
 set list
 set lcs=eol:¬,extends:❯,precedes:❮
 set number

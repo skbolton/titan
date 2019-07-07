@@ -31,6 +31,7 @@ let g:neomake_error_sign = {
 
 let g:dispatch_compilers = {'elixir': 'exunit'}
 
+let g:TESTING_STATUS = 'passing'
 
 " Show message that tests have started
 function! MyOnNeomakeJobStarted() abort

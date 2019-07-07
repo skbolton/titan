@@ -1,6 +1,5 @@
 base:
   '*':
-    - fonts
     - brew
     - git
     - zsh

@@ -1,3 +1,4 @@
+# TASK SERVER CONFIG -------
 taskd.server=app.wingtask.com:53589
 taskd.credentials=WingTask/stephenkbolton@gmail.com/3b5550fe-f05d-4aa0-a363-a12c5e217593
 taskd.trust=ignore hostname
@@ -5,13 +6,17 @@ taskd.certificate=\/Users\/{{ grains.user }}\/Drive\/task-sync\/stephenkbolton@g
 taskd.ca=\/Users\/{{ grains.user }}\/Drive\/task-sync\/dst.pem
 taskd.key=\/Users\/{{ grains.user }}\/Drive\/task-sync\/stephenkbolton@gmail.com.key.pem
 
-# Report for inbox things
+# CONTEXTS
+context.work=project:Work +in
+context.home=project:Personal +in +chores
+
+# INBOX REPORT
 report.in.columns = id,description
 report.in.description = Inbox
 report.in.filter = status:pending limit:page (+in)
 report.in.labels = ID,Description
 
-# burndown chart colors
+# BURNDOWN CHART COLORS
 color.burndown.pending=black on blue
 color.burndown.started=black on yellow
 color.burndown.done=black on green

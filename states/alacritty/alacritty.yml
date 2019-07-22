@@ -18,15 +18,15 @@ window:
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
   dimensions:
-    columns: 100
-    lines: 50 
+    columns: 200
+    lines: 100 
 
   # Window padding (changes require restart)
   #
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 12
+    x: 4
     y: 4 
 
   # Spread additional padding evenly around the terminal content.
@@ -44,7 +44,7 @@ window:
   decorations: buttonless
 
   # When true, alacritty starts maximized.
-  start_maximized: false
+  start_mode: windowed
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -80,7 +80,7 @@ tabspaces: 8
 font:
   # Normal (roman) font face
   normal:
-     family: SauceCodePro Nerd Font
+     family: RobotoMono Nerd Font
      style: Light
   # Default:
   #   - (macOS) Menlo
@@ -91,11 +91,11 @@ font:
   # The `style` can be specified to pick a specific face.
   #style: Regular
 
-  # Bold font face
+  #Bold font face
   bold:
-    Font: Source Code Pro
-    style: Regular
-  #
+    family: RobotoMono Nerd Font
+    style: Light
+  
   # If the bold family is not specified, it will fall back to the
   # value specified for the normal font.
   #family: monospace
@@ -104,8 +104,9 @@ font:
   #style: Bold
 
   # Italic font face
-  #italic:
-  # Font family
+  italic:
+    family: Operator Mono
+    style: Light
   #
   # If the italic family is not specified, it will fall back to the
   # value specified for the normal font.
@@ -115,12 +116,12 @@ font:
   #style: Italic
 
   # Point size
-  size: 16.0
+  size: 14.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
-    x: 0
+    x: 1
     y: 0
 
   # Glyph offset determines the locations of the glyphs within their cells with
@@ -147,28 +148,20 @@ font:
   use_thin_strokes: true
 
 # Display the time it takes to redraw each frame.
-render_timer: false
-
+debug:
+  render_timer: false
+  persistent_logging: false
 # Keep the log file after quitting Alacritty.
-persistent_logging: false
 
 # If `true`, bold text is drawn using the bright color variants.
-draw_bold_text_with_bright_colors: true
+draw_bold_text_with_bright_colors: false
 
-# Colors (Tomorrow Night Bright)
-colors:
-  # Default colors
+# ---- Colors ---- 
+# Palenight?
+palenight: &palenight
   primary:
     background: "0x292d3e"
     foreground: "0xeaeaea"
-
-    # Bright and dim foreground colors
-    #
-    # The dimmed foreground color is calculated automatically if it is not present.
-    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
-    # is `false`, the normal foreground color will be used.
-    #dim_foreground: '0x9a9a9a'
-    #bright_foreground: '0xffffff'
 
   # Cursor colors
   #
@@ -200,6 +193,69 @@ colors:
     cyan: "0xa3f7ff"
     white: "0xfefefe"
 
+challenger_deep: &challenger_deep
+  cursor:
+    text: '0x100e23'
+    cursor: '0x62d196'
+  primary:
+    background: '0x1b182c'
+    foreground: '0xcbe3e7'
+
+  # Normal colors
+  normal:
+    black:   '0x100e23'
+    red:     '0xff8080'
+    green:   '0x95ffa4'
+    yellow:  '0xffe9aa'
+    blue:    '0x91ddff'
+    magenta: '0xc991e1'
+    cyan:    '0xaaffe4'
+    white:   '0xcbe3e7'
+
+  # Bright colors
+  bright:
+    black:   '0x565575'
+    red:     '0xff5458'
+    green:   '0x62d196'
+    yellow:  '0xffb378'
+    blue:    '0x65b2ff'
+    magenta: '0x906cff'
+    cyan:    '0x63f2f1'
+    white: '0xa6b3cc'
+
+# Gruvbox
+gruvbox: &gruvbox
+  # Default colors
+  primary:
+    # hard contrast: background = '0x1d2021'
+    background: '0x282828'
+    # soft contrast: background = '0x32302f'
+    foreground: '0xebdbb2'
+
+  # Normal colors
+  normal:
+    black:   '0x282828'
+    red:     '0xcc241d'
+    green:   '0x98971a'
+    yellow:  '0xd79921'
+    blue:    '0x458588'
+    magenta: '0xb16286'
+    cyan:    '0x689d6a'
+    white:   '0xa89984'
+
+  # Bright colors
+  bright:
+    black:   '0x928374'
+    red:     '0xfb4934'
+    green:   '0xb8bb26'
+    yellow:  '0xfabd2f'
+    blue:    '0x83a598'
+    magenta: '0xd3869b'
+    cyan:    '0x8ec07c'
+    white:   '0xebdbb2'
+
+colors: *gruvbox
+
   # Dim colors
   #
   # If the dim colors are not set, they will be calculated automatically based
@@ -222,7 +278,7 @@ colors:
   # Example:
   #   `- { index: 16, color: '0xff00ff' }`
   #
-  indexed_colors: []
+  # indexed_colors: []
 
 # Visual Bell
 #
@@ -320,7 +376,7 @@ cursor:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  style: Block
+  style: Beam
 
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.

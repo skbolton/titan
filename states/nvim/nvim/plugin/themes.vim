@@ -97,8 +97,14 @@ function! ColorScheme()
 
     let g:lightline.colorscheme = 'ayu_mirage'
   endif
+
+  if g:VIM_COLOR_SCHEME ==# 'gruvbox'
+    set background=dark
+    colorscheme gruvbox-material
+
+    let g:lightline.colorscheme = 'gruvbox_material'
+  endif
 endfunction
 
 " The Defaults
-let g:VIM_COLOR_SCHEME = 'challenger_deep'
-:call SwitchColorScheme('challenger_deep')
+:call SwitchColorScheme('gruvbox')

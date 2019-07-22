@@ -19,6 +19,7 @@ call minpac#add('saltstack/salt-vim')
 call minpac#add('challenger-deep-theme/vim', { 'name': 'challenger-deep' })
 " Made optional so that we can load vim faster
 " See SwitchColorScheme for function that loads these when swapping scheme
+call minpac#add('sainnhe/gruvbox-material')
 call minpac#add('ayu-theme/ayu-vim', {'type': 'opt'})
 call minpac#add('drewtempelmeyer/palenight.vim', {'type': 'opt'})
 call minpac#add('arcticicestudio/nord-vim', {'type': 'opt'})

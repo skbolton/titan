@@ -52,7 +52,7 @@ set -g @tasks_manager 'taskwarrior'
 set -g @tasks_icon_urgent "\uf017 "
 set -g @tasks_icon_outstanding "\uf425 "
 set -g @tasks_format_begin "#[fg=black,bg=yellow] #(task _get rc.context)"
-set -g @tasks_format_end "#[fg=yellow,bg=green]\ue0bc"
+set -g @tasks_format_end "#[fg=yellow,bg=black]\ue0bc"
 
 #---------------------------------------
 # Theme
@@ -64,8 +64,8 @@ set -g status-left-length 100
 set -g window-status-separator "" 
 
 # Bars ---------------------------------
-set -g status-left "#[fg=black,bg=cyan] \uf40b #S #[fg=cyan,bg=black]\ue0bc"
-set -g status-right "#[fg=brightcyan,bg=black]\ue0ba #[fg=black,bg=brightcyan] %Y-%m-%d \ue0bb  %l:%M #[fg=brightcyan,bg=yellow]\ue0bc #{tasks_status} #[fg=black,bg=green] #(whoami) "
+set -g status-left "#[fg=black,bg=cyan] \uf40b #S #[fg=cyan,bg=yellow]\ue0bc #{tasks_status}"
+set -g status-right "#[fg=brightcyan,bg=black]\ue0ba #[fg=black,bg=brightcyan] %Y-%m-%d \ue0bb  %l:%M #[fg=brightcyan,bg=cyan]\ue0bc #[fg=black,bg=cyan] #(whoami) "
 
 # Windows ------------------------------
 set -g status-justify centre

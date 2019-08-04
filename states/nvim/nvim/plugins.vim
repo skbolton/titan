@@ -14,6 +14,7 @@ call minpac#add('tpope/vim-dispatch')
 call minpac#add('tpope/vim-endwise')
 call minpac#add('neomake/neomake')
 call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
+call minpac#add('liuchengxu/vista.vim')
 call minpac#add('saltstack/salt-vim')
 " Themes
 call minpac#add('challenger-deep-theme/vim', { 'name': 'challenger-deep' })

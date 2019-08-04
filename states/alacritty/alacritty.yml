@@ -94,7 +94,7 @@ font:
   #Bold font face
   bold:
     family: RobotoMono Nerd Font
-    style: Light
+    style: Regular
   
   # If the bold family is not specified, it will fall back to the
   # value specified for the normal font.
@@ -254,7 +254,7 @@ gruvbox: &gruvbox
     cyan:    '0x8ec07c'
     white:   '0xebdbb2'
 
-colors: *gruvbox
+colors: *challenger_deep
 
   # Dim colors
   #

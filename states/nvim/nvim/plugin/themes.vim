@@ -107,4 +107,4 @@ function! ColorScheme()
 endfunction
 
 " The Defaults
-:call SwitchColorScheme('gruvbox')
+:call SwitchColorScheme('challenger_deep')

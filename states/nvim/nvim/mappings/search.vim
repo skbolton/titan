@@ -29,6 +29,8 @@ if executable('rg')
   set grepprg=rg\ --vimgrep
 endif
 
+nnoremap <BS> :b#<CR>
+
 
 " supertab completions
 " This is how I got it so that tabbing moves down the completion list

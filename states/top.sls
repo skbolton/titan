@@ -10,3 +10,6 @@ base:
     - kitty
     - task-warrior
     - ranger
+  'os:MacOs'
+    - match: grain
+    - amethyst

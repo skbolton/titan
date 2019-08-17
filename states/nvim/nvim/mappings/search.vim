@@ -30,6 +30,20 @@ if executable('rg')
 endif
 
 nnoremap <BS> :b#<CR>
+let g:vista_sidebar_width = 45
+let g:vista_disable_statusline = 1
+
+" Ensure you have installed some decent font to show these pretty symbols, then you can enable icon for the kind.
+let g:vista#renderer#enable_icon = 1
+
+let g:vista_icon_indent = ["▸ ", ""]
+
+" The default icons can't be suitable for all the filetypes, you can extend it as you wish.
+let g:vista#renderer#icons = {
+\   "function": "\uf794 ",
+\   "module": "\uf6a6 ",
+\   "variable": "\ufb18 "
+\  }
 
 
 " supertab completions

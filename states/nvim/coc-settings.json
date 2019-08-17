@@ -1,5 +1,22 @@
 {
   "coc.preferences.formatOnSaveFiletypes": ["elixir"],
+  "codeLens.enable": true,
   "diagnostic.virtualText": true,
-  "diagnostic.errorSign": "◉"
+  "diagnostic.errorSign": "◉",
+  "suggest.completionItemKindLabels": {
+    "module": "\uf6a6 ",
+    "function": "\uf794 ",
+    "variable": "\ufb18 "
+  },
+  "languageserver": {
+    "elixirLS": {
+      "command": "~/Development/elixir-ls/rel/language_server.sh",
+      "filetypes": ["elixir", "eelixir"],
+      "settings": {
+        "elixirLS": {
+          "dialyzerEnabled": false
+        }
+      }
+    }
+  }
 }

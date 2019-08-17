@@ -18,8 +18,7 @@ minpac:
     - target: {{ grains.homedir }}/.local/share/nvim/site/pack/minpac/opt/minpac
 
 coc-settings:
-  file.managed:
+  file.symlink:
     - name: {{grains.homedir}}/.config/nvim/coc-settings.json
-    - source: {{ grains.statesdir }}/nvim/coc-settings.json
-    - template: jinja
+    - target: {{ grains.statesdir }}/nvim/coc-settings.json
 

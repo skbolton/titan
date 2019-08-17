@@ -7,5 +7,6 @@ base:
     - nvim
     - tmux
     - alacritty
+    - kitty
     - task-warrior
     - ranger

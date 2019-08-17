@@ -16,6 +16,7 @@ call minpac#add('neomake/neomake')
 call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
 call minpac#add('liuchengxu/vista.vim')
 call minpac#add('saltstack/salt-vim')
+call minpac#add('junegunn/goyo.vim')
 " Themes
 call minpac#add('challenger-deep-theme/vim', { 'name': 'challenger-deep' })
 " Made optional so that we can load vim faster

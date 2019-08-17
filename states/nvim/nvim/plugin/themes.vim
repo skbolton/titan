@@ -30,18 +30,34 @@ function! ColorScheme()
     hi CtrlPMode1 guibg=cyan guifg=black
   endif
 
+  if g:VIM_COLOR_SCHEME ==# 'embark'
+    colorscheme embark
+    hi Cursor guibg=#F48FB1 guifg=white
+    let g:lightline.colorscheme = 'embark'
+    hi CtrlPMatch guifg=#F48FB1 guibg=#1e1c31
+    hi CtrlPMode1 guibg=#aaffe4 guifg=black
+    if has("gui_vimr")
+    else
+      hi Normal guibg=NONE ctermbg=NONE
+      hi LineNr guibg=NONE ctermbg=NONE
+    endif
+  endif
+
   if g:VIM_COLOR_SCHEME ==# 'challenger_deep'
     colorscheme challenger_deep
+    let g:challenger_deep_terminal_italics=1
     let g:lightline.colorscheme = 'challenger_deep'
+    hi Normal guibg=NONE ctermbg=NONE
+    hi LineNr guibg=NONE ctermbg=NONE
     highlight clear ALEErrorSign
     highlight ALEWarningSign guifg=yellow
     highlight ALEVirtualTextWarning guifg=yellow
     hi Search guibg=#ffb378 guifg=#100e23 
     hi PMenu guibg=#100e23 guifg=#a6b3cc
     hi PmenuSel guibg=#1E1C30 guifg=#63f2f1
-    hi CtrlPMatch guibg=#ffe9aa guifg=black
+    hi CtrlPMatch guifg=#ffe9aa guibg=#1e1c31
     hi CtrlPMode1 guibg=#aaffe4 guifg=black
-    hi LineNr guibg=#1e1c31
+    " hi LineNr guibg=#1e1c31
     " Fix challengers horrible git diffs
     hi DiffAdd guibg=#62d196 guifg=black
     hi DiffDelete guibg=#ff5458 guifg=black
@@ -107,4 +123,4 @@ function! ColorScheme()
 endfunction
 
 " The Defaults
-:call SwitchColorScheme('challenger_deep')
+:call SwitchColorScheme('embark')

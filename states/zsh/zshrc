@@ -39,6 +39,7 @@ alias ta="task"
 alias tap="task context personal"
 alias taw="task context work"
 alias in='task add +in'
+alias d='delta'
 
 # Dotfiles utility functions
 # If simply titan is called go to titan directory
@@ -52,6 +53,18 @@ titan() {
   else
     tmuxinator start titan
   fi
+}
+
+delta() {
+  if [ "$1" = "launch" ]; then
+    tmuxinator start $2
+  fi
+  
+  if [ "$1" = "l" ]; then
+    tmuxinator start $2
+  fi
+
+  echo "Incorrect usage of delta"
 }
 
 notes() {

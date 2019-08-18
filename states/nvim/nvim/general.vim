@@ -74,3 +74,4 @@ set diffopt=vertical
 set completeopt=menu,menuone,preview,noselect,noinsert
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
+let g:calendar_view="week" 

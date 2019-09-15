@@ -55,7 +55,7 @@ let s:dark_blue = { "gui": "#65b2ff", "cterm": "75", "cterm16": "12"}
 let s:purple = { "gui": "#c991e1", "cterm": "141", "cterm16": "5"}
 let s:dark_purple = { "gui": "#906cff", "cterm": "135", "cterm16": "13"}
 
-let s:cyan = { "gui": "#aaffe4", "cterm": "122", "cterm16": "6"}
+let s:cyan = { "gui": "#87DFEB", "cterm": "122", "cterm16": "6"}
 let s:dark_cyan = { "gui": "#63f2f1", "cterm": "121", "cterm16": "14"}
 
 let s:clouds = { "gui": "#cbe3e7", "cterm": "253", "cterm16": "7"}
@@ -157,8 +157,8 @@ call s:h("Float",    {"fg": s:dark_yellow})
 call s:h("NonText",       {"fg": s:bg_dark})
 call s:h("Directory",     {"fg": s:purple})
 call s:h("ErrorMsg",      {"fg": s:dark_red})
-call s:h("IncSearch",     {"bg": s:red, "fg": s:clouds})
-call s:h("Search",        {"bg": s:red, "fg": s:asphalt})
+call s:h("IncSearch",     {"bg": s:yellow, "fg": s:asphalt})
+call s:h("Search",        {"bg": s:dark_yellow, "fg": s:asphalt})
 call s:h("MoreMsg",       {"fg": s:medium_gray, "gui": "bold", "cterm": "bold"})
 hi! link ModeMsg MoreMsg
 call s:h("LineNr",        {"fg": s:dark_asphalt, "bg": s:bg_subtle})
@@ -173,9 +173,9 @@ call s:h("Title",         {"fg": s:dark_blue})
 call s:h("Visual",        {"bg": s:visual})
 call s:h("WarningMsg",    {"fg": s:yellow})
 call s:h("WildMenu",      {"fg": s:bg_subtle, "bg": s:cyan})
-call s:h("Folded",        {"bg": s:purple, "fg": s:bg_subtle})
+call s:h("Folded",        {"fg": s:dark_purple})
 call s:h("FoldColumn",    {"fg": s:yellow})
-call s:h("DiffAdd",       {"fg": s:asphalt, "bg": s:green})
+call s:h("DiffAdd",       {"fg": s:asphalt, "bg": s:dark_green})
 call s:h("DiffDelete",    {"fg": s:asphalt, "bg": s:red})
 call s:h("DiffChange",    {"fg": s:asphalt, "bg": s:dark_yellow})
 call s:h("DiffText",      {"fg": s:asphalt, "bg": s:yellow})
@@ -314,6 +314,8 @@ call s:h("GitGutterDelete",{"fg": s:red, "bg": s:bg_subtle})
 call s:h("GitGutterChange",{"fg": s:yellow, "bg": s:bg_subtle})
 call s:h("GitGutterChangeDelete",{"fg": s:red, "bg": s:bg_subtle})
 
+" CTRLP
+call s:h("CtrlpMatch", {"bg": s:yellow, "fg": s:bg})
 
 "nvim terminal colors
 let g:terminal_color_0 = s:bg_dark.gui

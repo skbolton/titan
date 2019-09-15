@@ -1,5 +1,5 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["elixir"],
+  "coc.preferences.formatOnSaveFiletypes": ["elixir", "go"],
   "codeLens.enable": true,
   "diagnostic.virtualText": true,
   "diagnostic.errorSign": "◉",
@@ -8,6 +8,7 @@
     "function": "\uf794 ",
     "variable": "\ufb18 "
   },
+  "suggest.snippetIndicator": "\u26a1 ",
   "languageserver": {
     "elixirLS": {
       "command": "~/Development/elixir-ls/rel/language_server.sh",
@@ -17,6 +18,11 @@
           "dialyzerEnabled": false
         }
       }
+    },
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod"],
+      "filetypes": ["go"]
     }
   }
 }

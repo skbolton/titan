@@ -29,6 +29,9 @@ if executable('rg')
   set grepprg=rg\ --vimgrep
 endif
 
+vnoremap <c-q><c-r> :%DB g:db_url<CR>
+nnoremap <c-q><c-s> :DB g:db_url =
+
 nnoremap <BS> :b#<CR>
 let g:vista_sidebar_width = 45
 let g:vista_disable_statusline = 1

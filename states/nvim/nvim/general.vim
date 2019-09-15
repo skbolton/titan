@@ -27,7 +27,7 @@ set encoding=utf8
 " Give us a realtime preview of substitution before we send it
 set inccommand=nosplit
 set list
-set lcs=eol:¬,extends:❯,precedes:❮
+set lcs=eol:¬,extends:❯,precedes:❮,tab:>-
 set number
 set relativenumber
 set ruler
@@ -75,3 +75,4 @@ set completeopt=menu,menuone,preview,noselect,noinsert
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 let g:calendar_view="week" 
+

@@ -16,7 +16,7 @@ endfunction
 
 function! Git_branch() abort
   if fugitive#head() !=# ''
-    return fugitive#head() .  " " . "\ue702 "
+    return fugitive#head() .  " " . " "
   else
     return "\uf468"
   endif
@@ -51,7 +51,7 @@ let g:lightline.tab_component_function = {
 let g:lightline.component = {
         \ 'filename_with_icon': '%{FileNameWithIcon()}',
         \ 'lineinfo': "%2{Line_percent()}\uf295 %3{Line_num()}:%-2{Col_num()}",
-        \ 'vim_logo': "\ue7c5 ",
+        \ 'vim_logo': " ",
         \ 'git_branch': '%{Git_branch()}',
         \ 'filename_with_parent': '%t',
         \ 'status_diagnostic': '%{StatusDiagnostic()}',

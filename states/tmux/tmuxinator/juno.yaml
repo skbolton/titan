@@ -1,0 +1,7 @@
+name: Juno
+root: ~/Development/juno
+
+windows:
+  - vim: v
+  - console: ./.pkg/dev/start-database.sh
+

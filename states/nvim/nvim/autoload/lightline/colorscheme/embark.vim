@@ -17,7 +17,7 @@ let s:asphalt_subtle= { "gui": "#100E23", "cterm": "232", "cterm16": "8"}
 let s:dark_asphalt = { "gui": "#3E3859", "cterm": "236", "cterm16": "0"}
 
 let s:red = { "gui": "#F48FB1", "cterm": "204", "cterm16": "1"}
-let s:dark_red = { "gui": "#F02E6E", "cterm": "203", "cterm16": "9"}
+let s:dark_red = { "gui": "#ff5458", "cterm": "203", "cterm16": "9"}
 
 let s:green = { "gui": "#A1EFD3", "cterm": "120", "cterm16": "2"}
 let s:dark_green = { "gui": "#62d196", "cterm": "119", "cterm16": "10"}

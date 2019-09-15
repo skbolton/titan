@@ -21,14 +21,12 @@ call minpac#add('junegunn/goyo.vim')
 call minpac#add('challenger-deep-theme/vim', { 'name': 'challenger-deep' })
 " Made optional so that we can load vim faster
 " See SwitchColorScheme for function that loads these when swapping scheme
-call minpac#add('sainnhe/gruvbox-material')
 call minpac#add('ayu-theme/ayu-vim', {'type': 'opt'})
 call minpac#add('drewtempelmeyer/palenight.vim', {'type': 'opt'})
 call minpac#add('arcticicestudio/nord-vim', {'type': 'opt'})
-call minpac#add('haishanh/night-owl.vim', {'type': 'opt'})
 call minpac#add('dracula/vim', {'type': 'opt', 'name': 'dracula'})
-call minpac#add('kaicataldo/material.vim', {'type': 'opt'})
 
+call minpac#add('tpope/vim-dadbod')
 call minpac#add('machakann/vim-highlightedyank')
 call minpac#add('shime/vim-livedown')
 call minpac#add('sainnhe/lightline_foobar.vim')

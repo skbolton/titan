@@ -17,6 +17,7 @@
 
 [core]
         editor = nvim
+        excludesFile = ~/.gitignore_global
 
 [blame]
         date = relative

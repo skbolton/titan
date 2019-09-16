@@ -70,6 +70,7 @@ call minpac#add('itchyny/calendar.vim')
 call minpac#add('tpope/vim-fugitive')
 call minpac#add('rhysd/git-messenger.vim')
 call minpac#add('niklaas/lightline-gitdiff')
+call minpac#add('airblade/vim-gitgutter')
 
 "   _____ _                              
 "  |_   _| |__   ___ _ __ ___   ___  ___ 

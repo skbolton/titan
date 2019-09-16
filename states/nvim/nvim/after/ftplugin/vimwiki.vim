@@ -1,7 +1,6 @@
 " Load in additional support plugins
 packadd goyo.vim
 packadd vim-livedown
-packadd taskwiki
 packadd vim-taskwarrior
 
 " Launch wiki's more easily

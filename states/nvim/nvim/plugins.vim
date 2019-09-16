@@ -26,7 +26,9 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 " These plugins have to be required on every boot so that filetypes
 " exist and other plugins can kick in
 call minpac#add('elixir-editors/vim-elixir')
-call minpac#add('vimwiki/vimwiki')
+call minpac#add('vimwiki/vimwiki', { 'branch': 'dev' })
+" Taskwiki has buffer enter events so it has to be available
+call minpac#add('tbabej/taskwiki')
 call minpac#add('saltstack/salt-vim')
 call minpac#add('jparise/vim-graphql')
 call minpac#add('pangloss/vim-javascript')
@@ -101,7 +103,6 @@ call minpac#add('tpope/vim-dadbod', { 'type': 'opt' })
 call minpac#add('shime/vim-livedown', {'type': 'opt'})
 call minpac#add('junegunn/goyo.vim', {'type': 'opt'})
 call minpac#add('blindFS/vim-taskwarrior', { 'type': 'opt' })
-call minpac#add('tbabej/taskwiki', { 'type': 'opt' })
 " Javascript
 call minpac#add('mattn/emmet-vim', { 'type': 'opt' })
 call minpac#add('mxw/vim-jsx', { 'type': 'opt' })

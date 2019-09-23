@@ -13,7 +13,10 @@
         c = commit
         cm = commit -m
         can = commit --amend --no-edit
-        what = "!git config -l | grep alias | cut -c 7-"
+        files = !git diff --name-only $(git merge-base HEAD \"$REVIEW_BASE\")
+        stat = !git diff --stat $(git merge-base HEAD \"$REVIEW_BASE\")
+        review = !nvim -p $(git files) +\"tabdo Gdiff $REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$REVIEW_BASE'\"
+        what = "!git config --get-regexp alias"
 
 [core]
         editor = nvim
@@ -21,3 +24,9 @@
 
 [blame]
         date = relative
+
+[rebase]
+        autosquash = true
+
+[commit]
+        verbose = true

@@ -7,13 +7,15 @@ taskd.ca=\/Users\/{{ grains.user }}\/cloud\/task-sync\/dst.pem
 taskd.key=\/Users\/{{ grains.user }}\/cloud\/task-sync\/stephenkbolton@gmail.com.key.pem
 
 # CONTEXTS
-context.work=project:Work or +in
-context.home=project:Personal or +in or +chores
+# Not an inbox and a work project that is either overdue, due this week, or scheduled this week
+context.work = -in +WEEK or scheduled.after:yesterday or +OVERDUE project:Work
+# Not an inbox and not a work project that is overdue, due this week, or scheduled this week
+context.personal = -in project.not:Work +WEEK or +VERDUE or scheduled.after:yesterday
 
 # INBOX REPORT
 report.in.columns = id,description
 report.in.description = Inbox
-report.in.filter = status:pending limit:page (+in)
+report.in.filter = -WAITING status:pending limit:page (+in)
 report.in.labels = ID,Description
 
 # General decoration

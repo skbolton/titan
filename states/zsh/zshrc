@@ -11,7 +11,7 @@ SPACESHIP_KUBECONTEXT_SYMBOL="  "
 SPACESHIP_KUBECONTEXT_PREFIX="within"
 SPACESHIP_CHAR_SYMBOL="  "
 
-SPACESHIP_GIT_SYMBOL="  "
+SPACESHIP_GIT_SYMBOL=" "
 SPACESHIP_GIT_BRANCH_COLOR="red"
 
 SPACESHIP_ELIXIR_SYMBOL=" "
@@ -21,6 +21,7 @@ plugins=(
   docker
   tmuxinator
   mix
+  taskwarrior
   history-substring-search
 )
 
@@ -43,20 +44,9 @@ alias tap="task context personal"
 alias taw="task context work"
 alias in='task add +in'
 alias d='delta'
-alias tmux='direnv exec / tmux'
 
-# Dotfiles utility functions
-# If simply titan is called go to titan directory
-# If called with apply then run ./bin/run.sh
-titan() {
-  if [ "$1" = "apply" ]; then
-    pwd=$(pwd)
-    cd ~/titan
-    sh ./bin/run.sh
-    cd "${pwd}"
-  else
-    tmuxinator start titan
-  fi
+tickle () {
+    task $@ modify wait:soww
 }
 
 delta() {
@@ -71,18 +61,8 @@ delta() {
   echo "Incorrect usage of delta"
 }
 
-notes() {
-  tmuxinator start notes
-}
-
-# Tmux shenanigans
-dv-react() {
-  tmuxinator start dv-react
-}
-
-dv-node() {
-  tmuxinator start dv-node
-}
+# This is something for git so that certain commands know what branch to go against
+export REVIEW_BASE=master
 
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash

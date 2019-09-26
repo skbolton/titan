@@ -192,8 +192,8 @@ else
   call s:h("SpellRare",   {"cterm": "underline", "fg": s:red})
   call s:h("SpellLocal",  {"cterm": "underline", "fg": s:dark_green})
 endif
-call s:h("Pmenu",         {"fg": s:norm, "bg": s:bg_dark})
-call s:h("PmenuSel",      {"fg": s:norm, "bg": s:bg_subtle})
+call s:h("Pmenu",         {"fg": s:norm, "bg": s:asphalt_subtle})
+call s:h("PmenuSel",      {"fg": s:purple, "bg": s:asphalt})
 call s:h("PmenuSbar",     {"fg": s:norm, "bg": s:bg_subtle})
 call s:h("PmenuThumb",    {"fg": s:norm, "bg": s:bg_subtle})
 call s:h("TabLine",       {"fg": s:norm, "bg": s:bg_dark})
@@ -309,13 +309,19 @@ hi! link xmlTagName                 htmlTagName
 hi link SignifySignAdd              LineNr
 hi link SignifySignDelete           LineNr
 hi link SignifySignChange           LineNr
-call s:h("GitGutterAdd",{"fg": s:green, "bg": s:bg_subtle})
-call s:h("GitGutterDelete",{"fg": s:red, "bg": s:bg_subtle})
-call s:h("GitGutterChange",{"fg": s:yellow, "bg": s:bg_subtle})
-call s:h("GitGutterChangeDelete",{"fg": s:red, "bg": s:bg_subtle})
+call s:h("GitGutterAdd",{"fg": s:green, "bg": s:bg})
+call s:h("GitGutterDelete",{"fg": s:red, "bg": s:bg})
+call s:h("GitGutterChange",{"fg": s:yellow, "bg": s:bg})
+call s:h("GitGutterChangeDelete",{"fg": s:red, "bg": s:bg})
 
+" Ale
+call s:h("ALEErrorSign", {"fg": s:red, "bg": s:bg})
+call s:h("ALEWarningSign", {"fg": s:dark_yellow, "bg": s:bg})
+call s:h("ALEVirtualTextWarning", {"fg": s:dark_yellow})
 " CTRLP
 call s:h("CtrlpMatch", {"bg": s:yellow, "fg": s:bg})
+call s:h("NERDTreeDir", {"fg": s:blue})
+call s:h("NERDTreeFlags", {"fg": s:green})
 
 "nvim terminal colors
 let g:terminal_color_0 = s:bg_dark.gui

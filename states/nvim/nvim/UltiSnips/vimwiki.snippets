@@ -1,0 +1,27 @@
+snippet "- proj" "creates a project"
+[${1}](/Projects/${1/\s/-/g}/index.md)
+endsnippet
+
+snippet meeting "Meeting Template" b
+# ${1:Meeting Notes}
+
+* **Date:** `date +%m-%d-%Y`
+* **Objective:** ${2}
+
+## Attendees
+| Name           | Role      |
+|----------------|-----------|
+| Stephen Bolton | Developer |
+| ${3}           |           |
+
+
+## Action Items
+
+These are the things that need to be handled coming out of the meeting
+
+## Meeting Notes
+
+## Parking Lot
+
+These are conversations that would sidetrack the meeting. We can come back given time, or a different meeting needs to get scheduled.
+endsnippet

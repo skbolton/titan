@@ -1,9 +1,11 @@
 " language server 
-nmap <leader>ld <Plug>(coc-definition)
+nmap <leader>ld <Plug>(coc-definition)zz
+nnoremap <leader>lD :call CocAction('jumpDefinition', 'vsplit')<CR>
 nmap <leader>la <Plug>(coc-references)
 nmap <leader>lr <Plug>(coc-rename)
 noremap <leader>lh :call CocAction('doHover')<CR>
 noremap <leader>lo :CocList outline<CR>
+nnoremap <leader>lO :Vista<CR>
 noremap <leader>lp :CocList diagnostics<CR>
 
 " Quickfix 
@@ -45,8 +47,11 @@ let g:vista_icon_indent = ["▸ ", ""]
 let g:vista#renderer#icons = {
 \   "function": "\uf794 ",
 \   "module": "\uf6a6 ",
-\   "variable": "\ufb18 "
+\   "variable": "\ufb18 ",
+\   "constant": " "
 \  }
+
+let g:vista_default_executive = 'coc'
 
 
 " supertab completions
@@ -56,7 +61,9 @@ let g:SuperTabMappingForward = '<s-tab>'
 let g:SuperTabMappingBackward = '<tab>'
 
 " -------------- NERDtree -----------------
-nnoremap <leader>b :NERDTreeToggle<CR>
+nnoremap <silent><leader>\ :NERDTreeToggle<CR>
+nnoremap <silent><leader>p :CtrlP<CR>
+nnoremap <silent><leader>b :CtrlPBuffer<CR>
 
 " TODO: I need to find a better place for this config
 " ------------ Projectionist ----------------

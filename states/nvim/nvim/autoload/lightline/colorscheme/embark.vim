@@ -82,15 +82,15 @@ let s:lfc = {
 let s:p = { 'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {} }
 
 " Tabline
-let s:p.tabline.left    = [ [ s:lfc.white, s:lfc.bg_subtle ] ]
-let s:p.tabline.tabsel  = [ [ s:lfc.bg_subtle, s:lfc.blue ] ]
+let s:p.tabline.left    = [ [ s:lfc.white, s:lfc.bg_subtle ], [s:lfc.white, s:lfc.dark_asphalt] ]
+let s:p.tabline.tabsel  = [ [ s:lfc.bg_subtle, s:lfc.dark_cyan ] ]
 let s:p.tabline.middle  = [ [ s:lfc.white, s:lfc.bg_subtle ] ]
-let s:p.tabline.right   = [ [ s:lfc.bg_subtle, s:lfc.red ] ]
+let s:p.tabline.right   = [ [ s:lfc.bg_subtle, s:lfc.cyan ] ]
 
 " Normal mode
 let s:p.normal.left     = [ [ s:lfc.bg_subtle, s:lfc.cyan ],  [ s:lfc.bg_subtle, s:lfc.dark_cyan ] ]
 let s:p.normal.middle   = [ [ s:lfc.white, s:lfc.bg_subtle ] ]
-let s:p.normal.right    = [ [ s:lfc.bg_subtle, s:lfc.cyan ],  [ s:lfc.bg_subtle, s:lfc.dark_cyan ] ]
+let s:p.normal.right    = [ [ s:lfc.bg_subtle, s:lfc.cyan ],  [ s:lfc.bg_subtle, s:lfc.dark_cyan ], [s:lfc.bg_subtle, s:lfc.dark_blue] ]
 let s:p.normal.error    = [ [ s:lfc.red, s:lfc.bg_subtle ] ]
 let s:p.normal.warning  = [ [ s:lfc.yellow, s:lfc.bg_subtle ] ]
 

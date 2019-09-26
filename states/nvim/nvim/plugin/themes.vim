@@ -12,6 +12,7 @@ function! ColorScheme()
   if g:VIM_COLOR_SCHEME ==# 'palenight'
     " Lazy load theme in
     packadd palenight.vim
+    packadd lightline_foobar.vim
     let g:palenight_terminal_italics=1
     colorscheme palenight
     let g:lightline.colorscheme = 'palenight_alter'
@@ -19,15 +20,13 @@ function! ColorScheme()
 
   if g:VIM_COLOR_SCHEME ==# 'embark'
     colorscheme embark
+    let g:embark_terminal_italics = 1
     hi Cursor guibg=#F48FB1 guifg=white
     let g:lightline.colorscheme = 'embark'
     " hi CtrlPMatch guifg=#F48FB1 guibg=#1e1c31
     hi CtrlPMode1 guibg=#aaffe4 guifg=black
-    if has("gui_vimr")
-    else
-      hi Normal guibg=NONE ctermbg=NONE
-      hi LineNr guibg=NONE ctermbg=NONE
-    endif
+    hi Normal guibg=NONE ctermbg=NONE
+    hi LineNr guibg=NONE ctermbg=NONE
   endif
 
   if g:VIM_COLOR_SCHEME ==# 'challenger_deep'
@@ -37,7 +36,7 @@ function! ColorScheme()
     hi Normal guibg=NONE ctermbg=NONE
     hi LineNr guibg=NONE ctermbg=NONE
     highlight clear ALEErrorSign
-    highlight ALEWarningSign guifg=yellow
+    highlight aLEWarningSign guifg=yellow
     highlight ALEVirtualTextWarning guifg=yellow
     hi Search guibg=#ffb378 guifg=#100e23 
     hi PMenu guibg=#100e23 guifg=#a6b3cc
@@ -86,6 +85,7 @@ function! ColorScheme()
 
     let g:lightline.colorscheme = 'ayu_mirage'
   endif
+
 endfunction
 
 " The Defaults

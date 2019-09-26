@@ -61,19 +61,17 @@ set -g status-style default
 set -g status-right-length 80
 set -g status-left-length 100
 set -g window-status-separator "" 
-set -g status-bg brightblack
+set -g status-bg black
 
 # Bars ---------------------------------
-# set -g status-left "#[fg=cyan,bg=default]#[fg=black,bg=cyan]   #S #[fg=cyan,bg=default] #{tasks_status}"
-set -g status-left "#[fg=brightblack,bg=cyan]   #S #[fg=cyan,bg=default] #{tasks_status}"
-# set -g status-right "#[fg=brightcyan,bg=brightblack]#[fg=brightblack,bg=brightcyan] %Y-%m-%d | %l:%M #[fg=cyan,bg=brightcyan]|#[fg=brightblack,bg=cyan] #(whoami) #[fg=cyan,bg=default]"
-set -g status-right "#[fg=brightblack,bg=brightcyan] %Y-%m-%d | %l:%M #[fg=cyan,bg=brightcyan]|#[fg=brightblack,bg=cyan] #(whoami) "
+set -g status-left "#[fg=green]  #S |"
+set -g status-right "#[fg=green] %Y-%m-%d | %l:%M #[fg=brightwhite] #(whoami) "
 
 # Windows ------------------------------
-set -g status-justify centre
-set -g window-status-format "#[fg=white,bg=default] #W "
-# set -g window-status-current-format "#[fg=cyan,bg=default]#[fg=brightblack,bg=cyan] #W #[fg=cyan,bg=default]"
-set -g window-status-current-format "#[fg=cyan] #W"
+set -g status-justify left
+set -g window-status-format "#[fg=brightwhite] #W"
+#set -g window-status-current-format "#[fg=yellow] #W"
+set -g window-status-current-format "#{?window_zoomed_flag,#[fg=yellow] ,}#[fg=yellow] #W"
 
 # instantiate plugin manager for tmux
 run -b '~/.tmux/plugins/tpm/tpm'

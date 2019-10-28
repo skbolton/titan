@@ -1,6 +1,6 @@
 " language server 
 nmap <leader>ld <Plug>(coc-definition)zz
-nnoremap <leader>lD :call CocAction('jumpDefinition', 'vsplit')<CR>
+nnoremap <leader>lD :call CocAction('jumpDefinition', 'vsplit')<CR> nmap <leader>la <Plug>(coc-references)
 nmap <leader>la <Plug>(coc-references)
 nmap <leader>lr <Plug>(coc-rename)
 noremap <leader>lh :call CocAction('doHover')<CR>

@@ -1,12 +1,13 @@
 function! TestingStatus() abort
   if g:TESTING_STATUS == 'passing'
-    return " "
+    return " "
   elseif g:TESTING_STATUS == 'running'
-    return " "
+    return " "
   elseif g:TESTING_STATUS == 'failing'
-    return " "
+    return " "
   endif
 endfunction
+
 
 function! FileNameWithIcon() abort
   return winwidth(0) > 70  ? " " . WebDevIconsGetFileTypeSymbol() . ' ' . expand('%:t') : '' 
@@ -14,9 +15,9 @@ endfunction
 
 function! FileNameWithParent(f) abort
   if expand('%:t') ==# ''
-    return expand('%:p:h:t')
+    return expand('%:p:h:t') . ' ' . WebDevIconsGetFileTypeSymbol()
   else
-    return expand('%:p:h:t') . "/" . expand("%:t")
+    return expand('%:p:h:t') . "/" . expand("%:t") . ' ' . WebDevIconsGetFileTypeSymbol()
   endif
 endfunction
 
@@ -42,7 +43,7 @@ endfunction
 
 function! Git_branch() abort
   if fugitive#head() !=# ''
-    return " " . fugitive#head()
+    return " " . fugitive#head()
   else
     return "\uf468"
   endif
@@ -72,9 +73,9 @@ let g:lightline.separator = { 'left': "", 'right': "" }
 let g:lightline.subseparator = { 'left': "", 'right': "" }
 let g:lightline.tabline_separator = { 'left': "", 'right': "" }
 let g:lightline.tabline_subseparator = { 'left': "", 'right': "" }
-let g:lightline#gitdiff#indicator_added = "\uf055 "
-let g:lightline#gitdiff#indicator_deleted = "\uf057 "
-let g:lightline#gitdiff#indicator_modified = "\uf056 "
+let g:lightline#gitdiff#indicator_added = "\uf916"
+let g:lightline#gitdiff#indicator_deleted = "\uf658 "
+let g:lightline#gitdiff#indicator_modified = "\uf875 "
 
 let g:lightline.tabline = {
             \ 'left': [ [ 'vim_logo'], [ 'tabs' ] ],

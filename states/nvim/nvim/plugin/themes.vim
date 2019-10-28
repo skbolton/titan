@@ -18,6 +18,13 @@ function! ColorScheme()
     let g:lightline.colorscheme = 'palenight_alter'
   endif
 
+  if g:VIM_COLOR_SCHEME ==# 'embark-solarized'
+    colorscheme embark_solarized
+    let g:lightline.colorscheme = 'embark_solarized'
+    hi Normal guibg=NONE ctermbg=NONE
+    hi LineNr guibg=NONE ctermbg=NONE
+  endif
+
   if g:VIM_COLOR_SCHEME ==# 'embark'
     colorscheme embark
     let g:embark_terminal_italics = 1

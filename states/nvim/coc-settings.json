@@ -4,9 +4,9 @@
   "diagnostic.virtualText": true,
   "diagnostic.errorSign": "◉",
   "suggest.completionItemKindLabels": {
-    "module": "\uf6a6 ",
-    "function": "\uf794 ",
-    "variable": "\ufb18 "
+    "module": " ",
+    "function": "ﬦ",
+    "variable": "ﮂ"
   },
   "suggest.snippetIndicator": "\u26a1 ",
   "languageserver": {

@@ -48,10 +48,10 @@ let g:vista_icon_indent = ["▸ ", ""]
 
 " The default icons can't be suitable for all the filetypes, you can extend it as you wish.
 let g:vista#renderer#icons = {
-\   "function": "\uf794 ",
-\   "module": "\uf6a6 ",
+\   "function": "ﬦ",
+\   "module": " ",
 \   "variable": "\ufb18 ",
-\   "constant": " "
+\   "constant": ""
 \  }
 
 let g:vista_default_executive = 'coc'

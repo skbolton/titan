@@ -23,6 +23,7 @@ function! ColorScheme()
     let g:lightline.colorscheme = 'embark_solarized'
     hi Normal guibg=NONE ctermbg=NONE
     hi LineNr guibg=NONE ctermbg=NONE
+    hi link Sneak Search
   endif
 
   if g:VIM_COLOR_SCHEME ==# 'embark'
@@ -34,6 +35,7 @@ function! ColorScheme()
     hi CtrlPMode1 guibg=#aaffe4 guifg=black
     hi Normal guibg=NONE ctermbg=NONE
     hi LineNr guibg=NONE ctermbg=NONE
+    hi link Sneak Search
   endif
 
   if g:VIM_COLOR_SCHEME ==# 'challenger_deep'

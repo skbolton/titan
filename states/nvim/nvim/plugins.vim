@@ -13,7 +13,6 @@
 
 packadd minpac
 
-" call minpac#init({'dir': $HOME . '/.local/share/nvim/site'})
 call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 
@@ -44,7 +43,6 @@ call minpac#add('pangloss/vim-javascript')
 " Most likely plugins that I would want in every session I start
 
 " Utility Things
-call minpac#add('easymotion/vim-easymotion')
 call minpac#add('yuttie/comfortable-motion.vim')
 call minpac#add('jiangmiao/auto-pairs')
 call minpac#add('tpope/vim-surround')
@@ -77,7 +75,8 @@ call minpac#add('tpope/vim-fugitive')
 call minpac#add('rhysd/git-messenger.vim')
 call minpac#add('niklaas/lightline-gitdiff')
 call minpac#add('airblade/vim-gitgutter')
-
+call minpac#add('shumphrey/fugitive-gitlab.vim')
+call minpac#add('justinmk/vim-sneak')
 "   _____ _                              
 "  |_   _| |__   ___ _ __ ___   ___  ___ 
 "    | | | '_ \ / _ \ '_ ` _ \ / _ \/ __|

@@ -26,6 +26,9 @@ nnoremap <leader>, :nohlsearch<CR>
 nnoremap <leader>/ :silent grep<space>
 nnoremap <leader>co :cw<CR>
 nnoremap <leader>cc :ccl<CR>
+
+" Sneak
+let g:sneak#label = 1
 " set ag as the grep program
 if executable('rg') 
   set grepprg=rg\ --vimgrep

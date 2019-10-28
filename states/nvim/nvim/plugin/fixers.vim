@@ -14,7 +14,7 @@ let g:ale_completion_enabled = 0
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_javascript_eslint_use_local_config = 1
 let g:ale_sign_error = '●'
-let g:ale_sign_warning = "\uf49f"
+let g:ale_sign_warning = ""
 let g:ale_virtualtext_cursor = 1
 
 " Test support
@@ -58,15 +58,4 @@ augroup END
 """""""""""""""""""""
 " vim-test extensions
 """""""""""""""""""""
-function! ElixirUmbrellaTransform(cmd) abort
-  if match(a:cmd, 'apps/') != -1
-    return substitute(a:cmd, 'mix test apps/\([^/]*/\)', 'cd apps/\1 \&\& mix test ', '')
-  else
-    return a:cmd
-  end
-endfunction
-
-
 let g:test#preserve_screen = 0
-let g:test#custom_transformations = {'elixir_umbrella': function('ElixirUmbrellaTransform')}
-let g:test#transformation = 'elixir_umbrella'

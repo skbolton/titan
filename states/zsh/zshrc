@@ -4,6 +4,8 @@ export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.6.0/bin:$GOPATH/
 export EDITOR="nvim"
 export GOPATH=$HOME/go
 
+export ERL_AFLAGS="-kernel shell_history enabled"
+
 ZSH_THEME="spaceship"
 
 SPACESHIP_DOCKER_SHOW=false

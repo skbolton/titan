@@ -62,7 +62,9 @@ delta() {
     tmuxinator start $2
   fi
 
-  echo "Incorrect usage of delta"
+  if [ "$1" = "new" ]; then
+    tmuxinator start launch name=${PWD##*/} root=$(pwd)
+  fi
 }
 
 # This is something for git so that certain commands know what branch to go against

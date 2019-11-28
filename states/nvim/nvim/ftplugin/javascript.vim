@@ -1,3 +1,3 @@
 packadd emmet-vim
-packadd vim-jsx
 packadd vim-jsdoc
+packadd vim-jsx-pretty

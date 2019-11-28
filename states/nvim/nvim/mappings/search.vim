@@ -1,6 +1,6 @@
 " language server 
 nmap <leader>ld <Plug>(coc-definition)zz
-nnoremap <leader>lD :call CocAction('jumpDefinition', 'vsplit')<CR> nmap <leader>la <Plug>(coc-references)
+nnoremap <leader>lD :call CocAction('jumpDefinition', 'vsplit')<CR>zz
 nmap <leader>la <Plug>(coc-references)
 nmap <leader>lr <Plug>(coc-rename)
 noremap <leader>lh :call CocAction('doHover')<CR>
@@ -67,6 +67,9 @@ let g:SuperTabMappingBackward = '<tab>'
 nnoremap <silent><leader>\ :NERDTreeToggle<CR>
 nnoremap <silent><leader>p :CtrlP<CR>
 nnoremap <silent><leader>b :CtrlPBuffer<CR>
+" nnoremap <silent><leader>p :Clap files<CR>
+" nnoremap <silent><leader>b :Clap buffers<CR>
+" nnoremap <silent><leader>c :Clap command<CR>
 
 " TODO: I need to find a better place for this config
 " ------------ Projectionist ----------------

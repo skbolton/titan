@@ -63,7 +63,7 @@ delta() {
   fi
 
   if [ "$1" = "new" ]; then
-    tmuxinator start launch name=${PWD##*/} root=$(pwd)
+    tmuxinator start launch name=${PWD##*/}
   fi
 }
 

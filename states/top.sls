@@ -4,7 +4,6 @@
 # - habitica
 base:
   '*':
-    - brew
     - git
     - zsh
     - node
@@ -18,3 +17,4 @@ base:
   'os:MacOs':
     - match: grain
     - amethyst
+    - brew

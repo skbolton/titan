@@ -64,12 +64,14 @@ call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
 call minpac#add('liuchengxu/vista.vim')
 call minpac#add('ervandew/supertab')
 call minpac#add('ctrlpvim/ctrlp.vim')
+call minpac#add('liuchengxu/vim-clap')
 " Status and UI
 call minpac#add('scrooloose/nerdtree')
 call minpac#add('ryanoasis/vim-devicons')
 call minpac#add('tiagofumo/vim-nerdtree-syntax-highlight')
 call minpac#add('itchyny/lightline.vim')
 call minpac#add('itchyny/calendar.vim')
+call minpac#add('glacambre/firenvim')
 " Git
 call minpac#add('tpope/vim-fugitive')
 call minpac#add('rhysd/git-messenger.vim')
@@ -109,7 +111,7 @@ call minpac#add('junegunn/goyo.vim', {'type': 'opt'})
 call minpac#add('blindFS/vim-taskwarrior', { 'type': 'opt' })
 " Javascript
 call minpac#add('mattn/emmet-vim', { 'type': 'opt' })
-call minpac#add('mxw/vim-jsx', { 'type': 'opt' })
+call minpac#add('MaxMEllon/vim-jsx-pretty', { 'type': 'opt' })
 call minpac#add('heavenshell/vim-jsdoc', { 'type': 'opt' })
 " Elixir
 call minpac#add('andyl/vim-textobj-elixir', { 'type': 'opt' })

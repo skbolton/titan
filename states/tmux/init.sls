@@ -15,7 +15,7 @@ tmux-nord:
 tmux-config:
   file.symlink:
     - name: {{ grains.homedir }}/.tmux.conf
-    - target: {{ grains.statesdir }}/tmux/tmux-conf
+    - target: {{ grains.statesdir }}/tmux/tmux.conf
 
 tmuxinator:
   gem.installed:

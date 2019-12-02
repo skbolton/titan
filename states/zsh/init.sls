@@ -14,6 +14,21 @@ oh-my-zsh:
     - name: https://github.com/robbyrussell/oh-my-zsh.git
     - target: {{ grains.homedir }}/.oh-my-zsh
 
+create-zsh-folder:
+  file.directory:
+    - name: {{ grains.homedir }}/zsh
+    - user: {{ grains.user }}
+
+link-prompt:
+  file.symlink:
+    - name: {{ grains.homedir }}/zsh/promptrc
+    - target: {{ grains.statesdir }}/zsh/promptrc
+
+link-path:
+  file.symlink:
+    - name: {{ grains.homedir }}/zsh/pathrc
+    - target: {{ grains.statesdir }}/zsh/pathrc
+
 link-zsh:
   file.symlink:
   - name: {{ grains.homedir}}/.zshrc

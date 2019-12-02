@@ -6,38 +6,21 @@ export GOPATH=$HOME/go
 
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-ZSH_THEME="spaceship"
+# Configurationh for prompt
+if [ -f ~/zsh/promptrc ]; then
+    source ~/zsh/promptrc
+fi
 
-SPACESHIP_DOCKER_SHOW=false
-SPACESHIP_KUBECONTEXT_SYMBOL="  "
-SPACESHIP_KUBECONTEXT_PREFIX="within"
-SPACESHIP_CHAR_SYMBOL="  "
-
-SPACESHIP_GIT_SYMBOL=" "
-SPACESHIP_GIT_BRANCH_COLOR="red"
-
-SPACESHIP_NODE_SYMBOL=" "
-
-SPACESHIP_ELIXIR_SYMBOL=" "
-
-plugins=(
-  git
-  docker
-  tmuxinator
-  mix
-  taskwarrior
-  history-substring-search
-)
+# Configuration for path variable (varies between mac and arch)
+if [ -f ~/zsh/pathrc ]; then
+    source ~/zsh/pathrc
+fi
 
 source $ZSH/oh-my-zsh.sh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-autoload -U promptinit; promptinit
-prompt spaceship
-
 
 alias v="nvim"
 alias aqua="Asciiquarium"

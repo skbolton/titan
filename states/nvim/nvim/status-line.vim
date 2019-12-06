@@ -73,13 +73,10 @@ let g:lightline.separator = { 'left': "", 'right': "" }
 let g:lightline.subseparator = { 'left': "", 'right': "" }
 let g:lightline.tabline_separator = { 'left': "", 'right': "" }
 let g:lightline.tabline_subseparator = { 'left': "", 'right': "" }
-let g:lightline#gitdiff#indicator_added = "\uf916"
-let g:lightline#gitdiff#indicator_deleted = "\uf658 "
-let g:lightline#gitdiff#indicator_modified = "\uf875 "
 
 let g:lightline.tabline = {
             \ 'left': [ [ 'vim_logo'], [ 'tabs' ] ],
-            \ 'right': [ [ 'git_branch' ], [ 'gitdiff' ]]
+            \ 'right': [ [ 'git_branch' ]]
             \ }
 let g:lightline.tab = {
         \ 'active': ['artify_activetabnum', 'filename_with_parent'],
@@ -105,11 +102,6 @@ let g:lightline.component = {
         \ 'filename_with_parent': '%t',
         \ 'status_diagnostic': '%{StatusDiagnostic()}',
         \ 'testing_status': '%{TestingStatus()}'
-        \ }
-
-let g:lightline.component_expand = { 'gitdiff': 'lightline#gitdiff#get' }
-
-let g:lightline.component_function = {
         \ }
 
 

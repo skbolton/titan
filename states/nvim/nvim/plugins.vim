@@ -75,7 +75,6 @@ call minpac#add('glacambre/firenvim')
 " Git
 call minpac#add('tpope/vim-fugitive')
 call minpac#add('rhysd/git-messenger.vim')
-call minpac#add('niklaas/lightline-gitdiff')
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('shumphrey/fugitive-gitlab.vim')
 call minpac#add('justinmk/vim-sneak')

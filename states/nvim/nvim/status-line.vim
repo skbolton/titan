@@ -43,7 +43,7 @@ endfunction
 
 function! Git_branch() abort
   if fugitive#head() !=# ''
-    return " " . fugitive#head()
+    return  fugitive#head() . " "
   else
     return "\uf468"
   endif

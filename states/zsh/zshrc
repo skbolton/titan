@@ -18,10 +18,6 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
 alias v="nvim"
 alias aqua="Asciiquarium"
 
@@ -46,7 +42,7 @@ delta() {
   fi
 
   if [ "$1" = "new" ]; then
-    tmuxinator start launch name=${PWD##*/}
+    tmuxinator start launch name=${PWD##*/} root=$(pwd)
   fi
 }
 
@@ -56,3 +52,7 @@ export REVIEW_BASE=master
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 eval "$(direnv hook zsh)"
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship

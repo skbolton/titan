@@ -1,36 +1,25 @@
-# Whatever you do be careful this shit took forever to work
+# we need asdf installed
+include:
+  - asdf
 
-clear_nvm:
-  file.absent:
-    - name: {{ grains.homedir }}/.nvm
+# IMPORTANT: Asdf is a sourced function
+# Since we might be in a shell that hasn't yet sourced it we need to source it before any calls to asdf
 
-install_nvm:
-  cmd:
-    - run
-    - name: curl -L https://raw.githubusercontent.com/creationix/nvm/v0.10.0/install.sh | bash
-    - unless: test -d /{{ grains.homedir }}/.nvm
-    - user: {{ grains.user }}
+asdf-node:
+  pkg.installed:
+    - name: gpg
 
-install_node:
-  cmd:
-    - run
-    # NVM isn't actually an exectuable therefore some weird sourcing has to happen
-    - name: /bin/zsh -c "source {{ grains.homedir }}/.nvm/nvm.sh; nvm install 10 && nvm alias default 10"
-    - onlyif: /bin/bash -c "source ~/.nvm/nvm.sh; nvm ls 10 | grep 'N/A'"
-    - user: {{ grains.user }}
-    - require:
-      - cmd: install_nvm
-
-spaceship-prompt:
-  cmd:
-    - run
-    - name: /bin/zsh -c "source {{ grains.homedir }}/.nvm/nvm.sh; npm install -g spaceship-prompt"
-    - user: {{ grains.user }}
-    - require:
-      - cmd: install_node
+  cmd.run:
+    - names: 
+      # We have to source the script first since we might be running in a zsh session
+      # that doesn't have it source in the rc
+      - /bin/zsh -c "source ~/.asdf/asdf.sh; asdf global nodejs 12.13.1"
+      - /bin/zsh -c "source ~/.asdf/asdf.sh; asdf install nodejs 12.13.1"
+      - /bin/zsh -c "source ~/.asdf/asdf.sh; asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git"
+    - unless: /bin/zsh -c "source ~/.asdf/asdf.sh; asdf current nodejs"
 
 dependencies:
   cmd:
     - run
-    - name: /bin/zsh -c "source {{ grains.homedir }}/.nvm/nvm.sh; npm i -g yarn typescript livedown prettier npmr"
+    - name: /bin/zsh -c " source ~/.asdf/asdf.sh; npm i -g livedown prettier npmrc habitica-cli"
 

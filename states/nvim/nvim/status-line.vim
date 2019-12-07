@@ -1,6 +1,6 @@
 function! TestingStatus() abort
   if g:TESTING_STATUS == 'passing'
-    return " "
+    return "  "
   elseif g:TESTING_STATUS == 'running'
     return " "
   elseif g:TESTING_STATUS == 'failing'
@@ -10,35 +10,15 @@ endfunction
 
 
 function! FileNameWithIcon() abort
-  return winwidth(0) > 70  ? " " . WebDevIconsGetFileTypeSymbol() . ' ' . expand('%:t') : '' 
+  return winwidth(0) > 70  ?  WebDevIconsGetFileTypeSymbol() . ' ' . expand('%:t') : '' 
 endfunction
 
 function! FileNameWithParent(f) abort
   if expand('%:t') ==# ''
-    return expand('%:p:h:t') . ' ' . WebDevIconsGetFileTypeSymbol()
+    return expand('%:p:h:t')
   else
-    return expand('%:p:h:t') . "/" . expand("%:t") . ' ' . WebDevIconsGetFileTypeSymbol()
+    return expand('%:p:h:t') . "/" . expand("%:t")
   endif
-endfunction
-
-function! Line_num() abort
-  return string(line('.'))
-endfunction
-
-function! Active_tab_num(n) abort
-    return a:n . " "
-endfunction
-
-function! Inactive_tab_num(n) abort
-  return a:n . " "
-endfunction
-
-function! Line_percent() abort
-  return string((100*line('.'))/line('$'))
-endfunction
-
-function! Col_num() abort
-    return string(getcurpos()[2])
 endfunction
 
 function! Git_branch() abort
@@ -64,29 +44,26 @@ function! StatusDiagnostic() abort
 endfunction
 
 let g:lightline = {}
-let g:lightline.colorscheme = 'embark'
 let g:lightline.active = { 
       \ 'left': [ ['mode', 'readonly'], ['filename_with_icon', 'modified']],
       \ 'right': [['lineinfo'], ['testing_status', 'status_diagnostic'] ]
       \ }
-let g:lightline.separator = { 'left': "", 'right': "" }
-let g:lightline.subseparator = { 'left': "", 'right': "" }
-let g:lightline.tabline_separator = { 'left': "", 'right': "" }
-let g:lightline.tabline_subseparator = { 'left': "", 'right': "" }
+let g:lightline.separator = { 'left': "", 'right': "" }
+let g:lightline.tabline_separator = { 'left': "", 'right': "" }
+let g:lightline.tabline_subseparator = { 'left': "/", 'right': "/" }
+let g:lightline.subseparator = { 'left': '\\', 'right': '\\' }
 
 let g:lightline.tabline = {
             \ 'left': [ [ 'vim_logo'], [ 'tabs' ] ],
             \ 'right': [ [ 'git_branch' ]]
             \ }
 let g:lightline.tab = {
-        \ 'active': ['artify_activetabnum', 'filename_with_parent'],
-        \ 'inactive': ['artify_inactivetabnum', 'filename']
+        \ 'active': ['filename_with_parent'],
+        \ 'inactive': ['filename']
         \ }
 
 let g:lightline.tab_component = {}
 let g:lightline.tab_component_function = {
-            \ 'artify_activetabnum': 'Active_tab_num',
-            \ 'artify_inactivetabnum': 'Inactive_tab_num',
             \ 'artify_filename': 'lightline_tab_filename',
             \ 'filename': 'lightline#tab#filename',
             \ 'modified': 'lightline#tab#modified',

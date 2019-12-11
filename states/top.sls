@@ -9,7 +9,6 @@ base:
     - node
     - nvim
     - tmux
-    - alacritty
     - kitty
     - task-warrior
     - ranger

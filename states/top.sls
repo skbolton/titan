@@ -16,4 +16,4 @@ base:
   'os:MacOS':
     - match: grain
     - amethyst
-    - brew
+    - mac-utils

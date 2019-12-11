@@ -14,7 +14,7 @@ base:
     - task-warrior
     - ranger
 
-  'os:MacOs':
+  'os:MacOS':
     - match: grain
     - amethyst
     - brew

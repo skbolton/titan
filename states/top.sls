@@ -7,6 +7,7 @@ base:
     - git
     - zsh
     - node
+    - ruby
     - nvim
     - tmux
     - kitty

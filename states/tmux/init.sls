@@ -1,6 +1,8 @@
+include:
+  - ruby
+
 tmux:
   pkg.installed
-
 
 tmux-plugin-manager:
   git.cloned:

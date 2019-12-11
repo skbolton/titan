@@ -10,9 +10,9 @@ asdf-erlang:
   cmd.run:
     # important these scripts get run in reverse order
     - names: 
-      - /bin/zsh -c "source ~/.asdf/asdf.sh; asdf global erlang 22.0.7"
-      - /bin/zsh -c "source ~/.asdf/asdf.sh; asdf install erlang 22.0.7"
       - /bin/zsh -c "source ~/.asdf/asdf.sh; asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git"
+      - /bin/zsh -c "source ~/.asdf/asdf.sh; asdf install erlang 22.0.7"
+      - /bin/zsh -c "source ~/.asdf/asdf.sh; asdf global erlang 22.0.7"
     # If we already have erlang move on
     - unless: /bin/zsh -c "source ~/.asdf/asdf.sh; asdf current erlang"
 
@@ -21,9 +21,9 @@ asdf-elixir:
   cmd.run:
     # important these scripts get run in reverse order
     - names: 
-      - /bin/zsh -c "source ~/.asdf/asdf.sh; asdf global elixir 1.9.2-otp-22"
-      - /bin/zsh -c "source ~/.asdf/asdf.sh; asdf install elixir 1.9.2-otp-22"
       - /bin/zsh -c "source ~/.asdf/asdf.sh; asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git"
+      - /bin/zsh -c "source ~/.asdf/asdf.sh; asdf install elixir 1.9.2-otp-22"
+      - /bin/zsh -c "source ~/.asdf/asdf.sh; asdf global elixir 1.9.2-otp-22"
     # skip if we have elixir already
     - unless: /bin/zsh -c "source ~/.asdf/asdf.sh; asdf current elixir"
 

@@ -1,4 +1,5 @@
 file_roots:
   base:
     - ./
+file_client: local
 

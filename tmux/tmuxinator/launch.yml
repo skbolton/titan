@@ -1,0 +1,6 @@
+name: <%= @settings["name"].capitalize %>
+root: <%= @settings["root"] %>
+
+windows:
+  - vim: v
+  - console: clear

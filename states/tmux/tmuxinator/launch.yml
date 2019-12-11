@@ -1,5 +1,0 @@
-name: <%= @settings["name"] %>
-
-windows:
-  - vim: v
-  - console: clear

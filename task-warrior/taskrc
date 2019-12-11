@@ -1,0 +1,100 @@
+# TASK SERVER CONFIG -------
+taskd.certificate={{grains.homedir}}/cloud/task-sync/intheam/private.certificate.pem
+taskd.key={{ grains.homedir }}/cloud/task-sync/intheam/private.key.pem
+taskd.ca={{grains.homedir}}/cloud/task-sync/intheam/ca.cert.pem
+taskd.server=taskwarrior.inthe.am:53589
+taskd.credentials=inthe_am/stephenkbolton/8d0ffdbb-c701-4d3b-8735-167dccf3e8ac
+taskd.trust=ignore hostname
+
+data.location=~/.task-2019
+
+# CONTEXTS
+context.work = -in (+work or +code)
+context.personal = -in -work
+
+# INBOX REPORT
+report.in.columns = id,tags,description
+report.in.description = Inbox
+report.in.filter = -WAITING status:pending limit:page (+in)
+report.in.labels = ID,Tags,Description
+
+# Next report
+report.next.columns = id,project,priority,tags,due,scheduled,description 
+report.next.labels = ID,Proj,Priority,Tags,Due,Sched,Desc
+
+# urgency overrides
+urgency.user.tag.in.coefficient=-1
+
+# Theme
+rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.
+
+# General decoration
+color.label=
+color.label.sort=
+color.alternate=
+color.header=gray10
+color.footnote=gray10
+color.warning=white on blue
+color.error=white on red
+color.debug=blue
+
+# Task state
+color.completed=
+color.deleted=
+color.active=color2
+color.recurring=
+color.scheduled=
+color.until=
+color.blocked=bold gray10 on gray4
+color.blocking=gray18 on gray6
+
+# Project
+color.project.none=
+
+# Priority
+color.uda.priority.H=color3 on color0
+color.uda.priority.L=
+color.uda.priority.M=color11 on color0
+
+# Tags
+color.tag.next=
+color.tag.in=color15
+color.tag.none=
+color.tagged=
+
+# Due
+color.due=color0 on color11
+color.due.today=color1
+color.overdue=color0 on color1
+
+# Report: burndown
+color.burndown.pending=white on gray9
+color.burndown.started=black on gray16
+color.burndown.done=white on rgb013
+
+# Report: history
+color.history.add=white on gray6
+color.history.delete=black on gray18
+color.history.done=black on rgb024
+
+# Report: summary
+color.summary.bar=on rgb012
+color.summary.background=on gray2
+
+# Command: calendar
+color.calendar.due=color0 on gray10
+color.calendar.due.today=color0 on gray15
+color.calendar.holiday=color15 on rgb005
+color.calendar.overdue=color0 on gray20
+color.calendar.today=underline black on color15
+color.calendar.weekend=on gray4
+color.calendar.weeknumber=gray10
+
+# Command: sync
+color.sync.added=gray10
+color.sync.changed=gray15
+color.sync.rejected=gray23
+
+# Command: undo
+color.undo.before=rgb013
+color.undo.after=rgb035

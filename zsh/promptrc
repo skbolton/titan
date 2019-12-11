@@ -1,8 +1,8 @@
 ZSH_THEME="spaceship"
 
-SPACESHIP_DOCKER_SHOW=false
-SPACESHIP_KUBECONTEXT_SYMBOL="  "
+SPACESHIP_KUBECONTEXT_SYMBOL="  "
 SPACESHIP_KUBECONTEXT_PREFIX="within"
+
 SPACESHIP_CHAR_SYMBOL="  "
 
 SPACESHIP_GIT_SYMBOL=" "
@@ -12,6 +12,23 @@ SPACESHIP_NODE_SYMBOL=" "
 
 SPACESHIP_ELIXIR_SYMBOL=" "
 
+SPACESHIP_VI_MODE_PREFIX="\n"
+SPACESHIP_VI_MODE_COLOR="green"
+SPACESHIP_VI_MODE_INSERT=" "
+SPACESHIP_VI_MODE_NORMAL=" " 
+
+SPACESHIP_PROMPT_ORDER=(
+  dir
+  git
+  node
+  elixir
+  golang
+  kubecontext
+  exec_time
+  jobs
+  vi_mode
+)
+
 plugins=(
   git
   docker
@@ -19,6 +36,7 @@ plugins=(
   mix
   taskwarrior
   history-substring-search
+  vi-mode
 )
 
 autoload -U promptinit; promptinit

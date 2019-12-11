@@ -47,7 +47,7 @@ let s:green = { "gui": "#A1EFD3", "cterm": "120", "cterm16": "2"}
 let s:dark_green = { "gui": "#62d196", "cterm": "119", "cterm16": "10"}
 
 let s:yellow = { "gui": "#ffe6b3", "cterm": "228", "cterm16": "3"}
-let s:dark_yellow = { "gui": "#f29e74", "cterm": "215", "cterm16": "11"}
+let s:dark_yellow = { "gui": "#F2B482", "cterm": "215", "cterm16": "11"}
 
 let s:blue = { "gui": "#91ddff", "cterm": "159", "cterm16": "4"}
 let s:dark_blue = { "gui": "#65b2ff", "cterm": "75", "cterm16": "12"}
@@ -319,7 +319,7 @@ call s:h("ALEErrorSign", {"fg": s:red, "bg": s:bg})
 call s:h("ALEWarningSign", {"fg": s:dark_yellow, "bg": s:bg})
 call s:h("ALEVirtualTextWarning", {"fg": s:dark_yellow})
 " CTRLP
-call s:h("CtrlpMatch", {"bg": s:yellow, "fg": s:bg})
+call s:h("CtrlpMatch", {"fg": s:yellow})
 call s:h("NERDTreeDir", {"fg": s:blue})
 call s:h("NERDTreeFlags", {"fg": s:green})
 

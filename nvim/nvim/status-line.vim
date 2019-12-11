@@ -48,8 +48,8 @@ let g:lightline.active = {
       \ 'left': [ ['mode', 'readonly'], ['filename_with_icon', 'modified']],
       \ 'right': [['lineinfo'], ['testing_status', 'status_diagnostic'] ]
       \ }
-let g:lightline.separator = { 'left': "", 'right': "" }
-let g:lightline.tabline_separator = { 'left': "", 'right': "" }
+let g:lightline.separator = { 'left': " ", 'right': " " }
+let g:lightline.tabline_separator = { 'left': " ", 'right': "" }
 let g:lightline.tabline_subseparator = { 'left': "/", 'right': "/" }
 let g:lightline.subseparator = { 'left': '\\', 'right': '\\' }
 

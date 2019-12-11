@@ -22,7 +22,7 @@ nnoremap <C-o> <C-o>zz
 nnoremap <C-i> <C-i>zz
 nnoremap * *zz
 nnoremap # #zz
-nnoremap <leader>, :nohlsearch<CR>
+nnoremap <silent> <leader>, :nohlsearch<CR>
 nnoremap <leader>/ :silent grep<space>
 nnoremap <leader>co :cw<CR>
 nnoremap <leader>cc :ccl<CR>

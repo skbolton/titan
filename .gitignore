@@ -1,3 +1,2 @@
-grains
-/states/nvim/nvim/coc-settings.json
-/states/nvim/nvim/pack
+/nvim/nvim/coc-settings.json
+/nvim/nvim/pack/

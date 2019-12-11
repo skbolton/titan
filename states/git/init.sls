@@ -1,3 +1,9 @@
+{% if grains['os'] != 'MacOS' %}
+git:
+  pkg.installed:
+    - name: git
+{% endif %}
+
 gitconfig:
   file.symlink:
     - name: {{ grains.homedir }}/.gitconfig

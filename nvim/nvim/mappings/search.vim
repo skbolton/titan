@@ -1,12 +1,12 @@
 " language server 
 nmap <leader>ld <Plug>(coc-definition)zz
 nnoremap <leader>lD :call CocAction('jumpDefinition', 'vsplit')<CR>zz
-nmap <leader>la <Plug>(coc-references)
-nmap <leader>lr <Plug>(coc-rename)
 noremap <leader>lh :call CocAction('doHover')<CR>
 noremap <leader>lo :CocList outline<CR>
 nnoremap <leader>lO :Vista<CR>
 noremap <leader>lp :CocList diagnostics<CR>
+noremap <leader>l? :CocInfo<CR>
+noremap <leader>lr :CocRestart<CR>
 
 " Quickfix 
 nnoremap <silent> <UP> :cope<CR>

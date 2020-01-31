@@ -2,7 +2,7 @@ kitty:
   {% if grains['os'] == 'MacOS' %}
   cmd.run:
     - name: brew cask install kitty
-    - unless: brew list kitty
+    - unless: brew cask list kitty
   {% else %}
   pkg.installed:
     - name: kitty

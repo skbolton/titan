@@ -4,7 +4,7 @@ let code_wiki.path = '~/cloud/wiki/Coding'
 let code_wiki.syntax = 'markdown'
 let code_wiki.ext = '.md'
 let code_wiki.auto_diary_index = 1
-let code_wiki.nested_syntaxes = {'js': 'javascript', 'javascript': 'javascript', 'elixir': 'elixir'}
+let code_wiki.nested_syntaxes = {'js': 'javascript', 'javascript': 'javascript', 'elixir': 'elixir', 'gql': 'graphql'}
 
 let personal_wiki = {}
 let personal_wiki.path = '~/cloud/wiki/Personal'

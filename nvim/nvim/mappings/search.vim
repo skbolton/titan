@@ -63,13 +63,19 @@ let g:vista_default_executive = 'coc'
 let g:SuperTabMappingForward = '<s-tab>'
 let g:SuperTabMappingBackward = '<tab>'
 
+let g:clap_theme = 'embark'
+let g:clap_current_selection_sign = { 'text': ' ' }
+let g:clap_open_action = { 'ctrl-t': 'tab split', 'ctrl-v': 'vsplit', 'ctrl-s': 'split' }
+let g:clap_layout = {'relative': 'editor'}
+
 " -------------- NERDtree -----------------
 nnoremap <silent><leader>\ :NERDTreeToggle<CR>
-nnoremap <silent><leader>p :CtrlP<CR>
-nnoremap <silent><leader>b :CtrlPBuffer<CR>
-" nnoremap <silent><leader>p :Clap files<CR>
-" nnoremap <silent><leader>b :Clap buffers<CR>
-" nnoremap <silent><leader>c :Clap command<CR>
+nnoremap <silent><leader>pf :Clap files --hidden "!.git/"<CR>
+nnoremap <silent><leader>pb :CtrlPBuffer<CR>
+nnoremap <silent><leader>pc :Clap command<CR>
+nnoremap <silent><leader>pr :Clap registers<CR>
+nnoremap <leader>ps :silent grep 
+nnoremap <leader>pS :silent grep! 
 
 " TODO: I need to find a better place for this config
 " ------------ Projectionist ----------------

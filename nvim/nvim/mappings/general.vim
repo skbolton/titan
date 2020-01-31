@@ -3,9 +3,8 @@ let maplocalleader="-"
 
 nnoremap ; :
 nnoremap : ;
-nnoremap <leader>r :source $MYVIMRC<CR>
-nnoremap <leader>w :w<CR>
-nnoremap <leader>q :q<CR>
+vnoremap ; :
+vnoremap : ;
 
 tnoremap <Esc> <C-\><C-n>
 

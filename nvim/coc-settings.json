@@ -8,6 +8,7 @@
     "function": "ﬦ",
     "variable": "ﮂ"
   },
+  "list.interactiveDebounceTime": 300,
   "suggest.snippetIndicator": "\u26a1 ",
   "languageserver": {
     "elixirLS": {
@@ -18,6 +19,11 @@
           "dialyzerEnabled": false
         }
       }
+    },
+    "dockerfile": {
+      "command": "docker-langserver",
+      "filetypes": ["dockerfile"],
+      "args": ["--stdio"]
     },
     "golang": {
       "command": "gopls",

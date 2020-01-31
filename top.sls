@@ -13,6 +13,7 @@ base:
     - kitty
     - task-warrior
     - ranger
+    - starship
 
   'os:MacOS':
     - match: grain

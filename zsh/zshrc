@@ -48,11 +48,6 @@ delta() {
 
 # This is something for git so that certain commands know what branch to go against
 export REVIEW_BASE=master
-
-# Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
-
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 eval "$(direnv hook zsh)"

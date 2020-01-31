@@ -21,8 +21,6 @@ function! ColorScheme()
   if g:VIM_COLOR_SCHEME ==# 'embark-solarized'
     colorscheme embark_solarized
     let g:lightline.colorscheme = 'embark_solarized'
-    hi Normal guibg=NONE ctermbg=NONE
-    hi LineNr guibg=NONE ctermbg=NONE
     hi link Sneak Search
   endif
 
@@ -36,6 +34,7 @@ function! ColorScheme()
     hi Normal guibg=NONE ctermbg=NONE
     hi LineNr guibg=NONE ctermbg=NONE
     hi link Sneak Search
+    hi link ClapMatches Search
   endif
 
   if g:VIM_COLOR_SCHEME ==# 'challenger_deep'
@@ -88,8 +87,10 @@ function! ColorScheme()
 
   if g:VIM_COLOR_SCHEME ==# 'ayu-mirage'
     packadd ayu
+    packadd lightline_foobar.vim
     set background=dark
     let g:ayucolor="mirage"
+    let g:lightline.colorscheme = 'ayu_mirage'
     colorscheme ayu
 
     let g:lightline.colorscheme = 'ayu_mirage'

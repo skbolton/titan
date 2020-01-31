@@ -9,7 +9,7 @@ let s:lighter_black   = { "gui": "#545454", "cterm": "240", "cterm16" : "240" }
 " lighter shadows and darker grays
 let s:subtle_black  = { "gui": "#303030", "cterm": "236", "cterm16" : "236" }
 let s:light_gray    = { "gui": "#B2B2B2", "cterm": "249", "cterm16" : "249" }
-let s:lighter_gray  = { "gui": "#C6C6C6", "cterm": "251", "cterm16" : "251" }
+let s:lighter_gray  = { "gui": "#a6b3cc", "cterm": "251", "cterm16" : "251" }
 
 " challenger deep colors:
 let s:asphalt = { "gui": "#1e1c31", "cterm": "233", "cterm16": "NONE"}

@@ -24,18 +24,13 @@ nnoremap * *zz
 nnoremap # #zz
 nnoremap <silent> <leader>, :nohlsearch<CR>
 nnoremap <leader>/ :silent grep<space>
-nnoremap <leader>co :cw<CR>
-nnoremap <leader>cc :ccl<CR>
 
 " Sneak
 let g:sneak#label = 1
 " set ag as the grep program
 if executable('rg') 
-  set grepprg=rg\ --vimgrep
+  set grepprg=rg\ --vimgrep\ --hidden
 endif
-
-vnoremap <c-q><c-r> :%DB g:db_url<CR>
-nnoremap <c-q><c-s> :DB g:db_url =
 
 nnoremap <BS> :b#<CR>
 let g:vista_sidebar_width = 45
@@ -55,7 +50,6 @@ let g:vista#renderer#icons = {
 \  }
 
 let g:vista_default_executive = 'coc'
-
 
 " supertab completions
 " This is how I got it so that tabbing moves down the completion list
@@ -81,7 +75,7 @@ nnoremap <leader>pS :silent grep!
 " ------------ Projectionist ----------------
 " not stricltly search related but close enough
 " Open projections in splits
-nnoremap <leader>av :AV<CR>
+nnoremap <leader>av :A<CR>
 nnoremap <leader>as :AS<CR>
 nnoremap <leader>a :A<CR>
 let g:projectionist_heuristics = {

@@ -2,9 +2,9 @@ function! TestingStatus() abort
   if g:TESTING_STATUS == 'passing'
     return "  "
   elseif g:TESTING_STATUS == 'running'
-    return " "
+    return "  "
   elseif g:TESTING_STATUS == 'failing'
-    return " "
+    return "  "
   endif
 endfunction
 

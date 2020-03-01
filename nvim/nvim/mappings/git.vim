@@ -11,3 +11,11 @@ nnoremap <leader>gh :0Glog<CR>
 
 nnoremap <leader>g- :GitGutterUndoHunk<CR>
 nnoremap <leader>g+ :GitGutterStageHunk<CR>
+
+nnoremap <leader>dh :diffget<CR>
+nnoremap <leader>dl :diffget<CR>
+nnoremap <leader>dj :diffput<CR>
+
+vnoremap <leader>dh :diffget<CR>
+vnoremap <leader>dl :diffget<CR>
+vnoremap <leader>dj :diffput<CR>

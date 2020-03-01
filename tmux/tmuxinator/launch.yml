@@ -1,4 +1,4 @@
-name: <%= @settings["name"].capitalize %>
+name: <%= @settings["name"] %>
 root: <%= @settings["root"] %>
 
 windows:

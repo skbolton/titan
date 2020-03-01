@@ -39,7 +39,7 @@ When running salt commands without sudo the following folders need to be readabl
 
 Once all dependencies are installed you are ready to run titan. To install a singe module run the following from root of titan (replace nvim with any of the folder names in this repo based on which thing you want)
 ```
-$ salt-call --config=./ state.sls nvim
+$ salt-call --config=./ --refresh-grains-cache state.sls nvim
 ```
 
 To get full state run this from root of titan

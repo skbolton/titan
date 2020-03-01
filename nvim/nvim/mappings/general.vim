@@ -6,6 +6,26 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
+" Quickfix 
+nnoremap <silent> <UP> :cope<CR>
+nnoremap <silent> <DOWN> :cclose<CR>
+nnoremap <silent> <leader>cn :cnext<CR>
+nnoremap <silent> <leader>cp :cprev<CR>
+nnoremap <silent> <RIGHT> :cnext<CR>
+nnoremap <silent> <LEFT> :cprev<CR>
+
+" Make many of the jump commands also center on search term
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap <C-o> <C-o>zz
+nnoremap <C-i> <C-i>zz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap <silent> <leader>, :nohlsearch<CR>
+nnoremap <leader>/ :silent grep<space>
+nnoremap <BS> :b#<CR>
+
+" Have esc work just like it does in vim when running terminal
 tnoremap <Esc> <C-\><C-n>
 
 " More quickly call external programs

@@ -10,6 +10,10 @@ neofetch:
     - name: neofetch
     - unless: brew list neofetch
 
+sk:
+  pkg.installed:
+    - name: sk
+
 tree:
   pkg.installed:
     - name: tree

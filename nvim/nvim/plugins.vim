@@ -86,6 +86,7 @@ call minpac#add('justinmk/vim-sneak')
 "                                        
 call minpac#add('arcticicestudio/nord-vim', {'type': 'opt'})
 call minpac#add('sainnhe/lightline_foobar.vim', { 'type': 'opt' })
+call minpac#add('gruvbox-material/vim', { 'type': 'opt', 'name': 'gruvbox-material' })
 
 "   ____                               _     ____  _             _           
 "  / ___| _   _ _ __  _ __   ___  _ __| |_  |  _ \| |_   _  __ _(_)_ __  ___ 

@@ -10,6 +10,7 @@ set -g status-bg black
 
 #Bars ---------------------------------
 set -g status-left "#[fg=black,bg=brightcyan]  #S #[fg=brightcyan,bg=black]"
+
 set -g status-right "#[fg=black,bg=brightblack]#[fg=brightwhite,bg=brightblack] %Y-%m-%d / %I:%M #[fg=brightcyan,bg=brightblack]#[bg=brightcyan,fg=black] #(whoami) "
 
 # Windows ------------------------------

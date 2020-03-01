@@ -15,6 +15,25 @@ function! ColorScheme()
     hi link Sneak Search
   endif
 
+  if g:VIM_COLOR_SCHEME ==# 'gruvbox-light'
+    packadd gruvbox-material
+    set background=light
+    let g:gruvbox_material_background = 'hard'
+    let g:gruvbox_material_transparent_background = 1
+    colorscheme gruvbox-material
+    let g:lightline.colorscheme = 'gruvbox_material'
+    let g:clap_theme = 'gruvbox_light'
+    hi link Sneak Search
+    " hi Normal guibg=#FDF6E3
+    " hi EndOfBuffer guibg=#FDF6E3
+    hi CursorLine guibg=#FAF2CF
+    hi PMenu guibg=#FAF2CF
+    hi ClapFile guifg=#654735
+    hi Visual guibg=#d9e1cc
+    execute "silent ! kitty @ --to=tcp:localhost:12345 set-colors --all ~/.config/kitty/gruvbox-light.conf"
+    execute "silent ! tmux source-file ~/titan/tmux/gruvbox-light.tmux"
+  endif
+
   if g:VIM_COLOR_SCHEME ==# 'embark'
     colorscheme embark
     let g:embark_terminal_italics = 1
@@ -46,4 +65,4 @@ function! ColorScheme()
 endfunction
 
 " The Defaults
-:call SwitchColorScheme('embark')
+:call SwitchColorScheme('gruvbox-light')

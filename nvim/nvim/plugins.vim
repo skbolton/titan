@@ -84,13 +84,8 @@ call minpac#add('justinmk/vim-sneak')
 "    | | | | | |  __/ | | | | |  __/\__ \
 "    |_| |_| |_|\___|_| |_| |_|\___||___/
 "                                        
-call minpac#add('challenger-deep-theme/vim', { 'name': 'challenger-deep' })
-call minpac#add('ayu-theme/ayu-vim', {'type': 'opt'})
-call minpac#add('drewtempelmeyer/palenight.vim', {'type': 'opt'})
 call minpac#add('arcticicestudio/nord-vim', {'type': 'opt'})
-call minpac#add('dracula/vim', {'type': 'opt', 'name': 'dracula'})
 call minpac#add('sainnhe/lightline_foobar.vim', { 'type': 'opt' })
-call minpac#add('rakr/vim-two-firewatch', { 'type': 'opt' })
 
 "   ____                               _     ____  _             _           
 "  / ___| _   _ _ __  _ __   ___  _ __| |_  |  _ \| |_   _  __ _(_)_ __  ___ 

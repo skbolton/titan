@@ -10,103 +10,106 @@
 "  |  __/ (_| | (__|   < (_| | (_| |  __/ |   
 "  |_|   \__,_|\___|_|\_\__,_|\__, |\___|_|   
 "                             |___/           
+function! PackagerInit() abort
+  packadd vim-packager
+  call packager#init()
+  "    __ _ _      _                            _             _
+  "   / _(_) | ___| |_ _   _ _ __   ___   _ __ | |_   _  __ _(_)_ __  ___
+  "  | |_| | |/ _ \ __| | | | '_ \ / _ \ | '_ \| | | | |/ _` | | '_ \/ __|
+  "  |  _| | |  __/ |_| |_| | |_) |  __/ | |_) | | |_| | (_| | | | | \__ \
+  "  |_| |_|_|\___|\__|\__, | .__/ \___| | .__/|_|\__,_|\__, |_|_| |_|___/
+  "                    |___/|_|          |_|            |___/
+  "  
+  " These plugins have to be required on every boot so that filetypes
+  " exist and other plugins can kick in
+  call packager#add('elixir-editors/vim-elixir')
+  call packager#add('vimwiki/vimwiki', { 'branch': 'dev' })
+  " Taskwiki has buffer enter events so it has to be available
+  call packager#add('tbabej/taskwiki')
+  call packager#add('saltstack/salt-vim')
+  call packager#add('jparise/vim-graphql')
+  call packager#add('pangloss/vim-javascript')
 
-packadd minpac
+  "    ____                 ____  _             _
+  "   / ___|___  _ __ ___  |  _ \| |_   _  __ _(_)_ __  ___
+  "  | |   / _ \| '__/ _ \ | |_) | | | | |/ _` | | '_ \/ __|
+  "  | |__| (_) | | |  __/ |  __/| | |_| | (_| | | | | \__ \
+  "   \____\___/|_|  \___| |_|   |_|\__,_|\__, |_|_| |_|___/
+  "                                       |___/
+  "  
+  " Most likely plugins that I would want in every session I start
 
-call minpac#init()
-call minpac#add('k-takata/minpac', {'type': 'opt'})
+  " Utility Things
+  call packager#add('yuttie/comfortable-motion.vim')
+  call packager#add('jiangmiao/auto-pairs')
+  call packager#add('tpope/vim-surround')
+  call packager#add('tpope/vim-repeat')
+  call packager#add('tpope/vim-commentary')
+  call packager#add('tpope/vim-projectionist')
+  call packager#add('tpope/vim-dispatch')
+  call packager#add('tpope/vim-endwise')
+  call packager#add('machakann/vim-highlightedyank')
+  call packager#add('janko/vim-test')
+  call packager#add('christoomey/vim-tmux-navigator')
+  call packager#add('SirVer/ultisnips')
+  call packager#add('kana/vim-textobj-user')
+  " Fixers, completion and navigation
+  call packager#add('neomake/neomake')
+  call packager#add('neoclide/coc.nvim', {'branch': 'release'})
+  call packager#add('dense-analysis/ale')
+  call packager#add('liuchengxu/vista.vim')
+  call packager#add('ervandew/supertab')
+  call packager#add('liuchengxu/vim-clap')
+  call packager#add('srstevenson/vim-picker')
+  " Status and UI
+  call packager#add('scrooloose/nerdtree')
+  call packager#add('ryanoasis/vim-devicons')
+  call packager#add('tiagofumo/vim-nerdtree-syntax-highlight')
+  call packager#add('itchyny/lightline.vim')
+  call packager#add('glacambre/firenvim')
+  " Git
+  call packager#add('tpope/vim-fugitive')
+  call packager#add('rhysd/git-messenger.vim')
+  call packager#add('airblade/vim-gitgutter')
+  call packager#add('shumphrey/fugitive-gitlab.vim')
+  call packager#add('rktjmp/git-info.vim')
+  call packager#add('justinmk/vim-sneak')
+  "   _____ _                              
+  "  |_   _| |__   ___ _ __ ___   ___  ___ 
+  "    | | | '_ \ / _ \ '_ ` _ \ / _ \/ __|
+  "    | | | | | |  __/ | | | | |  __/\__ \
+  "    |_| |_| |_|\___|_| |_| |_|\___||___/
+  "                                        
+  call packager#add('arcticicestudio/nord-vim', {'type': 'opt'})
+  call packager#add('sainnhe/lightline_foobar.vim', { 'type': 'opt' })
+  call packager#add('gruvbox-material/vim', { 'type': 'opt', 'name': 'gruvbox-material' })
 
-"    __ _ _      _                            _             _
-"   / _(_) | ___| |_ _   _ _ __   ___   _ __ | |_   _  __ _(_)_ __  ___
-"  | |_| | |/ _ \ __| | | | '_ \ / _ \ | '_ \| | | | |/ _` | | '_ \/ __|
-"  |  _| | |  __/ |_| |_| | |_) |  __/ | |_) | | |_| | (_| | | | | \__ \
-"  |_| |_|_|\___|\__|\__, | .__/ \___| | .__/|_|\__,_|\__, |_|_| |_|___/
-"                    |___/|_|          |_|            |___/
-"  
-" These plugins have to be required on every boot so that filetypes
-" exist and other plugins can kick in
-call minpac#add('elixir-editors/vim-elixir')
-call minpac#add('vimwiki/vimwiki', { 'branch': 'dev' })
-" Taskwiki has buffer enter events so it has to be available
-call minpac#add('tbabej/taskwiki')
-call minpac#add('saltstack/salt-vim')
-call minpac#add('jparise/vim-graphql')
-call minpac#add('pangloss/vim-javascript')
+  "   ____                               _     ____  _             _           
+  "  / ___| _   _ _ __  _ __   ___  _ __| |_  |  _ \| |_   _  __ _(_)_ __  ___ 
+  "  \___ \| | | | '_ \| '_ \ / _ \| '__| __| | |_) | | | | |/ _` | | '_ \/ __|
+  "   ___) | |_| | |_) | |_) | (_) | |  | |_  |  __/| | |_| | (_| | | | | \__ \
+  "  |____/ \__,_| .__/| .__/ \___/|_|   \__| |_|   |_|\__,_|\__, |_|_| |_|___/
+  "              |_|   |_|                                   |___/             
+  "  
+  " These plugins are ones that I would only need when working with certain
+  " filetypes so they will be required when needed
+  "
+  " SQL
+  call packager#add('tpope/vim-dadbod', { 'type': 'opt' })
+  " Markdown
+  call packager#add('shime/vim-livedown', {'type': 'opt'})
+  call packager#add('junegunn/goyo.vim', {'type': 'opt'})
+  call packager#add('blindFS/vim-taskwarrior', { 'type': 'opt' })
+  " Javascript
+  call packager#add('mattn/emmet-vim', { 'type': 'opt' })
+  call packager#add('MaxMEllon/vim-jsx-pretty', { 'type': 'opt' })
+  call packager#add('heavenshell/vim-jsdoc', { 'type': 'opt' })
+  " Elixir
+  call packager#add('andyl/vim-textobj-elixir', { 'type': 'opt' })
+endfunction
 
-"    ____                 ____  _             _
-"   / ___|___  _ __ ___  |  _ \| |_   _  __ _(_)_ __  ___
-"  | |   / _ \| '__/ _ \ | |_) | | | | |/ _` | | '_ \/ __|
-"  | |__| (_) | | |  __/ |  __/| | |_| | (_| | | | | \__ \
-"   \____\___/|_|  \___| |_|   |_|\__,_|\__, |_|_| |_|___/
-"                                       |___/
-"  
-" Most likely plugins that I would want in every session I start
 
-" Utility Things
-call minpac#add('yuttie/comfortable-motion.vim')
-call minpac#add('jiangmiao/auto-pairs')
-call minpac#add('tpope/vim-surround')
-call minpac#add('tpope/vim-repeat')
-call minpac#add('tpope/vim-commentary')
-call minpac#add('tpope/vim-projectionist')
-call minpac#add('tpope/vim-dispatch')
-call minpac#add('tpope/vim-endwise')
-call minpac#add('machakann/vim-highlightedyank')
-call minpac#add('janko/vim-test')
-call minpac#add('wakatime/vim-wakatime')
-call minpac#add('christoomey/vim-tmux-navigator')
-call minpac#add('SirVer/ultisnips')
-call minpac#add('kana/vim-textobj-user')
-" Fixers, completion and navigation
-call minpac#add('neomake/neomake')
-call minpac#add('w0rp/ale')
-call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
-call minpac#add('liuchengxu/vista.vim')
-call minpac#add('ervandew/supertab')
-call minpac#add('ctrlpvim/ctrlp.vim')
-call minpac#add('liuchengxu/vim-clap')
-" Status and UI
-call minpac#add('scrooloose/nerdtree')
-call minpac#add('ryanoasis/vim-devicons')
-call minpac#add('tiagofumo/vim-nerdtree-syntax-highlight')
-call minpac#add('itchyny/lightline.vim')
-call minpac#add('itchyny/calendar.vim')
-call minpac#add('glacambre/firenvim')
-" Git
-call minpac#add('tpope/vim-fugitive')
-call minpac#add('rhysd/git-messenger.vim')
-call minpac#add('airblade/vim-gitgutter')
-call minpac#add('shumphrey/fugitive-gitlab.vim')
-call minpac#add('justinmk/vim-sneak')
-"   _____ _                              
-"  |_   _| |__   ___ _ __ ___   ___  ___ 
-"    | | | '_ \ / _ \ '_ ` _ \ / _ \/ __|
-"    | | | | | |  __/ | | | | |  __/\__ \
-"    |_| |_| |_|\___|_| |_| |_|\___||___/
-"                                        
-call minpac#add('arcticicestudio/nord-vim', {'type': 'opt'})
-call minpac#add('sainnhe/lightline_foobar.vim', { 'type': 'opt' })
-call minpac#add('gruvbox-material/vim', { 'type': 'opt', 'name': 'gruvbox-material' })
-
-"   ____                               _     ____  _             _           
-"  / ___| _   _ _ __  _ __   ___  _ __| |_  |  _ \| |_   _  __ _(_)_ __  ___ 
-"  \___ \| | | | '_ \| '_ \ / _ \| '__| __| | |_) | | | | |/ _` | | '_ \/ __|
-"   ___) | |_| | |_) | |_) | (_) | |  | |_  |  __/| | |_| | (_| | | | | \__ \
-"  |____/ \__,_| .__/| .__/ \___/|_|   \__| |_|   |_|\__,_|\__, |_|_| |_|___/
-"              |_|   |_|                                   |___/             
-"  
-" These plugins are ones that I would only need when working with certain
-" filetypes so they will be required when needed
-"
-" SQL
-call minpac#add('tpope/vim-dadbod', { 'type': 'opt' })
-" Markdown
-call minpac#add('shime/vim-livedown', {'type': 'opt'})
-call minpac#add('junegunn/goyo.vim', {'type': 'opt'})
-call minpac#add('blindFS/vim-taskwarrior', { 'type': 'opt' })
-" Javascript
-call minpac#add('mattn/emmet-vim', { 'type': 'opt' })
-call minpac#add('MaxMEllon/vim-jsx-pretty', { 'type': 'opt' })
-call minpac#add('heavenshell/vim-jsdoc', { 'type': 'opt' })
-" Elixir
-call minpac#add('andyl/vim-textobj-elixir', { 'type': 'opt' })
+command! PackagerInstall call PackagerInit() | call packager#install()
+command! -bang PackagerUpdate call PackagerInit() | call packager#update({ 'force_hooks': '<bang>' })
+command! PackagerClean call PackagerInit() | call packager#clean()
+command! PackagerStatus call PackagerInit() | call packager#status()

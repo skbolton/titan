@@ -39,13 +39,13 @@ function! ColorScheme()
     let g:embark_terminal_italics = 1
     hi Cursor guibg=#F48FB1 guifg=white
     let g:lightline.colorscheme = 'embark'
+    let g:clap_theme = 'embark'
     " hi CtrlPMatch guifg=#F48FB1 guibg=#1e1c31
     hi CtrlPMode1 guibg=#aaffe4 guifg=black
     hi Normal guibg=NONE ctermbg=NONE
     hi LineNr guibg=NONE ctermbg=NONE
     hi link Sneak Search
     hi link ClapMatches Search
-  endif
 
     execute "silent ! kitty @ --to=tcp:localhost:12345 set-colors --all ~/.config/kitty/ryze.conf"
     execute "silent ! tmux source-file ~/titan/tmux/embark.tmux"

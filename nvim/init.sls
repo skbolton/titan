@@ -1,8 +1,3 @@
-vundle:
-  git.cloned:
-    - name: https://github.com/VundleVim/Vundle.vim.git
-    - target: {{ salt["environ.get"]("HOME") }}/.vundle/bundle/Vundle.vim
-
 nvim:
   pkg.installed:
     - name: neovim
@@ -12,10 +7,10 @@ nvim-config:
     - name: {{ salt["environ.get"]("HOME") }}/.config/nvim
     - target: {{ salt["environ.get"]("HOME") }}/titan/nvim/nvim
 
-minpac:
+vim-packager:
   git.cloned:
-    - name: https://github.com/k-takata/minpac.git
-    - target: {{ salt["environ.get"]("HOME") }}/.local/share/nvim/site/pack/minpac/opt/minpac
+    - name: https://github.com/kristijanhusak/vim-packager
+    - target: {{ salt["environ.get"]("HOME") }}/.config/nvim/pack/packager/opt/vim-packager
 
 coc-settings:
   file.symlink:

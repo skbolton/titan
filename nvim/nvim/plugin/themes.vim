@@ -65,4 +65,4 @@ function! ColorScheme()
 endfunction
 
 " The Defaults
-:call SwitchColorScheme('gruvbox-light')
+:call SwitchColorScheme($THEME)

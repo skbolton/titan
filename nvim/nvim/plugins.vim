@@ -13,6 +13,7 @@
 function! PackagerInit() abort
   packadd vim-packager
   call packager#init()
+  call packager#add('kristijanhusak/vim-packager', { 'type': 'opt' })
   "    __ _ _      _                            _             _
   "   / _(_) | ___| |_ _   _ _ __   ___   _ __ | |_   _  __ _(_)_ __  ___
   "  | |_| | |/ _ \ __| | | | '_ \ / _ \ | '_ \| | | | |/ _` | | '_ \/ __|
@@ -59,8 +60,8 @@ function! PackagerInit() abort
   call packager#add('dense-analysis/ale')
   call packager#add('liuchengxu/vista.vim')
   call packager#add('ervandew/supertab')
-  call packager#add('liuchengxu/vim-clap')
-  call packager#add('srstevenson/vim-picker')
+  call packager#add('lotabout/skim', { 'dir': '~/.skim', 'do': './install' })
+  call packager#add('lotabout/skim.vim')
   " Status and UI
   call packager#add('scrooloose/nerdtree')
   call packager#add('ryanoasis/vim-devicons')

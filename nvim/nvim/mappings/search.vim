@@ -6,9 +6,5 @@ if executable('rg')
 endif
 
 nnoremap <silent><leader>\ :NERDTreeToggle<CR>
-nmap <silent><leader>pf <Plug>(PickerEdit)
-nmap <silent><leader>pv <Plug>(PickerVsplit)
-nmap <silent><leader>ps <Plug>(PickerSplit)
-nmap <silent><leader>pb <Plug>(PickerBuffer)
-nnoremap <silent><leader>pc :Clap command<CR>
-nnoremap <silent><leader>pr :Clap registers<CR>
+nnoremap <silent><leader>pf :Files<CR>
+nnoremap <silent><leader>pb :Buffers<CR>

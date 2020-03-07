@@ -17,6 +17,8 @@
         stat = !git diff --stat $(git merge-base HEAD \"$REVIEW_BASE\")
         review = !nvim -p $(git files) +\"tabdo Gdiff $REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$REVIEW_BASE'\"
         what = "!git config --get-regexp alias"
+[diff]
+        algorithm = histogram
 
 [core]
         editor = nvim
@@ -33,3 +35,6 @@
 
 [status]
         showUntrackedFiles = all
+
+[merge]
+        conflictstyle = diff3

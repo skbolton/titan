@@ -6,10 +6,10 @@ git:
 
 gitconfig:
   file.symlink:
-    - name: {{ grains.homedir }}/.gitconfig
-    - target: {{ grains.statesdir }}/git/gitconfig
+    - name: {{ salt["environ.get"]("HOME") }}/.gitconfig
+    - target: {{ salt["environ.get"]("HOME") }}/titan/git/gitconfig
 
 gitignore:
   file.symlink:
-    - name: {{ grains.homedir }}/.gitignore_global
-    - target: {{ grains.statesdir }}/git/gitignore
+    - name: {{ salt["environ.get"]("HOME") }}/.gitignore_global
+    - target: {{ salt["environ.get"]("HOME") }}/titan/git/gitignore

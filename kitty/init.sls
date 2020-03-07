@@ -11,5 +11,5 @@ kitty:
 
 configs:
   file.symlink:
-    - name: {{grains.homedir}}/.config/kitty
-    - target: {{ grains.statesdir }}/kitty/kitty
+    - name: {{ salt["environ.get"]("HOME") }}/.config/kitty
+    - target: {{ salt["environ.get"]("HOME") }}/titan/kitty/kitty

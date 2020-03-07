@@ -1,7 +1,7 @@
 vundle:
   git.cloned:
     - name: https://github.com/VundleVim/Vundle.vim.git
-    - target: {{ grains.homedir }}/.vundle/bundle/Vundle.vim
+    - target: {{ salt["environ.get"]("HOME") }}/.vundle/bundle/Vundle.vim
 
 nvim:
   pkg.installed:
@@ -9,16 +9,16 @@ nvim:
 
 nvim-config:
   file.symlink:
-    - name: {{ grains.homedir }}/.config/nvim
-    - target: {{ grains.statesdir }}/nvim/nvim
+    - name: {{ salt["environ.get"]("HOME") }}/.config/nvim
+    - target: {{ salt["environ.get"]("HOME") }}/titan/nvim/nvim
 
 minpac:
   git.cloned:
     - name: https://github.com/k-takata/minpac.git
-    - target: {{ grains.homedir }}/.local/share/nvim/site/pack/minpac/opt/minpac
+    - target: {{ salt["environ.get"]("HOME") }}/.local/share/nvim/site/pack/minpac/opt/minpac
 
 coc-settings:
   file.symlink:
-    - name: {{grains.homedir}}/.config/nvim/coc-settings.json
-    - target: {{ grains.statesdir }}/nvim/coc-settings.json
+    - name: {{ salt["environ.get"]("HOME") }}/.config/nvim/coc-settings.json
+    - target: {{ salt["environ.get"]("HOME") }}/titan/nvim/coc-settings.json
 

@@ -4,5 +4,5 @@ amethyst-installed:
 
 config:
   file.symlink:
-    - name: {{grains.homedir}}/.amethyst
-    - target: {{grains.statesdir}}/amethyst/.amethyst
+    - name: {{ salt["environ.get"]("HOME") }}/.amethyst
+    - target: {{ salt["environ.get"]("HOME") }}/titan/amethyst/.amethyst

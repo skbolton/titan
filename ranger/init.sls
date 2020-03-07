@@ -4,5 +4,5 @@ ranger:
 
 ranger-config:
   file.symlink:
-    - name: {{ grains.homedir }}/.config/ranger
-    - target: {{ grains.statesdir }}/ranger/ranger
+    - name: {{ salt["environ.get"]("HOME") }}/.config/ranger
+    - target: {{ salt["environ.get"]("HOME") }}/titan/ranger/ranger

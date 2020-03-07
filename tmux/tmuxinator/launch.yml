@@ -2,5 +2,5 @@ name: <%= @settings["name"] %>
 root: <%= @settings["root"] %>
 
 windows:
-  - vim: v
-  - console: clear
+  - " ": v
+  - " ": tmux link-window -s spotify:" "; tmux select-window -t <%= @settings["name"] %>: ; clear

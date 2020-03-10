@@ -2,6 +2,15 @@ snippet "- proj" "creates a project"
 [${1}](/Projects/${1/\s/-/g}/index.md)
 endsnippet
 
+snippet "# proj" "creates a project page"
+# ${1:Project Name} || proj:${1/\w+/\L$0\E/} ${2:+work}
+
+## Todos || +PENDING
+
+## Scratchpad
+
+endsnippet
+
 snippet meeting "Meeting Template" b
 # ${1:Meeting Notes}
 

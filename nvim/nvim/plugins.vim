@@ -53,7 +53,6 @@ function! PackagerInit() abort
   call packager#add('janko/vim-test')
   call packager#add('christoomey/vim-tmux-navigator')
   call packager#add('SirVer/ultisnips')
-  call packager#add('kana/vim-textobj-user')
   " Fixers, completion and navigation
   call packager#add('neomake/neomake')
   call packager#add('neoclide/coc.nvim', {'branch': 'release'})
@@ -63,9 +62,9 @@ function! PackagerInit() abort
   call packager#add('lotabout/skim', { 'dir': '~/.skim', 'do': './install' })
   call packager#add('lotabout/skim.vim')
   " Status and UI
-  call packager#add('scrooloose/nerdtree')
+  call packager#add('scrooloose/nerdtree', { 'type': 'opt' })
   call packager#add('ryanoasis/vim-devicons')
-  call packager#add('tiagofumo/vim-nerdtree-syntax-highlight')
+  call packager#add('tiagofumo/vim-nerdtree-syntax-highlight', { 'type': 'opt' })
   call packager#add('itchyny/lightline.vim')
   call packager#add('glacambre/firenvim')
   " Git
@@ -84,6 +83,7 @@ function! PackagerInit() abort
   call packager#add('arcticicestudio/nord-vim', {'type': 'opt'})
   call packager#add('sainnhe/lightline_foobar.vim', { 'type': 'opt' })
   call packager#add('gruvbox-material/vim', { 'type': 'opt', 'name': 'gruvbox-material' })
+  call packager#add('lifepillar/vim-solarized8', { 'type': 'opt' })
 
   "   ____                               _     ____  _             _           
   "  / ___| _   _ _ __  _ __   ___  _ __| |_  |  _ \| |_   _  __ _(_)_ __  ___ 

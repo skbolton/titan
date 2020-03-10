@@ -5,6 +5,6 @@ if executable('rg')
   set grepprg=rg\ --vimgrep\ --hidden
 endif
 
-nnoremap <silent><leader>\ :NERDTreeToggle<CR>
+nnoremap <silent><leader>\ :packadd nerdtree <BAR>packadd vim-nerdtree-syntax-highlight <BAR>NERDTreeToggle<CR>
 nnoremap <silent><leader>pf :Files<CR>
 nnoremap <silent><leader>pb :Buffers<CR>

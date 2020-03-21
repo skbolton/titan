@@ -17,7 +17,7 @@ oh-my-zsh:
 create-zsh-folder:
   file.directory:
     - name: {{ salt["environ.get"]("HOME") }}/zsh
-    - user: {{ grains.user }}
+    - user: {{ salt["environ.get"]("USER") }}
 
 link-prompt:
   file.symlink:

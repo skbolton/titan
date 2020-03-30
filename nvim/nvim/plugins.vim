@@ -57,7 +57,7 @@ function! PackagerInit() abort
   call packager#add('neomake/neomake')
   call packager#add('neoclide/coc.nvim', {'branch': 'release'})
   call packager#add('dense-analysis/ale')
-  call packager#add('liuchengxu/vista.vim')
+  call packager#add('liuchengxu/vista.vim', {'type': 'opt'})
   call packager#add('ervandew/supertab')
   call packager#add('lotabout/skim', { 'dir': '~/.skim', 'do': './install' })
   call packager#add('lotabout/skim.vim')
@@ -69,11 +69,11 @@ function! PackagerInit() abort
   call packager#add('glacambre/firenvim')
   " Git
   call packager#add('tpope/vim-fugitive')
-  call packager#add('rhysd/git-messenger.vim')
+  call packager#add('rhysd/git-messenger.vim', {'type': 'opt'})
   call packager#add('airblade/vim-gitgutter')
   call packager#add('shumphrey/fugitive-gitlab.vim')
-  call packager#add('rktjmp/git-info.vim')
   call packager#add('justinmk/vim-sneak')
+  call packager#add('kana/vim-textobj-user')
   "   _____ _                              
   "  |_   _| |__   ___ _ __ ___   ___  ___ 
   "    | | | '_ \ / _ \ '_ ` _ \ / _ \/ __|

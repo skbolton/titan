@@ -72,7 +72,6 @@ function! PackagerInit() abort
   call packager#add('rhysd/git-messenger.vim', {'type': 'opt'})
   call packager#add('airblade/vim-gitgutter')
   call packager#add('shumphrey/fugitive-gitlab.vim')
-  call packager#add('rktjmp/git-info.vim')
   call packager#add('justinmk/vim-sneak')
   call packager#add('kana/vim-textobj-user')
   "   _____ _                              

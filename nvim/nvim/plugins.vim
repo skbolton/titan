@@ -74,6 +74,7 @@ function! PackagerInit() abort
   call packager#add('shumphrey/fugitive-gitlab.vim')
   call packager#add('rktjmp/git-info.vim')
   call packager#add('justinmk/vim-sneak')
+  call packager#add('kana/vim-textobj-user')
   "   _____ _                              
   "  |_   _| |__   ___ _ __ ___   ___  ___ 
   "    | | | '_ \ / _ \ '_ ` _ \ / _ \/ __|

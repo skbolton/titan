@@ -8,6 +8,7 @@ nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>gr :Gread<CR>
 nnoremap <leader>gl :Glog<CR>
 nnoremap <leader>gh :0Glog<CR>
+nnoremap <leader>gm :packadd git-messenger.vim <BAR> GitMessenger<CR>
 
 nnoremap <leader>g- :GitGutterUndoHunk<CR>
 nnoremap <leader>g+ :GitGutterStageHunk<CR>

@@ -22,3 +22,9 @@ let g:livedown_autorun = 0
 let g:livedown_open = 1
 let g:livedown_port = 1337
 
+function TaskSearch()
+ let line = getline('.')
+ let task_id = split(line, "#")[1]
+ execute 'silent lgrep -g "!index.md" ' . task_id . ' ~/cloud/wiki/'
+endfunction
+

@@ -1,4 +1,5 @@
 " Vim wiki stuff
+let g:vimwiki_folding = 'expr'
 let code_wiki = {}
 let code_wiki.path = '~/cloud/wiki/Coding'
 let code_wiki.syntax = 'markdown'

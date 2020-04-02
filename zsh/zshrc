@@ -51,6 +51,9 @@ launch() {
   tmux attach -t $session_name > 2/dev/null || tmuxinator start launch name=$session_name root=~/Development/$session_name
 }
 
+title="A NEW BATTLE AWAITS, GUARDIAN"
+printf "%*s\n" $(((${#title}+$COLUMNS)/2)) "$title"
+
 # This is something for git so that certain commands know what branch to go against
 export REVIEW_BASE=master
 . $HOME/.asdf/asdf.sh

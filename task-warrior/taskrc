@@ -1,7 +1,7 @@
 # TASK SERVER CONFIG -------
-taskd.certificate={{grains.homedir}}/cloud/task-sync/intheam/private.certificate.pem
-taskd.key={{ grains.homedir }}/cloud/task-sync/intheam/private.key.pem
-taskd.ca={{grains.homedir}}/cloud/task-sync/intheam/ca.cert.pem
+taskd.certificate=~/cloud/task-sync/intheam/private.certificate.pem
+taskd.key=~/cloud/task-sync/intheam/private.key.pem
+taskd.ca=~/cloud/task-sync/intheam/ca.cert.pem
 taskd.server=taskwarrior.inthe.am:53589
 taskd.credentials=inthe_am/stephenkbolton/8d0ffdbb-c701-4d3b-8735-167dccf3e8ac
 taskd.trust=ignore hostname

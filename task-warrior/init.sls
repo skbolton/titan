@@ -1,8 +1,8 @@
 task-configs:
-  file.managed:
+  file.symlink:
     - name: {{ salt["environ.get"]("HOME") }}/.taskrc
-    - source: {{ salt["environ.get"]("HOME") }}/titan/task-warrior/taskrc
-    - template: jinja
+    - target: {{ salt["environ.get"]("HOME") }}/titan/task-warrior/taskrc
+    - force: True
 
 tasklib:
   pip.installed:

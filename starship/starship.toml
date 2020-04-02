@@ -33,7 +33,7 @@ prompt_order = [
 
 
 [git_branch]
-symbol = " "
+symbol = " "
 style = "bold red"
 
 [character]

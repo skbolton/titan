@@ -1,4 +1,5 @@
 " Vim wiki stuff
+let g:vimwiki_folding = 'expr'
 let code_wiki = {}
 let code_wiki.path = '~/cloud/wiki/Coding'
 let code_wiki.syntax = 'markdown'
@@ -21,4 +22,10 @@ let g:livedown_autorun = 0
 " Open the browser window upon previewing
 let g:livedown_open = 1
 let g:livedown_port = 1337
+
+function TaskSearch()
+ let line = getline('.')
+ let task_id = split(line, "#")[1]
+ execute 'silent lgrep -g "!index.md" ' . task_id . ' ~/cloud/wiki/'
+endfunction
 

@@ -1,10 +1,13 @@
 # TASK SERVER CONFIG -------
-taskd.certificate={{grains.homedir}}/cloud/task-sync/intheam/private.certificate.pem
-taskd.key={{ grains.homedir }}/cloud/task-sync/intheam/private.key.pem
-taskd.ca={{grains.homedir}}/cloud/task-sync/intheam/ca.cert.pem
+taskd.certificate=~/cloud/task-sync/intheam/private.certificate.pem
+taskd.key=~/cloud/task-sync/intheam/private.key.pem
+taskd.ca=~/cloud/task-sync/intheam/ca.cert.pem
 taskd.server=taskwarrior.inthe.am:53589
 taskd.credentials=inthe_am/stephenkbolton/8d0ffdbb-c701-4d3b-8735-167dccf3e8ac
 taskd.trust=ignore hostname
+
+# aliases
+alias.@ = context
 
 # CONTEXTS
 context.work = -in (+work or +code)
@@ -28,8 +31,6 @@ rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,sc
 
 # General decoration
 color.label=
-color.label.sort=
-color.alternate=on color8
 color.header=color8
 color.footnote=color15
 color.warning=white on blue

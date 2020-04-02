@@ -1,5 +1,5 @@
-snippet "- proj" "creates a project"
-[${1}](/Projects/${1/\s/-/g}/index.md)
+snippet "- proj" "creates a sub project"
+[${1}](`!p snip.rv = snip.basename`-${1/\s/-/g})
 endsnippet
 
 snippet "# proj" "creates a project page"

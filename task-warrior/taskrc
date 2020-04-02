@@ -6,6 +6,9 @@ taskd.server=taskwarrior.inthe.am:53589
 taskd.credentials=inthe_am/stephenkbolton/8d0ffdbb-c701-4d3b-8735-167dccf3e8ac
 taskd.trust=ignore hostname
 
+# aliases
+alias.@ = context
+
 # CONTEXTS
 context.work = -in (+work or +code)
 context.personal = -in -work
@@ -28,8 +31,6 @@ rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,sc
 
 # General decoration
 color.label=
-color.label.sort=
-color.alternate=on color8
 color.header=color8
 color.footnote=color15
 color.warning=white on blue

@@ -24,3 +24,4 @@ base:
     - match: grain
     - bspwm
     - rofi
+    - polybar

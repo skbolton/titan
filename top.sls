@@ -25,3 +25,4 @@ base:
     - bspwm
     - rofi
     - polybar
+    - dunst

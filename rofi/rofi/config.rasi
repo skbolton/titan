@@ -1,0 +1,4 @@
+configuration {
+  theme: "embark";
+  font: "iA Writer Quattro S 12";
+}

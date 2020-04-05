@@ -23,3 +23,4 @@ base:
   'os:Manjaro':
     - match: grain
     - bspwm
+    - rofi

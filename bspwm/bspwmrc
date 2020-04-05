@@ -8,7 +8,7 @@ nitrogen --restore &
 
 bspc monitor -d 1 2 3 4 5
 
-bspc config border_width         2
+bspc config border_width         1
 bspc config focused_border_color  "#ffe6b3"
 bspc config window_gap          12
 bspc config top_padding          26

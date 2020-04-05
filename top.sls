@@ -19,3 +19,7 @@ base:
     - match: grain
     - amethyst
     - mac-utils
+
+  'os:Manjaro':
+    - match: grain
+    - bspwm

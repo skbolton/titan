@@ -1,0 +1,40 @@
+#! /bin/sh
+
+sxhkd &
+picom &
+dunst -conf ~/.config/dunst/dunstrc &
+nitrogen --restore &
+~/.config/polybar/launch.sh &
+
+bspc monitor -d 1 2 3 4 5
+
+bspc config border_width         2
+bspc config focused_border_color  "#ffe6b3"
+bspc config window_gap          12
+bspc config top_padding          26
+bspc config bottom_padding       12 
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config focus_follows_pointer      true
+
+bspc rule -a kitty desktop='^1'
+bspc rule -a firefox desktop='^2'
+# This selector isn't working because slack isn't posting window name in time
+bspc rule -a slack desktop='^3'
+# This selector isn't working because spotify isn't posting window name in time
+bspc rule -a Spotify desktop='^4'
+bspc rule -a zoom desktop='^5' follow=on
+bspc rule -a nitrogen manage=off
+bspc rule -a Lxappearance 							follow=on		state=floating
+
+# Launch windows where selector is not working
+bspc desktop '^4' -f
+spotify &
+bspc desktop '^3' -f
+slack &
+# The applications that play nicely with selectors
+firefox &
+kitty &
+

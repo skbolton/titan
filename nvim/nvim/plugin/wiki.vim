@@ -1,14 +1,14 @@
 " Vim wiki stuff
 let g:vimwiki_folding = 'expr'
 let code_wiki = {}
-let code_wiki.path = '~/cloud/wiki/Coding'
+let code_wiki.path = '~/cloud/Knowledge/Coding'
 let code_wiki.syntax = 'markdown'
 let code_wiki.ext = '.md'
 let code_wiki.auto_diary_index = 1
 let code_wiki.nested_syntaxes = {'js': 'javascript', 'javascript': 'javascript', 'elixir': 'elixir', 'gql': 'graphql'}
 
 let personal_wiki = {}
-let personal_wiki.path = '~/cloud/wiki/Personal'
+let personal_wiki.path = '~/cloud/Knowledge/Personal'
 let personal_wiki.syntax = 'markdown'
 let personal_wiki.ext = '.md'
 let personal_wiki.auto_diary_index = 1
@@ -26,6 +26,6 @@ let g:livedown_port = 1337
 function TaskSearch()
  let line = getline('.')
  let task_id = split(line, "#")[1]
- execute 'silent lgrep -g "!index.md" ' . task_id . ' ~/cloud/wiki/'
+ execute 'silent lgrep -g "!index.md" ' . task_id . ' ~/cloud/Knowledge/'
 endfunction
 

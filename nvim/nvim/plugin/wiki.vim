@@ -23,6 +23,10 @@ let g:livedown_autorun = 0
 let g:livedown_open = 1
 let g:livedown_port = 1337
 
+" Zettel Goodies
+let g:zettel_format = "%y%m%d-%H%M"
+let g:zettel_fzf_command = "rg --column --line-number --ignore-case --no-heading --color=always "
+
 function TaskSearch()
  let line = getline('.')
  let task_id = split(line, "#")[1]

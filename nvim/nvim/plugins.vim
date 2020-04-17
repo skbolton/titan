@@ -25,6 +25,7 @@ function! PackagerInit() abort
   " exist and other plugins can kick in
   call packager#add('elixir-editors/vim-elixir')
   call packager#add('vimwiki/vimwiki', { 'branch': 'dev' })
+  call packager#add('michal-h21/vim-zettel')
   " Taskwiki has buffer enter events so it has to be available
   call packager#add('tbabej/taskwiki')
   call packager#add('saltstack/salt-vim')

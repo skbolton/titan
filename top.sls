@@ -13,6 +13,7 @@ base:
     - kitty
     - task-warrior
     - ranger
+    - direnv
     - starship
 
   'os:MacOS':

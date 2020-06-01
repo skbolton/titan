@@ -1,3 +1,7 @@
+include:
+  - asdf
+  - direnv
+
 zsh:
   pkg.installed
 

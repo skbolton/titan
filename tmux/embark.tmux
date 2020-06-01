@@ -9,7 +9,7 @@ set -g window-status-separator ""
 set -g status-bg black
 
 #Bars ---------------------------------
-set -g status-left "#[fg=black,bg=green]  #S #[fg=green,bg=black]$LEFT_SEPARATOR"
+set -g status-left "#[fg=black,bg=green]  #S #[fg=green,bg=black]$LEFT_SEPARATOR"
 
 set -g status-right "#[fg=black,bg=brightcyan]$LEFT_SEPARATOR#[fg=black,bg=brightcyan] %Y-%m-%d $LEFT_SUB_SEPARATOR %I:%M #[fg=green,bg=brightcyan]$RIGHT_SEPARATOR#[bg=green,fg=black] #(whoami) "
 

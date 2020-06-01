@@ -37,7 +37,7 @@ symbol = " "
 style = "bold red"
 
 [character]
-symbol = " "
+symbol = ""
 vicmd_symbol = " "
 
 [aws]

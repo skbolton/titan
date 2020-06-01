@@ -1,10 +1,10 @@
 function! TestingStatus() abort
   if g:TESTING_STATUS == 'passing'
-    return "  "
+    return " "
   elseif g:TESTING_STATUS == 'running'
-    return "  "
+    return " "
   elseif g:TESTING_STATUS == 'failing'
-    return "  "
+    return " "
   endif
 endfunction
 
@@ -23,7 +23,7 @@ endfunction
 
 function! Git_branch() abort
   if fugitive#head() !=# ''
-    return  fugitive#head() . " "
+    return  fugitive#head() . "  "
   else
     return "\uf468"
   endif
@@ -40,7 +40,7 @@ function! StatusDiagnostic() abort
     return info['warning'] . "\uf421"
   endif
 
-  return "\uf42e " 
+  return "\uf42e" 
 endfunction
 
 let g:lightline = {}

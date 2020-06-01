@@ -14,6 +14,7 @@ asdf-node:
       # We have to source the script first since we might be running in a zsh session
       # that doesn't have it source in the rc
       - /bin/zsh -c "source ~/.asdf/asdf.sh; asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git"
+      - /bin/zsh -c "~/.asdf/plugins/nodejs/bin/import-release-team-keyring"
       - /bin/zsh -c "source ~/.asdf/asdf.sh; asdf install nodejs 12.13.1"
       - /bin/zsh -c "source ~/.asdf/asdf.sh; asdf global nodejs 12.13.1"
     - unless: /bin/zsh -c "source ~/.asdf/asdf.sh; asdf current nodejs"

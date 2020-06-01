@@ -15,6 +15,7 @@ base:
     - ranger
     - direnv
     - starship
+    - terminfo
 
   'os:MacOS':
     - match: grain

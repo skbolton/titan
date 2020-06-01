@@ -15,6 +15,27 @@ function! ColorScheme()
     hi link Sneak Search
   endif
 
+    if g:VIM_COLOR_SCHEME ==# 'tomorrow-night-blue'
+    packadd colorsbox
+    " let g:colorsbox_contrast_dark = 'hard'
+    let g:colorsbox_italic = 1
+    let g:colorsbox_bold = 0
+    let g:colorsbox_inverse = 0
+    colorscheme colorsbox-stblue
+    let g:lightline.colorscheme = 'blue'
+    hi link Sneak Search
+    hi VertSplit guibg=#002451 guifg=#a0c1eb
+    hi SignColumn guibg=#002451
+    hi GitGutterAdd guibg=#002451
+    hi GitGutterChange guibg=#002451
+    hi GitGutterDelete guibg=#002451
+    hi CursorLineNr guifg=#d1f1a9
+    hi DiffAdd guibg=#d1f1a9 guifg=#002451
+    hi DiffDelete guibg=#ff9da4 guifg=#002451
+    hi DiffChange guibg=#ffeead guifg=#002451
+    hi DiffText guibg=#ffeead guifg=#002451 gui=bold
+  endif
+
   if g:VIM_COLOR_SCHEME ==# 'gruvbox-light'
     packadd gruvbox-material
     set background=light

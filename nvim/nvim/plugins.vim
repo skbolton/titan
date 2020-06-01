@@ -85,6 +85,7 @@ function! PackagerInit() abort
   call packager#add('sainnhe/lightline_foobar.vim', { 'type': 'opt' })
   call packager#add('gruvbox-material/vim', { 'type': 'opt', 'name': 'gruvbox-material' })
   call packager#add('lifepillar/vim-solarized8', { 'type': 'opt' })
+  call packager#add('mkarmona/colorsbox', { 'type': 'opt' })
 
   "   ____                               _     ____  _             _           
   "  / ___| _   _ _ __  _ __   ___  _ __| |_  |  _ \| |_   _  __ _(_)_ __  ___ 

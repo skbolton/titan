@@ -5,6 +5,7 @@ export EDITOR="nvim"
 export GOPATH=$HOME/go
 
 export ERL_AFLAGS="-kernel shell_history enabled"
+export SKIM_DEFAULT_COMMAND="rg --files --hidden -g !.git"
 
 # Configurationh for prompt
 if [ -f ~/zsh/promptrc ]; then

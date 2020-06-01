@@ -66,7 +66,7 @@ set path+=**
 set splitbelow
 set splitright
 
-set diffopt=vertical
+set diffopt=vertical,filler
 
 set completeopt=menu,menuone,preview,noselect,noinsert
 let g:calendar_google_calendar = 1

@@ -12,7 +12,7 @@
   "suggest.snippetIndicator": "\u26a1 ",
   "languageserver": {
     "elixirLS": {
-      "command": "~/Development/elixir-ls/rel/language_server.sh",
+      "command": "~/.elixir-ls/rel/language_server.sh",
       "filetypes": ["elixir", "eelixir"],
       "settings": {
         "elixirLS": {

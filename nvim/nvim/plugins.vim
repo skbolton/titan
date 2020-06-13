@@ -68,6 +68,7 @@ function! PackagerInit() abort
   call packager#add('tiagofumo/vim-nerdtree-syntax-highlight', { 'type': 'opt' })
   call packager#add('itchyny/lightline.vim')
   call packager#add('glacambre/firenvim')
+  call packager#add('norcalli/nvim-colorizer.lua', { 'type': 'opt' })
   " Git
   call packager#add('tpope/vim-fugitive')
   call packager#add('rhysd/git-messenger.vim', {'type': 'opt'})
@@ -116,3 +117,4 @@ command! PackagerInstall call PackagerInit() | call packager#install()
 command! -bang PackagerUpdate call PackagerInit() | call packager#update({ 'force_hooks': '<bang>' })
 command! PackagerClean call PackagerInit() | call packager#clean()
 command! PackagerStatus call PackagerInit() | call packager#status()
+

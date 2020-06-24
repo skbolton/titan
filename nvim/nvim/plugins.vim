@@ -31,6 +31,7 @@ function! PackagerInit() abort
   call packager#add('saltstack/salt-vim')
   call packager#add('jparise/vim-graphql')
   call packager#add('pangloss/vim-javascript')
+  call packager#add('evanleck/vim-svelte')
 
   "    ____                 ____  _             _
   "   / ___|___  _ __ ___  |  _ \| |_   _  __ _(_)_ __  ___

@@ -1,10 +1,10 @@
 function! TestingStatus() abort
   if g:TESTING_STATUS == 'passing'
-    return " "
+    return ""
   elseif g:TESTING_STATUS == 'running'
-    return " "
+    return ""
   elseif g:TESTING_STATUS == 'failing'
-    return " "
+    return ""
   endif
 endfunction
 
@@ -33,14 +33,14 @@ function! StatusDiagnostic() abort
   let info = get(b:, 'coc_diagnostic_info', {})
 
   if get(info, 'error', 0)
-    return "\uf46f"
+    return ""
   endif
 
   if get(info, 'warning', 0)
-    return info['warning'] . "\uf421"
+    return info['warning'] . ""
   endif
 
-  return "\uf42e" 
+  return "" 
 endfunction
 
 let g:lightline = {}

@@ -8,7 +8,7 @@ alt + Return
 
 # program launcher
 alt + d
-	rofi -show run
+	rofi -show drun -show-icons -location 0 -yoffset -250
 
 # screenshot
 super + shift + 4

@@ -21,6 +21,7 @@ base:
     - match: grain
     - amethyst
     - mac-utils
+    - mac-programs
 
   'os:Manjaro':
     - match: grain

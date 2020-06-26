@@ -21,20 +21,21 @@ bspc config focus_follows_pointer      true
 
 bspc rule -a kitty desktop='^1'
 bspc rule -a firefox desktop='^2'
-# This selector isn't working because slack isn't posting window name in time
-bspc rule -a slack desktop='^3'
-# This selector isn't working because spotify isn't posting window name in time
-bspc rule -a Spotify desktop='^4'
 bspc rule -a zoom desktop='^5' follow=on
 bspc rule -a nitrogen manage=off
 bspc rule -a Lxappearance 							follow=on		state=floating
+bspc rule -a discord desktop='^3'
+bspc rule -a Slack desktop='^3'
+bspc rule -a Mailspring desktop='^5'
 
 # Launch windows where selector is not working
 bspc desktop '^4' -f
 spotify &
-bspc desktop '^3' -f
+sleep 2
+
+mailspring &
+discord &
 slack &
-# The applications that play nicely with selectors
 firefox &
 kitty &
 

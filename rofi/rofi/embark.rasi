@@ -8,19 +8,15 @@
 }
 
 inputbar {
-  border: 0 0 1px 0;
   children: [prompt,entry];
 }
 
 prompt {
   padding: 16px;
-  border: 0 1px 0 0;
 }
 
 textbox {
   background-color: #3E3859;
-  border: 0 0 1px 0;
-  border-color: #100E23;
   padding: 8px 16px;
 }
 
@@ -35,11 +31,11 @@ listview {
 }
 
 element {
-  border: 0 0 1px 0;
   padding: 16px;
+  highlight: none;
 }
 
 element selected {
   text-color: #1e1c31;
-  background-color: #ffe6b3;
+  background-color: #63f2f1;
 }

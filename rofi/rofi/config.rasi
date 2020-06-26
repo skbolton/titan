@@ -1,4 +1,5 @@
 configuration {
   theme: "embark";
-  font: "iA Writer Quattro S 12";
+  font: "Stellar 18";
+  icon-theme: "Tela Blue";
 }

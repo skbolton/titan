@@ -24,11 +24,6 @@ task:
     - name: task
     - unless: brew list task
 
-direnv:
-  pkg.installed:
-    - name: direnv
-    - unless: brew list direnv
-
 Asciiquarium:
   pkg.installed:
     - name: Asciiquarium

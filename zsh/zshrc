@@ -51,7 +51,7 @@ delta() {
 
 launch() {
   session_name=$(ls ~/Development | sk) 
-  tmux attach -t $session_name > 2/dev/null || tmuxinator start launch name=$session_name root=~/Development/$session_name
+  tmuxinator start $session_name 2>/dev/null || tmuxinator start launch name=$session_name root=~/Development/$session_name
 }
 
 title="A NEW BATTLE AWAITS, GUARDIAN"

@@ -14,5 +14,5 @@ set -g status-right "#[fg=black,bg=cyan]$LEFT_SEPARATOR#[fg=black,bg=cyan] %Y-%m
 
 # Windows ------------------------------
 set -g status-justify left 
-set -g window-status-format "#[fg=white] #I $LEFT_SUB_SEPARATOR #W "
+set -g window-status-format "#[fg=white] #I $LEFT_SUB_SEPARATOR #{?window_zoomed_flag, ,}#W "
 set -g window-status-current-format "#[fg=black,bg=cyan]$LEFT_SEPARATOR#[bg=cyan,fg=black] #I $LEFT_SUB_SEPARATOR #{?window_zoomed_flag,#[fg=cyan] ,}#[fg=black]#W #[fg=cyan,bg=black]$LEFT_SEPARATOR"

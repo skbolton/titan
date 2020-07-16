@@ -6,5 +6,6 @@ if executable('rg')
 endif
 
 nnoremap <silent><leader>\ :packadd nerdtree <BAR>packadd vim-nerdtree-syntax-highlight <BAR>NERDTreeToggle<CR>
+nnoremap <silent><leader><bar> :packadd nerdtree <BAR>packadd vim-nerdtree-syntax-highlight <BAR>NERDTreeFind<CR>
 nnoremap <silent><leader>pf :Files<CR>
 nnoremap <silent><leader>pb :Buffers<CR>

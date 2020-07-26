@@ -101,7 +101,8 @@ function! PackagerInit() abort
   " filetypes so they will be required when needed
   "
   " SQL
-  call packager#add('tpope/vim-dadbod', { 'type': 'opt' })
+  call packager#add('kristijanhusak/vim-dadbod-ui')
+  call packager#add('tpope/vim-dadbod')
   " Markdown
   call packager#add('shime/vim-livedown', {'type': 'opt'})
   call packager#add('junegunn/goyo.vim', {'type': 'opt'})

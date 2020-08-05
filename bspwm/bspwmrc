@@ -3,7 +3,7 @@
 sxhkd &
 picom &
 dunst -conf ~/.config/dunst/dunstrc &
-nitrogen --restore &
+hsetroot -solid "#1e1c31" &
 ~/.config/polybar/launch.sh &
 
 bspc monitor -d 1 2 3 4 5 6

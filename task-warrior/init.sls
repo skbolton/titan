@@ -7,3 +7,10 @@ task-configs:
 tasklib:
   pip.installed:
     - name: tasklib
+
+# Sync the current years task to machine
+taskdata:
+  file.symlink:
+    - name: {{ salt["environ.get"]("HOME") }}/.task
+    - target: {{ salt["environ.get"]("HOME") }}/cloud/Tasks/current-year/
+    - force: True

@@ -17,6 +17,7 @@ base:
     - starship
     - terminfo
     - rust
+    - habits
 
   'os:MacOS':
     - match: grain

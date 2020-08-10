@@ -21,7 +21,7 @@ let zettel.ext = '.md'
 let zettel.syntax = 'markdown'
 
 let g:vimwiki_list = [code_wiki, delta_wiki, zettel]
-let g:taskwiki_maplocalleader="-"
+let g:taskwiki_maplocalleader="-t"
 let g:taskwiki_markup_syntax = 'markdown'
 
 " Livedown is a markdown server

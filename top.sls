@@ -16,6 +16,7 @@ base:
     - direnv
     - starship
     - terminfo
+    - rust
 
   'os:MacOS':
     - match: grain

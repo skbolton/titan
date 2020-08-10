@@ -4,7 +4,7 @@ include:
 
 dijo-data:
   file.symlink:
-    {% if grains['os'] == 'MacOs' %}
+    {% if grains['os'] == 'MacOS' %}
     - name: {{ salt["environ.get"]("HOME") }}/Library/Application\ Support/rs.nerdypepper.dijo/
     {% else %}
     - name: {{ salt["environ.get"]("HOME") }}/.local/share/dijo

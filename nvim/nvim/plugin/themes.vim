@@ -56,6 +56,7 @@ function! ColorScheme()
   endif
 
   if g:VIM_COLOR_SCHEME ==# 'embark'
+    packadd embark
     colorscheme embark
     let g:embark_terminal_italics = 1
     hi Cursor guibg=#F48FB1 guifg=white

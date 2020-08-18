@@ -1,6 +1,6 @@
 function! TestingStatus() abort
   if g:TESTING_STATUS == 'passing'
-    return ""
+    return " "
   elseif g:TESTING_STATUS == 'running'
     return ""
   elseif g:TESTING_STATUS == 'failing'

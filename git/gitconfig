@@ -6,7 +6,7 @@
 [alias]
         l = log --date=short --decorate --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]"
         dog = log --all --decorate --oneline --graph
-        co = checkout
+        to = "!git checkout $(git branches --no-multi)"
         st = status
         p = pull
         pp = push

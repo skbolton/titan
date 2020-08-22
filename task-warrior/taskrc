@@ -2,8 +2,8 @@
 alias.@ = context
 
 # CONTEXTS
-context.work = -in (+work or +code)
-context.personal = -in -work
+context.work = project:work
+context.personal = project.not:work
 
 # INBOX REPORT
 report.in.columns = id,tags,description

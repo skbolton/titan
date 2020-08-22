@@ -24,7 +24,7 @@ alias v="nvim"
 alias aqua="Asciiquarium"
 
 # Task warrior tooling
-alias ta="task"
+alias t="task"
 alias tap="task context personal"
 alias taw="task context work"
 alias in="task add +in"

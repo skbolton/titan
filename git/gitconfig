@@ -7,6 +7,7 @@
         l = log --date=short --decorate --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]"
         dog = log --all --decorate --oneline --graph
         to = "!git checkout $(git branches --no-multi)"
+        drop = "!git branch -d $(git branches --multi)"
         st = status
         p = pull
         pp = push

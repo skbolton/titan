@@ -15,6 +15,9 @@ report.in.labels = ID,Tags,Description
 report.next.columns = id,project,priority,tags,due,scheduled,description 
 report.next.labels = ID,Proj,Priority,Tags,Due,Sched,Desc
 
+# completed report
+report.completed.sort = project+/,end+
+
 # urgency overrides
 urgency.user.tag.in.coefficient=-1
 

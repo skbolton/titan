@@ -28,3 +28,5 @@ nnoremap <buffer> <localleader>C :Calendar<CR>
 " live preview of markdown in brower
 nnoremap <buffer> <localleader>r :LivedownPreview<CR>
 nnoremap <silent> <buffer> <localleader>f :Goyo<CR>
+
+let b:AutoPairs={}

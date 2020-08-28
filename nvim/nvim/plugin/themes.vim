@@ -82,5 +82,11 @@ function! ColorScheme()
 
 endfunction
 
+if empty($THEME)
+  let theme = 'embark'
+else
+  let theme = $THEME
+endif
+
 " The Defaults
-:call SwitchColorScheme($THEME)
+:call SwitchColorScheme(theme)

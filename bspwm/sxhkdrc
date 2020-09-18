@@ -45,6 +45,8 @@ super + y
 super + g
 	bspc node -s biggest
 
+super + p
+ polybar-msg cmd restart 
 #
 # state/flags
 #

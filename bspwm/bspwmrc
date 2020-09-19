@@ -5,6 +5,7 @@ picom &
 dunst -conf ~/.config/dunst/dunstrc &
 hsetroot -solid "#1e1c31" &
 ~/.config/polybar/launch.sh &
+flashfocus &
 
 bspc monitor -d 1 2 3 4 5 6
 

@@ -1,17 +1,16 @@
 " language server 
-nmap <silent> <leader>ld <Plug>(coc-definition)zz
-nnoremap <silent> <leader>lD :call CocAction('jumpDefinition', 'vsplit')<CR>zz
-noremap <silent> <leader>lh :call CocAction('doHover')<CR>
-nnoremap <leader>lo :CocList outline<CR>
+lua require 'lsp'
+
+nnoremap <silent> <leader>ld <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> <leader>lD :vsp <BAR> :lua vim.lsp.buf.definition()<CR>zz
+nnoremap <silent> <leader>ls <cmd>lua vim.lsp.buf.signature_help()<CR>
+noremap <silent> <leader>lh <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <leader>lo :packadd vista.vim <BAR> Vista finder skim<CR>
 nnoremap <leader>lO :packadd vista.vim <BAR> Vista<CR>
 noremap <leader>lp :CocList diagnostics<CR>
 noremap <leader>l? :CocInfo<CR>
-noremap <leader>lr :CocRestart<CR>
+nnoremap <leader>lr <cmd>lua vim.lsp.stop_client(vim.lsp.get_active_clients())<CR> :edit<CR>
 
-" supertab completions
-" This is how I got it so that tabbing moves down the completion list
-" from top to bottom instead of upwards
-let g:SuperTabMappingForward = '<s-tab>'
-let g:SuperTabMappingBackward = '<tab>'
-
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 

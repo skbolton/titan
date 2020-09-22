@@ -1,3 +1,5 @@
+lua require 'lsp'
+
 let g:vista_sidebar_width = 45
 let g:vista_disable_statusline = 1
 
@@ -9,9 +11,10 @@ let g:vista_icon_indent = ["▸ ", ""]
 let g:vista#renderer#icons = {
 \   "function": "ﬦ",
 \   "module": " ",
-\   "variable": "\ufb18 ",
+\   "variable": " ",
 \   "constant": ""
 \  }
 
-let g:vista_default_executive = 'coc'
-
+let g:vista_default_executive = 'nvim_lsp'
+let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+let g:completion_enable_auto_popup = 1

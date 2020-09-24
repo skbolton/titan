@@ -1,3 +1,18 @@
+snippet DEV "Creates a new dev ticket"
+# `!v expand('%:t:r')` || project:work.`!v expand('%:t:r')`
+* [ ] Define requirements
+
+[Ticket](https://blockfi.atlassian.net/browse/`!v expand('%:t:r')`)
+[PR](https://github.com/blockfi/blockfi-mystique/pulls)
+
+## Notes
+* [ ] Write test case(s)
+* [ ] Define rollout plan
+* [ ] Find approvers
+
+## Completed Tasks | +COMPLETED
+endsnippet
+
 snippet "- proj" "creates a sub project"
 [${1}](`!p snip.rv = snip.basename`-${1/\s/-/g})
 endsnippet

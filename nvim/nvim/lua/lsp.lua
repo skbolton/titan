@@ -3,10 +3,11 @@ vim.cmd('packadd completion-nvim')
 
 local nvim_lsp = require'nvim_lsp'
 local protocol = require'vim.lsp.protocol'
+local completion = require'completion'
 
 -- configuration across servers
 local function attach()
-  require'completion'.on_attach() 
+  completion.on_attach() 
 
   protocol.CompletionItemKind = {
     ' '; -- Text
@@ -40,6 +41,9 @@ end
 nvim_lsp.elixirls.setup{
   on_attach=attach;
   settings = {
-    dialyzerEnabled = false;
+    elixirLS = {
+      dialyzerEnabled = false;
+    }
   }
 }
+

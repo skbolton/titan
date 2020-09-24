@@ -15,6 +15,17 @@ let g:vista#renderer#icons = {
 \   "constant": ""
 \  }
 
-let g:vista_default_executive = 'nvim_lsp'
+let g:vista_default_executive = 'coc'
+
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 let g:completion_enable_auto_popup = 1
+let g:completion_auto_change_source = 1
+
+let g:completion_chain_complete_list = [
+      \    {'complete_items': ['lsp']},
+      \    {'complete_items': ['buffers']},
+      \    {'mode': '<c-p>'},
+      \    {'mode': '<c-n>'}
+      \  ]
+
+autocmd BufEnter * lua require'completion'.on_attach()

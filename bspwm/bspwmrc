@@ -4,10 +4,17 @@ sxhkd &
 picom &
 dunst -conf ~/.config/dunst/dunstrc &
 hsetroot -solid "#1e1c31" &
+setup-second-monitor &
 ~/.config/polybar/launch.sh &
 flashfocus &
 
-bspc monitor -d 1 2 3 4 5 6
+if has-two-monitors ; then
+  bspc monitor 'DisplayPort-0' -d 1 2 3
+  bspc monitor 'DisplayPort-1' -d 4 5 6
+
+else
+  bspc monitor 1 2 3 4 5 6
+fi
 
 bspc config border_width        1
 bspc config normal_border_color  "#585273"
@@ -21,17 +28,17 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config focus_follows_pointer      true
 
-bspc rule -a kitty desktop='^1'
-bspc rule -a firefox desktop='^2'
-bspc rule -a zoom desktop='^5' follow=on
+bspc rule -a kitty desktop='1'
+bspc rule -a firefox desktop='2'
+bspc rule -a zoom desktop='5' follow=on
 bspc rule -a nitrogen manage=off
 bspc rule -a Lxappearance 							follow=on		state=floating
-bspc rule -a discord desktop='^3'
-bspc rule -a Slack desktop='^3'
-bspc rule -a Mailspring desktop='^5'
+bspc rule -a discord desktop='4'
+bspc rule -a Slack desktop='4'
+bspc rule -a Mailspring desktop='5'
 
 # Launch windows where selector is not working
-bspc desktop '^4' -f
+bspc desktop '3' -f
 spotify &
 sleep 2
 

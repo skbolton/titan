@@ -38,4 +38,5 @@ element {
 element selected {
   text-color: #1e1c31;
   background-color: #A1EFD3;
+  highlight: none;
 }

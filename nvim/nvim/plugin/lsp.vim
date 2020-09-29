@@ -15,7 +15,7 @@ let g:vista#renderer#icons = {
 \   "constant": ""
 \  }
 
-let g:vista_default_executive = 'coc'
+let g:vista_default_executive = 'nvim_lsp'
 
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 let g:completion_enable_auto_popup = 1

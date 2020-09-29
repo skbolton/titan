@@ -64,8 +64,10 @@ function! ColorScheme()
     let g:clap_theme = 'embark'
     hi link Sneak Search
     hi link ClapMatches Search
+    hi LuaTreeFolderIcon guifg=#d4bfff
+    hi LuaTreeFolderName guifg=#cbe3e7
 
-    execute "silent ! kitty @ --to=tcp:localhost:12345 set-colors --all ~/.config/kitty/ryze.conf"
+    execute "silent ! kitty @ --to=tcp:localhost:12345 set-colors --all ~/.config/kitty/embark.conf"
     execute "silent ! tmux source-file ~/titan/tmux/embark.tmux"
   endif
 

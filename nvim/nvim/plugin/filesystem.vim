@@ -1,16 +1,24 @@
-" let g:NERDTreeHighlightFolders = 1
-let g:NERDTreeHighlightFoldersFullName = 1
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1 " enable folder glyph flag
-let g:DevIconsEnableFoldersOpenClose = 1
-let g:DevIconsEnableFolderExtensionPatternMatching = 1
-let g:webdevicons_conceal_nerdtree_brackets = 1
+let g:lua_tree_show_icons = {
+    \ 'git': 0,
+    \ 'folders': 1,
+    \ 'files': 1,
+    \}
 
-" Basically disable nerdtree markers
-let g:NERDTreeDirArrowExpandable = ' '
-let g:NERDTreeDirArrowCollapsible = ' '
-
-let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ' '
-let g:DevIconsDefaultFolderOpenSymbol = ' '
+let g:lua_tree_icons = {
+    \ 'default': '',
+    \ 'symlink': '',
+    \ 'git': {
+    \   'unstaged': "✗",
+    \   'staged': "✓",
+    \   'unmerged': "",
+    \   'renamed': "➜",
+    \   'untracked': "★"
+    \   },
+    \ 'folder': {
+    \   'default': " ",
+    \   'open': " "
+    \   }
+    \ }
 
 " If I later decide I want a floating window version of fzf
 " let g:skim_layout = { 'window': 'call FloatingFZF()'}

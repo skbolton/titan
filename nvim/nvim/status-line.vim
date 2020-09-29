@@ -10,7 +10,7 @@ endfunction
 
 
 function! FileNameWithIcon() abort
-  return winwidth(0) > 70  ?  WebDevIconsGetFileTypeSymbol() . ' ' . expand('%:t') : '' 
+  return winwidth(0) > 70  ? luaeval("require'nvim-web-devicons'.get_icon(_A[1], _A[2], { default = true })", [expand('%:t'), expand('%:e')]) . ' ' . expand('%:t') : '' 
 endfunction
 
 function! FileNameWithParent(f) abort

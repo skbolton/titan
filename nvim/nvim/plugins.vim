@@ -65,9 +65,9 @@ function! PackagerInit() abort
   call packager#add('lotabout/skim', { 'dir': '~/.skim', 'do': './install' })
   call packager#add('lotabout/skim.vim')
   " Status and UI
-  call packager#add('scrooloose/nerdtree', { 'type': 'opt' })
-  call packager#add('ryanoasis/vim-devicons')
-  call packager#add('tiagofumo/vim-nerdtree-syntax-highlight', { 'type': 'opt' })
+  " call packager#add('ryanoasis/vim-devicons')
+  call packager#add('kyazdani42/nvim-web-devicons.git')
+  call packager#add('kyazdani42/nvim-tree.lua')
   call packager#add('itchyny/lightline.vim')
   call packager#add('glacambre/firenvim')
   call packager#add('norcalli/nvim-colorizer.lua', { 'type': 'opt' })

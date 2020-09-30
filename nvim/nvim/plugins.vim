@@ -105,6 +105,7 @@ function! PackagerInit() abort
   "
   " SQL
   call packager#add('kristijanhusak/vim-dadbod-ui')
+  call packager#add('kristijanhusak/vim-dadbod-completion')
   call packager#add('tpope/vim-dadbod')
   " Markdown
   call packager#add('shime/vim-livedown', {'type': 'opt'})

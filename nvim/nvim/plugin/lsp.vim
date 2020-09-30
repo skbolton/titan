@@ -20,12 +20,23 @@ let g:vista_default_executive = 'nvim_lsp'
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 let g:completion_enable_auto_popup = 1
 let g:completion_auto_change_source = 1
+let g:completion_trigger_character = ['.', '"']
 
-let g:completion_chain_complete_list = [
-      \    {'complete_items': ['lsp']},
-      \    {'complete_items': ['buffers']},
-      \    {'mode': '<c-p>'},
-      \    {'mode': '<c-n>'}
+let g:completion_chain_complete_list = {
+      \  'default': [
+      \      {'complete_items': ['lsp']},
+      \      {'complete_items': ['buffers']},
+      \      {'mode': '<c-p>'},
+      \      {'mode': '<c-n>'}
+      \  ],
+      \  'sql': [
+      \    {'complete_items': ['vim-dadbod-completion']}
       \  ]
+      \}
 
-autocmd BufEnter * lua require'completion'.on_attach()
+augroup completion
+  autocmd!
+  autocmd BufEnter * lua require'completion'.on_attach()
+  autocmd FileType sql let g:completion_trigger_character = ['.', '"']
+augroup END
+

@@ -1,5 +1,5 @@
 configuration {
   theme: "embark";
   font: "Stellar 18";
-  icon-theme: "Tela Blue";
+  icon-theme: "Citrus";
 }

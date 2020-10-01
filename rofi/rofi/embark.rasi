@@ -1,7 +1,7 @@
 * {
   background-color: #2D2B40;
   border-color: #3E3859;
-  text-color: #CBE3E7;
+  text-color: #8A889D;
   spacing: 0;
   width: 700px;
   height: 500px;
@@ -13,6 +13,12 @@ inputbar {
 
 prompt {
   padding: 16px;
+  background-color: #A1EFD3;
+  text-color: #1e1c31;
+}
+
+entry {
+  text-color: #CBE3E7;
 }
 
 textbox {
@@ -25,6 +31,7 @@ entry {
 }
 
 listview {
+  padding: 16px 8px;
   cycle: false;
   margin: 0 0 -1px 0;
   scrollbar: false;
@@ -32,11 +39,17 @@ listview {
 
 element {
   padding: 16px;
-  highlight: none;
+}
+
+element-icon {
+  padding: 0px 16px 0px 0px;
+  size: 32px;
+}
+
+element-text {
+  padding: 6px 0px 0px 0px;
 }
 
 element selected {
-  text-color: #1e1c31;
-  background-color: #A1EFD3;
-  highlight: none;
+  text-color: #D4BFFF;
 }

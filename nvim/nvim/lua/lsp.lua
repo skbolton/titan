@@ -6,8 +6,8 @@ local protocol = require'vim.lsp.protocol'
 local completion = require'completion'
 
 -- configuration across servers
-local function attach()
-  completion.on_attach() 
+local function attach(client)
+  completion.on_attach(client) 
 
   protocol.CompletionItemKind = {
     ' '; -- Text

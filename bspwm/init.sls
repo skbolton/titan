@@ -10,6 +10,7 @@ bspwm-config:
   file.symlink:
     - name: {{ salt["environ.get"]("HOME") }}/.config/bspwm/bspwmrc
     - target: {{ salt["environ.get"]("HOME") }}/titan/bspwm/bspwmrc
+    - user: {{ salt["environ.get"]("USER") }}
     - force: True
 
 has-two-monitors-script:
@@ -46,4 +47,5 @@ sxhkd-config:
   file.symlink:
     - name: {{ salt["environ.get"]("HOME") }}/.config/sxhkd/sxhkdrc
     - target: {{ salt["environ.get"]("HOME") }}/titan/bspwm/sxhkdrc
+    - user: {{ salt["environ.get"]("USER") }}
     - force: True

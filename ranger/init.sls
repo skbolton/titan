@@ -6,3 +6,4 @@ ranger-config:
   file.symlink:
     - name: {{ salt["environ.get"]("HOME") }}/.config/ranger
     - target: {{ salt["environ.get"]("HOME") }}/titan/ranger/ranger
+    - user: {{ salt["environ.get"]("USER") }}

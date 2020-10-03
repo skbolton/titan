@@ -17,33 +17,40 @@ oh-my-zsh:
   git.cloned:
     - name: https://github.com/robbyrussell/oh-my-zsh.git
     - target: {{ salt["environ.get"]("HOME") }}/.oh-my-zsh
+    - user: {{ salt["environ.get"]("USER") }}
 
 create-zsh-folder:
   file.directory:
     - name: {{ salt["environ.get"]("HOME") }}/zsh
+    - user: {{ salt["environ.get"]("USER") }}
     - user: {{ salt["environ.get"]("USER") }}
 
 link-prompt:
   file.symlink:
     - name: {{ salt["environ.get"]("HOME") }}/zsh/promptrc
     - target: {{ salt["environ.get"]("HOME") }}/titan/zsh/promptrc
+    - user: {{ salt["environ.get"]("USER") }}
 
 link-path:
   file.symlink:
     - name: {{ salt["environ.get"]("HOME") }}/zsh/pathrc
     - target: {{ salt["environ.get"]("HOME") }}/titan/zsh/pathrc
+    - user: {{ salt["environ.get"]("USER") }}
 
 link-zsh:
   file.symlink:
   - name: {{ salt["environ.get"]("HOME") }}/.zshrc
   - target: {{ salt["environ.get"]("HOME") }}/titan/zsh/zshrc
+    - user: {{ salt["environ.get"]("USER") }}
 
 spaceship-prompt-oh-my-zsh:
   git.cloned:
     - name : https://github.com/denysdovhan/spaceship-prompt.git
     - target: {{ salt["environ.get"]("HOME") }}/.oh-my-zsh/custom/themes/spaceship-prompt
+    - user: {{ salt["environ.get"]("USER") }}
 
   file.symlink:
     - name: {{ salt["environ.get"]("HOME") }}/.oh-my-zsh/custom/themes/spaceship.zsh-theme
     - target: {{ salt["environ.get"]("HOME") }}/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme
+    - user: {{ salt["environ.get"]("USER") }}
     - force: True

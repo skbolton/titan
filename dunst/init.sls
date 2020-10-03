@@ -10,3 +10,4 @@ dunstrc:
   file.symlink:
     - name: {{ salt["environ.get"]("HOME") }}/.config/dunst/dunstrc
     - target: {{ salt["environ.get"]("HOME") }}/titan/dunst/dunstrc
+    - user: {{ salt["environ.get"]("USER") }}

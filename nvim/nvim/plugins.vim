@@ -59,6 +59,7 @@ function! PackagerInit() abort
   call packager#add('neomake/neomake')
   call packager#add('neovim/nvim-lspconfig')
   call packager#add('nvim-lua/completion-nvim')
+  call packager#add('nvim-lua/diagnostic-nvim')
   call packager#add('steelsojka/completion-buffers')
   call packager#add('dense-analysis/ale')
   call packager#add('liuchengxu/vista.vim', {'type': 'opt'})

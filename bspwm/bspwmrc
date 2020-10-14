@@ -30,7 +30,7 @@ bspc config focus_follows_pointer      true
 
 bspc rule -a kitty desktop='1'
 bspc rule -a firefox desktop='2'
-bspc rule -a zoom desktop='5' follow=on
+bspc rule -a zoom desktop='2' follow=on
 bspc rule -a nitrogen manage=off
 bspc rule -a Lxappearance 							follow=on		state=floating
 bspc rule -a discord desktop='4'

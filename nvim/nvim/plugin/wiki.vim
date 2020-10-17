@@ -5,6 +5,7 @@ let code_wiki = {}
 let code_wiki.path = '~/cloud/Knowledge/Coding'
 let code_wiki.syntax = 'markdown'
 let code_wiki.ext = '.md'
+let code_wiki.links_space_char = '_'
 let code_wiki.auto_diary_index = 1
 let code_wiki.automatic_nested_syntaxes = 1
 
@@ -12,12 +13,14 @@ let delta_wiki = {}
 let delta_wiki.path = '~/cloud/Knowledge/Delta'
 let delta_wiki.syntax = 'markdown'
 let delta_wiki.ext = '.md'
+let delta_wiki.links_space_char = '_'
 let delta_wiki.auto_diary_index = 1
 
 let zettel = {}
 let zettel.path = "~/cloud/Knowledge/Zettel"
 let zettel.automatic_nested_syntaxes = 1
 let zettel.ext = '.md'
+let zettel.links_space_char = '_'
 let zettel.syntax = 'markdown'
 
 let g:vimwiki_list = [code_wiki, delta_wiki, zettel]

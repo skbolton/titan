@@ -30,6 +30,8 @@
 
 [rebase]
         autosquash = true
+[pull]
+        ff = only
 
 [commit]
         verbose = true

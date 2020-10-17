@@ -57,8 +57,8 @@ function! ColorScheme()
 
   if g:VIM_COLOR_SCHEME ==# 'embark'
     packadd embark
-    colorscheme embark
     let g:embark_terminal_italics = 1
+    colorscheme embark
     hi Cursor guibg=#F48FB1 guifg=white
     let g:lightline.colorscheme = 'embark'
     let g:clap_theme = 'embark'

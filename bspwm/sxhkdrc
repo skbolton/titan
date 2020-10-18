@@ -15,7 +15,7 @@ alt + d
 
 # screenshot
 super + shift + 4
-  deepin-screenshot
+  flameshot screen -p ~/Desktop
 
 # make sxhkd reload its configuration files:
 super + Escape

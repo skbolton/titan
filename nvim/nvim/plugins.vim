@@ -55,7 +55,8 @@ function! PackagerInit() abort
   call packager#add('machakann/vim-highlightedyank')
   call packager#add('janko/vim-test')
   call packager#add('christoomey/vim-tmux-navigator')
-  call packager#add('SirVer/ultisnips')
+  call packager#add('hrsh7th/vim-vsnip')
+  call packager#add('hrsh7th/vim-vsnip-integ')
   " Fixers, completion and navigation
   call packager#add('neomake/neomake')
   call packager#add('neovim/nvim-lspconfig')

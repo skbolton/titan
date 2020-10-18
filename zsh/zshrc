@@ -20,6 +20,10 @@ alias taw="task context work"
 alias in="task add +in"
 alias chore="task add +personal +chore" 
 alias d="delta"
+alias lworth="hledger bs --real"
+alias ltrue="hledger balance --tree --real --empty"
+alias lbalance="hledger balance --tree --auto --empty"
+alias ledit="v $LEDGER_FILE"
 
 tickle () {
     task $@ modify wait:soww

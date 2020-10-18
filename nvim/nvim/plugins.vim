@@ -32,6 +32,7 @@ function! PackagerInit() abort
   call packager#add('jparise/vim-graphql')
   call packager#add('pangloss/vim-javascript')
   call packager#add('evanleck/vim-svelte')
+  call packager#add('ledger/vim-ledger')
 
   "    ____                 ____  _             _
   "   / ___|___  _ __ ___  |  _ \| |_   _  __ _(_)_ __  ___

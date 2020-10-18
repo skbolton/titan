@@ -2,6 +2,9 @@
 # wm independent hotkeys
 #
 
+super + slash
+  toggle-program kitty-scratch
+
 # terminal emulator
 alt + Return
 	kitty

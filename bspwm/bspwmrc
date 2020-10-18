@@ -36,16 +36,21 @@ bspc rule -a Lxappearance 							follow=on		state=floating
 bspc rule -a discord desktop='4'
 bspc rule -a Slack desktop='5'
 bspc rule -a Mailspring desktop='6'
-
-# Launch windows where selector is not working
-bspc desktop '3' -f
-spotify &
-sleep 2
+bspc rule -a kitty-scratch sticky=true hidden=true
 
 mailspring &
 discord &
 slack &
 firefox &
 kitty &
+kitty --listen-on=unix:/tmp/kitty-scratch --class kitty-scratch --hold --directory=$HOME &
 nextcloud &
+
+# Launch windows where selector is not working
+bspc desktop '3' -f
+spotify &
+sleep 2
+
+kitty @ --to=unix:/tmp/kitty-scratch set-colors --all $HOME/.config/kitty/tomorrow-night-blue.conf
+kitty @ --to=unix:/tmp/kitty-scratch send_text "THEME=tomorrow-night-blue v ~/cloud/Knowledge/Coding/index.md\r"
 

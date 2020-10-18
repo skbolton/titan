@@ -51,6 +51,7 @@ function! PackagerInit() abort
   call packager#add('tpope/vim-projectionist')
   call packager#add('tpope/vim-dispatch')
   call packager#add('tpope/vim-endwise')
+  call packager#add('tpope/vim-speeddating')
   call packager#add('machakann/vim-highlightedyank')
   call packager#add('janko/vim-test')
   call packager#add('christoomey/vim-tmux-navigator')

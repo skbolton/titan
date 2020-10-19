@@ -43,7 +43,7 @@ discord &
 slack &
 firefox &
 kitty &
-kitty --listen-on=unix:/tmp/kitty-scratch --class kitty-scratch --hold --directory=$HOME &
+THEME=tomorrow-night-blue kitty --listen-on=unix:/tmp/kitty-scratch --class kitty-scratch --hold --directory=$HOME &
 nextcloud &
 
 # Launch windows where selector is not working
@@ -52,5 +52,5 @@ spotify &
 sleep 2
 
 kitty @ --to=unix:/tmp/kitty-scratch set-colors --all $HOME/.config/kitty/tomorrow-night-blue.conf
-kitty @ --to=unix:/tmp/kitty-scratch send_text "THEME=tomorrow-night-blue v ~/cloud/Knowledge/Coding/index.md\r"
+kitty @ --to=unix:/tmp/kitty-scratch send_text "v ~/cloud/Knowledge/Coding/index.md\r"
 

@@ -9,7 +9,7 @@ dijo-data:
     {% else %}
     - name: {{ salt["environ.get"]("HOME") }}/.local/share/dijo
     {% endif %}
-    - target: {{ salt["environ.get"]("HOME") }}/cloud/Habits/current-year/
+    - target: {{ salt["environ.get"]("HOME") }}/Documents/sync/Habits/current-year/
     - force: True
 
 dijo-config:

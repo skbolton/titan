@@ -8,7 +8,7 @@ export EDITOR="nvim"
 export GOPATH=$HOME/go
 export SKIM_DEFAULT_COMMAND="rg --files --hidden -g !.git"
 
-export LEDGER_FILE="$HOME/cloud/Finances/.hledger.journal"
+export LEDGER_FILE="$HOME/Documents/sync/Finances/.hledger.journal"
 
 # Erlang
 export ERL_AFLAGS="-kernel shell_history enabled"

@@ -51,8 +51,6 @@ launch() {
 title="A NEW BATTLE AWAITS, GUARDIAN"
 printf "%*s\n" $(((${#title}+$COLUMNS)/2)) "$title"
 
-# This is something for git so that certain commands know what branch to go against
-export REVIEW_BASE=master
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 eval "$(direnv hook zsh)"

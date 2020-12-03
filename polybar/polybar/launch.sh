@@ -10,7 +10,6 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar1 and bar2
 polybar -c ~/.config/polybar/config.ini top-main &
-polybar -c ~/.config/polybar/config.ini bottom-main &
 
 if has-two-monitors ; then
   polybar -c ~/.config/polybar/config.ini top-external &

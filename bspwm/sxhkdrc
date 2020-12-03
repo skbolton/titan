@@ -6,8 +6,8 @@ super + slash
   toggle-program kitty-scratch
 
 # terminal emulator
-alt + Return
-	kitty
+alt + {_, shift +} Return
+	{kitty,kitty --config=~/.config/kitty/kitty-scratch.conf --listen-on=unix:/tmp/kitty-scratch --class kitty-scratch --hold --directory=$HOME}
 
 # program launcher
 alt + d

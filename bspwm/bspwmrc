@@ -43,7 +43,7 @@ discord &
 slack &
 firefox &
 kitty &
-THEME=tomorrow-night-blue kitty --listen-on=unix:/tmp/kitty-scratch --class kitty-scratch --hold --directory=$HOME &
+THEME=gruvbox-light kitty --listen-on=unix:/tmp/kitty-scratch --class kitty-scratch --config ~/.config/kitty/kitty-scratch.conf --hold --directory=$HOME &
 nextcloud &
 
 # Launch windows where selector is not working
@@ -51,6 +51,6 @@ bspc desktop '3' -f
 spotify &
 sleep 2
 
-kitty @ --to=unix:/tmp/kitty-scratch set-colors --all $HOME/.config/kitty/tomorrow-night-blue.conf
-kitty @ --to=unix:/tmp/kitty-scratch send_text "v ~/cloud/Knowledge/Coding/index.md\r"
+kitty @ --to=unix:/tmp/kitty-scratch set-colors --all $HOME/.config/kitty/gruvbox-light.conf
+kitty @ --to=unix:/tmp/kitty-scratch send_text "v ~/Documents/sync/Knowledge/Coding/index.md\r"
 

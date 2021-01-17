@@ -1,35 +1,30 @@
-prompt_order = [
-    "username",
-    "hostname",
-    "directory",
-    "git_branch",
-    "git_commit",
-    "git_state",
-    "git_status",
-    "hg_branch",
-    "package",
-    "dotnet",
-    "golang",
-    "java",
-    "nodejs",
-    "php",
-    "python",
-    "ruby",
-    "rust",
-    "terraform",
-    "kubernetes",
-    "nix_shell",
-    "conda",
-    "memory_usage",
-    "aws",
-    "env_var",
-    "cmd_duration",
-    "line_break",
-    "jobs",
-    "battery",
-    "time",
-    "character",
-]
+format = """\
+  $username\
+  $hostname\
+  $directory\
+  $git_branch\
+  $git_commit\
+  $git_state\
+  $git_status\
+  $hg_branch\
+  $package\
+  $golang\
+  $nodejs\
+  $php\
+  $python\
+  $ruby\
+  $rust\
+  $terraform\
+  $kubernetes\
+  $memory_usage\
+  $aws\
+  $env_var\
+  $cmd_duration\
+  $line_break\
+  $jobs\
+  $time\
+  $character\
+"""
 
 
 [git_branch]
@@ -37,7 +32,8 @@ symbol = " "
 style = "bold red"
 
 [character]
-symbol = ""
+success_symbol = "[](bold green)"
+error_symbol = "[](bold yellow)"
 vicmd_symbol = " "
 
 [aws]
@@ -50,6 +46,6 @@ symbol = " "
 disabled = true
 
 [kubernetes]
-prefix = "within"
+format = "within "
 disabled = false
 symbol = " "

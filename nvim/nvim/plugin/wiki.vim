@@ -1,20 +1,21 @@
 " Vim wiki stuff
 let g:vimwiki_folding = 'syntax'
 
-let code_wiki = {}
-let code_wiki.path = '~/Documents/sync/Knowledge/Coding'
-let code_wiki.syntax = 'markdown'
-let code_wiki.ext = '.md'
-let code_wiki.links_space_char = '_'
-let code_wiki.auto_diary_index = 1
-let code_wiki.automatic_nested_syntaxes = 1
+let reference_wiki = {}
+let reference_wiki.path = '~/Documents/sync/Knowledge/Personal'
+let reference_wiki.syntax = 'markdown'
+let reference_wiki.ext = '.md'
+let reference_wiki.links_space_char = '_'
+let reference_wiki.auto_diary_index = 1
+let reference_wiki.automatic_nested_syntaxes = 1
 
-let delta_wiki = {}
-let delta_wiki.path = '~/Documents/sync/Knowledge/Delta'
-let delta_wiki.syntax = 'markdown'
-let delta_wiki.ext = '.md'
-let delta_wiki.links_space_char = '_'
-let delta_wiki.auto_diary_index = 1
+let coding_wiki = {}
+let coding_wiki.path = '~/Documents/sync/Knowledge/Coding'
+let coding_wiki.syntax = 'markdown'
+let coding_wiki.ext = '.md'
+let coding_wiki.links_space_char = '_'
+let coding_wiki.auto_diary_index = 1
+let coding_wiki.automatic_nested_syntaxes = 1
 
 let zettel = {}
 let zettel.path = "~/Documents/sync/Knowledge/Zettel"
@@ -23,7 +24,7 @@ let zettel.ext = '.md'
 let zettel.links_space_char = '_'
 let zettel.syntax = 'markdown'
 
-let g:vimwiki_list = [code_wiki, delta_wiki, zettel]
+let g:vimwiki_list = [reference_wiki, coding_wiki, zettel]
 let g:taskwiki_maplocalleader="-t"
 let g:taskwiki_markup_syntax = 'markdown'
 

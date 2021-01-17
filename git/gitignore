@@ -2,4 +2,5 @@
 steve_queries
 .envrc
 .vim
+packer_compiled.vim
 

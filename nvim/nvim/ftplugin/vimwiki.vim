@@ -1,8 +1,3 @@
-" Load in additional support plugins
-packadd goyo.vim
-packadd vim-livedown
-packadd vim-taskwarrior
-
 " Launch wiki's more easily
 nmap <buffer> <localleader>1 1<Plug>VimwikiIndex
 nmap <buffer> <localleader>2 2<Plug>VimwikiIndex

@@ -14,6 +14,12 @@ vim-packager:
     - target: {{ salt["environ.get"]("HOME") }}/.config/nvim/pack/packager/opt/vim-packager
     - user: {{ salt["environ.get"]("USER") }}
 
+vim-packer:
+  git.cloned:
+    - name: https://github.com/wbthomason/packer.nvim
+    - target: {{ salt["environ.get"]("HOME") }}/.local/share/nvim/site/pack/packager/opt/packer.nvim
+    - user: {{ salt["environ.get"]("USER") }}
+
 coc-settings:
   file.symlink:
     - name: {{ salt["environ.get"]("HOME") }}/.config/nvim/coc-settings.json

@@ -24,7 +24,7 @@ set encoding=utf8
 " Give us a realtime preview of substitution before we send it
 set inccommand=nosplit
 set list
-set lcs=eol:¬,extends:❯,precedes:❮,tab:>-
+set lcs=extends:❯,precedes:❮,tab:>-
 set number
 set relativenumber
 set ruler

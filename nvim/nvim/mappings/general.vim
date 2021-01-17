@@ -9,10 +9,8 @@ vnoremap : ;
 " Quickfix 
 nnoremap <silent> <UP> :cope<CR>
 nnoremap <silent> <DOWN> :cclose<CR>
-nnoremap <silent> <leader>cn :cnext<CR>
-nnoremap <silent> <leader>cp :cprev<CR>
-nnoremap <silent> <RIGHT> :cnext<CR>
-nnoremap <silent> <LEFT> :cprev<CR>
+nnoremap <silent> <RIGHT> :cnext<CR>zz
+nnoremap <silent> <LEFT> :cprev<CR>zz
 
 " Make many of the jump commands also center on search term
 nnoremap n nzz
@@ -32,6 +30,6 @@ tnoremap <Esc> <C-\><C-n>
 nnoremap <leader>> :!<space>
 
 " Copy/Paste from register
-vnoremap <leader>cc "*y
-map <leader>vv "*p
+vnoremap <leader>cc "+y
+map <leader>vv "+p
 

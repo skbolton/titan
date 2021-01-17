@@ -17,7 +17,7 @@ let g:vista#renderer#icons = {
 
 let g:vista_default_executive = 'nvim_lsp'
 
-let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+let g:completion_matching_strategy_list = ['exact', 'substring']
 let g:completion_enable_auto_popup = 1
 let g:completion_auto_change_source = 1
 let g:completion_trigger_character = ['.', '"']

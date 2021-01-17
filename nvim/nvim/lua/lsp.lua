@@ -1,7 +1,7 @@
 vim.cmd('packadd nvim-lspconfig')
 vim.cmd('packadd completion-nvim')
 
-local nvim_lsp = require'nvim_lsp'
+local nvim_lsp = require'lspconfig'
 local protocol = require'vim.lsp.protocol'
 local completion = require'completion'
 
@@ -56,9 +56,10 @@ end
 
 nvim_lsp.elixirls.setup{
   on_attach=attach;
+  cmd = {vim.loop.os_homedir() .. "/.elixir-ls/rel/language_server.sh"};
   settings = {
     elixirLS = {
-      dialyzerEnabled = false;
+      dialyzerEnabled = true;
     }
   }
 }

@@ -1,10 +1,12 @@
-let g:lua_tree_show_icons = {
+let g:nvim_tree_show_icons = {
     \ 'git': 0,
     \ 'folders': 1,
     \ 'files': 1,
     \}
 
-let g:lua_tree_icons = {
+let g:nvim_tree_width_allow_resize = 0
+
+let g:nvim_tree_icons = {
     \ 'default': '',
     \ 'symlink': '',
     \ 'git': {

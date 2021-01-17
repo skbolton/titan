@@ -93,8 +93,8 @@ function! PackagerInit() abort
   call packager#add('gruvbox-material/vim', { 'type': 'opt', 'name': 'gruvbox-material' })
   call packager#add('lifepillar/vim-solarized8', { 'type': 'opt' })
   call packager#add('mkarmona/colorsbox', { 'type': 'opt' })
-  call packager#local('~/Development/embark', { 'type': 'opt', 'name': 'embark'})
-  " call packager#add('embark-theme/vim', { 'type': 'opt', 'name': 'embark'})
+  " call packager#local('~/Development/embark', { 'type': 'opt', 'name': 'embark'})
+  call packager#add('embark-theme/vim', { 'type': 'opt', 'name': 'embark'})
 
   "   ____                               _     ____  _             _           
   "  / ___| _   _ _ __  _ __   ___  _ __| |_  |  _ \| |_   _  __ _(_)_ __  ___ 

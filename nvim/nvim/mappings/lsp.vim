@@ -1,6 +1,3 @@
-" language server 
-lua require 'lsp'
-
 nnoremap <silent> <leader>ld <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> <leader>lD :vsp <BAR> :lua vim.lsp.buf.definition()<CR>zz
 nnoremap <silent> <leader>ls <cmd>lua vim.lsp.buf.signature_help()<CR>

@@ -47,5 +47,5 @@ disabled = true
 
 [kubernetes]
 format = "within "
-disabled = false
+disabled = true
 symbol = " "

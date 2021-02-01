@@ -10,7 +10,7 @@ let g:ale_linters = {
 \    'elixir': ['credo']
 \}
 
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 let g:ale_lint_on_save = 1
 " Letting coc.vim do the completion instead of all
 let g:ale_completion_enabled = 0

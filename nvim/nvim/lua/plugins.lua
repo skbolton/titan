@@ -58,7 +58,10 @@ packer.startup(function()
   use 'hrsh7th/vim-vsnip-integ'
   -- Fixers, completion and navigation
   use 'neomake/neomake'
-  use 'neovim/nvim-lspconfig'
+  use {
+    'neovim/nvim-lspconfig',
+    config = function() require('lsp') end,
+  }
   use 'nvim-lua/completion-nvim'
   use 'steelsojka/completion-buffers'
   use 'dense-analysis/ale'
@@ -76,6 +79,31 @@ packer.startup(function()
   }
   use 'glacambre/firenvim'
   use {'norcalli/nvim-colorizer.lua'}
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}, {'nvim-web-devicons'}},
+    config = function()
+      require('telescope').setup{
+        defaults = {
+          prompt_position = 'top',
+          sorting_strategy = 'ascending'
+        }
+      }
+    end
+  }
+  use {
+    'oberblastmeister/neuron.nvim',
+    requires = {{'nvim-lua/plenary.nvim'}, {'nvim-telescope/telescope.nvim'}},
+    config = function()
+      require'neuron'.setup {
+        virtual_titles = true,
+        mappings = true,
+        run = nil,
+        neuron_dir = "~/neuron",
+        leader = "gz"
+    }
+    end
+  }
   -- Git
   use 'tpope/vim-fugitive'
   use {'rhysd/git-messenger.vim', cmd = 'GitMessenger'}

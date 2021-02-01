@@ -7,5 +7,6 @@ endif
 
 nnoremap <silent><leader>\ :NvimTreeToggle<CR>
 nnoremap <silent><leader><bar> :NvimTreeFindFile<CR>
-nnoremap <silent><leader>ff :Files<CR>
-nnoremap <silent><leader>fr :Buffers<CR>
+" nnoremap <silent><leader>ff :Files<CR>
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+" nnoremap <silent><leader>fr :Buffers<CR>

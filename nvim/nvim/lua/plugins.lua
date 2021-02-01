@@ -66,10 +66,14 @@ packer.startup(function()
   use 'lotabout/skim'
   use 'lotabout/skim.vim'
   -- Status and UI
-  -- call packager#add('ryanoasis/vim-devicons')
   use 'kyazdani42/nvim-web-devicons.git'
   use 'kyazdani42/nvim-tree.lua'
-  use 'itchyny/lightline.vim'
+  use {
+    'glepnir/galaxyline.nvim',
+    branch = 'main',
+    config = function() require('status-line') end,
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
   use 'glacambre/firenvim'
   use {'norcalli/nvim-colorizer.lua'}
   -- Git

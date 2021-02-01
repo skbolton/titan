@@ -3,9 +3,6 @@
 function SwitchColorScheme(name)
   let g:VIM_COLOR_SCHEME = a:name
   call ColorScheme()
-  call lightline#init()
-  call lightline#colorscheme()
-  call lightline#update()
 endfunction
 
 function! ColorScheme()
@@ -42,7 +39,6 @@ function! ColorScheme()
     let g:gruvbox_material_background = 'hard'
     let g:gruvbox_material_transparent_background = 1
     colorscheme gruvbox-material
-    let g:lightline.colorscheme = 'gruvbox_material'
     let g:clap_theme = 'gruvbox_light'
     hi link Sneak Search
     " hi Normal guibg=#FDF6E3
@@ -60,8 +56,6 @@ function! ColorScheme()
     let g:embark_terminal_italics = 1
     colorscheme embark
     hi Cursor guibg=#F48FB1 guifg=white
-    let g:lightline.colorscheme = 'embark'
-    let g:clap_theme = 'embark'
     hi link Sneak Search
     hi link ClapMatches Search
     hi LuaTreeFolderIcon guifg=#d4bfff

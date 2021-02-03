@@ -91,19 +91,6 @@ packer.startup(function()
       }
     end
   }
-  use {
-    'oberblastmeister/neuron.nvim',
-    requires = {{'nvim-lua/plenary.nvim'}, {'nvim-telescope/telescope.nvim'}},
-    config = function()
-      require'neuron'.setup {
-        virtual_titles = true,
-        mappings = true,
-        run = nil,
-        neuron_dir = "~/neuron",
-        leader = "gz"
-    }
-    end
-  }
   -- Git
   use 'tpope/vim-fugitive'
   use {'rhysd/git-messenger.vim', cmd = 'GitMessenger'}

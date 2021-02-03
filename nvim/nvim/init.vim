@@ -3,6 +3,7 @@ runtime! mappings/**/*.vim
 runtime! tabline.vim
 
 lua require 'plugins'
+lua require 'tree'
 
 autocmd BufWritePost plugins.lua PackerCompile
 

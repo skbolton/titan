@@ -22,7 +22,7 @@ vim.g['vista#renderer#icons'] = {
 -- completion
 -- ===================================================================
 vim.g.completion_matching_strategy_list = { 'exact', 'substring' };
-vim.g.completion_auto_change_source = true;
+vim.g.completion_auto_change_source = 1;
 vim.g.completion_trigger_character = {'.', '"'};
 vim.g.completion_enable_snippet = 'vim-vsnip';
 vim.g.completion_confirm_key = "<c-y>";

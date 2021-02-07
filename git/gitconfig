@@ -1,7 +1,8 @@
 [user]
         name = Stephen Bolton
-        email = stephenkbolton@gmail.com
+        email = stephen@bitsonthemind.com
         username = skbolton
+        signingkey = 0x60410414D406AF1D
 
 [alias]
         l = log --date=short --decorate --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]"
@@ -35,6 +36,7 @@
 
 [commit]
         verbose = true
+        gpgsign = true
 
 [status]
         showUntrackedFiles = all

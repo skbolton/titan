@@ -14,10 +14,10 @@ map('v', ';', ':', default_opts)
 map('v', ':', ';', default_opts)
 
 -- quickfix list
-map('n', '<silent> <UP>', ':cope<CR>', default_opts)
-map('n', '<silent> <DOWN>', ':cclose<CR>', default_opts)
-map('n', '<silent> <RIGHT>', ':cnext<CR>zz', default_opts)
-map('n', '<silent> <LEFT>', ':cprev<CR>zz', default_opts)
+map('n', '<UP>', ':cope<CR>', {noremap = true, silent = true})
+map('n', '<DOWN>', ':cclose<CR>', {noremap = true, silent = true})
+map('n', '<RIGHT>', ':cnext<CR>zz', {noremap = true, silent = true})
+map('n', '<LEFT>', ':cprev<CR>zz', {noremap = true, silent = true})
 
 -- make jump commands center the screen on search term
 map('n', 'n', 'nzz', default_opts)
@@ -26,7 +26,7 @@ map('n', '<C-o>', '<C-o>zz', default_opts)
 map('n', '<C-i>', '<C-i>zz', default_opts)
 map('n', '*', '*zz', default_opts)
 map('n', '#', '#zz', default_opts)
-map('n', '<silent> <leader>', ':nohlsearch<CR>', default_opts)
+map('n', '<leader>', ':nohlsearch<CR>', {noremap = true, silent = true})
 map('n', '<BS>', ':b#<CR>', default_opts)
 
 -- Have esc work just like it does in vim when running terminal

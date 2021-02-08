@@ -1,0 +1,6 @@
+require('mappings.core')
+require('mappings.git')
+require('mappings.lsp')
+require('mappings.filesystem')
+require('mappings.test')
+require('mappings.wiki')

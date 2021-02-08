@@ -1,30 +1,21 @@
+--[[
+ ______  __       __  __   ______   __   __   __   ______    
+/\  == \/\ \     /\ \/\ \ /\  ___\ /\ \ /\ "-.\ \ /\  ___\   
+\ \  _-/\ \ \____\ \ \_\ \\ \ \__ \\ \ \\ \ \-.  \\ \___  \  
+ \ \_\   \ \_____\\ \_____\\ \_____\\ \_\\ \_\\"\_\\/\_____\ 
+  \/_/    \/_____/ \/_____/ \/_____/ \/_/ \/_/ \/_/ \/_____/ 
+                                                             
+--]]
+
 vim.cmd [[packadd packer.nvim]]
 
-local packer = require('packer')
---     ____             __ _                      
---   / ___|___  _ __  / _(_) __ _ _   _ _ __ ___ 
---  | |   / _ \| '_ \| |_| |/ _` | | | | '__/ _ \
---  | |__| (_) | | | |  _| | (_| | |_| | | |  __/
---   \____\___/|_| |_|_| |_|\__, |\__,_|_|  \___|
---                          |___/                
---   ____            _                         
---  |  _ \ __ _  ___| | ____ _  __ _  ___ _ __ 
---  | |_) / _` |/ __| |/ / _` |/ _` |/ _ \ '__|
---  |  __/ (_| | (__|   < (_| | (_| |  __/ |   
---  |_|   \__,_|\___|_|\_\__,_|\__, |\___|_|   
---                             |___/           
 
+local packer = require('packer')
 packer.startup(function()
   use {'wbthomason/packer.nvim', opt = true}
-  --    __ _ _      _                            _             _
-  --   / _(_) | ___| |_ _   _ _ __   ___   _ __ | |_   _  __ _(_)_ __  ___
-  --  | |_| | |/ _ \ __| | | | '_ \ / _ \ | '_ \| | | | |/ _` | | '_ \/ __|
-  --  |  _| | |  __/ |_| |_| | |_) |  __/ | |_) | | |_| | (_| | | | | \__ \
-  --  |_| |_|_|\___|\__|\__, | .__/ \___| | .__/|_|\__,_|\__, |_|_| |_|___/
-  --                    |___/|_|          |_|            |___/
-  --  
-  -- These plugins have to be required on every boot so that filetypes
-  -- exist and other plugins can kick in
+  -- ===================================================================
+
+  -- FILETYPE PLUGINS
   use 'elixir-editors/vim-elixir'
   use {'vimwiki/vimwiki', branch = 'dev'}
   use 'michal-h21/vim-zettel'
@@ -34,14 +25,9 @@ packer.startup(function()
   use 'pangloss/vim-javascript'
   use 'evanleck/vim-svelte'
   use 'ledger/vim-ledger'
+  -- ===================================================================
 
-  --    ____                 ____  _             _
-  --   / ___|___  _ __ ___  |  _ \| |_   _  __ _(_)_ __  ___
-  --  | |   / _ \| '__/ _ \ | |_) | | | | |/ _` | | '_ \/ __|
-  --  | |__| (_) | | |  __/ |  __/| | |_| | (_| | | | | \__ \
-  --   \____\___/|_|  \___| |_|   |_|\__,_|\__, |_|_| |_|___/
-  --                                       |___/
-  --  
+  -- CORE PLUGINS
   use 'yuttie/comfortable-motion.vim'
   use 'jiangmiao/auto-pairs'
   use 'tpope/vim-surround'
@@ -99,28 +85,19 @@ packer.startup(function()
   use 'tpope/vim-rhubarb'
   use 'justinmk/vim-sneak'
   use 'kana/vim-textobj-user'
+  -- ===================================================================
 
-  --   _____ _                              
-  --  |_   _| |__   ___ _ __ ___   ___  ___ 
-  --    | | | '_ \ / _ \ '_ ` _ \ / _ \/ __|
-  --    | | | | | |  __/ | | | | |  __/\__ \
-  --    |_| |_| |_|\___|_| |_| |_|\___||___/
-  --                                        
+  -- THEMES
   use {'arcticicestudio/nord-vim', opt = true}
   use {'sainnhe/lightline_foobar.vim', opt = true}
   use {'gruvbox-material/vim', opt = true, as = 'gruvbox-material'}
   use {'lifepillar/vim-solarized8', opt = true}
   use {'mkarmona/colorsbox', opt = true}
   use {'embark-theme/vim', opt = true, as = 'embark'}
+  -- ===================================================================
 
-  --   ____                               _     ____  _             _           
-  --  / ___| _   _ _ __  _ __   ___  _ __| |_  |  _ \| |_   _  __ _(_)_ __  ___ 
-  --  \___ \| | | | '_ \| '_ \ / _ \| '__| __| | |_) | | | | |/ _` | | '_ \/ __|
-  --   ___) | |_| | |_) | |_) | (_) | |  | |_  |  __/| | |_| | (_| | | | | \__ \
-  --  |____/ \__,_| .__/| .__/ \___/|_|   \__| |_|   |_|\__,_|\__, |_|_| |_|___/
-  --              |_|   |_|                                   |___/             
-  --  
-  -- SQL
+  -- SUPPORT PLUGINS
+  -- These don't have to be loaded up front
   use 'kristijanhusak/vim-dadbod-ui'
   use 'kristijanhusak/vim-dadbod-completion'
   use 'tpope/vim-dadbod'

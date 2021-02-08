@@ -1,3 +1,11 @@
+-- Colorscheme overrides
+vim.cmd("hi link xmlEndTag xmlTag")
+vim.cmd("hi htmlArg gui=italic")
+vim.cmd("hi Comment gui=italic")
+vim.cmd("hi Type gui=italic")
+vim.cmd("hi htmlArg cterm=italic")
+vim.cmd("hi Type cterm=italic")
+
 local embark = {
   bg_dark = "#100E23",
   bg = "#1e1c31",

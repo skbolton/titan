@@ -33,8 +33,8 @@ o.linebreak = true
 -- gutters, line numbers, searching
 o.termguicolors = true
 o.encoding = "utf8"
-o.number = true
-o.relativenumber = true
+wo.number = true
+wo.relativenumber = true
 o.ruler = true
 o.cursorline = true
 -- when typing a bracket highlight the match

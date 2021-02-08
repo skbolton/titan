@@ -135,3 +135,5 @@ packer.startup(function()
   -- Elixir
   use {'andyl/vim-textobj-elixir', ft = 'elixir'}
 end)
+
+vim.cmd("autocmd BufWritePost plugins.lua PackerCompile")

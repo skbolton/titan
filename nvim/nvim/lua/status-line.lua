@@ -1,28 +1,10 @@
+local testing = require('testing')
 local gl = require('galaxyline')
+local themes = require('themes')
 local gls = gl.section
 gl.short_line_list = {'NvimTree','vista_kind','dbui'}
 
-local colors = {
-  space0 = "#100E23",
-  space1 = "#1e1c31",
-  space2 = "#2D2B40",
-  space3 = "#3E3859",
-  space4 = "#585273",
-  astral0 ="#8A889D",
-  astral1 ="#cbe3e7",
-  red = "#F48FB1",
-  dark_red = "#F02E6E",
-  green = "#A1EFD3",
-  dark_green = "#62d196",
-  yellow = "#ffe6b3",
-  dark_yellow = "#F2B482",
-  blue = "#91ddff",
-  dark_blue = "#65b2ff",
-  purple = "#d4bfff",
-  dark_purple ="#a37acc",
-  cyan = "#87DFEB",
-  dark_cyan = "#63f2f1"
-}
+local colors = themes.get_theme()
 
 -- helper functions
 local buffer_not_empty = function() 
@@ -42,7 +24,7 @@ local active_lsp = function()
     return '鷺' .. active_client.name
   end
 
-  return '鷺----'
+  return '鷺------'
 end
 
 local testing_results = function()
@@ -52,13 +34,13 @@ local testing_results = function()
     failing = colors.red
   }
 
-  vim.api.nvim_command('hi GalaxyTestResults guifg=' ..test_colors[vim.g.TESTING_STATUS])
+  vim.api.nvim_command('hi GalaxyTestResults guifg=' ..test_colors[testing.TESTING_STATUS])
 
-  if vim.g.TESTING_STATUS == 'passing' then
+  if testing.TESTING_STATUS == 'passing' then
     return "∙ PASS"
-  elseif vim.g.TESTING_STATUS == 'running' then
+  elseif testing.TESTING_STATUS == 'running' then
     return "∙ CHECK"
-  elseif vim.g.TESTING_STATUS == 'failing' then
+  elseif testing.TESTING_STATUS == 'failing' then
     return "∙ FAIL"
   end
 end
@@ -74,43 +56,48 @@ gls.left[1] = {
     provider = function()
       -- auto change color according to vim mode
       local mode_color = {
-        -- normal
         n = colors.cyan,
         no = colors.cyan,
-        -- selection
         s = colors.dark_yellow,
-        -- insert
+        S = colors.dark_yellow,
         i = colors.red,
-        -- visual
+        ic = colors.red,
         V = colors.yellow,
         v = colors.yellow,
+        [""] = colors.dark_yellow,
         c = colors.purple,
-        -- terminal
-        t = colors.green
+        cv = colors.purple,
+        ce = colors.purple,
+        t = colors.green,
+        r = colors.purple,
+        R = colors.purple,
+        Rv = colors.purple,
+        ["!"] = colors.purple,
       }
 
       local alias = {
         n      = 'NORMAL',
         i      = 'INSERT',
         v      = 'VISUAL',
+        [""] = 'V-BLOCK',
         V      = 'V·LINE',
         c      = 'COMMAND',
         R      = 'REPLACE',
         Rv     = 'V·REPLACE',
-        t      =  'TERM',
-        ['!']  =  'SHELL'
+        t      = 'TERM',
+        ['!']  = 'SHELL',
       }
 
       local mode = vim.fn.mode();
-      local color = mode_color[mode] or colors.yellow
-      local alias = alias[mode] or ''
+      local color = mode_color[mode]
+      local alias = alias[mode]
       vim.api.nvim_command('hi GalaxyViMode guifg=' .. color)
 
-      return ' ' .. alias
+      return '   ' .. alias
     end,
     separator = ' ',
-    separator_highlight = {'NONE', colors.space1},
-    highlight = {colors.green, colors.space1,  'bold'}
+    separator_highlight = {'NONE', colors.bg},
+    highlight = {colors.green, colors.bg,  'bold'}
   }
 }
 
@@ -118,7 +105,7 @@ gls.left[2] = {
   FileSize = {
     provider = 'FileSize',
     condition = buffer_not_empty,
-    highlight = {colors.astral1, colors.space1}
+    highlight = {colors.fg, colors.bg}
   }
 }
 
@@ -142,8 +129,8 @@ gls.left[5] = {
   LineInfo = {
     provider = 'LineColumn',
     separator = ' ',
-    separator_highlight = {'NONE',colors.space1},
-    highlight = {colors.astral0, colors.space1},
+    separator_highlight = {'NONE',colors.bg},
+    highlight = {colors.astral0, colors.bg},
   },
 }
 
@@ -152,18 +139,18 @@ gls.left[5] = {
 gls.right[1] = {
   TestResults = {
     provider = testing_results,
-    separator = ' ',
-    separator_highlight = {'NONE',colors.space1},
-    highlight = {colors.yellow, colors.space1}
+    separator = '  ',
+    separator_highlight = {'NONE',colors.bg},
+    highlight = {colors.yellow, colors.bg}
   }
 }
 
 gls.right[2] = {
   LanguageServer = {
     provider = active_lsp,
-    separator = ' ',
-    separator_highlight = {'NONE', colors.space1},
-    highlight = {colors.green, colors.space1}
+    separator = '  ',
+    separator_highlight = {'NONE', colors.bg},
+    highlight = {colors.green, colors.bg}
   }
 }
 
@@ -171,9 +158,9 @@ gls.right[3] = {
   GitIcon = {
     provider = function() return ' ' end,
     condition = require('galaxyline.provider_vcs').check_git_workspace,
-    separator = ' ',
-    separator_highlight = {'NONE',colors.space1},
-    highlight = {colors.purple,colors.space1},
+    separator = '  ',
+    separator_highlight = {'NONE',colors.bg},
+    highlight = {colors.purple,colors.bg},
   }
 }
 
@@ -181,7 +168,7 @@ gls.right[4] = {
   GitBranch = {
     provider = 'GitBranch',
     condition = require('galaxyline.provider_vcs').check_git_workspace,
-    highlight = {colors.purple,colors.space1}
+    highlight = {colors.purple,colors.bg}
   }
 }
 
@@ -190,6 +177,6 @@ gls.right[4] = {
 gls.short_line_left[1] = {
   FileName = {
     provider = 'FileName',
-    highlight = {colors.green, colors.space1}
+    highlight = {colors.green, colors.bg}
   }
 }

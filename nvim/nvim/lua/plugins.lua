@@ -80,8 +80,13 @@ packer.startup(function()
   -- Git
   use 'tpope/vim-fugitive'
   use {'rhysd/git-messenger.vim', cmd = 'GitMessenger'}
-  use 'airblade/vim-gitgutter'
-  use 'shumphrey/fugitive-gitlab.vim'
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {'nvim-lua/plenary.nvim'},
+    config = function()
+      require('git')
+    end
+  }
   use 'tpope/vim-rhubarb'
   use 'justinmk/vim-sneak'
   use 'kana/vim-textobj-user'

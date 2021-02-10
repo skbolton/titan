@@ -49,6 +49,7 @@ wo.signcolumn = 'yes'
 o.hlsearch = true
 -- start hlsearch as I type
 o.incsearch = true
+o.ignorecase = true
 -- search case insensitive until I add a capital letter
 o.smartcase = true
 -- show effects of substitution as I perform it

@@ -10,7 +10,7 @@ map('n', '<leader>gw', ':Gwrite<CR>', default_opts)
 map('n', '<leader>gr', ':Gread<CR>', default_opts)
 map('n', '<leader>gl', ':Glog<CR>', default_opts)
 map('n', '<leader>gh', ':0Glog<CR>', default_opts)
-map('n', '<leader>gm', 'GitMessenger<CR>', default_opts)
+map('n', '<leader>gm', ':GitMessenger<CR>', default_opts)
 
 map('n', '<leader>dh', ':diffget<CR>', default_opts)
 map('n', '<leader>dl', ':diffget<CR>', default_opts)

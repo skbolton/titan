@@ -116,10 +116,7 @@ packer.startup(function()
   -- ===================================================================
 
   -- THEMES
-  use {'arcticicestudio/nord-vim', opt = true}
-  use {'sainnhe/lightline_foobar.vim', opt = true}
   use {'gruvbox-material/vim', opt = true, as = 'gruvbox-material'}
-  use {'lifepillar/vim-solarized8', opt = true}
   use {'mkarmona/colorsbox', opt = true}
   use {'embark-theme/vim', opt = true, as = 'embark'}
   -- ===================================================================

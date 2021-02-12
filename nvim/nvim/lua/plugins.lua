@@ -17,7 +17,13 @@ packer.startup(function()
 
   -- FILETYPE PLUGINS
   use 'elixir-editors/vim-elixir'
-  use {'vimwiki/vimwiki', branch = 'dev'}
+  use {
+    'vimwiki/vimwiki',
+    branch = 'dev',
+    config = function()
+      require('wiki')
+    end
+  }
   use 'michal-h21/vim-zettel'
   use 'tbabej/taskwiki'
   use 'saltstack/salt-vim'
@@ -39,7 +45,12 @@ packer.startup(function()
   use 'tpope/vim-speeddating'
   use 'machakann/vim-highlightedyank'
   use 'janko/vim-test'
-  use 'christoomey/vim-tmux-navigator'
+  use {
+    'christoomey/vim-tmux-navigator',
+    config = function ()
+      vim.g.tmux_navigator_disable_when_zoomed = true
+    end
+  }
   use 'hrsh7th/vim-vsnip'
   use 'hrsh7th/vim-vsnip-integ'
   -- Fixers, completion and navigation
@@ -50,7 +61,12 @@ packer.startup(function()
   }
   use 'nvim-lua/completion-nvim'
   use 'steelsojka/completion-buffers'
-  use 'dense-analysis/ale'
+  use {
+    'dense-analysis/ale',
+    config = function()
+      require('formatting')
+    end
+  }
   use {'liuchengxu/vista.vim', cmd = 'Vista'}
   use 'lotabout/skim'
   use 'lotabout/skim.vim'
@@ -64,7 +80,12 @@ packer.startup(function()
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
   use 'glacambre/firenvim'
-  use {'norcalli/nvim-colorizer.lua'}
+  use {
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require('colorizer').setup()
+    end
+  }
   use {
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}, {'nvim-web-devicons'}},

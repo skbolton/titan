@@ -53,29 +53,11 @@ function! ColorScheme()
 
   if g:VIM_COLOR_SCHEME ==# 'embark'
     packadd embark
-    let g:embark_terminal_italics = 1
     colorscheme embark
-    hi Cursor guibg=#F48FB1 guifg=white
-    hi link Sneak Search
-    hi link ClapMatches Search
-    hi LuaTreeFolderIcon guifg=#d4bfff
-    hi LuaTreeFolderName guifg=#cbe3e7
 
     execute "silent ! kitty @ --to=tcp:localhost:12345 set-colors --all ~/.config/kitty/embark.conf"
     execute "silent ! tmux source-file ~/titan/tmux/embark.tmux"
   endif
-
-  if g:VIM_COLOR_SCHEME ==# 'nord'
-    " Lazy load theme in
-    packadd nord
-    let g:nord_underline = 1
-    let g:nord_italic_comments = 1
-    let g:nord_italic = 1
-    let g:nord_cursor_line_number_background = 1
-    colorscheme nord
-    let g:lightline.colorscheme = 'nord'
-  endif
-
 endfunction
 
 if empty($THEME)

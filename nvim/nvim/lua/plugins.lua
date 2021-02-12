@@ -99,7 +99,10 @@ packer.startup(function()
     end
   }
   -- Git
-  use 'tpope/vim-fugitive'
+  use {
+    'tpope/vim-fugitive',
+    requires = {'tpope/vim-rhubarb'}
+  }
   use {'rhysd/git-messenger.vim', cmd = 'GitMessenger'}
   use {
     'lewis6991/gitsigns.nvim',
@@ -108,7 +111,6 @@ packer.startup(function()
       require('git')
     end
   }
-  use 'tpope/vim-rhubarb'
   use 'justinmk/vim-sneak'
   use 'kana/vim-textobj-user'
   -- ===================================================================

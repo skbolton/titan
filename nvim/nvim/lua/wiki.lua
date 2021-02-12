@@ -45,6 +45,9 @@ vim.g.livedown_port = 1337
 vim.g.zettel_format = "%y%m%d-%H%M"
 vim.g.zettel_fzf_command = "rg --column --line-number --ignore-case --no-heading --color=always "
 
+-- taskwiki
+vim.g.taskwiki_maplocalleader="-t"
+
 -- TODO: Port to lua
 -- function TaskSearch()
 --  let line = getline('.')

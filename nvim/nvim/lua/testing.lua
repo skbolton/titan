@@ -11,10 +11,10 @@ g['test#strategy'] = {
 }
 g['test#neovim#term_position'] = 'vert'
 g.neomake_warning_sign = {
-  text = '◉'
+  text = '∙'
 }
 g.neomake_error_sign = {
-  text = '◉'
+  text = '∙'
 }
 
 g.dispatch_compilers = {elixir = 'exunit'}

@@ -1,5 +1,5 @@
 name: juno
-root: ~/Development/juno
+root: ~/Repos/juno
 
 windows:
   - vim: v

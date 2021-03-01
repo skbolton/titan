@@ -45,8 +45,8 @@ delta() {
 }
 
 launch() {
-  session_name=$(ls ~/Development | sk) 
-  tmuxinator start $session_name 2>/dev/null || tmuxinator start launch name=$session_name root=~/Development/$session_name
+  session_name=$(ls ~/Repos | sk) 
+  tmuxinator start $session_name 2>/dev/null || tmuxinator start launch name=$session_name root=~/Repos/$session_name
 }
 
 title="A NEW BATTLE AWAITS, GUARDIAN"

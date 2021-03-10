@@ -31,6 +31,8 @@ report.completed.sort = project+/,end+
 urgency.user.tag.in.coefficient=-1
 # just because its a project doesn't make it more important
 urgency.project.coefficient=0
+urgency.scheduled.coefficient=2
+urgency.user.tag.next.coefficient=1
 
 # Theme
 rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.
@@ -103,3 +105,4 @@ color.sync.rejected=gray23
 # Command: undo
 color.undo.before=rgb013
 color.undo.after=rgb035
+context=work

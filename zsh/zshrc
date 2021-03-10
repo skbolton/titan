@@ -37,6 +37,21 @@ inbox () {
   fi
 }
 
+work () {
+  if [ $# -eq 0 ]; then
+    # are we in the work context?
+    local context=$(task _get rc.context)
+    echo $context
+    if [ -z "${context}" ] && [ "${context}" = "work" ]; then
+      task
+    else
+      task +work
+    fi
+  else
+    task add +in $@
+  fi
+}
+
 delta() {
   if [ "$1" = "launch" ]; then
     tmuxinator start $2

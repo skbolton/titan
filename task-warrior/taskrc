@@ -22,6 +22,7 @@ report.in.labels = ID,Tags,Description
 # Next report
 report.next.columns = id,project,priority,tags,due,scheduled,description 
 report.next.labels = ID,Proj,Priority,Tags,Due,Sched,Desc
+report.next.filter = status:pending limit:10 -BLOCKED
 
 # completed report
 report.completed.sort = project+/,end+
@@ -102,4 +103,3 @@ color.sync.rejected=gray23
 # Command: undo
 color.undo.before=rgb013
 color.undo.after=rgb035
-context=personal

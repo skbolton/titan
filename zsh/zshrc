@@ -17,7 +17,6 @@ alias aqua="Asciiquarium"
 alias t="task"
 alias tap="task context personal"
 alias taw="task context work"
-alias in="task add +in"
 alias chore="task add +personal +chore" 
 alias d="delta"
 alias l="hledger"
@@ -28,6 +27,14 @@ alias ledit="v $LEDGER_FILE"
 
 tickle () {
     task $@ modify wait:soww
+}
+
+inbox () {
+  if [ $# -eq 0 ]; then
+    task +in
+  else
+    task add +in $@
+  fi
 }
 
 delta() {

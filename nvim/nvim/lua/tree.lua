@@ -21,3 +21,4 @@ vim.g.nvim_tree_icons = {
 }
 
 vim.g.nvim_tree_width_allow_resize = true;
+vim.g.nvim_tree_disable_netrw = false

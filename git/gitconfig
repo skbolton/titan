@@ -21,6 +21,8 @@
         files = !git diff --name-only $(git merge-base HEAD \"$REVIEW_BASE\")
         stat = !git diff --stat $(git merge-base HEAD \"$REVIEW_BASE\")
         review = !nvim -p $(git files) +\"tabdo Gdiff $REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$REVIEW_BASE'\"
+        feature = !sh -c 'git switch --no-track -c $1 origin/${BASE_GIT_BRANCH-main}' -
+        catchup = !sh -c 'git rebase origin/${BASE_GIT_BRANCH-main}' -
         what = "!git config --get-regexp alias"
 [diff]
         algorithm = histogram

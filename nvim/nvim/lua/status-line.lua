@@ -94,7 +94,8 @@ gls.left[1] = {
       local alias = alias[mode]
       vim.api.nvim_command('hi GalaxyViMode guifg=' .. color)
 
-      return '   ' .. alias
+      -- return '   ' .. alias
+      return ' 異' .. alias
     end,
     separator = ' ',
     separator_highlight = {'NONE', colors.bg},

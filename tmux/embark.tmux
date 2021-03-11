@@ -9,7 +9,7 @@ set -g window-status-separator ""
 set -g status-bg black
 
 #Bars ---------------------------------
-set -g status-left "#[fg=green italics]#S"
+set -g status-left "#[fg=green]#S"
 
 set -g status-right "#[fg=brightwhite]%Y-%m-%d ∙ %I:%M"
 

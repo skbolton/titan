@@ -82,6 +82,7 @@ gls.left[1] = {
         [""] = 'V-BLOCK',
         V      = 'V·LINE',
         c      = 'COMMAND',
+        r      = 'REPLACE',
         R      = 'REPLACE',
         Rv     = 'V·REPLACE',
         t      = 'TERM',

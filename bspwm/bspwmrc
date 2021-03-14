@@ -1,11 +1,11 @@
 #! /bin/sh
 
-sxhkd &
-dunst -conf ~/.config/dunst/dunstrc &
-picom --experimental-backends &
-~/.config/polybar/launch.sh &
 setup-monitors &
-hsetroot -solid "#1e1c31" &
+picom --experimental-backends &
+dunst -conf ~/.config/dunst/dunstrc &
+~/.config/polybar/launch.sh &
+sxhkd &
+hsetroot -solid "#1e1c31"
 
 monitor_count=$(monitor-count)
 
@@ -36,6 +36,7 @@ bspc config focus_follows_pointer      true
 
 bspc rule -a kitty desktop='1'
 bspc rule -a kitty-tasks desktop='6'
+bspc rule -a kitty-monitor state=floating
 bspc rule -a firefox desktop='2'
 bspc rule -a zoom desktop='2' follow=on
 bspc rule -a nitrogen manage=off

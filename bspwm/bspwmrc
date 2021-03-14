@@ -3,8 +3,7 @@
 sxhkd &
 dunst -conf ~/.config/dunst/dunstrc &
 picom --experimental-backends &
-# hsetroot -solid "#1e1c31" &
-nitrogen --restore &
+hsetroot -solid "#1e1c31" &
 ~/.config/polybar/launch.sh &
 
 monitor_count=$(monitor-count)

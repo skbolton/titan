@@ -3,9 +3,9 @@
 sxhkd &
 dunst -conf ~/.config/dunst/dunstrc &
 picom --experimental-backends &
-hsetroot -solid "#1e1c31" &
 ~/.config/polybar/launch.sh &
 setup-monitors &
+hsetroot -solid "#1e1c31" &
 
 monitor_count=$(monitor-count)
 

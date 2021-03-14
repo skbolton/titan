@@ -27,7 +27,7 @@
     # Possible values are "left", "center" and "right"
     alignment = left
 
-    icon_path = /usr/share/icons/Suru/16x16/status/
+    icon_path = /usr/share/icons/Tela-purple-dark/16@2x/status/:/usr/share/icons/Tela-purple-dark/16@2x/devices:/usr/share/icons/Tela-purple-dark/16@2x/actions
 
 
     # The frequency with wich text that is longer than the notification
@@ -56,7 +56,7 @@
     # right side of the screen.  Y is measured from the top and down respectevly.
     # The width can be negative. In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "350x100-18+18"
+    geometry = "350x100-18+36"
 
     # The transparency of the window. range: [0; 100]
     # This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
@@ -83,7 +83,7 @@
     follow = mouse
     
     icon_position = left
-    max_icon_size = 48
+    max_icon_size = 56
 
     # should a notification popped up from history be sticky or
     # timeout as if it would normally do.
@@ -150,13 +150,13 @@
     background = "#2D2B40"
     foreground = "#cbe3e7"
     frame_color = "#100E23"
-    timeout = 5
+    timeout = 0
 
 [urgency_normal]
     background = "#2D2B40"
     foreground = "#cbe3e7"
     frame_color = "#1e1c31"
-    timeout = 7
+    timeout = 0
 
 [urgency_critical]
     background = "#2D2B40"

@@ -13,27 +13,60 @@ bspwm-config:
     - user: {{ salt["environ.get"]("USER") }}
     - force: True
 
-has-two-monitors-script:
+monitor-count:
   file.managed:
-    - name: {{ salt["environ.get"]("HOME")}}/.local/bin/has-two-monitors
+    - name: {{ salt["environ.get"]("HOME") }}/.local/bin/monitor-count
     - user: {{ salt["environ.get"]("USER") }}
     - contents: |
-        secondary_monitor=$(xrandr --query | grep 'DisplayPort-1')
-        if [[ $secondary_monitor = *connected* ]]; then
-          exit 0
-        else
-          exit 1
-        fi
+        xrandr --query | rg "\bconnected" --count
 
-second-monitor-script:
+setup-monitors:
   file.managed:
-    - name: {{ salt["environ.get"]("HOME")}}/.local/bin/setup-second-monitor
+    - name: {{ salt["environ.get"]("HOME") }}/.local/bin/setup-monitors
     - user: {{ salt["environ.get"]("USER") }}
     - contents: |
-        # This is for setting up multi monitors in bspwm if they exist
-        has-two-monitors && \
-        xrandr --output DisplayPort-0 --primary --mode 5120x2160 --rotate normal \
-        --output DisplayPort-1 --mode 1920x1080 --rotate normal --above DisplayPort-0 \
+        monitors=$(monitor-count)
+        case $monitors in
+          1)
+            echo "one"
+            xrandr \
+              --output DisplayPort-0 \
+                --primary \
+                --mode 5120x2160 \
+                --pos 1440x1440 \
+                --rotate normal \
+          ;;
+          2)
+            echo "two"
+            xrandr \
+              --output DisplayPort-0 \
+                --primary \
+                --mode 5120x2160 \
+                --pos 1440x1440 \
+                --rotate normal \
+              --output DisplayPort-1 \
+                --mode 2560x1440 \
+                --pos 2720x0 \
+                --rotate normal \
+          ;;
+          3)
+            echo "three"
+            xrandr \
+              --output DisplayPort-0 \
+                --primary \
+                --mode 5120x2160 \
+                --pos 1440x1440 \
+                --rotate normal \
+              --output DisplayPort-1 \
+                --mode 2560x1440 \
+                --pos 2720x0 \
+                --rotate normal \
+              --output HDMI-A-0 \
+                --mode 2560x1440 \
+                --pos 0x1240  \
+                --rotate right \
+          ;;
+        esac
 
 sxhkd:
   pkg.installed

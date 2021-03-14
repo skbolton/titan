@@ -1,0 +1,83 @@
+#   ______     ______     ______   __     __     __    __    
+#  /\  == \   /\  ___\   /\  == \ /\ \  _ \ \   /\ "-./  \   
+#  \ \  __<   \ \___  \  \ \  _-/ \ \ \/ ".\ \  \ \ \-./\ \  
+#   \ \_____\  \/\_____\  \ \_\    \ \__/".~\_\  \ \_\ \ \_\ 
+#    \/_____/   \/_____/   \/_/     \/_/   \/_/   \/_/  \/_/ 
+#
+# SUPER key for BSPWM commands
+
+# quit/restart bspwm
+super + shift + {q,r}
+	bspc {quit,wm -r}
+
+# WINDOW LIFECYCLE
+# ========================================================
+
+super + q
+	bspc node -k
+
+# close a window
+super + w
+	bspc node -c
+
+# set the node flags
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+# MOVEMENTS
+# ========================================================
+
+# swap or move to given direction
+super + {_,ctrl} + {h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# swap the current node and the biggest node
+super + g
+	bspc node -s biggest.local
+
+# focus the next/previous desktop in the current monitor
+super + {shift + Tab, Tab}
+	bspc desktop -f {prev,next}.local
+
+# focus the older or newer node in the focus history
+super + {o,i}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
+
+# focus or send to the given desktop
+super + {_, ctrl + }{1-9,0}
+	bspc {desktop ,node -d} '{1-9,10}' -f
+
+
+# LAYOUT
+# ========================================================
+
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
+
+# expand windows
+super + {Left,Down,Up,Right}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# expand windows more
+super + shift + {Left,Down,Up,Right}
+	bspc node -z {left -40 0,bottom 0 40,top 0 -40,right 40 0}
+
+# contract windows
+super + alt + {Left,Down,Up,Right}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# Equalize all windows to same size
+super + equal
+	bspc node @/ -E
+
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+

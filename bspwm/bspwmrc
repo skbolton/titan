@@ -4,7 +4,7 @@ setup-monitors &
 picom --experimental-backends &
 dunst -conf ~/.config/dunst/dunstrc &
 ~/.config/polybar/launch.sh &
-sxhkd &
+sxhkd ~/.config/bspwm/bspwm-sxhkdrc &
 hsetroot -solid "#1e1c31"
 
 monitor_count=$(monitor-count)

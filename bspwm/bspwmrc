@@ -35,7 +35,7 @@ bspc config gapless_monocle      true
 bspc config focus_follows_pointer      true
 
 bspc rule -a kitty desktop='1'
-bspc rule -a kitty-tasks desktop='8'
+bspc rule -a kitty-tasks desktop='8' locked=true
 bspc rule -a kitty-monitor state=floating
 bspc rule -a firefox desktop='2'
 bspc rule -a zoom desktop='2' follow=on
@@ -53,8 +53,8 @@ slack &
 firefox &
 kitty &
 kitty --listen-on=unix:/tmp/kitty-scratch --class kitty-scratch --config ~/.config/kitty/kitty-scratch.conf --hold --directory=$HOME &
-kitty --listen-on=unix:/tmp/kitty-tasks --class kitty-tasks --hold &
 nextcloud &
+kitty --listen-on=unix:/tmp/kitty-tasks --class kitty-tasks --hold &
 
 sleep 5
 bspc desktop '5' -f

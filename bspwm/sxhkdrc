@@ -14,6 +14,14 @@ alt + period
 super + slash
   toggle-program kitty-scratch
 
+alt + semicolon
+	kitty --class kitty-monitor bashtop
+
+alt + t
+  kitty @ --to=unix:/tmp/kitty-tasks send_text "clear && task\r"; \
+  bspc desktop '8' -f; \
+  bspc node local.locked -f
+
 # terminal emulator
 alt + {_, shift +} Return
 	{kitty,kitty --config=~/.config/kitty/kitty-scratch.conf --listen-on=unix:/tmp/kitty-scratch --class kitty-scratch --hold --directory=$HOME}

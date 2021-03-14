@@ -70,16 +70,12 @@ super + w
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
-# focus the node in the given direction
-alt + {_,shift + }{h,j,k,l}
-	bspc node -{f,s} {west,south,north,east}
-
 # MOVEMENTS
 # ========================================================
 
-# swap by direction
-super + ctrl + {h,j,k,l}
-	bspc node -s {west,south,north,east}
+# swap or move to given direction
+super + {_,ctrl} + {h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
 
 # swap the current node and the biggest node
 super + g

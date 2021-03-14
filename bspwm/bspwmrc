@@ -25,7 +25,7 @@ esac
 
 bspc config border_width        1
 bspc config normal_border_color  "#585273"
-bspc config focused_border_color "#63F2F1"
+bspc config focused_border_color "#87DFEB"
 bspc config window_gap          12
 bspc config top_padding         42
 

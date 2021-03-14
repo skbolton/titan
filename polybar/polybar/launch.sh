@@ -22,6 +22,7 @@ case $monitor_count in
   3)
     polybar -c ~/.config/polybar/config.ini top-main &
     polybar -c ~/.config/polybar/config.ini top-external &
+    polybar -c ~/.config/polybar/config.ini third &
   ;;
 esac
 

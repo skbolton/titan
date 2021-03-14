@@ -5,6 +5,7 @@ dunst -conf ~/.config/dunst/dunstrc &
 picom --experimental-backends &
 hsetroot -solid "#1e1c31" &
 ~/.config/polybar/launch.sh &
+setup-monitors &
 
 monitor_count=$(monitor-count)
 
@@ -18,17 +19,9 @@ case $monitor_count in
   ;;
   3)
     bspc monitor 'DisplayPort-0' -d 1 2 3 4
-    bspc monitor 'DisplayPort-1' -d 5 6
-    bspc monitor 'HDMI-A-0' -d 7 8
+    bspc monitor 'DisplayPort-1' -d 5
+    bspc monitor 'HDMI-A-0' -d 6
 esac
-
-if has-two-monitors ; then
-  bspc monitor 'DisplayPort-0' -d 1 2 3 4
-  bspc monitor 'DisplayPort-1' -d 5 6
-
-else
-  bspc monitor 1 2 3 4 5 6
-fi
 
 bspc config border_width        1
 bspc config normal_border_color  "#585273"
@@ -43,13 +36,15 @@ bspc config gapless_monocle      true
 bspc config focus_follows_pointer      true
 
 bspc rule -a kitty desktop='1'
+bspc rule -a kitty-tasks desktop='6'
 bspc rule -a firefox desktop='2'
 bspc rule -a zoom desktop='2' follow=on
 bspc rule -a nitrogen manage=off
 bspc rule -a Lxappearance 							follow=on		state=floating
-bspc rule -a discord desktop='4'
-bspc rule -a Slack desktop='5'
-bspc rule -a Mailspring desktop='6'
+bspc rule -a discord desktop='3'
+bspc rule -a Slack desktop='3'
+bspc rule -a Mailspring desktop='4'
+bspc rule -a Minetime desktop='6'
 bspc rule -a kitty-scratch sticky=true hidden=true
 
 mailspring &
@@ -57,14 +52,19 @@ discord &
 slack &
 firefox &
 kitty &
-THEME=gruvbox-light kitty --listen-on=unix:/tmp/kitty-scratch --class kitty-scratch --config ~/.config/kitty/kitty-scratch.conf --hold --directory=$HOME &
+kitty --listen-on=unix:/tmp/kitty-scratch --class kitty-scratch --config ~/.config/kitty/kitty-scratch.conf --hold --directory=$HOME &
 nextcloud &
 
-# Launch windows where selector is not working
-bspc desktop '3' -f
-spotify &
-sleep 2
+sleep 5
+bspc desktop '5' -f
+flatpak run com.spotify.Client &
+sleep 3
 
-kitty @ --to=unix:/tmp/kitty-scratch set-colors --all $HOME/.config/kitty/gruvbox-light.conf
-kitty @ --to=unix:/tmp/kitty-scratch send_text "v ~/Documents/sync/Knowledge/Coding/index.md\r"
+bspc desktop '6' -f
+minetime &
+sleep 5
+kitty --listen-on=unix:/tmp/kitty-tasks --class kitty-tasks --hold &
 
+kitty @ --to=unix:/tmp/kitty-scratch send_text "v ~/Documents/knowledge/\r"
+
+bspc desktop '1' -f

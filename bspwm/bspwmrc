@@ -53,7 +53,6 @@ slack &
 firefox &
 kitty &
 kitty --listen-on=unix:/tmp/kitty-scratch --class kitty-scratch --config ~/.config/kitty/kitty-scratch.conf --hold --directory=$HOME &
-nextcloud &
 kitty --listen-on=unix:/tmp/kitty-tasks --class kitty-tasks --hold &
 
 sleep 5

@@ -69,9 +69,13 @@ alt + {_,shift + }{h,j,k,l}
 # MOVEMENTS
 # ========================================================
 
+# swap by direction
+super + ctrl + {h,j,k,l}
+	bspc node -s {west,south,north,east}
+
 # swap the current node and the biggest node
 super + g
-	bspc node -s biggest
+	bspc node -s biggest.local
 
 # focus the next/previous desktop in the current monitor
 super + {shift + Tab, Tab}

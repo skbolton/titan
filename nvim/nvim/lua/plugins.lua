@@ -90,12 +90,22 @@ packer.startup(function()
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}, {'nvim-web-devicons'}},
     config = function()
-      require('telescope').setup{
+      local telescope = require('telescope')
+      local builtin = require('telescope.builtin')
+      local actions = require('telescope.actions')
+      -- configure telescope
+      telescope.setup{
         defaults = {
           prompt_position = 'top',
           sorting_strategy = 'ascending'
         }
       }
+      -- picker specific options
+      builtin.git_branches({ attach_mappings = function(_, map)
+        map('i', '<c-d>', actions.git_delete_branch)
+        map('n', '<c-d>', actions.git_delete_branch)
+        return true
+      end})
     end
   }
   -- Git

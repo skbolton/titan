@@ -48,7 +48,7 @@ work () {
       task +work
     fi
   else
-    task add +in $@
+    task add +work $@
   fi
 }
 

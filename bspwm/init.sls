@@ -71,3 +71,9 @@ setup-monitors:
           ;;
         esac
 
+bspwm-specific-sxhkd:
+  file.symlink:
+    - name: {{ salt["environ.get"]("HOME") }}/.config/bspwm/bspwm-sxhkdrc
+    - target: {{ salt["environ.get"]("HOME") }}/titan/bspwm/bspwm-sxhkdrc
+    - user: {{ salt["environ.get"]("USER") }}
+    - force: True

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# get state before toggle
+dunst_paused=$(dunstctl is-paused)
+
+# toggle notifications
+dunstctl set-paused toggle
+
+# if we were paused we just toggled, time for a greeting
+if [ $dunst_paused = "true" ]; then
+  notify-send "Welcome Back" -i notifications
+fi
+
+# now we can lookup what state we are in with notifications script
+~/.config/polybar/scripts/notifications-status

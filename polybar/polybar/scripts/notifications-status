@@ -1,0 +1,10 @@
+#!/bin/bash
+
+dunst_paused=$(dunstctl is-paused)
+notification_icon=" "
+
+if [ $dunst_paused = "true" ]; then
+  echo "%{F#FFE6B3}$notification_icon"
+else
+  echo "%{F#A1EFD3}$notification_icon"
+fi

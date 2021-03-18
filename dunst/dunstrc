@@ -27,7 +27,7 @@
     # Possible values are "left", "center" and "right"
     alignment = left
 
-    icon_path = /usr/share/icons/Tela-purple-dark/16@2x/status/:/usr/share/icons/Tela-purple-dark/16@2x/devices:/usr/share/icons/Tela-purple-dark/16@2x/actions
+    icon_path = /usr/share/icons/Tela-purple-dark/24@2x/status/:/usr/share/icons/Tela-purple-dark/24@2x/devices:/usr/share/icons/Tela-purple-dark/24@2x/actions
 
 
     # The frequency with wich text that is longer than the notification
@@ -56,7 +56,7 @@
     # right side of the screen.  Y is measured from the top and down respectevly.
     # The width can be negative. In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "350x100-18+36"
+    geometry = "350x200-18+36"
 
     # The transparency of the window. range: [0; 100]
     # This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
@@ -96,10 +96,10 @@
 
     # Draw a line of 'separatpr_height' pixel height between two notifications.
     # Set to 0 to disable
-    separator_height = 2
+    separator_height = 1
 
     # padding between text and separator
-    padding = 8
+    padding = 16
 
     # horizontal padding
     horizontal_padding = 16 
@@ -110,7 +110,7 @@
     #  * foreground: use the same color as the foreground
     #  * frame: use the same color as the frame.
     #  * anything else will be interpreted as a X color
-    separator_color = foreground
+    separator_color = #585273
 
     # print a notification on startup
     # This is mainly for error detection, since dbus (re-)starts dunst
@@ -118,7 +118,7 @@
     startup_notification = false
 
     # dmenu path
-    dmenu = /usr/bin/dmenu -p dunst:
+    dmenu = /usr/bin/rofi -show drun -show-icons
 
     # browser for opening urls in context menu
     browser = /usr/bin/firefox -new-tab
@@ -134,10 +134,10 @@
     # xev might be helpful to find names for keys
 
     # close notification
-    close = ctrl+space
+    # close = ctrl+space
 
     # close all notifications
-    close_all = ctrl+shift+space
+    # close_all = ctrl+shift+space
 
     # redisplay last message(s)
     # On the US keyboard layout 'grave' is normally above TAB and left of '1'.

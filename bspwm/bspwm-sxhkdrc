@@ -81,3 +81,13 @@ super + equal
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+# NOTIFICATIONS
+# ========================================================
+
+# close notification
+super + at
+  dunstctl close
+
+# recall notifications
+super + numbersign
+ dunstctl history-pop

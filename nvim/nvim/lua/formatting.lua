@@ -11,7 +11,7 @@ g.ale_linters = {
   elixir = {'credo'}
 }
 
-g.ale_fix_on_save = false
+g.ale_fix_on_save = true
 g.ale_lint_on_save = true
 g.ale_completion_enabled = false
 g.ale_javascript_prettier_use_local_config = 1

@@ -1,4 +1,4 @@
-name: <%= @settings["name"].split(/[-_]/).map(&:capitalize).join(' ') %>
+name: <%= @settings["name"].upcase().split(/[-_]/).join(' ') %>
 root: <%= @settings["root"] %>
 
 windows:

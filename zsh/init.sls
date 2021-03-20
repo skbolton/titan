@@ -1,6 +1,7 @@
 include:
   - asdf
   - direnv
+  - cli-utils
 
 zsh:
   pkg.installed

@@ -4,5 +4,6 @@ direnv:
     - name: brew install direnv
   {% else %}
   cmd.run:
-    - name: yay -S direnv
+    - name: paru -S direnv --skipreview --noconfirm
+    - runas: orlando
   {% endif %}

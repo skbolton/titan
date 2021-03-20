@@ -10,6 +10,9 @@ bpytop:
 skim:
   pkg.installed
 
+jq:
+  pkg.installed
+
 op:
   cmd.run:
     - names:

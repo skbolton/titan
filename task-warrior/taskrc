@@ -34,6 +34,7 @@ urgency.project.coefficient=0
 urgency.scheduled.coefficient=2
 urgency.user.tag.next.coefficient=1
 urgency.user.tag.pr.coefficient=2
+urgency.uda.priority.H.coefficient=10
 
 # Theme
 rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.

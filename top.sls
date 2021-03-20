@@ -12,7 +12,6 @@ base:
     - tmux
     - kitty
     - task-warrior
-    - ranger
     - direnv
     - starship
     - terminfo

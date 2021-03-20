@@ -13,9 +13,9 @@ asdf-rust:
 
 default-crates:
   file.managed:
-    - name: {{ salt["environ.get"]("HOME") }}/.default-cargo-crates
+    - name: /home/orlando/.default-cargo-crates
     - contents:
       - dijo
-    - user: {{ salt["environ.get"]("USER") }}
+    - user: orlando
 
 

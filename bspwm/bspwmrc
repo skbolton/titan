@@ -1,5 +1,10 @@
 #! /bin/sh
 
+# Helper for bspwm client
+_bc () {
+  bspc $@
+}
+
 #   ______     __  __     ______   ______     ______     ______   ______     ______     ______  
 #  /\  __ \   /\ \/\ \   /\__  _\ /\  __ \   /\  ___\   /\__  _\ /\  __ \   /\  == \   /\__  _\ 
 #  \ \  __ \  \ \ \_\ \  \/_/\ \/ \ \ \/\ \  \ \___  \  \/_/\ \/ \ \  __ \  \ \  __<   \/_/\ \/ 
@@ -29,16 +34,16 @@ monitor_count=$(monitor-count)
 
 case $monitor_count in
   1)
-    bspc monitor 1 2 3 4 5 6 7 8 9
+    _bc monitor 1 2 3 4 5 6 7 8 9
   ;;
   2)
-    bspc monitor 'DisplayPort-0' -d 1 2 3 4
-    bspc monitor 'DisplayPort-1' -d 5 6 7
+    _bc monitor 'DisplayPort-0' -d 1 2 3 4
+    _bc monitor 'DisplayPort-1' -d 5 6 7
   ;;
   3)
-    bspc monitor 'DisplayPort-0' -d 1 2 3 4
-    bspc monitor 'DisplayPort-1' -d 5 6 7
-    bspc monitor 'HDMI-A-0' -d 8 9
+    _bc monitor 'DisplayPort-0' -d 1 2 3 4
+    _bc monitor 'DisplayPort-1' -d 5 6 7
+    _bc monitor 'HDMI-A-0' -d 8 9
 esac
 
 #   ______     ______     __   __     ______   __     ______    
@@ -48,16 +53,16 @@ esac
 #    \/_____/   \/_____/   \/_/ \/_/   \/_/     \/_/   \/_____/ 
 #      
 
-bspc config border_width        1
-bspc config normal_border_color  "#585273"
-bspc config focused_border_color "#87DFEB"
-bspc config window_gap          12
-bspc config top_padding         42
+_bc config border_width        1
+_bc config normal_border_color  "#585273"
+_bc config focused_border_color "#87DFEB"
+_bc config window_gap          12
+_bc config top_padding         42
 
-bspc config split_ratio          0.65
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
-bspc config focus_follows_pointer      true
+_bc config split_ratio          0.65
+_bc config borderless_monocle   true
+_bc config gapless_monocle      true
+_bc config focus_follows_pointer      true
 
 #   ______     __         __     ______     __   __     ______  
 #  /\  ___\   /\ \       /\ \   /\  ___\   /\ "-.\ \   /\__  _\ 
@@ -70,19 +75,20 @@ bspc config focus_follows_pointer      true
 #   \ \_\ \_\  \ \_____\  \ \_____\  \ \_____\  \/\_____\       
 #    \/_/ /_/   \/_____/   \/_____/   \/_____/   \/_____/       
 #
+# -- This goes there
 
-bspc rule -a kitty desktop='1'
-bspc rule -a kitty-tasks desktop='8' locked=true
-bspc rule -a kitty-monitor state=floating
-bspc rule -a firefox desktop='2'
-bspc rule -a zoom desktop='2' follow=on
-bspc rule -a nitrogen manage=off
-bspc rule -a Lxappearance 							follow=on		state=floating
-bspc rule -a discord desktop='3'
-bspc rule -a Slack desktop='3'
-bspc rule -a Mailspring desktop='4'
-bspc rule -a Minetime desktop='8'
-bspc rule -a kitty-scratch sticky=true hidden=true
+_bc rule -a kitty desktop='1'
+_bc rule -a kitty-tasks desktop='8' locked=true
+_bc rule -a kitty-monitor state=floating
+_bc rule -a firefox desktop='2'
+_bc rule -a zoom desktop='2' follow=on
+_bc rule -a nitrogen manage=off
+_bc rule -a Lxappearance 							follow=on		state=floating
+_bc rule -a discord desktop='3'
+_bc rule -a Slack desktop='3'
+_bc rule -a Mailspring desktop='4'
+_bc rule -a Minetime desktop='8'
+_bc rule -a kitty-scratch sticky=true hidden=true
 
 #   __     __   __     __     ______   __     ______     __        
 #  /\ \   /\ "-.\ \   /\ \   /\__  _\ /\ \   /\  __ \   /\ \       
@@ -105,14 +111,14 @@ kitty --listen-on=unix:/tmp/kitty-scratch --class kitty-scratch --config ~/.conf
 kitty --listen-on=unix:/tmp/kitty-tasks --class kitty-tasks --hold &
 
 sleep 5
-bspc desktop '5' -f
+_bc desktop '5' -f
 flatpak run com.spotify.Client &
 sleep 3
 
-bspc desktop '8' -f
+_bc desktop '8' -f
 minetime &
 sleep 5
 
 kitty @ --to=unix:/tmp/kitty-scratch send_text "v ~/Documents/knowledge/\r"
 
-bspc desktop '1' -f
+_bc desktop '1' -f

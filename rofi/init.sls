@@ -8,3 +8,8 @@ rofi-config:
     - user: orlando
     - force: True
 
+rofi-emoji:
+  cmd.run:
+    - name: paru -S rofi-emoji --noconfirm --skipreview
+    - runas: orlando
+

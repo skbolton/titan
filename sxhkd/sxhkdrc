@@ -30,6 +30,9 @@ alt + {_, shift +} Return
 alt + d
 	rofi -show drun -show-icons -location 0 -yoffset -250
 
+alt + e
+  rofi -show emoji -modi emoji
+
 # screenshot
 alt + shift + 4
   flameshot screen -p ~/Desktop

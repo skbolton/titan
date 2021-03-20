@@ -33,6 +33,9 @@ alt + d
 alt + e
   rofi -show emoji -modi emoji
 
+alt + c
+  rofi -show calc -modi calc -no-show-match -no-sort
+
 # screenshot
 alt + shift + 4
   flameshot screen -p ~/Desktop

@@ -13,3 +13,6 @@ rofi-emoji:
     - name: paru -S rofi-emoji --noconfirm --skipreview
     - runas: orlando
 
+rofi-calc:
+  pkg.installed
+

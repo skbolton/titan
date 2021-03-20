@@ -1,5 +1,9 @@
 include:
   - sxhkd
+  - cli-utils
+  - dunst
+  - polybar
+  - rofi
 
 bspwm:
   pkg.installed

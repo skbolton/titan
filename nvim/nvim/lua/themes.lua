@@ -6,6 +6,8 @@ vim.cmd("hi Type gui=italic")
 vim.cmd("hi htmlArg cterm=italic")
 vim.cmd("hi Type cterm=italic")
 
+vim.g.embark_terminal_italics = true
+
 local embark = {
   bg_dark = "#100E23",
   bg = "#1e1c31",

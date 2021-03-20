@@ -11,6 +11,6 @@ kitty:
 
 configs:
   file.symlink:
-    - name: {{ salt["environ.get"]("HOME") }}/.config/kitty
-    - target: {{ salt["environ.get"]("HOME") }}/titan/kitty/kitty
-    - user: {{ salt["environ.get"]("USER") }}
+    - name: /home/orlando/.config/kitty
+    - target: /home/orlando/titan/kitty/kitty
+    - user: orlando

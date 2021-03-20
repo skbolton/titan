@@ -3,8 +3,8 @@ rofi:
 
 rofi-config:
   file.symlink:
-    - name: {{ salt["environ.get"]("HOME") }}/.config/rofi
-    - target: {{ salt["environ.get"]("HOME") }}/titan/rofi/rofi
-    - user: {{ salt["environ.get"]("USER") }}
+    - name: /home/orlando/.config/rofi
+    - target: /home/orlando/titan/rofi/rofi
+    - user: orlando
     - force: True
 

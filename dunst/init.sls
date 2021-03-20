@@ -3,11 +3,11 @@ dunst:
 
 dunst-config-directory:
   file.directory:
-    - name: {{ salt["environ.get"]("HOME") }}/.config/dunst
-    - user: {{ salt["environ.get"]("USER") }}
+    - name: /home/orlando/.config/dunst
+    - user: orlando
 
 dunstrc:
   file.symlink:
-    - name: {{ salt["environ.get"]("HOME") }}/.config/dunst/dunstrc
-    - target: {{ salt["environ.get"]("HOME") }}/titan/dunst/dunstrc
-    - user: {{ salt["environ.get"]("USER") }}
+    - name: /home/orlando/.config/dunst/dunstrc
+    - target: /home/orlando/titan/dunst/dunstrc
+    - user: orlando

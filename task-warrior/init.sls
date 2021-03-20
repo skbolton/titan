@@ -1,8 +1,8 @@
 task-configs:
   file.symlink:
-    - name: {{ salt["environ.get"]("HOME") }}/.taskrc
-    - target: {{ salt["environ.get"]("HOME") }}/titan/task-warrior/taskrc
-    - user: {{ salt["environ.get"]("USER") }}
+    - name: /home/orlando/.taskrc
+    - target: /home/orlando/titan/task-warrior/taskrc
+    - user: orlando
     - force: True
 
 tasklib:
@@ -12,7 +12,7 @@ tasklib:
 # Sync the current years task to machine
 taskdata:
   file.symlink:
-    - name: {{ salt["environ.get"]("HOME") }}/.task
-    - target: {{ salt["environ.get"]("HOME") }}/Documents/sync/Tasks/current-year/
-    - user: {{ salt["environ.get"]("USER") }}
+    - name: /home/orlando/.task
+    - target: /home/orlando/Documents/sync/Tasks/current-year/
+    - user: orlando
     - force: True

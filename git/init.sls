@@ -6,22 +6,21 @@ git:
 
 gitconfig:
   file.symlink:
-    - name: {{ salt["environ.get"]("HOME") }}/.gitconfig
-    - target: {{ salt["environ.get"]("HOME") }}/titan/git/gitconfig
-    - user: {{ salt["environ.get"]("USER") }}
+    - name: /home/orlando/.gitconfig
+    - target: /home/orlando/titan/git/gitconfig
+    - user: orlando
 
 gitignore:
   file.symlink:
-    - name: {{ salt["environ.get"]("HOME") }}/.gitignore_global
-    - target: {{ salt["environ.get"]("HOME") }}/titan/git/gitignore
-    - user: {{ salt["environ.get"]("USER") }}
+    - name: /home/orlando/.gitignore_global
+    - target: /home/orlando/titan/git/gitignore
+    - user: orlando
 
 git-branches:
   file.symlink:
-    - name: {{ salt["environ.get"]("HOME") }}/.local/bin/git-branches
-    - target: {{ salt["environ.get"]("HOME") }}/titan/git/git-branches
-    - user: {{ salt["environ.get"]("USER") }}
-    - user: {{ salt["environ.get"]("USER") }}
+    - name: /home/orlando/.local/bin/git-branches
+    - target: /home/orlando/titan/git/git-branches
+    - user: orlando
 
 github-cli:
   pkg.installed:

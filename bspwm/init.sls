@@ -6,27 +6,27 @@ bspwm:
 
 bspwm-config-directory:
   file.directory:
-    - name: {{ salt["environ.get"]("HOME") }}/.config/bspwm
-    - user: {{ salt["environ.get"]("USER") }}
+    - name: /home/orlando/.config/bspwm
+    - user: orlando
 
 bspwm-config:
   file.symlink:
-    - name: {{ salt["environ.get"]("HOME") }}/.config/bspwm/bspwmrc
-    - target: {{ salt["environ.get"]("HOME") }}/titan/bspwm/bspwmrc
-    - user: {{ salt["environ.get"]("USER") }}
+    - name: /home/orlando/.config/bspwm/bspwmrc
+    - target: /home/orlando/titan/bspwm/bspwmrc
+    - user: orlando
     - force: True
 
 monitor-count:
   file.managed:
-    - name: {{ salt["environ.get"]("HOME") }}/.local/bin/monitor-count
-    - user: {{ salt["environ.get"]("USER") }}
+    - name: /home/orlando/.local/bin/monitor-count
+    - user: orlando
     - contents: |
         xrandr --query | rg "\bconnected" --count
 
 setup-monitors:
   file.managed:
-    - name: {{ salt["environ.get"]("HOME") }}/.local/bin/setup-monitors
-    - user: {{ salt["environ.get"]("USER") }}
+    - name: /home/orlando/.local/bin/setup-monitors
+    - user: orlando
     - contents: |
         monitors=$(monitor-count)
         case $monitors in
@@ -73,7 +73,7 @@ setup-monitors:
 
 bspwm-specific-sxhkd:
   file.symlink:
-    - name: {{ salt["environ.get"]("HOME") }}/.config/bspwm/bspwm-sxhkdrc
-    - target: {{ salt["environ.get"]("HOME") }}/titan/bspwm/bspwm-sxhkdrc
-    - user: {{ salt["environ.get"]("USER") }}
+    - name: /home/orlando/.config/bspwm/bspwm-sxhkdrc
+    - target: /home/orlando/titan/bspwm/bspwm-sxhkdrc
+    - user: orlando
     - force: True

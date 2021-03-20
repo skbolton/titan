@@ -4,5 +4,5 @@ amethyst-installed:
 
 config:
   file.symlink:
-    - name: {{ salt["environ.get"]("HOME") }}/.amethyst
-    - target: {{ salt["environ.get"]("HOME") }}/titan/amethyst/.amethyst
+    - name: /home/orlando/.amethyst
+    - target: /home/orlando/titan/amethyst/.amethyst

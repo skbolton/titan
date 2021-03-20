@@ -3,6 +3,6 @@ starship:
 
 starship-config:
   file.symlink:
-    - name: {{ salt["environ.get"]("HOME") }}/.config/starship.toml
-    - target: {{ salt["environ.get"]("HOME") }}/titan/starship/starship.toml
-    - user: {{ salt["environ.get"]("USER") }}
+    - name: /home/orlando/.config/starship.toml
+    - target: /home/orlando/titan/starship/starship.toml
+    - user: orlando

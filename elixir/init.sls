@@ -37,10 +37,10 @@ install-package-toolchains:
 elixir-language-server:
   git.cloned:
     - name: https://github.com/JakeBecker/elixir-ls.git
-    - target: {{ salt["environ.get"]("HOME") }}/.elixir-ls
+    - target: /home/orlando/.elixir-ls
 
   cmd.run:
-    - cwd: {{ salt["environ.get"]("HOME") }}/.elixir-ls
+    - cwd: /home/orlando/.elixir-ls
     - names:
       - mix deps.get
       - mix compile

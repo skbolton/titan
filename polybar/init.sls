@@ -3,6 +3,6 @@ polybar:
 
 polybar-config:
   file.symlink:
-    - name: {{ salt["environ.get"]("HOME") }}/.config/polybar
-    - target: {{ salt["environ.get"]("HOME") }}/titan/polybar/polybar
-    - user: {{ salt["environ.get"]("USER") }}
+    - name: /home/orlando/.config/polybar
+    - target: /home/orlando/titan/polybar/polybar
+    - user: orlando

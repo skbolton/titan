@@ -1,5 +1,5 @@
 terminfos:
   cmd.run:
     - names:
-      - tic -x {{ salt["environ.get"]("HOME") }}/titan/terminfo/xterm-256color-italic.terminfo
-      - tic -x {{ salt["environ.get"]("HOME") }}/titan/terminfo/tmux-256color.terminfo
+      - tic -x /home/orlando/titan/terminfo/xterm-256color-italic.terminfo
+      - tic -x /home/orlando/titan/terminfo/tmux-256color.terminfo

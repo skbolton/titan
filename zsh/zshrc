@@ -25,6 +25,13 @@ alias ltrue="hledger balance --tree --real --empty"
 alias lbalance="hledger balance --tree --auto --empty"
 alias ledit="v $LEDGER_FILE"
 
+# use exa for ls
+alias ls='exa -al --icons --color=always --group-directories-first'
+alias la='exa -a --icons --color=always --group-directories-first'
+alias ll='exa -l --icons --color=always --group-directories-first'
+alias lt='exa -aT --icons --color=always --group-directories-first'
+
+
 tickle () {
     task $@ modify wait:soww
 }
@@ -67,7 +74,8 @@ delta() {
 }
 
 launch() {
-  session_name=$(ls ~/Repos | sk) 
+  # since I override ls for myself need to call original directly
+  session_name=$(command ls ~/Repos | sk) 
   tmuxinator start $session_name 2>/dev/null || tmuxinator start launch name=$session_name root=~/Repos/$session_name
 }
 

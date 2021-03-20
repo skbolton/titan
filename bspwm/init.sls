@@ -4,6 +4,7 @@ include:
   - dunst
   - polybar
   - rofi
+  - picom
 
 bspwm:
   pkg.installed

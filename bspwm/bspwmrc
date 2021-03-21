@@ -28,7 +28,6 @@ dunst -conf ~/.config/dunst/dunstrc &
 ~/.config/polybar/launch.sh &
 # Hotkey Daemon
 sxhkd ~/.config/bspwm/bspwm-sxhkdrc &
-hsetroot -solid "#1e1c31"
 
 monitor_count=$(monitor-count)
 
@@ -122,3 +121,4 @@ sleep 5
 kitty @ --to=unix:/tmp/kitty-scratch send_text "v ~/Documents/knowledge/\r"
 
 _bc desktop '1' -f
+hsetroot -solid "#1e1c31"

@@ -4,6 +4,8 @@ My complete dev environment across Mac and Arch Linux powered by [SaltStack](htt
 
 > Fair warning these dotfiles are optimized for me so make sure if you run any of these commands you are ready to accept the risk of losing your setup on your machine. You are probably better off just copying the actual config from any of my tools instead of running SaltStack commands listed here.
 
+![Desktop](./desktop.png)
+
 ## Setup
 
 The only dependency that needs to be in place is SaltStack. On Mac it's easiest to install with brew and so brew also becomes a dependency.

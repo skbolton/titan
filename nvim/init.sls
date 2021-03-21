@@ -7,6 +7,7 @@ nvim-config:
     - name: /home/orlando/.config/nvim
     - target: /home/orlando/titan/nvim/nvim
     - user: orlando
+    - force: True
 
 vim-packager:
   git.cloned:

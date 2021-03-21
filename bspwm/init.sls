@@ -12,6 +12,7 @@ bspwm:
 bspwm-config-directory:
   file.directory:
     - name: /home/orlando/.config/bspwm
+    - makedirs: True
     - user: orlando
 
 bspwm-config:
@@ -25,6 +26,7 @@ monitor-count:
   file.managed:
     - name: /home/orlando/.local/bin/monitor-count
     - user: orlando
+    - makedirs: True
     - contents: |
         xrandr --query | rg "\bconnected" --count
 
@@ -32,6 +34,7 @@ setup-monitors:
   file.managed:
     - name: /home/orlando/.local/bin/setup-monitors
     - user: orlando
+    - makedirs: True
     - contents: |
         monitors=$(monitor-count)
         case $monitors in
@@ -80,5 +83,6 @@ bspwm-specific-sxhkd:
   file.symlink:
     - name: /home/orlando/.config/bspwm/bspwm-sxhkdrc
     - target: /home/orlando/titan/bspwm/bspwm-sxhkdrc
+    - makedirs: True
     - user: orlando
     - force: True

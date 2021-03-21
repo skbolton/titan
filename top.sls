@@ -4,29 +4,28 @@
 # - habitica
 base:
   '*':
-    - git
-    - zsh
-    - node
-    - ruby
-    - nvim
-    - tmux
-    - kitty
-    - task-warrior
-    - direnv
-    - starship
-    - terminfo
-    - rust
-    - habits
-
-  'os:MacOS':
-    - match: grain
-    - amethyst
-    - mac-utils
-    - mac-programs
-
-  'os:Manjaro':
-    - match: grain
+    - asdf
     - bspwm
-    - rofi
-    - polybar
+    - cli-utils
+    - direnv
     - dunst
+    - elixir
+    - fonts
+    - git
+    - habits
+    - kitty
+    - nnn
+    - node
+    - nvim
+    - picom
+    - polybar
+    - python
+    - rofi
+    - ruby
+    - rust
+    - starship
+    - sxhkd
+    - task-warrior
+    - terminfo
+    - tmux
+    - zsh

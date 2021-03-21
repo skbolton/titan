@@ -1,9 +1,3 @@
-taskd.certificate=~/Documents/sync/Tasks/Sync/intheam/private.certificate.pem
-taskd.key=~/Documents/sync/Tasks/Sync/intheam/private.key.pem
-taskd.ca=~/Documents/sync/Tasks/Sync/intheam/ca.cert.pem
-taskd.server=taskwarrior.inthe.am:53589
-taskd.credentials=inthe_am/stephenkbolton/8d0ffdbb-c701-4d3b-8735-167dccf3e8ac
-taskd.trust=ignore hostname
 # aliases
 alias.@ = context
 

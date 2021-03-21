@@ -9,12 +9,6 @@ nvim-config:
     - user: orlando
     - force: True
 
-vim-packager:
-  git.cloned:
-    - name: https://github.com/kristijanhusak/vim-packager
-    - target: /home/orlando/.config/nvim/pack/packager/opt/vim-packager
-    - user: orlando
-
 vim-packer:
   git.cloned:
     - name: https://github.com/wbthomason/packer.nvim

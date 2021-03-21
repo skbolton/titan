@@ -1,3 +1,6 @@
+include:
+  - fonts
+
 polybar:
   pkg.installed
 

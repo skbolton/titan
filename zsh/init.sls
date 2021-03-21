@@ -6,6 +6,16 @@ include:
 zsh:
   pkg.installed
 
+starship:
+  pkg.installed
+
+starship-config:
+  file.symlink:
+    - name: /home/orlando/.config/starship.toml
+    - target: /home/orlando/titan/zsh/starship.toml
+    - makedirs: True
+    - user: orlando
+
 clear-oh-my-zsh:
   file.absent:
     - name: /home/orlando/.oh-my-zsh

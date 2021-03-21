@@ -23,7 +23,6 @@ base:
     - rofi
     - ruby
     - rust
-    - starship
     - sxhkd
     - task-warrior
     - terminfo

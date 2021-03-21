@@ -21,5 +21,8 @@ op:
     - runas: orlando
     - unless: paru -Qi 1password-cli
 
+hsetroot:
+  pkg.installed
+
   
   

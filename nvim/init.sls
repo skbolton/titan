@@ -15,9 +15,3 @@ vim-packer:
     - target: /home/orlando/.local/share/nvim/site/pack/packager/opt/packer.nvim
     - user: orlando
 
-coc-settings:
-  file.symlink:
-    - name: /home/orlando/.config/nvim/coc-settings.json
-    - target: /home/orlando/titan/nvim/coc-settings.json
-    - user: orlando
-

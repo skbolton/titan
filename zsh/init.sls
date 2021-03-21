@@ -42,7 +42,7 @@ link-zshenv:
 
 link-zsh:
   file.symlink:
-  - name: /home/orlando/.config/.zshrc
+  - name: /home/orlando/.config/zsh/.zshrc
   - target: /home/orlando/titan/zsh/zshrc
   - user: orlando
 

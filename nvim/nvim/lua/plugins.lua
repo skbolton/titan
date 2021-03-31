@@ -97,6 +97,7 @@ packer.startup(function()
       telescope.setup{
         defaults = {
           prompt_position = 'top',
+          prompt_prefix = '  ',
           sorting_strategy = 'ascending'
         }
       }

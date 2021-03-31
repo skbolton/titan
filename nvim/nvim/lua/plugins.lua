@@ -100,12 +100,6 @@ packer.startup(function()
           sorting_strategy = 'ascending'
         }
       }
-      -- picker specific options
-      builtin.git_branches({ attach_mappings = function(_, map)
-        map('i', '<c-d>', actions.git_delete_branch)
-        map('n', '<c-d>', actions.git_delete_branch)
-        return true
-      end})
     end
   }
   -- Git

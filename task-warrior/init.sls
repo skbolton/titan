@@ -1,3 +1,6 @@
+task:
+  pkg.installed
+
 task-configs:
   file.symlink:
     - name: /home/orlando/.taskrc

@@ -63,26 +63,26 @@ local function attach(client)
 
   protocol.CompletionItemKind = {
     ' '; -- Text
-    '';  -- Method
-    'ﬦ'; -- Function
-    ''; -- Constructor
-    ''; -- Field
+    ' ';  -- Method
+    ' '; -- Function
+    ' '; -- Constructor
+    ' '; -- Field
     ' '; --Variable
-    ''; -- Class
-    ' '; -- Interface
-    ' '; -- Module
-    ' '; -- Property
+    ' '; -- Class
+    ' '; -- Interface
+    ' '; -- Module
+    ' '; -- Property
     ''; -- Unit
     ''; -- Value
-    ''; -- Enum
+    ' '; -- Enum
     ''; -- Keyword
-    ' '; -- Snippet
+    ' '; -- Snippet
     ' '; -- Color
     ' '; -- file
     ''; -- Reference
-    ' '; -- Folder
-    ''; -- EnumMember
-    ' '; -- Constant
+    ' '; -- Folder
+    ' '; -- EnumMember
+    ' '; -- Constant
     ''; -- Struct
     ''; -- Event
     ''; -- Operator

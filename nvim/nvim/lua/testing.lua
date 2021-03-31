@@ -7,7 +7,7 @@ g.neomake_open_list = true
 g['test#strategy'] = {
   nearest = 'neomake',
   file = 'neomake',
-  suite = 'neovim'
+  suite = 'neomake'
 }
 g['test#neovim#term_position'] = 'vert'
 g.neomake_warning_sign = {

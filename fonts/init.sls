@@ -24,3 +24,15 @@ iosevka:
     - runas: orlando
     - unless: paru -Qi ttf-iosevka
 
+stellar:
+  file.symlink:
+    - name: /home/orlando/.local/share/fonts/Stellar
+    - target: /home/orlando/titan/fonts/Stellar
+    - user: orlando
+
+victor-mono:
+  file.symlink:
+    - name: /home/orlando/.local/share/fonts/VictorMonoNerdFont
+    - target: /home/orlando/titan/fonts/VictorMono Nerd Font/
+    - user: orlando
+

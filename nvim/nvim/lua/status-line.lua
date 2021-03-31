@@ -1,5 +1,6 @@
 local testing = require('testing')
 local gl = require('galaxyline')
+local condition = require('galaxyline.condition')
 local themes = require('themes')
 local gls = gl.section
 gl.short_line_list = {'NvimTree','vista_kind','dbui'}
@@ -14,6 +15,30 @@ local buffer_not_empty = function()
   return false
 end
 
+local function file_readonly()
+  if vim.bo.filetype == 'help' then
+    return ''
+  end
+  if vim.bo.readonly == true then
+    return '   '
+  end
+  return ''
+end
+
+local file_name = function()
+  local file = vim.fn.expand('%:t')
+  if vim.fn.empty(file) == 1 then return '' end
+  if string.len(file_readonly()) ~= 0 then
+    return file .. file_readonly(readonly_icon)
+  end
+  if vim.bo.modifiable then
+    if vim.bo.modified then
+      return file .. '  '
+    end
+  end
+  return file .. ' '
+end
+
 local server_attached = function()
   return vim.lsp.buf_get_clients()[1] ~= nil
 end
@@ -21,14 +46,17 @@ end
 local active_lsp = function()
   active_client = vim.lsp.buf_get_clients()[1]
   if active_client ~= nil then
-    return '鷺' .. active_client.name
+    vim.api.nvim_command('hi GalaxyLanguageServer guifg=' ..colors.green)
+  else
+    vim.api.nvim_command('hi GalaxyLanguageServer guifg=' ..colors.fg_dark)
   end
 
-  return '鷺------'
+  return ' '
 end
 
 local testing_results = function()
   local test_colors = {
+    init = colors.fg_dark,
     passing = colors.blue,
     running = colors.yellow,
     failing = colors.red
@@ -36,12 +64,14 @@ local testing_results = function()
 
   vim.api.nvim_command('hi GalaxyTestResults guifg=' ..test_colors[testing.TESTING_STATUS])
 
-  if testing.TESTING_STATUS == 'passing' then
-    return "∙ PASS"
+  if testing.TESTING_STATUS == 'init' then
+    return " "
+  elseif testing.TESTING_STATUS == 'passing' then
+    return " "
   elseif testing.TESTING_STATUS == 'running' then
-    return "∙ CHECK"
+    return " "
   elseif testing.TESTING_STATUS == 'failing' then
-    return "∙ FAIL"
+    return " "
   end
 end
 
@@ -52,6 +82,13 @@ end
 -- LEFT
 -----------------------------------------------------------
 gls.left[1] = {
+  Embark = {
+    provider = function() return '  ' end,
+    separator = ' '
+  }
+}
+
+gls.left[2] = {
   ViMode = {
     provider = function()
       -- auto change color according to vim mode
@@ -94,8 +131,7 @@ gls.left[1] = {
       local alias = alias[mode]
       vim.api.nvim_command('hi GalaxyViMode guifg=' .. color)
 
-      -- return '   ' .. alias
-      return ' 異' .. alias
+      return alias
     end,
     separator = ' ',
     separator_highlight = {'NONE', colors.bg},
@@ -103,15 +139,15 @@ gls.left[1] = {
   }
 }
 
-gls.left[2] = {
+gls.left[3] = {
   FileSize = {
     provider = 'FileSize',
     condition = buffer_not_empty,
-    highlight = {colors.fg, colors.bg}
+    highlight = {colors.fg_dark, colors.bg}
   }
 }
 
-gls.left[3] ={
+gls.left[4] ={
   FileIcon = {
     provider = 'FileIcon',
     condition = buffer_not_empty,
@@ -119,29 +155,30 @@ gls.left[3] ={
   }
 }
 
-gls.left[4] = {
+gls.left[5] = {
   FileName = {
-    provider = {'FileName'},
+    provider = file_name,
     condition = buffer_not_empty,
     highlight = {colors.green ,colors.bg,'bold'}
   }
 }
 
-gls.left[5] = {
+gls.left[6] = {
   LineInfo = {
     provider = 'LineColumn',
-    separator = ' ',
+    condition = buffer_not_empty,
     separator_highlight = {'NONE',colors.bg},
-    highlight = {colors.astral0, colors.bg},
+    highlight = {colors.fg_dark, colors.bg},
   },
 }
 
 -- RIGHT
 -----------------------------------------------------------
+
 gls.right[1] = {
   TestResults = {
     provider = testing_results,
-    separator = '  ',
+    -- separator = '',
     separator_highlight = {'NONE',colors.bg},
     highlight = {colors.yellow, colors.bg}
   }
@@ -150,7 +187,7 @@ gls.right[1] = {
 gls.right[2] = {
   LanguageServer = {
     provider = active_lsp,
-    separator = '  ',
+    separator = ' ',
     separator_highlight = {'NONE', colors.bg},
     highlight = {colors.green, colors.bg}
   }
@@ -158,9 +195,16 @@ gls.right[2] = {
 
 gls.right[3] = {
   GitIcon = {
-    provider = function() return ' ' end,
-    condition = require('galaxyline.provider_vcs').check_git_workspace,
-    separator = '  ',
+    -- provider = function() return ' ' end,
+    provider = function()
+      if condition.check_git_workspace() then
+        vim.api.nvim_command('hi GalaxyGitIcon guifg=' ..colors.purple)
+      else
+        vim.api.nvim_command('hi GalaxyGitIcon guifg=' ..colors.fg_dark)
+      end
+      return ' '
+    end,
+    separator = ' ',
     separator_highlight = {'NONE',colors.bg},
     highlight = {colors.purple,colors.bg},
   }
@@ -182,3 +226,8 @@ gls.short_line_left[1] = {
     highlight = {colors.green, colors.bg}
   }
 }
+
+if (os.getenv("NO_SHOW_STATUSLINE")) then
+  gls.left = {}
+  gls.right = {}
+end

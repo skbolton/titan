@@ -27,7 +27,7 @@
     # Possible values are "left", "center" and "right"
     alignment = left
 
-    icon_path = /usr/share/icons/Tela-purple-dark/24@2x/status/:/usr/share/icons/Tela-purple-dark/24@2x/devices:/usr/share/icons/Tela-purple-dark/24@2x/actions
+    icon_path = /usr/share/icons/Tela-purple-dark/16@2x/status/:/usr/share/icons/Tela-purple-dark/16@2x/devices:/usr/share/icons/Tela-purple-dark/16@2x/actions
 
 
     # The frequency with wich text that is longer than the notification
@@ -84,6 +84,7 @@
     
     icon_position = left
     max_icon_size = 56
+    min_icon_size = 24
 
     # should a notification popped up from history be sticky or
     # timeout as if it would normally do.

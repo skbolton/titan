@@ -45,7 +45,7 @@ alt + shift + 3
 
 # make sxhkd reload its configuration files:
 alt + Escape
-	pkill -USR1 -x sxhkd && notify-send "Reloaded sxhkd"
+	pkill -USR1 -x sxhkd && notify-send "Reloaded sxhkd" -i reload
 
 alt + p
- polybar-msg cmd restart && notify-send "Reloaded polybar"
+ polybar-msg cmd restart && notify-send "Reloaded polybar" -i reload

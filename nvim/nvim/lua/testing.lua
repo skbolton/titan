@@ -20,7 +20,7 @@ g.neomake_error_sign = {
 g.dispatch_compilers = {elixir = 'exunit'}
 
 local M = {}
-M.TESTING_STATUS = 'passing'
+M.TESTING_STATUS = 'init'
 
 M.neomake_on_job_started = function ()
   M.TESTING_STATUS = 'running'

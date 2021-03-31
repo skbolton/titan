@@ -28,6 +28,7 @@ dunst -conf ~/.config/dunst/dunstrc &
 ~/.config/polybar/launch.sh &
 # Hotkey Daemon
 sxhkd ~/.config/bspwm/bspwm-sxhkdrc &
+synology-drive &
 
 monitor_count=$(monitor-count)
 

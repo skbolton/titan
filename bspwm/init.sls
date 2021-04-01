@@ -5,6 +5,7 @@ include:
   - polybar
   - rofi
   - picom
+  - xorg
 
 bspwm:
   pkg.installed
@@ -29,55 +30,6 @@ monitor-count:
     - makedirs: True
     - contents: |
         xrandr --query | rg "\bconnected" --count
-
-setup-monitors:
-  file.managed:
-    - name: /home/orlando/.local/bin/setup-monitors
-    - user: orlando
-    - makedirs: True
-    - contents: |
-        monitors=$(monitor-count)
-        case $monitors in
-          1)
-            echo "one"
-            xrandr \
-              --output DisplayPort-0 \
-                --primary \
-                --mode 5120x2160 \
-                --pos 1440x1440 \
-                --rotate normal \
-          ;;
-          2)
-            echo "two"
-            xrandr \
-              --output DisplayPort-0 \
-                --primary \
-                --mode 5120x2160 \
-                --pos 1440x1440 \
-                --rotate normal \
-              --output DisplayPort-1 \
-                --mode 2560x1440 \
-                --pos 2720x0 \
-                --rotate normal \
-          ;;
-          3)
-            echo "three"
-            xrandr \
-              --output DisplayPort-0 \
-                --primary \
-                --mode 5120x2160 \
-                --pos 1440x1440 \
-                --rotate normal \
-              --output DisplayPort-1 \
-                --mode 2560x1440 \
-                --pos 2720x0 \
-                --rotate normal \
-              --output HDMI-A-0 \
-                --mode 2560x1440 \
-                --pos 0x1240  \
-                --rotate right \
-          ;;
-        esac
 
 bspwm-specific-sxhkd:
   file.symlink:

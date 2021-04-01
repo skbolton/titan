@@ -17,9 +17,6 @@ _bc () {
 #    \/____/   \/_/\/_/   \/_____/   \/_/  \/_/   \/_____/   \/_/ \/_/   \/_____/               
 #
 # -- aka Build your own Desktop Environment
-#
-# xrandr monitor setup and placement
-setup-monitors &
 # compositor
 picom --experimental-backends &
 # notification daemon

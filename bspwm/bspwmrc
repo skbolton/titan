@@ -27,7 +27,7 @@ dunst -conf ~/.config/dunst/dunstrc &
 sxhkd ~/.config/bspwm/bspwm-sxhkdrc &
 synology-drive &
 
-monitor_count=$(monitor-count)
+monitor_count=$(xrandr --query | grep "\bconnected" --count)
 
 case $monitor_count in
   1)

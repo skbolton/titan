@@ -9,7 +9,7 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # do we have a second monitor?
-monitor_count=$(monitor-count)
+monitor_count=$(xrandr --query | grep "\bconnected" --count)
 
 case $monitor_count in
   1)

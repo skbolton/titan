@@ -23,14 +23,6 @@ bspwm-config:
     - user: orlando
     - force: True
 
-monitor-count:
-  file.managed:
-    - name: /home/orlando/.local/bin/monitor-count
-    - user: orlando
-    - makedirs: True
-    - contents: |
-        xrandr --query | rg "\bconnected" --count
-
 bspwm-specific-sxhkd:
   file.symlink:
     - name: /home/orlando/.config/bspwm/bspwm-sxhkdrc

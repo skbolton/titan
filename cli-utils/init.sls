@@ -29,7 +29,7 @@ synology-drive:
     - names:
       - paru -S 1password-cli --noconfirm --skipreview
     - runas: orlando
-    - unless paru -Qi synology-drive
+    - unless: paru -Qi synology-drive
 
   
   

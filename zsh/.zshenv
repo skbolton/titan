@@ -10,6 +10,7 @@ export GOPATH=$HOME/go
 
 export SKIM_DEFAULT_COMMAND="rg --files --hidden -g !.git"
 export SKIM_DEFAULT_OPTIONS="--reverse --ansi --color=fg:15,hl:03,hl+:03,matched_bg:-1,bg+:-1,fg+:-1,current_match_bg:-1,cursor:06,spinner:05,info:07,prompt:06"
+export FZF_DEFAULT_OPTS="--reverse --ansi --color=fg:15,hl:3,hl+:3,bg+:-1,fg+:-1,pointer:06,spinner:05,info:7,prompt:6"
 
 export LEDGER_FILE="$HOME/Documents/Archive/Finances/$(date +%Y)/$(date +%Y).journal"
 

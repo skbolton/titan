@@ -7,7 +7,9 @@ export MANPAGER="nvim -c 'set ft=man' -"
 export PATH="$GOPATH/bin:"$HOME"/.local/bin:"$HOME"/.cargo/bin:$PATH"
 export EDITOR="nvim"
 export GOPATH=$HOME/go
+
 export SKIM_DEFAULT_COMMAND="rg --files --hidden -g !.git"
+export SKIM_DEFAULT_OPTIONS="--reverse --ansi --color=fg:15,hl:03,hl+:03,matched_bg:-1,bg+:-1,fg+:-1,current_match_bg:-1,cursor:06,spinner:05,info:07,prompt:06"
 
 export LEDGER_FILE="$HOME/Documents/Archive/Finances/$(date +%Y)/$(date +%Y).journal"
 

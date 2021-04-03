@@ -2,6 +2,7 @@
 export ZDOTDIR="$HOME/.config/zsh"
 export ZSH_DISABLE_COMPFIX=true
 export ZSH="$HOME/.oh-my-zsh"
+export MANPAGER="nvim -c 'set ft=man' -"
 
 export PATH="$GOPATH/bin:"$HOME"/.local/bin:"$HOME"/.cargo/bin:$PATH"
 export EDITOR="nvim"

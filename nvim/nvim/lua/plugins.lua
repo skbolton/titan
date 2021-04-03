@@ -38,7 +38,7 @@ packer.startup(function()
   use 'jiangmiao/auto-pairs'
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
-  use 'tpope/vim-commentary'
+  use 'b3nj5m1n/kommentary'
   use 'tpope/vim-projectionist'
   use 'tpope/vim-dispatch'
   use 'tpope/vim-endwise'

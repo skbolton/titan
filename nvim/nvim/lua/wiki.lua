@@ -6,30 +6,33 @@ vim.g.vimwiki_folding = 'syntax';
 
 -- Wolf - personal improvement and character workspace
 local wolf = {
-  path = "~/Documents/knowledge/wolf",
+  path = "~/Documents/Wolf",
   syntax = "markdown",
   ext = '.md',
   links_space_char = '_',
-  auto_diary_index = 1,
-  automatic_nested_syntaxes = 1
+  automatic_nested_syntaxes = 1,
+  index = 'wolf'
 }
 
 -- Genesis Block - Workspace for genesis related stuff
 local genesis = {
-  path = '~/Documents/knowledge/genesis',
+  path = '~/Documents/Warrior/genesis-block',
   syntax = 'markdown',
   ext = '.md',
   links_space_char = '_',
-  auto_diary_index = 1,
-  automatic_nested_syntaxes = 1,
-  diary_header = 'Daily Notes',
-  diary_rel_path = 'dailies/',
-  diary_index = 'index'
+  automatic_nested_syntaxes = 1
 }
 
--- Delta - Zettelkasten style PKM
+-- Zettelkasten/Reference Wiki
+local wanderer = {
+  path = '~/Documents/Wanderer',
+  syntax = 'markdown',
+  ext = '.md',
+  links_space_char = '_',
+  automatic_nested_syntaxes = 1
+}
 
-vim.g.vimwiki_list = {wolf, genesis}
+vim.g.vimwiki_list = {wolf, genesis, wanderer}
 
 
 -----------------------------------------------------------------------

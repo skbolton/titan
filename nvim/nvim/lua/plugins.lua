@@ -31,6 +31,7 @@ packer.startup(function()
   use 'pangloss/vim-javascript'
   use 'evanleck/vim-svelte'
   use 'ledger/vim-ledger'
+  use 'hashivim/vim-terraform'
   -- ===================================================================
 
   -- CORE PLUGINS

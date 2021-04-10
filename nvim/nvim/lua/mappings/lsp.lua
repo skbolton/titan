@@ -11,6 +11,7 @@ map('n', '<leader>lO', ':Vista<CR>', {noremap = true, silent = true})
 map('n', '<leader>lp', ':CocList diagnostics<CR>', default_opts)
 map('n', '<leader>l?', ':CocInfo<CR>', default_opts) 
 map('n', '<leader>lr', '<cmd>lua vim.lsp.stop_client(vim.lsp.get_active_clients())<CR> :edit<CR>', default_opts) 
+map('i', '<C-y>', "compe#confirm('<CR>')", {noremap = true, silent = true, expr = true})
 
 map('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {noremap = true, expr = true})
 map('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"', {noremap = true, expr = true})

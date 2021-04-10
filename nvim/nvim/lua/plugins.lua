@@ -54,13 +54,39 @@ packer.startup(function()
   use 'hrsh7th/vim-vsnip'
   use 'hrsh7th/vim-vsnip-integ'
   -- Fixers, completion and navigation
+  use {
+    'hrsh7th/nvim-compe',
+    config = function()
+      require'compe'.setup {
+        enabled = true,
+        autocomplete = true,
+        debug = false,
+        min_length = 1,
+        preselect = 'enable',
+        throttle_time = 80,
+        source_timeout = 200,
+        incomplete_delay = 400,
+        max_abbr_width = 100,
+        max_kind_width = 100,
+        max_menu_width = 100,
+        documentation = true,
+        source = {
+          path = true,
+          buffer = true,
+          calc = true,
+          nvim_lsp = true,
+          nvim_lua = true,
+          vim_dadbod_completion = true,
+          vsnip = true
+        }
+      }
+    end
+  }
   use 'neomake/neomake'
   use {
     'neovim/nvim-lspconfig',
     config = function() require('lsp') end,
   }
-  use 'nvim-lua/completion-nvim'
-  use 'steelsojka/completion-buffers'
   use {
     'dense-analysis/ale',
     config = function()

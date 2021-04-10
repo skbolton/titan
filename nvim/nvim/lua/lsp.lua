@@ -1,9 +1,7 @@
 vim.cmd('packadd nvim-lspconfig')
-vim.cmd('packadd completion-nvim')
 
 local nvim_lsp = require'lspconfig'
 local protocol = require'vim.lsp.protocol'
-local completion = require'completion'
 
 -- Vista
 -- ===================================================================
@@ -18,27 +16,6 @@ vim.g['vista#renderer#icons'] = {
   variable = ' ',
   constant = ''
 }
-
--- completion
--- ===================================================================
-vim.g.completion_matching_strategy_list = { 'exact', 'substring' };
-vim.g.completion_auto_change_source = 1;
-vim.g.completion_trigger_character = {'.', '"'};
-vim.g.completion_enable_snippet = 'vim-vsnip';
-vim.g.completion_confirm_key = "<c-y>";
-
-vim.g.completion_chain_complete_list = {
-  default = {
-      {complete_items = { 'lsp' }},
-      {complete_items = { 'buffers' }},
-      {mode = '<c-p>'},
-      {mode = '<c-n>'}
-  },
-  sql = {
-    {complete_items = { 'vim-dadbod-completion' }}
-  }
-}
-
 
 -- LSP Diagnositics
 -- ===================================================================
@@ -59,7 +36,6 @@ vim.fn['sign_define']("LspDiagnosticsSignHint", {text = "", texthl = "LspDiag
 -- Attachment
 -- ===================================================================
 local function attach(client)
-  completion.on_attach(client) 
 
   protocol.CompletionItemKind = {
     ' '; -- Text
@@ -90,16 +66,14 @@ local function attach(client)
   }
 end
 
--- autocommand to attach completion to all buffers
-vim.api.nvim_command('augroup completion');
-vim.api.nvim_command('autocmd!');
-vim.api.nvim_command("autocmd BufEnter * lua require'completion'.on_attach()");
-vim.api.nvim_command('augroup END')
+local capabilities = protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- LSP SERVER CONFIGURATION
 -- ===================================================================
 nvim_lsp.elixirls.setup{
   on_attach=attach;
+  capabilities = capabilities,
   cmd = {
     vim.loop.os_homedir() .. "/.elixir-ls/rel/language_server.sh"
   };

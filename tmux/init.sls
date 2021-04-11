@@ -10,12 +10,6 @@ tmux-plugin-manager:
     - target: /home/orlando/.tmux/plugins/tpm
     - user: orlando
 
-tmux-nord:
-  git.cloned:
-    - name: https://github.com/arcticicestudio/nord-tmux
-    - target: /home/orlando/.tmux/themes/nord-tmux
-    - user: orlando
-
 tmux-config:
   file.symlink:
     - name: /home/orlando/.tmux.conf

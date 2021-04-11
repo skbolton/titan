@@ -4,6 +4,8 @@ export ZSH_DISABLE_COMPFIX=true
 export ZSH="$HOME/.oh-my-zsh"
 export MANPAGER="nvim -c 'set ft=man' -"
 
+# GPG shenanigans
+export GNUPGHOME=~/.config/gnupg
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 

@@ -28,4 +28,8 @@ gpg-config:
     - name: /home/orlando/.config/gnupg/gpg.conf
     - target: /home/orlando/titan/gpg/gpg.conf
     - user: orlando
-    - makedirs: True
+
+receive-public-key:
+  cmd.run:
+    - name: gpg --receive-keys "35BE29E174F8981ECF31D03C60410414D406AF1D"
+    - runas: orlando

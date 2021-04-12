@@ -77,6 +77,7 @@ _bc config focus_follows_pointer      true
 _bc rule -a kitty desktop='1'
 _bc rule -a kitty-tasks desktop='8' locked=true
 _bc rule -a kitty-monitor state=floating
+_bc rule -a kitty-bench state=floating
 _bc rule -a firefox desktop='2'
 _bc rule -a zoom desktop='2' follow=on
 _bc rule -a nitrogen manage=off

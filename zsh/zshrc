@@ -73,6 +73,10 @@ delta() {
   fi
 }
 
+bench() {
+  echo $@ >> ~/Documents/Warrior/bench.md
+}
+
 launch() {
   # since I override ls for myself need to call original directly
   session_name=$(command ls ~/Repos | sk) 

@@ -10,12 +10,18 @@ pcscd:
   service.running:
     - enable: True
 
+gpg-config-dir:
+  file.directory:
+    - name: /home/orlando/.config/gnupg/
+    - user: orlando
+    - dir_mode: 700
+    - file_mode: 600
+
 gpg-agent-config:
   file.symlink:
     - name: /home/orlando/.config/gnupg/gpg-agent.conf
     - target: /home/orlando/titan/gpg/gpg-agent.conf
     - user: orlando
-    - makedirs: True
 
 gpg-config:
   file.symlink:

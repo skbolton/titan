@@ -9,6 +9,9 @@ export GNUPGHOME=~/.config/gnupg
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
+# nnn config
+export NNN_BMS='x:~/Documents/Warrior;w:~/Documents/Wolf;k:~/Documents/Wanderer'
+
 export PATH="$GOPATH/bin:"$HOME"/.local/bin:"$HOME"/.cargo/bin:$PATH"
 export EDITOR="nvim"
 export GOPATH=$HOME/go

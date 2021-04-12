@@ -15,10 +15,10 @@ super + slash
   toggle-program kitty-scratch
 
 alt + semicolon
-	kitty --class kitty-monitor bpytop
+	kitty --config ~/.config/kitty/kitty-float.conf --class kitty-float bpytop
 
 alt + b
-  kitty -o initial_window_height=1200 -o initial_window_width=1200 --class kitty-bench nvim ~/Documents/Warrior/bench.md
+  kitty --config ~/.config/kitty/kitty-float.conf --class kitty-float nvim ~/Documents/Warrior/bench.md
 
 alt + t
   kitty @ --to=unix:/tmp/kitty-tasks send_text "clear && task\r"; \

@@ -66,7 +66,17 @@ delta() {
 }
 
 bench() {
-  echo $@ >> ~/Documents/Warrior/bench.md
+  dir="$HOME/Documents/Warrior/bench.md"
+  if [ $# -eq 0 ]
+  then
+    while read line
+      do
+        echo "$line" >> $dir
+      done < "${1:-/dev/stdin}"
+  else
+    echo $@ >> $dir
+  fi
+
 }
 
 launch() {

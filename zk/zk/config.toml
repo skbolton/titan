@@ -59,6 +59,7 @@ recents = "--sort created- --created-after 'last two weeks'"
 # COMMAND ALIASES
 [alias]
 ## Journal aliases
+journal = 'zk --notebook-dir ~/Documents/Wolf $@'
 day = 'zk new --group day --no-input --notebook-dir ~/Documents/Wolf journal'
 week = 'zk new --group week --no-input --notebook-dir ~/Documents/Wolf journal'
 quarter = 'zk new --group quarter --no-input --notebook-dir ~/Documents/Wolf journal'
@@ -68,6 +69,7 @@ year = 'zk new --group year --no-input --notebook-dir ~/Documents/Wolf journal'
 meeting = 'zk new --group meeting --title $1 --notebook-dir ~/Documents/Warrior/genesis-block meetings'
 
 ## Knowledge aliases
+zettel = 'zk --notebook-dir ~/Documents/Wanderer $@'
 ls = 'zk list --notebook-dir ~/Documents/Wanderer $@'
 lookup = 'zk edit --interactive --notebook-dir ~/Documents/Wanderer $@'
 

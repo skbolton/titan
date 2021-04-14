@@ -58,4 +58,9 @@ recents = "--sort created- --created-after 'last two weeks'"
 
 # COMMAND ALIASES
 [alias]
+## Journal aliases
+day = 'zk new --group day --no-input --notebook-dir ~/Documents/Wolf journal'
+week = 'zk new --group week --no-input --notebook-dir ~/Documents/Wolf journal'
+quarter = 'zk new --group quarter --no-input --notebook-dir ~/Documents/Wolf journal'
+year = 'zk new --group year --no-input --notebook-dir ~/Documents/Wolf journal'
 

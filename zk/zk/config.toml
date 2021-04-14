@@ -64,3 +64,7 @@ week = 'zk new --group week --no-input --notebook-dir ~/Documents/Wolf journal'
 quarter = 'zk new --group quarter --no-input --notebook-dir ~/Documents/Wolf journal'
 year = 'zk new --group year --no-input --notebook-dir ~/Documents/Wolf journal'
 
+## Knowledge aliases
+ls = 'zk list --notebook-dir ~/Documents/Wanderer $@'
+lookup = 'zk edit --interactive --notebook-dir ~/Documents/Wanderer $@'
+

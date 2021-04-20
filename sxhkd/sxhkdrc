@@ -18,7 +18,7 @@ alt + semicolon
 	kitty --config ~/.config/kitty/kitty-float.conf --class kitty-float bpytop
 
 alt + b
-  kitty --config ~/.config/kitty/kitty-float.conf --class kitty-float nvim ~/Documents/Warrior/bench.md
+  kitty --config ~/.config/kitty/kitty-float.conf --class kitty-float nvim ~/Documents/Wolf/bench.md
 
 alt + t
   kitty @ --to=unix:/tmp/kitty-tasks send_text "clear && task\r"; \

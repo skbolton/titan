@@ -104,7 +104,7 @@ default_tmux_template() {
     fi
   fi
 
-  tmux new -d -s $session_name -n " " -c $root nvim
+  tmux new -d -s $session_name -n " " -c $root
   tmux new-window -d -n " " -c $root
   tmux a -t $session_name
 }

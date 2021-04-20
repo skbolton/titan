@@ -89,6 +89,7 @@ opt('g', 'splitright', true)
 opt('g', 'wildmenu', true)
 opt('g', 'completeopt', "menuone,noselect,noinsert")
 opt('g', 'history', 100)
+opt('g', 'shortmess', 'FWco')
 
 -- FOLDING
 -- ===================================================================

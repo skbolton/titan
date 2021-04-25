@@ -79,16 +79,6 @@ bench() {
 
 }
 
-launch() {
-  # since I override ls for myself need to call original directly
-  session_name=$({ command ls ~/Repos; echo "titan" } | sk) 
-  if [ $session_name = "titan" ]; then
-    tmuxinator start $session_name 2>/dev/null || tmuxinator start launch name=titan root=~/titan
-  else
-    tmuxinator start $session_name 2>/dev/null || tmuxinator start launch name=$session_name root=~/Repos/$session_name
-  fi
-}
-
 title="A NEW BATTLE AWAITS, GUARDIAN"
 printf "%*s\n" $(((${#title}+$COLUMNS)/2)) "$title"
 

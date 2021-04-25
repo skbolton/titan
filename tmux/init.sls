@@ -26,3 +26,13 @@ tmuxinator-configs:
     - name: /home/orlando/.tmuxinator
     - target: /home/orlando/titan/tmux/tmuxinator
     - user: orlando
+
+tmux-launcher:
+  file.symlink:
+    - name: /home/orlando/.local/bin/rally.sh
+    - target: /home/orlando/titan/tmux/rally.sh
+    - user: orlando
+    - force: True
+  cmd.run:
+    - cwd: /home/orlando/.local/bin
+    - name: chmod +x ./rally.sh

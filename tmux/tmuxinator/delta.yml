@@ -1,0 +1,12 @@
+name: Delta
+root: ~/
+startup_window: dashboard.3
+
+windows:
+  - dashboard:
+      layout: tiled
+      panes:
+        - while true; do task burndown.daily; sleep 60; done
+        - habitica
+        - v +Calendar
+        - task

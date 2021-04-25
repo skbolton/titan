@@ -83,30 +83,10 @@ launch() {
   # since I override ls for myself need to call original directly
   session_name=$({ command ls ~/Repos; echo "titan" } | sk) 
   if [ $session_name = "titan" ]; then
-    smug start $session_name 2>/dev/null || default_tmux_template titan ~/titan
+    tmuxinator start $session_name 2>/dev/null || tmuxinator start launch name=titan root=~/titan
   else
-    smug start $session_name 2>/dev/null || default_tmux_template $session_name ~/Repos/$session_name
+    tmuxinator start $session_name 2>/dev/null || tmuxinator start launch name=$session_name root=~/Repos/$session_name
   fi
-}
-
-default_tmux_template() {
-  session_name=$(echo $1 | tr '-' ' ' | tr '[:lower:]' '[:upper:]')
-  root=$2
-
-  # Check existing session and switch into it
-  if tmux has-session -t $session_name 2>/dev/null; then
-    if [ -n "${TMUX:-}" ]; then
-        tmux switch-client -t $session_name
-        exit 0
-    else
-      tmux attach-session -t $session_name
-      exit 0
-    fi
-  fi
-
-  tmux new -d -s $session_name -n " " -c $root
-  tmux new-window -d -n " " -c $root
-  tmux a -t $session_name
 }
 
 title="A NEW BATTLE AWAITS, GUARDIAN"

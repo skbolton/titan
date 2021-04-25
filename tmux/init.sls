@@ -23,7 +23,7 @@ tmuxinator:
 
 tmuxinator-configs:
   file.symlink:
-    - name: /home/orlando/.tmuxinator
+    - name: /home/orlando/.config/tmuxinator
     - target: /home/orlando/titan/tmux/tmuxinator
     - user: orlando
 

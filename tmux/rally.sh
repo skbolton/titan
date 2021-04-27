@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -eu
+
 RALLY=rally
 VERSION=0.0.1
 

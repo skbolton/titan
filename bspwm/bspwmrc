@@ -55,8 +55,7 @@ _bc config normal_border_color  "#585273"
 _bc config focused_border_color "#87DFEB"
 _bc config window_gap          12
 _bc config top_padding         42
-
-_bc config split_ratio          0.65
+_bc config automatic_scheme alternate
 _bc config borderless_monocle   true
 _bc config gapless_monocle      true
 _bc config focus_follows_pointer      true

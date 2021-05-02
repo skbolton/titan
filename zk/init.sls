@@ -2,7 +2,7 @@ include:
   - go
 
 zk:
-  git.cloned:
+  git.latest:
     - name: https://github.com/mickael-menu/zk.git
     - target: /home/orlando/zk
   file.directory:

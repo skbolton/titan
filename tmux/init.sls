@@ -1,5 +1,5 @@
 include:
-  - ruby
+  - go
 
 tmux:
   pkg.installed
@@ -17,15 +17,25 @@ tmux-plugin-manager:
     - target: /home/orlando/.config/tmux/plugins/tpm
     - user: orlando
 
-tmuxinator:
-  gem.installed:
-    - name: tmuxinator
-
-tmuxinator-configs:
-  file.symlink:
-    - name: /home/orlando/.config/tmuxinator
-    - target: /home/orlando/titan/tmux/tmuxinator
+smug:
+  git.latest:
+    - name: https://github.com/ivaaaan/smug
+    - target: /home/orlando/Repos/smug
     - user: orlando
+  cmd.run:
+    - cwd: /home/orlando/Repos/smug
+    - name: go install
+    - runas: orlando
+    - onchanges:
+      - git: smug
+
+smug-config:
+  file.symlink:
+    - name: /home/orlando/.config/smug
+    - target: /home/orlando/titan/tmux/smug
+    - user: orlando
+    - makedirs: True
+    - force: True
 
 tmux-launcher:
   file.symlink:

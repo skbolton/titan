@@ -1,6 +1,0 @@
-name: <%= @settings["name"].upcase().split(/[-_]/).join(' ') %>
-root: <%= @settings["root"] %>
-
-windows:
-  - " ": v
-  - " ": tmux link-window -s spotify:" "; tmux select-window -t <%= @settings["name"] %>: ; clear

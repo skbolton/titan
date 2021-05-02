@@ -4,6 +4,11 @@ export ZSH_DISABLE_COMPFIX=true
 export ZSH="$HOME/.oh-my-zsh"
 export MANPAGER="nvim -c 'set ft=man' -"
 
+# XDG Base directory
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+
 # GPG shenanigans
 export GNUPGHOME=~/.config/gnupg
 export GPG_TTY="$(tty)"

@@ -108,7 +108,7 @@ kitty --listen-on=unix:/tmp/kitty-tasks --class kitty-tasks --hold &
 
 sleep 5
 _bc desktop '5' -f
-flatpak run com.spotify.Client &
+spotify &
 sleep 3
 
 _bc desktop '8' -f

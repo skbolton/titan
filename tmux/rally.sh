@@ -8,4 +8,4 @@ VERSION=0.0.1
 TARGET=$(ls -d ~/Repos/* ~/* | sk)
 NAME=$(basename $TARGET)
 
-tmuxinator start $NAME || tmuxinator start launch name=$NAME root=$TARGET
+smug start $NAME -a || smug start launch -a name=$NAME root=$TARGET

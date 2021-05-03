@@ -1,12 +1,13 @@
 base:
   '*':
+    - xorg
+    - display-manager
     - audio
     - asdf
     - bspwm
     - cli-utils
     - direnv
     - dunst
-    - display-manager
     - fonts
     - git
     - gpg
@@ -22,7 +23,6 @@ base:
     - task-warrior
     - terminfo
     - tmux
-    - xorg
     - zk
     - zsh
 

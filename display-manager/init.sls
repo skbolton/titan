@@ -3,7 +3,7 @@ lightdm:
     - name: lightdm
 
 lightdm-started:
-  service.running:
+  service.enabled:
     - name: lightdm
     - enable: True
     - require:

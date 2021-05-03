@@ -1,6 +1,11 @@
-nvim:
+{# nvim:
   pkg.installed:
-    - name: neovim
+    - name: neovim #}
+nvim:
+  cmd.run:
+    - runas: orlando
+    - name: paru -S neovim-nightly-git --noconfirm --noreview
+    - unless: paru -Qi neovim-nightly-git
 
 nvim-config:
   file.symlink:

@@ -29,3 +29,7 @@ base:
   'trinity|titan':
     - match: pcre
     - xorg.monitors
+    - display-drivers.amd
+  
+  'neo':
+    - display-drivers.nvidia

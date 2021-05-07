@@ -3,6 +3,7 @@ base:
     - xorg
     - display-manager
     - audio
+    - arch.reflector
     - asdf
     - bspwm
     - cli-utils

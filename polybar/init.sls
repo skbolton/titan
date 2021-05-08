@@ -2,7 +2,10 @@ include:
   - fonts
 
 polybar:
-  pkg.installed
+  cmd.run:
+    - name: paru -S polybar --noconfirm --skipreview
+    - unless: paru -Qi polybar
+    - runas: orlando
 
 polybar-config:
   file.symlink:

@@ -4,7 +4,7 @@
 nvim:
   cmd.run:
     - runas: orlando
-    - name: paru -S neovim-nightly-git --noconfirm --noreview
+    - name: paru -S neovim-nightly-git --noconfirm --skipreview
     - unless: paru -Qi neovim-nightly-git
 
 nvim-config:

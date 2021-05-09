@@ -1,6 +1,7 @@
 base:
   '*':
     - xorg
+    - xorg.monitors
     - display-manager
     - audio
     - arch.reflector
@@ -29,7 +30,6 @@ base:
 
   'trinity|titan':
     - match: pcre
-    - xorg.monitors
     - display-drivers.amd
   
   'neo':

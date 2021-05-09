@@ -50,7 +50,7 @@ esac
 #    \/_____/   \/_____/   \/_/ \/_/   \/_/     \/_/   \/_____/ 
 #      
 
-_bc config border_width        1
+_bc config border_width        2
 _bc config normal_border_color  "#585273"
 _bc config focused_border_color "#87DFEB"
 _bc config window_gap          12

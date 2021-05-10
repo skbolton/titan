@@ -36,3 +36,9 @@ victor-mono:
     - target: /home/orlando/titan/fonts/VictorMono Nerd Font/
     - user: orlando
 
+ligalex-mono:
+  file.symlink:
+    - name: /home/orlando/.local/share/fonts/Ligalex
+    - target: /home/orlando/titan/fonts/Ligalex
+    - user: orlando
+

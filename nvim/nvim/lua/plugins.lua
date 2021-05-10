@@ -106,7 +106,10 @@ packer.startup(function()
     config = function() require('status-line') end,
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
-  use 'glacambre/firenvim'
+  use {
+    'glacambre/firenvim',
+    run = function() vim.fn['firenvim#install'](0) end
+  }
   use {
     'norcalli/nvim-colorizer.lua',
     config = function()

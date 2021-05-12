@@ -26,13 +26,6 @@ oh-my-zsh:
     - target: /home/orlando/.oh-my-zsh
     - user: orlando
 
-link-prompt:
-  file.managed:
-    - name: /home/orlando/.config/zsh/promptrc
-    - source: salt://zsh/promptrc
-    - makedirs: True
-    - user: orlando
-
 zshenv:
   file.managed:
     - name: /home/orlando/.zshenv

@@ -20,6 +20,7 @@ git-branches:
   file.managed:
     - name: /home/orlando/.local/bin/git-branches
     - source: salt://git/git-branches
+    - mode: keep
     - user: orlando
 
 github-cli:

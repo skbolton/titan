@@ -5,8 +5,8 @@ picom:
     - unless: paru -Qi picom-jonaburg-git
 
 picom-config:
-  file.symlink:
+  file.managed:
     - name: /home/orlando/.config/picom.conf
-    - target: /home/orlando/titan/picom/picom.conf
+    - source: salt://picom/picom.conf
     - makedirs: True
 

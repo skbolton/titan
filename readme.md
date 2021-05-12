@@ -14,15 +14,23 @@ Install dependencies
 * salt stack
 * paru aur helper
 
+Clone the repo to the proper place on file system. Salt stack sets up a local fileserver that will pull files from this location.
+
+```
+git clone https://github.com/skbolton/titan /srv/titan
+```
+
 ## Running
 
-Once all dependencies are installed you are ready to run titan. To install a singe module run the following from root of titan (replace nvim with any of the folder names in this repo based on which thing you want)
+The `--config=/srv/titan` option below can be avoided by symlinking the `minion` file in titan to `/etc/salt/minion/` which is the default location salt stack looks for minion configuration.
+
+Get just the nvim state
 ```
-$ sudo salt-call --config=./ state.sls nvim
+$ sudo salt-call --config=/srv/titan state.sls nvim
 ```
 
-To get full state run this from root of titan
+To apply what salt stack calls the highstate (all the states).
 ```
-$ sudo salt-call --config=./ state.apply
+$ sudo salt-call --config=/srv/titan state.apply
 ```
 

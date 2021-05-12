@@ -1,7 +1,7 @@
 remix-icon:
-  file.symlink:
+  file.managed:
     - name: /home/orlando/.local/share/fonts/remixicon.ttf
-    - target: /home/orlando/titan/fonts/remixicon.ttf
+    - source: salt://fonts/remixicon.ttf
     - makedirs: True
     - user: orlando
 
@@ -12,9 +12,9 @@ roboto-mono:
     - unless: paru -Qi nerd-fonts-roboto-mono
 
 source-sans-pro:
-  file.symlink:
+  file.recurse:
     - name: /home/orlando/.local/share/fonts/adobe
-    - target: /home/orlando/titan/fonts/adobe
+    - source: salt://fonts/adobe
     - makedirs: True
     - user: orlando
 
@@ -25,20 +25,20 @@ iosevka:
     - unless: paru -Qi ttf-iosevka
 
 stellar:
-  file.symlink:
+  file.recurse:
     - name: /home/orlando/.local/share/fonts/Stellar
-    - target: /home/orlando/titan/fonts/Stellar
+    - source: salt://fonts/Stellar
     - user: orlando
 
 victor-mono:
-  file.symlink:
+  file.recurse:
     - name: /home/orlando/.local/share/fonts/VictorMonoNerdFont
-    - target: /home/orlando/titan/fonts/VictorMono Nerd Font/
+    - source: salt://fonts/VictorMono Nerd Font/
     - user: orlando
 
 ligalex-mono:
-  file.symlink:
+  file.recurse:
     - name: /home/orlando/.local/share/fonts/Ligalex
-    - target: /home/orlando/titan/fonts/Ligalex
+    - source: salt://fonts/Ligalex
     - user: orlando
 

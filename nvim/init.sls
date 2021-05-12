@@ -8,9 +8,9 @@ nvim:
     - unless: paru -Qi neovim-nightly-git
 
 nvim-config:
-  file.symlink:
+  file.recurse:
     - name: /home/orlando/.config/nvim
-    - target: /home/orlando/titan/nvim/nvim
+    - source: salt://nvim/nvim
     - user: orlando
     - force: True
 

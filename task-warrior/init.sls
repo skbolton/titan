@@ -2,9 +2,9 @@ task:
   pkg.installed
 
 task-configs:
-  file.symlink:
+  file.managed:
     - name: /home/orlando/.taskrc
-    - target: /home/orlando/titan/task-warrior/taskrc
+    - source: salt://task-warrior/taskrc
     - user: orlando
     - force: True
 

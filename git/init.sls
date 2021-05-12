@@ -5,21 +5,22 @@ git:
 {% endif %}
 
 gitconfig:
-  file.symlink:
+  file.managed:
     - name: /home/orlando/.gitconfig
-    - target: /home/orlando/titan/git/gitconfig
+    - source: salt://git/gitconfig
     - user: orlando
 
 gitignore:
-  file.symlink:
+  file.managed:
     - name: /home/orlando/.gitignore_global
-    - target: /home/orlando/titan/git/gitignore
+    - source: salt://git/gitignore
     - user: orlando
 
 git-branches:
-  file.symlink:
+  file.managed:
     - name: /home/orlando/.local/bin/git-branches
-    - target: /home/orlando/titan/git/git-branches
+    - source: salt://git/git-branches
+    - mode: keep
     - user: orlando
 
 github-cli:

@@ -3,9 +3,9 @@ reflector:
     - name: reflector
 
 reflector-config:
-  file.symlink:
+  file.managed:
     - name: /etc/xdg/reflector/reflector.conf
-    - target: /home/orlando/titan/arch/reflector.conf
+    - source: salt://arch/reflector.conf
     - require:
       - pkg: reflector
     - onchanges:
@@ -13,6 +13,7 @@ reflector-config:
 
 reflector-running:
   service.running:
+    - name: reflector.timer
     - enable: True
     - require:
       - pkg: reflector

@@ -8,7 +8,9 @@ polybar:
     - runas: orlando
 
 polybar-config:
-  file.symlink:
+  file.recurse:
     - name: /home/orlando/.config/polybar
-    - target: /home/orlando/titan/polybar/polybar
+    - source: salt://polybar/polybar
+    - file_mode: keep
     - user: orlando
+

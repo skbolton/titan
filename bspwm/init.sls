@@ -17,16 +17,17 @@ bspwm-config-directory:
     - user: orlando
 
 bspwm-config:
-  file.symlink:
+  file.managed:
     - name: /home/orlando/.config/bspwm/bspwmrc
-    - target: /home/orlando/titan/bspwm/bspwmrc
+    - source: salt://bspwm/bspwmrc
     - user: orlando
+    - mode: keep
     - force: True
 
 bspwm-specific-sxhkd:
-  file.symlink:
+  file.managed:
     - name: /home/orlando/.config/bspwm/bspwm-sxhkdrc
-    - target: /home/orlando/titan/bspwm/bspwm-sxhkdrc
+    - source: salt://bspwm/bspwm-sxhkdrc
     - makedirs: True
     - user: orlando
     - force: True

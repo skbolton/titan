@@ -10,7 +10,7 @@ kitty:
   {% endif %}
 
 configs:
-  file.symlink:
+  file.recurse:
     - name: /home/orlando/.config/kitty
-    - target: /home/orlando/titan/kitty/kitty
+    - source: salt://kitty/kitty
     - user: orlando

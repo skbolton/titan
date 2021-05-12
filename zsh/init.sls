@@ -10,9 +10,9 @@ starship:
   pkg.installed
 
 starship-config:
-  file.symlink:
+  file.managed:
     - name: /home/orlando/.config/starship.toml
-    - target: /home/orlando/titan/zsh/starship.toml
+    - source: salt://zsh/starship.toml
     - makedirs: True
     - user: orlando
 
@@ -27,30 +27,30 @@ oh-my-zsh:
     - user: orlando
 
 link-prompt:
-  file.symlink:
+  file.managed:
     - name: /home/orlando/.config/zsh/promptrc
-    - target: /home/orlando/titan/zsh/promptrc
+    - source: salt://zsh/promptrc
     - makedirs: True
     - user: orlando
 
 link-path:
-  file.symlink:
+  file.managed:
     - name: /home/orlando/.config/zsh/pathrc
-    - target: /home/orlando/titan/zsh/pathrc
+    - source: salt://zsh/pathrc
     - makedirs: True
     - user: orlando
 
-link-zshenv:
-  file.symlink:
+zshenv:
+  file.managed:
     - name: /home/orlando/.zshenv
-    - target: /home/orlando/titan/zsh/.zshenv
+    - source: salt://zsh/.zshenv
     - makedirs: True
     - user: orlando
 
 link-zsh:
-  file.symlink:
+  file.managed:
   - name: /home/orlando/.config/zsh/.zshrc
-  - target: /home/orlando/titan/zsh/zshrc
+  - source: salt://zsh/zshrc
   - makedirs: True
   - user: orlando
 

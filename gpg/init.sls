@@ -12,24 +12,27 @@ pcscd:
 
 gpg-config-dir:
   file.directory:
-    - name: /home/orlando/.config/gnupg/
+    - name: /home/orlando/.gnupg/
     - user: orlando
     - dir_mode: 700
     - file_mode: 600
 
 gpg-agent-config:
   file.managed:
-    - name: /home/orlando/.config/gnupg/gpg-agent.conf
+    - name: /home/orlando/.gnupg/gpg-agent.conf
     - source: salt://gpg/gpg-agent.conf
     - user: orlando
 
 gpg-config:
   file.managed:
-    - name: /home/orlando/.config/gnupg/gpg.conf
+    - name: /home/orlando/.gnupg/gpg.conf
     - source: salt://gpg/gpg.conf
     - user: orlando
 
-receive-public-key:
-  cmd.run:
-    - name: gpg --receive-keys "35BE29E174F8981ECF31D03C60410414D406AF1D"
-    - runas: orlando
+my-gpg-key:
+  gpg.present:
+    - keys: 35BE29E174F8981ECF31D03C60410414D406AF1D
+    - keyserver: hkps://keys.gnupg.net
+    - user: orlando
+    - trust: "ultimately"
+

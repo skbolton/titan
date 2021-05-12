@@ -8,8 +8,6 @@ reflector-config:
     - source: salt://arch/reflector.conf
     - require:
       - pkg: reflector
-    - onchanges:
-      - pkg: reflector
 
 reflector-running:
   service.running:
@@ -17,6 +15,6 @@ reflector-running:
     - enable: True
     - require:
       - pkg: reflector
-    - onchanges:
-      - pkg: reflector
+    - watch:
+      - file: reflector-config
 

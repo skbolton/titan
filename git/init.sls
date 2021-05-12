@@ -1,9 +1,3 @@
-{% if grains['os'] != 'MacOS' %}
-git:
-  pkg.installed:
-    - name: git
-{% endif %}
-
 gitconfig:
   file.managed:
     - name: /home/orlando/.gitconfig
@@ -25,9 +19,5 @@ git-branches:
 
 github-cli:
   pkg.installed:
-  {% if grains['os'] != 'MacOS' %}
-    - name: github-cli
-  {% else %}
     - name: github/gh/gh
-  {% endif %}
 

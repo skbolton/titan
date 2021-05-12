@@ -33,13 +33,6 @@ link-prompt:
     - makedirs: True
     - user: orlando
 
-link-path:
-  file.managed:
-    - name: /home/orlando/.config/zsh/pathrc
-    - source: salt://zsh/pathrc
-    - makedirs: True
-    - user: orlando
-
 zshenv:
   file.managed:
     - name: /home/orlando/.zshenv

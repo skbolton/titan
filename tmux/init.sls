@@ -5,9 +5,9 @@ tmux:
   pkg.installed
 
 tmux-config:
-  file.symlink:
+  file.managed:
     - name: /home/orlando/.config/tmux/tmux.conf
-    - target: /home/orlando/titan/tmux/tmux.conf
+    - source: salt://tmux/tmux.conf
     - user: orlando
     - makedirs: True
 
@@ -30,17 +30,17 @@ smug:
       - git: smug
 
 smug-config:
-  file.symlink:
+  file.recurse:
     - name: /home/orlando/.config/smug
-    - target: /home/orlando/titan/tmux/smug
+    - source: salt://tmux/smug/
     - user: orlando
     - makedirs: True
     - force: True
 
 tmux-launcher:
-  file.symlink:
+  file.managed:
     - name: /home/orlando/.local/bin/rally.sh
-    - target: /home/orlando/titan/tmux/rally.sh
+    - source: salt://tmux/rally.sh
     - user: orlando
     - force: True
   cmd.run:

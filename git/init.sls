@@ -1,12 +1,13 @@
 gitconfig:
   file.managed:
-    - name: /home/orlando/.gitconfig
+    - name: /home/orlando/.config/git/config
     - source: salt://git/gitconfig
     - user: orlando
+    - makedirs: True
 
 gitignore:
   file.managed:
-    - name: /home/orlando/.gitignore_global
+    - name: /home/orlando/.config/gitignore
     - source: salt://git/gitignore
     - user: orlando
 
@@ -18,6 +19,8 @@ git-branches:
     - user: orlando
 
 github-cli:
-  pkg.installed:
-    - name: github/gh/gh
+  cmd.run:
+    - name: paru -S github-cli --noconfirm --skipreview
+    - runas: orlando
+    - unless: paru -Qi github-cli
 

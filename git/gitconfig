@@ -29,7 +29,7 @@
 
 [core]
         editor = nvim
-        excludesFile = ~/.gitignore_global
+        excludesFile = ~/.config/git/gitignore
 
 [blame]
         date = relative

@@ -14,9 +14,10 @@ zk:
       - mv ./zk /home/orlando/go/bin
 
 zk-config:
-  file.symlink:
-    - name: /home/orlando/.config/zk
-    - target: /home/orlando/titan/zk/zk
+  file.managed:
+    - name: /home/orlando/.config/zk/config.toml
+    - source: salt://zk/config.toml
+    - makedirs: True
     - force: True
     - user: orlando
 

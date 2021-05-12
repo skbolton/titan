@@ -2,9 +2,9 @@ rofi:
   pkg.installed
 
 rofi-config:
-  file.symlink:
+  file.recurse:
     - name: /home/orlando/.config/rofi
-    - target: /home/orlando/titan/rofi/rofi
+    - source: salt://rofi/rofi
     - user: orlando
     - force: True
 

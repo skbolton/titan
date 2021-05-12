@@ -1,14 +1,10 @@
 sxhkd:
   pkg.installed
 
-sxhkd-config-directory:
-  file.directory:
-    - name: /home/orlando/.config/sxhkd
-    - user: orlando
-
 sxhkd-config:
-  file.symlink:
+  file.managed:
     - name: /home/orlando/.config/sxhkd/sxhkdrc
-    - target: /home/orlando/titan/sxhkd/sxhkdrc
+    - source: salt://sxhkd/sxhkdrc
     - user: orlando
     - force: True
+    - makedirs: True

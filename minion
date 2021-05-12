@@ -1,5 +1,5 @@
 file_roots:
   base:
-    - ./
+    - /srv/titan
 file_client: local
 

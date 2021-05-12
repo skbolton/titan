@@ -11,6 +11,13 @@ tmux-config:
     - user: orlando
     - makedirs: True
 
+embark-tmux:
+  file.managed:
+    - name: /home/orlando/.config/tmux/embark.tmux
+    - source: salt://tmux/embark.tmux
+    - user: orlando
+    - makedirs: True
+
 tmux-plugin-manager:
   git.cloned:
     - name: https://github.com/tmux-plugins/tpm

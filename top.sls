@@ -5,6 +5,7 @@ base:
     - display-manager
     - audio
     - arch.reflector
+    - crons
     - asdf
     - bspwm
     - cli-utils

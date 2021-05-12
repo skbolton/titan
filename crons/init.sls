@@ -7,6 +7,7 @@ cron-daemon:
 
 pacman-download-updates:
   cron.present:
-    - name: pacman -Suw
+    - identifier: "download pacman updates without applying"
+    - name: pacman -Syuw --noconfirm
     - minute: 0
     - hour: 11

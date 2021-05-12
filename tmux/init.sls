@@ -41,8 +41,6 @@ tmux-launcher:
   file.managed:
     - name: /home/orlando/.local/bin/rally.sh
     - source: salt://tmux/rally.sh
+    - mode: keep
     - user: orlando
     - force: True
-  cmd.run:
-    - cwd: /home/orlando/.local/bin
-    - name: chmod +x ./rally.sh

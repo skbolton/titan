@@ -1,0 +1,14 @@
+{% set polybar_configs = salt['grains.filter_by']({
+    'neo': {
+      'launcher': 'laptop-launch.sh',
+      'config': 'laptop-config.ini'
+    },
+    'titan': {
+      'launcher': 'desktop-launch.sh',
+      'config': 'desktop-config.ini'
+    },
+    'trinity': {
+      'launcher': 'desktop-launch.sh',
+      'config': 'desktop-config.ini'
+    }
+}, grain='host') %}

@@ -102,3 +102,10 @@ color.sync.rejected=gray23
 color.undo.before=rgb013
 color.undo.after=rgb035
 context=work
+
+# Server Config
+taskd.server=freecinc.com:53589
+taskd.key=~/.task/freecinc_6a74274e.key.pem
+taskd.certificate=~/.task/freecinc_6a74274e.cert.pem
+taskd.ca=~/.task/freecinc_6a74274e.ca.pem
+taskd.credentials=FreeCinc\/freecinc_6a74274e\/029b039a-ed72-4c1e-a5a5-713183b10ecd

@@ -19,6 +19,7 @@ export NNN_BMS='x:~/Documents/Warrior;w:~/Documents/Wolf;k:~/Documents/Wanderer'
 export EDITOR="nvim"
 export BROWSER="firefox"
 export GOPATH=$HOME/go
+export GO111MODULE=on
 export PATH="$GOPATH/bin:"$HOME"/.local/bin:"$HOME"/.cargo/bin:$PATH"
 
 export SKIM_DEFAULT_COMMAND="rg --files --hidden -g !.git"

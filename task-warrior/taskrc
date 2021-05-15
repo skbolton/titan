@@ -101,7 +101,6 @@ color.sync.rejected=gray23
 # Command: undo
 color.undo.before=rgb013
 color.undo.after=rgb035
-context=work
 
 # Server Config
 taskd.server=freecinc.com:53589

@@ -69,7 +69,7 @@ local testing_results = function()
   elseif testing.TESTING_STATUS == 'passing' then
     return " "
   elseif testing.TESTING_STATUS == 'running' then
-    return " "
+    return " "
   elseif testing.TESTING_STATUS == 'failing' then
     return " "
   end

@@ -81,6 +81,10 @@ super + equal
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+# Rotate the windows in a circle
+super + paren{left,right}
+  bspc node @/ -R {270,90} 
+
 # NOTIFICATIONS
 # ========================================================
 

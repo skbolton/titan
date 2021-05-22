@@ -75,7 +75,7 @@ nvim_lsp.elixirls.setup{
   on_attach=attach;
   capabilities = capabilities,
   cmd = {
-    vim.loop.os_homedir() .. "/.elixir-ls/rel/language_server.sh"
+    vim.loop.os_homedir() .. "/.local/share/elixir-ls/rel/language_server.sh"
   };
   settings = {
     elixirLS = {

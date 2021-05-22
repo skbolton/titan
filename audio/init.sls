@@ -13,12 +13,6 @@ pavucontrol:
     - require:
       - pkg: pulseaudio
 
-pacmixer:
-  pkg.installed:
-    - name: pacmixer
-    - require:
-      - pkg: pulseaudio
-
 bluetooth:
   pkg.installed:
     - pkgs:

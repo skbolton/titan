@@ -2,46 +2,66 @@
 include:
   - asdf
 
+{% set erlang_version = '23.2.3' %}
+{% set elixir_version = '1.11.3-otp-23' %}
+
 # IMPORTANT: Asdf is a sourced function
 # Since we might be in a shell that hasn't yet sourced it we need to source it before any calls to asdf
 
-# install asdf-erlang and erlang
-asdf-erlang:
+asdf-erlang-plugin:
   cmd.run:
-    # important these scripts get run in reverse order
-    - names: 
-      - /bin/zsh -c "source ~/.asdf/asdf.sh; asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git"
-      - /bin/zsh -c "source ~/.asdf/asdf.sh; asdf install erlang 22.0.7"
-      - /bin/zsh -c "source ~/.asdf/asdf.sh; asdf global erlang 22.0.7"
-    # If we already have erlang move on
-    - unless: /bin/zsh -c "source ~/.asdf/asdf.sh; asdf current erlang"
+    - name: source ~/.asdf/asdf.sh; asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
+    - runas: orlando
+    - unless: source ~/.asdf/asdf.sh; asdf plugin list all | grep erlang
+
+asdf-erlang-install:
+  cmd.run:
+    - name: source ~/.asdf/asdf.sh; asdf install erlang {{ erlang_version }}
+    - runas: orlando
+
+asdf-erlang-global:
+  cmd.run:
+    - name: source ~/.asdf/asdf.sh; asdf global erlang {{ erlang_version }}
+    - runas: orlando
 
 # install elixir
-asdf-elixir:
+asdf-elixir-plugin:
+  pkg.installed:
+    - name: unzip
   cmd.run:
-    # important these scripts get run in reverse order
-    - names: 
-      - /bin/zsh -c "source ~/.asdf/asdf.sh; asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git"
-      - /bin/zsh -c "source ~/.asdf/asdf.sh; asdf install elixir 1.9.2-otp-22"
-      - /bin/zsh -c "source ~/.asdf/asdf.sh; asdf global elixir 1.9.2-otp-22"
-    # skip if we have elixir already
-    - unless: /bin/zsh -c "source ~/.asdf/asdf.sh; asdf current elixir"
+    - name: source ~/.asdf/asdf.sh; asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+    - runas: orlando
+    - unless: source ~/.asdf/asdf.sh; asdf plugin list all | grep elixir
+
+asdf-elixir-install:
+  cmd.run:
+    - name: source ~/.asdf/asdf.sh; asdf install elixir {{ elixir_version }}
+    - runas: orlando
+
+asdf-elixir-global:
+  cmd.run:
+    - name: source ~/.asdf/asdf.sh; asdf global elixir {{ elixir_version }}
+    - runas: orlando
 
 install-package-toolchains:
   cmd.run:
-    - names: 
-      - mix local.hex --if-missing
-      - mix local.rebar --force
+    - name: source ~/.asdf/asdf.sh; asdf reshim; mix local.hex --if-missing --force; mix local.rebar --force
+    - runas: orlando
+    - env:
+      - LANG: en_US.UTF-8
 
 # get language server in place
 elixir-language-server:
-  git.cloned:
-    - name: https://github.com/JakeBecker/elixir-ls.git
-    - target: /home/orlando/.elixir-ls
+  git.latest:
+    - name: https://github.com/elixir-lsp/elixir-ls.git
+    - target: /home/orlando/.local/share/elixir-ls
+    - user: orlando
 
   cmd.run:
-    - cwd: /home/orlando/.elixir-ls
-    - names:
-      - mix deps.get
-      - mix compile
-      - mix elixir_ls.release -o rel
+    - cwd: /home/orlando/.local/share/elixir-ls
+    - runas: orlando
+    - name: source ~/.asdf/asdf.sh; asdf reshim; mix deps.get; mix compile; mix elixir_ls.release -o rel
+    - env:
+      - LANG: en_US.UTF-8
+    - onchanges:
+      - git: elixir-language-server

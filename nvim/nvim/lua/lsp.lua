@@ -1,7 +1,21 @@
 vim.cmd('packadd nvim-lspconfig')
 
 local nvim_lsp = require'lspconfig'
+local configs = require'lspconfig/configs'
 local protocol = require'vim.lsp.protocol'
+
+-- ZK configuration
+-- add configuration to lspconfig
+configs.zk = {
+  default_config = {
+    cmd = {'zk', 'lsp'},
+    filetypes = {'markdown'},
+    root_dir = function()
+      return vim.loop.cwd()
+    end,
+    settings = {}
+  };
+}
 
 -- Vista
 -- ===================================================================
@@ -84,3 +98,5 @@ nvim_lsp.elixirls.setup{
   }
 }
 
+-- ZK
+nvim_lsp.zk.setup({})

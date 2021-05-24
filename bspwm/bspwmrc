@@ -59,7 +59,7 @@ _bc config top_padding         42
 _bc config automatic_scheme alternate
 _bc config borderless_monocle   true
 _bc config gapless_monocle      true
-_bc config focus_follows_pointer      true
+_bc config focus_follows_pointer      false
 
 #   ______     __         __     ______     __   __     ______  
 #  /\  ___\   /\ \       /\ \   /\  ___\   /\ "-.\ \   /\__  _\ 

@@ -31,10 +31,6 @@ local file_name = function()
   return file .. ' '
 end
 
-local server_attached = function()
-  return vim.lsp.buf_get_clients()[1] ~= nil
-end
-
 local active_lsp = function()
   active_client = vim.lsp.buf_get_clients()[1]
   if active_client ~= nil then

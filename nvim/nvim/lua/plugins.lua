@@ -43,7 +43,6 @@ packer.startup(function()
   use 'tpope/vim-projectionist'
   use 'tpope/vim-endwise'
   use 'tpope/vim-speeddating'
-  use 'machakann/vim-highlightedyank'
   use {
     'janko/vim-test',
     requires = { 'tpoop/vim-dispatch', 'neomake/neomake' }

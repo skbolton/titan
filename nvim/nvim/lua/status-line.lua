@@ -7,14 +7,6 @@ gl.short_line_list = {'NvimTree','vista_kind','dbui'}
 
 local colors = themes.get_theme()
 
--- helper functions
-local buffer_not_empty = function() 
-  if vim.fn.empty(vim.fn.expand('%:t')) ~= 1 then
-    return true
-  end
-  return false
-end
-
 local function file_readonly()
   if vim.bo.filetype == 'help' then
     return ''
@@ -142,7 +134,7 @@ gls.left[2] = {
 gls.left[3] = {
   FileSize = {
     provider = 'FileSize',
-    condition = buffer_not_empty,
+    condition = condition.buffer_not_empty,
     highlight = {colors.fg_dark, colors.bg}
   }
 }
@@ -150,7 +142,7 @@ gls.left[3] = {
 gls.left[4] ={
   FileIcon = {
     provider = 'FileIcon',
-    condition = buffer_not_empty,
+    condition = condition.buffer_not_empty,
     highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color,colors.bg},
   }
 }
@@ -158,7 +150,7 @@ gls.left[4] ={
 gls.left[5] = {
   FileName = {
     provider = file_name,
-    condition = buffer_not_empty,
+    condition = condition.buffer_not_empty,
     highlight = {colors.green ,colors.bg,'bold'}
   }
 }
@@ -166,7 +158,7 @@ gls.left[5] = {
 gls.left[6] = {
   LineInfo = {
     provider = 'LineColumn',
-    condition = buffer_not_empty,
+    condition = condition.buffer_not_empty,
     separator_highlight = {'NONE',colors.bg},
     highlight = {colors.fg_dark, colors.bg},
   },

@@ -41,11 +41,13 @@ packer.startup(function()
   use 'tpope/vim-repeat'
   use 'b3nj5m1n/kommentary'
   use 'tpope/vim-projectionist'
-  use 'tpope/vim-dispatch'
   use 'tpope/vim-endwise'
   use 'tpope/vim-speeddating'
   use 'machakann/vim-highlightedyank'
-  use 'janko/vim-test'
+  use {
+    'janko/vim-test',
+    requires = { 'tpoop/vim-dispatch', 'neomake/neomake' }
+  }
   use {
     'christoomey/vim-tmux-navigator',
     config = function ()
@@ -103,7 +105,6 @@ packer.startup(function()
       }
     end
   }
-  use 'neomake/neomake'
   use {
     'neovim/nvim-lspconfig',
     config = function() require('lsp') end,

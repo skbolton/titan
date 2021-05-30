@@ -35,6 +35,7 @@ packer.startup(function()
   -- ===================================================================
 
   -- CORE PLUGINS
+  use 'wakatime/vim-wakatime'
   use 'yuttie/comfortable-motion.vim'
   use 'jiangmiao/auto-pairs'
   use 'tpope/vim-surround'

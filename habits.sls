@@ -2,19 +2,22 @@
 include:
   - rust
 
+dijo:
+  cmd.run:
+    - name: paru -S dijo --noconfirm --skipreview
+    - runas: orlando
+    - unless: paru -Qi dijo
+
 dijo-data:
   file.symlink:
-    {% if grains['os'] == 'MacOS' %}
-    - name: {{ salt["environ.get"]("HOME") }}/Library/Application Support/rs.nerdypepper.dijo
-    {% else %}
-    - name: {{ salt["environ.get"]("HOME") }}/.local/share/dijo
-    {% endif %}
-    - target: {{ salt["environ.get"]("HOME") }}/Documents/sync/Habits/current-year/
+    - name: /home/orlando/.local/share/dijo
+    - target: /home/orlando/Documents/Wolf/dijo
     - force: True
 
 dijo-config:
   file.managed:
-    - name: {{ salt["environ.get"]("HOME") }}/.config/dijo/config.toml
+    - name: /home/orlando/.config/dijo/config.toml
+    - makedirs: True
     - contents:
       - "[look]"
       - true_chr = "●"
@@ -23,4 +26,4 @@ dijo-config:
       - "[colors]"
       - reached = "cyan"
       - todo = "magenta"
-      - inactive = "light black"
+      - inactive = "#8A889D"

@@ -46,7 +46,7 @@ packer.startup(function()
   use 'tpope/vim-speeddating'
   use {
     'janko/vim-test',
-    requires = { 'tpoop/vim-dispatch', 'neomake/neomake' }
+    requires = { 'tpope/vim-dispatch', 'neomake/neomake' }
   }
   use {
     'christoomey/vim-tmux-navigator',

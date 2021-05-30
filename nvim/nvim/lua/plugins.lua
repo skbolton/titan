@@ -35,6 +35,10 @@ packer.startup(function()
   -- ===================================================================
 
   -- CORE PLUGINS
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    config = function() require("tree-sitter") end
+  }
   use 'wakatime/vim-wakatime'
   use 'yuttie/comfortable-motion.vim'
   use 'jiangmiao/auto-pairs'

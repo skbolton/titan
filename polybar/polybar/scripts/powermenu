@@ -6,7 +6,7 @@
 MENU="$(rofi -sep "|" -dmenu -i -p 'System' -location 1 -xoffset 12 -yoffset 58 -width 10 -hide-scrollbar -line-padding 4 -padding 20 -lines 4 <<< "  Lock|  Logout|  Reboot|  Shutdown|  UEFI")"
             case "$MENU" in
                 *Lock) i3lock-fancy ;;
-                *Logout) openbox --exit;;
+                *Logout) bspc quit;;
                 *Reboot) systemctl reboot ;;
                 *Shutdown) systemctl -i poweroff;;
                 *UEFI) systemctl reboot --firmware-setup

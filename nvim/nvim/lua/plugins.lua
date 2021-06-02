@@ -124,7 +124,10 @@ packer.startup(function()
   use 'lotabout/skim.vim'
   -- Status and UI
   use 'kyazdani42/nvim-web-devicons.git'
-  use 'kyazdani42/nvim-tree.lua'
+  use {
+    'kyazdani42/nvim-tree.lua',
+    config = function() require('tree') end
+  }
   use {
     'glepnir/galaxyline.nvim',
     branch = 'main',

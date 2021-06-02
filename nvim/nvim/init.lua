@@ -8,6 +8,5 @@
 --]]
 require('options')
 require('plugins')
-require('tree')
 require('mappings')
 require('search')

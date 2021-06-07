@@ -31,3 +31,9 @@ bspwm-specific-sxhkd:
     - makedirs: True
     - user: orlando
     - force: True
+
+betterlockscreen:
+  cmd.run:
+    - name: paru -S betterlockscreen --noconfirm --skipreview
+    - runas: orlando
+    - unless: paru -Qi betterlockscreen

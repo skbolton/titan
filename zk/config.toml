@@ -74,3 +74,11 @@ zettel = 'zk --notebook-dir ~/Documents/Wanderer $@'
 ls = 'zk list --notebook-dir ~/Documents/Wanderer $@'
 lookup = 'zk edit --interactive --notebook-dir ~/Documents/Wanderer $@'
 
+
+[lsp]
+
+[lsp.diagnostics]
+# Report titles of wiki-links as hints.
+wiki-title = "hint"
+# Warn for dead links between notes.
+dead-link = "warning"

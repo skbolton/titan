@@ -35,21 +35,22 @@ rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,sc
 
 # General decoration
 color.label=
-color.header=color8
+color.header=color15
 color.footnote=color15
 color.warning=white on blue
 color.error=white on red
 color.debug=blue
+color.alternate=
 
 # Task state
 color.completed=
 color.deleted=
 color.active=black on color2
 color.recurring=
-color.scheduled=
+color.scheduled=yellow
 color.until=
 color.blocked=bold gray10 on gray4
-color.blocking=gray18 on gray6
+color.blocking=
 
 # Project
 color.project.none=
@@ -60,7 +61,7 @@ color.uda.priority.L=
 color.uda.priority.M=color11 on color0
 
 # Tags
-color.tag.next=
+color.tag.next=green
 color.tag.in=color15
 color.tag.none=
 color.tagged=

@@ -1,3 +1,6 @@
+flameshot:
+  pkg.installed
+
 ripgrep:
   pkg.installed
 

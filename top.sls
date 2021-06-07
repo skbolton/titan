@@ -22,7 +22,7 @@ base:
     - python
     - rofi
     - sxhkd
-    - task-warrior
+    - taskwarrior
     - terminfo
     - tmux
     - zk

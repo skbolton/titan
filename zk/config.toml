@@ -67,6 +67,7 @@ year = 'zk new --group year --no-input --working-dir ~/Documents/Wolf journal'
 
 ## Working aliases
 meeting = 'zk new --group meeting --title $1 --notebook-dir ~/Documents/Warrior/genesis-block meetings'
+projects = 'zk edit --interactive --tag="project" --notebook-dir ~/Documents/Warrior $@'
 
 ## Knowledge aliases
 zettel = 'zk --notebook-dir ~/Documents/Wanderer $@'

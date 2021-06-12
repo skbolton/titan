@@ -66,5 +66,10 @@ else
   let theme = $THEME
 endif
 
+function! SynGroup()                                                            
+    let l:s = synID(line('.'), col('.'), 1)                                       
+    echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
+  endfun
+
 " The Defaults
 :call SwitchColorScheme(theme)

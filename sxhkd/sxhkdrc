@@ -14,22 +14,24 @@ alt + period
 super + slash
   toggle-program kitty-scratch
 
-alt + semicolon
+# Launch Specific Programs
+# ========================================================
+alt + BackSpace; semicolon
 	kitty --config ~/.config/kitty/kitty-float.conf --class kitty-float bpytop
 
-alt + b
+alt + BackSpace; b
   kitty --config ~/.config/kitty/kitty-float.conf --class kitty-float nvim ~/Documents/Wolf/bench.md
 
-alt + w
+alt + BackSpace; w
   kitty --config ~/.config/kitty/kitty-float.conf --class kitty-float nvim ~/Documents/Warrior/genesis-block/index.md
 
-alt + h
+alt + BackSpace; h
   kitty --config ~/.config/kitty/kitty-float.conf --class kitty-float dijo
 
-alt + greater
+alt + BackSpace; greater
   kitty --config ~/.config/kitty/kitty-float.conf --class kitty-float --hold
 
-alt + asciitilde
+alt + BackSpace; asciitilde
   kitty zk projects
 
 alt + t
@@ -45,10 +47,10 @@ alt + {_, shift +} Return
 alt + d
 	rofi -show drun -show-icons -location 0 -yoffset -250
 
-alt + e
+alt + f; e
   rofi -show emoji -modi emoji
 
-alt + c
+alt + f; c
   rofi -show calc -modi calc -no-show-match -no-sort
 
 # screenshot
@@ -58,9 +60,12 @@ alt + shift + 4
 alt + shift + 3
   flameshot gui
 
-# make sxhkd reload its configuration files:
-alt + Escape
+# Reload programs
+# ========================================================
+
+# SXHKD
+alt + r; Escape
 	pkill -USR1 -x sxhkd && notify-send "Reloaded sxhkd" -i reload
 
-alt + p
+alt + r; p
  polybar-msg cmd restart && notify-send "Reloaded polybar" -i reload

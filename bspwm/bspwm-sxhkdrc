@@ -13,6 +13,7 @@ super + shift + {q,r}
 # WINDOW LIFECYCLE
 # ========================================================
 
+# force close window
 super + q
 	bspc node -k
 
@@ -20,24 +21,40 @@ super + q
 super + w
 	bspc node -c
 
-# set the node flags
-super + ctrl + {m,x,y,z}
-	bspc node -g {marked,locked,sticky,private}
-
-# MOVEMENTS
+# DESKTOP COMMANDS
 # ========================================================
 
-# swap or move to given direction
-super + {_,ctrl} + {h,j,k,l}
-	bspc node -{f,s} {west,south,north,east}
-
-# swap the current node and the biggest node
-super + g
-	bspc node -s biggest.local
+# Focus a given desktop 
+super + {1-9,0}
+  bspc desktop '{1-9,10}' -f
 
 # focus the next/previous desktop in the current monitor
 super + {shift + Tab, Tab}
 	bspc desktop -f {prev,next}.local
+
+
+# NODE COMMANDS
+# ========================================================
+
+# Move in a given direction
+super + {h,j,k,l}
+	bspc node -f {west,south,north,east}
+
+# Swap in a given direction
+super + semicolon; {h,j,k,l}
+  bspc node -s {west,south,north,east}
+
+# swap the current node and the biggest node
+super + semicolon; z
+	bspc node -s biggest.local
+
+# Send node to desktop # along with focus
+super + semicolon; {1-9,0}
+  bspc node -d '{1-9,10}' -f
+
+# Send node to desktop # w/o keeping focus
+super + semicolon; ctrl + {1-9,0}
+  bspc node -d '{1-9,10}'
 
 # focus the older or newer node in the focus history
 super + {o,i}
@@ -45,45 +62,36 @@ super + {o,i}
 	bspc node {older,newer} -f; \
 	bspc wm -h on
 
-# focus or send to the given desktop
-super + {_, ctrl + }{1-9,0}
-	bspc {desktop ,node -d} '{1-9,10}' -f
-
-
-# LAYOUT
-# ========================================================
+# set the node flags
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
 
 # set the window state
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
+# Equalize all windows to same size
+super + semicolon; equal
+	bspc node @/ -E
+
+super + semicolon: {Left,Down,Up,Right}
+  bspc node -z {right -30 0,top 0 30,top 0 -30,right 30 0}
+
+# Rotate the nodes in a circle
+# Rotate the windows in a circle
+super + semicolon: paren{left,right}
+  bspc node @/ -R {270,90} 
+
+# LAYOUT
+# ========================================================
+
 # alternate between the tiled and monocle layout
 super + m
 	bspc desktop -l next
 
-# expand windows
-super + {Left,Down,Up,Right}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
-
-# expand windows more
-super + shift + {Left,Down,Up,Right}
-	bspc node -z {left -40 0,bottom 0 40,top 0 -40,right 40 0}
-
-# contract windows
-super + alt + {Left,Down,Up,Right}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
-
-# Equalize all windows to same size
-super + equal
-	bspc node @/ -E
-
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
-
-# Rotate the windows in a circle
-super + paren{left,right}
-  bspc node @/ -R {270,90} 
 
 # NOTIFICATIONS
 # ========================================================

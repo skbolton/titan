@@ -166,6 +166,12 @@ packer.startup(function()
   }
   use {'rhysd/git-messenger.vim', cmd = 'GitMessenger'}
   use {
+    'pwntester/octo.nvim',
+    config = function()
+      require('octo').setup()
+    end
+  }
+  use {
     'lewis6991/gitsigns.nvim',
     requires = {'nvim-lua/plenary.nvim'},
     config = function()

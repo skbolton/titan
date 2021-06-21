@@ -24,7 +24,6 @@ packer.startup(function()
       require('wiki')
     end
   }
-  use 'michal-h21/vim-zettel'
   use 'tbabej/taskwiki'
   use 'saltstack/salt-vim'
   use 'jparise/vim-graphql'

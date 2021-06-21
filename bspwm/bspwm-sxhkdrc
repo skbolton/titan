@@ -63,7 +63,7 @@ super + {o,i}
 	bspc wm -h on
 
 # set the node flags
-super + ctrl + {m,x,y,z}
+super + semicolon; ctrl + {m,x,s,z}
 	bspc node -g {marked,locked,sticky,private}
 
 # set the window state

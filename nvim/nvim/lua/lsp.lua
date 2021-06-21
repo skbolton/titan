@@ -69,7 +69,7 @@ local function attach(client)
     ' '; -- Snippet
     ' '; -- Color
     ' '; -- file
-    ''; -- Reference
+    ' '; -- Reference
     ' '; -- Folder
     ' '; -- EnumMember
     ' '; -- Constant
@@ -99,4 +99,7 @@ nvim_lsp.elixirls.setup{
 }
 
 -- ZK
-nvim_lsp.zk.setup({})
+nvim_lsp.zk.setup{
+  on_attach = attach,
+  capabilities = capabilities
+}

@@ -9,7 +9,7 @@ set -g window-status-separator ""
 set -g status-bg black
 
 #Bars ---------------------------------
-set -g status-left "#[fg=green]#S"
+set -g status-left "#[fg=green,bold]#(tmux run-shell 'tmux display-message -p \"#S\" | tr \"[:lower:]\" \"[:upper:]\"')"
 
 set -g status-right "#[fg=brightwhite]%Y-%m-%d ∙ %I:%M"
 

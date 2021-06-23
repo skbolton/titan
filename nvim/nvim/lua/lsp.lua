@@ -25,10 +25,11 @@ vim.g.vista_disable_statusline = true;
 vim.g['vista#renderer#enable_icon'] = 1;
 vim.g.vista_icon_indent = {"▸ ", ""};
 vim.g['vista#renderer#icons'] = {
-  ['function'] = 'ﬦ',
-  module = ' ',
-  variable = ' ',
-  constant = ''
+  ['function'] = ' ',
+  module = '  ',
+  variable = ' ',
+  constant = ' ',
+  event = ' '
 }
 
 -- LSP Diagnositics
@@ -57,7 +58,7 @@ local function attach(client)
     ' '; -- Function
     ' '; -- Constructor
     ' '; -- Field
-    ' '; --Variable
+    ' '; --Variable
     ' '; -- Class
     ' '; -- Interface
     ' '; -- Module
@@ -74,7 +75,7 @@ local function attach(client)
     ' '; -- EnumMember
     ' '; -- Constant
     ''; -- Struct
-    ''; -- Event
+    ''; -- Event
     ''; -- Operator
     ''; -- TypeParameter
   }

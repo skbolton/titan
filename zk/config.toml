@@ -58,6 +58,9 @@ recents = "--sort created- --created-after 'last two weeks'"
 
 # COMMAND ALIASES
 [alias]
+## General alias
+links = 'zk list --format link --no-pager --quiet --delimiter="\n" $@'
+
 ## Journal aliases
 journal = 'zk --notebook-dir ~/Documents/Wolf $@'
 day = 'zk new --group day --no-input --working-dir ~/Documents/Wolf journal'

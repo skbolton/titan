@@ -21,3 +21,10 @@ zk-config:
     - force: True
     - user: orlando
 
+delta-emoji-picker:
+  file.managed:
+    - name: /home/orlando/.local/bin/delta-emoji-picker
+    - source: salt://zk/delta-emoji-picker
+    - mode: keep
+    - user: orlando
+

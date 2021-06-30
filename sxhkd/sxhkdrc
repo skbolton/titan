@@ -53,6 +53,9 @@ alt + d
 alt + f; e
   rofi -show emoji -modi emoji
 
+alt + f; d
+  delta-emoji-picker
+
 alt + f; c
   rofi -show calc -modi calc -no-show-match -no-sort
 

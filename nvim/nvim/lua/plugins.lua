@@ -152,7 +152,9 @@ packer.startup(function()
       -- configure telescope
       telescope.setup{
         defaults = {
-          prompt_position = 'top',
+          layout_config = {
+            prompt_position = 'top',
+          },
           prompt_prefix = '  ',
           sorting_strategy = 'ascending'
         }

@@ -1,13 +1,9 @@
 include:
   - zk
-{# nvim:
+
+ nvim:
   pkg.installed:
-    - name: neovim #}
-nvim:
-  cmd.run:
-    - runas: orlando
-    - name: paru -S neovim-nightly-git --noconfirm --skipreview
-    - unless: paru -Qi neovim-nightly-git
+    - name: neovim
 
 nvim-config:
   file.recurse:

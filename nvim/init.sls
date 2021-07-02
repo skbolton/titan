@@ -1,7 +1,7 @@
 include:
   - zk
 
- nvim:
+nvim:
   pkg.installed:
     - name: neovim
 

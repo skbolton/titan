@@ -38,3 +38,7 @@ map('n', '<leader>>', ':!<space>', default_opts)
 -- copy and paste
 map('v', '<leader>cc', '"+y', default_opts)
 map('', '<leader>vv', '"+p', default_opts)
+
+-- fold goodies
+map('n', '<TAB>', 'za', default_opts)
+map('n', '<S-TAB>', 'zA', default_opts)

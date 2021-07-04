@@ -1,6 +1,6 @@
 #!/bin/sh
 
-MENU="$(rofi -sep "|" -dmenu -i -p 'System' -location 0 -width 10 -hide-scrollbar -line-padding 4 -padding 20 -lines 4 <<< "area|health|finance|career|character|home|gb|goals|milestones|projects|achievements")"
+MENU="$(rofi -sep "|" -dmenu -i -p 'System' -location 0 -width 10 -hide-scrollbar -line-padding 4 -padding 20 -lines 4 <<< "area|health|finance|career|character|home|gb|goals|milestones|projects|achievements|quests|checkpoints")"
 
 case "$MENU" in
     area) echo -n ♾️  | xclip  -i -selection clipboard;;
@@ -14,4 +14,6 @@ case "$MENU" in
     milestones) echo -n 🏁 | xclip -i -selection clipboard;;
     achievements) echo -n 🥇 | xclip -i -selection clipboard;;
     projects) echo -n ✅ | xclip -i -selection clipboard;;
+    quests) echo -n ⚔️ | xclip -i -selection clipboard;;
+    checkpoints) echo -n ⛺ | xclip -i -selection clipboard;;
 esac

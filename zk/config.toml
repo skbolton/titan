@@ -59,6 +59,7 @@ recents = "--sort created- --created-after 'last two weeks'"
 # COMMAND ALIASES
 [alias]
 ## General alias
+e = 'zk edit --interactive $@'
 links = 'zk list --format link --no-pager --quiet --delimiter="\n" $@'
 
 ## Journal aliases
@@ -70,13 +71,29 @@ year = 'zk new --group year --no-input --working-dir ~/Documents/Wolf journal'
 
 ## Working aliases
 meeting = 'zk new --group meeting --title $1 --notebook-dir ~/Documents/Warrior/genesis-block meetings'
-projects = 'zk edit --interactive --tag="project" --notebook-dir ~/Documents/Warrior $@'
 
 ## Knowledge aliases
 zettel = 'zk --notebook-dir ~/Documents/Wanderer $@'
 ls = 'zk list --notebook-dir ~/Documents/Wanderer $@'
-lookup = 'zk edit --interactive --notebook-dir ~/Documents/Wanderer $@'
+lookup = 'zk e --notebook-dir ~/Documents/Wanderer $@'
 
+## Projects and areas
+areas = 'zk e areas --working-dir ~/Documents/Delta '
+project = 'zk new --template "project.md" --working-dir ~/Documents/Delta --title="$*"'
+projects = 'zk e projects --working-dir ~/Documents/Delta $@'
+goal = 'zk new --template "goal.md" --working-dir ~/Documents/Delta --title="$*"'
+milestone = 'zk new --template "milestone.md" --working-dir ~/Documents/Delta --title="$*"'
+
+## Quests
+quest = 'zk new --group Quests --no-input --working-dir ~/Documents/Delta Quests'
+checkpoint = 'zk new --group Checkpoint --no-input --working-dir ~/Documents/Delta Quests'
+
+## Spells
+cast = 'zk e --working-dir ~/Documents/Delta/ Spells $@'
+spell = 'zk new --no-input --working-dir ~/Documents/Delta/Spells --title "$*"'
+
+## Inventory
+inv = 'zk e --working-dir ~/Documents/Delta Inventory $@'
 
 [lsp]
 

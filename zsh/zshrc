@@ -56,17 +56,12 @@ work () {
   fi
 }
 
-delta() {
-  if [ "$1" = "launch" ]; then
-    tmuxinator start $2
-  fi
-  
-  if [ "$1" = "l" ]; then
-    tmuxinator start $2
-  fi
-
-  if [ "$1" = "new" ]; then
-    tmuxinator start launch name=${PWD##*/} root=$(pwd)
+zk() {
+  if [ $# -eq 0 ]
+  then
+    cd ~/Documents/Delta
+  else
+    command zk $@
   fi
 }
 

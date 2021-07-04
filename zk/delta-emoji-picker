@@ -9,7 +9,7 @@ case "$MENU" in
     career) echo -n " " | xclip -i -selection clipboard;;
     character) echo -n " " | xclip -i -selection clipboard;;
     home) echo -n " " | xclip -i -selection clipboard;;
-    gb) echo -n " " | xclip -i -selection clipboard;;
+    gb) echo -n "" | xclip -i -selection clipboard;;
     goals) echo -n "﫜"| xclip -i -selection clipboard;;
     milestones) echo -n " " | xclip -i -selection clipboard;;
     achievements) echo -n " " | xclip -i -selection clipboard;;

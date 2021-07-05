@@ -43,8 +43,8 @@ alt + t
   bspc node local.locked -f
 
 # terminal emulator
-alt + {_, shift +} Return
-	{kitty,kitty --config=~/.config/kitty/kitty-scratch.conf --listen-on=unix:/tmp/kitty-scratch --class kitty-scratch --hold --directory=$HOME}
+alt + Return
+	kitty
 
 # program launcher
 alt + d

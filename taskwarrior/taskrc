@@ -26,7 +26,6 @@ urgency.user.tag.in.coefficient=-1
 # just because its a project doesn't make it more important
 urgency.project.coefficient=0
 urgency.scheduled.coefficient=2
-urgency.user.tag.next.coefficient=1
 urgency.user.tag.pr.coefficient=2
 urgency.uda.priority.H.coefficient=10
 

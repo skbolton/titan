@@ -25,9 +25,15 @@ report.completed.sort = project+/,end+
 urgency.user.tag.in.coefficient=-1
 # just because its a project doesn't make it more important
 urgency.project.coefficient=0
+# just because its a blocker doesn't boost it automatically
+urgency.blocking.coefficient=0
 urgency.scheduled.coefficient=2
 urgency.user.tag.pr.coefficient=2
 urgency.uda.priority.H.coefficient=10
+# Create priority boosts for areas of my life
+# by default a tag is 0.9 coefficient
+urgency.user.tag.Health.coefficient=1.1
+urgency.user.tag.Home.coefficient=1
 
 # Theme
 rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.

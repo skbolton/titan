@@ -1,6 +1,7 @@
 # We need rust for dijo to work
 include:
   - rust
+  - snap
 
 dijo:
   cmd.run:
@@ -27,3 +28,21 @@ dijo-config:
       - reached = "cyan"
       - todo = "magenta"
       - inactive = "#8A889D"
+
+harsh:
+  cmd.run:
+    - name: snap install harsh
+
+harsh-habits:
+  file.symlink:
+    - name: /home/orlando/.config/harsh/habits
+    - target: /home/orlando/Documents/Delta/habits
+    - user: orlando
+    - makedirs: True
+
+harsh-log:
+  file.symlink:
+    - name: /home/orlando/.config/harsh/log
+    - target: /home/orlando/Documents/Delta/habits-log
+    - user: orlando
+    - makedirs: True

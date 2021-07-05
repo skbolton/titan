@@ -104,3 +104,15 @@ nvim_lsp.zk.setup{
   on_attach = attach,
   capabilities = capabilities
 }
+
+-- beancount
+nvim_lsp.beancount.setup {
+  cmd = {
+    'beancount-langserver',
+    '--stdio'
+  },
+  init_options = {
+    journalFile = "/home/orlando/Documents/Delta/2021-journal.beancount",
+    pythonPath = "python3"
+  }
+}

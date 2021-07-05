@@ -4,8 +4,8 @@ alias.@ = context
 data.location=~/.task
 
 # CONTEXTS
-context.work = proj:Work
-context.personal = proj.not:Work
+context.gb = +GB
+context.personal = -GB
 
 # INBOX REPORT
 report.in.columns = id,tags,description

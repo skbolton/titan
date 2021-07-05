@@ -22,6 +22,8 @@ report.next.filter = status:pending limit:20 -BLOCKED -milestone
 report.completed.sort = project+/,end+
 
 # urgency overrides
+# make daily highlight always highest priority
+urgency.user.tag.DH.coefficient=100
 urgency.user.tag.in.coefficient=-1
 # just because its a project doesn't make it more important
 urgency.project.coefficient=0
@@ -70,6 +72,7 @@ color.tag.next=green
 color.tag.in=color15
 color.tag.none=
 color.tagged=
+color.tag.DH=color11
 
 # Due
 color.due=color14

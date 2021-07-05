@@ -20,7 +20,7 @@ alt + BackSpace; semicolon
 	kitty --config ~/.config/kitty/kitty-float.conf --class kitty-float bpytop
 
 alt + BackSpace; b
-  kitty --config ~/.config/kitty/kitty-float.conf --class kitty-float nvim ~/Documents/Wolf/bench.md
+  kitty --config ~/.config/kitty/kitty-float.conf --class kitty-float nvim ~/Documents/Delta/Bench.md
 
 alt + BackSpace; w
   kitty --config ~/.config/kitty/kitty-float.conf --class kitty-float nvim ~/Documents/Warrior/genesis-block/index.md

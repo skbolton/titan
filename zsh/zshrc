@@ -65,7 +65,7 @@ zk() {
 }
 
 bench() {
-  dir="$HOME/Documents/Wolf/bench.md"
+  dir="$HOME/Documents/Delta/Bench.md"
   if [ $# -eq 0 ]
   then
     while read line

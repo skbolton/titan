@@ -24,6 +24,12 @@ iosevka:
     - runas: orlando
     - unless: paru -Qi ttf-iosevka
 
+iosevka-ss18:
+  cmd.run:
+    - name: paru -S ttf-iosevka-ss18 --noconfirm --skipreview
+    - runas: orlando
+    - unless: paru -Qi ttf-iosevka-ss18
+
 stellar:
   file.recurse:
     - name: /home/orlando/.local/share/fonts/Stellar

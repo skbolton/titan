@@ -18,6 +18,13 @@ embark-tmux:
     - user: orlando
     - makedirs: True
 
+gruvbox-light-tmux:
+  file.managed:
+    - name: /home/orlando/.config/tmux/gruvbox-light.tmux
+    - source: salt://tmux/gruvbox-light.tmux
+    - user: orlando
+    - makedirs: True
+
 tmux-plugin-manager:
   git.cloned:
     - name: https://github.com/tmux-plugins/tpm

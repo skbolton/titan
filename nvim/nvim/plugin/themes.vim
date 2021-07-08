@@ -53,6 +53,7 @@ function! ColorScheme()
 
   if g:VIM_COLOR_SCHEME ==# 'embark'
     packadd embark
+    let g:embark_terminal_italics = 1
     colorscheme embark
 
     execute "silent ! kitty @ --to=tcp:localhost:12345 set-colors --all ~/.config/kitty/embark.conf"

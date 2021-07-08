@@ -42,27 +42,6 @@ local active_lsp = function()
   return ' '
 end
 
-local testing_results = function()
-  local test_colors = {
-    init = colors.fg_dark,
-    passing = colors.blue,
-    running = colors.yellow,
-    failing = colors.red
-  }
-
-  vim.api.nvim_command('hi GalaxyTestResults guifg=' ..test_colors[testing.TESTING_STATUS])
-
-  if testing.TESTING_STATUS == 'init' then
-    return " "
-  elseif testing.TESTING_STATUS == 'passing' then
-    return " "
-  elseif testing.TESTING_STATUS == 'running' then
-    return " "
-  elseif testing.TESTING_STATUS == 'failing' then
-    return " "
-  end
-end
-
 -----------------------------------------------------------
 -- Bar Sections
 -----------------------------------------------------------
@@ -79,27 +58,6 @@ gls.left[1] = {
 gls.left[2] = {
   ViMode = {
     provider = function()
-      -- auto change color according to vim mode
-      local mode_color = {
-        n = colors.cyan,
-        no = colors.cyan,
-        s = colors.dark_yellow,
-        S = colors.dark_yellow,
-        i = colors.red,
-        ic = colors.red,
-        V = colors.yellow,
-        v = colors.yellow,
-        [""] = colors.dark_yellow,
-        c = colors.purple,
-        cv = colors.purple,
-        ce = colors.purple,
-        t = colors.green,
-        r = colors.purple,
-        R = colors.purple,
-        Rv = colors.purple,
-        ["!"] = colors.purple,
-      }
-
       local alias = {
         n      = 'NORMAL',
         i      = 'INSERT',
@@ -114,16 +72,32 @@ gls.left[2] = {
         ['!']  = 'SHELL',
       }
 
-      local mode = vim.fn.mode();
-      local color = mode_color[mode]
-      local alias = alias[mode]
-      vim.api.nvim_command('hi GalaxyViMode guifg=' .. color)
-
-      return alias
+      return alias[vim.fn.mode()]
     end,
     separator = ' ',
-    separator_highlight = {'NONE', colors.bg},
-    highlight = {colors.green, colors.bg,  'bold'}
+    highlight = function()
+      local mode_color = {
+        n = 'Special',
+        no = 'Special',
+        s = 'Boolean',
+        S = 'Boolean',
+        i = 'Keyword',
+        ic = 'Keyword',
+        V = 'Search',
+        v = 'Search',
+        [""] = 'Boolean',
+        c = 'Identifier',
+        cv = 'Identifier',
+        ce = 'Identifier',
+        t = 'PreProc',
+        r = 'Identifier',
+        R = 'Identifier',
+        Rv = 'Identifier',
+        ["!"] = 'Identifier',
+      }
+
+      return mode_color[vim.fn.mode()]
+    end
   }
 }
 
@@ -131,7 +105,7 @@ gls.left[3] = {
   FileSize = {
     provider = 'FileSize',
     condition = condition.buffer_not_empty,
-    highlight = {colors.fg_dark, colors.bg}
+    highlight = 'Comment'
   }
 }
 
@@ -139,7 +113,7 @@ gls.left[4] ={
   FileIcon = {
     provider = 'FileIcon',
     condition = condition.buffer_not_empty,
-    highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color,colors.bg},
+    highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color,'NONE'},
   }
 }
 
@@ -147,7 +121,7 @@ gls.left[5] = {
   FileName = {
     provider = file_name,
     condition = condition.buffer_not_empty,
-    highlight = {colors.green ,colors.bg,'bold'}
+    highlight = "PreProc"
   }
 }
 
@@ -156,7 +130,7 @@ gls.left[6] = {
     provider = 'LineColumn',
     condition = condition.buffer_not_empty,
     separator_highlight = {'NONE',colors.bg},
-    highlight = {colors.fg_dark, colors.bg},
+    highlight = "Comment",
   },
 }
 
@@ -165,10 +139,27 @@ gls.left[6] = {
 
 gls.right[1] = {
   TestResults = {
-    provider = testing_results,
-    -- separator = '',
-    separator_highlight = {'NONE',colors.bg},
-    highlight = {colors.yellow, colors.bg}
+    provider = function()
+      if testing.TESTING_STATUS == 'init' then
+        return " "
+      elseif testing.TESTING_STATUS == 'passing' then
+        return " "
+      elseif testing.TESTING_STATUS == 'running' then
+        return " "
+      elseif testing.TESTING_STATUS == 'failing' then
+        return " "
+      end
+    end,
+    highlight = function()
+      local test_colors = {
+        init = 'Comment',
+        passing = 'Type',
+        running = 'Search',
+        failing = 'Keyword'
+      }
+
+      return test_colors[testing.TESTING_STATUS]
+    end
   }
 }
 
@@ -176,8 +167,7 @@ gls.right[2] = {
   LanguageServer = {
     provider = active_lsp,
     separator = ' ',
-    separator_highlight = {'NONE', colors.bg},
-    highlight = {colors.green, colors.bg}
+    highlight = "PreProc"
   }
 }
 
@@ -185,16 +175,16 @@ gls.right[3] = {
   GitIcon = {
     -- provider = function() return ' ' end,
     provider = function()
-      if condition.check_git_workspace() then
-        vim.api.nvim_command('hi GalaxyGitIcon guifg=' ..colors.purple)
-      else
-        vim.api.nvim_command('hi GalaxyGitIcon guifg=' ..colors.fg_dark)
-      end
       return ' '
     end,
     separator = ' ',
-    separator_highlight = {'NONE',colors.bg},
-    highlight = {colors.purple,colors.bg},
+    highlight = function()
+      if condition.check_git_workspace() then
+        return "Identifier"
+      else
+        return "Comment"
+      end
+    end
   }
 }
 
@@ -202,7 +192,7 @@ gls.right[4] = {
   GitBranch = {
     provider = 'GitBranch',
     condition = require('galaxyline.provider_vcs').check_git_workspace,
-    highlight = {colors.purple,colors.bg}
+    highlight = "Identifier"
   }
 }
 
@@ -211,7 +201,7 @@ gls.right[4] = {
 gls.short_line_left[1] = {
   FileName = {
     provider = 'FileName',
-    highlight = {colors.green, colors.bg}
+    highlight = "PreProc"
   }
 }
 

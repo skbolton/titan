@@ -31,17 +31,6 @@ local file_name = function()
   return file .. ' '
 end
 
-local active_lsp = function()
-  active_client = vim.lsp.buf_get_clients()[1]
-  if active_client ~= nil then
-    vim.api.nvim_command('hi GalaxyLanguageServer guifg=' ..colors.green)
-  else
-    vim.api.nvim_command('hi GalaxyLanguageServer guifg=' ..colors.fg_dark)
-  end
-
-  return ' '
-end
-
 -----------------------------------------------------------
 -- Bar Sections
 -----------------------------------------------------------
@@ -165,9 +154,16 @@ gls.right[1] = {
 
 gls.right[2] = {
   LanguageServer = {
-    provider = active_lsp,
+    provider = function() return ' ' end,
     separator = ' ',
-    highlight = "PreProc"
+    highlight = function()
+      active_client = vim.lsp.buf_get_clients()[1]
+      if active_client ~= nil then
+        return "PreProc"
+      else
+        return "Comment"
+      end
+    end
   }
 }
 

@@ -1,0 +1,6 @@
+name: <%= @settings["name"] %>
+root: <%= @settings["root"] %>
+
+windows:
+  - " ": nvim
+  - " ": clear

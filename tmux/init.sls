@@ -1,5 +1,6 @@
 include:
   - go
+  - ruby
 
 tmux:
   pkg.installed
@@ -31,25 +32,37 @@ tmux-plugin-manager:
     - target: /home/orlando/.config/tmux/plugins/tpm
     - user: orlando
 
-smug:
-  git.latest:
-    - name: https://github.com/ivaaaan/smug
-    - target: /home/orlando/Repos/smug
-    - user: orlando
+tmuxinator:
   cmd.run:
-    - cwd: /home/orlando/Repos/smug
-    - name: go install
-    - runas: orlando
-    - onchanges:
-      - git: smug
+    - name: gem install tmuxinator
 
-smug-config:
+tmuxinator-configs:
   file.recurse:
-    - name: /home/orlando/.config/smug
-    - source: salt://tmux/smug/
+    - name: /home/orlando/.config/tmuxinator
+    - source: salt://tmux/tmuxinator/
     - user: orlando
     - makedirs: True
     - force: True
+
+# smug:
+#   git.latest:
+#     - name: https://github.com/ivaaaan/smug
+#     - target: /home/orlando/Repos/smug
+#     - user: orlando
+#   cmd.run:
+#     - cwd: /home/orlando/Repos/smug
+#     - name: go install
+#     - runas: orlando
+#     - onchanges:
+#       - git: smug
+
+# smug-config:
+#   file.recurse:
+#     - name: /home/orlando/.config/smug
+#     - source: salt://tmux/smug/
+#     - user: orlando
+#     - makedirs: True
+#     - force: True
 
 tmux-launcher:
   file.managed:

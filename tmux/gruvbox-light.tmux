@@ -16,5 +16,5 @@ set -g status-right "#[fg=brightwhite]%Y-%m-%d ∙ %I:%M"
 # Windows ------------------------------
 set -g status-justify center
 set -g window-status-format "#[fg=brightwhite] #I #{?window_zoomed_flag, ,}#W"
-set -g window-status-current-format "#[fg=yellow] #I #{?window_zoomed_flag, ,}#W"
+set -g window-status-current-format "#[fg=cyan] #I #{?window_zoomed_flag, ,}#W"
 

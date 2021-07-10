@@ -35,6 +35,7 @@ tmux-plugin-manager:
 tmuxinator:
   cmd.run:
     - name: gem install tmuxinator
+    - runas: orlando
 
 tmuxinator-configs:
   file.recurse:

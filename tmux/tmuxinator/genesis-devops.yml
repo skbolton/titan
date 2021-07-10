@@ -1,0 +1,13 @@
+name: Genesis Devops
+root: ~/Repos/genesis-devops
+
+windows:
+  - " ": nvim +DBUI
+  - " ":
+      layout: main-vertical
+      panes:
+        - clear
+        - " ":
+          - ./db-connect.sh
+          - "3"
+          - "1"

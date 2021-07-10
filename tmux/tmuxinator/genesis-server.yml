@@ -1,0 +1,13 @@
+name: Genesis Server
+root: ~/Repos/genesis-server
+
+on_project_first_start: docker-compose up -d
+on_project_exit: docker-compose down
+
+windows:
+  - " ": nvim
+  - " ":
+      layout: main-vertical
+      panes:
+        - clear
+

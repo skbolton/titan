@@ -20,6 +20,7 @@ base:
     - picom
     - polybar
     - python
+    - qmk
     - rofi
     - sxhkd
     - taskwarrior

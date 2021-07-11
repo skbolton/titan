@@ -1,5 +1,5 @@
 configuration {
   theme: "embark";
-  font: "Stellar 18";
-  icon-theme: "Citrus";
+  font: "Iosevka SS08 14";
+  icon-theme: "Tela";
 }

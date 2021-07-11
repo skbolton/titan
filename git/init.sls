@@ -7,7 +7,7 @@ gitconfig:
 
 gitignore:
   file.managed:
-    - name: /home/orlando/.config/gitignore
+    - name: /home/orlando/.config/git/gitignore
     - source: salt://git/gitignore
     - user: orlando
 

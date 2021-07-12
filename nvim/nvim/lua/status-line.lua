@@ -31,6 +31,73 @@ local file_name = function()
   return file .. ' '
 end
 
+-- Customize editor mode name
+-- and color per mode
+local editor_mode = function ()
+  local alias = {
+    n      = 'NORMAL',
+    i      = 'INSERT',
+    v      = 'VISUAL',
+    [""] = 'V-BLOCK',
+    V      = 'V·LINE',
+    c      = 'COMMAND',
+    r      = 'REPLACE',
+    R      = 'REPLACE',
+    Rv     = 'V·REPLACE',
+    t      = 'TERM',
+    ['!']  = 'SHELL',
+  }
+
+  local mode_color = {
+    n = 'Special',
+    no = 'Special',
+    s = 'Boolean',
+    S = 'Boolean',
+    i = 'Keyword',
+    ic = 'Keyword',
+    V = 'Search',
+    v = 'Search',
+    [""] = 'Boolean',
+    c = 'Identifier',
+    cv = 'Identifier',
+    ce = 'Identifier',
+    t = 'PreProc',
+    r = 'Identifier',
+    R = 'Identifier',
+    Rv = 'Identifier',
+    ["!"] = 'Identifier',
+  }
+
+  local mode = vim.fn.mode()
+  vim.api.nvim_command('hi link GalaxyEditorMode ' ..mode_color[mode])
+
+  return alias[mode]
+end
+
+-- Read from testing.lua module
+-- and adjust icon and color per testing state
+local testing_results = function ()
+  local test_colors = {
+    init = 'Comment',
+    passing = 'Type',
+    running = 'Constant',
+    failing = 'Keyword'
+  }
+
+  vim.api.nvim_command('hi link GalaxyTestResults ' ..test_colors[testing.TESTING_STATUS])
+
+  if testing.TESTING_STATUS == 'init' then
+    return " "
+  elseif testing.TESTING_STATUS == 'passing' then
+    return " "
+  elseif testing.TESTING_STATUS == 'running' then
+    return " "
+  elseif testing.TESTING_STATUS == 'failing' then
+    return " "
+  end
+
+end
+
 -----------------------------------------------------------
 -- Bar Sections
 -----------------------------------------------------------
@@ -45,48 +112,9 @@ gls.left[1] = {
 }
 
 gls.left[2] = {
-  ViMode = {
-    provider = function()
-      local alias = {
-        n      = 'NORMAL',
-        i      = 'INSERT',
-        v      = 'VISUAL',
-        [""] = 'V-BLOCK',
-        V      = 'V·LINE',
-        c      = 'COMMAND',
-        r      = 'REPLACE',
-        R      = 'REPLACE',
-        Rv     = 'V·REPLACE',
-        t      = 'TERM',
-        ['!']  = 'SHELL',
-      }
-
-      return alias[vim.fn.mode()]
-    end,
-    separator = ' ',
-    highlight = function()
-      local mode_color = {
-        n = 'Special',
-        no = 'Special',
-        s = 'Boolean',
-        S = 'Boolean',
-        i = 'Keyword',
-        ic = 'Keyword',
-        V = 'Search',
-        v = 'Search',
-        [""] = 'Boolean',
-        c = 'Identifier',
-        cv = 'Identifier',
-        ce = 'Identifier',
-        t = 'PreProc',
-        r = 'Identifier',
-        R = 'Identifier',
-        Rv = 'Identifier',
-        ["!"] = 'Identifier',
-      }
-
-      return mode_color[vim.fn.mode()]
-    end
+  EditorMode = {
+    provider = editor_mode,
+    separator = ' '
   }
 }
 
@@ -128,41 +156,23 @@ gls.left[6] = {
 
 gls.right[1] = {
   TestResults = {
-    provider = function()
-      if testing.TESTING_STATUS == 'init' then
-        return " "
-      elseif testing.TESTING_STATUS == 'passing' then
-        return " "
-      elseif testing.TESTING_STATUS == 'running' then
-        return " "
-      elseif testing.TESTING_STATUS == 'failing' then
-        return " "
-      end
-    end,
-    highlight = function()
-      local test_colors = {
-        init = 'Comment',
-        passing = 'Type',
-        running = 'Search',
-        failing = 'Keyword'
-      }
-
-      return test_colors[testing.TESTING_STATUS]
-    end
+    provider = testing_results
   }
 }
 
 gls.right[2] = {
   LanguageServer = {
-    provider = function() return ' ' end,
-    separator = ' ',
-    highlight = function()
+    provider = function()
       active_client = vim.lsp.buf_get_clients()[1]
       if active_client ~= nil then
-        return "PreProc"
+        vim.api.nvim_command('hi link GalaxyLanguageServer PreProc')
       else
-        return "Comment"
+        vim.api.nvim_command('hi link GalaxyLanguageServer Comment')
       end
+      return ' '
+    end,
+    separator = ' ',
+    highlight = function()
     end
   }
 }

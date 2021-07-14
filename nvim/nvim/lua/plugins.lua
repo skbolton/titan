@@ -17,6 +17,7 @@ packer.startup(function()
 
   -- FILETYPE PLUGINS
   use 'elixir-editors/vim-elixir'
+  use 'lfe-support/vim-lfe'
   use {
     'vimwiki/vimwiki',
     branch = 'dev',

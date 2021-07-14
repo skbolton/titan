@@ -1,11 +1,8 @@
 local testing = require('testing')
 local gl = require('galaxyline')
 local condition = require('galaxyline.condition')
-local themes = require('themes')
 local gls = gl.section
 gl.short_line_list = {'NvimTree','vista_kind','dbui'}
-
-local colors = themes.get_theme()
 
 local function file_readonly()
   if vim.bo.filetype == 'help' then
@@ -146,7 +143,6 @@ gls.left[6] = {
   LineInfo = {
     provider = 'LineColumn',
     condition = condition.buffer_not_empty,
-    separator_highlight = {'NONE',colors.bg},
     highlight = "Comment",
   },
 }

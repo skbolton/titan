@@ -1,51 +1,24 @@
 format = """\
-  $username\
-  $hostname\
-  $directory\
-  $git_branch\
-  $git_commit\
-  $git_state\
-  $git_status\
-  $hg_branch\
-  $package\
-  $golang\
-  $nodejs\
-  $php\
-  $python\
-  $ruby\
-  $rust\
-  $terraform\
-  $kubernetes\
-  $memory_usage\
-  $aws\
-  $env_var\
-  $cmd_duration\
-  $line_break\
-  $jobs\
-  $time\
   $character\
+  $directory\
 """
-
 
 [git_branch]
 symbol = " "
-style = "bold red"
+style = "red"
+format = "[$symbol $branch]($style) "
+
+[directory]
+style = "italic cyan"
+format = "[$path]($style) > "
 
 [character]
-success_symbol = "[](bold green)"
-error_symbol = "[](bold yellow)"
-vicmd_symbol = " "
+success_symbol = "[ ](green)"
+error_symbol = "[ ](yellow)"
+vicmd_symbol = "[ ](green)"
 
 [aws]
 disabled = true
 
-[nodejs]
-symbol = " "
-
 [package]
 disabled = true
-
-[kubernetes]
-format = "within "
-disabled = true
-symbol = " "

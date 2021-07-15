@@ -72,3 +72,11 @@ tmux-launcher:
     - mode: keep
     - user: orlando
     - force: True
+
+clickup:
+  file.managed:
+    - name: /home/orlando/.local/bin/clickup.sh
+    - source: salt://tmux/clickup.sh
+    - mode: keep
+    - user: orlando
+    - force: True

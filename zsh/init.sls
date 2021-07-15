@@ -34,6 +34,14 @@ zsh-syntax-highlighting:
     - require:
       - git: oh-my-zsh
 
+zsh-autosuggestions:
+  git.cloned:
+    - name: https://github.com/zsh-users/zsh-autosuggestions
+    - target: /home/orlando/.oh-my-zsh/plugins/zsh-autosuggestions
+    - user: orlando
+    - require:
+      - git: oh-my-zsh
+
 zshenv:
   file.managed:
     - name: /home/orlando/.zshenv

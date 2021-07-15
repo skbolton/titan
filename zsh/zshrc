@@ -7,9 +7,13 @@ plugins=(
   history-substring-search
   vi-mode
   zsh-syntax-highlighting
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
+
+bindkey '^ ' autosuggest-accept
+
 
 alias v="nvim"
 alias aqua="Asciiquarium"

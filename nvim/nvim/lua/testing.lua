@@ -1,6 +1,8 @@
 local g = vim.g
 local v = vim.v
 
+g.VimuxOrientation = "h"
+
 g["test#preserve_screen"] = false
 g['test#javascript#jest#options'] = '--reporters jest-vim-reporter'
 g.neomake_open_list = true

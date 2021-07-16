@@ -1,16 +1,17 @@
 format = """\
   $character\
   $directory\
+  $git_branch\
 """
 
 [git_branch]
 symbol = " "
-style = "red"
-format = "[$symbol $branch]($style) "
+style = "purple"
+format = "on [$symbol $branch]($style)  "
 
 [directory]
 style = "italic cyan"
-format = "[$path]($style) > "
+format = "[$path]($style) "
 
 [character]
 success_symbol = "[ ](green)"

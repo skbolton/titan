@@ -52,8 +52,8 @@ local editor_mode = function ()
     S = 'Boolean',
     i = 'Keyword',
     ic = 'Keyword',
-    V = 'Search',
-    v = 'Search',
+    V = 'Constant',
+    v = 'Constant',
     [""] = 'Boolean',
     c = 'Identifier',
     cv = 'Identifier',
@@ -141,7 +141,11 @@ gls.left[5] = {
 
 gls.left[6] = {
   LineInfo = {
-    provider = 'LineColumn',
+    provider = function ()
+      local line = vim.fn.line('.')
+      local column = vim.fn.col('.')
+      return string.format("%d:%d", line, column)
+    end,
     condition = condition.buffer_not_empty,
     highlight = "Comment",
   },

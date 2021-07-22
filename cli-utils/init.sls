@@ -27,6 +27,12 @@ op:
 hsetroot:
   pkg.installed
 
+toilet:
+  cmd.run:
+    - name: paru -S toilet
+    - runas: orlando
+    - unless: paru -Qi toilet
+
 synology-drive:
   cmd.run:
     - names:

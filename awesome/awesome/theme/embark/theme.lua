@@ -204,6 +204,7 @@ theme.menu_border_width = theme.border_width / 2
 -- Hotkeys Pop Up
 --
 theme.hotkeys_font = theme.font
+theme.hotkeys_modifiers_fg = theme.xcolor2
 theme.hotkeys_border_color = theme.xcolor0
 theme.hotkeys_group_margin = dpi(40)
 theme.hotkeys_shape = helpers.rrect(25)

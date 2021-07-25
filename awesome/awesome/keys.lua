@@ -2,7 +2,6 @@ local awful = require("awful")
 local gears = require("gears")
 local bling = require("module.bling")
 local hotkeys_popup = require("awful.hotkeys_popup")
-require("awful.hotkeys_popup.keys")
 
 local superkey = "Mod4"
 local altkey = "Mod1"

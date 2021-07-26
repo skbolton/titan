@@ -296,6 +296,10 @@ theme.mstab_bar_ontop = true
 theme.notification_spacing = 10
 theme.notif_border_radius = dpi(10)
 theme.notif_border_width = dpi(3)
+theme.notification_width = 250
+theme.notification_icon_size = 75 
+theme.notification_max_width = 500
+theme.notification_max_height = 500
 
 -- Weather
 --

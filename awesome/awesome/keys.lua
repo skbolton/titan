@@ -145,6 +145,32 @@ local globalkeys = gears.table.join(
       {description = "focus the previous screen", group = "screen"}
     ),
 
+    -- MEDIA KEYS
+    awful.key({}, "XF86AudioNext",
+      function ()
+        awful.spawn("playerctl next")
+      end,
+      {description = "next track", group = "media"}
+    ),
+    awful.key({}, "XF86AudioPrev",
+      function ()
+        awful.spawn("playerctl previous")
+      end,
+      {description = "previous track", group = "media"}
+    ),
+    awful.key({}, "XF86AudioPlay",
+      function ()
+        awful.spawn("playerctl play-pause")
+      end,
+      {description = "play/pause", group = "media"}
+    ),
+    awful.key({}, "Print",
+      function ()
+        awful.spawn("flameshot gui")
+      end,
+      {description = "take screenshot", group = "media"}
+    ),
+
     -- Launchers
     -- Terminal
     awful.key({ alt }, "Return",

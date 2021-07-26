@@ -81,7 +81,7 @@ awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
     -- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
     awful.tag.add("1", {
-      icon = gears.filesystem.get_configuration_dir() .. "icons/embark/terminal-box-line.svg",
+      icon = gears.filesystem.get_configuration_dir() .. "icons/" .. icon .. "/terminal-box-line.svg",
       layout = awful.layout.layouts[1],
       master_fill_policy = "expand",
       gap_single_client = true,

@@ -179,6 +179,12 @@ local globalkeys = gears.table.join(
       end,
       {description = "open a terminal", group = "launcher"}
     ),
+    awful.key({ alt, shift }, "b",
+      function ()
+        awful.spawn(user.terminal .. " nvim " .. os.getenv("HOME") .. "/Documents/Delta/Bench.md")
+      end,
+      {desription = "open bench", group = "launcher"}
+    ),
     -- powermenu
     -- TODO: Make this a lua widget and bind to bar
     awful.key({ alt }, "period",

@@ -13,7 +13,7 @@ naughty.config.defaults.position = "top_right"
 
 naughty.config.icon_dirs = {
   "/home/orlando/.local/share/icons/Tela-purple-dark/16@2x/apps",
-  "/home/orlando/.locah/share/icons/Tela-purple-dark/16@2x/actions"
+  "/home/orlando/.local/share/icons/Tela-purple-dark/16@2x/actions"
 }
 
 naughty.config.icon_formats = { "svg" }

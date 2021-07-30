@@ -241,7 +241,6 @@ theme.wibar_bg_secondary = theme.xbackground
 --
 theme.systray_icon_spacing = dpi(10)
 theme.bg_systray = theme.xcolor8
-theme.systray_icon_size = dpi(14)
 
 -- Collision
 --

@@ -124,7 +124,7 @@ awful.screen.connect_for_each_screen(function(s)
       gap_single_client = true,
       gap = beautiful.useless_gap,
       screen = s,
-      selected = true
+      selected = false
     })
 end)
 

@@ -36,7 +36,7 @@ toilet:
 synology-drive:
   cmd.run:
     - names:
-      - paru -S 1password-cli --noconfirm --skipreview
+      - paru -S synology-drive --noconfirm --skipreview
     - runas: orlando
     - unless: paru -Qi synology-drive
 

@@ -29,7 +29,7 @@ hsetroot:
 
 toilet:
   cmd.run:
-    - name: paru -S toilet
+    - name: paru -S toilet --noconfirm --skipreview
     - runas: orlando
     - unless: paru -Qi toilet
 

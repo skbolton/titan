@@ -40,7 +40,7 @@ beautiful.init(gears.filesystem.get_configuration_dir() .. "theme/" .. theme .. 
 
 -- UI elements
 require("elemental.bar." .. bar)
-require("elemental.scratchpad")
+require("elemental.scratchpad").init()
 require("elemental.notifs")
 require("demons")
 

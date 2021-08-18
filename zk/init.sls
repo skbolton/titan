@@ -1,5 +1,6 @@
 include:
   - go
+  - cli-utils
 
 zk:
   git.latest:

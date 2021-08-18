@@ -13,6 +13,12 @@ bpytop:
 skim:
   pkg.installed
 
+fzf:
+  pkg.installed
+
+bat:
+  pkg.installed
+
 jq:
   pkg.installed
 

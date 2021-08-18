@@ -16,6 +16,9 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 # nnn config
 export NNN_BMS='x:~/Documents/Warrior;w:~/Documents/Wolf;k:~/Documents/Wanderer'
 
+# ZK
+export ZK_NOTEBOOK_DIR="$HOME/Documents/Delta"
+
 export EDITOR="nvim"
 export BROWSER="firefox"
 export GOPATH=$HOME/go

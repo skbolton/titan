@@ -11,9 +11,6 @@
 alt + period
   ~/.config/polybar/scripts/powermenu
 
-super + slash
-  toggle-program kitty-scratch
-
 # Launch Specific Programs
 # ========================================================
 alt + BackSpace; semicolon

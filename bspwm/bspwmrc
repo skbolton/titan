@@ -84,7 +84,6 @@ _bc rule -a discord desktop='3'
 _bc rule -a Slack desktop='3'
 _bc rule -a Mailspring desktop='4'
 _bc rule -a Minetime desktop='8'
-_bc rule -a kitty-scratch sticky=true hidden=true
 
 #   __     __   __     __     ______   __     ______     __        
 #  /\ \   /\ "-.\ \   /\ \   /\__  _\ /\ \   /\  __ \   /\ \       
@@ -103,7 +102,6 @@ discord &
 slack &
 firefox &
 kitty &
-kitty --listen-on=unix:/tmp/kitty-scratch --class kitty-scratch --config ~/.config/kitty/kitty-scratch.conf --hold --directory=$HOME &
 kitty --listen-on=unix:/tmp/kitty-tasks --class kitty-tasks --hold &
 
 sleep 5
@@ -114,7 +112,5 @@ sleep 3
 _bc desktop '8' -f
 minetime &
 sleep 5
-
-kitty @ --to=unix:/tmp/kitty-scratch send_text "v ~/Documents/knowledge/\r"
 
 _bc desktop '1' -f

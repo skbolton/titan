@@ -4,7 +4,7 @@ base:
     - xorg.monitors
     - display-manager
     - audio
-    - arch.reflector
+    - arch
     - user-dirs
     - asdf
     - bspwm

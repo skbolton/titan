@@ -1,3 +1,12 @@
+include:
+  - crons
+
+pacman-conf:
+  file.managed:
+    - name: /etc/pacman.conf
+    - source: salt://arch/pacman.conf
+    - template: jinja
+
 reflector:
   pkg.installed:
     - name: reflector
@@ -18,3 +27,10 @@ reflector-running:
     - watch:
       - file: reflector-config
 
+pacman-download-updates:
+  cron.present:
+    - identifier: "download pacman updates without applying"
+    - name: pacman -Syuw --noconfirm
+    # every two hours
+    - minute: 0
+    - hour: "*/2"

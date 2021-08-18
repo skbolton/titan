@@ -62,21 +62,6 @@ recents = "--sort created- --created-after 'last two weeks'"
 e = 'zk edit --interactive $@'
 links = 'zk list --format link --no-pager --quiet --delimiter="\n" $@'
 
-## Journal aliases
-journal = 'zk --notebook-dir ~/Documents/Wolf $@'
-day = 'zk new --group day --no-input --working-dir ~/Documents/Wolf journal'
-week = 'zk new --group week --no-input --working-dir ~/Documents/Wolf journal'
-quarter = 'zk new --group quarter --no-input --working-dir ~/Documents/Wolf journal'
-year = 'zk new --group year --no-input --working-dir ~/Documents/Wolf journal'
-
-## Working aliases
-meeting = 'zk new --group meeting --title $1 --notebook-dir ~/Documents/Warrior/genesis-block meetings'
-
-## Knowledge aliases
-zettel = 'zk --notebook-dir ~/Documents/Wanderer $@'
-ls = 'zk list --notebook-dir ~/Documents/Wanderer $@'
-lookup = 'zk e --notebook-dir ~/Documents/Wanderer $@'
-
 ## Projects and areas
 areas = 'zk e areas --working-dir ~/Documents/Delta '
 project = 'zk new --template "project.md" --working-dir ~/Documents/Delta --title="$*"'

@@ -5,13 +5,14 @@ zk:
   git.latest:
     - name: https://github.com/mickael-menu/zk.git
     - target: /home/orlando/zk
+    - user: orlando
   file.directory:
     - name: /home/orlando/go/bin
   cmd.run:
     - cwd: /home/orlando/zk
     - names:
-      - ./go build
-      - mv ./zk /home/orlando/go/bin
+      - make
+      - mv -f ./zk /home/orlando/go/bin
 
 zk-config:
   file.managed:

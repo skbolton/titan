@@ -30,7 +30,7 @@ base:
     - zk
     - zsh
 
-  'trinity|titan':
+  'trinity|prodigy':
     - match: pcre
     - display-drivers.amd
   

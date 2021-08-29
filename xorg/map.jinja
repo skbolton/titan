@@ -1,5 +1,5 @@
 {% set monitor_config = salt['grains.filter_by']({
   'neo': "monitor-laptop.conf",
-  'prodigy': "monitor-desktop.conf",
-  'trinity': "monitor-desktop.conf",
+  'prodigy': "monitor-desktops.conf",
+  'trinity': "monitor-widescreen.conf",
 }, grain='host') %}

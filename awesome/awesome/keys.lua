@@ -79,7 +79,7 @@ local globalkeys = gears.table.join(
     ),
     awful.key({ super, shift }, "[",
       function ()
-        awful.layout.inc(1)
+        awful.layout.inc(-1)
       end,
       {description = "select prev layout", group = "tag"}
     ),

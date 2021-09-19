@@ -6,6 +6,7 @@ local beautiful = require("beautiful")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local helpers = require("helpers")
+local gh_contrib = require("awesome-wm-widgets.github-contributions-widget.github-contributions-widget")
 
 -- Awesome Panel -----------------------------------------------------------
 
@@ -378,6 +379,7 @@ awful.screen.connect_for_each_screen(function(s)
                 },
                 {wrap_widget(s.mytasklist), widget = wibox.container.constraint},
                 {
+                    wrap_widget(gh_contrib({ color_of_empty_cells = beautiful.xcolor0, username = "skbolton" })),
                     wrap_widget(make_pill(time_pill, beautiful.xcolor0 .. 55)),
                     wrap_widget(make_pill(date_pill, beautiful.xcolor0)),
                     wrap_widget(make_pill(

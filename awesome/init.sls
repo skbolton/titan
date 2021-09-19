@@ -7,10 +7,6 @@ include:
 awesome:
   pkg.installed
 
-awestore:
-  cmd.run:
-   - name: luarocks --lua-version 5.3 install awestore
-
 awesome-configs:
   file.recurse:
     - name: /home/orlando/.config/awesome
@@ -18,6 +14,12 @@ awesome-configs:
     - user: orlando
     - makedirs: True
     - force: True
+
+rubato:
+  git.latest:
+    - name: https://github.com/andOrlando/rubato.git
+    - target: /home/orlando/.config/awesome/module/rubato
+    - user: orlando
 
 awesome-bling:
   git.latest:

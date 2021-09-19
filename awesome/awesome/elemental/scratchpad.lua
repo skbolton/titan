@@ -2,8 +2,19 @@ local awful = require("awful")
 local bling = require("module.bling")
 local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
-local awestore = require("awestore")
+local rubato = require("module.rubato")
 local helpers = require("helpers")
+
+local rubato_with_defaults = function(overrides)
+  return rubato.timed {
+    pos = overrides.pos or 0,
+    rate = overrides.rate or 120,
+    easing = overrides.easing or rubato.quadratic,
+    intro = overrides.intro or 0.1,
+    duration = overrides.duration or 0.3,
+    awestore_compat = true
+  }
+end
 
 local _M = {}
 
@@ -21,8 +32,10 @@ local terminal_scratch = function(screen_geometry)
     geometry = {x = x, y = dpi(60), height = height, width = width},
     floating = true,
     reapply = true,
-    awestore = {
-      y = awestore.tweened(-height, { duration = 300, easing = awestore.easing.cubic_in_out })
+    rubato = {
+      y = rubato_with_defaults {
+        pos = -height
+      }
     }
   }
 
@@ -46,8 +59,10 @@ local monitor_scratch = function(screen_geometry)
     geometry = {x = x, y = y, height = height, width = width},
     floating = true,
     reapply = true,
-    awestore = {
-      y = awestore.tweened(-height, { duration = 400, easing = awestore.easing.cubic_in_out })
+    rubato = {
+      y = rubato_with_defaults {
+        pos = -height
+      }
     }
   }
 
@@ -72,8 +87,10 @@ local bench_scratch = function(screen_geometry)
     floating = true,
     geometry = {x = x, y = y, height = height, width = width},
     reapply = true,
-    awestore = {
-      y = awestore.tweened(screen_geometry.height * 2, { duration = 400, easing = awestore.easing.cubic_in_out })
+    rubato = {
+      y = rubato_with_defaults {
+        pos = screen_geometry.height * 2
+      }
     }
   }
 
@@ -96,7 +113,11 @@ local quest_scratch = function(screen_geometry)
       floating = true,
       geometry = {x = x, y = y, height = height, width = width},
       reapply = true,
-      awestore = {x = awestore.tweened(screen_geometry.width * 2, {duration = 400, easing = awestore.easing.cubic_in_out})}
+      rubato = {
+        x = rubato_with_defaults {
+          pos = screen_geometry.width + width
+        }
+      }
   }
 
   awesome.connect_signal("scratch::quest", function() quest:toggle() end)

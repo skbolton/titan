@@ -29,7 +29,7 @@ local terminal_scratch = function(screen_geometry)
     rule = {class = "kitty-scratch"},
     sticky = true,
     autoclose = false,
-    geometry = {x = x, y = dpi(60), height = height, width = width},
+    geometry = {x = x, y = dpi(60) + screen_geometry.y, height = height, width = width},
     floating = true,
     reapply = true,
     rubato = {
@@ -49,7 +49,7 @@ local monitor_scratch = function(screen_geometry)
   local width = math.min(screen_geometry.width * 0.90, 2400)
   local height = math.min(1000, screen_geometry.height - 20)
   local x = (screen_geometry.width - width) / 2
-  local y = (screen_geometry.height - height) / 2
+  local y = ((screen_geometry.height - height) / 2) + screen_geometry.y
 
   local monitor = bling.module.scratchpad:new {
     command = "kitty --class kitty-monitor bpytop",
@@ -77,7 +77,7 @@ local bench_scratch = function(screen_geometry)
   local width = math.min(screen_geometry.width * 0.90, 2400)
   local height = math.min(1000, screen_geometry.height - 20)
   local x = (screen_geometry.width - width) / 2
-  local y = (screen_geometry.height - height) / 2
+  local y = ((screen_geometry.height - height) / 2) + screen_geometry.y
 
   local bench = bling.module.scratchpad:new {
     command = "kitty --class kitty-bench -d '$HOME/Documents/Delta' nvim Bench.md",
@@ -102,7 +102,7 @@ end
 local quest_scratch = function(screen_geometry)
   local width = math.min(screen_geometry.width / 3, 1400)
   local height = screen_geometry.height * 0.90
-  local x = (screen_geometry.width - width - 20)
+  local x = (screen_geometry.width - width - 20) + screen_geometry.x
   local y = (screen_geometry.height - height) / 2
 
   local quest = bling.module.scratchpad:new{

@@ -238,6 +238,12 @@ local globalkeys = gears.table.join(
       end,
       {description = "launch task scratchpad", group = "scratchpads"}
     ),
+    awful.key({ alt }, "p",
+      function ()
+        awesome.emit_signal("scratch::password")
+      end,
+      {description = "launch password scratchpad", group = "scratchpads"}
+    ),
     -- END MY KEYS
 
     awful.key({ super }, "u",

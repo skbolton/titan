@@ -125,6 +125,33 @@ local quest_scratch = function(screen_geometry)
   return quest
 end
 
+local password_scratch = function(screen_geometry)
+  -- clamp the width and height to always fit on screen
+  local width = math.min(screen_geometry.width * 0.90, 2400)
+  local height = math.min(1000, screen_geometry.height - 20)
+  local x = (screen_geometry.width - width) / 2
+  local y = ((screen_geometry.height - height) / 2) + screen_geometry.y
+
+  local op = bling.module.scratchpad:new {
+    command = "1password",
+    rule = {class = "1password"},
+    sticky = true,
+    autoclose = false,
+    floating = true,
+    geometry = {x = x, y = y, height = height, width = width},
+    reapply = true,
+    rubato = {
+      y = rubato_with_defaults {
+        pos = screen_geometry.height * 2
+      }
+    }
+  }
+
+  awesome.connect_signal("scratch::password", function() op:toggle() end)
+
+  return op
+end
+
 
 -- initialize scratchpads
 _M.init = function()
@@ -132,7 +159,8 @@ _M.init = function()
       terminal_scratch,
       monitor_scratch,
       bench_scratch,
-      quest_scratch
+      quest_scratch,
+      password_scratch
     }
 
     for _idx, scratch in pairs(scratchpads) do

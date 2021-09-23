@@ -234,7 +234,7 @@ local globalkeys = gears.table.join(
     ),
     awful.key({ alt }, "t",
       function ()
-        awesome.emit_signal("scratch::task")
+        awesome.emit_signal("scratch::tasks")
       end,
       {description = "launch task scratchpad", group = "scratchpads"}
     ),

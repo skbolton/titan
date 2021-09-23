@@ -152,6 +152,32 @@ local password_scratch = function(screen_geometry)
   return op
 end
 
+local task_scratch = function(screen_geometry)
+  local width = math.min(screen_geometry.width / 3, 1400)
+  local height = screen_geometry.height * 0.90
+  local x = screen_geometry.x + 20
+  local y = (screen_geometry.height - height) / 2
+
+  local task = bling.module.scratchpad:new{
+      command = "kitty --class kitty-tasks --hold",
+      rule = {class = "kitty-tasks"},
+      sticky = false,
+      autoclose = false,
+      floating = true,
+      geometry = {x = x, y = y, height = height, width = width},
+      reapply = true,
+      rubato = {
+        x = rubato_with_defaults {
+          pos = -width
+        }
+      }
+  }
+
+  awesome.connect_signal("scratch::tasks", function() task:toggle() end)
+
+  return task
+end
+
 
 -- initialize scratchpads
 _M.init = function()
@@ -160,7 +186,8 @@ _M.init = function()
       monitor_scratch,
       bench_scratch,
       quest_scratch,
-      password_scratch
+      password_scratch,
+      task_scratch
     }
 
     for _idx, scratch in pairs(scratchpads) do

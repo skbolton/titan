@@ -21,7 +21,7 @@ nnoremap <buffer> <localleader>/ :VimwikiSearchTags<SPACE>
 nnoremap <buffer> <localleader>C :Calendar<CR>
 
 " live preview of markdown in brower
-nnoremap <buffer> <localleader>r :LivedownPreview<CR>
+nnoremap <buffer> <localleader>r :MarkdownPreview<CR>
 nnoremap <silent> <buffer> <localleader>f :Goyo<CR>
 
 let b:AutoPairs={}

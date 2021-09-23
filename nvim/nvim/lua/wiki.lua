@@ -39,10 +39,7 @@ vim.g.vimwiki_list = {wolf, genesis, wanderer}
 -- Peripheral configuration
 -----------------------------------------------------------------------
 
--- Livedown server - markdown previewer
-vim.g.livedown_autorun = 0
-vim.g.livedown_open = 1
-vim.g.livedown_port = 1337
+vim.g.mkdp_page_title = '${name}'
 
 -- Vim Zettel
 vim.g.zettel_format = "%y%m%d-%H%M"

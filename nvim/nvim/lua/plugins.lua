@@ -192,7 +192,11 @@ packer.startup(function()
   use 'kristijanhusak/vim-dadbod-completion'
   use 'tpope/vim-dadbod'
   -- Markdown
-  use {'shime/vim-livedown', ft = {'md', 'vimwiki'}}
+  -- use {'shime/vim-livedown', ft = {'md', 'vimwiki'}}
+  use {
+    'iamcco/markdown-preview.nvim',
+    run = ':call mkdp#util#install()'
+  }
   use {'junegunn/goyo.vim', ft = {'md', 'vimwiki'}}
   use {'blindFS/vim-taskwarrior', fg = {'md', 'vimwiki'}}
   -- Javascript

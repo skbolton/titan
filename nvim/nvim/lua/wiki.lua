@@ -4,35 +4,21 @@ vim.g.vimwiki_folding = 'syntax';
 -- WIKIS
 -----------------------------------------------------------------------
 
--- Wolf - personal improvement and character workspace
-local wolf = {
-  path = "~/Documents/Wolf",
+-- Delta
+local delta = {
+  name = 'Delta',
+  index = 'Spawn',
+  path = "~/Documents/Delta",
   syntax = "markdown",
-  ext = '.md',
-  links_space_char = '_',
+  ext = ".md",
   automatic_nested_syntaxes = 1,
-  index = 'wolf'
+  diary_rel_path = "Quests/",
+  diary_index = "quests",
+  diary_header = "Quests",
+  auto_diary_index = 1
 }
 
--- Genesis Block - Workspace for genesis related stuff
-local genesis = {
-  path = '~/Documents/Warrior/genesis-block',
-  syntax = 'markdown',
-  ext = '.md',
-  links_space_char = '_',
-  automatic_nested_syntaxes = 1
-}
-
--- Zettelkasten/Reference Wiki
-local wanderer = {
-  path = '~/Documents/Wanderer',
-  syntax = 'markdown',
-  ext = '.md',
-  links_space_char = '_',
-  automatic_nested_syntaxes = 1
-}
-
-vim.g.vimwiki_list = {wolf, genesis, wanderer}
+vim.g.vimwiki_list = {delta}
 
 
 -----------------------------------------------------------------------

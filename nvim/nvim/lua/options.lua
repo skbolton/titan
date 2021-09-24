@@ -73,6 +73,8 @@ opt.shortmess = 'FWco'
 opt.foldenable = true
 opt.foldlevelstart = 10
 opt.foldnestmax = 10
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- BACKUP/SWAP
 -- ===================================================================

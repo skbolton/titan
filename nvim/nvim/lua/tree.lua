@@ -1,3 +1,5 @@
+local tree = require('nvim-tree')
+
 vim.g.nvim_tree_show_icons = {
    git = 0,
    folders = 1,
@@ -21,4 +23,7 @@ vim.g.nvim_tree_icons = {
 }
 
 vim.g.nvim_tree_width_allow_resize = true;
-vim.g.nvim_tree_disable_netrw = false
+
+tree.setup {
+  disable_netrw = false
+}

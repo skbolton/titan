@@ -25,11 +25,19 @@ awful.rules.rules = {
   {
     rule_any = {
       class = {
-        "Slack",
         "discord"
       }
     },
     properties = { tag = "3" }
+  },
+  -- Slack goes on multiple
+  {
+    rule = {
+      class = "Slack"
+    },
+    properties = {
+      tags = {"3", "6"}
+    }
   },
   {
     rule = {
@@ -42,6 +50,16 @@ awful.rules.rules = {
       class = "[Ss]potify"
     },
     properties = { tag = "5" }
+  },
+  -- Planning Clients
+  {
+    rule_any = {
+      class = {
+        "morgen",
+        "obsidian",
+      }
+    },
+    properties = { tag = "6" }
   },
   -- Floating clients.
   {

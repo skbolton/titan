@@ -59,8 +59,8 @@ user = {
 -- TODO: Move this to its own module? (tag.lua)
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-  awful.layout.suit.tile,
   bling.layout.centered,
+  awful.layout.suit.tile,
   awful.layout.suit.tile.left,
   awful.layout.suit.tile.bottom,
   -- awful.layout.suit.tile.top,
@@ -120,6 +120,15 @@ awful.screen.connect_for_each_screen(function(s)
     })
     awful.tag.add("5", {
       icon = gears.filesystem.get_configuration_dir() .. "icons/" .. icon .. "/spotify-line.svg",
+      layout = awful.layout.layouts[1],
+      master_fill_policy = "expand",
+      gap_single_client = true,
+      gap = beautiful.useless_gap,
+      screen = s,
+      selected = false
+    })
+    awful.tag.add("6", {
+      icon = gears.filesystem.get_configuration_dir() .. "icons/" .. icon .. "/sword-line.svg",
       layout = awful.layout.layouts[1],
       master_fill_policy = "expand",
       gap_single_client = true,

@@ -12,7 +12,8 @@ local selected_colors = {
   "#F2B482",
   "#d4bfff",
   "#91ddff",
-  "#A1EFD3"
+  "#A1EFD3",
+  "#FFE6B3"
 }
 
 local get_taglist = function(s)

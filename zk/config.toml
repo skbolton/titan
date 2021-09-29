@@ -42,6 +42,6 @@ conf = '$EDITOR "$ZK_NOTEBOOK_DIR/.zk/config.toml"'
 
 [lsp.diagnostics]
 # Report titles of wiki-links as hints.
-wiki-title = "hint"
+wiki-title = "none"
 # Warn for dead links between notes.
 dead-link = "warning"

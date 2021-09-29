@@ -42,8 +42,7 @@ alias ls='exa -al --icons --color=always --group-directories-first'
 alias la='exa -a --icons --color=always --group-directories-first'
 alias ll='exa -l --icons --color=always --group-directories-first'
 alias lt='exa -aT --icons --color=always --group-directories-first'
-alias titan='sudo salt-call state.apply'
-
+alias titan='command ls /srv/titan | sk | xargs basename -s ".sls" | xargs sudo salt-call state.apply'
 
 tickle () {
     task $@ modify wait:soww

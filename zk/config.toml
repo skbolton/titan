@@ -36,6 +36,7 @@ today = "--sort created- --created 'today'"
 [alias]
 e = 'zk edit --interactive $@'
 links = 'zk list --format link --no-pager --quiet --delimiter="\n" $@'
+conf = '$EDITOR "$ZK_NOTEBOOK_DIR/.zk/config.toml"'
 
 [lsp]
 

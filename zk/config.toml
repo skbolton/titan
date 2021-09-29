@@ -1,84 +1,41 @@
-# Global zk settings
+# ░█▀▀░█░░░█▀█░█▀▄░█▀█░█░░░░░▀▀█░█░█░░░█▀▀░█▀█░█▀█░█▀▀░▀█▀░█▀▀
+# ░█░█░█░░░█░█░█▀▄░█▀█░█░░░░░▄▀░░█▀▄░░░█░░░█░█░█░█░█▀▀░░█░░█░█
+# ░▀▀▀░▀▀▀░▀▀▀░▀▀░░▀░▀░▀▀▀░░░▀▀▀░▀░▀░░░▀▀▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀▀▀
+# Configuration shared across all zk notebooks
+
 [note]
 
-# Language used when writing notes.
-# This is used to generate slugs or with date formats.
 language = "en"
 
-# The default title used for new note, if no `--title` flag is provided.
-default-title = "Untitled"
-
-# Template used to generate a note's filename, without extension.
+id-charset = "alphanum"
+id-length = 4
+id-case = "lower"
 filename = "{{id}}-{{slug title}}"
-
-# The file extension used for the notes.
 extension = "md"
-
-# Template used to generate a note's content.
-# If not an absolute path, it is relative to .zk/templates/
 template = "default.md"
 
-# Configure random ID generation.
-
-# The charset used for random IDs.
-id-charset = "alphanum"
-
-# Length of the generated IDs.
-id-length = 4
-
-# Letter case for the random IDs.
-id-case = "lower"
-
-# EXTRA VARIABLES
 [extra]
 author = "Stephen"
 
-# MARKDOWN SETTINGS
 [format.markdown]
-# Enable support for #hashtags
 hashtags = true
-# Enable support for :colon:separated:tags:
 colon-tags = true
+link-format = "[[{{path}}|{{title}}]]"
 
 # EXTERNAL TOOLS
 [tool]
 
-# Default editor used to open notes.
 editor = "nvim"
-
-# Pager used to scroll through long output.
 pager = "bat"
-
-# Command used to preview a note during interactive fzf mode.
 fzf-preview = "bat -p --color always {-1}"
 
 # NAMED FILTERS
 [filter]
-recents = "--sort created- --created-after 'last two weeks'"
+today = "--sort created- --created 'today'"
 
-# COMMAND ALIASES
 [alias]
-## General alias
 e = 'zk edit --interactive $@'
 links = 'zk list --format link --no-pager --quiet --delimiter="\n" $@'
-
-## Projects and areas
-areas = 'zk e areas'
-project = 'zk new --template "project.md" --title="$*"'
-projects = 'zk e projects $@'
-goal = 'zk new --template "goal.md" --title="$*"'
-milestone = 'zk new --template "milestone.md" --title="$*"'
-
-## Quests
-quest = 'zk new --group Quests --no-input Quests'
-checkpoint = 'zk new --group Checkpoint --no-input Quests'
-
-## Spells
-cast = 'zk e Spells $@'
-spell = 'zk new --no-input Spells --title "$*"'
-
-## Inventory
-inv = 'zk e Inventory $@'
 
 [lsp]
 

@@ -27,15 +27,13 @@ alias t="task"
 alias tap="task context personal"
 alias taw="task context work"
 alias chore="task add +personal +chore" 
-alias gb="cd ~/Documents/Warrior/genesis-block"
-alias war="cd ~/Documents/Warrior"
-alias wand="cd ~/Documents/Wanderer"
-alias wolf="cd ~/Documents/Wolf"
 alias l="hledger"
 alias lworth="hledger bs --tree -2 --real -V"
 alias ltrue="hledger balance --tree --real --empty"
 alias lbalance="hledger balance --tree --auto --empty"
 alias ledit="v $LEDGER_FILE"
+alias de="cd ~/Documents/Delta"
+alias gb="cd ~/Documents/GenesisBlock"
 
 # use exa for ls
 alias ls='exa -al --icons --color=always --group-directories-first'
@@ -60,15 +58,6 @@ work () {
     fi
   else
     task add +work $@
-  fi
-}
-
-zk() {
-  if [ $# -eq 0 ]
-  then
-    cd ~/Documents/Delta
-  else
-    command zk $@
   fi
 }
 

@@ -34,6 +34,7 @@ fzf-preview = "bat -p --color always {-1}"
 today = "--sort created- --created 'today'"
 complete = "--tag complete"
 active = "--tag active"
+idea = "--tag idea"
 
 [alias]
 e = 'zk edit --interactive $@'

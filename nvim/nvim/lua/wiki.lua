@@ -18,7 +18,15 @@ local delta = {
   auto_diary_index = 1
 }
 
-vim.g.vimwiki_list = {delta}
+local gb = {
+  name = 'GenesisBlock',
+  path = "~/Documents/GenesisBlock",
+  syntax = "markdown",
+  ext = ".md",
+  automatic_nested_syntaxes = 1
+}
+
+vim.g.vimwiki_list = {delta, gb}
 
 
 -----------------------------------------------------------------------

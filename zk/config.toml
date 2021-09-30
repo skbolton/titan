@@ -32,6 +32,8 @@ fzf-preview = "bat -p --color always {-1}"
 # NAMED FILTERS
 [filter]
 today = "--sort created- --created 'today'"
+complete = "--tag complete"
+active = "--tag active"
 
 [alias]
 e = 'zk edit --interactive $@'

@@ -154,8 +154,8 @@ end
 local task_scratch = function(screen_geometry)
   local width = math.min(screen_geometry.width / 3, 1400)
   local height = screen_geometry.height * 0.90
-  local x = screen_geometry.x + 20
-  local y = (screen_geometry.height - height) / 2
+  local x = 20
+  local y = ((screen_geometry.height - height) / 2) + screen_geometry.y
 
   local task = bling.module.scratchpad:new{
       command = "kitty --class kitty-tasks --hold",
@@ -166,8 +166,8 @@ local task_scratch = function(screen_geometry)
       geometry = {x = x, y = y, height = height, width = width},
       reapply = true,
       rubato = {
-        x = rubato_with_defaults {
-          pos = -width
+        y = rubato_with_defaults {
+          pos = height
         }
       }
   }

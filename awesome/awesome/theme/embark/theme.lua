@@ -113,7 +113,7 @@ theme.button_close = theme.xcolor1
 theme.border_width = dpi(2)
 theme.oof_border_width = dpi(0)
 theme.border_normal = theme.xcolor0
-theme.border_focus = embark.green
+theme.border_focus = embark.purple
 theme.border_radius = dpi(12)
 theme.client_radius = dpi(12)
 theme.widget_border_width = dpi(3)
@@ -221,7 +221,7 @@ theme = theme_assets.recolor_layout(theme, theme.xforeground)
 
 -- Gaps
 --
-theme.useless_gap = dpi(6)
+theme.useless_gap = dpi(4)
 
 -- Exit Screen
 --

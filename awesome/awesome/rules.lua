@@ -18,7 +18,7 @@ awful.rules.rules = {
     }
   },
   { 
-    rule = { class = "Navigator" },
+    rule = { class = "firefox" },
     properties = { maximized = false, floating = false, tag = "2" }
   },
   -- Chat applications

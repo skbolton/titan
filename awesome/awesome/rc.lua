@@ -138,6 +138,12 @@ awful.screen.connect_for_each_screen(function(s)
     })
 end)
 
+client.connect_signal("property::urgent", function(c)
+    if c.class == 'firefox' then
+      c.minimized = false
+      c:jump_to()
+    end
+end)
 
 -- Error handling
 -- Check if awesome encountered an error during startup and fell back to

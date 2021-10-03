@@ -139,7 +139,7 @@ awful.screen.connect_for_each_screen(function(s)
 end)
 
 client.connect_signal("property::urgent", function(c)
-    if c.class == 'firefox' then
+    if c.class == 'firefox' or c.class == 'firefoxdeveloperedition' then
       c.minimized = false
       c:jump_to()
     end

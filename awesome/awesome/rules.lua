@@ -18,7 +18,12 @@ awful.rules.rules = {
     }
   },
   { 
-    rule = { class = "firefox" },
+    rule_any = {
+      class = {
+        "firefox",
+        "firefoxdeveloperedition"
+      }
+    },
     properties = { maximized = false, floating = false, tag = "2" }
   },
   -- Chat applications

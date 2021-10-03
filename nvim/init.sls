@@ -5,10 +5,6 @@ nvim:
   pkg.installed:
     - name: neovim
 
-clear-old-config:
-  file.absent: 
-    - name: /home/orlando/.config/nvim
-
 nvim-config:
   file.recurse:
     - name: /home/orlando/.config/nvim

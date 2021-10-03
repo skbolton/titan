@@ -14,7 +14,6 @@ base:
     - fonts
     - git
     - gpg
-    - habits
     - kitty
     - nnn
     - nvim

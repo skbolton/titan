@@ -75,8 +75,11 @@ bench() {
 
 }
 
-title="A NEW BATTLE AWAITS, GUARDIAN"
-printf "%*s\n" $(((${#title}+$COLUMNS)/2)) "$title"
+if [[ -o interactive ]]
+then
+  color=$(( ( RANDOM % 6 ) + 1 ))
+  tput setaf $color && toilet -F border -t -f pagga "Bit by Bit"
+fi
 
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash

@@ -39,6 +39,12 @@ toilet:
     - runas: orlando
     - unless: paru -Qi toilet
 
+figlet:
+  cmd.run:
+    - name: paru -S figlet --noconfirm --skipreview
+    - runas: orlando
+    - unless: paru -Qi figlet
+
 synology-drive:
   cmd.run:
     - names:

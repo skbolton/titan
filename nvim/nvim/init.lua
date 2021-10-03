@@ -6,5 +6,5 @@
 
 require('options')
 require('plugins')
-require('mappings')
+-- require('mappings')
 require('search')

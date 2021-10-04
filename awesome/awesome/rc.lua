@@ -59,13 +59,13 @@ user = {
 -- TODO: Move this to its own module? (tag.lua)
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-  bling.layout.centered,
   awful.layout.suit.tile,
+  awful.layout.suit.tile.top,
   awful.layout.suit.tile.left,
   awful.layout.suit.tile.bottom,
-  -- awful.layout.suit.tile.top,
   awful.layout.suit.fair,
   awful.layout.suit.fair.horizontal,
+  bling.layout.centered,
   -- awful.layout.suit.spiral,
   -- awful.layout.suit.spiral.dwindle,
   awful.layout.suit.max,
@@ -139,7 +139,7 @@ awful.screen.connect_for_each_screen(function(s)
 end)
 
 client.connect_signal("property::urgent", function(c)
-    if c.class == 'firefox' then
+    if c.class == 'firefox' or c.class == 'firefoxdeveloperedition' then
       c.minimized = false
       c:jump_to()
     end

@@ -11,7 +11,7 @@ local rubato_with_defaults = function(overrides)
     rate = overrides.rate or 120,
     easing = overrides.easing or rubato.quadratic,
     intro = overrides.intro or 0.1,
-    duration = overrides.duration or 0.3,
+    duration = overrides.duration or 0.4,
     awestore_compat = true
   }
 end
@@ -167,7 +167,7 @@ local task_scratch = function(screen_geometry)
       reapply = true,
       rubato = {
         y = rubato_with_defaults {
-          pos = height
+          pos = height + screen_geometry.height
         }
       }
   }

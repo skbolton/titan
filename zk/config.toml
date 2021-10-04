@@ -35,10 +35,12 @@ today = "--sort created- --created 'today'"
 complete = "--tag complete"
 active = "--tag active"
 idea = "--tag idea"
+project = "--tag Project"
 
 [alias]
 e = 'zk edit --interactive $@'
 links = 'zk list --format link --no-pager --quiet --delimiter="\n" $@'
+projects = 'zk e projects'
 conf = '$EDITOR "$ZK_NOTEBOOK_DIR/.zk/config.toml"'
 
 [lsp]

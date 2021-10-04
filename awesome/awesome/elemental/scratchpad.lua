@@ -114,7 +114,7 @@ local quest_scratch = function(screen_geometry)
       reapply = true,
       rubato = {
         x = rubato_with_defaults {
-          pos = screen_geometry.width + width
+          pos = screen_geometry.width + width + screen_geometry.x
         }
       }
   }

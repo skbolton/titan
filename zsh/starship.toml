@@ -1,4 +1,5 @@
 format = """\
+  $jobs\
   $character\
   $directory\
   $git_branch\
@@ -23,3 +24,7 @@ disabled = true
 
 [package]
 disabled = true
+
+[jobs]
+symbol = " "
+style = "bold bright-black"

@@ -8,7 +8,7 @@ format = """\
 [git_branch]
 symbol = " "
 style = "purple"
-format = "on [$symbol$branch]($style) > "
+format = "on [$symbol$branch]($style) | "
 
 [directory]
 style = "italic cyan"

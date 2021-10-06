@@ -177,7 +177,7 @@ packer.startup(function()
       require('git')
     end
   }
-  use 'justinmk/vim-sneak'
+  use 'ggandor/lightspeed.nvim'
   use 'kana/vim-textobj-user'
   -- ===================================================================
 

@@ -32,7 +32,6 @@ gpg-config:
 my-gpg-key:
   gpg.present:
     - keys: 35BE29E174F8981ECF31D03C60410414D406AF1D
-    - keyserver: hkps://keys.gnupg.net
     - user: orlando
     - trust: "ultimately"
 

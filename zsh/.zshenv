@@ -12,6 +12,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # GPG shenanigans
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+export PASSWORD_STORE_DIR="$HOME/.cache/password-store"
 
 # nnn config
 export NNN_BMS='x:~/Documents/Warrior;w:~/Documents/Wolf;k:~/Documents/Wanderer'

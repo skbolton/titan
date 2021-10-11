@@ -17,6 +17,7 @@ base:
     - kitty
     - nnn
     - nvim
+    - passwords
     - picom
     - polybar
     - python

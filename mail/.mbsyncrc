@@ -1,0 +1,117 @@
+# MBSYNC Configuration
+
+# There are two big ideas in mbsync `Stores` and `Channels`
+# `Stores` define a collection of mailboxes, basically folders, either local or remote
+# `Channels` connect two Stores and describe how they are synchronized
+#
+# There are two auxiliary objects: `Accounts` and `Groups`
+# `Accounts` describes the connection part of Network `Stores` - Allowing the sharing of
+# configurations between `Stores`
+# `Groups` meanwhile aggregate multiple `Channels` together to save typing at the command
+# line. Basically syncing the `Group` to sync all `Channels` of that `Group`.
+
+# Global Options
+# Defing these outside of a Store applies to all of them
+
+# -----------------------------------
+# Bits on the Mind Config
+# -----------------------------------
+
+# BOTM Network Account
+IMAPAccount botm
+HOST imap.fastmail.com
+User stephen@bitsonthemind.com
+PassCmd "pass show Mail/mbsync-botm-prodigy"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+# BOTM Network IMAPStore using BOTM Account
+IMAPStore botm-remote
+Account botm
+
+# BOTM Local Maildir Store
+MailDirStore botm-local
+# Suggested by Manual pages - follow folder layout exactly on sync
+Subfolders Verbatim
+# Where this store exists
+Path ~/Mail/BOTM/
+Inbox ~/Mail/BOTM/Inbox
+
+# BOTM Channel
+# Since Fastmail labels are pretty straightforward I just 
+# let all the folders on the remote get created locally
+Channel botm
+Near :botm-local:
+Far :botm-remote:
+Patterns *
+Create Both
+SyncState *
+
+# -----------------------------------
+# Genesis Block Config
+# -----------------------------------
+
+# Genesis Block Network Account
+IMAPAccount genesis
+HOST imap.gmail.com
+User "stephen@genesisblock.com"
+PassCmd "pass show Mail/mbsync-genesis-prodigy"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+# Genesis Block Network IMAPStore using Genesis Block Account
+IMAPStore genesis-remote
+Account genesis
+
+# Genesis Block Local Maildir Store
+MailDirStore genesis-local
+Subfolders Verbatim
+Path ~/Mail/GB/
+Inbox ~/Mail/GB/Inbox
+
+# Unlike Fastmail GMail puts their folders in a format that I don't want locally
+# So I make a channel per tag so that I can rename locally
+Channel genesis-inbox
+Near :genesis-local:
+Far :genesis-remote:
+patterns "INBOX"
+
+Channel genesis-drafts
+Near :genesis-local:Drafts
+Far :genesis-remote:"[Gmail]/Drafts"
+Create Near
+
+Channel genesis-sent
+Near :genesis-local:Sent
+Far :genesis-remote:"[Gmail]/Sent Mail"
+Create Near
+
+Channel genesis-archive
+Near :genesis-local:Archive
+Far :genesis-remote:"[Gmail]/All Mail"
+Create Near
+
+
+Channel genesis-trash
+Near :genesis-local:Trash
+Far :genesis-remote:"[Gmail]/Trash"
+Create Near
+
+Channel genesis-acquiring
+Near :genesis-local:Acquiring
+Far :genesis-remote:Acquiring
+Create Near
+
+Channel genesis-waiting
+Near :genesis-local:Waiting
+Far :genesis-remote:Waiting
+Create Near
+
+# Group all the genesis channels together
+Group genesis-block
+Channel genesis-inbox
+Channel genesis-drafts
+Channel genesis-archive
+Channel geneses-sent
+Channel genesis-trash
+Channel genesis-acquiring

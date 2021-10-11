@@ -15,6 +15,7 @@ base:
     - git
     - gpg
     - kitty
+    - mail
     - nnn
     - nvim
     - passwords

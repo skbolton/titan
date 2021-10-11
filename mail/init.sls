@@ -9,6 +9,7 @@ mbsync:
 mbsync-config:
   file.managed:
     - name: /home/orlando/.config/mbsync/.mbsyncrc
+    - template: jinja
     - source: salt://mail/.mbsyncrc
     - makedirs: True
     - user: orlando

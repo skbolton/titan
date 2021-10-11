@@ -21,7 +21,7 @@
 IMAPAccount botm
 HOST imap.fastmail.com
 User stephen@bitsonthemind.com
-PassCmd "pass show Mail/mbsync-botm-prodigy"
+PassCmd "pass show botm/{{grains["host"]}}/mbsync"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
@@ -45,6 +45,7 @@ Near :botm-local:
 Far :botm-remote:
 Patterns *
 Create Both
+Expunge None
 SyncState *
 
 # -----------------------------------
@@ -55,7 +56,7 @@ SyncState *
 IMAPAccount genesis
 HOST imap.gmail.com
 User "stephen@genesisblock.com"
-PassCmd "pass show Mail/mbsync-genesis-prodigy"
+PassCmd "pass show genesis-block/{{grains["host"]}}/mbsync"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 

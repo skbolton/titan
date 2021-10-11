@@ -24,7 +24,6 @@ base:
     - rofi
     - sxhkd
     - taskwarrior
-    - terminfo
     - tmux
     - zk
     - zsh

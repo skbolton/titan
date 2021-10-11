@@ -11,6 +11,18 @@ roboto-mono:
     - runas: orlando
     - unless: paru -Qi nerd-fonts-roboto-mono
 
+roboto-slab:
+  cmd.run:
+    - name: paru -S ttf-roboto-slab --no-confirm --skipreview
+    - runas: orlando
+    - unless: paru -Qi ttf-roboto-slab
+
+fira-code:
+  cmd.run:
+    - name: paru -S ttf-fira-code --no-confirm --skipreview
+    - runas: orlando
+    - unless: paru -Qi ttf-fira-code
+
 source-sans-pro:
   file.recurse:
     - name: /home/orlando/.local/share/fonts/adobe

@@ -11,6 +11,7 @@ base:
     - cli-utils
     - direnv
     - dunst
+    - emacs
     - fonts
     - git
     - gpg

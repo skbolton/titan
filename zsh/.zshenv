@@ -2,7 +2,7 @@
 export ZDOTDIR="$HOME/.config/zsh"
 export ZSH_DISABLE_COMPFIX=true
 export ZSH="$HOME/.oh-my-zsh"
-export MANPAGER="nvim -c 'set ft=man' -"
+export MANPAGER="nvim +Man!"
 
 # XDG Base directory
 export XDG_CONFIG_HOME="$HOME/.config"

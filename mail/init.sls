@@ -15,7 +15,11 @@ mbsync-config:
     - user: orlando
 
 # MU is a mail indexer to make searching email quick and easy
-mu: pkg.installed
+mu: 
+  cmd.run:
+    - name: paru -S mu --noconfirm --skipreview
+    - runas: orlando
+    - unless: paru -Qi mu
 
 
 

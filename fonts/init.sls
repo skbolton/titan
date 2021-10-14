@@ -13,13 +13,13 @@ roboto-mono:
 
 roboto-slab:
   cmd.run:
-    - name: paru -S ttf-roboto-slab --no-confirm --skipreview
+    - name: paru -S ttf-roboto-slab --noconfirm --skipreview
     - runas: orlando
     - unless: paru -Qi ttf-roboto-slab
 
 fira-code:
   cmd.run:
-    - name: paru -S ttf-fira-code --no-confirm --skipreview
+    - name: paru -S ttf-fira-code --noconfirm --skipreview
     - runas: orlando
     - unless: paru -Qi ttf-fira-code
 

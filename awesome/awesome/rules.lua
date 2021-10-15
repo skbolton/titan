@@ -35,20 +35,19 @@ awful.rules.rules = {
     },
     properties = { tag = "3" }
   },
-  -- Slack goes on multiple
   {
     rule = {
       class = "Slack"
     },
     properties = {
-      tags = {"3", "6"}
+      tags = {"3"}
     }
   },
   {
     rule = {
       class = "Mailspring"
     },
-    properties = { tag = "4" }
+    properties = { tag = "6" }
   },
   {
     rule = {
@@ -56,15 +55,16 @@ awful.rules.rules = {
     },
     properties = { tag = "5" }
   },
-  -- Planning Clients
+  -- Notes and Planning
   {
     rule_any = {
       class = {
         "morgen",
         "obsidian",
+        "emacs"
       }
     },
-    properties = { tag = "6" }
+    properties = { tag = "4" }
   },
   -- Floating clients.
   {

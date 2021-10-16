@@ -1,7 +1,13 @@
-local map = vim.api.nvim_set_keymap
-local default_opts = {noremap = true}
+local nest = require('nest')
 
-map('n', '<leader><DOWN>', '<cmd>VimwikiMakeDiaryNote<cr>', default_opts)
-map('n', '<leader><UP>', '<cmd>VimwikiDiaryIndex<cr>', default_opts)
-map('n', '<leader><LEFT>', '<cmd>VimwikiDiaryPrevDay<cr>', default_opts)
-map('n', '<leader><RIGHT>', '<cmd>VimwikiDiaryNextDay<cr>', default_opts)
+nest.applyKeymaps {
+  {
+    '<leader>', {
+      {'<DOWN>', '<CMD>VimwikiMakeDiaryNote<CR>'},
+      {'<UP>', '<CMD>VimwikiDiaryIndex<CR>'},
+      {'<LEFT>', '<CMD>VimwikiDiaryPrevDay<CR>'},
+      {'<RIGHT>', '<CMD>VimwikiDiaryNextDay<CR>'},
+    }
+  }
+}
+

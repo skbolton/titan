@@ -1,12 +1,24 @@
-local map = vim.api.nvim_set_keymap
-local default_opts = {noremap = true}
+local nest = require('nest')
 
-map('n', '<leader>\\', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
-map('n', '<leader><bar>', ':NvimTreeFindFile<CR>', {noremap = true, silent = true})
-map('n', '<leader>ff', "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>", default_opts)
-map('n', '<leader>fr', "<cmd>lua require'telescope.builtin'.buffers({ show_all_buffers = true })<cr>", default_opts)
-map('n', '<leader>fg', "<cmd>lua require'telescope.builtin'.git_status()<cr>", default_opts)
-map('n', '<leader>fb', "<cmd>lua require'telescope.builtin'.git_branches()<cr>", default_opts)
-map('n', '<leader>f?', ":TodoTelescope<cr>", default_opts)
-map('n', '<leader>/', ":silent grep ", default_opts)
-map('n', '<leader>_', "<cmd>lua require'telescope.builtin'.live_grep()<cr>", default_opts)
+nest.applyKeymaps {
+  {
+    '<leader>', {
+      {
+        { '\\', '<CMD>NvimTreeToggle<CR>' },
+        { '<BAR>', '<CMD>NvimTreeFindFile<CR>' },
+        { '/', ':silent grep ', options = { silent = false }},
+        { '_', "<CMD>lua require'telescope.builtin'.live_grep()<CR>" },
+        {
+          'f', {
+            { 'f', "<CMD>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' } })<CR>" },
+            { 'r', "<CMD>lua require'telescope.builtin'.buffers({ show_all_buffers = true })<CR>" },
+            { 'g', "<CMD>lua require'telescope.builtin'.git_status()<CR>" },
+            { 'b', "<CMD>lua require'telescope.builtin'.git_branches()<CR>" },
+            { '?', "<CMD>TodoTelescope<CR>" },
+          }
+        }
+      }
+    }
+  }
+}
+

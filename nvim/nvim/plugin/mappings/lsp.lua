@@ -1,22 +1,35 @@
-local map = vim.api.nvim_set_keymap
-local default_opts = {noremap = true}
+local nest = require('nest')
 
-map('n', '<leader>ld', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true, silent = true})
-map('n', '<leader>lD', ':vsp <BAR> :lua vim.lsp.buf.definition()<CR>zz', { noremap = true, silent = true })
-map('n', '<leader>ls', '<cmd>lua vim.lsp.buf.signature_help()<CR>', { noremap = true, silent = true })
-map('n', '<leader>lh', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
-map('n', '<leader>lf', '<cmd>lua vim.lsp.buf.formatting_sync(nil, 1000)<CR>', default_opts)
-map('n', '<leader>lo', ':Vista finder skim<cr>', default_opts)
-map('n', '<leader>l[', '<cmd>lua vim.lsp.diagnostic.goto_prev({ wrap = true })<CR>', default_opts)
-map('n', '<leader>l]', '<cmd>lua vim.lsp.diagnostic.goto_next({ wrap = true })<CR>', default_opts)
-map('n', '<leader>l=', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({})<CR>', default_opts)
-map('n', '<leader>li', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', default_opts)
-map('n', '<leader>lO', ':Vista<CR>', {noremap = true, silent = true})
-map('n', '<leader>lp', ':CocList diagnostics<CR>', default_opts)
-map('n', '<leader>l?', ':CocInfo<CR>', default_opts) 
-map('n', '<leader>lr', '<cmd>lua vim.lsp.stop_client(vim.lsp.get_active_clients())<CR> :edit<CR>', default_opts) 
-map('i', '<C-y>', "compe#confirm('<CR>')", {noremap = true, silent = true, expr = true})
-
-map('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {noremap = true, expr = true})
-map('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"', {noremap = true, expr = true})
+nest.applyKeymaps {
+  {
+    'leader', {
+      'l', {
+        { 'd', '<CMD>lua vim.lsp.buf.definition()<CR>' },
+        {'D', ':vsp <BAR> :lua vim.lsp.buf.definition()<CR>zz'},
+        {'s', '<CMD>lua vim.lsp.buf.signature_help()<CR>'},
+        {'h', '<CMD>lua vim.lsp.buf.hover()<CR>'},
+        {'f', '<CMD>lua vim.lsp.buf.formatting_sync(nil, 1000)<CR>'},
+        {'o', '<CMD>Vista finder skim<cr>'},
+        {'[', '<CMD>lua vim.lsp.diagnostic.goto_prev({ wrap = true })<CR>'},
+        {']', '<CMD>lua vim.lsp.diagnostic.goto_next({ wrap = true })<CR>'},
+        {'=', '<CMD>lua vim.lsp.diagnostic.show_line_diagnostics({})<CR>'},
+        {'i', '<CMD>lua vim.lsp.diagnostic.set_loclist()<CR>'},
+        {'O', '<CMD>Vista<CR>'},
+        {'p', '<CMD>CocList diagnostics<CR>'},
+        {'?', '<CMD>CocInfo<CR>'},
+        {'r', '<cmd>lua vim.lsp.stop_client(vim.lsp.get_active_clients())<CR> :edit<CR>'},
+      }
+    }
+  },
+  {
+    mode = 'i', {
+      { options = { expr = true }, {
+          { '<C-y>', "compe#confirm('<CR>')" },
+          { '<TAB>', 'pumvisible() ? "\\<C-n>" : "\\<TAB>"' },
+          { '<S-TAB>', 'pumvisible() ? "\\<C-p>" : "\\<TAB>"' }
+        }
+      }
+    }
+  }
+}
 

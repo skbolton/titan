@@ -2,6 +2,7 @@ local awful = require("awful")
 local gears = require("gears")
 local bling = require("module.bling")
 local hotkeys_popup = require("awful.hotkeys_popup")
+local scratchpad = require("elemental.scratchpad")
 
 local super = "Mod4"
 local shift = "Shift"
@@ -222,38 +223,38 @@ local globalkeys = gears.table.join(
     -- Scratchpads
     awful.key({ alt }, "/",
       function ()
-        awesome.emit_signal("scratch::bench")
+        scratchpad.toggle_and_restore("bench")
       end,
       {description = "show bench", group = "scratchpads"}
     ),
     -- show terminal scratch alt + >
     awful.key({ alt, shift }, ".",
       function ()
-        awesome.emit_signal("scratch::terminal")
+        scratchpad.toggle_and_restore("terminal")
       end,
       {description = "show terminal", group = "scratchpads"}
     ),
     awful.key({ alt }, ";",
       function ()
-        awesome.emit_signal("scratch::monitor")
+        scratchpad.toggle_and_restore("monitor")
       end,
       {description = "show sys monitor", group = "scratchpads"}
     ),
     awful.key({ alt }, "q",
       function ()
-        awesome.emit_signal("scratch::quest")
+        scratchpad.toggle_and_restore("quest")
       end,
       {description = "show quest", group = "scratchpads"}
     ),
     awful.key({ alt }, "t",
       function ()
-        awesome.emit_signal("scratch::tasks")
+        scratchpad.toggle_and_restore("task")
       end,
       {description = "launch task scratchpad", group = "scratchpads"}
     ),
     awful.key({ alt }, "p",
       function ()
-        awesome.emit_signal("scratch::password")
+        scratchpad.toggle_and_restore("password")
       end,
       {description = "launch password scratchpad", group = "scratchpads"}
     ),

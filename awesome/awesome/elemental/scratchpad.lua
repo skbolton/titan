@@ -4,6 +4,9 @@ local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
 local rubato = require("module.rubato")
 local helpers = require("helpers")
+local naughty = require("naughty")
+
+local _M = { last_focused_client = nil }
 
 local rubato_with_defaults = function(overrides)
   return rubato.timed {
@@ -16,7 +19,12 @@ local rubato_with_defaults = function(overrides)
   }
 end
 
-local _M = {}
+local restore_client = function ()
+  if (_M.last_focused_client) then
+    _M.last_focused_client:jump_to()
+    _M.last_focused_client = nil
+  end
+end
 
 local terminal_scratch = function(screen_geometry)
   -- clamp the width and height to always fit on screen
@@ -39,6 +47,7 @@ local terminal_scratch = function(screen_geometry)
     }
   }
 
+  terminal:connect_signal("turn_off", restore_client)
   awesome.connect_signal("scratch::terminal", function() terminal:toggle() end)
 
   return terminal
@@ -66,6 +75,7 @@ local monitor_scratch = function(screen_geometry)
     }
   }
 
+  monitor:connect_signal("turn_off", restore_client)
   awesome.connect_signal("scratch::monitor", function() monitor:toggle() end)
 
   return monitor
@@ -94,6 +104,7 @@ local bench_scratch = function(screen_geometry)
     }
   }
 
+  bench:connect_signal("turn_off", restore_client)
   awesome.connect_signal("scratch::bench", function() bench:toggle() end)
 
   return bench
@@ -119,6 +130,7 @@ local quest_scratch = function(screen_geometry)
       }
   }
 
+  quest:connect_signal("turn_off", restore_client)
   awesome.connect_signal("scratch::quest", function() quest:toggle() end)
 
   return quest
@@ -146,6 +158,7 @@ local password_scratch = function(screen_geometry)
     }
   }
 
+  op:connect_signal("turn_off", restore_client)
   awesome.connect_signal("scratch::password", function() op:toggle() end)
 
   return op
@@ -172,6 +185,7 @@ local task_scratch = function(screen_geometry)
       }
   }
 
+  task:connect_signal("turn_off", restore_client)
   awesome.connect_signal("scratch::tasks", function() task:toggle() end)
 
   return task
@@ -181,18 +195,27 @@ end
 -- initialize scratchpads
 _M.init = function()
     local scratchpads = {
-      terminal_scratch,
-      monitor_scratch,
-      bench_scratch,
-      quest_scratch,
-      password_scratch,
-      task_scratch
+      terminal = terminal_scratch,
+      monitor = monitor_scratch,
+      bench = bench_scratch,
+      quest = quest_scratch,
+      password = password_scratch,
+      task = task_scratch
     }
 
-    for _idx, scratch in pairs(scratchpads) do
-      scratch(screen.primary.geometry)
+    for name, scratch in pairs(scratchpads) do
+      _M[name] = scratch(screen.primary.geometry)
     end
 end
+
+_M.toggle_and_restore = function (scratchpad) 
+  if (not _M.last_focused_client) then
+    _M.last_focused_client = client.focus
+  end
+
+  awesome.emit_signal("scratch::" .. scratchpad)
+end
+
 
 return _M
 

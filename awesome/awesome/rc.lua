@@ -51,6 +51,9 @@ require("signals")
 require("autostart")
 -- Extras
 local bling = require("module.bling")
+local machi = require("module.layout-machi")
+beautiful.layout_machi = machi.get_icon()
+machi.layout.default_cmd = "13h"
 bling.signal.playerctl.enable()
 
 user = {
@@ -72,6 +75,7 @@ awful.layout.layouts = {
   awful.layout.suit.max.fullscreen,
   awful.layout.suit.magnifier,
   awful.layout.suit.floating,
+  machi.default_layout
   -- awful.layout.suit.corner.nw,
   -- awful.layout.suit.corner.ne,
   -- awful.layout.suit.corner.sw,

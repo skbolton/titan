@@ -61,7 +61,7 @@ awful.rules.rules = {
       class = {
         "morgen",
         "obsidian",
-        "emacs"
+        "Emacs"
       }
     },
     properties = { tag = "4" }

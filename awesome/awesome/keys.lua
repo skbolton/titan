@@ -72,15 +72,15 @@ local globalkeys = gears.table.join(
 
     -- TAG KEYS
     -- Increase master width factor
-    awful.key({ super }, ",",
+    awful.key({ super }, ".",
       function ()
-        awful.tag.incmwfact(10)
+        awful.tag.incmwfact(0.1)
       end,
       {description = "increase master width", group = "tag"}
     ),
-    awful.key({ super }, ".",
+    awful.key({ super }, ",",
       function ()
-        awful.tag.incmwfact(10)
+        awful.tag.incmwfact(-0.1)
       end,
       {description = "decrease master width", group = "tag"}
     ),

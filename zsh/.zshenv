@@ -12,7 +12,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # GPG shenanigans
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-export PASSWORD_STORE_DIR="$HOME/.cache/password-store"
+export PASSWORD_STORE_DIR="$HOME/.local/share/password-store"
 export PASSWORD_STORE_GPG_OPTS="--no-throw-keyids"
 
 # nnn config

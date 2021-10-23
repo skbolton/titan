@@ -2,7 +2,7 @@ local nest = require('nest')
 
 nest.applyKeymaps {
   {
-    'leader', {
+    '<leader>', {
       't', {
         {'t', '<CMD>TestFile<CR>'},
         {'T', '<CMD>TestFile -strategy=neomake<CR>'},

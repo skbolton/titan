@@ -2,7 +2,7 @@ local nest = require('nest')
 
 nest.applyKeymaps {
   {
-    'leader', {
+    '<leader>', {
       'l', {
         { 'd', '<CMD>lua vim.lsp.buf.definition()<CR>' },
         {'D', ':vsp <BAR> :lua vim.lsp.buf.definition()<CR>zz'},

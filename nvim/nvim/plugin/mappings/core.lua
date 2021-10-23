@@ -36,7 +36,7 @@ nest.applyKeymaps {
   {
     '<leader>', {
       { ',', '<CMD>nohlsearch<CR>' },
-      { '>', ':!<space>' },
+      { '>', ':!<SPACE>', options = { silent = false }},
     }
   },
   {

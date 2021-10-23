@@ -21,9 +21,6 @@ nest.applyKeymaps {
           { 'm', '<CMD>GitMessenger<CR>' },
           { '<down>', '<CMD>Git pull<CR>' },
           { '<up>', '<CMD>Git push<CR>' },
-          { 'h', '<CMD>diffget<CR>' },
-          { 'l', '<CMD>diffget<CR>' },
-          { 'j', '<CMD>diffput<CR>' },
           {
             mode = 'v', {
               { 'v', '<CMD>Gbrowse<CR>' },
@@ -33,6 +30,11 @@ nest.applyKeymaps {
               { 'j', '<CMD>diffput<CR>' },
             }
           }
+        },
+        'd', {
+          { 'h', '<CMD>diffget<CR>' },
+          { 'l', '<CMD>diffget<CR>' },
+          { 'j', '<CMD>diffput<CR>' },
         }
       }
     }

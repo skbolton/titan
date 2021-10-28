@@ -18,18 +18,18 @@ starship-config:
 
 clear-oh-my-zsh:
   file.absent:
-    - name: /home/orlando/.oh-my-zsh
+    - name: /home/orlando/.config/.oh-my-zsh
 
 oh-my-zsh:
   git.cloned:
     - name: https://github.com/robbyrussell/oh-my-zsh.git
-    - target: /home/orlando/.oh-my-zsh
+    - target: /home/orlando/.config/.oh-my-zsh
     - user: orlando
 
 zsh-syntax-highlighting:
   git.cloned:
     - name: https://github.com/zsh-users/zsh-syntax-highlighting.git
-    - target: /home/orlando/.oh-my-zsh/plugins/zsh-syntax-highlighting
+    - target: /home/orlando/.config/.oh-my-zsh/plugins/zsh-syntax-highlighting
     - user: orlando
     - require:
       - git: oh-my-zsh
@@ -37,7 +37,7 @@ zsh-syntax-highlighting:
 zsh-autosuggestions:
   git.cloned:
     - name: https://github.com/zsh-users/zsh-autosuggestions
-    - target: /home/orlando/.oh-my-zsh/plugins/zsh-autosuggestions
+    - target: /home/orlando/.config/.oh-my-zsh/plugins/zsh-autosuggestions
     - user: orlando
     - require:
       - git: oh-my-zsh

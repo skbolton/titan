@@ -1,14 +1,16 @@
 # vim:ft=sh
 export ZDOTDIR="$HOME/.config/zsh"
 
-export EDITOR="nvim"
-export BROWSER="firefox"
-export MANPAGER="nvim +Man!"
-
 # XDG Base directory
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
+
+export EDITOR="nvim"
+export BROWSER="firefox"
+export MANPAGER="nvim +Man!"
+export LESSHISTFILE="$XDG_DATA_HOME/lesshst"
+
 
 # GPG shenanigans
 export GPG_TTY="$(tty)"

@@ -44,7 +44,7 @@ zsh-autosuggestions:
 
 zshenv:
   file.managed:
-    - name: /home/orlando/.zshenv
+    - name: /home/orlando/.config/zsh/.zshenv
     - source: salt://zsh/.zshenv
     - makedirs: True
     - user: orlando

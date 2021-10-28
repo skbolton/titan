@@ -85,7 +85,6 @@ fi
 . $HOME/.asdf/completions/asdf.bash
 eval "$(direnv hook zsh)"
 
-gpgconf --launch gpg-agent
 eval "$(starship init zsh)"
 
 # The next line updates PATH for the Google Cloud SDK.

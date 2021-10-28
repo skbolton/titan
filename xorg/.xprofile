@@ -1,0 +1,26 @@
+# vim:ft=sh
+export ZDOTDIR="$HOME/.config/zsh"
+
+export EDITOR="nvim"
+export BROWSER="firefox"
+export MANPAGER="nvim +Man!"
+
+# XDG Base directory
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+# GPG shenanigans
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+
+export SKIM_DEFAULT_COMMAND="rg --files --hidden -g !.git"
+export SKIM_DEFAULT_OPTIONS="--reverse --ansi --color=fg:15,hl:03,hl+:03,matched_bg:-1,bg+:-1,fg+:-1,current_match_bg:-1,cursor:06,spinner:05,info:07,prompt:06"
+export FZF_DEFAULT_OPTS="--reverse --ansi --color=fg:15,hl:3,hl+:3,bg+:-1,fg+:-1,pointer:06,spinner:05,info:7,prompt:6"
+
+export PASSWORD_STORE_DIR="$XDG_CACHE_HOME/password-store"
+export PASSWORD_STORE_GPG_OPTS="--no-throw-keyids"
+
+# Erlang
+export ERL_AFLAGS="-kernel shell_history enabled"

@@ -1,5 +1,5 @@
 name: Genesis Server
-root: ~/Repos/genesis-server
+root: ~/Public/genesis-server
 
 windows:
   - " ": nvim

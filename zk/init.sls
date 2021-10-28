@@ -6,15 +6,15 @@ zk:
   git.latest:
     - name: https://github.com/mickael-menu/zk.git
     - rev: v0.6.0
-    - target: /home/orlando/zk
+    - target: /home/orlando/.local/share/zk
     - user: orlando
   file.directory:
-    - name: /home/orlando/go/bin
+    - name: /home/orlando/.local/share/go/bin
   cmd.run:
-    - cwd: /home/orlando/zk
+    - cwd: /home/orlando/.local/share/zk
     - names:
       - make
-      - mv -f ./zk /home/orlando/go/bin
+      - mv -f ./zk /home/orlando/.local/share/go/bin
 
 zk-config:
   file.managed:

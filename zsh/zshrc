@@ -75,11 +75,8 @@ bench() {
 
 }
 
-if [[ -o interactive ]]
-then
-  color=$(( ( RANDOM % 6 ) + 1 ))
-  tput setaf $color && toilet -F border -t -f pagga "Bit by Bit"
-fi
+color=$(( ( RANDOM % 6 ) + 1 ))
+tput setaf $color && toilet -F border -t -f pagga "Bit by Bit"
 
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash

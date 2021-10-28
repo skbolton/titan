@@ -49,6 +49,11 @@ zshenv:
     - makedirs: True
     - user: orlando
 
+histfile:
+  file.directory:
+    - name: /home/orlando/.local/share/zsh
+    - user: orlando
+
 link-zsh:
   file.managed:
   - name: /home/orlando/.config/zsh/.zshrc

@@ -1,6 +1,7 @@
 # ZSH env configuration
 export ZSH_DISABLE_COMPFIX=true
 export ZSH="$HOME/.oh-my-zsh"
+export HISTFILE="$XDG_DATA_HOME/zsh/history"
 
 # nnn config
 export NNN_BMS='x:~/Documents/Warrior;w:~/Documents/Wolf;k:~/Documents/Wanderer'

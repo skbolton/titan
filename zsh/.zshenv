@@ -9,7 +9,7 @@ export NNN_BMS='x:~/Documents/Warrior;w:~/Documents/Wolf;k:~/Documents/Wanderer'
 # ZK
 export ZK_NOTEBOOK_DIR="$HOME/Documents/Delta"
 
-export GOPATH=$HOME/go
+export GOPATH=$XDG_DATA_HOME/go
 export GO111MODULE=on
 export PATH="$GOPATH/bin:"$HOME"/.local/bin:"$HOME"/.cargo/bin:"$HOME"/.local/share/gem/ruby/3.0.0/bin:$PATH"
 

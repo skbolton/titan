@@ -11,7 +11,6 @@ export BROWSER="firefox"
 export MANPAGER="nvim +Man!"
 export LESSHISTFILE="$XDG_DATA_HOME/lesshst"
 
-
 # GPG shenanigans
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
@@ -30,3 +29,5 @@ export ASDF_DATA_DIR=$ASDF_DIR
 
 # Erlang
 export ERL_AFLAGS="-kernel shell_history enabled"
+export MIX_XDG=1
+export HEX_HOME="$XDG_CACHE_HOME/hex"

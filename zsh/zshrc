@@ -78,8 +78,8 @@ bench() {
 color=$(( ( RANDOM % 6 ) + 1 ))
 tput setaf $color && toilet -F border -t -f pagga "Bit by Bit"
 
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+. $XDG_DATA_HOME/asdf/asdf.sh
+. $XDG_DATA_HOME/asdf/completions/asdf.bash
 eval "$(direnv hook zsh)"
 
 eval "$(starship init zsh)"

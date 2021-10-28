@@ -15,9 +15,9 @@ style = "italic cyan"
 format = "[$path]($style) "
 
 [character]
-success_symbol = "[ ](green)"
-error_symbol = "[ ](yellow)"
-vicmd_symbol = "[ ](green)"
+success_symbol = "[ ](green)"
+error_symbol = "[ ](yellow)"
+vicmd_symbol = "[ ](green)"
 
 [aws]
 disabled = true

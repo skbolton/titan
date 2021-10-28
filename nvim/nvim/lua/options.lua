@@ -67,6 +67,7 @@ opt.wildmenu = true
 opt.completeopt = "menuone,noselect,noinsert"
 opt.history = 100
 opt.shortmess = 'FWco'
+opt.modeline = true
 
 -- FOLDING
 -- ===================================================================

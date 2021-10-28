@@ -6,7 +6,7 @@ task:
 
 task-configs:
   file.managed:
-    - name: /home/orlando/.taskrc
+    - name: /home/orlando/.config/task/taskrc
     - source: salt://taskwarrior/taskrc
     - user: orlando
     - force: True

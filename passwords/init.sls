@@ -17,4 +17,8 @@ pass-fzf:
     - force: true
     - makedirs: true
 
+pass-otp: pkg.installed
+
+zbar: pkg.installed
+
 

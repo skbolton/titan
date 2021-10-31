@@ -259,6 +259,12 @@ local globalkeys = gears.table.join(
       end,
       {description = "launch task scratchpad", group = "scratchpads"}
     ),
+    awful.key({ alt, shift }, "4",
+      function ()
+        scratchpad.toggle_and_restore("finance")
+      end,
+      {description = "show finance pad", group = "scratchpads"}
+    ),
     awful.key({ alt }, "p",
       function ()
         scratchpad.toggle_and_restore("password")

@@ -53,6 +53,34 @@ local terminal_scratch = function(screen_geometry)
   return terminal
 end
 
+local finance_scratch = function(screen_geometry)
+  -- clamp the width and height to always fit on screen
+  local width = math.min(screen_geometry.width * 0.90, 2400)
+  local height = math.min(1000, screen_geometry.height - 20)
+  local x = (screen_geometry.width - width) / 2
+  local y = ((screen_geometry.height - height) / 2) + screen_geometry.y
+
+  local finance = bling.module.scratchpad:new {
+    command = "kitty --class kitty-finance nvim ~/Documents/Delta/journal.beancount",
+    rule = {class = "kitty-finance"},
+    sticky = true,
+    autoclose = false,
+    geometry = {x = x, y = y, height = height, width = width},
+    floating = true,
+    reapply = true,
+    rubato = {
+      y = rubato_with_defaults {
+        pos = -height
+      }
+    }
+  }
+
+  finance:connect_signal("turn_off", restore_client)
+  awesome.connect_signal("scratch::finance", function() finance:toggle() end)
+
+  return finance
+end
+
 local monitor_scratch = function(screen_geometry)
   -- clamp the width and height to always fit on screen
   local width = math.min(screen_geometry.width * 0.90, 2400)
@@ -200,7 +228,8 @@ _M.init = function()
       bench = bench_scratch,
       quest = quest_scratch,
       password = password_scratch,
-      task = task_scratch
+      task = task_scratch,
+      finance = finance_scratch
     }
 
     for name, scratch in pairs(scratchpads) do

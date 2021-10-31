@@ -1,5 +1,6 @@
 include:
   - zk
+  - finances
 
 nvim:
   pkg.installed:

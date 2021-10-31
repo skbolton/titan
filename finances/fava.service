@@ -1,0 +1,7 @@
+[Unit]
+Description=Fava Web UI for Beancount
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/fava --host localhost --port 9999 /home/orlando/Documents/Delta/journal.beancount
+User=orlando

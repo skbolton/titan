@@ -112,7 +112,7 @@ nvim_lsp.beancount.setup {
     '--stdio'
   },
   init_options = {
-    journalFile = "/home/orlando/Documents/Delta/2021-journal.beancount",
+    journalFile = "/home/orlando/Documents/Delta/journal.beancount",
     pythonPath = "python3"
   }
 }

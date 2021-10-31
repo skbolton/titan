@@ -13,9 +13,6 @@ export GOPATH=$XDG_DATA_HOME/go
 export GO111MODULE=on
 export PATH="$GOPATH/bin:"$HOME"/.local/bin:"$XDG_DATA_HOME"/cargo/bin:"$HOME"/.local/share/gem/ruby/3.0.0/bin:$PATH"
 
-export LEDGER_FILE="$HOME/Documents/Archive/Finances/$(date +%Y)/$(date +%Y).journal"
-
-
 # Android config
 export ANDROID_HOME=/opt/android-sdk
 export PATH=$PATH:$ANDROID_HOME/emulator

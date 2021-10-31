@@ -3,7 +3,7 @@ qmk: pkg.installed
 keyboards-config:
   git.cloned:
     - name: https://github.com/skbolton/qmk_firmware
-    - target: /home/orlando/Repos/qmk_firmware
+    - target: /home/orlando/Public/qmk_firmware
     - user: orlando
 
 qmk-udev-rule:

@@ -1,19 +1,7 @@
 # ZSH env configuration
-export ZDOTDIR="$HOME/.config/zsh"
 export ZSH_DISABLE_COMPFIX=true
-export ZSH="$HOME/.oh-my-zsh"
-export MANPAGER="nvim +Man!"
-
-# XDG Base directory
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CACHE_HOME="$HOME/.cache"
-
-# GPG shenanigans
-export GPG_TTY="$(tty)"
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-export PASSWORD_STORE_DIR="$HOME/.local/share/password-store"
-export PASSWORD_STORE_GPG_OPTS="--no-throw-keyids"
+export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
+export HISTFILE="$XDG_DATA_HOME/zsh/history"
 
 # nnn config
 export NNN_BMS='x:~/Documents/Warrior;w:~/Documents/Wolf;k:~/Documents/Wanderer'
@@ -21,20 +9,12 @@ export NNN_BMS='x:~/Documents/Warrior;w:~/Documents/Wolf;k:~/Documents/Wanderer'
 # ZK
 export ZK_NOTEBOOK_DIR="$HOME/Documents/Delta"
 
-export EDITOR="nvim"
-export BROWSER="firefox"
-export GOPATH=$HOME/go
+export GOPATH=$XDG_DATA_HOME/go
 export GO111MODULE=on
-export PATH="$GOPATH/bin:"$HOME"/.local/bin:"$HOME"/.cargo/bin:"$HOME"/.local/share/gem/ruby/3.0.0/bin:$PATH"
-
-export SKIM_DEFAULT_COMMAND="rg --files --hidden -g !.git"
-export SKIM_DEFAULT_OPTIONS="--reverse --ansi --color=fg:15,hl:03,hl+:03,matched_bg:-1,bg+:-1,fg+:-1,current_match_bg:-1,cursor:06,spinner:05,info:07,prompt:06"
-export FZF_DEFAULT_OPTS="--reverse --ansi --color=fg:15,hl:3,hl+:3,bg+:-1,fg+:-1,pointer:06,spinner:05,info:7,prompt:6"
+export PATH="$GOPATH/bin:"$HOME"/.local/bin:"$XDG_DATA_HOME"/cargo/bin:"$HOME"/.local/share/gem/ruby/3.0.0/bin:$PATH"
 
 export LEDGER_FILE="$HOME/Documents/Archive/Finances/$(date +%Y)/$(date +%Y).journal"
 
-# Erlang
-export ERL_AFLAGS="-kernel shell_history enabled"
 
 # Android config
 export ANDROID_HOME=/opt/android-sdk

@@ -1,5 +1,5 @@
 name: Genesis Devops
-root: ~/Repos/genesis-devops
+root: ~/Public/genesis-devops
 
 windows:
   - " ": nvim +DBUI

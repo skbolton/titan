@@ -21,8 +21,10 @@ mu:
     - runas: orlando
     - unless: paru -Qi mu
 
-maildir:
+maildirs:
   file.directory:
-    - name: /home/orlando/.local/share/Mail
+    - names:
+      - /home/orlando/.local/share/Mail/GB
+      - /home/orlando/.local/share/Mail/BOTM
     - user: orlando
 

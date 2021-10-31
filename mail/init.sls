@@ -21,5 +21,8 @@ mu:
     - runas: orlando
     - unless: paru -Qi mu
 
-
+maildir:
+  file.directory:
+    - name: /home/orlando/.local/share/Mail
+    - user: orlando
 

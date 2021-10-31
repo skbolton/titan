@@ -12,6 +12,7 @@
 
 # Global Options
 # Defing these outside of a Store applies to all of them
+SyncState *
 
 # -----------------------------------
 # Bits on the Mind Config
@@ -21,7 +22,7 @@
 IMAPAccount botm
 HOST imap.fastmail.com
 User stephen@bitsonthemind.com
-PassCmd "pass show botm/{{grains["host"]}}/mbsync"
+PassCmd "pass show fastmail.com/mbsync@{{grains["host"]}}"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
@@ -34,8 +35,8 @@ MailDirStore botm-local
 # Suggested by Manual pages - follow folder layout exactly on sync
 Subfolders Verbatim
 # Where this store exists
-Path ~/Mail/BOTM/
-Inbox ~/Mail/BOTM/Inbox
+Path ~/.local/share/Mail/BOTM/
+Inbox ~/.local/share/Mail/BOTM/Inbox
 
 # BOTM Channel
 # Since Fastmail labels are pretty straightforward I just 
@@ -46,7 +47,6 @@ Far :botm-remote:
 Patterns *
 Create Both
 Expunge None
-SyncState *
 
 # -----------------------------------
 # Genesis Block Config
@@ -56,7 +56,7 @@ SyncState *
 IMAPAccount genesis
 HOST imap.gmail.com
 User "stephen@genesisblock.com"
-PassCmd "pass show genesis-block/{{grains["host"]}}/mbsync"
+PassCmd "pass show GenesisBlock/GMail/mbsync@{{grains["host"]}}"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
@@ -67,15 +67,16 @@ Account genesis
 # Genesis Block Local Maildir Store
 MailDirStore genesis-local
 Subfolders Verbatim
-Path ~/Mail/GB/
-Inbox ~/Mail/GB/Inbox
+Path ~/.local/share/Mail/GB/
+Inbox ~/.local/share/Mail/GB/Inbox
 
 # Unlike Fastmail GMail puts their folders in a format that I don't want locally
 # So I make a channel per tag so that I can rename locally
 Channel genesis-inbox
 Near :genesis-local:
 Far :genesis-remote:
-patterns "INBOX"
+Create Near
+Patterns "Inbox"
 
 Channel genesis-drafts
 Near :genesis-local:Drafts
@@ -92,27 +93,29 @@ Near :genesis-local:Archive
 Far :genesis-remote:"[Gmail]/All Mail"
 Create Near
 
-
 Channel genesis-trash
 Near :genesis-local:Trash
 Far :genesis-remote:"[Gmail]/Trash"
 Create Near
 
-Channel genesis-acquiring
-Near :genesis-local:Acquiring
-Far :genesis-remote:Acquiring
+Channel genesis-spam
+Near :genesis-local:Spam
+Far :genesis-remote:"[Gmail]/Spam"
 Create Near
 
-Channel genesis-waiting
-Near :genesis-local:Waiting
-Far :genesis-remote:Waiting
-Create Near
+Channel genesis-custom-labels
+Near :genesis-local:
+Far :genesis-remote:
+Create Both
+Patterns * !Inbox ![Gmail]/*
+
 
 # Group all the genesis channels together
 Group genesis-block
 Channel genesis-inbox
 Channel genesis-drafts
 Channel genesis-archive
-Channel geneses-sent
+Channel genesis-sent
 Channel genesis-trash
-Channel genesis-acquiring
+Channel genesis-spam
+Channel genesis-custom-labels

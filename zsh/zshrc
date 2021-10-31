@@ -85,7 +85,7 @@ eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/orlando/google-cloud-sdk/path.zsh.inc' ]; then . '/home/orlando/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/home/orlando/.local/share/google-cloud-sdk/path.zsh.inc' ]; then . '/home/orlando/.local/share/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/orlando/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/orlando/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/home/orlando/.local/share/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/orlando/.local/share/google-cloud-sdk/completion.zsh.inc'; fi

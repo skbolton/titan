@@ -4,6 +4,9 @@ nnn:
     - target: /home/orlando/.local/share/nnn
     - user: orlando
 
+trash-cli:
+  pkg.installed
+
 nnn-build:
   file.absent:
     - name: /home/orlando/.local/bin/nnn

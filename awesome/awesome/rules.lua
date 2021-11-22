@@ -26,6 +26,12 @@ awful.rules.rules = {
     },
     properties = { maximized = false, floating = false, tag = "2" }
   },
+  {
+    rule = {
+      class = "NNN"
+    },
+    properties = { tag = "3" }
+  },
   -- Chat applications
   {
     rule_any = {
@@ -33,27 +39,27 @@ awful.rules.rules = {
         "discord"
       }
     },
-    properties = { tag = "3" }
+    properties = { tag = "4" }
   },
   {
     rule = {
       class = "Slack"
     },
     properties = {
-      tags = {"3"}
+      tags = {"4"}
     }
   },
   {
     rule = {
       class = "Mailspring"
     },
-    properties = { tag = "6" }
+    properties = { tag = "7" }
   },
   {
     rule = {
       class = "[Ss]potify"
     },
-    properties = { tag = "5" }
+    properties = { tag = "6" }
   },
   -- Notes and Planning
   {
@@ -64,7 +70,7 @@ awful.rules.rules = {
         "Emacs"
       }
     },
-    properties = { tag = "4" }
+    properties = { tag = "5" }
   },
   -- Floating clients.
   {

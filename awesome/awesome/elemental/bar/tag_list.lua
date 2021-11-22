@@ -10,6 +10,7 @@ local naughty = require("naughty")
 local selected_colors = {
   "#63F2F1",
   "#F2B482",
+  "#F48FB1",
   "#d4bfff",
   "#91ddff",
   "#A1EFD3",

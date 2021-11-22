@@ -8,6 +8,7 @@ awful.spawn.once("synology-drive")
 awful.spawn.once("playerctld daemon")
 
 -- GUIS
+awful.spawn("kitty --class NNN /home/orlando/.local/bin/nnn")
 awful.spawn.once("mailspring")
 awful.spawn.once("slack")
 

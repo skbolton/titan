@@ -12,3 +12,8 @@ nnn-build:
     - names:
       - make O_NERD=1
       - mv nnn /home/orlando/.local/bin
+
+nnn-desktop:
+  file.managed:
+    - name: /home/orlando/.local/share/applications/nnn.desktop
+    - source: salt://nnn/nnn.desktop

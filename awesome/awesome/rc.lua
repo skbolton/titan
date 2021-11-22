@@ -95,6 +95,7 @@ awful.screen.connect_for_each_screen(function(s)
       screen = s,
       selected = true
     })
+
     awful.tag.add("2", {
       icon = gears.filesystem.get_configuration_dir() .. "icons/" .. icon .. "/firefox-line.svg",
       layout = awful.layout.layouts[1],
@@ -104,7 +105,18 @@ awful.screen.connect_for_each_screen(function(s)
       screen = s,
       selected = false
     })
+
     awful.tag.add("3", {
+      icon = gears.filesystem.get_configuration_dir() .. "icons/" .. icon .. "/folder-5-line.svg",
+      layout = awful.layout.layouts[1],
+      master_fill_policy = "expand",
+      gap_single_client = true,
+      gap = beautiful.useless_gap,
+      screen = s,
+      selected = false
+    })
+
+    awful.tag.add("4", {
       icon = gears.filesystem.get_configuration_dir() .. "icons/" .. icon .. "/slack-line.svg",
       layout = awful.layout.layouts[1],
       master_fill_policy = "expand",
@@ -113,7 +125,8 @@ awful.screen.connect_for_each_screen(function(s)
       screen = s,
       selected = false
     })
-    awful.tag.add("4", {
+
+    awful.tag.add("5", {
       icon = gears.filesystem.get_configuration_dir() .. "icons/" .. icon .. "/lightbulb-line.svg",
       layout = awful.layout.layouts[1],
       master_fill_policy = "expand",
@@ -122,7 +135,8 @@ awful.screen.connect_for_each_screen(function(s)
       screen = s,
       selected = false
     })
-    awful.tag.add("5", {
+
+    awful.tag.add("6", {
       icon = gears.filesystem.get_configuration_dir() .. "icons/" .. icon .. "/spotify-line.svg",
       layout = awful.layout.layouts[1],
       master_fill_policy = "expand",
@@ -131,7 +145,8 @@ awful.screen.connect_for_each_screen(function(s)
       screen = s,
       selected = false
     })
-    awful.tag.add("6", {
+
+    awful.tag.add("7", {
       icon = gears.filesystem.get_configuration_dir() .. "icons/" .. icon .. "/send-plane-line.svg",
       layout = awful.layout.layouts[1],
       master_fill_policy = "expand",

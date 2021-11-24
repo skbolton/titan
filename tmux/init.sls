@@ -26,6 +26,14 @@ gruvbox-light-tmux:
     - user: orlando
     - makedirs: True
 
+neoline:
+  file.managed:
+    - name: /home/orlando/.config/tmux/neoline.tmux
+    - source: salt://tmux/neoline.tmux
+    - user: orlando
+    - makedirs: True
+
+
 tmux-plugin-manager:
   git.cloned:
     - name: https://github.com/tmux-plugins/tpm

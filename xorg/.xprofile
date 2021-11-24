@@ -9,7 +9,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # nnn config
 export NNN_OPTS="Hd"
 export NNN_TRASH=1
-export NNN_BMS="a:$HOME/Documents/Archive;g:$HOME/Documents/Genesis-Block;D:$HOME/Documents;d:$HOME/Documents/Delta;o:$HOME/Downloads;f:$Documents/Finances;w:$HOME/Pictures/Wallpapers"
+export NNN_BMS="a:$HOME/Documents/Archive;g:$HOME/Documents/Genesis-Block;D:$HOME/Documents;d:$HOME/Documents/Delta;o:$HOME/Downloads;f:$HOME/Documents/Finances;w:$HOME/Pictures/Wallpapers"
 BLK="00" CHAR="00" DIR="56" EXE="DE" REG="00" HLI="00" SLI="00" MIS="00" ORP="00" FIF="00" SOC="00" UNK="00"
 export NNN_FCOLORS="$BLK$CHAR$DIR$EXE$REG$HLI$SLI$MIS$ORP$FIF$SOC$UNK"
 export NNN_COLORS="5555"

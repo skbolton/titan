@@ -1,0 +1,19 @@
+alias v="nvim"
+alias aqua="Asciiquarium"
+
+# Task warrior tooling
+alias t="task"
+alias tap="task context personal"
+alias taw="task context work"
+alias chore="task add +personal +chore" 
+alias bce="$EDITOR $HOME/Documents/Delta/journal.beancount"
+alias de="cd ~/Documents/Delta"
+alias gb="cd ~/Documents/GenesisBlock"
+
+# use exa for ls
+alias ls='exa -al --icons --color=always --group-directories-first'
+alias la='exa -a --icons --color=always --group-directories-first'
+alias ll='exa -l --icons --color=always --group-directories-first'
+alias lt='exa -aT --icons --color=always --group-directories-first'
+alias titan='command ls /srv/titan | sk | xargs basename -s ".sls" | xargs sudo salt-call state.apply'
+

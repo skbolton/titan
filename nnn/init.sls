@@ -7,6 +7,10 @@ nnn:
 trash-cli:
   pkg.installed
 
+nnn-config:
+  file.directory:
+    - name: /home/orlando/.config/nnn
+
 nnn-build:
   file.absent:
     - name: /home/orlando/.local/bin/nnn
@@ -15,6 +19,7 @@ nnn-build:
     - names:
       - make O_NERD=1
       - mv nnn /home/orlando/.local/bin
+      - mv plugins /home/orlando/.config/nnn
 
 nnn-desktop:
   file.managed:

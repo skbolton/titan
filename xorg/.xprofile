@@ -13,6 +13,8 @@ export NNN_BMS="a:$HOME/Documents/Archive;g:$HOME/Documents/Genesis-Block;D:$HOM
 BLK="00" CHAR="00" DIR="56" EXE="DE" REG="00" HLI="00" SLI="00" MIS="00" ORP="00" FIF="00" SOC="00" UNK="00"
 export NNN_FCOLORS="$BLK$CHAR$DIR$EXE$REG$HLI$SLI$MIS$ORP$FIF$SOC$UNK"
 export NNN_COLORS="5555"
+export NNN_PLUG="p:preview-tui"
+export NNN_FIFO=/tmp/nnn.fifo
 
 export EDITOR="nvim"
 export BROWSER="firefox"

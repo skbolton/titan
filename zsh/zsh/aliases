@@ -10,6 +10,12 @@ alias bce="$EDITOR $HOME/Documents/Delta/journal.beancount"
 alias de="cd ~/Documents/Delta"
 alias gb="cd ~/Documents/GenesisBlock"
 
+# Elixir Goodies
+alias m="iex -S mix"
+alias ms="iex -S mix phx.server"
+alias mdg="mix deps.get"
+alias mdc="mix deps.clean --all"
+
 # use exa for ls
 alias ls='exa -al --icons --color=always --group-directories-first'
 alias la='exa -a --icons --color=always --group-directories-first'

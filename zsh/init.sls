@@ -54,3 +54,7 @@ zsh-vim-mode:
     - name: https://github.com/softmoth/zsh-vim-mode
     - target: {{ zsh_dir }}/plugins/zsh-vim-mode
 
+zsh-fzf-tab:
+  git.cloned:
+    - name: https://github.com/Aloxaf/fzf-tab
+    - target: {{ zsh_dir }}/plugins/fzf-tab

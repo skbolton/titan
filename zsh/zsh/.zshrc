@@ -109,6 +109,19 @@ zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f
 if [ -f '/home/orlando/.local/share/google-cloud-sdk/path.zsh.inc' ]; then . '/home/orlando/.local/share/google-cloud-sdk/path.zsh.inc'; fi
 if [ -f '/home/orlando/.local/share/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/orlando/.local/share/google-cloud-sdk/completion.zsh.inc'; fi
 
+# Use fzf for completions - Might make a lot of the above completion obsolete
+source $ZDOTDIR/plugins/fzf-tab/fzf-tab.plugin.zsh
+
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
+# preview directory's content with exa when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+# switch group using `,` and `.`
+zstyle ':fzf-tab:*' switch-group ',' '.'
+
+
 #######################################################################
 # Aliases
 #######################################################################
@@ -134,6 +147,14 @@ zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
 source $ZDOTDIR/plugins/zsh-vim-mode
+
+#######################################################################
+# FZF
+#######################################################################
+if [ $(command -v "fzf") ]; then
+  source /usr/share/fzf/completion.zsh
+  source /usr/share/fzf/key-bindings.zsh
+fi
 
 #######################################################################
 # Greeting

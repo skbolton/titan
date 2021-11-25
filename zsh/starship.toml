@@ -1,14 +1,15 @@
 format = """\
   $jobs\
-  $character\
   $directory\
   $git_branch\
+  $line_break\
+  $character\
 """
 
 [git_branch]
 symbol = " "
 style = "purple"
-format = "on [$symbol$branch]($style) | "
+format = "on [$symbol$branch]($style)"
 
 [directory]
 style = "italic cyan"

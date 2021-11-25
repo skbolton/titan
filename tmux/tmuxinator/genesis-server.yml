@@ -2,7 +2,7 @@ name: Genesis Server
 root: ~/Public/genesis-server
 
 windows:
-  - " ": nvim
+  - " ": nvim
   - " ":
       layout: main-vertical
       panes:

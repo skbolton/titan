@@ -1,6 +1,10 @@
 alias v="nvim"
 alias aqua="Asciiquarium"
 
+alias mux="tmux"
+alias muxk="tmux kill-server"
+alias muxa="tmux a"
+
 # Task warrior tooling
 alias t="task"
 alias tap="task context personal"

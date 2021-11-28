@@ -17,4 +17,4 @@ set -g status-right "#[fg=#37354A]#[bg=#37354A,fg=brightwhite]%Y-%m-%d #[fg=#
 set -g status-justify left
 
 set -g window-status-format "#[fg=#2D2B40]#[fg=brightwhite,bg=#2D2B40] #{?window_zoomed_flag,  ,}#W #[bg=black,fg=#2D2B40]"
-set -g window-status-current-format "#[fg=#63F2F1]#[bg=#63F2F1,fg=black] · #{?window_zoomed_flag,  ,}#[fg=#63F2F1,bg=black]"
+set -g window-status-current-format "#[fg=#63F2F1]#[bg=#63F2F1,fg=black] #W #{?window_zoomed_flag,  ,}#[fg=#63F2F1,bg=black]"

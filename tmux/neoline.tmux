@@ -1,5 +1,7 @@
 set -g status-interval 3
 set-option -g status-position bottom
+set-option -g pane-active-border-style "fg=green"
+set-option -g pane-border-style "fg=brightwhite"
 
 # Status line
 set -g status-style default

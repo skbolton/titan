@@ -71,7 +71,7 @@ gls.left[2] = {
 
 gls.left[3] = {
   GitDiffAdded = {
-    icon = '   ',
+    icon = '   ',
     provider = function()
       if vcs.diff_add() then
         return vcs.diff_add() .. ' '
@@ -84,8 +84,22 @@ gls.left[3] = {
 }
 
 gls.left[4] = {
+  GitDiffChanged = {
+    icon = '   ',
+    provider = function()
+      if vcs.diff_modified() then
+        return vcs.diff_modified() .. ' '
+      else
+        return '· '
+      end
+    end,
+    highlight = { colors.fg_dark, "#37354A" }
+  }
+}
+
+gls.left[5] = {
   GitDiffRemoved = {
-    icon = '   ',
+    icon = '   ',
     provider = function()
       if vcs.diff_remove() then
         return vcs.diff_remove() .. ' '

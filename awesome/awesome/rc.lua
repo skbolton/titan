@@ -126,7 +126,7 @@ awful.screen.connect_for_each_screen(function(s)
     })
 
     awful.tag.add("5", {
-      icon = gears.filesystem.get_configuration_dir() .. "icons/" .. icon .. "/lightbulb-line.svg",
+      icon = gears.filesystem.get_configuration_dir() .. "icons/" .. icon .. "/share-line.svg",
       layout = awful.layout.layouts[1],
       master_fill_policy = "expand",
       gap_single_client = true,

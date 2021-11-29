@@ -38,7 +38,7 @@ end
 gls.left[1] = {
   FileName = {
     icon = function()
-      return file.get_file_icon() .. ' '
+      return file.get_file_icon()
     end,
     provider = function()
       if condition.buffer_not_empty() then

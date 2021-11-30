@@ -1,6 +1,8 @@
 # ZSH env configuration
 export ZSH_DISABLE_COMPFIX=true
 export HISTFILE="$XDG_DATA_HOME/zsh/history"
+export HISTSIZE=1000000000
+export HISTFILESIZE=1000000000
 
 # ZK
 export ZK_NOTEBOOK_DIR="$HOME/Documents/Delta"

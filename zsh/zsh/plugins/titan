@@ -1,3 +1,5 @@
+#!/bin/sh
+
 titan() {
   # if passed no args then fuzzy search a state to run
   if [ -z "$1" ]; then

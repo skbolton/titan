@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 alias v="nvim"
 alias aqua="Asciiquarium"
 

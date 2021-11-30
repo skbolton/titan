@@ -3,7 +3,7 @@ root: ~/Public/genesis-server
 
 windows:
   - " ": nvim
-  - " ":
+  - " ":
       layout: main-vertical
       panes:
         - clear

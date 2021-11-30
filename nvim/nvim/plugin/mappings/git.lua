@@ -1,7 +1,5 @@
 local nest = require('nest')
-local map = vim.api.nvim_set_keymap
-
-local default_opts = {noremap = true}
+local telescope = require('telescope.builtin')
 
 nest.applyKeymaps {
   {
@@ -9,8 +7,8 @@ nest.applyKeymaps {
       '<leader>', {
         'g', {
           { 's', '<CMD>G<CR>' },
-          { 'S', "<CMD>lua require'telescope.builtin'.git_status()<CR>" },
-          { 'B', "<CMD>lua require'telescope.builtin'.git_branches()<CR>" },
+          { 'S', telescope.git_status },
+          { 'B', telescope.git_branches },
           { 'c', "<CMD>Git commit<CR>" },
           { 'd', "<CMD>Gdiff<CR>" },
           { 'b', "<CMD>Git blame<CR>" },

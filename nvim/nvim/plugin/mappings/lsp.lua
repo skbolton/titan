@@ -1,23 +1,53 @@
 local nest = require('nest')
+local lsp = vim.lsp
+
+local reload_lsp_clients = function()
+  lsp.stop_client(vim.lsp.get_active_clients())
+  -- reload current buffer so that language servers kick in again
+  return vim.api.nvim_command('edit!')
+end
+
+local definition_in_split = function()
+  -- open a split, this will carry the current buffer over
+  vim.api.nvim_command('vsp')
+  -- go to definition
+  lsp.buf.definition()
+  -- center cursor
+  vim.api.nvim_command('normal zz')
+end
+
+-- Go to a diagnostic based on direction
+-- Wrapping results causes going back to beginning/end of file
+local goto_diagnostic = function(dir)
+  if dir == 'next' then
+    return function()
+      return lsp.diagnostic.goto_next({ wrap = true })
+    end
+  else
+    return function()
+      return lsp.diagnostic.goto_prev({ wrap = true })
+    end
+  end
+end
 
 nest.applyKeymaps {
   {
     '<leader>', {
       'l', {
-        { 'd', '<CMD>lua vim.lsp.buf.definition()<CR>' },
-        {'D', ':vsp <BAR> :lua vim.lsp.buf.definition()<CR>zz'},
-        {'s', '<CMD>lua vim.lsp.buf.signature_help()<CR>'},
-        {'h', '<CMD>lua vim.lsp.buf.hover()<CR>'},
-        {'f', '<CMD>lua vim.lsp.buf.formatting_sync(nil, 1000)<CR>'},
+        {'d', vim.lsp.buf.definition},
+        {'D', definition_in_split},
+        {'s', vim.lsp.buf.signature_help },
+        {'h', vim.lsp.buf.hover},
+        {'f', vim.lsp.buf.formatting_sync},
         {'o', '<CMD>Vista finder skim<cr>'},
-        {'[', '<CMD>lua vim.lsp.diagnostic.goto_prev({ wrap = true })<CR>'},
-        {']', '<CMD>lua vim.lsp.diagnostic.goto_next({ wrap = true })<CR>'},
-        {'=', '<CMD>lua vim.lsp.diagnostic.show_line_diagnostics({})<CR>'},
-        {'i', '<CMD>lua vim.lsp.diagnostic.set_loclist()<CR>'},
+        {'[', goto_diagnostic('prev')},
+        {']', goto_diagnostic('next')},
+        {'=', vim.lsp.diagnostic.show_line_diagnostics},
+        {'i', vim.lsp.diagnostic.set_loclist},
         {'O', '<CMD>Vista<CR>'},
         {'p', '<CMD>CocList diagnostics<CR>'},
         {'?', '<CMD>CocInfo<CR>'},
-        {'r', '<cmd>lua vim.lsp.stop_client(vim.lsp.get_active_clients())<CR> :edit<CR>'},
+        {'r', reload_lsp_clients},
       }
     }
   },

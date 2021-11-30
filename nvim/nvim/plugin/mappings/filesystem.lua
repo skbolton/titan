@@ -1,4 +1,15 @@
 local nest = require('nest')
+local telescope = require('telescope.builtin')
+
+local all_buffers = function()
+  return telescope.buffers({ show_all_buffers = true })
+end
+
+-- find files
+-- include hidden files but not from the git directory
+local find_files = function()
+  return telescope.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git'} })
+end
 
 nest.applyKeymaps {
   {
@@ -7,14 +18,14 @@ nest.applyKeymaps {
         { '\\', '<CMD>NvimTreeToggle<CR>' },
         { '<BAR>', '<CMD>NvimTreeFindFile<CR>' },
         { '/', ':silent grep ', options = { silent = false }},
-        { '_', "<CMD>lua require'telescope.builtin'.live_grep()<CR>" },
+        { '_', telescope.live_grep },
         {
           'f', {
-            { 'f', "<CMD>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' } })<CR>" },
-            { 'r', "<CMD>lua require'telescope.builtin'.buffers({ show_all_buffers = true })<CR>" },
-            { 'g', "<CMD>lua require'telescope.builtin'.git_status()<CR>" },
-            { 'b', "<CMD>lua require'telescope.builtin'.git_branches()<CR>" },
-            { '?', "<CMD>TodoTelescope<CR>" },
+            { 'f', find_files },
+            { 'r', all_buffers },
+            { 'g', telescope.git_status },
+            { 'b',  telescope.git_branches },
+            { '?', "<CMD>TodoTelescope<CR>" }
           }
         }
       }

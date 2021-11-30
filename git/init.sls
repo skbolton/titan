@@ -18,6 +18,14 @@ git-branches:
     - mode: keep
     - user: orlando
 
+git-default-branch:
+  file.managed:
+    - name: /home/orlando/.local/bin/git-default-branch
+    - source: salt://git/git-default-branch
+    - mode: keep
+    - user: orlando
+
+
 github-cli:
   cmd.run:
     - name: paru -S github-cli --noconfirm --skipreview

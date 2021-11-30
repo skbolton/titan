@@ -56,10 +56,10 @@ gls.left[1] = {
 gls.left[2] = {
   GitBranch = {
     provider = function()
-      if condition.check_git_workspace() then
+      if vcs.get_git_branch() then
         return vcs.get_git_branch() .. ' '
       else
-        return '--'
+        return '· '
       end
     end,
     icon = '  ',

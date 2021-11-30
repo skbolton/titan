@@ -1,4 +1,5 @@
 nnoremap <leader>db :DBUI<CR>
+nnoremap <buffer> <leader>\ :DBUIToggle<CR>
 nnoremap <buffer> <localleader>rc :DB g:db_url = 
 vnoremap <buffer> <localleader>r :%DB g:db_url<CR>
 

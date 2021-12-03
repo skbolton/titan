@@ -64,7 +64,7 @@ opt.splitbelow = true
 opt.splitright = true
 -- MENUS
 opt.wildmenu = true
-opt.completeopt = "menuone,noselect,noinsert"
+opt.completeopt = "menuone,menu,noselect,noinsert"
 opt.history = 100
 opt.shortmess = 'FWco'
 opt.modeline = true

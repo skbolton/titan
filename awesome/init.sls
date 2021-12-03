@@ -14,6 +14,7 @@ awesome-configs:
     - user: orlando
     - makedirs: True
     - force: True
+    - template: jinja
 
 rubato:
   git.latest:

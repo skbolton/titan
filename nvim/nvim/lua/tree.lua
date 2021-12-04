@@ -25,5 +25,8 @@ vim.g.nvim_tree_icons = {
 vim.g.nvim_tree_width_allow_resize = true;
 
 tree.setup {
-  disable_netrw = false
+  disable_netrw = false,
+  git = {
+    enable = false
+  }
 }

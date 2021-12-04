@@ -5,7 +5,6 @@ include:
 zk:
   git.latest:
     - name: https://github.com/mickael-menu/zk.git
-    - rev: v0.6.0
     - target: /home/orlando/.local/share/zk
     - user: orlando
   cmd.run:

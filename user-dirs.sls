@@ -1,3 +1,6 @@
+include:
+  - orlando
+
 user-dirs:
   pkg.installed:
     - name: xdg-user-dirs
@@ -20,9 +23,16 @@ user-dirs-folders:
   file.directory:
     - names:
         - /home/orlando/Pictures
+        - /home/orlando/Pictures/Wallpapers
         - /home/orlando/Downloads
         - /home/orlando/Music
         - /home/orlando/Videos
         - /home/orlando/Public
         - /home/orlando/Templates
+        # Some other useful folders to have
+        - /home/orlando/.config
+        - /home/orlando/Documents/Archive
+        - /home/orlando/Documents/Delta
+        - /home/orlando/.local/bin
     - user: orlando
+

@@ -6,6 +6,7 @@ awful.spawn.once("nitrogen --restore")
 awful.spawn.once("picom --experimental-backends")
 awful.spawn.once("synology-drive")
 awful.spawn.once("playerctld daemon")
+awful.spawn.once("nm-applet --no-agent")
 
 -- GUIS
 awful.spawn("kitty --class NNN /home/orlando/.local/bin/nnn")

@@ -6,6 +6,7 @@ base:
     - audio
     - arch
     - user-dirs
+    - networking
     - asdf
     - bspwm
     - cli-utils

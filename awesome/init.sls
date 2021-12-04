@@ -3,6 +3,7 @@ include:
   - rofi
   - fonts
   - cli-utils
+  - networking
 
 awesome:
   pkg.installed

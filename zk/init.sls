@@ -8,8 +8,6 @@ zk:
     - rev: v0.6.0
     - target: /home/orlando/.local/share/zk
     - user: orlando
-  file.directory:
-    - name: /home/orlando/.local/share/go/bin
   cmd.run:
     - cwd: /home/orlando/.local/share/zk
     - names:

@@ -1,5 +1,6 @@
 include:
   - crons
+  - python
 
 task:
   pkg.installed

@@ -107,8 +107,8 @@ zstyle ':completion:*' keep-prefix true
 zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
 
 # Google cloud completion
-if [ -f '/home/orlando/.local/share/google-cloud-sdk/path.zsh.inc' ]; then . '/home/orlando/.local/share/google-cloud-sdk/path.zsh.inc'; fi
-if [ -f '/home/orlando/.local/share/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/orlando/.local/share/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/opt/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/opt/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Use fzf for completions - Might make a lot of the above completion obsolete
 source $ZDOTDIR/plugins/fzf-tab/fzf-tab.plugin.zsh

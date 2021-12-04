@@ -10,6 +10,7 @@ base:
     - asdf
     - bspwm
     - cli-utils
+    - cloud
     - direnv
     - dunst
     - emacs

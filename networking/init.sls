@@ -15,6 +15,15 @@ dhcpcd:
     # Make sure it also not enabled on next boot
     - enable: False
 
+systemd-resolved:
+  service.running:
+    - enable: True
+    - name: systemd-resolved
+  file.symlink:
+    - name: /etc/resolv.conf
+    - target: /run/systemd/resolve/stub-resolv.conf
+    - force: True
+
 networkmanager: 
   pkg.installed:
     - require:

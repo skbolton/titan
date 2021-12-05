@@ -7,6 +7,7 @@ base:
     - arch
     - user-dirs
     - networking
+    - scanner
     - systemd
     - asdf
     - bspwm

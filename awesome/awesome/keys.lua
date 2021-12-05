@@ -95,12 +95,14 @@ local globalkeys = gears.table.join(
     awful.key({ super, shift }, "]",
       function ()
         awful.layout.inc(1)
+        awesome.emit_signal("layout-changed")
       end,
       {description = "select next layout", group = "tag"}
     ),
     awful.key({ super, shift }, "[",
       function ()
         awful.layout.inc(-1)
+        awesome.emit_signal("layout-changed")
       end,
       {description = "select prev layout", group = "tag"}
     ),

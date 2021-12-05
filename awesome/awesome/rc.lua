@@ -62,8 +62,8 @@ user = {
 -- TODO: Move this to its own module? (tag.lua)
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-  awful.layout.suit.tile,
   awful.layout.suit.tile.left,
+  awful.layout.suit.tile,
   awful.layout.suit.fair,
   awful.layout.suit.fair.horizontal,
   -- awful.layout.suit.spiral,
@@ -184,4 +184,13 @@ do
         in_error = false
     end)
 end
+
+awesome.connect_signal("layout-changed", function()
+  local t = client.focus and client.focus.first_tag or nil
+  if t and t.layout.name == 'centered' then
+    t.master_width_factor = 0.5
+  else
+    t.master_width_factor = beautiful.master_width_factor
+  end
+end)
 

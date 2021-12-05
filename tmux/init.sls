@@ -33,11 +33,18 @@ neoline:
     - user: orlando
     - makedirs: True
 
-
 tmux-plugin-manager:
   git.cloned:
     - name: https://github.com/tmux-plugins/tpm
     - target: /home/orlando/.config/tmux/plugins/tpm
+    - user: orlando
+
+# For some reason I have to manually install
+# TPM won't install this
+tmux-fuzzback:
+  git.cloned:
+    - name: https://github.com/roosta/tmux-fuzzback
+    - target: /home/orlando/.config/tmux/plugins/tmux-fuzzback
     - user: orlando
 
 tmuxinator:

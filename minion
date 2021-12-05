@@ -3,3 +3,5 @@ file_roots:
     - /srv/titan
 file_client: local
 
+log_level: info
+

@@ -6,7 +6,7 @@ picom:
 
 picom-config:
   file.managed:
-    - name: /home/orlando/.config/picom.conf
+    - name: {{ pillar['xdg_config_home'] }}/picom.conf
     - source: salt://picom/picom.conf
     - makedirs: True
 

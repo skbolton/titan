@@ -3,5 +3,9 @@ file_roots:
     - /srv/titan
 file_client: local
 
+pillar_roots:
+  base:
+    - /srv/titan/pillar
+
 log_level: info
 

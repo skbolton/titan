@@ -11,21 +11,21 @@ polybar:
 
 polybar-bars:
   file.managed:
-    - name: /home/orlando/.config/polybar/config.ini
+    - name: {{ pillar['xdg_config_home'] }}/polybar/config.ini
     - source: salt://polybar/{{ polybar_configs.config }}
     - mode: keep
     - user: orlando
 
 polybar-launcher:
   file.managed:
-    - name: /home/orlando/.config/polybar/launch.sh
+    - name: {{ pillar['xdg_config_home'] }}/polybar/launch.sh
     - source: salt://polybar/{{ polybar_configs.launcher }}
     - mode: keep
     - user: orlando
 
 polybar-config:
   file.recurse:
-    - name: /home/orlando/.config/polybar
+    - name: {{ pillar['xdg_config_home'] }}/polybar
     - source: salt://polybar/polybar
     - file_mode: keep
     - user: orlando

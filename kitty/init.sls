@@ -4,6 +4,6 @@ kitty:
 
 configs:
   file.recurse:
-    - name: /home/orlando/.config/kitty
+    - name: {{ pillar['xdg_config_home'] }}/kitty
     - source: salt://kitty/kitty
     - user: orlando

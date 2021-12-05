@@ -2,33 +2,35 @@ include:
   - go
   - ruby
 
+{% set tmux_dir = pillar['xdg_config_home'] + '/tmux' %}
+
 tmux:
   pkg.installed
 
 tmux-config:
   file.managed:
-    - name: /home/orlando/.config/tmux/tmux.conf
+    - name: {{ tmux_dir}} /tmux.conf
     - source: salt://tmux/tmux.conf
     - user: orlando
     - makedirs: True
 
 embark-tmux:
   file.managed:
-    - name: /home/orlando/.config/tmux/embark.tmux
+    - name: {{ tmux_dir }}/embark.tmux
     - source: salt://tmux/embark.tmux
     - user: orlando
     - makedirs: True
 
 gruvbox-light-tmux:
   file.managed:
-    - name: /home/orlando/.config/tmux/gruvbox-light.tmux
+    - name: {{ tmux_dir }}/gruvbox-light.tmux
     - source: salt://tmux/gruvbox-light.tmux
     - user: orlando
     - makedirs: True
 
 neoline:
   file.managed:
-    - name: /home/orlando/.config/tmux/neoline.tmux
+    - name: {{ tmux_dir }}/neoline.tmux
     - source: salt://tmux/neoline.tmux
     - user: orlando
     - makedirs: True
@@ -36,7 +38,7 @@ neoline:
 tmux-plugin-manager:
   git.cloned:
     - name: https://github.com/tmux-plugins/tpm
-    - target: /home/orlando/.config/tmux/plugins/tpm
+    - target: {{ tmux_dir }}/plugins/tpm
     - user: orlando
 
 # For some reason I have to manually install
@@ -44,7 +46,7 @@ tmux-plugin-manager:
 tmux-fuzzback:
   git.cloned:
     - name: https://github.com/roosta/tmux-fuzzback
-    - target: /home/orlando/.config/tmux/plugins/tmux-fuzzback
+    - target: {{ tmux_dir }}/plugins/tmux-fuzzback
     - user: orlando
 
 tmuxinator:
@@ -54,7 +56,7 @@ tmuxinator:
 
 tmuxinator-configs:
   file.recurse:
-    - name: /home/orlando/.config/tmuxinator
+    - name: {{ pillar['xdg_config_home'] }}/tmuxinator
     - source: salt://tmux/tmuxinator/
     - user: orlando
     - makedirs: True
@@ -74,7 +76,7 @@ tmuxinator-configs:
 
 # smug-config:
 #   file.recurse:
-#     - name: /home/orlando/.config/smug
+#     - name: {{ pillar['xdg_config_home'] }}/smug
 #     - source: salt://tmux/smug/
 #     - user: orlando
 #     - makedirs: True

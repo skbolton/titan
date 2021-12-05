@@ -8,11 +8,11 @@ nvim:
 
 old-configs-gone:
   file.absent:
-    - name: /home/orlando/.config/nvim
+    - name: {{ pillar['xdg_config_home'] }}/nvim
 
 nvim-config:
   file.recurse:
-    - name: /home/orlando/.config/nvim
+    - name: {{ pillar['xdg_config_home'] }}/nvim
     - source: salt://nvim/nvim
     - user: orlando
     - force: True
@@ -21,12 +21,12 @@ nvim-config:
     - name: nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
     # Help wakatime finds its api key
     - env:
-      - WAKATIME_HOME: /home/orlando/.config/wakatime
+      - WAKATIME_HOME: {{ pillar['xdg_config_home'] }}/wakatime
     - runas: orlando
 
 vim-packer:
   git.cloned:
     - name: https://github.com/wbthomason/packer.nvim
-    - target: /home/orlando/.local/share/nvim/site/pack/packager/opt/packer.nvim
+    - target: {{ pillar['xdg_data_home'] }}/nvim/site/pack/packager/opt/packer.nvim
     - user: orlando
 

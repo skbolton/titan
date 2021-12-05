@@ -5,17 +5,17 @@ include:
 zk:
   git.latest:
     - name: https://github.com/mickael-menu/zk.git
-    - target: /home/orlando/.local/share/zk
+    - target: {{ pillar['xdg_data_home'] }}/zk
     - user: orlando
   cmd.run:
-    - cwd: /home/orlando/.local/share/zk
+    - cwd: {{ pillar['xdg_data_home'] }}/zk
     - names:
       - make
-      - mv -f ./zk /home/orlando/.local/share/go/bin
+      - mv -f ./zk {{ pillar['go_path'] }}
 
 zk-config:
   file.managed:
-    - name: /home/orlando/.config/zk/config.toml
+    - name: {{ pillar['xdg_config_home'] }}/zk/config.toml
     - source: salt://zk/config.toml
     - makedirs: True
     - force: True

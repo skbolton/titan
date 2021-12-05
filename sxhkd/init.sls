@@ -3,7 +3,7 @@ sxhkd:
 
 sxhkd-config:
   file.managed:
-    - name: /home/orlando/.config/sxhkd/sxhkdrc
+    - name: {{ pillar['xdg_config_home'] }}/sxhkd/sxhkdrc
     - source: salt://sxhkd/sxhkdrc
     - user: orlando
     - force: True

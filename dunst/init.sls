@@ -3,7 +3,7 @@ dunst:
 
 dunstrc:
   file.managed:
-    - name: /home/orlando/.config/dunst/dunstrc
+    - name: {{ pillar['xdg_config_home'] }}/dunst/dunstrc
     - source: salt://dunst/dunstrc
     - mode: keep
     - user: orlando

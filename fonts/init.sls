@@ -1,6 +1,6 @@
 remix-icon:
   file.managed:
-    - name: /home/orlando/.local/share/fonts/remixicon.ttf
+    - name: {{ pillar['xdg_data_home'] }}/fonts/remixicon.ttf
     - source: salt://fonts/remixicon.ttf
     - makedirs: True
     - user: orlando
@@ -25,7 +25,7 @@ fira-code:
 
 source-sans-pro:
   file.recurse:
-    - name: /home/orlando/.local/share/fonts/adobe
+    - name: {{ pillar['xdg_data_home'] }}/fonts/adobe
     - source: salt://fonts/adobe
     - makedirs: True
     - user: orlando
@@ -44,19 +44,19 @@ iosevka-ss18:
 
 stellar:
   file.recurse:
-    - name: /home/orlando/.local/share/fonts/Stellar
+    - name: {{ pillar['xdg_data_home'] }}/fonts/Stellar
     - source: salt://fonts/Stellar
     - user: orlando
 
 victor-mono:
   file.recurse:
-    - name: /home/orlando/.local/share/fonts/VictorMonoNerdFont
+    - name: {{ pillar['xdg_data_home'] }}/fonts/VictorMonoNerdFont
     - source: salt://fonts/VictorMono Nerd Font/
     - user: orlando
 
 ligalex-mono:
   file.recurse:
-    - name: /home/orlando/.local/share/fonts/Ligalex
+    - name: {{ pillar['xdg_data_home'] }}/fonts/Ligalex
     - source: salt://fonts/Ligalex
     - user: orlando
 

@@ -11,7 +11,7 @@ spotifyd:
 
 spotifyd-config:
   file.managed:
-    - name: /home/orlando/.config/spotifyd/spotifyd.conf
+    - name: {{ pillar['xdg_config_home'] }}/spotifyd/spotifyd.conf
     - source: salt://music/spotifyd.conf
     - user: orlando
     - makedirs: True

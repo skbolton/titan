@@ -7,7 +7,7 @@ task:
 
 task-configs:
   file.managed:
-    - name: /home/orlando/.config/task/taskrc
+    - name: {{ pillar['xdg_config_home'] }}/task/taskrc
     - source: salt://taskwarrior/taskrc
     - user: orlando
     - force: True

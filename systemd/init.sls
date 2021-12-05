@@ -1,6 +1,7 @@
 systemd-user-configs:
   file.managed:
-    - name: /home/orlando/.config/environment.d/env.conf
+    - template: jinja
+    - name: {{ pillar['xdg_config_home'] }}/environment.d/env.conf
     - source: salt://systemd/env.conf
     - user: orlando
     - makedirs: True

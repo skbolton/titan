@@ -12,13 +12,13 @@ bspwm:
 
 bspwm-config-directory:
   file.directory:
-    - name: /home/orlando/.config/bspwm
+    - name: {{ pillar['xdg_config_home'] }}/bspwm
     - makedirs: True
     - user: orlando
 
 bspwm-config:
   file.managed:
-    - name: /home/orlando/.config/bspwm/bspwmrc
+    - name: {{ pillar['xdg_config_home'] }}/bspwm/bspwmrc
     - source: salt://bspwm/bspwmrc
     - user: orlando
     - mode: keep
@@ -26,7 +26,7 @@ bspwm-config:
 
 bspwm-specific-sxhkd:
   file.managed:
-    - name: /home/orlando/.config/bspwm/bspwm-sxhkdrc
+    - name: {{ pillar['xdg_config_home'] }}/bspwm/bspwm-sxhkdrc
     - source: salt://bspwm/bspwm-sxhkdrc
     - makedirs: True
     - user: orlando

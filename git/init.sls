@@ -1,13 +1,13 @@
 gitconfig:
   file.managed:
-    - name: /home/orlando/.config/git/config
+    - name: {{ pillar['xdg_config_home'] }}/git/config
     - source: salt://git/gitconfig
     - user: orlando
     - makedirs: True
 
 gitignore:
   file.managed:
-    - name: /home/orlando/.config/git/gitignore
+    - name: {{ pillar['xdg_config_home'] }}/git/gitignore
     - source: salt://git/gitignore
     - user: orlando
 

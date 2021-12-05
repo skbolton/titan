@@ -3,7 +3,7 @@ include:
   - direnv
   - cli-utils
 
-{% set zsh_dir = "/home/orlando/.config/zsh" %}
+{% set zsh_dir = pillar['xdg_config_home'] + "/zsh" %}
 
 zsh:
   pkg.installed
@@ -14,8 +14,8 @@ starship:
 purge-oh-my-zsh:
   file.absent:
     - names:
-      - /home/orlando/.config/oh-my-zsh
-      - /home/orlando/.config/.oh-my-zsh
+      - {{ pillar['xdg_config_home'] }}/oh-my-zsh
+      - {{ pillar['xdg_config_home'] }}/.oh-my-zsh
       - /home/orlando/.oh-my-zsh
 
 zsh-config:
@@ -27,12 +27,12 @@ zsh-config:
 
 histfile:
   file.directory:
-    - name: /home/orlando/.local/share/zsh
+    - name: {{ pillar['xdg_data_home'] }}/zsh
     - user: orlando
 
 starship-config:
   file.managed:
-    - name: /home/orlando/.config/starship.toml
+    - name: {{ pillar['xdg_config_home'] }}/starship.toml
     - source: salt://zsh/starship.toml
     - makedirs: True
     - user: orlando

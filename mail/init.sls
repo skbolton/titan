@@ -8,7 +8,7 @@ mbsync:
 
 mbsync-config:
   file.managed:
-    - name: /home/orlando/.config/mbsync/.mbsyncrc
+    - name: {{ pillar['xdg_config_home'] }}/mbsync/.mbsyncrc
     - template: jinja
     - source: salt://mail/.mbsyncrc
     - makedirs: True
@@ -24,7 +24,7 @@ mu:
 maildirs:
   file.directory:
     - names:
-      - /home/orlando/.local/share/Mail/GB
-      - /home/orlando/.local/share/Mail/BOTM
+      - {{ pillar['xdg_data_home'] }}/Mail/GB
+      - {{ pillar['xdg_data_home'] }}/Mail/BOTM
     - user: orlando
 

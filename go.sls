@@ -2,4 +2,4 @@ go: pkg.installed
 
 go-dir:
   file.directory:
-    - name: /home/orlando/.local/share/go
+    - name: {{ pillar['go_path'] }}

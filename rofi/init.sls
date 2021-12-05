@@ -3,7 +3,7 @@ rofi:
 
 rofi-config:
   file.recurse:
-    - name: /home/orlando/.config/rofi
+    - name: {{ pillar['xdg_config_home'] }}/rofi
     - source: salt://rofi/rofi
     - user: orlando
     - force: True

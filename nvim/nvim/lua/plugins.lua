@@ -38,8 +38,7 @@ packer.startup(function()
   -- CORE PLUGINS
   use {
     'nvim-treesitter/nvim-treesitter',
-    config = function() require("tree-sitter") end,
-    branch = '0.5-compat'
+    config = function() require("tree-sitter") end
   }
   use 'LionC/nest.nvim'
   use 'wakatime/vim-wakatime'

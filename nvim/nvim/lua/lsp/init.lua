@@ -1,3 +1,3 @@
-require('diagnostics')
-require('servers')
-require('sidebar')
+require('lsp.diagnostics')
+require('lsp.servers')
+require('lsp.sidebar')

@@ -56,8 +56,11 @@ awful.rules.rules = {
     properties = { tag = "7" }
   },
   {
-    rule = {
-      class = "[Ss]potify"
+    rule_any = {
+      class = {
+        "[Ss]potify",
+        "spotify-tui"
+      }
     },
     properties = { tag = "6" }
   },

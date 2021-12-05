@@ -6,6 +6,6 @@ windows:
   - " ":
       layout: main-vertical
       panes:
-        - clear
+        - tmux link-window -s spotify:"阮" -d
         - docker-compose up
 

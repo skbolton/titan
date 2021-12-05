@@ -2,5 +2,5 @@ name: <%= @settings["name"] %>
 root: <%= @settings["root"] %>
 
 windows:
-  - " ": nvim
-  - " ": clear
+  - " ": nvim 
+  - " ": tmux link-window -s spotify:"阮" -d

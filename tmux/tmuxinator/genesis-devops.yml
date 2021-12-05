@@ -6,7 +6,7 @@ windows:
   - " ":
       layout: main-vertical
       panes:
-        - clear
+        - tmux link-window -s spotify:"阮" -d
         - " ":
           - ./db-connect.sh
           - "3"

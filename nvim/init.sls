@@ -20,9 +20,8 @@ nvim-config:
     # Helper to run packer sync to get plugins in right state and then quit
     - name: nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
     # Help wakatime finds its api key
-    - env:
-      - WAKATIME_HOME: {{ pillar['xdg_config_home'] }}/wakatime
     - runas: orlando
+    - shell: /bin/zsh
 
 vim-packer:
   git.cloned:

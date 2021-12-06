@@ -18,6 +18,11 @@ purge-oh-my-zsh:
       - {{ pillar['xdg_config_home'] }}/.oh-my-zsh
       - /home/orlando/.oh-my-zsh
 
+zsh-env:
+  file.managed:
+    - name: /home/orlando/.zshenv
+    - source: salt://zsh/.zshenv
+
 zsh-config:
   file.recurse:
     - name: {{ zsh_dir }}

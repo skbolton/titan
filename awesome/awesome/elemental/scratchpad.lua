@@ -19,20 +19,13 @@ local rubato_with_defaults = function(overrides)
   }
 end
 
-local restore_client = function ()
-  if (_M.last_focused_client) then
-    _M.last_focused_client:jump_to()
-    _M.last_focused_client = nil
-  end
-end
-
 local terminal_scratch = function(screen_geometry)
   -- clamp the width and height to always fit on screen
   local width = math.min(screen_geometry.width * 0.90, 2400)
   local height = math.min(600, screen_geometry.height - 20)
   local x = (screen_geometry.width - width) / 2
 
-  local terminal = bling.module.scratchpad:new {
+  return terminal = bling.module.scratchpad:new {
     command = "kitty --class kitty-scratch --hold",
     rule = {class = "kitty-scratch"},
     sticky = true,
@@ -46,11 +39,6 @@ local terminal_scratch = function(screen_geometry)
       }
     }
   }
-
-  terminal:connect_signal("turn_off", restore_client)
-  awesome.connect_signal("scratch::terminal", function() terminal:toggle() end)
-
-  return terminal
 end
 
 local finance_scratch = function(screen_geometry)
@@ -60,7 +48,7 @@ local finance_scratch = function(screen_geometry)
   local x = (screen_geometry.width - width) / 2
   local y = ((screen_geometry.height - height) / 2) + screen_geometry.y
 
-  local finance = bling.module.scratchpad:new {
+  return bling.module.scratchpad:new {
     command = "kitty --class kitty-finance nvim ~/Documents/Delta/journal.beancount",
     rule = {class = "kitty-finance"},
     sticky = true,
@@ -74,11 +62,6 @@ local finance_scratch = function(screen_geometry)
       }
     }
   }
-
-  finance:connect_signal("turn_off", restore_client)
-  awesome.connect_signal("scratch::finance", function() finance:toggle() end)
-
-  return finance
 end
 
 local monitor_scratch = function(screen_geometry)
@@ -88,7 +71,7 @@ local monitor_scratch = function(screen_geometry)
   local x = (screen_geometry.width - width) / 2
   local y = ((screen_geometry.height - height) / 2) + screen_geometry.y
 
-  local monitor = bling.module.scratchpad:new {
+  return bling.module.scratchpad:new {
     command = "kitty --class kitty-monitor bpytop",
     rule = {class = "kitty-monitor"},
     sticky = true,
@@ -102,11 +85,6 @@ local monitor_scratch = function(screen_geometry)
       }
     }
   }
-
-  monitor:connect_signal("turn_off", restore_client)
-  awesome.connect_signal("scratch::monitor", function() monitor:toggle() end)
-
-  return monitor
 end
 
 
@@ -117,7 +95,7 @@ local bench_scratch = function(screen_geometry)
   local x = (screen_geometry.width - width) / 2
   local y = ((screen_geometry.height - height) / 2) + screen_geometry.y
 
-  local bench = bling.module.scratchpad:new {
+  return bling.module.scratchpad:new {
     command = "kitty --class kitty-bench -d '$HOME/Documents/Delta' nvim Bench.md",
     rule = {class = "kitty-bench"},
     sticky = true,
@@ -131,11 +109,6 @@ local bench_scratch = function(screen_geometry)
       }
     }
   }
-
-  bench:connect_signal("turn_off", restore_client)
-  awesome.connect_signal("scratch::bench", function() bench:toggle() end)
-
-  return bench
 end
 
 local quest_scratch = function(screen_geometry)
@@ -144,7 +117,7 @@ local quest_scratch = function(screen_geometry)
   local x = (screen_geometry.width - width - 20) + screen_geometry.x
   local y = (screen_geometry.height - height) / 2
 
-  local quest = bling.module.scratchpad:new{
+  return bling.module.scratchpad:new{
       command = "kitty --class kitty-quest -d '$/home/orlando/Documents/Delta' --hold zk quest ", rule = {class = "kitty-quest"},
       sticky = false,
       autoclose = false,
@@ -157,11 +130,6 @@ local quest_scratch = function(screen_geometry)
         }
       }
   }
-
-  quest:connect_signal("turn_off", restore_client)
-  awesome.connect_signal("scratch::quest", function() quest:toggle() end)
-
-  return quest
 end
 
 local password_scratch = function(screen_geometry)
@@ -171,7 +139,7 @@ local password_scratch = function(screen_geometry)
   local x = (screen_geometry.width - width) / 2
   local y = ((screen_geometry.height - height) / 2) + screen_geometry.y
 
-  local op = bling.module.scratchpad:new {
+  return bling.module.scratchpad:new {
     command = "1password",
     rule = {class = "1password"},
     sticky = true,
@@ -185,11 +153,6 @@ local password_scratch = function(screen_geometry)
       }
     }
   }
-
-  op:connect_signal("turn_off", restore_client)
-  awesome.connect_signal("scratch::password", function() op:toggle() end)
-
-  return op
 end
 
 local task_scratch = function(screen_geometry)
@@ -198,7 +161,7 @@ local task_scratch = function(screen_geometry)
   local x = 20
   local y = ((screen_geometry.height - height) / 2) + screen_geometry.y
 
-  local task = bling.module.scratchpad:new{
+  return bling.module.scratchpad:new{
       command = "kitty --class kitty-tasks --hold",
       rule = {class = "kitty-tasks"},
       sticky = false,
@@ -212,11 +175,6 @@ local task_scratch = function(screen_geometry)
         }
       }
   }
-
-  task:connect_signal("turn_off", restore_client)
-  awesome.connect_signal("scratch::tasks", function() task:toggle() end)
-
-  return task
 end
 
 
@@ -234,17 +192,9 @@ _M.init = function()
 
     for name, scratch in pairs(scratchpads) do
       _M[name] = scratch(screen.primary.geometry)
+      _M[name]:connect_signal("turn_off", awful.client.focus.history.previous)
     end
 end
-
-_M.toggle_and_restore = function (scratchpad) 
-  if (not _M.last_focused_client) then
-    _M.last_focused_client = client.focus
-  end
-
-  awesome.emit_signal("scratch::" .. scratchpad)
-end
-
 
 return _M
 

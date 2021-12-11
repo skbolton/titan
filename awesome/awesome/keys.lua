@@ -232,44 +232,44 @@ local globalkeys = gears.table.join(
     -- Scratchpads
     awful.key({ alt }, "/",
       function ()
-        scratchpad.toggle_and_restore("bench")
+        scratchpad.bench:toggle()
       end,
       {description = "show bench", group = "scratchpads"}
     ),
     -- show terminal scratch alt + >
     awful.key({ alt, shift }, ".",
       function ()
-        scratchpad.toggle_and_restore("terminal")
+        scratchpad.terminal:toggle()
       end,
       {description = "show terminal", group = "scratchpads"}
     ),
     awful.key({ alt }, ";",
       function ()
-        scratchpad.toggle_and_restore("monitor")
+        scratchpad.monitor:toggle()
       end,
       {description = "show sys monitor", group = "scratchpads"}
     ),
     awful.key({ alt }, "q",
       function ()
-        scratchpad.toggle_and_restore("quest")
+        scratchpad.quest:toggle()
       end,
       {description = "show quest", group = "scratchpads"}
     ),
     awful.key({ alt }, "t",
       function ()
-        scratchpad.toggle_and_restore("task")
+        scratchpad.task:toggle()
       end,
       {description = "launch task scratchpad", group = "scratchpads"}
     ),
     awful.key({ alt, shift }, "4",
       function ()
-        scratchpad.toggle_and_restore("finance")
+        scratchpad.finance:toggle()
       end,
       {description = "show finance pad", group = "scratchpads"}
     ),
     awful.key({ alt }, "p",
       function ()
-        scratchpad.toggle_and_restore("password")
+        scratchpad.password:toggle()
       end,
       {description = "launch password scratchpad", group = "scratchpads"}
     ),

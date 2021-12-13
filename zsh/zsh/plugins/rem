@@ -1,0 +1,3 @@
+rem() {
+  remind $@ $REM_FILE
+}

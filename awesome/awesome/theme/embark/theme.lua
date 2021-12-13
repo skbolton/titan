@@ -38,13 +38,6 @@ local embark = {
 --
 local theme = dofile(themes_path .. "default/theme.lua")
 
-{% if grains['host'] == 'trinity' %}
-theme.master_width_factor = 0.7
-{% else %}
-theme.master_width_factor = 0.5
-{% endif %}
-
-
 -- Titlebar icon path
 --
 local icon_path = gfs.get_configuration_dir() .. "icons/embark/"

@@ -185,12 +185,3 @@ do
     end)
 end
 
-awesome.connect_signal("layout-changed", function()
-  local t = client.focus and client.focus.first_tag or nil
-  if t and t.layout.name == 'centered' then
-    t.master_width_factor = 0.5
-  else
-    t.master_width_factor = beautiful.master_width_factor
-  end
-end)
-

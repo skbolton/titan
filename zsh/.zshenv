@@ -6,6 +6,7 @@ export ZSH_DISABLE_COMPFIX=true
 export HISTFILE="$XDG_DATA_HOME/zsh/history"
 export HISTSIZE=1000000000
 export HISTFILESIZE=1000000000
+export SAVEHIST=1000000000
 
 # XDG Base directory
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -16,6 +17,7 @@ export EDITOR="nvim"
 export BROWSER="firefox"
 export MANPAGER="nvim +Man!"
 export LESSHISTFILE="$XDG_DATA_HOME/lesshst"
+export REM_FILE="$HOME/Documents/Delta/remind.rem"
 
 # GPG shenanigans
 export GNUPGHOME="$XDG_CONFIG_HOME/gpg"

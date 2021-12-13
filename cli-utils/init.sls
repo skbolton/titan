@@ -52,5 +52,5 @@ synology-drive:
     - runas: orlando
     - unless: paru -Qi synology-drive
 
-  
+remind: pkg.installed
   

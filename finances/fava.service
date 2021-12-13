@@ -3,5 +3,5 @@ Description=Fava Web UI for Beancount
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/fava --host localhost --port 9999 /home/orlando/Documents/Archive/Finances/master-journal.beancount
+ExecStart=/usr/bin/fava --host localhost --port 9999 /home/orlando/Documents/Finances/master-journal.beancount
 User=orlando

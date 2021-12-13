@@ -25,7 +25,7 @@ local terminal_scratch = function(screen_geometry)
   local height = math.min(600, screen_geometry.height - 20)
   local x = (screen_geometry.width - width) / 2
 
-  return terminal = bling.module.scratchpad:new {
+  return bling.module.scratchpad:new {
     command = "kitty --class kitty-scratch --hold",
     rule = {class = "kitty-scratch"},
     sticky = true,
@@ -192,6 +192,9 @@ _M.init = function()
 
     for name, scratch in pairs(scratchpads) do
       _M[name] = scratch(screen.primary.geometry)
+      _M[name]:connect_signal("spawn", function (client)
+        awful.client.focus.history.delete(client)
+      end)
       _M[name]:connect_signal("turn_off", awful.client.focus.history.previous)
     end
 end

@@ -117,7 +117,7 @@ theme.button_close = theme.xcolor1
 
 -- uBorders
 --
-theme.border_width = dpi(2)
+theme.border_width = dpi(3)
 theme.oof_border_width = dpi(0)
 theme.border_normal = theme.xcolor0
 theme.border_focus = embark.purple

@@ -16,6 +16,7 @@ ipp-usb-running:
 brscan5:
   cmd.run:
     - name: paru -S brscan5 --noconfirm --skipreview
+    - runas: orlando
     - unless: paru -Qi brscan5
 
 brother-scanner-udev-rule:

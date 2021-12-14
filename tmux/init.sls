@@ -9,7 +9,7 @@ tmux:
 
 tmux-config:
   file.managed:
-    - name: {{ tmux_dir}} /tmux.conf
+    - name: {{ tmux_dir }}/tmux.conf
     - source: salt://tmux/tmux.conf
     - user: orlando
     - makedirs: True

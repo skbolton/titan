@@ -41,6 +41,7 @@ vim.g.zettel_fzf_command = "rg --column --line-number --ignore-case --no-heading
 
 -- taskwiki
 vim.g.taskwiki_maplocalleader="-t"
+vim.g.taskwiki_data_location="~/.local/share/task"
 
 -- TODO: Port to lua
 -- function TaskSearch()

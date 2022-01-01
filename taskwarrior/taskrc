@@ -16,7 +16,8 @@ report.in.labels = ID,Tags,Description
 # Next report
 report.next.columns = id,project,priority,tags,due,scheduled,description 
 report.next.labels = ID,Proj,Priority,Tags,Due,Sched,Desc
-report.next.filter = status:pending limit:20 -BLOCKED -milestone
+# exclude milestones and outcomes
+report.next.filter = status:pending limit:20 -BLOCKED -🏆 -🎯
 
 # completed report
 report.completed.sort = project+/,end+

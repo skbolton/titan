@@ -32,7 +32,6 @@ packer.startup(function()
   use 'evanleck/vim-svelte'
   use 'ledger/vim-ledger'
   use 'hashivim/vim-terraform'
-  use 'skbolton/moonshot.nvim'
   -- ===================================================================
 
   -- CORE PLUGINS

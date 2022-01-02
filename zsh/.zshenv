@@ -1,3 +1,8 @@
+# XDG Base directory
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+
 # ZSH Environment
 # These are for variables that I want to adjust and be able to source a new shell and have pop up
 # other more standard variables should go in .zprofile
@@ -7,11 +12,6 @@ export HISTFILE="$XDG_DATA_HOME/zsh/history"
 export HISTSIZE=1000000000
 export HISTFILESIZE=1000000000
 export SAVEHIST=1000000000
-
-# XDG Base directory
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CACHE_HOME="$HOME/.cache"
 
 export EDITOR="nvim"
 export BROWSER="firefox"

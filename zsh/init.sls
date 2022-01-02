@@ -22,6 +22,7 @@ zsh-env:
   file.managed:
     - name: /home/orlando/.zshenv
     - source: salt://zsh/.zshenv
+    - user: orlando
 
 zsh-config:
   file.recurse:

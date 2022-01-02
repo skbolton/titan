@@ -1,6 +1,0 @@
-# vim:ft=sh
-
-# This file is sourced by lightdm on startup
-# sourcing the zprofile "fakes" a login shell being ran
-
-[[ -f ~/.zshenv ]] && source ~/.zshenv

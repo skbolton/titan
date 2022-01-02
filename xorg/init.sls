@@ -15,10 +15,3 @@ xresources:
     - source: salt://xorg/.Xresources
     - user: orlando
 
-xprofile:
-  file.managed:
-    - name: /home/orlando/.xprofile
-    - source: salt://xorg/.xprofile
-    - user: orlando
-
-

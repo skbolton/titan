@@ -63,3 +63,11 @@ zsh-fzf-tab:
   git.cloned:
     - name: https://github.com/Aloxaf/fzf-tab
     - target: {{ zsh_dir }}/plugins/fzf-tab
+
+shell-scripts:
+  file.recurse:
+    - name: /home/orlando/.local/bin/
+    - source: salt://zsh/scripts
+    - file_mode: keep
+    - user: orlando
+    - force: True

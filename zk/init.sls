@@ -28,3 +28,9 @@ delta-emoji-picker:
     - mode: keep
     - user: orlando
 
+generate-journal:
+  file.managed:
+    - name: /home/orlando/.local/bin/generate-journal.sh
+    - source: salt://zk/generate-journal.sh
+    - mode: keep
+    - user: orlando

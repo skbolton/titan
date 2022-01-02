@@ -10,6 +10,17 @@ pcscd:
   service.running:
     - enable: True
 
+# passwordless authentication
+pam-u2f: pkg.installed
+
+pam-sudo:
+  file.managed:
+    - name: /etc/pam.d/sudo
+    - source: salt://gpg/sudo
+    - template: jinja
+    - require:
+      - pkg: pam-u2f
+
 gpg-config-dir:
   file.directory:
     - name: {{ pillar['xdg_config_home'] }}/gpg

@@ -1,0 +1,5 @@
+#%PAM-1.0
+account		include		system-auth
+session		include		system-auth
+auth		sufficient	pam_u2f.so cue origin=pam://{{grains["host"]}} appid=pam://{{grains["host"]}}
+

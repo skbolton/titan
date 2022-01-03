@@ -3,15 +3,10 @@ include:
   - cli-utils
 
 zk:
-  git.latest:
-    - name: https://github.com/mickael-menu/zk.git
-    - target: {{ pillar['xdg_data_home'] }}/zk
-    - user: orlando
   cmd.run:
-    - cwd: {{ pillar['xdg_data_home'] }}/zk
-    - names:
-      - make
-      - mv -f ./zk {{ pillar['go_path'] }}
+    - name: paru -S zk --noconfirm --skipreview
+    - runas: orlando
+    - unless: paru -Qi zk
 
 zk-config:
   file.managed:

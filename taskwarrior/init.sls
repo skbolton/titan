@@ -6,11 +6,9 @@ task:
   pkg.installed
 
 task-configs:
-  file.directory:
-    - name: {{ pillar['xdg_config_home'] }}/task
-    - user: orlando
   file.managed:
     - name: {{ pillar['xdg_config_home'] }}/task/taskrc
+    - makedirs: True
     - source: salt://taskwarrior/taskrc
     - user: orlando
     - force: True

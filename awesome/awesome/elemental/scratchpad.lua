@@ -105,7 +105,7 @@ local bench_scratch = function(screen_geometry)
     reapply = true,
     rubato = {
       y = rubato_with_defaults {
-        pos = screen_geometry.height * 2
+        pos = -height
       }
     }
   }
@@ -149,7 +149,7 @@ local password_scratch = function(screen_geometry)
     reapply = true,
     rubato = {
       y = rubato_with_defaults {
-        pos = screen_geometry.height * 2
+        pos = -height
       }
     }
   }
@@ -171,7 +171,7 @@ local task_scratch = function(screen_geometry)
       reapply = true,
       rubato = {
         y = rubato_with_defaults {
-          pos = height + screen_geometry.height
+          pos = -height
         }
       }
   }
@@ -192,10 +192,6 @@ _M.init = function()
 
     for name, scratch in pairs(scratchpads) do
       _M[name] = scratch(screen.primary.geometry)
-      _M[name]:connect_signal("spawn", function (client)
-        awful.client.focus.history.delete(client)
-      end)
-      _M[name]:connect_signal("turn_off", awful.client.focus.history.previous)
     end
 end
 

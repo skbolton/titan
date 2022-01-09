@@ -7,6 +7,7 @@ local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local helpers = require("helpers")
 local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
+local playerctl_bar = require("elemental.player")
 
 -- Awesome Panel -----------------------------------------------------------
 
@@ -145,85 +146,6 @@ local tasklist_buttons = gears.table.join(
         awful.client.focus.byidx(-1)
     end))
 
--- Playerctl Bar Widget -------------------------------------------------------
-
--- Title Widget
-local song_title = wibox.widget {
-    markup = "Nothing Playing",
-    align = "center",
-    valign = "center",
-    widget = wibox.widget.textbox
-}
-
-local song_artist = wibox.widget {
-    markup = "nothing playing",
-    align = "center",
-    valign = "center",
-    widget = wibox.widget.textbox
-}
-
-local song_logo = wibox.widget {
-    markup = '<span foreground="' .. beautiful.xcolor6 .. '"> </span>',
-    font = beautiful.icon_font_name .. 12,
-    align = "center",
-    valign = "center",
-    widget = wibox.widget.textbox
-}
-
-local playerctl_bar = wibox.widget {
-    {
-        {
-            song_logo,
-            top = dpi(3),
-            left = dpi(3),
-            right = dpi(0),
-            bottom = dpi(1),
-            widget = wibox.container.margin
-        },
-        {
-            {
-                song_title,
-                expand = "outside",
-                layout = wibox.layout.align.vertical
-            },
-            top = dpi(1),
-            left = dpi(10),
-            right = dpi(10),
-            widget = wibox.container.margin
-        },
-        {
-            {
-                song_artist,
-                expand = "outside",
-                layout = wibox.layout.align.vertical
-            },
-            top = dpi(1),
-            left = dpi(10),
-            widget = wibox.container.margin
-        },
-        spacing = 1,
-        layout = wibox.layout.fixed.horizontal
-    },
-    left = dpi(10),
-    right = dpi(13),
-    widget = wibox.container.margin
-}
-
-playerctl_bar.visible = false
-
-awesome.connect_signal("bling::playerctl::no_players",
-                       function() playerctl_bar.visible = false end)
-
--- Get Title
-awesome.connect_signal("bling::playerctl::title_artist_album",
-                       function(title, artist, _)
-    playerctl_bar.visible = true
-    song_title.markup = '<span foreground="' .. beautiful.xcolor5 .. '">' ..
-                            title .. "</span>"
-
-    song_artist.markup = '<span foreground="' .. beautiful.xcolor4 .. '">' ..
-                             artist .. "</span>"
-end)
 
 -- Create the Wibar -----------------------------------------------------------
 

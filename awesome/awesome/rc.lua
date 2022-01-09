@@ -12,6 +12,12 @@ local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
 local naughty = require("naughty")
+local bling = require("module.bling")
+
+-- bling.signal.playerctl.lib {
+--   ignore = 'firefoxdeveloperedition',
+--   player = {'spotify', 'spotifyd'}
+-- }
 
 local themes = {
   "embark" -- 1
@@ -50,14 +56,9 @@ require("rules")
 require("signals")
 require("autostart")
 -- Extras
-local bling = require("module.bling")
 local machi = require("module.layout-machi")
 beautiful.layout_machi = machi.get_icon()
 machi.layout.default_cmd = "13h"
-bling.signal.playerctl.lib {
-  ignore = 'firefoxdeveloperedition',
-  player = {'spotify', 'spotifyd'}
-}
 
 user = {
   terminal = "kitty"

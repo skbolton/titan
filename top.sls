@@ -4,7 +4,6 @@ base:
     - xorg.monitors
     - display-manager
     - audio
-    - arch
     - user-dirs
     - networking
     - scanner
@@ -41,3 +40,7 @@ base:
   
   'neo':
     - display-drivers.nvidia
+
+  'os:Arch':
+    - match: grain
+    - arch

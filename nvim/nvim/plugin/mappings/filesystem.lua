@@ -15,8 +15,8 @@ nest.applyKeymaps {
   {
     '<leader>', {
       {
-        { '\\', '<CMD>NvimTreeToggle<CR>' },
-        { '<BAR>', '<CMD>NvimTreeFindFile<CR>' },
+        { '\\', '<CMD>NnnExplorer<CR>' },
+        { '<BAR>', '<CMD>NnnPicker %:p:h<CR>' },
         { '/', ':silent grep ', options = { silent = false }},
         { '_', telescope.live_grep },
         {

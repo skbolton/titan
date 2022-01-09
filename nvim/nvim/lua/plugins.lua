@@ -102,8 +102,8 @@ packer.startup(function()
   use 'lotabout/skim.vim'
   -- Status and UI
   use {
-    'kyazdani42/nvim-tree.lua',
-    config = function() require('tree') end
+    'luukvbaal/nnn.nvim',
+    config = function() require('nnn').setup() end
   }
   use {
     'glepnir/galaxyline.nvim',

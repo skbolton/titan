@@ -54,7 +54,10 @@ local bling = require("module.bling")
 local machi = require("module.layout-machi")
 beautiful.layout_machi = machi.get_icon()
 machi.layout.default_cmd = "13h"
-bling.signal.playerctl.enable()
+bling.signal.playerctl.lib {
+  ignore = 'firefoxdeveloperedition',
+  player = {'spotify', 'spotifyd'}
+}
 
 user = {
   terminal = "kitty"

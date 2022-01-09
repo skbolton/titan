@@ -47,7 +47,6 @@ local icon_path = gfs.get_configuration_dir() .. "icons/embark/"
 theme.me = gears.surface.load_uncached(gfs.get_configuration_dir() ..
                                            "images/me.png")
 
-theme.playerctl_player = {"spotifyd"}
 -- Distro Logo
 --
 -- theme.distro_logo = gears.surface.load_uncached(

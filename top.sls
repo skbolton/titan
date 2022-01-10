@@ -9,6 +9,7 @@ base:
     - scanner
     - systemd
     - asdf
+    - awesome
     - bspwm
     - cli-utils
     - cloud

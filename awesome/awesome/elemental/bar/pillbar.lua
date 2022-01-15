@@ -6,7 +6,7 @@ local beautiful = require("beautiful")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local helpers = require("helpers")
-local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
+local battery_arc = require("elemental.battery")
 local playerctl_bar = require("elemental.player")
 
 -- Awesome Panel -----------------------------------------------------------
@@ -108,14 +108,6 @@ local time_pill = wibox.widget {
     left = dpi(10),
     right = dpi(10),
     widget = wibox.container.margin
-}
-
-local battery = battery_widget {
-    font = "Operator Mono",
-    margin_left = 8,
-    margin_right = 8,
-    path_to_icons = "/usr/share/icons/Arc/status/symbolic/",
-    show_current_level = true
 }
 
 -- Systray Widget -------------------------------------------------------------
@@ -311,7 +303,7 @@ awful.screen.connect_for_each_screen(function(s)
                 {
                     wrap_widget(make_pill(time_pill, beautiful.xcolor0 .. 55)),
                     wrap_widget(make_pill(date_pill, beautiful.xcolor0)),
-                    wrap_widget(make_pill(battery, beautiful.xforeground)),
+                    wrap_widget(make_pill(battery_arc, beautiful.xforeground)),
                     wrap_widget(make_pill(
                                     {
                             s.mylayoutbox,

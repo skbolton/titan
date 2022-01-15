@@ -10,6 +10,13 @@ include:
 awesome:
   pkg.installed
 
+acpid:
+  pkg.installed:
+    - name: acpid
+  service.running:
+    - name: acpid
+    - enable: True
+
 awesome-configs:
   file.recurse:
     - name: {{ awesome_dir }}

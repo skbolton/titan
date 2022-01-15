@@ -1,6 +1,6 @@
 -- These daemons are props to elenapan.
 -- https://github.com/elenapan/dotfiles
--- require("demons.battery")
+require("demons.battery")
 -- require("demons.volume")
 -- require("demons.brightness")
 -- require("demons.ram")

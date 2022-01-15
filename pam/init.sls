@@ -9,7 +9,7 @@ pam-yubikeys:
     - name: {{ pillar['xdg_config_home'] }}/Yubico
     - user: orlando
   cmd.run:
-    - name: pamu2fcfg -o pam://{{ grains['host'] }} -i pam://{{ grains['host'] }} > {{ pillar['xdg_config_home'] }}/Yubico/u2f_keys
+    - name: pamu2fcfg -o pam://{{ grains['host'] }} -i pam://{{ grains['host'] }} >> {{ pillar['xdg_config_home'] }}/Yubico/u2f_keys
     - runas: orlando
   require:
     - pkg: pam-u2f
@@ -17,7 +17,7 @@ pam-yubikeys:
 pam-sudo:
   file.managed:
     - name: /etc/pam.d/sudo
-    - source: salt://gpg/sudo
+    - source: salt://pam/sudo
     - template: jinja
     - require:
       - pkg: pam-u2f

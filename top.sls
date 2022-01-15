@@ -24,7 +24,6 @@ base:
     - nnn
     - nvim
     - passwords
-    - pam
     - picom
     - polybar
     - python

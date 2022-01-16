@@ -114,7 +114,7 @@ color.undo.after=rgb035
 
 # Server Config
 taskd.server=freecinc.com:53589
-taskd.key=$XDG_DATA_HOME/task/freecinc_6a74274e.key.pem
-taskd.certificate=$XDG_DATA_HOME/task/freecinc_6a74274e.cert.pem
-taskd.ca=$XDG_DATA_HOME/task/freecinc_6a74274e.ca.pem
-taskd.credentials=FreeCinc\/freecinc_6a74274e\/029b039a-ed72-4c1e-a5a5-713183b10ecd
+taskd.key=$XDG_DATA_HOME/task/freecinc.key.pem
+taskd.certificate=$XDG_DATA_HOME/task/freecinc.cert.pem
+taskd.ca=$XDG_DATA_HOME/task/freecinc.ca.pem
+taskd.credentials=FreeCinc/freecinc_1264e832/76974bab-f95e-41fb-ac70-6940a9bc07a6

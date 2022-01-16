@@ -6,6 +6,7 @@ local beautiful = require("beautiful")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local helpers = require("helpers")
+local time = require("widgets.time")
 local battery_arc = require("widgets.battery_arc")
 local playerctl_bar = require("widgets.player")
 
@@ -72,43 +73,6 @@ local date_pill = wibox.widget {
     widget = wibox.container.margin
 }
 
--- Time Widget ----------------------------------------------------------------
-
-local time_text = wibox.widget {
-    font = beautiful.font,
-    format = "%l:%M %P",
-    align = "center",
-    valign = "center",
-    widget = wibox.widget.textclock
-}
-
-time_text.markup = "<span foreground='" .. beautiful.xcolor5 .. "'>" ..
-                       time_text.text .. "</span>"
-
-time_text:connect_signal("widget::redraw_needed", function()
-    time_text.markup = "<span foreground='" .. beautiful.xcolor5 .. "'>" ..
-                           time_text.text .. "</span>"
-end)
-
-local time_icon = wibox.widget {
-    font = beautiful.icon_font_name .. "12",
-    markup = "<span foreground='" .. beautiful.xcolor5 .. "'></span>",
-    align = "center",
-    valign = "center",
-    widget = wibox.widget.textbox
-}
-
-local time_pill = wibox.widget {
-    {
-        {time_icon, top = dpi(1), widget = wibox.container.margin},
-        helpers.horizontal_pad(10),
-        {time_text, top = dpi(1), widget = wibox.container.margin},
-        layout = wibox.layout.fixed.horizontal
-    },
-    left = dpi(10),
-    right = dpi(10),
-    widget = wibox.container.margin
-}
 
 -- Systray Widget -------------------------------------------------------------
 
@@ -301,7 +265,7 @@ awful.screen.connect_for_each_screen(function(s)
                 },
                 {wrap_widget(s.mytasklist), widget = wibox.container.constraint},
                 {
-                    wrap_widget(make_pill(time_pill, beautiful.xcolor0 .. 55)),
+                    wrap_widget(make_pill(time, beautiful.xcolor0 .. 55)),
                     wrap_widget(make_pill(date_pill, beautiful.xcolor0)),
                     wrap_widget(make_pill(battery_arc, beautiful.xforeground)),
                     wrap_widget(make_pill(

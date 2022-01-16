@@ -54,3 +54,7 @@ synology-drive:
 
 remind: pkg.installed
   
+netcat:
+  pkg.installed: 
+    - name: openbsd-netcat
+

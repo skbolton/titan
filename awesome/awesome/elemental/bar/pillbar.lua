@@ -11,6 +11,7 @@ local time = require("widgets.time")
 local date = require("widgets.date")
 local battery_arc = require("widgets.battery_arc")
 local playerctl_bar = require("widgets.player")
+local yubikey = require("widgets.yubikey")
 
 -- Systray Widget -------------------------------------------------------------
 
@@ -205,6 +206,7 @@ awful.screen.connect_for_each_screen(function(s)
                 {
                     wrap_widget(make_pill(time, beautiful.xcolor0 .. 55)),
                     wrap_widget(make_pill(date, beautiful.xcolor0)),
+                    wrap_widget(yubikey),
                     wrap_widget(make_pill(battery_arc, beautiful.xforeground)),
                     wrap_widget(make_pill(
                                     {

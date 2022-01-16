@@ -44,8 +44,3 @@ awesome-widgets:
     - target: {{ awesome_dir }}/awesome-wm-widgets
     - user: orlando
 
-awesome-layout-machi:
-  git.latest:
-    - name: https://github.com/xinhaoyuan/layout-machi
-    - target: {{ awesome_dir }}/module/layout-machi
-    - user: orlando

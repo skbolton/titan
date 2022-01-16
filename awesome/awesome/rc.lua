@@ -55,10 +55,6 @@ require("keys").init()
 require("rules")
 require("signals")
 require("autostart")
--- Extras
-local machi = require("module.layout-machi")
-beautiful.layout_machi = machi.get_icon()
-machi.layout.default_cmd = "13h"
 
 user = {
   terminal = "kitty"

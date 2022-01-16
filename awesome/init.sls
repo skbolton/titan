@@ -38,9 +38,3 @@ awesome-bling:
     - target: {{ awesome_dir }}/module/bling
     - user: orlando
 
-awesome-widgets:
-  git.latest:
-    - name: https://github.com/streetturtle/awesome-wm-widgets.git
-    - target: {{ awesome_dir }}/awesome-wm-widgets
-    - user: orlando
-

@@ -17,7 +17,7 @@ nnn-build:
   cmd.run:
     - cwd: {{ pillar['xdg_data_home'] }}/nnn
     - names:
-      - make O_NERD=1
+      - make O_NERD=1 O_NAMEFIRST=1
       - mv nnn /home/orlando/.local/bin
       - cp -r plugins {{ pillar['xdg_config_home'] }}/nnn
 

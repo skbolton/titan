@@ -204,10 +204,18 @@ awful.screen.connect_for_each_screen(function(s)
                 },
                 {wrap_widget(s.mytasklist), widget = wibox.container.constraint},
                 {
+                  wrap_widget(make_pill(wibox.widget {
+                    helpers.horizontal_pad(6),
+                    yubikey,
+                    helpers.horizontal_pad(10),
+                    battery_arc,
+                    helpers.horizontal_pad(6),
+                    layout = wibox.layout.fixed.horizontal
+                  })),
+                    -- wrap_widget(yubikey),
+                    -- wrap_widet(battery_arc),
                     wrap_widget(make_pill(time, beautiful.xcolor0 .. 55)),
                     wrap_widget(make_pill(date, beautiful.xcolor0)),
-                    wrap_widget(yubikey),
-                    wrap_widget(make_pill(battery_arc, beautiful.xforeground)),
                     wrap_widget(make_pill(
                                     {
                             s.mylayoutbox,

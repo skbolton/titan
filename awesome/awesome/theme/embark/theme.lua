@@ -40,7 +40,13 @@ local theme = dofile(themes_path .. "default/theme.lua")
 
 -- Titlebar icon path
 --
-local icon_path = gfs.get_configuration_dir() .. "icons/embark/"
+local icon_path = gfs.get_configuration_dir() .. "/icons/remix/"
+
+theme.layout_tile = icon_path .. "layout-2-line.svg"
+theme.layout_tileleft = icon_path .. "layout-4-line.svg"
+theme.layout_fairh = icon_path .. "layout-grid-line.svg"
+theme.layout_fairv = icon_path .. "layout-grid-line.svg"
+theme.layout_fullscreen = icon_path .. "fullscreen-line.svg"
 
 -- PFP
 --

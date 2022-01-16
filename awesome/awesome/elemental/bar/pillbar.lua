@@ -6,35 +6,11 @@ local beautiful = require("beautiful")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local helpers = require("helpers")
+local arch = require("widgets.arch")
 local time = require("widgets.time")
 local date = require("widgets.date")
 local battery_arc = require("widgets.battery_arc")
 local playerctl_bar = require("widgets.player")
-
--- Awesome Panel -----------------------------------------------------------
-
-local icon1 = wibox.widget {
-    widget = wibox.widget.textbox,
-    markup = "<span color='#A1EFD3'>" .. beautiful.distro_logo .. "</span>",
-    font = beautiful.icon_font
-}
-
-local awesome_icon = wibox.widget {
-    {
-        icon1,
-        top = dpi(5),
-        bottom = dpi(5),
-        left = dpi(10),
-        right = dpi(5),
-        widget = wibox.container.margin
-    },
-    bg = beautiful.xcolor0,
-    widget = wibox.container.background
-}
-
-awesome_icon:buttons(gears.table.join(awful.button({}, 1, function()
-    awesome.emit_signal("widgets::start::toggle", mouse.screen)
-end)))
 
 -- Systray Widget -------------------------------------------------------------
 
@@ -214,7 +190,7 @@ awful.screen.connect_for_each_screen(function(s)
                     wrap_widget( --
                     -- function to add pill
                     make_pill({
-                        awesome_icon,
+                        arch,
                         {
                             s.mytaglist,
                             helpers.horizontal_pad(4),

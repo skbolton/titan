@@ -7,7 +7,6 @@ base:
     - user-dirs
     - networking
     - scanner
-    - systemd
     - asdf
     - awesome
     - bspwm
@@ -45,3 +44,7 @@ base:
   'os:Arch':
     - match: grain
     - arch
+
+  'init:systemd':
+    - match: grain
+    - systemd

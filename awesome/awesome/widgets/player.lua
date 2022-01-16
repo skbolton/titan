@@ -3,7 +3,7 @@ local beautiful = require("beautiful")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local bling = require("module.bling")
-local playerctl = bling.signal.playerctl.lib()
+-- local playerctl = bling.signal.playerctl.lib()
 local naughty = require("naughty")
 -- Playerctl Bar Widget -------------------------------------------------------
 

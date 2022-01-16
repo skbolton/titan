@@ -6,8 +6,8 @@ local beautiful = require("beautiful")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local helpers = require("helpers")
-local battery_arc = require("elemental.battery")
-local playerctl_bar = require("elemental.player")
+local battery_arc = require("widgets.battery_arc")
+local playerctl_bar = require("widgets.player")
 
 -- Awesome Panel -----------------------------------------------------------
 

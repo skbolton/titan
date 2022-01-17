@@ -1,7 +1,7 @@
 # aliases
 alias.@ = context
 
-data.location=$XDG_DATA_HOME/task
+data.location=$HOME/Documents/Delta/task
 
 # CONTEXTS
 context.work = proj:GB
@@ -113,8 +113,8 @@ color.undo.before=rgb013
 color.undo.after=rgb035
 
 # Server Config
-taskd.server=freecinc.com:53589
-taskd.key=$XDG_DATA_HOME/task/freecinc.key.pem
-taskd.certificate=$XDG_DATA_HOME/task/freecinc.cert.pem
-taskd.ca=$XDG_DATA_HOME/task/freecinc.ca.pem
-taskd.credentials=FreeCinc/freecinc_1264e832/76974bab-f95e-41fb-ac70-6940a9bc07a6
+# taskd.server=freecinc.com:53589
+# taskd.key=$XDG_DATA_HOME/task/freecinc.key.pem
+# taskd.certificate=$XDG_DATA_HOME/task/freecinc.cert.pem
+# taskd.ca=$XDG_DATA_HOME/task/freecinc.ca.pem
+# taskd.credentials=FreeCinc/freecinc_88c5afa6/6e715c5c-8aaa-4d24-8220-c758a6c0c82a

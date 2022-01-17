@@ -11,6 +11,7 @@ awful.spawn.once("nm-applet --no-agent")
 -- GUIS
 awful.spawn("kitty --class NNN zsh -c ~/.local/bin/nnn")
 awful.spawn("kitty --class spotify-tui tmux start ';' attach -t spotify")
+awful.spawn("kitty --class kitty-delta tmuxinator start Delta")
 awful.spawn.once("mailspring")
 awful.spawn.once("slack")
 

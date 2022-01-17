@@ -70,7 +70,8 @@ awful.rules.rules = {
       class = {
         "morgen",
         "obsidian",
-        "Emacs"
+        "Emacs",
+        "kitty-delta"
       }
     },
     properties = { tag = "5" }

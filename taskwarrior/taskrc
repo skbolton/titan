@@ -4,8 +4,8 @@ alias.@ = context
 data.location=$XDG_DATA_HOME/task
 
 # CONTEXTS
-context.work = proj:GB
-context.personal = proj.not:GB
+context.GB = +GB or +OSS or +CAR
+context.personal = -GB
 
 # INBOX REPORT
 report.in.columns = id,tags,description

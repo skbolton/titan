@@ -16,7 +16,7 @@ nest.applyKeymaps {
     '<leader>', {
       {
         { '\\', '<CMD>NnnExplorer<CR>' },
-        { '<BAR>', '<CMD>NnnPicker %:p:h<CR>' },
+        { '<BAR>', '<CMD>NnnPicker %:p<CR>' },
         { '/', ':silent grep ', options = { silent = false }},
         { '_', telescope.live_grep },
         {

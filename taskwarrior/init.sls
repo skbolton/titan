@@ -20,7 +20,7 @@ tasklib:
 task-sync-cron:
   cron.present:
     - identifier: "sync taskwarrior"
-    - name: task sync
+    - name: 'source $HOME/.zshenv && task sync'
     # every 10 minutes
     - minute: "*/10"
     - user: orlando

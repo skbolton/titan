@@ -46,6 +46,7 @@ cmp.setup {
     end
   },
   formatting = {
+    fields = {"kind", "abbr"},
     format = function(entry, vim_item)
       -- Kind icons
       vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
@@ -87,7 +88,7 @@ cmp.setup {
       end
     end, { "i", "s" }),
   },
-  sources = {
+  sources = cmp.config.sources {
     { name = 'nvim_lsp' },
     { name = 'vsnip' },
     { name = 'nvim_lua' },

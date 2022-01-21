@@ -84,7 +84,7 @@ theme.xcolor15 = embark.fg_dark
 
 -- Fonts
 --
-theme.font_name = "Operator Mono "
+theme.font_name = "Iosevka SS18 Medium "
 theme.font = theme.font_name .. "10"
 theme.icon_font_name = "RobotMono Nerd Font Mono "
 theme.icon_font = theme.icon_font_name .. "18"

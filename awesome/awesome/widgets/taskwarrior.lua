@@ -73,7 +73,7 @@ return wibox.widget {
       bottom = dpi(4),
       widget = wibox.container.margin
     },
-    helpers.horizontal_pad(6),
+    helpers.horizontal_pad(10),
     {
       completed_text,
       top = dpi(4),
@@ -88,7 +88,7 @@ return wibox.widget {
       bottom = dpi(4),
       widget = wibox.container.margin
     },
-    helpers.horizontal_pad(6),
+    helpers.horizontal_pad(10),
     {
       due_text,
       top = dpi(4),
@@ -102,7 +102,7 @@ return wibox.widget {
       bottom = dpi(4),
       widget = wibox.container.margin
     },
-    helpers.horizontal_pad(6),
+    helpers.horizontal_pad(10),
     {
       overdue_text,
       top = dpi(4),

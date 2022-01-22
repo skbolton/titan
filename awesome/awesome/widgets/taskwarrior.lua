@@ -6,6 +6,19 @@ local helpers = require("helpers")
 local gfs = require("gears.filesystem")
 local gc = require("gears.color")
 
+local context_text = wibox.widget {
+  font = beautiful.font,
+  text = "none",
+  widget = wibox.widget.textbox
+}
+
+awesome.connect_signal("tw::context", function(context)
+  if context == "" then
+    context_text.text = "--"
+  else
+    context_text.text = context
+  end
+end)
 
 local completed_text = wibox.widget {
   font = beautiful.font,
@@ -67,6 +80,13 @@ end)
 
 return wibox.widget {
   {
+    {
+      context_text,
+      top = dpi(4),
+      bottom = dpi(4),
+      widget = wibox.container.margin
+    },
+    helpers.horizontal_pad(10),
     {
       completed_icon,
       top = dpi(4),

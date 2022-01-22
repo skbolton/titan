@@ -17,6 +17,18 @@ tasklib:
   pip.installed:
     - name: tasklib
 
+timewarrior:
+  pkg.installed:
+    - name: timew
+
+timewarrior-taskwarrior-hook:
+  file.managed:
+    - name: {{ pillar['xdg_data_home'] }}/task/hooks/on-modify.timewarrior
+    - source: salt://taskwarrior/on-modify.timewarrior
+    - makedirs: True
+    - mode: keep
+    - user: orlando
+
 task-sync-cron:
   cron.present:
     - identifier: "sync taskwarrior"

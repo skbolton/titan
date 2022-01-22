@@ -8,6 +8,7 @@ beancount-langserver:
   cmd.run:
     - name: npm i -g beancount-langserver
     - unless: npm list -g beancount-langserver
+    - runas: {{ grains['user'] }}
 
 fava: pip.installed
 

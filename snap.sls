@@ -2,7 +2,7 @@ snap:
   cmd.run:
     - name: paru -S snapd --noconfirm --skipreview
     - unless: paru -Qi snapd
-    - runas: orlando
+    - runas: {{ grains['user'] }}
 
 snap-classic:
   file.symlink:

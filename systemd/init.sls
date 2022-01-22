@@ -3,5 +3,5 @@ systemd-user-configs:
     - template: jinja
     - name: {{ pillar['xdg_config_home'] }}/environment.d/env.conf
     - source: salt://systemd/env.conf
-    - user: orlando
+    - user: {{ grains['user'] }}
     - makedirs: True

@@ -27,7 +27,7 @@ op:
     - names:
       - gpg --recv-keys 3FEF9748469ADBE15DA7CA80AC2D62742012EA22
       - paru -S 1password-cli --noconfirm --skipreview
-    - runas: orlando
+    - runas: {{ grains['user'] }}
     - unless: paru -Qi 1password-cli
 
 hsetroot:
@@ -36,20 +36,20 @@ hsetroot:
 toilet:
   cmd.run:
     - name: paru -S toilet --noconfirm --skipreview
-    - runas: orlando
+    - runas: {{ grains['user'] }}
     - unless: paru -Qi toilet
 
 figlet:
   cmd.run:
     - name: paru -S figlet --noconfirm --skipreview
-    - runas: orlando
+    - runas: {{ grains['user'] }}
     - unless: paru -Qi figlet
 
 synology-drive:
   cmd.run:
     - names:
       - paru -S synology-drive --noconfirm --skipreview
-    - runas: orlando
+    - runas: {{ grains['user'] }}
     - unless: paru -Qi synology-drive
 
 remind: pkg.installed

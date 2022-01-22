@@ -2,33 +2,33 @@ gitconfig:
   file.managed:
     - name: {{ pillar['xdg_config_home'] }}/git/config
     - source: salt://git/gitconfig
-    - user: orlando
+    - user: {{ grains['user'] }}
     - makedirs: True
 
 gitignore:
   file.managed:
     - name: {{ pillar['xdg_config_home'] }}/git/gitignore
     - source: salt://git/gitignore
-    - user: orlando
+    - user: {{ grains['user'] }}
 
 git-branches:
   file.managed:
-    - name: /home/orlando/.local/bin/git-branches
+    - name: /home/{{ grains['user'] }}/.local/bin/git-branches
     - source: salt://git/git-branches
     - mode: keep
-    - user: orlando
+    - user: {{ grains['user'] }}
 
 git-default-branch:
   file.managed:
-    - name: /home/orlando/.local/bin/git-default-branch
+    - name: /home/{{ grains['user'] }}/.local/bin/git-default-branch
     - source: salt://git/git-default-branch
     - mode: keep
-    - user: orlando
+    - user: {{ grains['user'] }}
 
 
 github-cli:
   cmd.run:
     - name: paru -S github-cli --noconfirm --skipreview
-    - runas: orlando
+    - runas: {{ grains['user'] }}
     - unless: paru -Qi github-cli
 

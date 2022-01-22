@@ -1,5 +1,5 @@
 include:
-  - orlando
+  - user
 
 user-dirs:
   pkg.installed:
@@ -17,7 +17,7 @@ user-dirs-config:
         XDG_PUBLICSHARE_DIR={{ pillar['xdg_publicshare_dir'] }}
         XDG_TEMPLATES_DIR={{ pillar['xdg_templates_dir'] }}
         XDG_VIDEOS_DIR={{ pillar['xdg_videos_dir'] }}
-    - user: orlando
+    - user: {{ grains['user'] }}
 
 user-dirs-folders:
   file.directory:
@@ -36,6 +36,6 @@ user-dirs-folders:
       - {{ pillar['xdg_documents_dir'] }}
       - {{ pillar['xdg_documents_dir'] }}/Archive
       - {{ pillar['xdg_documents_dir'] }}/Delta
-      - /home/orlando/.local/bin
-    - user: orlando
+      - /home/{{ grains['user'] }}/.local/bin
+    - user: {{ grains['user'] }}
 

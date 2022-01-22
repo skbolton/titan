@@ -11,13 +11,13 @@ xorg:
 
 xresources:
   file.managed:
-    - name: /home/orlando/.Xresources
+    - name: /home/{{ grains['user'] }}/.Xresources
     - source: salt://xorg/.Xresources
-    - user: orlando
+    - user: {{ grains['user'] }}
 
 xprofile:
   file.managed:
-    - name: /home/orlando/.xprofile
+    - name: /home/{{ grains['user'] }}/.xprofile
     - source: salt://xorg/.xprofile
-    - user: orlando
+    - user: {{ grains['user'] }}
 

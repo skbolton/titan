@@ -11,18 +11,18 @@ include:
 asdf-erlang-plugin:
   cmd.run:
     - name: source ~/.asdf/asdf.sh; asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
-    - runas: orlando
+    - runas: {{ grains['user'] }}
     - unless: source ~/.asdf/asdf.sh; asdf plugin list all | grep erlang
 
 asdf-erlang-install:
   cmd.run:
     - name: source ~/.asdf/asdf.sh; asdf install erlang {{ erlang_version }}
-    - runas: orlando
+    - runas: {{ grains['user'] }}
 
 asdf-erlang-global:
   cmd.run:
     - name: source ~/.asdf/asdf.sh; asdf global erlang {{ erlang_version }}
-    - runas: orlando
+    - runas: {{ grains['user'] }}
 
 # install elixir
 asdf-elixir-plugin:
@@ -30,23 +30,23 @@ asdf-elixir-plugin:
     - name: unzip
   cmd.run:
     - name: source ~/.asdf/asdf.sh; asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
-    - runas: orlando
+    - runas: {{ grains['user'] }}
     - unless: source ~/.asdf/asdf.sh; asdf plugin list all | grep elixir
 
 asdf-elixir-install:
   cmd.run:
     - name: source ~/.asdf/asdf.sh; asdf install elixir {{ elixir_version }}
-    - runas: orlando
+    - runas: {{ grains['user'] }}
 
 asdf-elixir-global:
   cmd.run:
     - name: source ~/.asdf/asdf.sh; asdf global elixir {{ elixir_version }}
-    - runas: orlando
+    - runas: {{ grains['user'] }}
 
 install-package-toolchains:
   cmd.run:
     - name: source ~/.asdf/asdf.sh; asdf reshim; mix local.hex --if-missing --force; mix local.rebar --force
-    - runas: orlando
+    - runas: {{ grains['user'] }}
     - env:
       - LANG: en_US.UTF-8
 
@@ -54,12 +54,12 @@ install-package-toolchains:
 elixir-language-server:
   git.latest:
     - name: https://github.com/elixir-lsp/elixir-ls.git
-    - target: /home/orlando/.local/share/elixir-ls
-    - user: orlando
+    - target: /home/{{ grains['user'] }}/.local/share/elixir-ls
+    - user: {{ grains['user'] }}
 
   cmd.run:
-    - cwd: /home/orlando/.local/share/elixir-ls
-    - runas: orlando
+    - cwd: /home/{{ grains['user'] }}/.local/share/elixir-ls
+    - runas: {{ grains['user'] }}
     - name: source ~/.asdf/asdf.sh; asdf reshim; mix deps.get; mix compile; mix elixir_ls.release -o rel
     - env:
       - LANG: en_US.UTF-8

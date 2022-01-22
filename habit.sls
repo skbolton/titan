@@ -6,18 +6,18 @@ include:
 dijo:
   cmd.run:
     - name: paru -S dijo --noconfirm --skipreview
-    - runas: orlando
+    - runas: {{ grains['user'] }}
     - unless: paru -Qi dijo
 
 dijo-data:
   file.symlink:
-    - name: /home/orlando/.local/share/dijo
-    - target: /home/orlando/Documents/Delta/habits
+    - name: {{ pillar['xdg_data_home'] }}/dijo
+    - target: /home/{{ grains['user'] }}/Documents/Delta/habits
     - force: True
 
 dijo-config:
   file.managed:
-    - name: /home/orlando/.config/dijo/config.toml
+    - name: {{ pillar['xdg_config_home'] }}/dijo/config.toml
     - makedirs: True
     - contents:
       - "[look]"

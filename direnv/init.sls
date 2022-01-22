@@ -1,5 +1,5 @@
 direnv:
   cmd.run:
     - name: paru -S direnv --skipreview --noconfirm
-    - runas: orlando
+    - runas: {{ grains['user'] }}
     - unless: paru -Qi direnv

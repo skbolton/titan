@@ -12,13 +12,13 @@ mbsync-config:
     - template: jinja
     - source: salt://mail/.mbsyncrc
     - makedirs: True
-    - user: orlando
+    - user: {{ grains['user'] }}
 
 # MU is a mail indexer to make searching email quick and easy
 mu: 
   cmd.run:
     - name: paru -S mu --noconfirm --skipreview
-    - runas: orlando
+    - runas: {{ grains['user'] }}
     - unless: paru -Qi mu
 
 maildirs:
@@ -26,5 +26,5 @@ maildirs:
     - names:
       - {{ pillar['xdg_data_home'] }}/Mail/GB
       - {{ pillar['xdg_data_home'] }}/Mail/BOTM
-    - user: orlando
+    - user: {{ grains['user'] }}
 

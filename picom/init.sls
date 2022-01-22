@@ -1,7 +1,7 @@
 picom:
   cmd.run:
     - name: paru -S picom-jonaburg-git --skipreview --noconfirm
-    - runas: orlando
+    - runas: {{ grains['user'] }}
     - unless: paru -Qi picom-jonaburg-git
 
 picom-config:

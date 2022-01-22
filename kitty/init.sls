@@ -6,4 +6,4 @@ configs:
   file.recurse:
     - name: {{ pillar['xdg_config_home'] }}/kitty
     - source: salt://kitty/kitty
-    - user: orlando
+    - user: {{ grains['user'] }}

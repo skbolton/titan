@@ -21,7 +21,7 @@ awesome-configs:
   file.recurse:
     - name: {{ awesome_dir }}
     - source: salt://awesome/awesome
-    - user: orlando
+    - user: {{ grains['user'] }}
     - makedirs: True
     - force: True
     - template: jinja
@@ -30,11 +30,11 @@ rubato:
   git.latest:
     - name: https://github.com/andOrlando/rubato.git
     - target: {{ awesome_dir }}/module/rubato
-    - user: orlando
+    - user: {{ grains['user'] }}
 
 awesome-bling:
   git.latest:
     - name: https://github.com/BlingCorp/bling
     - target: {{ awesome_dir }}/module/bling
-    - user: orlando
+    - user: {{ grains['user'] }}
 

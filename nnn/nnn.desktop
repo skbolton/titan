@@ -2,7 +2,7 @@
 Type=Application
 Name=nnn
 Comment=Terminal file manager
-Exec=kitty --class "NNN" /home/orlando/.local/bin/nnn
+Exec=kitty --class "NNN" /home/{{ grains['user'] }}/.local/bin/nnn
 Icon=nnn
 MimeType=inode/directory
 Categories=System;FileTools;FileManager;ConsoleOnly

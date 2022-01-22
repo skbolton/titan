@@ -14,6 +14,7 @@ fava: pip.installed
 fava-service:
   file.managed:
     - name: /etc/systemd/system/fava.service
+    - template: jinja
     - source: salt://finances/fava.service
     - makedirs: True
 

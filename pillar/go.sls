@@ -1,1 +1,1 @@
-go_path: /home/orlando/.local/share/go
+go_path: /home/{{ grains['user'] }}/.local/share/go

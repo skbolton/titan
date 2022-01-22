@@ -10,7 +10,7 @@ task-configs:
     - name: {{ pillar['xdg_config_home'] }}/task/taskrc
     - makedirs: True
     - source: salt://taskwarrior/taskrc
-    - user: orlando
+    - user: {{ grains['user'] }}
     - force: True
 
 tasklib:
@@ -27,7 +27,7 @@ timewarrior-taskwarrior-hook:
     - source: salt://taskwarrior/on-modify.timewarrior
     - makedirs: True
     - mode: keep
-    - user: orlando
+    - user: {{ grains['user'] }}
 
 task-sync-cron:
   cron.present:
@@ -35,4 +35,4 @@ task-sync-cron:
     - name: 'source $HOME/.zshenv && task sync'
     # every 10 minutes
     - minute: "*/10"
-    - user: orlando
+    - user: {{ grains['user'] }}

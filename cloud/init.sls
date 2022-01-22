@@ -1,5 +1,5 @@
 include:
-  - orlando
+  - user
 
 docker: pkg.installed
 
@@ -7,7 +7,7 @@ docker-group:
   group.present:
     - name: docker
     - addusers:
-      - orlando
+      - {{ grains['user'] }}
 
 docker-running:
   service.running:
@@ -24,4 +24,4 @@ google-cloud-sdk:
   cmd.run:
     - name: paru -S google-cloud-sdk --noconfirm --skipreview
     - unless: paru -Qi google-cloud-sdk
-    - runas: orlando
+    - runas: {{ grains['user'] }}

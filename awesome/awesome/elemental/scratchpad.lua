@@ -118,7 +118,7 @@ local quest_scratch = function(screen_geometry)
   local y = (screen_geometry.height - height) / 2
 
   return bling.module.scratchpad:new{
-      command = "kitty --class kitty-quest -d '$/home/orlando/Documents/Delta' --hold zk quest ", rule = {class = "kitty-quest"},
+      command = "kitty --class kitty-quest -d '$/home/{{ grains['user'] }}/Documents/Delta' --hold zk quest ", rule = {class = "kitty-quest"},
       sticky = false,
       autoclose = false,
       floating = true,

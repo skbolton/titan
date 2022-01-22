@@ -1,11 +1,11 @@
-xdg_config_home: /home/orlando/.config
-xdg_data_home: /home/orlando/.local/share
-xdg_cache_home: /home/orlando/.cache
-xdg_desktop_dir: /home/orlando/Desktop
-xdg_documents_dir: /home/orlando/Documents
-xdg_download_dir: /home/orlando/Downloads
-xdg_music_dir: /home/orlando/Music
-xdg_pictures_dir: /home/orlando/Pictures
-xdg_publicshare_dir: /home/orlando/Public
-xdg_templates_dir: /home/orlando/Templates
-xdg_videos_dir: /home/orlando/Videos
+xdg_config_home: /home/{{ grains['user'] }}/.config
+xdg_data_home: /home/{{ grains['user'] }}/.local/share
+xdg_cache_home: /home/{{ grains['user'] }}/.cache
+xdg_desktop_dir: /home/{{ grains['user'] }}/Desktop
+xdg_documents_dir: /home/{{ grains['user'] }}/Documents
+xdg_download_dir: /home/{{ grains['user'] }}/Downloads
+xdg_music_dir: /home/{{ grains['user'] }}/Music
+xdg_pictures_dir: /home/{{ grains['user'] }}/Pictures
+xdg_publicshare_dir: /home/{{ grains['user'] }}/Public
+xdg_templates_dir: /home/{{ grains['user'] }}/Templates
+xdg_videos_dir: /home/{{ grains['user'] }}/Videos

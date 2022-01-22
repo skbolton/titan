@@ -12,8 +12,8 @@ naughty.config.defaults.title = "System Notification"
 naughty.config.defaults.position = "top_right"
 
 naughty.config.icon_dirs = {
-  "/home/orlando/.local/share/icons/Tela-purple-dark/16@2x/apps",
-  "/home/orlando/.local/share/icons/Tela-purple-dark/16@2x/actions"
+  "{{ pillar['xdg_data_home'] }}/icons/Tela-purple-dark/16@2x/apps",
+  "{{ pillar['xdg_data_home'] }}/icons/Tela-purple-dark/16@2x/actions"
 }
 
 naughty.config.icon_formats = { "svg" }

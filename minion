@@ -9,3 +9,7 @@ pillar_roots:
 
 log_level: info
 
+grains:
+  user: orlando
+  user_fullname: Orlando Collins
+

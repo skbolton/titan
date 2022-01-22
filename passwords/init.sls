@@ -4,7 +4,7 @@ passstore:
   git.cloned:
     - name: https://github.com/skbolton/password-store.git
     - target: {{ pillar['xdg_data_home'] }}/password-store
-    - user: orlando
+    - user: {{ grains['user'] }}
     - require:
       - pkg: pass
 
@@ -13,7 +13,7 @@ pass-fzf:
     - name: {{ pillar['xdg_data_home'] }}/password-store/.extensions/fzf.bash
     - source: salt://passwords/fzf.bash
     - mode: keep
-    - user: orlando
+    - user: {{ grains['user'] }}
     - force: true
     - makedirs: true
 

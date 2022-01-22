@@ -7,13 +7,14 @@ spotifyd:
   cmd.run:
     - name: paru -S spotifyd-full-git --noconfirm --skipreview
     - unless: paru -Qi spotifyd-full-git
-    - runas: orlando
+    - runas: {{ grains['user'] }}
 
 spotifyd-config:
   file.managed:
     - name: {{ pillar['xdg_config_home'] }}/spotifyd/spotifyd.conf
+    - template: jinja
     - source: salt://music/spotifyd.conf
-    - user: orlando
+    - user: {{ grains['user'] }}
     - makedirs: True
     - force: True
 
@@ -21,6 +22,6 @@ spotify-tui:
   cmd.run:
     - name: paru -S spotify-tui --noconfirm --skipreview
     - unless: paru -Qi spotify-tui
-    - runas: orlando
+    - runas: {{ grains['user'] }}
     - require:
       - cmd: spotifyd

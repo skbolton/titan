@@ -1,5 +1,6 @@
 base:
   '*':
+    - display-drivers
     - xorg
     - xorg.monitors
     - display-manager
@@ -33,13 +34,6 @@ base:
     - tmux
     - zk
     - zsh
-
-  'trinity|prodigy':
-    - match: pcre
-    - display-drivers.amd
-  
-  'neo':
-    - display-drivers.nvidia
 
   'os:Arch':
     - match: grain

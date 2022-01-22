@@ -1,0 +1,4 @@
+{% set display_drivers = salt['grains.filter_by']({
+  'amd': ['xf86-video-amdgpu', 'mesa'],
+  'nvidia': ['nvidia-dkms']
+}, grain='gpus:0:vendor') %}

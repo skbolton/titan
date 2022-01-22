@@ -5,6 +5,17 @@ include:
 {% set erlang_version = '23.2.3' %}
 {% set elixir_version = '1.11.3-otp-23' %}
 
+iex:
+  file.managed:
+    - name: /home/{{ grains['user'] }}/.iex.exs
+    - contents: |
+        IEx.configure(
+          default_prompt:
+            "#{IO.ANSI.magenta} #{IO.ANSI.reset}(%counter) |",
+          continuation_prompt:
+            "#{IO.ANSI.magenta} #{IO.ANSI.reset}(.) |"
+        )
+
 # IMPORTANT: Asdf is a sourced function
 # Since we might be in a shell that hasn't yet sourced it we need to source it before any calls to asdf
 

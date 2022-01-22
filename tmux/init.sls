@@ -50,9 +50,9 @@ tmux-fuzzback:
     - user: {{ grains['user'] }}
 
 tmuxinator:
-  cmd.run:
-    - name: gem install tmuxinator
-    - runas: {{ grains['user'] }}
+  gem.installed:
+    - name: tmuxinator
+    - user: {{ grains['user'] }}
 
 tmuxinator-configs:
   file.recurse:

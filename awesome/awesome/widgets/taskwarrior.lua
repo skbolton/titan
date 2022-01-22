@@ -8,12 +8,12 @@ local gc = require("gears.color")
 
 local context_text = wibox.widget {
   font = beautiful.font,
-  text = "none",
+  text = "--",
   widget = wibox.widget.textbox
 }
 
 awesome.connect_signal("tw::context", function(context)
-  if context == "" then
+  if context:gsub("%s+", "") == "" then
     context_text.text = "--"
   else
     context_text.text = context

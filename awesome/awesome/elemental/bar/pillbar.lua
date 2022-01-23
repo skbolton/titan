@@ -179,6 +179,15 @@ awful.screen.connect_for_each_screen(function(s)
                 {
                     layout = wibox.layout.fixed.horizontal,
                     wrap_widget(make_pill(arch)),
+                    wrap_widget(make_pill(
+                                    {
+                            s.mylayoutbox,
+                            top = dpi(5),
+                            bottom = dpi(5),
+                            right = dpi(8),
+                            left = dpi(8),
+                            widget = wibox.container.margin
+                        })),
                     wrap_widget(make_pill(s.mytaglist)),
                     s.mypromptbox,
                     wrap_widget(make_pill(playerctl_bar))
@@ -196,15 +205,6 @@ awful.screen.connect_for_each_screen(function(s)
                     wrap_widget(make_pill(taskwarrior)),
                     wrap_widget(make_pill(time)),
                     wrap_widget(make_pill(date)),
-                    wrap_widget(make_pill(
-                                    {
-                            s.mylayoutbox,
-                            top = dpi(5),
-                            bottom = dpi(5),
-                            right = dpi(8),
-                            left = dpi(8),
-                            widget = wibox.container.margin
-                        })),
                     wrap_widget(awful.widget.only_on_screen(final_systray,
                                                             screen[1])),
                     helpers.horizontal_pad(4),

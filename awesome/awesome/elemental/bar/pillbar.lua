@@ -139,13 +139,11 @@ awful.screen.connect_for_each_screen(function(s)
                           id     = 'clienticon',
                           widget = awful.widget.clienticon,
                       },
-                      -- margins = 2,
                       top = dpi(1),
                       bottom = dpi(1),
                       right = dpi(1),
                       widget  = wibox.container.margin,
                   },
-                  helpers.horizontal_pad(6),
                   {
                     {
                       id = 'text_role',
@@ -154,6 +152,7 @@ awful.screen.connect_for_each_screen(function(s)
                     width = 150,
                     widget = wibox.container.constraint
                   },
+                  spacing = dpi(6),
                   layout = wibox.layout.fixed.horizontal,
               },
               top = dpi(5),

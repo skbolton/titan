@@ -1,6 +1,6 @@
 include:
-  - python
-  - node
+  - lang.python
+  - lang.node
 
 beancount: pip.installed
 

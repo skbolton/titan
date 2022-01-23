@@ -26,7 +26,6 @@ base:
     - passwords
     - picom
     - polybar
-    - python
     - qmk
     - rofi
     - sxhkd

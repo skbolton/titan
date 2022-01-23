@@ -1,6 +1,6 @@
 # We need rust for dijo to work
 include:
-  - rust
+  - lang.rust
   - snap
 
 dijo:

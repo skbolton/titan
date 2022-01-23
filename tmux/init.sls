@@ -1,6 +1,6 @@
 include:
-  - go
-  - ruby
+  - lang.go
+  - lang.ruby
 
 {% set tmux_dir = pillar['xdg_config_home'] + '/tmux' %}
 

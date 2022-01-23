@@ -1,5 +1,5 @@
 include:
-  - go
+  - lang.go
   - cli-utils
 
 zk:

@@ -2,23 +2,20 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
+local gfs = require("gears.filesystem")
+local gc = require("gears.color")
 
 local icon = wibox.widget {
-    widget = wibox.widget.textbox,
-    markup = "<span color='#A1EFD3'> </span>",
-    font = beautiful.icon_font
+    widget = wibox.widget.imagebox,
+    image = gc.recolor_image(gfs.get_configuration_dir() .. "/icons/remix/space-ship-fill.svg", beautiful.xcolor2),
 }
 
 return wibox.widget {
-    {
-        icon,
-        top = dpi(5),
-        bottom = dpi(5),
-        left = dpi(10),
-        right = dpi(5),
-        widget = wibox.container.margin
-    },
-    bg = beautiful.xcolor0,
-    widget = wibox.container.background
+  icon,
+  top = dpi(5),
+  bottom = dpi(5),
+  left = dpi(6),
+  right = dpi(6),
+  widget = wibox.container.margin
 }
 

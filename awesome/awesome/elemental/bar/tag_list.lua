@@ -1,5 +1,6 @@
 local awful = require("awful")
 local gears = require("gears")
+local helpers = require("helpers")
 local gfs = gears.filesystem
 local wibox = require("wibox")
 local beautiful = require("beautiful")
@@ -49,7 +50,7 @@ local get_taglist = function(s)
     local pac_taglist = awful.widget.taglist {
         screen = s,
         filter = awful.widget.taglist.filter.all,
-        style = {shape = gears.shape.rectangle},
+        style = {shape = helpers.rrect(10)},
         layout = {spacing = 0, layout = wibox.layout.fixed.horizontal},
         widget_template = {
             {

@@ -63,14 +63,13 @@ local wrap_widget = function(w)
     return wrapped
 end
 
-local make_pill = function(w, c)
-    local pill = wibox.widget {
+local make_pill = function(w)
+    return wibox.widget {
         w,
         bg = beautiful.xcolor0,
         shape = helpers.rrect(10),
         widget = wibox.container.background
     }
-    return pill
 end
 
 awful.screen.connect_for_each_screen(function(s)
@@ -179,21 +178,10 @@ awful.screen.connect_for_each_screen(function(s)
                 expand = "none",
                 {
                     layout = wibox.layout.fixed.horizontal,
-                    helpers.horizontal_pad(4),
-                    -- function to add padding
-                    wrap_widget( --
-                    -- function to add pill
-                    make_pill({
-                        arch,
-                        {
-                            s.mytaglist,
-                            helpers.horizontal_pad(4),
-                            layout = wibox.layout.fixed.horizontal
-                        },
-                        layout = wibox.layout.fixed.horizontal
-                    })),
+                    wrap_widget(make_pill(arch)),
+                    wrap_widget(make_pill(s.mytaglist)),
                     s.mypromptbox,
-                    wrap_widget(make_pill(playerctl_bar, beautiful.xcolor8))
+                    wrap_widget(make_pill(playerctl_bar))
                 },
                 {wrap_widget(s.mytasklist), widget = wibox.container.constraint},
                 {
@@ -205,9 +193,9 @@ awful.screen.connect_for_each_screen(function(s)
                     helpers.horizontal_pad(6),
                     layout = wibox.layout.fixed.horizontal
                   })),
-                    wrap_widget(make_pill(taskwarrior, beautiful.xcolor0)),
-                    wrap_widget(make_pill(time, beautiful.xcolor0 .. 55)),
-                    wrap_widget(make_pill(date, beautiful.xcolor0)),
+                    wrap_widget(make_pill(taskwarrior)),
+                    wrap_widget(make_pill(time)),
+                    wrap_widget(make_pill(date)),
                     wrap_widget(make_pill(
                                     {
                             s.mylayoutbox,
@@ -216,7 +204,7 @@ awful.screen.connect_for_each_screen(function(s)
                             right = dpi(8),
                             left = dpi(8),
                             widget = wibox.container.margin
-                        }, beautiful.xcolor8 .. 90)),
+                        })),
                     wrap_widget(awful.widget.only_on_screen(final_systray,
                                                             screen[1])),
                     helpers.horizontal_pad(4),

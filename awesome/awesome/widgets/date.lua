@@ -31,8 +31,8 @@ local date_icon = wibox.widget {
 return wibox.widget {
     {
         {date_icon, top = dpi(1), widget = wibox.container.margin},
-        helpers.horizontal_pad(10),
         {date_text, top = dpi(1), widget = wibox.container.margin},
+        spacing = dpi(10),
         layout = wibox.layout.fixed.horizontal
     },
     left = dpi(10),

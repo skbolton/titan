@@ -86,14 +86,12 @@ return wibox.widget {
       bottom = dpi(4),
       widget = wibox.container.margin
     },
-    helpers.horizontal_pad(10),
     {
       completed_icon,
       top = dpi(4),
       bottom = dpi(4),
       widget = wibox.container.margin
     },
-    helpers.horizontal_pad(10),
     {
       completed_text,
       top = dpi(4),
@@ -101,34 +99,31 @@ return wibox.widget {
       widget = wibox.container.margin
     },
     layout = wibox.layout.fixed.horizontal,
-    helpers.horizontal_pad(10),
     {
       due_icon,
       top = dpi(4),
       bottom = dpi(4),
       widget = wibox.container.margin
     },
-    helpers.horizontal_pad(10),
     {
       due_text,
       top = dpi(4),
       bottom = dpi(4),
       widget = wibox.container.margin
     },
-    helpers.horizontal_pad(10),
     {
       overdue_icon,
       top = dpi(4),
       bottom = dpi(4),
       widget = wibox.container.margin
     },
-    helpers.horizontal_pad(10),
     {
       overdue_text,
       top = dpi(4),
       bottom = dpi(4),
       widget = wibox.container.margin
     },
+    spacing = dpi(10),
     layout = wibox.layout.fixed.horizontal
   },
   left = dpi(10),

@@ -17,14 +17,6 @@ local taskwarrior = require("widgets.taskwarrior")
 -- Systray Widget -------------------------------------------------------------
 
 local mysystray = wibox.widget.systray()
-mysystray:set_base_size(beautiful.systray_icon_size)
-
-local mysystray_container = {
-    mysystray,
-    left = dpi(3),
-    right = dpi(3),
-    widget = wibox.container.margin
-}
 
 -- Tasklist Buttons -----------------------------------------------------------
 
@@ -47,8 +39,9 @@ local tasklist_buttons = gears.table.join(
 
 local final_systray = wibox.widget {
     {
-        mysystray_container,
-        top = dpi(6),
+        mysystray,
+        top = dpi(4),
+        bottom = dpi(2),
         left = dpi(6),
         right = dpi(6),
         layout = wibox.container.margin

@@ -213,8 +213,6 @@ awful.screen.connect_for_each_screen(function(s)
                     helpers.horizontal_pad(6),
                     layout = wibox.layout.fixed.horizontal
                   })),
-                    -- wrap_widget(yubikey),
-                    -- wrap_widet(battery_arc),
                     wrap_widget(make_pill(taskwarrior, beautiful.xcolor0)),
                     wrap_widget(make_pill(time, beautiful.xcolor0 .. 55)),
                     wrap_widget(make_pill(date, beautiful.xcolor0)),

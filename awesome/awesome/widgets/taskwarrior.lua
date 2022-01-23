@@ -82,51 +82,51 @@ return wibox.widget {
   {
     {
       context_text,
-      top = dpi(4),
-      bottom = dpi(4),
+      top = dpi(6),
+      bottom = dpi(6),
       widget = wibox.container.margin
     },
     {
       completed_icon,
-      top = dpi(4),
-      bottom = dpi(4),
+      top = dpi(6),
+      bottom = dpi(6),
       widget = wibox.container.margin
     },
     {
       completed_text,
-      top = dpi(4),
-      bottom = dpi(4),
+      top = dpi(6),
+      bottom = dpi(6),
       widget = wibox.container.margin
     },
     layout = wibox.layout.fixed.horizontal,
     {
       due_icon,
-      top = dpi(4),
-      bottom = dpi(4),
+      top = dpi(6),
+      bottom = dpi(6),
       widget = wibox.container.margin
     },
     {
       due_text,
-      top = dpi(4),
-      bottom = dpi(4),
+      top = dpi(6),
+      bottom = dpi(6),
       widget = wibox.container.margin
     },
     {
       overdue_icon,
-      top = dpi(4),
-      bottom = dpi(4),
+      top = dpi(6),
+      bottom = dpi(6),
       widget = wibox.container.margin
     },
     {
       overdue_text,
-      top = dpi(4),
-      bottom = dpi(4),
+      top = dpi(6),
+      bottom = dpi(6),
       widget = wibox.container.margin
     },
     spacing = dpi(10),
     layout = wibox.layout.fixed.horizontal
   },
-  left = dpi(10),
-  right = dpi(10),
+  left = dpi(8),
+  right = dpi(8),
   widget = wibox.container.margin
 }

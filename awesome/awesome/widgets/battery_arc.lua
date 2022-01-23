@@ -9,8 +9,8 @@ local battery_arc = wibox.widget {
   rounded_edge = true,
   start_angle = 4.71238898, -- 2pi*3/4
   thickness = 3,
-  forced_height = dpi(16),
-  forced_width = dpi(16),
+  forced_height = dpi(12),
+  forced_width = dpi(12),
   widget = wibox.container.arcchart
 }
 

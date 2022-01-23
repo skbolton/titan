@@ -26,7 +26,7 @@ end)
 
 return wibox.widget {
   yubikey,
-  top = dpi(4),
-  bottom = dpi(4),
+  top = dpi(6),
+  bottom = dpi(6),
   widget = wibox.container.margin
 }

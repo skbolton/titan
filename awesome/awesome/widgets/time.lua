@@ -3,6 +3,8 @@ local xresources = require("beautiful.xresources")
 local wibox = require("wibox")
 local dpi = xresources.apply_dpi
 local helpers = require("helpers")
+local gfs = require("gears.filesystem")
+local gc = require("gears.color")
 
 -- Child widgets
 local time_text = wibox.widget {
@@ -14,11 +16,9 @@ local time_text = wibox.widget {
 }
 
 local time_icon = wibox.widget {
-    font = beautiful.icon_font_name .. "12",
-    markup = "<span foreground='" .. beautiful.xcolor5 .. "'></span>",
-    align = "center",
-    valign = "center",
-    widget = wibox.widget.textbox
+    image = gc.recolor_image(gfs.get_configuration_dir() .. "/icons/remix/time-line.svg", beautiful.xcolor5),
+    resize = true,
+    widget = wibox.widget.imagebox
 }
 
 time_text.markup = "<span foreground='" .. beautiful.xcolor5 .. "'>" ..
@@ -33,9 +33,14 @@ end)
 -- parent container
 return wibox.widget {
     {
-        {time_icon, top = dpi(1), widget = wibox.container.margin},
+        {
+          time_icon,
+          top = dpi(6),
+          bottom = dpi(6),
+          widget = wibox.container.margin
+        },
         {time_text, top = dpi(1), widget = wibox.container.margin},
-        spacing = dpi(10),
+        spacing = dpi(1),
         layout = wibox.layout.fixed.horizontal
     },
     left = dpi(10),

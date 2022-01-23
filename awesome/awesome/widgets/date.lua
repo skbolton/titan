@@ -3,6 +3,8 @@ local beautiful = require("beautiful")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local helpers = require("helpers")
+local gfs = require("gears.filesystem")
+local gc = require("gears.color")
 
 local date_text = wibox.widget {
     font = beautiful.font,
@@ -21,18 +23,21 @@ date_text:connect_signal("widget::redraw_needed", function()
 end)
 
 local date_icon = wibox.widget {
-    font = beautiful.icon_font_name .. "12",
-    markup = "<span foreground='" .. beautiful.xcolor11 .. "'> </span>",
-    align = "center",
-    valign = "center",
-    widget = wibox.widget.textbox
+    image = gc.recolor_image(gfs.get_configuration_dir() .. "/icons/remix/calendar-event-line.svg", beautiful.xcolor11),
+    resize = true,
+    widget = wibox.widget.imagebox
 }
 
 return wibox.widget {
     {
-        {date_icon, top = dpi(1), widget = wibox.container.margin},
+        {
+          date_icon,
+          top = dpi(6),
+          bottom = dpi(6),
+          widget = wibox.container.margin
+        },
         {date_text, top = dpi(1), widget = wibox.container.margin},
-        spacing = dpi(10),
+        spacing = dpi(8),
         layout = wibox.layout.fixed.horizontal
     },
     left = dpi(10),

@@ -40,7 +40,7 @@ return wibox.widget {
           widget = wibox.container.margin
         },
         {time_text, top = dpi(1), widget = wibox.container.margin},
-        spacing = dpi(1),
+        spacing = dpi(8),
         layout = wibox.layout.fixed.horizontal
     },
     left = dpi(10),

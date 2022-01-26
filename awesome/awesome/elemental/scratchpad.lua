@@ -156,7 +156,7 @@ local password_scratch = function(screen_geometry)
 end
 
 local task_scratch = function(screen_geometry)
-  local width = math.min(screen_geometry.width / 3, 1400)
+  local width = math.max(screen_geometry.width / 3, 1200)
   local height = screen_geometry.height * 0.90
   local x = 20
   local y = ((screen_geometry.height - height) / 2) + screen_geometry.y

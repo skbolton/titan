@@ -17,6 +17,9 @@ local selected_colors = {
   beautiful.yellow
 }
 
+local empty_circle = gfs.get_configuration_dir() .. "icons/remix/checkbox-blank-circle-line.svg"
+local filled_circle = gfs.get_configuration_dir() .. "icons/remix/checkbox-blank-circle-fill.svg"
+
 local get_taglist = function(s)
     -- Taglist buttons
     local taglist_buttons = gears.table.join(
@@ -37,12 +40,12 @@ local get_taglist = function(s)
     local update_tags = function(widget, tag)
         local imgbox = widget:get_children_by_id('icon_role')[1]
         local icon = tag.icon
-        if tag.selected then
-            imgbox.image = gears.color.recolor_image(icon, selected_colors[tag.index])
-        elseif #tag:clients() == 0 then
-            imgbox.image = gears.color.recolor_image(icon, "#585273")
+        if tag.selected and #tag:clients() == 0 then
+          imgbox.image = gears.color.recolor_image(empty_circle, selected_colors[tag.index])
+        elseif tag.selected then
+          imgbox.image = gears.color.recolor_image(filled_circle, selected_colors[tag.index])
         else
-              imgbox.image = gears.color.recolor_image(icon, beautiful.fg_dark)
+          imgbox.image = gears.color.recolor_image(icon, beautiful.fg_dark)
         end
     end
 

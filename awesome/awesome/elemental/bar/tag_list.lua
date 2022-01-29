@@ -40,12 +40,12 @@ local get_taglist = function(s)
     local update_tags = function(widget, tag)
         local imgbox = widget:get_children_by_id('icon_role')[1]
         local icon = tag.icon
-        if tag.selected and #tag:clients() == 0 then
-          imgbox.image = gears.color.recolor_image(empty_circle, selected_colors[tag.index])
-        elseif tag.selected then
+        if tag.selected then
           imgbox.image = gears.color.recolor_image(filled_circle, selected_colors[tag.index])
-        else
+        elseif #tag:clients() == 0 then
           imgbox.image = gears.color.recolor_image(icon, beautiful.fg_dark)
+        else
+          imgbox.image = gears.color.recolor_image(empty_circle, selected_colors[tag.index])
         end
     end
 

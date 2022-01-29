@@ -26,12 +26,6 @@ awful.rules.rules = {
     },
     properties = { maximized = false, floating = false, tag = "2" }
   },
-  {
-    rule = {
-      class = "NNN"
-    },
-    properties = { tag = "3" }
-  },
   -- Chat applications
   {
     rule_any = {
@@ -46,14 +40,14 @@ awful.rules.rules = {
       class = "Slack"
     },
     properties = {
-      tags = {"4"}
+      tags = {"3"}
     }
   },
   {
     rule = {
       class = "Mailspring"
     },
-    properties = { tag = "7" }
+    properties = { tag = "6" }
   },
   {
     rule_any = {
@@ -62,7 +56,7 @@ awful.rules.rules = {
         "spotify-tui"
       }
     },
-    properties = { tag = "6" }
+    properties = { tag = "5" }
   },
   -- Notes and Planning
   {
@@ -74,7 +68,7 @@ awful.rules.rules = {
         "kitty-delta"
       }
     },
-    properties = { tag = "5" }
+    properties = { tag = "4" }
   },
   -- Floating clients.
   {

@@ -7,6 +7,10 @@ data.location=$XDG_DATA_HOME/task
 context.GB = +GB or +OSS or +CAR
 context.personal = -GB
 
+# UDA (User Defined Attributes)
+uda.ticket.type=string
+uda.ticket.label=Ticket
+
 # INBOX REPORT
 report.in.columns = id,tags,description
 report.in.description = Inbox

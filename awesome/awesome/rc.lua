@@ -14,10 +14,9 @@ require("awful.autofocus")
 local naughty = require("naughty")
 local bling = require("module.bling")
 
--- bling.signal.playerctl.lib {
---   ignore = 'firefoxdeveloperedition',
---   player = {'spotify', 'spotifyd'}
--- }
+bling.signal.playerctl.lib {
+  player = {'spotify', 'spotifyd', '%any'}
+}
 
 local themes = {
   "embark" -- 1

@@ -1,5 +1,6 @@
 name: Delta
 root: ~/Documents/Delta
+attach: false
 
 windows:
   - "DO": 

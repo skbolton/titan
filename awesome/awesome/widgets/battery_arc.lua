@@ -16,11 +16,11 @@ local battery_arc = wibox.widget {
 
 awesome.connect_signal("demon::battery", function(value)
     if (value >= 30) then
-      battery_arc.colors = {beautiful.xcolor2}
+      battery_arc.colors = {beautiful.green}
     elseif (value > 10) then
-      battery_arc.colors = {beautiful.xcolor3}
+      battery_arc.colors = {beautiful.yellow}
     else
-      battery_arc.colors = {beautiful.xcolor1}
+      battery_arc.colors = {beautiful.red}
     end
     battery_arc.value = value
 end)

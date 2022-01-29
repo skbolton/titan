@@ -7,7 +7,7 @@ local gc = require("gears.color")
 
 local icon = wibox.widget {
     widget = wibox.widget.imagebox,
-    image = gc.recolor_image(gfs.get_configuration_dir() .. "/icons/remix/space-ship-fill.svg", beautiful.xcolor2),
+    image = gc.recolor_image(gfs.get_configuration_dir() .. "/icons/remix/space-ship-fill.svg", beautiful.green),
 }
 
 return wibox.widget {

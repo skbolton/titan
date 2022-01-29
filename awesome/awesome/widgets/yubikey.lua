@@ -7,8 +7,8 @@ local gfs = require("gears.filesystem")
 local gc = require("gears.color")
 
 local icon = gfs.get_configuration_dir() .. "/icons/remix/fingerprint-line.svg"
-local white_icon = gc.recolor_image(icon, beautiful.xcolor7)
-local green_icon = gc.recolor_image(icon, beautiful.xcolor2)
+local white_icon = gc.recolor_image(icon, beautiful.fg)
+local green_icon = gc.recolor_image(icon, beautiful.green)
 
 local yubikey = wibox.widget {
   image = white_icon,

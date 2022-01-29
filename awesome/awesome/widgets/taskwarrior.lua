@@ -27,7 +27,7 @@ local completed_text = wibox.widget {
 }
 
 local completed_icon = wibox.widget {
-  image = gc.recolor_image(gfs.get_configuration_dir() .. "/icons/remix/checkbox-circle-fill.svg", beautiful.xcolor4),
+  image = gc.recolor_image(gfs.get_configuration_dir() .. "/icons/remix/checkbox-circle-fill.svg", beautiful.blue),
   resize = true,
   widget = wibox.widget.imagebox
 }
@@ -53,7 +53,7 @@ local due_text = wibox.widget {
 }
 
 local due_icon = wibox.widget {
-  image = gc.recolor_image(gfs.get_configuration_dir() .. "/icons/remix/checkbox-circle-line.svg", beautiful.xcolor3),
+  image = gc.recolor_image(gfs.get_configuration_dir() .. "/icons/remix/checkbox-circle-line.svg", beautiful.yellow),
   resize = true,
   widget = wibox.widget.imagebox
 }
@@ -69,7 +69,7 @@ local overdue_text = wibox.widget {
 }
 
 local overdue_icon = wibox.widget {
-  image = gc.recolor_image(gfs.get_configuration_dir() .. "/icons/remix/alarm-warning-line.svg", beautiful.xcolor1),
+  image = gc.recolor_image(gfs.get_configuration_dir() .. "/icons/remix/alarm-warning-line.svg", beautiful.red),
   resize = true,
   widget = wibox.widget.imagebox
 }

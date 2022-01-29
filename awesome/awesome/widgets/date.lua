@@ -14,16 +14,16 @@ local date_text = wibox.widget {
     widget = wibox.widget.textclock
 }
 
-date_text.markup = "<span foreground='" .. beautiful.xcolor11 .. "'>" ..
+date_text.markup = "<span foreground='" .. beautiful.yellow_dark .. "'>" ..
                        date_text.text .. "</span>"
 
 date_text:connect_signal("widget::redraw_needed", function()
-    date_text.markup = "<span foreground='" .. beautiful.xcolor11 .. "'>" ..
+    date_text.markup = "<span foreground='" .. beautiful.yellow_dark .. "'>" ..
                            date_text.text .. "</span>"
 end)
 
 local date_icon = wibox.widget {
-    image = gc.recolor_image(gfs.get_configuration_dir() .. "/icons/remix/calendar-event-line.svg", beautiful.xcolor11),
+    image = gc.recolor_image(gfs.get_configuration_dir() .. "/icons/remix/calendar-event-line.svg", beautiful.yellow_dark),
     resize = true,
     widget = wibox.widget.imagebox
 }

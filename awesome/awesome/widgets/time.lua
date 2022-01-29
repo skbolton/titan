@@ -5,6 +5,9 @@ local dpi = xresources.apply_dpi
 local helpers = require("helpers")
 local gfs = require("gears.filesystem")
 local gc = require("gears.color")
+local naughty = require("naughty")
+
+naughty.notify({text = tostring(beautiful.purple)})
 
 -- Child widgets
 local time_text = wibox.widget {
@@ -16,17 +19,17 @@ local time_text = wibox.widget {
 }
 
 local time_icon = wibox.widget {
-    image = gc.recolor_image(gfs.get_configuration_dir() .. "/icons/remix/time-line.svg", beautiful.xcolor5),
+    image = gc.recolor_image(gfs.get_configuration_dir() .. "/icons/remix/time-line.svg", beautiful.purple),
     resize = true,
     widget = wibox.widget.imagebox
 }
 
-time_text.markup = "<span foreground='" .. beautiful.xcolor5 .. "'>" ..
+time_text.markup = "<span foreground='" .. beautiful.purple .. "'>" ..
                        time_text.text .. "</span>"
 
 -- Signals
 time_text:connect_signal("widget::redraw_needed", function()
-    time_text.markup = "<span foreground='" .. beautiful.xcolor5 .. "'>" ..
+    time_text.markup = "<span foreground='" .. beautiful.purple .. "'>" ..
                            time_text.text .. "</span>"
 end)
 

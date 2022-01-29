@@ -46,7 +46,7 @@ local final_systray = wibox.widget {
         right = dpi(6),
         layout = wibox.container.margin
     },
-    bg = beautiful.xcolor8,
+    bg = beautiful.bg_dark,
     shape = helpers.rrect(10),
     widget = wibox.container.background
 }
@@ -66,7 +66,7 @@ end
 local make_pill = function(w)
     return wibox.widget {
         w,
-        bg = beautiful.xcolor0,
+        bg = beautiful.bg_dark,
         shape = helpers.rrect(10),
         widget = wibox.container.background
     }
@@ -121,11 +121,11 @@ awful.screen.connect_for_each_screen(function(s)
         filter = awful.widget.tasklist.filter.currenttags,
         buttons = tasklist_buttons,
         bg = beautiful.wibar_bg,
-        style = {bg = beautiful.xcolor0, shape = helpers.rrect(10)},
+        style = {bg = beautiful.bg_dark, shape = helpers.rrect(10)},
         layout = {
             spacing = dpi(10),
             spacing_widget = {
-                bg = beautiful.xcolor8,
+                bg = beautiful.bg_dark,
                 widget = wibox.container.background
             },
             layout = wibox.layout.fixed.horizontal
@@ -216,7 +216,7 @@ awful.screen.connect_for_each_screen(function(s)
         },
         { -- This is for a bottom border in the bar
             widget = wibox.container.background,
-            bg = beautiful.xcolor0,
+            bg = beautiful.bg_dark,
             forced_height = beautiful.widget_border_width
         }
     }

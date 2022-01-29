@@ -9,12 +9,12 @@ local dpi = xresources.apply_dpi
 local naughty = require("naughty")
 
 local selected_colors = {
-  "#63F2F1",
-  "#F2B482",
-  "#d4bfff",
-  "#91ddff",
-  "#A1EFD3",
-  "#FFE6B3"
+  beautiful.cyan_dark,
+  beautiful.yellow_dark,
+  beautiful.purple,
+  beautiful.blue,
+  beautiful.green,
+  beautiful.yellow
 }
 
 local get_taglist = function(s)
@@ -42,7 +42,7 @@ local get_taglist = function(s)
         elseif #tag:clients() == 0 then
             imgbox.image = gears.color.recolor_image(icon, "#585273")
         else
-            imgbox.image = gears.color.recolor_image(icon, "#8A889D")
+              imgbox.image = gears.color.recolor_image(icon, beautiful.fg_dark)
         end
     end
 
@@ -74,11 +74,11 @@ local get_taglist = function(s)
                         awesome.emit_signal("bling::tag_preview::visibility", s,
                                             true)
                     end
-                    if self.bg ~= beautiful.xbackground .. "60" then
+                    if self.bg ~= beautiful.bg .. "60" then
                         self.backup = self.bg
                         self.has_backup = true
                     end
-                    self.bg = beautiful.xbackground .. "60"
+                    self.bg = beautiful.bg .. "60"
                 end)
                 self:connect_signal('mouse::leave', function()
                     awesome.emit_signal("bling::tag_preview::visibility", s,

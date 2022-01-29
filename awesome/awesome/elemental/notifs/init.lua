@@ -36,7 +36,7 @@ naughty.config.presets.low = {
 
 naughty.config.presets.critical = {
     font = beautiful.font_name .. "10",
-    fg = beautiful.xcolor1,
+    fg = beautiful.red,
     bg = beautiful.bg_normal,
     timeout = 0
 }

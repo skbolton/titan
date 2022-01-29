@@ -23,7 +23,7 @@ local song_artist = wibox.widget {
 }
 
 local song_logo = wibox.widget {
-    markup = '<span foreground="' .. beautiful.xcolor6 .. '"> </span>',
+    markup = '<span foreground="' .. beautiful.cyan .. '"> </span>',
     font = beautiful.icon_font_name .. 12,
     align = "center",
     valign = "center",
@@ -76,10 +76,10 @@ playerctl:connect_signal("metadata", function(_, title, artist)
   -- only show player bar if actual music is playing
   if title ~= "" and artist ~= "" then
     playerctl_bar.visible = true
-    song_title.markup = '<span foreground="' .. beautiful.xcolor5 .. '">' ..
+    song_title.markup = '<span foreground="' .. beautiful.purple .. '">' ..
                             title .. "</span>"
 
-    song_artist.markup = '<span foreground="' .. beautiful.xcolor4 .. '">' ..
+    song_artist.markup = '<span foreground="' .. beautiful.blue .. '">' ..
                              artist .. "</span>"
   end
 end)

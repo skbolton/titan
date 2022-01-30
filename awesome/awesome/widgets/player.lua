@@ -1,5 +1,6 @@
 local wibox = require("wibox")
 local beautiful = require("beautiful")
+local helpers = require("helpers")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local bling = require("module.bling")
@@ -23,7 +24,7 @@ local song_artist = wibox.widget {
 }
 
 local song_logo = wibox.widget {
-    markup = '<span foreground="' .. beautiful.cyan .. '"> </span>',
+    markup = helpers.colorize_text(' ', beautiful.cyan),
     font = beautiful.icon_font_name .. 12,
     align = "center",
     valign = "center",
@@ -76,11 +77,8 @@ playerctl:connect_signal("metadata", function(_, title, artist)
   -- only show player bar if actual music is playing
   if title ~= "" and artist ~= "" then
     playerctl_bar.visible = true
-    song_title.markup = '<span foreground="' .. beautiful.purple .. '">' ..
-                            title .. "</span>"
-
-    song_artist.markup = '<span foreground="' .. beautiful.blue .. '">' ..
-                             artist .. "</span>"
+    song_title.markup = helpers.colorize_text(title, beautiful.purple)
+    song_artist.markup = helpers.colorize_text(artist, beautiful.blue)
   end
 end)
 

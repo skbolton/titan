@@ -14,12 +14,10 @@ local date_text = wibox.widget {
     widget = wibox.widget.textclock
 }
 
-date_text.markup = "<span foreground='" .. beautiful.yellow_dark .. "'>" ..
-                       date_text.text .. "</span>"
+date_text.markup = helpers.colorize_text(date_text.text, beautiful.yellow_dark)
 
 date_text:connect_signal("widget::redraw_needed", function()
-    date_text.markup = "<span foreground='" .. beautiful.yellow_dark .. "'>" ..
-                           date_text.text .. "</span>"
+  date_text.markup = helpers.colorize_text(date_text.text, beautiful.yellow_dark)
 end)
 
 local date_icon = wibox.widget {

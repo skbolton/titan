@@ -24,13 +24,11 @@ local time_icon = wibox.widget {
     widget = wibox.widget.imagebox
 }
 
-time_text.markup = "<span foreground='" .. beautiful.purple .. "'>" ..
-                       time_text.text .. "</span>"
+time_text.markup = helpers.colorize_text(time_text.text, beautiful.purple)
 
 -- Signals
 time_text:connect_signal("widget::redraw_needed", function()
-    time_text.markup = "<span foreground='" .. beautiful.purple .. "'>" ..
-                           time_text.text .. "</span>"
+  time_text.markup = helpers.colorize_text(time_text.text, beautiful.purple)
 end)
 
 -- parent container

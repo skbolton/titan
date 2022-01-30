@@ -137,7 +137,7 @@ function helpers.client_menu_toggle()
     end
 end
 
--- Escapes a string so that it can be displayed inside pango markup
+  -- Escapes a string so that it can be displayed inside pango markup
 -- tags. Modified from:
 -- https://github.com/kernelsauce/turbo/blob/master/turbo/escape.lua
 function helpers.pango_escape(s)

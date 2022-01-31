@@ -30,18 +30,11 @@ awful.rules.rules = {
   {
     rule_any = {
       class = {
-        "discord"
+        "discord",
+        "[Ss]lack"
       }
     },
-    properties = { tag = "4" }
-  },
-  {
-    rule = {
-      class = "Slack"
-    },
-    properties = {
-      tags = {"3"}
-    }
+    properties = { tag = "3" }
   },
   {
     rule = {

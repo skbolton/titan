@@ -180,7 +180,7 @@ end
 local ticket_scratch = function(screen_geometry)
   local width = math.max(screen_geometry.width / 3, 1200)
   local height = screen_geometry.height * 0.90
-  local x = screen_geometry.width - width - 20
+  local x = (screen_geometry.width - width - 20) + screen_geometry.x
   local y = ((screen_geometry.height - height) / 2) + screen_geometry.y
 
   return bling.module.scratchpad:new{

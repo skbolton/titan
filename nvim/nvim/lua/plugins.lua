@@ -40,7 +40,6 @@ packer.startup(function()
     config = function() require("tree-sitter") end
   }
   use 'LionC/nest.nvim'
-  use 'wakatime/vim-wakatime'
   use 'yuttie/comfortable-motion.vim'
   use 'jiangmiao/auto-pairs'
   use 'tpope/vim-surround'

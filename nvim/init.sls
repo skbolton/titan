@@ -1,10 +1,22 @@
 include:
+  - lang.python
   - zk
   - finances
+  - tmux
 
 nvim:
   pkg.installed:
     - name: neovim
+
+nvim-python:
+  pip.installed: 
+    - name: pynvim
+
+vim-packer:
+  git.cloned:
+    - name: https://github.com/wbthomason/packer.nvim
+    - target: {{ pillar['xdg_data_home'] }}/nvim/site/pack/packager/opt/packer.nvim
+    - user: {{ grains['user'] }}
 
 old-configs-gone:
   file.absent:
@@ -22,10 +34,4 @@ nvim-config:
     # Help wakatime finds its api key
     - runas: {{ grains['user'] }}
     - shell: /bin/zsh
-
-vim-packer:
-  git.cloned:
-    - name: https://github.com/wbthomason/packer.nvim
-    - target: {{ pillar['xdg_data_home'] }}/nvim/site/pack/packager/opt/packer.nvim
-    - user: {{ grains['user'] }}
 

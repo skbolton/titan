@@ -4,7 +4,7 @@ local helpers = require("helpers")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local bling = require("module.bling")
-local playerctl = bling.signal.playerctl.lib()
+-- local playerctl = bling.signal.playerctl.lib()
 local naughty = require("naughty")
 -- Playerctl Bar Widget -------------------------------------------------------
 
@@ -73,17 +73,17 @@ local playerctl_bar = wibox.widget {
 playerctl_bar.visible = false
 
 -- Connect signals to widgets
-playerctl:connect_signal("metadata", function(_, title, artist)
-  -- only show player bar if actual music is playing
-  if title ~= "" and artist ~= "" then
-    playerctl_bar.visible = true
-    song_title.markup = helpers.colorize_text(title, beautiful.purple)
-    song_artist.markup = helpers.colorize_text(artist, beautiful.blue)
-  end
-end)
+-- playerctl:connect_signal("metadata", function(_, title, artist)
+--   -- only show player bar if actual music is playing
+--   if title ~= "" and artist ~= "" then
+--     playerctl_bar.visible = true
+--     song_title.markup = helpers.colorize_text(title, beautiful.purple)
+--     song_artist.markup = helpers.colorize_text(artist, beautiful.blue)
+--   end
+-- end)
 
-playerctl:connect_signal("no_players",
-                       function() playerctl_bar.visible = false end)
+-- playerctl:connect_signal("no_players",
+--                        function() playerctl_bar.visible = false end)
 
 
 return playerctl_bar

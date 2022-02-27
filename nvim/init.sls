@@ -3,6 +3,7 @@ include:
   - zk
   - finances
   - tmux
+  - taskwarrior
 
 # nvim:
 #   pkg.installed:

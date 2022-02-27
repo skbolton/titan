@@ -39,7 +39,6 @@ packer.startup(function()
     'nvim-treesitter/nvim-treesitter',
     config = function() require("tree-sitter") end
   }
-  use 'LionC/nest.nvim'
   use 'yuttie/comfortable-motion.vim'
   use 'jiangmiao/auto-pairs'
   use 'tpope/vim-surround'

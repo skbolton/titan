@@ -1,13 +1,4 @@
-local nest = require('nest')
-
-nest.applyKeymaps {
-  {
-    '<leader>', {
-      {'<DOWN>', '<CMD>VimwikiMakeDiaryNote<CR>'},
-      {'<UP>', '<CMD>VimwikiDiaryIndex<CR>'},
-      {'<LEFT>', '<CMD>VimwikiDiaryPrevDay<CR>'},
-      {'<RIGHT>', '<CMD>VimwikiDiaryNextDay<CR>'},
-    }
-  }
-}
-
+vim.keymap.set('n', '<leader><DOWN>', '<CMD>VimwikiMakeDiaryNote<CR>')
+vim.keymap.set('n', '<leader><UP>', '<CMD>VimwikiDiaryIndex<CR>')
+vim.keymap.set('n', '<leader><LEFT>', '<CMD>VimwikiDiaryPrevDay<CR>')
+vim.keymap.set('n', '<leader><RIGHT>', '<CMD>VimwikiDiaryNextDay<CR>')

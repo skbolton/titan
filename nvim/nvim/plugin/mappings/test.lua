@@ -1,20 +1,9 @@
-local nest = require('nest')
-
-nest.applyKeymaps {
-  {
-    '<leader>', {
-      't', {
-        {'t', '<CMD>TestFile<CR>'},
-        {'T', '<CMD>TestFile -strategy=neomake<CR>'},
-        {'n', '<CMD>TestNearest<CR>'},
-        {'N', '<CMD>TestNearest -strategy=neomake<CR>'},
-        {'.', '<CMD>TestLast<CR>'},
-        {'v', '<CMD>TestVisit<CR>zz'},
-        {'s', '<CMD>TestSuite<CR>'},
-        {'S', '<CMD>TestSuite -strategy=neomake<CR>'},
-        {'c', '<CMD>VimuxCloseRunner<CR>'}
-      }
-    }
-  }
-}
-
+vim.keymap.set('n', '<leader>tt', '<CMD>TestFile<CR>')
+vim.keymap.set('n', '<leader>tT', '<CMD>TestFile -strategy=neomake<CR>')
+vim.keymap.set('n', '<leader>tn', '<CMD>TestNearest<CR>')
+vim.keymap.set('n', '<leader>tN', '<CMD>TestNearest -strategy=neomake<CR>')
+vim.keymap.set('n', '<leader>t.', '<CMD>TestLast<CR>')
+vim.keymap.set('n', '<leader>tv', '<CMD>TestVisit<CR>zz')
+vim.keymap.set('n', '<leader>ts', '<CMD>TestSuite<CR>')
+vim.keymap.set('n', '<leader>tS', '<CMD>TestSuite -strategy=neomake<CR>')
+vim.keymap.set('n', '<leader>tc', '<CMD>VimuxCloseRunner<CR>')

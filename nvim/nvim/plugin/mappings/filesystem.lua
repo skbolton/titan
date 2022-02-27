@@ -1,4 +1,3 @@
-local nest = require('nest')
 local telescope = require('telescope.builtin')
 
 local all_buffers = function()
@@ -11,25 +10,12 @@ local find_files = function()
   return telescope.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git'} })
 end
 
-nest.applyKeymaps {
-  {
-    '<leader>', {
-      {
-        { '\\', '<CMD>NnnExplorer<CR>' },
-        { '<BAR>', '<CMD>NnnPicker %:p<CR>' },
-        { '/', ':silent grep ', options = { silent = false }},
-        { '_', telescope.live_grep },
-        {
-          'f', {
-            { 'f', find_files },
-            { 'r', all_buffers },
-            { 'g', telescope.git_status },
-            { 'b',  telescope.git_branches },
-            { '?', "<CMD>TodoTelescope<CR>" }
-          }
-        }
-      }
-    }
-  }
-}
-
+vim.keymap.set('n', '<leader>\\', '<CMD>NnnExplorer<CR>')
+vim.keymap.set('n', '<leader><BAR>', '<CMD>NnnPicker %:p<CR>')
+vim.keymap.set('n', '<leader>/', ':silent grep ', { silent = false })
+vim.keymap.set('n', '<leader>_', telescope.live_grep)
+vim.keymap.set( 'n', '<leader>ff', find_files)
+vim.keymap.set( 'n', '<leader>fr', all_buffers)
+vim.keymap.set( 'n', '<leader>fg', telescope.git_status)
+vim.keymap.set( 'n', '<leader>fb',  telescope.git_branches)
+vim.keymap.set( 'n', '<leader>f?', "<CMD>TodoTelescope<CR>")

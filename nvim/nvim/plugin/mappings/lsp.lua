@@ -1,4 +1,3 @@
-local nest = require('nest')
 local lsp = vim.lsp
 
 local reload_lsp_clients = function()
@@ -30,36 +29,21 @@ local goto_diagnostic = function(dir)
   end
 end
 
-nest.applyKeymaps {
-  {
-    '<leader>', {
-      'l', {
-        {'d', vim.lsp.buf.definition},
-        {'D', definition_in_split},
-        {'s', vim.lsp.buf.signature_help },
-        {'h', vim.lsp.buf.hover},
-        {'f', vim.lsp.buf.formatting_sync},
-        {'o', '<CMD>Vista finder skim<cr>'},
-        {'[', goto_diagnostic('prev')},
-        {']', goto_diagnostic('next')},
-        {'=', vim.lsp.diagnostic.show_line_diagnostics},
-        {'i', vim.lsp.diagnostic.set_loclist},
-        {'O', '<CMD>Vista<CR>'},
-        {'p', '<CMD>CocList diagnostics<CR>'},
-        {'?', '<CMD>CocInfo<CR>'},
-        {'r', reload_lsp_clients},
-      }
-    }
-  },
-  {
-    mode = 'i', {
-      { options = { expr = true }, {
-          { '<C-y>', "compe#confirm('<CR>')" },
-          { '<TAB>', 'pumvisible() ? "\\<C-n>" : "\\<TAB>"' },
-          { '<S-TAB>', 'pumvisible() ? "\\<C-p>" : "\\<TAB>"' }
-        }
-      }
-    }
-  }
-}
+vim.keymap.set('n', '<leader>ld', vim.lsp.buf.definition)
+vim.keymap.set('n', '<leader>lD', definition_in_split)
+vim.keymap.set('n', '<leader>ls', vim.lsp.buf.signature_help )
+vim.keymap.set('n', '<leader>lh', vim.lsp.buf.hover)
+vim.keymap.set('n', '<leader>lf', vim.lsp.buf.formatting_sync)
+vim.keymap.set('n', '<leader>lo', '<CMD>Vista finder skim<cr>')
+vim.keymap.set('n', '<leader>l[', goto_diagnostic('prev'))
+vim.keymap.set('n', '<leader>l]', goto_diagnostic('next'))
+vim.keymap.set('n', '<leader>l=', vim.lsp.diagnostic.show_line_diagnostics)
+vim.keymap.set('n', '<leader>li', vim.lsp.diagnostic.set_loclist)
+vim.keymap.set('n', '<leader>lO', '<CMD>Vista<CR>')
+vim.keymap.set('n', '<leader>lp', '<CMD>CocList diagnostics<CR>')
+vim.keymap.set('n', '<leader>l?', '<CMD>CocInfo<CR>')
+vim.keymap.set('n', '<leader>lr', reload_lsp_clients)
+vim.keymap.set('i', '<C-y>', "compe#confirm('<CR>')", { expr = true })
+vim.keymap.set('i', '<TAB>', 'pumvisible() ? "\\<C-n>" : "\\<TAB>"', { expr = true })
+vim.keymap.set('i', '<S-TAB>', 'pumvisible() ? "\\<C-p>" : "\\<TAB>"', { expr = true })
 

@@ -4,9 +4,15 @@ include:
   - finances
   - tmux
 
+# nvim:
+#   pkg.installed:
+#     - name: neovim
+
 nvim:
-  pkg.installed:
-    - name: neovim
+  cmd.run:
+    - name: paru -S neovim-git --noconfirm --skipreview --useask
+    - unless: paru -Qi neovim-git
+    - runas: {{ grains['user'] }}
 
 nvim-python:
   pip.installed: 

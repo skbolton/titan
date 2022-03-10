@@ -11,9 +11,39 @@ local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 } ]]
 
 require "nvim-treesitter.configs".setup {
-  ensure_installed = {'beancount'},
+  ensure_installed = {'beancount', 'elixir'},
   highlight = {
-    enable = true
+    enable = true,
+    disable = {'elixir'}
+  },
+  textobjects = {
+    select = {
+      enable = true,
+      lookbehind = true,
+      keymaps = {
+        -- You can use the capture groups defined in textobjects.scm
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ac"] = "@class.outer",
+        ["ic"] = "@class.inner",
+      }
+    },
+    move = {
+      enable = true,
+      set_jumps = false,
+      goto_next_start = {
+        ["]]"] = "@function.outer",
+      },
+      goto_next_end = {
+        ["]["] = "@function.outer",
+      },
+      goto_previous_start = {
+        ["[["] = "@function.outer",
+      },
+      goto_previous_end = {
+        ["[]"] = "@function.outer",
+      },
+    },
   }
 }
 

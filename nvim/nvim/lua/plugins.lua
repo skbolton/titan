@@ -37,6 +37,7 @@ packer.startup(function()
   -- CORE PLUGINS
   use {
     'nvim-treesitter/nvim-treesitter',
+    requires = { 'nvim-treesitter/nvim-treesitter-textobjects' },
     config = function() require("tree-sitter") end
   }
   use 'yuttie/comfortable-motion.vim'

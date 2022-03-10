@@ -40,13 +40,9 @@ M.neomake_on_job_ended = function ()
 end
 
 -- AUTOCOMMANDS
-vim.cmd([[
-  augroup my_neomake_hooks
-    au!
-    autocmd User NeomakeJobFinished call luaeval("require('testing').neomake_on_job_ended()")
-    autocmd User NeomakeJobStarted call luaeval("require('testing').neomake_on_job_started()")
-  augroup END
-]])
+local neomake_hooks = vim.api.nvim_create_augroup("MyNeomakeHooks", { clear = true })
 
+vim.api.nvim_create_autocmd("User", { pattern = "NeomakeJobStarted", callback = M.neomake_on_job_started, group = neomake_hooks })
+vim.api.nvim_create_autocmd("User", { pattern = "NeomakeJobFinished", callback = M.neomake_on_job_ended, group = neomake_hooks })
 
 return M

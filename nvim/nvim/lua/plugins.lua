@@ -130,7 +130,7 @@ packer.startup(function()
   }
   use {
     'nvim-telescope/telescope.nvim',
-    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}, {'nvim-web-devicons'}},
+    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}, {'kyazdani42/nvim-web-devicons'}, {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}},
     config = function()
       local telescope = require('telescope')
       local builtin = require('telescope.builtin')
@@ -142,9 +142,17 @@ packer.startup(function()
             prompt_position = 'top',
           },
           prompt_prefix = '  ',
-          sorting_strategy = 'ascending'
-        }
+          sorting_strategy = 'ascending',
+          preview = false
+        },
+        pickers = {
+          find_files = {
+            theme = "ivy"
+          }
       }
+    }
+
+    telescope.load_extension('fzf')
     end
   }
   -- Git

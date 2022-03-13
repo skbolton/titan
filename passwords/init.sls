@@ -21,4 +21,5 @@ pass-otp: pkg.installed
 
 zbar: pkg.installed
 
+browserpass-firefox: pkg.installed
 

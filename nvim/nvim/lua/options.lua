@@ -68,6 +68,7 @@ opt.completeopt = "menuone,menu,noselect,noinsert"
 opt.history = 100
 opt.shortmess = 'FWco'
 opt.modeline = true
+opt.laststatus = 3
 
 -- FOLDING
 -- ===================================================================

@@ -5,13 +5,34 @@ include:
 task:
   pkg.installed
 
+{% set task_home = pillar['xdg_config_home'] + '/task' %}
+
 task-configs:
   file.managed:
-    - name: {{ pillar['xdg_config_home'] }}/task/taskrc
+    - name: {{ task_home }}/taskrc
     - makedirs: True
     - source: salt://taskwarrior/taskrc
     - user: {{ grains['user'] }}
+    - template: jinja
     - force: True
+
+taskserver-root-cert-file:
+  file.managed:
+    - name: {{ task_home }}/root-cert.pem
+    - contents_pillar: taskwarrior:taskd_root_cert
+    - user: {{ grains['user'] }}
+
+taskserver-cert-file:
+  file.managed:
+    - name: {{ task_home }}/cert.pem
+    - contents_pillar: taskwarrior:taskd_cert
+    - user: {{ grains['user'] }}
+
+taskserver-key-file:
+  file.managed:
+    - name: {{ task_home }}/key.pem
+    - contents_pillar: taskwarrior:taskd_key
+    - user: {{ grains['user'] }}
 
 tasklib:
   pip.installed:

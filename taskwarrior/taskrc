@@ -113,7 +113,7 @@ color.undo.after=rgb035
 
 # Server Config
 taskd.server=app.wingtask.com:53589
-taskd.key=$XDG_DATA_HOME/task/stephen@bitsonthemind.com.key.pem
-taskd.certificate=$XDG_DATA_HOME/task/stephen@bitsonthemind.com.cert.pem
-taskd.ca=$XDG_DATA_HOME/task/letsencrypt_root_cert.pem
-taskd.credentials=WingTask/stephen@bitsonthemind.com/49852dcf-4bef-4cd2-b0a6-abcff65a599a
+taskd.key=$XDG_CONFIG_HOME/task/key.pem
+taskd.certificate=$XDG_CONFIG_HOME/task/cert.pem
+taskd.ca=$XDG_CONFIG_HOME/task/root-cert.pem
+taskd.credentials=WingTask/tasks@bitsonthemind.com/{{ pillar['taskwarrior']['taskd_credential'] }}

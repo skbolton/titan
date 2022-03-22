@@ -18,13 +18,13 @@ packer.startup(function()
   -- FILETYPE PLUGINS
   use 'elixir-editors/vim-elixir'
   use 'lfe-support/vim-lfe'
-  use {
-    'vimwiki/vimwiki',
-    branch = 'dev',
-    config = function()
-      require('wiki')
-    end
-  }
+  -- use {
+  --   'vimwiki/vimwiki',
+  --   branch = 'dev',
+  --   config = function()
+  --     require('wiki')
+  --   end
+  -- }
   use 'tbabej/taskwiki'
   use 'saltstack/salt-vim'
   use 'jparise/vim-graphql'
@@ -37,7 +37,7 @@ packer.startup(function()
   -- CORE PLUGINS
   use {
     'nvim-treesitter/nvim-treesitter',
-    requires = { 'nvim-treesitter/nvim-treesitter-textobjects' },
+    requires = { 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/playground' },
     config = function() require("tree-sitter") end
   }
   use 'yuttie/comfortable-motion.vim'

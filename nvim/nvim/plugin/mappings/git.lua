@@ -1,5 +1,9 @@
-local telescope = require('telescope.builtin')
-local Job = require('plenary.job')
+local has_telescope, telescope = pcall(require, 'telescope.builtin')
+local has_plenary, Job = pcall(require, 'plenary.job')
+
+if not has_telescope or not has_plenary then
+  return
+end
 
 -- Gets the default branch for the current repository
 -- `git default-branch` is a git alias

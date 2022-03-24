@@ -1,4 +1,8 @@
-local telescope = require('telescope.builtin')
+local has_telescope, telescope = pcall(require, 'telescope.builtin')
+
+if not has_telescope then
+  return
+end
 
 local all_buffers = function()
   return telescope.buffers({ show_all_buffers = true })

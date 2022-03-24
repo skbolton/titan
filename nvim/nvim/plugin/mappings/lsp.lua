@@ -29,8 +29,8 @@ local goto_diagnostic = function(dir)
   end
 end
 
-vim.keymap.set('n', '<leader>ld', vim.lsp.buf.definition)
-vim.keymap.set('n', '<leader>lD', definition_in_split)
+vim.keymap.set('n', '<CR>', vim.lsp.buf.definition)
+vim.keymap.set('n', '<CR><CR>', definition_in_split)
 vim.keymap.set('n', '<leader>ls', vim.lsp.buf.signature_help )
 vim.keymap.set('n', '<leader>lh', vim.lsp.buf.hover)
 vim.keymap.set('n', '<leader>lf', vim.lsp.buf.formatting_sync)

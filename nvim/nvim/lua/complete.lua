@@ -49,14 +49,11 @@ cmp.setup {
     fields = {"kind", "abbr"},
     format = function(entry, vim_item)
       -- Kind icons
-      vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
-      -- Source
-      vim_item.menu = ({
-        buffer = "[Buffer]",
-        nvim_lsp = "[LSP]",
-        vsnip = "[VSnip]",
-        nvim_lua = "[Lua]"
-      })[entry.source.name]
+      if entry.source.name == 'vim-dadbod-completion' then
+        vim_item.kind = "ﰩ"
+      else
+        vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
+      end
       return vim_item
     end
   },
@@ -101,8 +98,21 @@ cmp.setup {
   }
 }
 
+cmp.setup.filetype('plsql', {
+  sources = cmp.config.sources({
+    { name = 'vim-dadbod-completion' },
+    { name = 'buffer' }
+  })
+})
+
+cmp.setup.filetype('sql', {
+  sources = cmp.config.sources({
+    { name = 'vim-dadbod-completion' },
+    { name = 'buffer' }
+  })
+})
+
 vim.cmd("hi link CmpItemMenu Comment")
 vim.cmd("hi CmpItemAbbrMatch guifg=#CBE3E7 guibg=#2D2B40")
 vim.cmd("hi link CmpItemKindDefault Identifier")
 
-vim.cmd("autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })")

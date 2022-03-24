@@ -19,6 +19,7 @@ nvim_lsp.elixirls.setup{
   }
 }
 
+nvim_lsp.gopls.setup {}
 
 -- ZK configuration
 -- add configuration to lspconfig

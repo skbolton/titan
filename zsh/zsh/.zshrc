@@ -157,7 +157,7 @@ if [ $(command -v "fzf") ]; then
   source /usr/share/fzf/key-bindings.zsh
 fi
 
-autoload -Uz titan
+autoload -Uz titan-call
 
 #######################################################################
 # FUNCTIONS

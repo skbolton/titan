@@ -1,6 +1,6 @@
 #!/bin/sh
 
-titan() {
+titan-call() {
   # if passed no args then fuzzy search a state to run
   if [ -z "$1" ]; then
     ls /srv/titan | sk | xargs basename -s ".sls" | xargs sudo salt-call state.apply

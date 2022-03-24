@@ -1,1 +1,1 @@
-nmap <buffer> <leader>ld <Plug>(DBUI_JumpToForeignKey)
+nmap <buffer> <CR> <Plug>(DBUI_JumpToForeignKey)

@@ -35,7 +35,7 @@ local capabilities = cmp_lsp.update_capabilities(vim.lsp.protocol.make_client_ca
 local attach_mappings = function(client, bufnr)
   local opts = { buffer = bufnr }
   vim.keymap.set('n', '<CR>', vim.lsp.buf.definition, opts)
-  vim.keymap.set('n', '<CR><CR>', definition_in_split, opts)
+  vim.keymap.set('n', '<leader><CR>', definition_in_split, opts)
   vim.keymap.set('n', '<leader>ls', vim.lsp.buf.signature_help, opts)
   vim.keymap.set('n', '<leader>lh', vim.lsp.buf.hover, opts)
   vim.keymap.set('n', '<leader>lf', vim.lsp.buf.formatting_sync, opts)

@@ -4,10 +4,6 @@ if not has_telescope then
   return
 end
 
-local all_buffers = function()
-  return telescope.buffers({ show_all_buffers = true })
-end
-
 vim.keymap.set('n', '<leader>\\', '<CMD>NnnExplorer<CR>')
 vim.keymap.set('n', '<leader><BAR>', '<CMD>NnnPicker %:p<CR>')
 vim.keymap.set('n', '<leader>/', ':silent grep ', { silent = false })

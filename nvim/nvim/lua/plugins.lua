@@ -127,6 +127,9 @@ packer.startup(function()
           find_files = {
             find_command = {'rg', '--files', '--hidden', '-g', '!.git'},
             theme = "ivy"
+          },
+          buffers = {
+            show_all_buffers = true
           }
       }
     }

@@ -144,7 +144,6 @@ packer.startup(function()
           },
           prompt_prefix = '  ',
           sorting_strategy = 'ascending',
-          preview = false
         },
         pickers = {
           find_files = {

@@ -77,8 +77,6 @@ packer.startup(function()
     end
   }
   use {'liuchengxu/vista.vim', cmd = 'Vista'}
-  use 'lotabout/skim'
-  use 'lotabout/skim.vim'
   -- Status and UI
   use {
     'luukvbaal/nnn.nvim',

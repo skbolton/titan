@@ -46,7 +46,7 @@ local attach_mappings = function(client, bufnr)
   vim.keymap.set('n', '<leader>li', vim.lsp.diagnostic.set_loclist, opts)
   vim.keymap.set('n', '<leader>lO', '<CMD>Vista<CR>', opts)
   vim.keymap.set('n', '<leader>l?', '<CMD>LspInfo<CR>', opts)
-  vim.keymap.set('n', '<leader>lr', '<CMD>:LspRestart<CR>', opts)
+  vim.keymap.set('n', '<leader>lr', '<CMD>LspRestart<CR>', opts)
 end
 
 for _, language_server in pairs({ elixir, zk, go, beancount }) do

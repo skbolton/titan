@@ -22,15 +22,15 @@ git clone https://github.com/skbolton/titan /srv/titan
 
 ## Running
 
-The `--config=/srv/titan` option below can be avoided by symlinking the `minion` file in titan to `/etc/salt/minion/` which is the default location salt stack looks for minion configuration.
+Drop the `titan.conf` file in this repo into the `/etc/salt/minion.d/` directory to configure the minion.
 
 Get just the nvim state
 ```
-$ sudo salt-call --config=/srv/titan state.sls nvim
+$ sudo salt-call state.sls nvim
 ```
 
 To apply what salt stack calls the highstate (all the states).
 ```
-$ sudo salt-call --config=/srv/titan state.apply
+$ sudo salt-call state.apply
 ```
 

@@ -71,11 +71,12 @@ packer.startup(function()
     config = function() require('lsp') end,
   }
   use {
-    'dense-analysis/ale',
+    'skbolton/nvim-lint',
     config = function()
-      require('formatting')
+      require('linting')
     end
   }
+
   use {'liuchengxu/vista.vim', cmd = 'Vista'}
   -- Status and UI
   use {

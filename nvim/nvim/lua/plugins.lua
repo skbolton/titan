@@ -58,26 +58,6 @@ packer.startup(function()
       vim.g.tmux_navigator_disable_when_zoomed = true
     end
   }
-  use {
-    'folke/todo-comments.nvim',
-    config = function()
-      require'todo-comments'.setup{
-        signs = true,
-        keywords = {
-          TASK = {icon = " ", color = "purple"},
-          IDEA = {icon = ' ', color = "green"},
-          TODO = {icon = " ", color = "yellow"},
-          FIX = {icon = " ", color = "red"}
-        },
-        colors = {
-          purple = "Type",
-          green = "PreProc",
-          yellow = "TODO",
-          red = "Keyword"
-        }
-      }
-    end
-  }
   -- Fixers, completion and navigation
   use {
     'hrsh7th/nvim-cmp',

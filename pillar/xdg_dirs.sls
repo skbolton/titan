@@ -3,7 +3,7 @@ xdg_data_home: /home/{{ grains['user'] }}/.local/share
 xdg_cache_home: /home/{{ grains['user'] }}/.cache
 xdg_desktop_dir: /home/{{ grains['user'] }}/Desktop
 xdg_documents_dir: /home/{{ grains['user'] }}/Documents
-xdg_download_dir: /home/{{ grains['user'] }}/Downloads
+xdg_download_dir: /home/{{ grains['user'] }}/Desktop
 xdg_music_dir: /home/{{ grains['user'] }}/Music
 xdg_pictures_dir: /home/{{ grains['user'] }}/Pictures
 xdg_publicshare_dir: /home/{{ grains['user'] }}/Public

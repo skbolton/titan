@@ -9,6 +9,11 @@ lightdm-started:
     - require:
       - pkg: lightdm
 
+lightdm-config:
+  file.managed:
+    - name: /etc/lightdm/lightdm.conf
+    - source: salt://display-manager/lightdm.conf
+
 lightdm-greeter:
   cmd.run:
     - name: paru -S lightdm-webkit2-greeter --noconfirm --skipreview

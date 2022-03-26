@@ -147,7 +147,6 @@ packer.startup(function()
     end
   }
   use 'ggandor/lightspeed.nvim'
-  use 'kana/vim-textobj-user'
   -- ===================================================================
 
   -- THEMES
@@ -173,8 +172,6 @@ packer.startup(function()
   use {'mattn/emmet-vim', ft = {'svelte', 'html', 'elixir', 'javascript'}}
   use {'MaxMEllon/vim-jsx-pretty', ft = 'javascript'}
   use {'heavenshell/vim-jsdoc', ft = 'javascript'}
-  -- Elixir
-  use {'andyl/vim-textobj-elixir', ft = 'elixir'}
 end)
 
 vim.cmd("autocmd BufWritePost plugins.lua PackerCompile")

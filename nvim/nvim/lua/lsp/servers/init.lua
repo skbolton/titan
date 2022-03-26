@@ -1,6 +1,8 @@
-local nvim_lsp = require'lspconfig'
-local configs = require'lspconfig/configs'
-local cmp_lsp = require('cmp_nvim_lsp')
+local cmp_lsp = require 'cmp_nvim_lsp'
+local elixir = require 'lsp.servers.elixir'
+local zk = require 'lsp.servers.zk'
+local go = require 'lsp.servers.go'
+local beancount = require 'lsp.servers.beancount'
 
 local lsp = vim.lsp
 
@@ -30,7 +32,7 @@ end
 -- enable snippets and completion goodnes
 local capabilities = cmp_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-local on_attach = function(client, bufnr)
+local attach_mappings = function(client, bufnr)
   local opts = { buffer = bufnr }
   vim.keymap.set('n', '<CR>', vim.lsp.buf.definition, opts)
   vim.keymap.set('n', '<CR><CR>', definition_in_split, opts)
@@ -47,49 +49,6 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>lr', '<CMD>:LspRestart<CR>', opts)
 end
 
--- LSP SERVER CONFIGURATION
--- ===================================================================
-nvim_lsp.elixirls.setup{
-  capabilities = capabilities,
-  on_attach = on_attach,
-  cmd = {
-    vim.loop.os_homedir() .. "/.local/share/elixir-ls/rel/language_server.sh"
-  };
-  settings = {
-    elixirLS = {
-      dialyzerEnabled = true;
-    }
-  }
-}
-
-nvim_lsp.gopls.setup {}
-
--- ZK configuration
--- add configuration to lspconfig
-configs.zk = {
-  default_config = {
-    cmd = {'zk', 'lsp'},
-    filetypes = {'markdown'},
-    root_dir = function()
-      return vim.loop.cwd()
-    end,
-    settings = {}
-  };
-}
-
--- ZK
-nvim_lsp.zk.setup{
-  capabilities = capabilities
-}
-
--- beancount
-nvim_lsp.beancount.setup {
-  cmd = {
-    'beancount-langserver',
-    '--stdio'
-  },
-  init_options = {
-    journalFile = "/home/orlando/Documents/Delta/journal.beancount",
-    pythonPath = "python3"
-  }
-}
+for _, language_server in pairs({ elixir, zk, go, beancount }) do
+  language_server.init(capabilities, attach_mappings)
+end

@@ -55,6 +55,10 @@ function! ColorScheme()
     packadd embark
     let g:embark_terminal_italics = 1
     colorscheme embark
+    hi link TSLiteral PreProc
+    hi link TSTextReference Constant
+    hi link TSTitle Identifier
+    hi link TSURI Comment
 
     execute "silent ! kitty @ --to=tcp:localhost:12345 set-colors --all ~/.config/kitty/embark.conf"
     execute "silent ! tmux source-file ~/titan/tmux/embark.tmux"

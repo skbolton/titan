@@ -34,6 +34,8 @@ local capabilities = cmp_lsp.update_capabilities(vim.lsp.protocol.make_client_ca
 
 local attach_mappings = function(client, bufnr)
   local opts = { buffer = bufnr }
+  vim.api.nvim_create_autocmd('BufWritePre', { buffer = bufnr, callback = lsp.buf.formatting_seq_sync })
+
   vim.keymap.set('n', '<CR>', vim.lsp.buf.definition, opts)
   vim.keymap.set('n', '<leader><CR>', definition_in_split, opts)
   vim.keymap.set('n', '<leader>ls', vim.lsp.buf.signature_help, opts)

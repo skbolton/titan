@@ -41,10 +41,11 @@ gls.left[1] = {
       return file.get_file_icon()
     end,
     provider = function()
-      if condition.buffer_not_empty() then
-        return  file.get_current_file_name() .. ' '
-      else
+      local name = file.get_current_file_name()
+      if name == '' then
         return 'SCRATCH '
+      else
+        return name .. ' '
       end
     end,
     highlight = { colors.fg_dark, "#19172C" },

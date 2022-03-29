@@ -33,6 +33,7 @@
 
 [core]
         editor = nvim
+        commentChar = ";"
         excludesFile = ~/.config/git/gitignore
 
 [blame]

@@ -47,6 +47,7 @@
 [commit]
         verbose = true
         gpgsign = true
+        template = ~/.config/git/commit-template
 
 [status]
         showUntrackedFiles = all

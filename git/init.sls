@@ -11,6 +11,12 @@ gitignore:
     - source: salt://git/gitignore
     - user: {{ grains['user'] }}
 
+commit-template:
+  file.managed:
+    - name: {{ pillar['xdg_config_home'] }}/git/commit-template
+    - source: salt://git/commit-template
+    - user: {{ grains['user'] }}
+
 git-branches:
   file.managed:
     - name: /home/{{ grains['user'] }}/.local/bin/git-branches

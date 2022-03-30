@@ -8,6 +8,11 @@ kitty-icon:
     - pattern: Icon=.*
     - repl: Icon=/srv/titan/kitty/kitty-dark.png
 
+kitty-client-icon:
+  file.managed:
+    - name: /usr/lib/kitty/logo/kitty-128.png
+    - source: salt://kitty/kitty-light.png
+
 configs:
   file.recurse:
     - name: {{ pillar['xdg_config_home'] }}/kitty

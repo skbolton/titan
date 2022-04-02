@@ -11,6 +11,7 @@ base:
     - asdf
     - awesome
     - bspwm
+    - calendar
     - cli-utils
     - cloud
     - direnv

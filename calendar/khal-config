@@ -1,0 +1,31 @@
+[default]
+  highlight_event_days = true
+
+[view]
+  agenda_event_format = {calendar-color}{cancelled}{start-end-time-style} {title}{repeat-symbol}{reset}
+
+[calendars]
+  [[BOTM]]
+    path = {{ pillar['xdg_data_home'] }}/vdirsyncer/cals/{{ botm_root }}
+    color = light magenta
+
+  [[BOTM-CHAR]]
+    path = {{ pillar['xdg_data_home'] }}/vdirsyncer/cals/{{ botm_character }}
+    color = yellow
+
+  [[BOTM-HYG]]
+    path = {{ pillar['xdg_data_home'] }}/vdirsyncer/cals/{{ botm_hygiene }}
+    color = light cyan
+
+  [[BOTM-HEA]]
+    path = {{ pillar['xdg_data_home'] }}/vdirsyncer/cals/{{ botm_health }}
+    color = light green
+
+  [[GENESIS]]
+    path = {{ pillar['xdg_data_home'] }}/vdirsyncer/cals/{{ botm_genesis }}
+    color = light blue
+
+  [[GENESIS-TEAM]]
+    path = {{ pillar['xdg_data_home'] }}/vdirsyncer/cals/{{ botm_genesis_team}}
+    color = yellow
+

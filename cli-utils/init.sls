@@ -1,3 +1,6 @@
+include:
+  - flatpak
+
 flameshot:
   pkg.installed
 
@@ -47,10 +50,7 @@ figlet:
 
 synology-drive:
   cmd.run:
-    - names:
-      - paru -S synology-drive --noconfirm --skipreview
-    - runas: {{ grains['user'] }}
-    - unless: paru -Qi synology-drive
+    - name: flatpak install -y flathub com.synology.SynologyDrive
 
 remind: pkg.installed
   

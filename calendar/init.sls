@@ -16,6 +16,13 @@ vdirsyncer-config:
     - makedirs: True
     - template: jinja
 
+vdirsyncer-user-service:
+  file.symlink:
+    - name: {{ pillar['xdg_config_home'] }}/systemd/user/timers.target.wants/vdirsyncer.timer
+    - target: /usr/lib/systemd/user/vdirsyncer.timer
+    - user: {{ grains['user'] }}
+    - makedirs: true
+
 khal: pkg.installed
 
 khal-config:

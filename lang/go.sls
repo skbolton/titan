@@ -9,6 +9,5 @@ go-pls:
     - name: go install golang.org/x/tools/gopls@latest
     - runas: orlando
     - env:
-      - GO_PATH: {{ pillar['go_path'] }}
-
+      - GOPATH: {{ pillar['go_path'] }}
 

@@ -47,14 +47,21 @@ cmp.setup {
     end
   },
   formatting = {
-    fields = {"kind", "abbr"},
+    fields = {"kind", "abbr", "menu"},
     format = function(entry, vim_item)
       -- Kind icons
       if entry.source.name == 'vim-dadbod-completion' then
         vim_item.kind = "ﰩ"
       else
-        vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
+        vim_item.kind = kind_icons[vim_item.kind]
       end
+      vim_item.menu = ({
+        buffer = "[Buffer]",
+        nvim_lsp = "[LSP]",
+        luasnip = "[LuaSnip]",
+        nvim_lua = "[Lua]",
+        path = "[Path]"
+      })[entry.source.name]
       return vim_item
     end
   },

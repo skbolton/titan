@@ -55,7 +55,7 @@ Expunge None
 # Genesis Block Network Account
 IMAPAccount genesis
 HOST imap.gmail.com
-User "stephen@genesisblock.com"
+User "stephen@hightop.com"
 PassCmd "pass show GenesisBlock/GMail/mbsync@{{grains["host"]}}"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
@@ -76,7 +76,7 @@ Channel genesis-inbox
 Near :genesis-local:
 Far :genesis-remote:
 Create Near
-Patterns "Inbox"
+Patterns "INBOX"
 
 Channel genesis-drafts
 Near :genesis-local:Drafts
@@ -103,13 +103,6 @@ Near :genesis-local:Spam
 Far :genesis-remote:"[Gmail]/Spam"
 Create Near
 
-Channel genesis-custom-labels
-Near :genesis-local:
-Far :genesis-remote:
-Create Both
-Patterns * !Inbox ![Gmail]/*
-
-
 # Group all the genesis channels together
 Group genesis-block
 Channel genesis-inbox
@@ -118,4 +111,3 @@ Channel genesis-archive
 Channel genesis-sent
 Channel genesis-trash
 Channel genesis-spam
-Channel genesis-custom-labels

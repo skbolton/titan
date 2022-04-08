@@ -8,7 +8,6 @@
 
 vim.cmd [[packadd packer.nvim]]
 
-
 local packer = require('packer')
 packer.startup(function()
   use {'wbthomason/packer.nvim', opt = true}
@@ -17,13 +16,13 @@ packer.startup(function()
   -- FILETYPE PLUGINS
   use 'elixir-editors/vim-elixir'
   use 'lfe-support/vim-lfe'
-  -- use {
-  --   'vimwiki/vimwiki',
-  --   branch = 'dev',
-  --   config = function()
-  --     require('wiki')
-  --   end
-  -- }
+  use {
+    'vimwiki/vimwiki',
+    branch = 'dev',
+    config = function()
+      require('wiki')
+    end
+  }
   use 'tbabej/taskwiki'
   use 'saltstack/salt-vim'
   use 'jparise/vim-graphql'

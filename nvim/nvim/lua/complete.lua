@@ -122,7 +122,3 @@ cmp.setup.filetype('sql', {
   })
 })
 
-vim.cmd("hi link CmpItemMenu Comment")
-vim.cmd("hi CmpItemAbbrMatch guifg=#CBE3E7 guibg=#2D2B40")
-vim.cmd("hi link CmpItemKindDefault Identifier")
-

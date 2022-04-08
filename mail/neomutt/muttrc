@@ -1,0 +1,10 @@
+source ~/.config/neomutt/settings
+source ~/.config/neomutt/colors
+source ~/.config/neomutt/mappings
+
+# Accounts
+source ~/.config/neomutt/accounts/work
+folder-hook $folder 'source ~/.config/neomutt/accounts/work'
+
+source ~/.config/neomutt/accounts/botm
+folder-hook $folder 'source ~/.config/neomutt/accounts/botm'

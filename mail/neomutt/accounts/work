@@ -1,0 +1,13 @@
+# vim: ft=muttrc
+set from = "stephen@hightop.com"
+set smtp_user = "stephen@hightop.com"
+set smtp_pass = "`pass show GenesisBlock/GMail/mbsync@prodigy`"
+set smtp_url = "smtps://$smtp_user:$smtp_pass@smtp.gmail.com:465"
+
+set folder = "~/.local/share/Mail/GB/"
+set spoolfile = +Inbox 
+set postponed = +Drafts
+unset record
+set trash = +Trash
+
+mailboxes =Inbox =Sent =Trash =Drafts =Archive

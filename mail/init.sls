@@ -21,6 +21,16 @@ mu:
     - runas: {{ grains['user'] }}
     - unless: paru -Qi mu
 
+notmuch: pkg.installed
+
+neomutt: pkg.installed
+
+neomutt-config:
+  file.recurse:
+    - name: {{ pillar['xdg_config_home'] }}/neomutt
+    - source: salt://mail/neomutt
+    - user: {{ grains['user'] }}
+
 maildirs:
   file.directory:
     - names:

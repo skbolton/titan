@@ -1,0 +1,18 @@
+# vim: ft=muttrc
+set editor = "nvim"
+set sidebar_visible = no
+set sidebar_new_mail_only = no
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set sidebar_short_path
+
+set reply_to
+
+set header_cache = "~/.cache/mutt"
+set message_cachedir = "~/.cache/mutt"
+set mbox_type = Maildir
+
+set mail_check_stats
+set sort = reverse-date
+
+
+set real_name = "Stephen Bolton"

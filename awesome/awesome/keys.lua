@@ -329,6 +329,12 @@ local clientkeys = gears.table.join(
       end,
       {description = "Move client to other screen", group = "client"}
     ),
+    awful.key({ super }, "t",
+      function (c)
+        c.floating = not c.floating
+      end,
+      {description = "toggle floating", group = "client"}
+    ),
     awful.key({ super }, "f",
       function (c)
           c.fullscreen = not c.fullscreen

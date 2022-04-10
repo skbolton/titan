@@ -26,7 +26,9 @@ local read_default_branch = function()
   return vim.api.nvim_command("Gread origin/" .. get_default_branch() .. ":%")
 end
 
-vim.keymap.set('n', '<leader>G', '<CMD>G<CR>')
+vim.keymap.set('n', '<leader>gg', '<CMD>G<CR>')
+vim.keymap.set('n', '<leader>go', '<CMD>Git difftool --name-only<CR>')
+vim.keymap.set('n', '<leader>gO', '<CMD>Git difftool<CR>')
 vim.keymap.set('n', '<leader>gf', telescope.git_status)
 vim.keymap.set('n', '<leader>gB', telescope.git_branches)
 vim.keymap.set('n', '<leader>gd', '<CMD>Gdiff<CR>')

@@ -335,6 +335,12 @@ local clientkeys = gears.table.join(
       end,
       {description = "toggle floating", group = "client"}
     ),
+    awful.key({ super }, "s",
+      function (c)
+        c.sticky = not c.sticky
+      end,
+      {description = "toggle sticky", group = "client"}
+    ),
     awful.key({ super }, "f",
       function (c)
           c.fullscreen = not c.fullscreen

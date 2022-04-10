@@ -230,54 +230,54 @@ local globalkeys = gears.table.join(
       {description = "delta picker", group = "launcher"}
     ),
     -- Scratchpads
-    awful.key({ alt }, "/",
+    awful.key({ alt, shift}, "8",
       function ()
         scratchpad.bench:toggle()
       end,
-      {description = "show bench", group = "scratchpads"}
+      {description = "show bench ALT(*)", group = "scratchpads"}
     ),
     -- show terminal scratch alt + >
     awful.key({ alt, shift }, ".",
       function ()
         scratchpad.terminal:toggle()
       end,
-      {description = "show terminal", group = "scratchpads"}
+      {description = "show terminal ALT(>)", group = "scratchpads"}
     ),
-    awful.key({ alt }, ";",
+    awful.key({ alt, shift }, ";",
       function ()
         scratchpad.monitor:toggle()
       end,
-      {description = "show sys monitor", group = "scratchpads"}
+      {description = "show sys monitor ALT(;)", group = "scratchpads"}
     ),
-    awful.key({ alt }, "q",
+    awful.key({ alt, shift }, "6",
       function ()
         scratchpad.quest:toggle()
       end,
-      {description = "show quest", group = "scratchpads"}
+      {description = "show quest ALT(^)", group = "scratchpads"}
     ),
-    awful.key({ alt }, "t",
+    awful.key({ alt, shift }, "5",
       function ()
         scratchpad.task:toggle()
       end,
-      {description = "launch task scratchpad", group = "scratchpads"}
+      {description = "launch tasks ALT(%)", group = "scratchpads"}
     ),
     awful.key({ alt, shift}, "2",
       function ()
         scratchpad.cal:toggle()
       end,
-      {description = "launch calendar scratchpad", group = "scratchpads"}
+      {description = "show calendar ALT(@)", group = "scratchpads"}
     ),
-    awful.key({ alt }, "'",
+    awful.key({ alt, shift }, "3",
       function ()
         scratchpad.ticket:toggle()
       end,
-      {description = "launch ticket scratchpad", group = "scratchpads"}
+      {description = "show ticket ALT(#)", group = "scratchpads"}
     ),
     awful.key({ alt, shift }, "4",
       function ()
         scratchpad.finance:toggle()
       end,
-      {description = "show finance pad", group = "scratchpads"}
+      {description = "show finance pad ALT($)", group = "scratchpads"}
     ),
     awful.key({ alt }, "p",
       function ()

@@ -261,6 +261,12 @@ local globalkeys = gears.table.join(
       end,
       {description = "launch task scratchpad", group = "scratchpads"}
     ),
+    awful.key({ alt, shift}, "2",
+      function ()
+        scratchpad.cal:toggle()
+      end,
+      {description = "launch calendar scratchpad", group = "scratchpads"}
+    ),
     awful.key({ alt }, "'",
       function ()
         scratchpad.ticket:toggle()

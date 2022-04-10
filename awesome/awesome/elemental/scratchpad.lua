@@ -177,6 +177,28 @@ local task_scratch = function(screen_geometry)
   }
 end
 
+local cal_scratch = function(screen_geometry)
+  local width = math.min(screen_geometry.width / 3, 1400)
+  local height = screen_geometry.height * 0.90
+  local x = (screen_geometry.width - width - 20) + screen_geometry.x
+  local y = (screen_geometry.height - height) / 2
+
+  return bling.module.scratchpad:new{
+      command = "kitty --class kitty-cal ikhal",
+      rule = {class = "kitty-cal"},
+      sticky = false,
+      autoclose = false,
+      floating = true,
+      geometry = {x = x, y = y, height = height, width = width},
+      reapply = true,
+      rubato = {
+        x = rubato_with_defaults {
+          pos = screen_geometry.width + width + screen_geometry.x
+        }
+      }
+  }
+end
+
 local ticket_scratch = function(screen_geometry)
   local width = math.max(screen_geometry.width / 3, 1200)
   local height = screen_geometry.height * 0.90
@@ -209,6 +231,7 @@ _M.init = function()
       quest = quest_scratch,
       password = password_scratch,
       task = task_scratch,
+      cal = cal_scratch,
       finance = finance_scratch,
       ticket = ticket_scratch
     }

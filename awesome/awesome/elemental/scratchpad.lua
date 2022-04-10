@@ -22,7 +22,7 @@ end
 local terminal_scratch = function(screen_geometry)
   -- clamp the width and height to always fit on screen
   local width = math.min(screen_geometry.width * 0.90, 2400)
-  local height = math.min(600, screen_geometry.height - 20)
+  local height = math.min(800, screen_geometry.height - 20)
   local x = (screen_geometry.width - width) / 2
 
   return bling.module.scratchpad:new {

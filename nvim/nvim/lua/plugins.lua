@@ -70,7 +70,7 @@ packer.startup(function()
     config = function() require('lsp') end,
   }
   use {
-    'skbolton/nvim-lint',
+    'mfussenegger/nvim-lint',
     config = function()
       require('linting')
     end

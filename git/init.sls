@@ -31,10 +31,18 @@ git-default-branch:
     - mode: keep
     - user: {{ grains['user'] }}
 
+github-cli: pkg.installed
 
-github-cli:
+github-cli-dash:
   cmd.run:
-    - name: paru -S github-cli --noconfirm --skipreview
+    - name: gh extension install dlvhdr/gh-dash
     - runas: {{ grains['user'] }}
-    - unless: paru -Qi github-cli
+    - unless: gh dash --help
+    - require:
+      - pkg: github-cli
+  file.managed:
+    - name: {{ pillar['xdg_config_home'] }}/gh-dash/config.yml
+    - source: salt://git/gh-dash.config.yml
+    - makedirs: True
+    - user: {{ grains['user'] }}
 

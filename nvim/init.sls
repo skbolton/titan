@@ -5,15 +5,9 @@ include:
   - tmux
   - taskwarrior
 
-# nvim:
-#   pkg.installed:
-#     - name: neovim
-
 nvim:
-  cmd.run:
-    - name: paru -S neovim-git --noconfirm --skipreview --useask
-    - unless: paru -Qi neovim-git
-    - runas: {{ grains['user'] }}
+  pkg.installed:
+    - name: neovim
 
 nvim-python:
   pip.installed: 

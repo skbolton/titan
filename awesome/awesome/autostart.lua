@@ -7,6 +7,7 @@ awful.spawn.once("picom --experimental-backends")
 awful.spawn.once("flatpak run com.synology.SynologyDrive")
 awful.spawn.once("playerctld daemon")
 awful.spawn.once("nm-applet --no-agent")
+awful.spawn.once("blueman-applet")
 
 -- GUIS
 awful.spawn.once("mailspring")

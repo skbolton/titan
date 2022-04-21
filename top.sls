@@ -5,6 +5,7 @@ base:
     - xorg.monitors
     - display-manager
     - audio
+    - bluetooth
     - user-dirs
     - networking
     - scanner

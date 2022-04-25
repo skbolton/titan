@@ -10,7 +10,7 @@ password.fetch = ["command", "pass", "show", "fastmail.com/caldav@{{ grains["hos
 
 [storage BOTM_cal_local]
 type = "filesystem"
-path = "{{ pillar['xdg_data_home'] }}/vdirsyncer/cals"
+path = "/home/{{ grains['user'] }}/Calendar"
 fileext = ".ics"
 
 [pair BOTM_cal]

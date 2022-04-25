@@ -6,26 +6,26 @@
 
 [calendars]
   [[BOTM]]
-    path = {{ pillar['xdg_data_home'] }}/vdirsyncer/cals/{{ botm_root }}
+    path = /home/{{ grains['user'] }}/Calendar/{{ botm_root }}
     color = light magenta
 
   [[BOTM-CHAR]]
-    path = {{ pillar['xdg_data_home'] }}/vdirsyncer/cals/{{ botm_character }}
+    path = /home/{{ grains['user'] }}/Calendar/{{ botm_character }}
     color = yellow
 
   [[BOTM-HYG]]
-    path = {{ pillar['xdg_data_home'] }}/vdirsyncer/cals/{{ botm_hygiene }}
+    path = /home/{{ grains['user'] }}/Calendar/{{ botm_hygiene }}
     color = light cyan
 
   [[BOTM-HEA]]
-    path = {{ pillar['xdg_data_home'] }}/vdirsyncer/cals/{{ botm_health }}
+    path = /home/{{ grains['user'] }}/Calendar/{{ botm_health }}
     color = light green
 
   [[GENESIS]]
-    path = {{ pillar['xdg_data_home'] }}/vdirsyncer/cals/{{ botm_genesis }}
+    path = /home/{{ grains['user'] }}/Calendar/{{ botm_genesis }}
     color = light blue
 
   [[GENESIS-TEAM]]
-    path = {{ pillar['xdg_data_home'] }}/vdirsyncer/cals/{{ botm_genesis_team}}
+    path = /home/{{ grains['user'] }}/Calendar/{{ botm_genesis_team }}
     color = yellow
 

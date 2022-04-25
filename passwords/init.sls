@@ -2,7 +2,7 @@ pass: pkg.installed
 
 passstore:
   git.cloned:
-    - name: https://github.com/skbolton/password-store.git
+    - name: git@github.com:skbolton/password-store.git
     - target: {{ pillar['xdg_data_home'] }}/password-store
     - user: {{ grains['user'] }}
     - require:

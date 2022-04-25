@@ -4,7 +4,7 @@ set smtp_user = "stephen@bitsonthemind.com"
 set smtp_pass = "`pass show fastmail.com/mbsync@prodigy`"
 set smtp_url = "smtps://$smtp_user:$smtp_pass@smtp.fastmail.com:465"
 
-set folder = "~/.local/share/Mail/BOTM/"
+set folder = "~/Mail/BOTM/"
 set spoolfile = "+Inbox"
 set postponed = "+Drafts"
 set record = "+Sent"

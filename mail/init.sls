@@ -34,7 +34,7 @@ neomutt-config:
 maildirs:
   file.directory:
     - names:
-      - {{ pillar['xdg_data_home'] }}/Mail/GB
-      - {{ pillar['xdg_data_home'] }}/Mail/BOTM
+      - /home/{{ grains['user'] }}/Mail/GB
+      - /home/{{ grains['user'] }}/Mail/BOTM
     - user: {{ grains['user'] }}
 

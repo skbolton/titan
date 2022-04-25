@@ -35,8 +35,8 @@ MailDirStore botm-local
 # Suggested by Manual pages - follow folder layout exactly on sync
 Subfolders Verbatim
 # Where this store exists
-Path ~/.local/share/Mail/BOTM/
-Inbox ~/.local/share/Mail/BOTM/Inbox
+Path ~/Mail/BOTM/
+Inbox ~/Mail/BOTM/Inbox
 
 # BOTM Channel
 # Since Fastmail labels are pretty straightforward I just 
@@ -67,8 +67,8 @@ Account genesis
 # Genesis Block Local Maildir Store
 MailDirStore genesis-local
 Subfolders Verbatim
-Path ~/.local/share/Mail/GB/
-Inbox ~/.local/share/Mail/GB/Inbox
+Path ~/Mail/GB/
+Inbox ~/Mail/GB/Inbox
 
 # Unlike Fastmail GMail puts their folders in a format that I don't want locally
 # So I make a channel per tag so that I can rename locally

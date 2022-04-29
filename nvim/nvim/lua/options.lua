@@ -84,6 +84,7 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.backup = false
 opt.writebackup = false
 opt.swapfile = false
+opt.shada = ""
 
 if vim.fn.executable("rg") then
   vim.o.grepprg = "rg --vimgrep --hidden -g !.git"

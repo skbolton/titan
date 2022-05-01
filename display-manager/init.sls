@@ -22,10 +22,10 @@ lightdm-greeter:
     - require:
       - pkg: lightdm
 
-lightdm-aether:
+lightdm-osmos:
   cmd.run:
-    - name: paru -S lightdm-webkit-theme-aether --noconfirm --skipreview
-    - unless: paru -Qi lightdm-webkit-theme-aether
+    - name: paru -S lightdm-webkit-theme-osmos --noconfirm --skipreview
+    - unless: paru -Qi lightdm-webkit-theme-osmos
     - runas: {{ grains['user'] }}
     - require:
       - pkg: lightdm

@@ -1,5 +1,5 @@
 configuration {
-  font: "Iosevka SS08 14";
+  font: "Stella 14";
   icon-theme: "Tela";
 }
 

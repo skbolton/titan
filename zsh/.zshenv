@@ -77,7 +77,7 @@ export NNN_FIFO=/tmp/nnn.fifo
 # ZK
 export ZK_NOTEBOOK_DIR="$HOME/Documents/Delta"
 
-export TIMEWARRIORDB="$HOME/Documents/Delta/timewarrior"
+export TIMEWARRIORDB="$HOME/Documents/Delta/trackers/timesheets"
 
 export PATH="$GOPATH/bin:"$HOME"/.local/bin:"$XDG_DATA_HOME"/cargo/bin:"$HOME"/.local/share/gem/ruby/3.0.0/bin:$PATH"
 

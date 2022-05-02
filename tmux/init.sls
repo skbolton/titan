@@ -28,10 +28,17 @@ gruvbox-light-tmux:
     - user: {{ grains['user'] }}
     - makedirs: True
 
-neoline:
+neoline-embark:
   file.managed:
-    - name: {{ tmux_dir }}/neoline.tmux
-    - source: salt://tmux/neoline.tmux
+    - name: {{ tmux_dir }}/neoline-embark.tmux
+    - source: salt://tmux/neoline-embark.tmux
+    - user: {{ grains['user'] }}
+    - makedirs: True
+
+neoline-gruvbox-light:
+  file.managed:
+    - name: {{ tmux_dir }}/neoline-gruvbox-light.tmux
+    - source: salt://tmux/neoline-gruvbox-light.tmux
     - user: {{ grains['user'] }}
     - makedirs: True
 

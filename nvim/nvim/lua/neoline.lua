@@ -6,12 +6,26 @@ local file = require('galaxyline.provider_fileinfo')
 local gls = gl.section
 gl.short_line_list = {'NvimTree','vista_kind','dbui'}
 
-local colors = {
-  bg = "#1e1c31",
+local embark = {
+  bg_0 = "#19172C",
+  bg_1 = "#2D2B40",
+  bg_2 = "#37354A",
   bg_dark = "#100E23",
+  bg = "#1e1c31",
   fg = "#cbe3e7",
   fg_dark = "#8A889D"
 }
+
+local gruvbox_light = {
+  bg_0 = "#7C6F64",
+  bg_1 = "#928374",
+  bg_2 = "#A89984",
+  bg_dark = "#FAF2CF",
+  fg = "#FAF2CF",
+  fg_dark = "#FAF2CF"
+}
+
+local colors = gruvbox_light
 
 -- Read from testing.lua module
 -- and adjust icon and color per testing state
@@ -38,7 +52,7 @@ end
 gls.left[1] = {
   FileName = {
     icon = function()
-      return file.get_file_icon()
+      return '  ' .. file.get_file_icon()
     end,
     provider = function()
       local name = file.get_current_file_name()
@@ -48,9 +62,9 @@ gls.left[1] = {
         return name .. ' '
       end
     end,
-    highlight = { colors.fg_dark, "#19172C" },
+    highlight = { colors.fg_dark, colors.bg_0 },
     separator = '',
-    separator_highlight = {"#19172C", "#2D2B40"}
+    separator_highlight = {colors.bg_0, colors.bg_1}
   }
 }
 
@@ -64,9 +78,9 @@ gls.left[2] = {
       end
     end,
     icon = '  ',
-    highlight = { colors.fg_dark, "#2D2B40" },
+    highlight = { colors.fg_dark, colors.bg_1 },
     separator = '',
-    separator_highlight = {"#2D2B40", "#37354A" }
+    separator_highlight = {colors.bg_1, colors.bg_2 }
   }
 }
 
@@ -80,7 +94,7 @@ gls.left[3] = {
         return '· '
       end
     end,
-    highlight = { colors.fg_dark, "#37354A" }
+    highlight = { colors.fg_dark, colors.bg_2 }
   }
 }
 
@@ -94,7 +108,7 @@ gls.left[4] = {
         return '· '
       end
     end,
-    highlight = { colors.fg_dark, "#37354A" }
+    highlight = { colors.fg_dark, colors.bg_2 }
   }
 }
 
@@ -108,9 +122,9 @@ gls.left[5] = {
         return '· '
       end
     end,
-    highlight = { colors.fg_dark, "#37354A" },
+    highlight = { colors.fg_dark, colors.bg_2 },
     separator = '',
-    separator_highlight = { "#37354A", colors.bg_dark }
+    separator_highlight = { colors.bg_2, colors.bg_dark }
   }
 }
 
@@ -127,9 +141,9 @@ gls.right[1] = {
         return '   '
       end
     end,
-    highlight = { colors.fg_dark, "#37354A" },
+    highlight = { colors.fg_dark, colors.bg_2 },
     separator = '',
-    separator_highlight = { "#37354A", colors.bg_dark }
+    separator_highlight = { colors.bg_2, colors.bg_dark }
   }
 }
 
@@ -146,9 +160,9 @@ gls.right[2] = {
         return '   '
       end
     end,
-    highlight = { colors.fg_dark, "#2D2B40" },
+    highlight = { colors.fg_dark, colors.bg_1 },
     separator = '',
-    separator_highlight = {  "#2D2B40", "#37354A" }
+    separator_highlight = {  colors.bg_1, colors.bg_2 }
   }
 }
 
@@ -159,9 +173,9 @@ gls.right[3] = {
       local col = vim.fn.col('.')
       return ' ' .. line .. ':' .. col .. ' '
     end,
-    highlight = { colors.fg_dark, "#19172C" },
+    highlight = { colors.fg_dark, colors.bg_0 },
     separator = '',
-    separator_highlight = {"#19172C", "#2D2B40"}
+    separator_highlight = {colors.bg_0, colors.bg_1}
   }
 }
 

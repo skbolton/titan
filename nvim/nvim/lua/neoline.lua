@@ -25,7 +25,7 @@ local gruvbox_light = {
   fg_dark = "#FAF2CF"
 }
 
-local colors = gruvbox_light
+local colors = embark
 
 -- Read from testing.lua module
 -- and adjust icon and color per testing state

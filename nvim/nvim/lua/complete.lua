@@ -12,29 +12,29 @@ local feedkey = function(key, mode)
 end
 
 local kind_icons = {
-  Text = ' ',
+  Text = ' ',
   Method = ' ',
-  Function = ' ',
+  Function = '',
   Constructor = ' ',
   Field = ' ',
-  Variable = ' ',
-  Class = ' ',
-  Interface = ' ',
-  Module = ' ',
-  Property = ' ',
-  Unit = '',
-  Value = '',
-  Enum = ' ',
+  Variable = ' ',
+  Class = ' ',
+  Interface = ' ',
+  Module = ' ',
+  Property = ' ',
+  Unit = ' ',
+  Value = ' ',
+  Enum = ' ',
   Keyword = '',
-  Snippet = ' ',
+  Snippet = ' ',
   Color = ' ',
   file = ' ',
   Reference = ' ',
   Folder = ' ',
-  EnumMember = ' ',
+  EnumMember = ' ',
   Constant = ' ',
-  Struct = '',
-  Event = '',
+  Struct = ' ',
+  Event = ' ',
   Operator = '',
   TypeParameter = ''
 }
@@ -111,7 +111,7 @@ cmp.setup {
 cmp.setup.cmdline('/', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
-    { name = 'buffer' }
+    { name = 'buffer', keyword_length = 3 }
   })
 })
 
@@ -120,7 +120,7 @@ cmp.setup.cmdline(':', {
   sources = cmp.config.sources({
     { name = 'path' }
   }, {
-    { name = 'cmdline' }
+    { name = 'cmdline', keyword_length = 3 }
   })
 })
 

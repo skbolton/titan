@@ -40,10 +40,14 @@ require "nvim-treesitter.configs".setup {
       lookbehind = true,
       keymaps = {
         -- You can use the capture groups defined in textobjects.scm
+        ["ic"] = "@comment.inner",
+        ["ac"] = "@comment.outer",
         ["af"] = "@function.outer",
         ["if"] = "@function.inner",
-        ["ac"] = "@class.outer",
-        ["ic"] = "@class.inner",
+        ["am"] = "@class.outer",
+        ["im"] = "@class.inner",
+        ["ib"] = "@block.inner",
+        ["ab"] = "@block.outer"
       }
     },
     move = {

@@ -2,6 +2,7 @@ format = """\
   $jobs\
   $directory\
   $git_branch\
+  $git_status\
   $line_break\
   $character\
 """
@@ -9,7 +10,7 @@ format = """\
 [git_branch]
 symbol = " "
 style = "purple"
-format = "on [$symbol$branch]($style)"
+format = "on [$symbol$branch]($style) "
 
 [directory]
 style = "italic cyan"

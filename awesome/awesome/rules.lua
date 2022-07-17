@@ -62,6 +62,10 @@ awful.rules.rules = {
     },
     properties = { tag = "4" }
   },
+  {
+    rule = { class = "Conky" },
+    properties = { border_width = false }
+  },
   -- Floating clients.
   {
     rule_any = {

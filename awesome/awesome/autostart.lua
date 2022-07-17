@@ -9,6 +9,8 @@ awful.spawn.once("playerctld daemon")
 awful.spawn.once("nm-applet --no-agent")
 awful.spawn.once("blueman-applet")
 
+awful.spawn.with_shell("~/.config/conky/launch.sh")
+
 -- GUIS
 awful.spawn.once("mailspring")
 awful.spawn.once("slack")

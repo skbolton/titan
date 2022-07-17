@@ -1,4 +1,5 @@
 include:
+  - conky
   - lang.lua
   - rofi
   - fonts

@@ -7,6 +7,7 @@ local beautiful = require("beautiful")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local naughty = require("naughty")
+local icons = require("icons")
 
 local selected_colors = {
   beautiful.cyan_dark,
@@ -16,9 +17,6 @@ local selected_colors = {
   beautiful.green,
   beautiful.yellow
 }
-
-local empty_circle = gfs.get_configuration_dir() .. "icons/remix/checkbox-blank-circle-line.svg"
-local filled_circle = gfs.get_configuration_dir() .. "icons/remix/checkbox-blank-circle-fill.svg"
 
 local get_taglist = function(s)
     -- Taglist buttons
@@ -41,11 +39,11 @@ local get_taglist = function(s)
         local imgbox = widget:get_children_by_id('icon_role')[1]
         local icon = tag.icon
         if tag.selected then
-          imgbox.image = gears.color.recolor_image(filled_circle, selected_colors[tag.index])
+          imgbox.image = gears.color.recolor_image(icons.get(tag.name .. '_active'), selected_colors[tag.index])
         elseif #tag:clients() == 0 then
-          imgbox.image = gears.color.recolor_image(icon, beautiful.fg_dark)
+          imgbox.image = gears.color.recolor_image(icons.get(tag.name), beautiful.fg_dark)
         else
-          imgbox.image = gears.color.recolor_image(empty_circle, selected_colors[tag.index])
+          imgbox.image = gears.color.recolor_image(icons.get(tag.name), selected_colors[tag.index])
         end
     end
 

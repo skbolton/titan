@@ -104,6 +104,11 @@ theme.fg_focus = theme.blue
 theme.fg_urgent = theme.yellow
 theme.fg_minimize = theme.bg_dark
 
+theme.tasklist_fg_normal = theme.fg
+theme.tasklist_fg_focus = theme.fg
+theme.tasklist_fg_urgent = theme.yellow
+theme.tasklist_fg_minimize = theme.fg_dark
+
 theme.button_close = theme.red
 
 -- uBorders

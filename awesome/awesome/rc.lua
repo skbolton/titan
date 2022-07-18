@@ -8,6 +8,7 @@
 -- =======================================================
 -- Awesome libs
 local beautiful = require("beautiful")
+local icons = require("icons")
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
@@ -25,16 +26,18 @@ local themes = {
 local theme = themes[1]
 
 local icon_themes = {
-  "remix" -- 1
+  "remix",    -- 1
+  "hero",     -- 2
 }
 -- select icon theme
-local icon = icon_themes[1]
+icons.init(icon_themes[2])
 
 local bar_themes = {
-  "pillbar" -- 1
+  "pillbar", -- 1
+  "vertbar"  -- 2
 }
 -- select bar theme
-local bar = bar_themes[1]
+local bar = bar_themes[2]
 
 -- Initialization
 -- =======================================================
@@ -82,8 +85,8 @@ awful.layout.layouts = {
 awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
     -- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
-    awful.tag.add("1", {
-      icon = gears.filesystem.get_configuration_dir() .. "icons/" .. icon .. "/checkbox-blank-circle-line.svg",
+    awful.tag.add('terminal', {
+      icon = icons.get 'terminal',
       layout = awful.layout.layouts[1],
       master_fill_policy = "expand",
       gap_single_client = true,
@@ -92,8 +95,8 @@ awful.screen.connect_for_each_screen(function(s)
       selected = true
     })
 
-    awful.tag.add("2", {
-      icon = gears.filesystem.get_configuration_dir() .. "icons/" .. icon .. "/checkbox-blank-circle-line.svg",
+    awful.tag.add("browser", {
+      icon = icons.get 'browser',
       layout = awful.layout.layouts[1],
       master_fill_policy = "expand",
       gap_single_client = true,
@@ -102,8 +105,8 @@ awful.screen.connect_for_each_screen(function(s)
       selected = false
     })
 
-    awful.tag.add("3", {
-      icon = gears.filesystem.get_configuration_dir() .. "icons/" .. icon .. "/checkbox-blank-circle-line.svg",
+    awful.tag.add("chat", {
+      icon = icons.get 'chat',
       layout = awful.layout.layouts[1],
       master_fill_policy = "expand",
       gap_single_client = true,
@@ -112,8 +115,8 @@ awful.screen.connect_for_each_screen(function(s)
       selected = false
     })
 
-    awful.tag.add("4", {
-      icon = gears.filesystem.get_configuration_dir() .. "icons/" .. icon .. "/checkbox-blank-circle-line.svg",
+    awful.tag.add("explorer", {
+      icon = icons.get 'explorer',
       layout = awful.layout.layouts[1],
       master_fill_policy = "expand",
       gap_single_client = true,
@@ -122,8 +125,8 @@ awful.screen.connect_for_each_screen(function(s)
       selected = false
     })
 
-    awful.tag.add("5", {
-      icon = gears.filesystem.get_configuration_dir() .. "icons/" .. icon .. "/checkbox-blank-circle-line.svg",
+    awful.tag.add("music", {
+      icon = icons.get 'music',
       layout = awful.layout.layouts[1],
       master_fill_policy = "expand",
       gap_single_client = true,
@@ -132,8 +135,8 @@ awful.screen.connect_for_each_screen(function(s)
       selected = false
     })
 
-    awful.tag.add("6", {
-      icon = gears.filesystem.get_configuration_dir() .. "icons/" .. icon .. "/checkbox-blank-circle-line.svg",
+    awful.tag.add("music", {
+      icon = icons.get 'mail',
       layout = awful.layout.layouts[1],
       master_fill_policy = "expand",
       gap_single_client = true,

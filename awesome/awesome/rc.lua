@@ -135,7 +135,7 @@ awful.screen.connect_for_each_screen(function(s)
       selected = false
     })
 
-    awful.tag.add("music", {
+    awful.tag.add("mail", {
       icon = icons.get 'mail',
       layout = awful.layout.layouts[1],
       master_fill_policy = "expand",

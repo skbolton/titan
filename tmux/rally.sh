@@ -6,6 +6,7 @@ RALLY=rally
 VERSION=0.0.1
 
 TARGET=$(ls -d ~/Public/* ~/* /srv/* ~/Documents/* | sk)
-NAME=$(basename $TARGET | tr [:lower:] [:upper:])
+NAME=$(basename $TARGET)
+SESSION_NAME=$(echo $NAME | tr [:lower:] [:upper:])
 
-tmuxinator start $NAME || tmuxinator start default name=$NAME root=$TARGET
+tmuxinator start $NAME || tmuxinator start default name=$SESSION_NAME root=$TARGET

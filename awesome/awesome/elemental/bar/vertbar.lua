@@ -148,9 +148,34 @@ awful.screen.connect_for_each_screen(function(s)
     {
       {
         {
-          cog,
-          margins = dpi(12),
-          widget = wibox.container.margin
+          {
+            {
+              format = "%I:%M" ,
+              widget = wibox.widget.textclock
+            },
+            left = dpi(5),
+            right = dpi(5),
+            top = dpi(2),
+            bottom = dpi(2),
+            widget = wibox.container.margin
+          },
+          {
+            {
+              format = "%m-%d",
+              widget = wibox.widget.textclock
+            },
+            left = dpi(5),
+            right = dpi(5),
+            top = dpi(2),
+            bottom = dpi(2),
+            widget = wibox.container.margin
+          },
+          {
+            cog,
+            margins = dpi(12),
+            widget = wibox.container.margin
+          },
+          layout = wibox.layout.align.vertical
         },
         {
           me,

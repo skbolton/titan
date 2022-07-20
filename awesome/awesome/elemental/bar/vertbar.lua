@@ -150,7 +150,7 @@ awful.screen.connect_for_each_screen(function(s)
         {
           {
             {
-              format = "%I:%M" ,
+              format = "<span foreground='" .. beautiful.purple .."'>%I:%M</span>" ,
               widget = wibox.widget.textclock
             },
             left = dpi(5),

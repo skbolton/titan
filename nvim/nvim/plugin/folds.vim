@@ -4,4 +4,3 @@ function! MyFoldText()
 endfunction
 
 set foldtext=MyFoldText()
-set fillchars=fold:\ 

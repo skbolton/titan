@@ -12,7 +12,6 @@ export HISTFILE="$XDG_DATA_HOME/zsh/history"
 export HISTSIZE=1000000000
 export HISTFILESIZE=1000000000
 export SAVEHIST=1000000000
-export CDPATH=.:/srv/:/home/orlando/:/home/orlando/Public/:/home/orlando/Documents/:/home/orlando/Documents/Delta/
 
 export EDITOR="nvim"
 export BROWSER="firefox"

@@ -29,7 +29,7 @@ local update_tags = function(widget, tag)
     local icon = tag.icon
     imgbox.image = gears.color.recolor_image(icon, beautiful.fg)
     if tag.selected then
-      imgbox.image = gears.color.recolor_image(icon, beautiful.green)
+      imgbox.image = gears.color.recolor_image(icon, beautiful.purple)
     elseif #tag:clients() == 0 then
       imgbox.image = gears.color.recolor_image(icon, beautiful.fg_dark)
     else

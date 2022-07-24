@@ -5,6 +5,7 @@ local go = require 'lsp.servers.go'
 local beancount = require 'lsp.servers.beancount'
 
 local lsp = vim.lsp
+local map = vim.keymap.set
 
 local definition_in_split = function()
   -- open a split, this will carry the current buffer over
@@ -22,17 +23,17 @@ local attach_mappings = function(client, bufnr)
   local opts = { buffer = bufnr }
   vim.api.nvim_create_autocmd('BufWritePre', { buffer = bufnr, callback = lsp.buf.formatting_seq_sync })
 
-  vim.keymap.set('n', '<CR>', vim.lsp.buf.definition, opts)
-  vim.keymap.set('n', '<leader><CR>', definition_in_split, opts)
-  vim.keymap.set('n', '<leader>ls', vim.lsp.buf.signature_help, opts)
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-  vim.keymap.set('n', '<leader>lf', vim.lsp.buf.formatting_sync, opts)
-  vim.keymap.set('n', '<leader>lo', '<CMD>Telescope lsp_document_symbols<cr>', opts)
-  vim.keymap.set('n', '<leader>l=', vim.lsp.diagnostic.show_line_diagnostics, opts)
-  vim.keymap.set('n', '<leader>li', vim.lsp.diagnostic.set_loclist, opts)
-  vim.keymap.set('n', '<leader>lO', '<CMD>Vista<CR>', opts)
-  vim.keymap.set('n', '<leader>l?', '<CMD>LspInfo<CR>', opts)
-  vim.keymap.set('n', '<leader>lr', '<CMD>LspRestart<CR>', opts)
+  map('n', '<CR>', vim.lsp.buf.definition, opts)
+  map('n', '<leader><CR>', definition_in_split, opts)
+  map('n', '<leader>ls', vim.lsp.buf.signature_help, opts)
+  map('n', 'K', vim.lsp.buf.hover, opts)
+  map('n', '<leader>lf', vim.lsp.buf.formatting_sync, opts)
+  map('n', '<leader>lo', '<CMD>Telescope lsp_document_symbols<cr>', opts)
+  map('n', '<leader>l=', vim.lsp.diagnostic.show_line_diagnostics, opts)
+  map('n', '<leader>li', vim.lsp.diagnostic.set_loclist, opts)
+  map('n', '<leader>lO', '<CMD>Vista<CR>', opts)
+  map('n', '<leader>l?', '<CMD>LspInfo<CR>', opts)
+  map('n', '<leader>lr', '<CMD>LspRestart<CR>', opts)
 end
 
 for _, language_server in pairs({ elixir, zk, go, beancount }) do

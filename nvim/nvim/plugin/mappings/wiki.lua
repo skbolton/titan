@@ -1,4 +1,6 @@
-vim.keymap.set('n', '<leader><DOWN>', '<CMD>VimwikiMakeDiaryNote<CR>')
-vim.keymap.set('n', '<leader><UP>', '<CMD>VimwikiDiaryIndex<CR>')
-vim.keymap.set('n', '<leader><LEFT>', '<CMD>VimwikiDiaryPrevDay<CR>')
-vim.keymap.set('n', '<leader><RIGHT>', '<CMD>VimwikiDiaryNextDay<CR>')
+local map = vim.keymap.set
+
+map('n', '<leader><DOWN>', '<CMD>VimwikiMakeDiaryNote<CR>')
+map('n', '<leader><UP>', '<CMD>VimwikiDiaryIndex<CR>')
+map('n', '<leader><LEFT>', '<CMD>VimwikiDiaryPrevDay<CR>')
+map('n', '<leader><RIGHT>', '<CMD>VimwikiDiaryNextDay<CR>')

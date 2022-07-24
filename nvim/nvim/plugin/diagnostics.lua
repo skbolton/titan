@@ -1,3 +1,5 @@
+local map = vim.keymap.set
+
 vim.diagnostic.config {
   underline = false,
   virtual_text = {
@@ -6,9 +8,9 @@ vim.diagnostic.config {
   signs = true,
 }
 
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<C-g>', vim.diagnostic.open_float)
+map('n', '[d', vim.diagnostic.goto_prev)
+map('n', ']d', vim.diagnostic.goto_next)
+map('n', '<C-g>', vim.diagnostic.open_float)
 
 -- Sign Icons
 local signs = { Error = '裂', Warn = ' ', Hint = ' ' }

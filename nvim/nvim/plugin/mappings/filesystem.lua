@@ -4,11 +4,13 @@ if not has_telescope then
   return
 end
 
-vim.keymap.set('n', '<leader>E', '<CMD>NnnExplorer<CR>')
-vim.keymap.set('n', '<leader>e', '<CMD>NnnPicker %:p<CR>')
-vim.keymap.set('n', '<leader>/', ':silent grep ', { silent = false })
-vim.keymap.set('n', '<leader>_', telescope.live_grep)
-vim.keymap.set( 'n', '<leader><leader>', telescope.find_files)
-vim.keymap.set( 'n', '<leader><Backspace>', telescope.buffers)
-vim.keymap.set( 'n', '<leader>ff', telescope.find_files)
-vim.keymap.set( 'n', '<leader>fr', telescope.buffers)
+local map = vim.keymap.set
+
+map('n', '<leader>E', '<CMD>NnnExplorer<CR>')
+map('n', '<leader>e', '<CMD>NnnPicker %:p<CR>')
+map('n', '<leader>/', ':silent grep ', { silent = false })
+map('n', '<leader>_', telescope.live_grep)
+map( 'n', '<leader><leader>', telescope.find_files)
+map( 'n', '<leader><Backspace>', telescope.buffers)
+map( 'n', '<leader>ff', telescope.find_files)
+map( 'n', '<leader>fr', telescope.buffers)

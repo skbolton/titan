@@ -134,7 +134,18 @@ packer.startup(function()
   -- THEMES
   use {'gruvbox-material/vim', opt = true, as = 'gruvbox-material'}
   use {'mkarmona/colorsbox', opt = true}
-  use {'embark-theme/vim', opt = true, as = 'embark'}
+  use {
+    'embark-theme/vim',
+    config = function()
+      vim.g.embark_terminal_italics = 1
+      vim.cmd('colorscheme embark')
+      vim.cmd('hi link TSLiteral PreProc')
+      vim.cmd('hi link TSTextReference Constant')
+      vim.cmd('hi link TSTitle Identifier')
+      vim.cmd('hi link TSURI Comment')
+    end,
+    as = 'embark'
+  }
   -- ===================================================================
 
   -- SUPPORT PLUGINS

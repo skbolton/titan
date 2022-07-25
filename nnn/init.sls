@@ -1,7 +1,6 @@
 nnn:
   git.cloned:
-    - name: https://github.com/skbolton/nnn
-    - branch: add-elixir-icon
+    - name: https://github.com/jarun/nnn
     - target: {{ pillar['xdg_data_home'] }}/nnn
     - user: {{ grains['user'] }}
 

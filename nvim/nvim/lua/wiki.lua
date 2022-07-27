@@ -12,7 +12,7 @@ local gb = {
   automatic_nested_syntaxes = 1
 }
 
-vim.g.vimwiki_list = {delta, gb}
+vim.g.vimwiki_list = {gb}
 
 
 -----------------------------------------------------------------------

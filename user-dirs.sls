@@ -35,7 +35,7 @@ user-dirs-folders:
       - {{ pillar['xdg_config_home'] }}
       - {{ pillar['xdg_documents_dir'] }}
       - {{ pillar['xdg_documents_dir'] }}/Archive
-      - {{ pillar['xdg_documents_dir'] }}/Delta
+      - {{ pillar['xdg_documents_dir'] }}/Notes
       - /home/{{ grains['user'] }}/.local/bin
     - user: {{ grains['user'] }}
 

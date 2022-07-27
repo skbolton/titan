@@ -4,20 +4,6 @@ vim.g.vimwiki_folding = 'syntax';
 -- WIKIS
 -----------------------------------------------------------------------
 
--- Delta
-local delta = {
-  name = 'Delta',
-  index = 'Spawn',
-  path = "~/Documents/Delta",
-  syntax = "markdown",
-  ext = ".md",
-  automatic_nested_syntaxes = 1,
-  diary_rel_path = "Quests/",
-  diary_index = "quests",
-  diary_header = "Quests",
-  auto_diary_index = 1
-}
-
 local gb = {
   name = 'GenesisBlock',
   path = "~/Documents/GenesisBlock",

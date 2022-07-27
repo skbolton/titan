@@ -13,8 +13,8 @@ alias tap="task context personal"
 alias taw="task context work"
 alias tw="timew"
 alias chore="task add +personal +chore" 
-alias bce="$EDITOR $HOME/Documents/Delta/journal.beancount"
-alias de="cd ~/Documents/Delta"
+alias bce="$EDITOR $HOME/Documents/Notes/journal.beancount"
+alias de="cd ~/Documents/Notes"
 alias gb="cd ~/Documents/GenesisBlock"
 
 # Elixir Goodies

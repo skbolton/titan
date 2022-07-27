@@ -49,7 +49,7 @@ local finance_scratch = function(screen_geometry)
   local y = ((screen_geometry.height - height) / 2) + screen_geometry.y
 
   return bling.module.scratchpad:new {
-    command = "kitty --class kitty-finance nvim ~/Documents/Delta/journal.beancount",
+    command = "kitty --class kitty-finance nvim ~/Documents/Notes/journal.beancount",
     rule = {class = "kitty-finance"},
     sticky = true,
     autoclose = false,
@@ -96,7 +96,7 @@ local bench_scratch = function(screen_geometry)
   local y = ((screen_geometry.height - height) / 2) + screen_geometry.y
 
   return bling.module.scratchpad:new {
-    command = "kitty --class kitty-bench -d '$HOME/Documents/Delta' nvim Bench.md",
+    command = "kitty --class kitty-bench -d '$HOME/Documents/Notes/Inbox' nvim Bench.md",
     rule = {class = "kitty-bench"},
     sticky = true,
     autoclose = false,
@@ -118,7 +118,7 @@ local quest_scratch = function(screen_geometry)
   local y = (screen_geometry.height - height) / 2
 
   return bling.module.scratchpad:new{
-      command = "kitty --class kitty-quest -d '$/home/{{ grains['user'] }}/Documents/Delta' --hold zk quest ", rule = {class = "kitty-quest"},
+      command = "kitty --class kitty-quest -d '$/home/{{ grains['user'] }}/Documents/Notes/Journal' --hold zk quest ", rule = {class = "kitty-quest"},
       sticky = false,
       autoclose = false,
       floating = true,

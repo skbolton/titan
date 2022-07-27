@@ -12,7 +12,7 @@ dijo:
 dijo-data:
   file.symlink:
     - name: {{ pillar['xdg_data_home'] }}/dijo
-    - target: /home/{{ grains['user'] }}/Documents/Delta/trackers/dijo
+    - target: /home/{{ grains['user'] }}/Documents/Notes/trackers/dijo
     - force: True
 
 dijo-config:

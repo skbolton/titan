@@ -204,7 +204,7 @@ local globalkeys = gears.table.join(
     ),
     awful.key({ alt, shift }, "b",
       function ()
-        awful.spawn(user.terminal .. " nvim " .. os.getenv("HOME") .. "/Documents/Delta/Bench.md")
+        awful.spawn(user.terminal .. " nvim " .. os.getenv("HOME") .. "/Documents/Notes/Inbox/Bench.md")
       end,
       {desription = "open bench", group = "launcher"}
     ),

@@ -11,7 +11,7 @@ function _M.init(capabilities, on_attach)
       '--stdio'
     },
     init_options = {
-      journalFile = "/home/orlando/Documents/Delta/journal.beancount",
+      journalFile = "/home/orlando/Documents/Notes/journal.beancount",
       pythonPath = "python3"
     }
   }

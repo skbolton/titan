@@ -30,6 +30,7 @@ opt.linebreak = true
 -- ===================================================================
 -- gutters, line numbers, searching
 opt.termguicolors = true
+opt.conceallevel = 2
 opt.encoding = "utf8"
 opt.number = true
 opt.relativenumber = true

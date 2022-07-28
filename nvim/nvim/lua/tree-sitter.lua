@@ -11,10 +11,11 @@ local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 } ]]
 
 require "nvim-treesitter.configs".setup {
-  ensure_installed = {'beancount', 'elixir', 'markdown'},
+  ensure_installed = {'beancount', 'elixir', 'markdown', 'markdown_inline'},
   highlight = {
     enable = true,
-    disable = {'elixir'}
+    disable = {'elixir'},
+    additional_vim_regex_highlighting = {'markdown'}
   },
   playground = {
     enable = true,

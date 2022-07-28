@@ -17,13 +17,6 @@ packer.startup(function()
   -- FILETYPE PLUGINS
   use 'elixir-editors/vim-elixir'
   use 'lfe-support/vim-lfe'
-  use {
-    'vimwiki/vimwiki',
-    branch = 'dev',
-    config = function()
-      require('wiki')
-    end
-  }
   use 'tbabej/taskwiki'
   use 'saltstack/salt-vim'
   use 'jparise/vim-graphql'
@@ -68,6 +61,7 @@ packer.startup(function()
   }
   use {
     'neovim/nvim-lspconfig',
+    requires = {'mickael-menu/zk-nvim'},
     config = function() require('lsp') end,
   }
   use {
@@ -141,7 +135,7 @@ packer.startup(function()
       vim.g.embark_terminal_italics = 1
       vim.cmd('colorscheme embark')
       vim.cmd('hi link TSLiteral PreProc')
-      vim.cmd('hi link TSTextReference Constant')
+      vim.cmd('hi link TSTextReference Identifier')
       vim.cmd('hi link TSTitle Identifier')
       vim.cmd('hi link TSURI Comment')
     end,

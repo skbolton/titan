@@ -1,2 +1,2 @@
-require('lsp.servers')
-require('lsp.sidebar')
+require 'lsp.servers'
+require 'lsp.sidebar'

@@ -9,7 +9,7 @@
 vim.cmd [[packadd packer.nvim]]
 vim.cmd [[packadd cfilter]]
 
-local packer = require('packer')
+local packer = require 'packer'
 packer.startup(function()
   use {'wbthomason/packer.nvim', opt = true}
   -- ===================================================================
@@ -99,7 +99,7 @@ packer.startup(function()
   use {
     'norcalli/nvim-colorizer.lua',
     config = function()
-      require('colorizer').setup()
+      require 'colorizer'.setup()
     end
   }
   
@@ -113,7 +113,7 @@ packer.startup(function()
       {'nvim-telescope/telescope-bibtex.nvim'}
     },
     config = function()
-      require('fuzzy')
+      require 'fuzzy'
     end
   }
   -- Git
@@ -126,7 +126,7 @@ packer.startup(function()
     'lewis6991/gitsigns.nvim',
     requires = {'nvim-lua/plenary.nvim'},
     config = function()
-      require('git')
+      require 'git'
     end
   }
   use 'ggandor/lightspeed.nvim'

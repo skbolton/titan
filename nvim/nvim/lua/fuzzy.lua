@@ -1,5 +1,5 @@
-local telescope = require('telescope')
-local builtin = require('telescope.builtin')
+local telescope = require 'telescope'
+local builtin = require 'telescope.builtin'
 
 local map = vim.keymap.set
 
@@ -10,6 +10,10 @@ map('n', '<leader>ff', builtin.find_files)
 map('n', '<leader>fr', builtin.buffers)
 map('n', '<leader>gf', builtin.git_status)
 map('n', '<leader>gB', builtin.git_branches)
+map('n', '<leader><leader>', builtin.find_files)
+map('n', '<leader><Backspace>', builtin.buffers)
+map('n', '<leader>ff', builtin.find_files)
+map('n', '<leader>fr', builtin.buffers)
 map('n', '<leader>nn', '<CMD>ZkNotes<CR>')
 map('n', '<leader>nt', '<CMD>ZkTags<CR>')
 

@@ -1,8 +1,8 @@
-local testing = require('testing')
-local gl = require('galaxyline')
-local condition = require('galaxyline.condition')
-local vcs = require('galaxyline.provider_vcs')
-local file = require('galaxyline.provider_fileinfo')
+local testing = require 'testing'
+local gl = require 'galaxyline'
+local condition = require 'galaxyline.condition'
+local vcs = require 'galaxyline.provider_vcs'
+local file = require 'galaxyline.provider_fileinfo'
 local gls = gl.section
 gl.short_line_list = {'NvimTree','vista_kind','dbui'}
 

@@ -1,10 +1,3 @@
-local has_telescope, telescope = pcall(require, 'telescope.builtin')
-local has_plenary, Job = pcall(require, 'plenary.job')
-
-if not has_telescope or not has_plenary then
-  return
-end
-
 local map = vim.keymap.set
 
 -- Gets the default branch for the current repository

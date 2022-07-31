@@ -1,4 +1,4 @@
-local nvim_lsp = require'lspconfig'
+local nvim_lsp = require 'lspconfig'
 
 local _M = {}
 

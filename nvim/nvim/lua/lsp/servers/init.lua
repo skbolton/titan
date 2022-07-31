@@ -24,7 +24,7 @@ local attach_mappings = function(client, bufnr)
   vim.api.nvim_create_autocmd('BufWritePre', { buffer = bufnr, callback = lsp.buf.formatting_seq_sync })
 
   map('n', '<CR>', vim.lsp.buf.definition, opts)
-  map('n', '<leader><CR>', definition_in_split, opts)
+  map('n', '<C-CR>', definition_in_split, opts)
   map('n', '<leader>ls', vim.lsp.buf.signature_help, opts)
   map('n', 'K', vim.lsp.buf.hover, opts)
   map('n', '<leader>lf', vim.lsp.buf.formatting_sync, opts)

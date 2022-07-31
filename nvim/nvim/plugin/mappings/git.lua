@@ -31,8 +31,6 @@ end
 map('n', '<leader>gg', '<CMD>G<CR>')
 map('n', '<leader>go', '<CMD>Git difftool --name-only<CR>')
 map('n', '<leader>gO', '<CMD>Git difftool<CR>')
-map('n', '<leader>gf', telescope.git_status)
-map('n', '<leader>gB', telescope.git_branches)
 map('n', '<leader>gd', '<CMD>Gdiff<CR>')
 map('n', '<leader>gdd', diff_against_default_branch)
 map('n', '<leader>gb', '<CMD>Git blame<CR>')

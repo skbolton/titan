@@ -10,6 +10,13 @@ context.personal = -HT
 # UDA (User Defined Attributes)
 uda.ticket.type=string
 uda.ticket.label=Ticket
+# EFFORT
+uda.effort.type=string
+uda.effort.label=Effort
+uda.effort.values=H,M,L
+urgency.uda.effort.H.coefficient=0.8
+urgency.uda.effort.M.coefficient=1.0
+urgency.uda.effort.L.coefficient=1.1
 
 # INBOX REPORT
 report.in.columns = id,tags,description
@@ -35,7 +42,7 @@ urgency.project.coefficient=0
 # just because its a blocker doesn't boost it automatically
 urgency.blocking.coefficient=0
 urgency.scheduled.coefficient=2
-urgency.uda.priority.H.coefficient=10
+urgency.uda.priority.L.coefficient=0.8
 
 # Theme
 rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.

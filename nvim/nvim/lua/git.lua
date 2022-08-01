@@ -1,5 +1,20 @@
 local gitsigns = require 'gitsigns'
 
+function next_hunk()
+  -- Move to next hunk
+  gitsigns.next_hunk()
+  -- center cursor
+  vim.cmd('normal zz')
+end
+
+function prev_hunk()
+  -- Move to prev hunk
+  gitsigns.prev_hunk()
+  -- center cursor
+  vim.cmd('normal zz')
+end
+
+
 gitsigns.setup {
   signs = {
     add          = {hl = 'GitGutterAdd'   , text = '│'},
@@ -9,16 +24,14 @@ gitsigns.setup {
     changedelete = {hl = 'GitGutterDelete', text = '│'},
   },
   on_attach = function(bufnr)
-    local function map(mode, lhs, rhs, opts)
-        opts = vim.tbl_extend('force', {noremap = true, silent = true}, opts or {})
-        vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts)
-    end
+    local map = vim.keymap.set
+    local opts = {silent = true}
 
-    map('n', ']g', '<cmd>lua require\"gitsigns\".next_hunk()<CR>zz')
-    map('n', '[g', '<cmd>lua require\"gitsigns\".prev_hunk()<CR>zz')
-    map('n', '<leader>g+', '<cmd>lua require"gitsigns".stage_hunk()<CR>')
-    map('n', '<leader>g-', '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>')
-    map('n', '<leader>g=', '<cmd>lua require"gitsigns".reset_hunk()<CR>')
-    map('n', '<leader>gp', '<cmd>lua require"gitsigns".preview_hunk()<CR>')
+    map('n', ']g', next_hunk, opts)
+    map('n', '[g', prev_hunk, opts)
+    map('n', '<leader>g+', gitsigns.stage_hunk, opts)
+    map('n', '<leader>g-', gitsigns.undo_stage_hunk, opts)
+    map('n', '<leader>g=', gitsigns.reset_hunk, opts)
+    map('n', '<leader>gp', gitsigns.preview_hunk, opts)
   end
 }

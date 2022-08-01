@@ -4,8 +4,8 @@ alias.@ = context
 data.location=$XDG_DATA_HOME/task
 
 # CONTEXTS
-context.GB = +GB or +OSS or +CAR
-context.personal = -GB
+context.HT = +HT or +OSS or +CAR
+context.personal = -HT
 
 # UDA (User Defined Attributes)
 uda.ticket.type=string

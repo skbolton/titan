@@ -5,7 +5,7 @@
 # └────────────────────┘
 
 # Make sure plugins are along the fpath
-fpath=($ZDOTDIR/plugins $fpath)
+fpath=($ASDF_DIR/completions $ZDOTDIR/plugins $fpath)
 
 #######################################################################
 # Navigation
@@ -178,7 +178,7 @@ tput setaf $color && toilet -F border -t -f pagga "Bit by Bit"
 #######################################################################
 # ASDF
 . $XDG_DATA_HOME/asdf/asdf.sh
-. $XDG_DATA_HOME/asdf/completions/asdf.bash
+# . $XDG_DATA_HOME/asdf/completions/asdf.bash
 
 # DIRENV
 eval "$(direnv hook zsh)"

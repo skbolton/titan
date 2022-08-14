@@ -68,6 +68,12 @@ awful.rules.rules = {
   },
   -- Floating clients.
   {
+    rule = { floating = true },
+    properties = {
+      placement = awful.placement.centered
+    }
+  },
+  {
     rule_any = {
       instance = {
         "DTA",  -- Firefox addon DownThemAll.

@@ -60,3 +60,20 @@ ligalex-mono:
     - source: salt://fonts/Ligalex
     - user: {{ grains['user'] }}
 
+operator-mono-italic:
+  file.managed:
+    - name: {{ pillar['xdg_data_home'] }}/fonts/OperatorMonoLig-BookItalic.otf
+    - contents_pillar: operator-mono:lig-book-italic
+    - user: {{ grains['user'] }}
+
+operator-mono-bold:
+  file.managed:
+    - name: {{ pillar['xdg_data_home'] }}/fonts/OperatorMono-Bold.otf
+    - contents_pillar: operator-mono:bold
+    - user: {{ grains['user'] }}
+
+operator-mono-lig-book:
+  file.managed:
+    - name: {{ pillar['xdg_data_home'] }}/fonts/OperatorMonoLig-Book.otf
+    - contents_pillar: operator-mono:lig-book 
+    - user: {{ grains['user'] }}

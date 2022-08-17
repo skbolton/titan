@@ -110,7 +110,8 @@ packer.startup(function()
       {'nvim-lua/plenary.nvim'},
       {'kyazdani42/nvim-web-devicons'},
       {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
-      {'nvim-telescope/telescope-bibtex.nvim'}
+      {'nvim-telescope/telescope-bibtex.nvim'},
+      {'nvim-telescope/telescope-symbols.nvim'}
     },
     config = function()
       require 'fuzzy'

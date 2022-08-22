@@ -36,9 +36,9 @@ map('n', '<leader>gm', '<CMD>GitMessenger<CR>')
 map('n', '<leader>g<down>', '<CMD>Git pull<CR>')
 map('n', '<leader>g<up>', '<CMD>Git push<CR>')
 
-map('n', '<leader>dh', '<CMD>diffget<CR>')
-map('n', '<leader>dl', '<CMD>diffget<CR>')
-map('n', '<leader>dj', '<CMD>diffput<CR>')
+map('n', '<leader>g<left>', '<CMD>diffget<CR>')
+map('n', '<leader>g<right>', '<CMD>diffget<CR>')
+map('n', '<leader>g<down>', '<CMD>diffput<CR>')
 
 map('v', '<leader>gv', '<CMD>GBrowse<CR>')
 map('v', '<leader>gV', '<CMD>GBrowse!<CR>')

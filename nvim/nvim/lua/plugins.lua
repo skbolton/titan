@@ -122,6 +122,14 @@ packer.startup(function()
     'tpope/vim-fugitive',
     requires = {'tpope/vim-rhubarb'}
   }
+  use {
+    'sindrets/diffview.nvim',
+    cmd = "DiffviewOpen",
+    requires = { 'nvim-lua/plenary.nvim', 'kyazdani42/nvim-web-devicons' },
+    config = function()
+      require('diffview').setup()
+    end
+  }
   use {'rhysd/git-messenger.vim', cmd = 'GitMessenger'}
   use {
     'lewis6991/gitsigns.nvim',

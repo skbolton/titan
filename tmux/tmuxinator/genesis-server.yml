@@ -7,5 +7,6 @@ windows:
       layout: main-vertical
       panes:
         - tmux link-window -s spotify:"阮" -d
+        - tmux link-window -s Notes -d
         - docker-compose up
 

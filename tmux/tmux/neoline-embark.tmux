@@ -1,3 +1,4 @@
+# vim: set ft=tmux:
 set -g status-interval 3
 set-option -g status-position bottom
 set-option -g pane-active-border-style "fg=green"

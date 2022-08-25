@@ -9,7 +9,7 @@ tmux:
 
 tmux-config:
   file.recurse:
-    - name: {{ tmux_dir }}/tmux
+    - name: {{ tmux_dir }}/
     - source: salt://tmux/tmux/
     - force: True
     - user: {{ grains['user'] }}

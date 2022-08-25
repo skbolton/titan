@@ -14,8 +14,7 @@ require "nvim-treesitter.configs".setup {
   ensure_installed = {'sql', 'bash', 'beancount', 'elixir', 'norg', 'markdown', 'markdown_inline'},
   highlight = {
     enable = true,
-    disable = {'elixir'},
-    -- additional_vim_regex_highlighting = {'markdown'}
+    disable = {'elixir'}
   },
   playground = {
     enable = true,

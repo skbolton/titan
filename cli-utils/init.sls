@@ -20,7 +20,13 @@ fzf:
   pkg.installed
 
 bat:
-  pkg.installed
+  pkg.installed:
+    - name: bat
+  file.managed:
+    - name: {{ pillar['xdg_config_home'] }}/bat/config
+    - contents: --theme="base16"
+    - makedirs: True
+    - user: {{ grains['user'] }}
 
 jq:
   pkg.installed

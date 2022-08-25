@@ -2,6 +2,7 @@
 
 alias v="nvim"
 alias aqua="Asciiquarium"
+alias cat="bat --paging=never"
 
 alias mux="tmux"
 alias muxk="tmux kill-server"

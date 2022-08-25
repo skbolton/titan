@@ -8,37 +8,10 @@ tmux:
   pkg.installed
 
 tmux-config:
-  file.managed:
-    - name: {{ tmux_dir }}/tmux.conf
-    - source: salt://tmux/tmux.conf
-    - user: {{ grains['user'] }}
-    - makedirs: True
-
-embark-tmux:
-  file.managed:
-    - name: {{ tmux_dir }}/embark.tmux
-    - source: salt://tmux/embark.tmux
-    - user: {{ grains['user'] }}
-    - makedirs: True
-
-gruvbox-light-tmux:
-  file.managed:
-    - name: {{ tmux_dir }}/gruvbox-light.tmux
-    - source: salt://tmux/gruvbox-light.tmux
-    - user: {{ grains['user'] }}
-    - makedirs: True
-
-neoline-embark:
-  file.managed:
-    - name: {{ tmux_dir }}/neoline-embark.tmux
-    - source: salt://tmux/neoline-embark.tmux
-    - user: {{ grains['user'] }}
-    - makedirs: True
-
-neoline-gruvbox-light:
-  file.managed:
-    - name: {{ tmux_dir }}/neoline-gruvbox-light.tmux
-    - source: salt://tmux/neoline-gruvbox-light.tmux
+  file.recurse:
+    - name: {{ tmux_dir }}/tmux
+    - source: salt://tmux/tmux/
+    - force: True
     - user: {{ grains['user'] }}
     - makedirs: True
 

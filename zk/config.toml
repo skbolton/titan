@@ -38,6 +38,7 @@ idea = "--tag idea"
 project = "--tag Project"
 
 [alias]
+tagged = 'zk edit --interactive --tag $@'
 e = 'zk edit --interactive $@'
 links = 'zk list --format link --no-pager --quiet --delimiter="\n" $@'
 projects = 'zk e project $@'

@@ -10,7 +10,7 @@ language = "en"
 id-charset = "alphanum"
 id-length = 8
 id-case = "lower"
-filename = "{{id}}"
+filename = "{{id}}-{{slug title}}"
 extension = "md"
 template = "default.md"
 

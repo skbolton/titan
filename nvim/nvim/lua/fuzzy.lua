@@ -43,8 +43,7 @@ telescope.setup{
       show_all_buffers = true
     },
     live_grep = {
-      previewer = false,
-      theme = "dropdown"
+      theme = "ivy"
     },
     git_status = {
       git_icons = {
@@ -56,8 +55,7 @@ telescope.setup{
         unmerged = " ",
         untracked = " ",
       },
-      previewer = false,
-      theme = "dropdown"
+      theme = "ivy"
     }
 },
 extensions = {

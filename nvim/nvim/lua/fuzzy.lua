@@ -25,6 +25,12 @@ telescope.setup{
     },
     prompt_prefix = '  ',
     sorting_strategy = 'ascending',
+    borderchars = {
+      { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+      prompt = {"─", "│", " ", "│", '┌', '┐', "│", "│"},
+      results = {"─", "│", "─", "│", "├", "┤", "┘", "└"},
+      preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+    }
   },
   pickers = {
     find_files = {

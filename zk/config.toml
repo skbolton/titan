@@ -20,7 +20,7 @@ author = "Stephen"
 [format.markdown]
 hashtags = false
 colon-tags = true
-link-format = "[[{{path}}|{{title}}]]"
+link-format = "markdown"
 
 # EXTERNAL TOOLS
 [tool]

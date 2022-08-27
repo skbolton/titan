@@ -138,3 +138,8 @@ cmp.setup.filetype('sql', {
   })
 })
 
+cmp.setup.filetype('norg', {
+  sources = cmp.config.sources {
+    { name = "neorg" }
+  }
+})

@@ -25,6 +25,10 @@ packer.startup(function()
   use 'ledger/vim-ledger'
   use 'hashivim/vim-terraform'
   use 'thesis/vim-solidity'
+  use {
+    'nvim-neorg/neorg',
+    config = function() require 'notes' end
+  }
   -- ===================================================================
 
   -- CORE PLUGINS

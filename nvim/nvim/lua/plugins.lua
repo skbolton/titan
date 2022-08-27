@@ -146,7 +146,6 @@ packer.startup(function()
   -- ===================================================================
 
   -- THEMES
-  use {'gruvbox-material/vim', opt = true, as = 'gruvbox-material'}
   use {'mkarmona/colorsbox', opt = true}
   use {
     'embark-theme/vim',

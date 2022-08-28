@@ -29,37 +29,71 @@ packer.startup(function()
     'nvim-neorg/neorg',
     config = function() require 'notes' end
   }
-  -- ===================================================================
-
-  -- CORE PLUGINS
   use {
-    'nvim-treesitter/nvim-treesitter',
-    requires = { 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/playground' },
-    config = function() require("tree-sitter") end
-  }
-  use 'yuttie/comfortable-motion.vim'
-  use 'jiangmiao/auto-pairs'
-  use 'tpope/vim-surround'
-  use 'tpope/vim-repeat'
-  use 'tpope/vim-commentary'
-  use 'tpope/vim-projectionist'
-  use 'tpope/vim-endwise'
-  use 'tpope/vim-speeddating'
-  use {
-    'janko/vim-test',
+    'tpope/vim-dadbod',
     requires = {
-      'tpope/vim-dispatch',
-      'neomake/neomake',
-      'preservim/vimux'
+      'kristijanhusak/vim-dadbod-ui',
+      'kristijanhusak/vim-dadbod-completion'
     }
   }
+
+  -- Git
+  use {
+    'tpope/vim-fugitive',
+    event = 'VimEnter',
+    requires = {'tpope/vim-rhubarb'}
+  }
+  use {
+    'sindrets/diffview.nvim',
+    cmd = "DiffviewOpen",
+    requires = { 'nvim-lua/plenary.nvim', 'kyazdani42/nvim-web-devicons' },
+    config = function()
+      require('diffview').setup()
+    end
+  }
+  use {'rhysd/git-messenger.vim', cmd = 'GitMessenger'}
+  use {
+    'lewis6991/gitsigns.nvim',
+    event = "VimEnter",
+    requires = {'nvim-lua/plenary.nvim'},
+    config = function()
+      require 'git'
+    end
+  }
+  
+  -- Editing
+  use 'jiangmiao/auto-pairs'
+  use 'tpope/vim-surround'
+  use 'tpope/vim-commentary'
+  use 'tpope/vim-repeat'
+  use 'tpope/vim-endwise'
+  use 'tpope/vim-speeddating'
+  use 'ggandor/lightspeed.nvim'
+  use 'yuttie/comfortable-motion.vim'
+
+  -- Completion, Navigation, Linters, Fixers
   use {
     'christoomey/vim-tmux-navigator',
     config = function ()
       vim.g.tmux_navigator_disable_when_zoomed = true
     end
   }
-  -- Fixers, completion and navigation
+
+  use {
+    'neovim/nvim-lspconfig',
+    requires = {'mickael-menu/zk-nvim'},
+    config = function() require('lsp') end,
+  }
+
+  use {
+    'mfussenegger/nvim-lint',
+    config = function()
+      require('linting')
+    end
+  }
+
+  use {'liuchengxu/vista.vim', cmd = 'Vista'}
+
   use {
     'hrsh7th/nvim-cmp',
     requires = {
@@ -75,20 +109,62 @@ packer.startup(function()
       require('complete')
     end
   }
+
   use {
-    'neovim/nvim-lspconfig',
-    requires = {'mickael-menu/zk-nvim'},
-    config = function() require('lsp') end,
+    'nvim-treesitter/nvim-treesitter',
+    requires = {
+      'nvim-treesitter/nvim-treesitter-textobjects',
+      'nvim-treesitter/playground'
+    },
+    config = function() require("tree-sitter") end
+  }
+  use 'tpope/vim-projectionist'
+  use {
+    'janko/vim-test',
+    requires = {
+      'tpope/vim-dispatch',
+      'neomake/neomake',
+      'preservim/vimux'
+    }
+  }
+  
+  -- UI
+  use {'mkarmona/colorsbox', opt = true}
+
+  use {
+    'embark-theme/vim',
+    config = function()
+      vim.g.embark_terminal_italics = 1
+      vim.cmd('colorscheme embark')
+      vim.cmd('hi link TSLiteral PreProc')
+      vim.cmd('hi link TSTextReference Identifier')
+      vim.cmd('hi link TSTitle Identifier')
+      vim.cmd('hi link TSURI Comment')
+    end,
+    as = 'embark'
   }
   use {
-    'mfussenegger/nvim-lint',
+    'glepnir/galaxyline.nvim',
+    branch = 'main',
+    config = function() require('neoline') end,
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
+
+  use {
+    'glacambre/firenvim',
+    cond = function()
+      return vim.g.started_by_nvim
+    end,
+    run = function() vim.fn['firenvim#install'](0) end
+  }
+
+  use {
+    'norcalli/nvim-colorizer.lua',
     config = function()
-      require('linting')
+      require 'colorizer'.setup()
     end
   }
 
-  use {'liuchengxu/vista.vim', cmd = 'Vista'}
-  -- Status and UI
   use {
     'luukvbaal/nnn.nvim',
     config = function()
@@ -102,23 +178,7 @@ packer.startup(function()
       }
     end
   }
-  use {
-    'glepnir/galaxyline.nvim',
-    branch = 'main',
-    config = function() require('neoline') end,
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
-  }
-  use {
-    'glacambre/firenvim',
-    run = function() vim.fn['firenvim#install'](0) end
-  }
-  use {
-    'norcalli/nvim-colorizer.lua',
-    config = function()
-      require 'colorizer'.setup()
-    end
-  }
-  
+
   use {
     'nvim-telescope/telescope.nvim',
     requires = {
@@ -133,51 +193,8 @@ packer.startup(function()
       require 'fuzzy'
     end
   }
-  -- Git
-  use {
-    'tpope/vim-fugitive',
-    requires = {'tpope/vim-rhubarb'}
-  }
-  use {
-    'sindrets/diffview.nvim',
-    cmd = "DiffviewOpen",
-    requires = { 'nvim-lua/plenary.nvim', 'kyazdani42/nvim-web-devicons' },
-    config = function()
-      require('diffview').setup()
-    end
-  }
-  use {'rhysd/git-messenger.vim', cmd = 'GitMessenger'}
-  use {
-    'lewis6991/gitsigns.nvim',
-    requires = {'nvim-lua/plenary.nvim'},
-    config = function()
-      require 'git'
-    end
-  }
-  use 'ggandor/lightspeed.nvim'
-  -- ===================================================================
 
-  -- THEMES
-  use {'mkarmona/colorsbox', opt = true}
-  use {
-    'embark-theme/vim',
-    config = function()
-      vim.g.embark_terminal_italics = 1
-      vim.cmd('colorscheme embark')
-      vim.cmd('hi link TSLiteral PreProc')
-      vim.cmd('hi link TSTextReference Identifier')
-      vim.cmd('hi link TSTitle Identifier')
-      vim.cmd('hi link TSURI Comment')
-    end,
-    as = 'embark'
-  }
-  -- ===================================================================
-
-  -- SUPPORT PLUGINS
-  -- These don't have to be loaded up front
-  use 'kristijanhusak/vim-dadbod-ui'
-  use 'kristijanhusak/vim-dadbod-completion'
-  use 'tpope/vim-dadbod'
+  -- Language Support Plugins
   -- Markdown
   use {
     'iamcco/markdown-preview.nvim',
@@ -186,7 +203,7 @@ packer.startup(function()
   }
   use {'junegunn/goyo.vim', ft = {'md', 'vimwiki'}}
   use {'blindFS/vim-taskwarrior', fg = {'md', 'vimwiki'}}
-  -- Javascript
+  -- JS
   use {'mattn/emmet-vim', ft = {'svelte', 'html', 'elixir', 'javascript'}}
   use {'MaxMEllon/vim-jsx-pretty', ft = 'javascript'}
   use {'heavenshell/vim-jsdoc', ft = 'javascript'}

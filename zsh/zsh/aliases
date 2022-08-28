@@ -25,8 +25,8 @@ alias mdg="mix deps.get"
 alias mdc="mix deps.clean --all"
 
 # use exa for ls
-alias ls='exa -al --icons --color=always --group-directories-first'
-alias la='exa -a --icons --color=always --group-directories-first'
+alias ls='exa -a --icons --color=always --group-directories-first'
+alias la='exa -al --icons --color=always --group-directories-first'
 alias ll='exa -l --icons --color=always --group-directories-first'
 alias lt='exa -aT --icons --color=always --group-directories-first'
 

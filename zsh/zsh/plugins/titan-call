@@ -1,10 +1,16 @@
 #!/bin/sh
 
 titan-call() {
+  local titan="/srv/titan"
+
   # if passed no args then fuzzy search a state to run
   if [ -z "$1" ]; then
-    ls /srv/titan | sk | xargs basename -s ".sls" | xargs sudo salt-call state.apply
+    ls $titan \
+      | sk --preview "[[ -d $titan/{} ]] && bat --color always $titan/{}/init.sls || bat --color always $titan/{}" \
+      | xargs basename -s ".sls" \
+      | xargs sudo salt-call state.apply
   else
     sudo salt-call state.apply "$@"
   fi
 }
+

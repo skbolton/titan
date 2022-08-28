@@ -67,7 +67,7 @@ end
 local monitor_scratch = function(screen_geometry)
   -- clamp the width and height to always fit on screen
   local width = math.min(screen_geometry.width * 0.90, 2400)
-  local height = math.min(1000, screen_geometry.height - 20)
+  local height = screen_geometry.height * 0.75
   local x = (screen_geometry.width - width) / 2
   local y = ((screen_geometry.height - height) / 2) + screen_geometry.y
 
@@ -91,7 +91,7 @@ end
 local bench_scratch = function(screen_geometry)
   -- clamp the width and height to always fit on screen
   local width = math.min(screen_geometry.width * 0.90, 2400)
-  local height = math.min(1000, screen_geometry.height - 20)
+  local height = screen_geometry.height * 0.75
   local x = (screen_geometry.width - width) / 2
   local y = ((screen_geometry.height - height) / 2) + screen_geometry.y
 

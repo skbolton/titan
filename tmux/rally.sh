@@ -5,7 +5,7 @@ set -eu
 RALLY=rally
 VERSION=0.0.1
 
-TARGET=$(ls -d ~/Public/* ~/* /srv/* ~/Documents/* | sk)
+TARGET=$(ls -d ~/Public/* ~/* /srv/* ~/Documents/* | sk --preview "exa --tree --icons --level 3 --git-ignore {}")
 NAME=$(basename $TARGET)
 SESSION_NAME=$(echo $NAME | tr [:lower:] [:upper:])
 

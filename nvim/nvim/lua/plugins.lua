@@ -47,7 +47,11 @@ packer.startup(function()
   use 'tpope/vim-speeddating'
   use {
     'janko/vim-test',
-    requires = { 'tpope/vim-dispatch', 'neomake/neomake', 'preservim/vimux' }
+    requires = {
+      'tpope/vim-dispatch',
+      'neomake/neomake',
+      'preservim/vimux'
+    }
   }
   use {
     'christoomey/vim-tmux-navigator',
@@ -58,7 +62,15 @@ packer.startup(function()
   -- Fixers, completion and navigation
   use {
     'hrsh7th/nvim-cmp',
-    requires = {'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline', 'L3MON4D3/LuaSnip', 'hrsh7th/cmp-nvim-lua', 'onsails/lspkind-nvim'},
+    requires = {
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-cmdline',
+      'L3MON4D3/LuaSnip',
+      'hrsh7th/cmp-nvim-lua',
+      'onsails/lspkind-nvim'
+    },
     config = function()
       require('complete')
     end

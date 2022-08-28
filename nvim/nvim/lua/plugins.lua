@@ -201,12 +201,10 @@ packer.startup(function()
     run = ':call mkdp#util#install()',
     ft = {'markdown'}
   }
-  use {'junegunn/goyo.vim', ft = {'md', 'vimwiki'}}
   use {'blindFS/vim-taskwarrior', fg = {'md', 'vimwiki'}}
   -- JS
   use {'mattn/emmet-vim', ft = {'svelte', 'html', 'elixir', 'javascript'}}
   use {'MaxMEllon/vim-jsx-pretty', ft = 'javascript'}
-  use {'heavenshell/vim-jsdoc', ft = 'javascript'}
 end)
 
 vim.cmd("autocmd BufWritePost plugins.lua PackerCompile")

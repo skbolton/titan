@@ -251,9 +251,9 @@ local globalkeys = gears.table.join(
     ),
     awful.key({ alt, shift }, "6",
       function ()
-        scratchpad.quest:toggle()
+        scratchpad.log:toggle()
       end,
-      {description = "show quest ALT(^)", group = "scratchpads"}
+      {description = "show log ALT(^)", group = "scratchpads"}
     ),
     awful.key({ alt, shift }, "5",
       function ()

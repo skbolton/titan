@@ -47,6 +47,7 @@ bind C-h new-window -n  dijo
 #######################################################################
 bind s display-popup -E -w 80% -h 70% rally.sh
 bind S display-popup -E 'tmux switch-client -t "$(tmux list-sessions -F "#{session_name}"| sk)"'
+bind C-l split-window -h -l 120 zk log
 
 #######################################################################
 # Layers

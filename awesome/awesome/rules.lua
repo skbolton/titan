@@ -24,7 +24,7 @@ awful.rules.rules = {
         "firefoxdeveloperedition"
       }
     },
-    properties = { maximized = false, floating = false, tag = "2" }
+    properties = { maximized = false, floating = false, tag = "browser" }
   },
   -- Chat applications
   {
@@ -34,13 +34,13 @@ awful.rules.rules = {
         "[Ss]lack"
       }
     },
-    properties = { tag = "3" }
+    properties = { tag = "chat" }
   },
   {
     rule = {
       class = "Mailspring"
     },
-    properties = { tag = "6" }
+    properties = { tag = "mail" }
   },
   {
     rule_any = {
@@ -49,7 +49,7 @@ awful.rules.rules = {
         "spotify-tui"
       }
     },
-    properties = { tag = "5" }
+    properties = { tag = "music" }
   },
   -- Notes and Planning
   {
@@ -60,7 +60,7 @@ awful.rules.rules = {
         "Emacs"
       }
     },
-    properties = { tag = "4" }
+    properties = { tag = "explorer" }
   },
   {
     rule = { class = "Conky" },

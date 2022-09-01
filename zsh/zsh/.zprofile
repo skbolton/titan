@@ -33,5 +33,5 @@ export FZF_DEFAULT_OPTS="--reverse --ansi --color=fg:15,hl:3,hl+:3,bg+:-1,fg+:-1
 
 # Delta Config
 export ZK_NOTEBOOK_DIR="$HOME/Documents/Notes"
-export REM_FILE="$HOME/Documents/Dashboards/remind.rem"
-export TIMEWARRIORDB="$HOME/Documents/Dashboards/trackers/timesheets"
+export REM_FILE="$HOME/Documents/Delta/Dashboards/remind.rem"
+export TIMEWARRIORDB="$HOME/Documents/Delta/Dashboards/trackers/timesheets"

@@ -2,6 +2,7 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
+path+=($HOME/.local/bin)
 
 # ZSH Environment
 # These are for variables that I want to adjust and be able to source a new shell and have pop up
@@ -35,10 +36,7 @@ export FZF_DEFAULT_OPTS="--reverse --ansi --color=fg:15,hl:3,hl+:3,bg+:-1,fg+:-1
 
 # Android config
 export ANDROID_HOME=/opt/android-sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+path+=($ANDROID_HOME/emulator $ANDROID_HOME/tools $ANDROID_HOME/tools/bin $ANDROID_HOME/platform-tools)
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 export ASDF_CONFIG_FILE="$XDG_CONFIG_HOME/.asdfrc"
@@ -52,9 +50,11 @@ export HEX_HOME="$XDG_CACHE_HOME/hex"
 
 # Rust
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
+path+=($HOME/cargo/bin)
 
 # Go
 export GOPATH=$XDG_DATA_HOME/go
+path+=($GOPATH/bin)
 export GO111MODULE=on
 export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"
 
@@ -62,6 +62,8 @@ export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 # ZOOM - What the hell is SSB?
 export SSB_HOME="$XDG_DATA_HOME/zoom"
 
+# Ruby
+path+=($HOME/.local/share/gem/ruby/3.0.0/bin)
 
 # nnn config
 export NNN_OPTS="Hd"
@@ -79,10 +81,10 @@ export ZK_NOTEBOOK_DIR="$HOME/Documents/Notes"
 
 export TIMEWARRIORDB="$HOME/Documents/Dashboards/trackers/timesheets"
 
-export PATH="$GOPATH/bin:"$HOME"/.local/bin:"$XDG_DATA_HOME"/cargo/bin:"$HOME"/.local/share/gem/ruby/3.0.0/bin:$PATH"
-
 # Git helpers
 # Fallback value when review base is not set
 # This environment sets up what the "master" branch is for a repo
 # in case a repo uses a non standard version
 export REVIEW_BASE=master
+
+export PATH

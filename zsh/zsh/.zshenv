@@ -29,7 +29,7 @@ export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export SSB_HOME="$XDG_DATA_HOME/zoom"
 
 # Ruby
-path+=($HOME/.local/share/gem/ruby/3.0.0/bin)
+path+=($XDG_DATA_HOME/gem/ruby/3.0.0/bin)
 
 # nnn config
 export NNN_OPTS="Hd"

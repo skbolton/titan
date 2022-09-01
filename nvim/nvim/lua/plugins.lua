@@ -166,7 +166,7 @@ packer.startup(function()
       vim.g.firenvim_config = {
         localSettings = {
           [".*"] = {
-            takeover = 'never'
+            takeover = 'always'
           }
         }
       }

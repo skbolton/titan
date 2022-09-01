@@ -18,11 +18,11 @@ purge-oh-my-zsh:
       - {{ pillar['xdg_config_home'] }}/.oh-my-zsh
       - /home/{{ grains['user'] }}/.oh-my-zsh
 
-zsh-env:
-  file.managed:
-    - name: /home/{{ grains['user'] }}/.zshenv
-    - source: salt://zsh/.zshenv
-    - user: {{ grains['user'] }}
+# zsh-env:
+#   file.managed:
+#     - name: /home/{{ grains['user'] }}/.zshenv
+#     - source: salt://zsh/.zshenv
+#     - user: {{ grains['user'] }}
 
 zsh-config:
   file.recurse:

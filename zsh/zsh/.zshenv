@@ -16,7 +16,7 @@ export HEX_HOME="$XDG_CACHE_HOME/hex"
 
 # Rust
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
-path+=($HOME/cargo/bin)
+path+=($CARGO_HOME/bin)
 
 # Go
 export GOPATH=$XDG_DATA_HOME/go

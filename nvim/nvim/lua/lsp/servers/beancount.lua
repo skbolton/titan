@@ -6,13 +6,8 @@ function _M.init(capabilities, on_attach)
   nvim_lsp.beancount.setup {
     capabilities = capabilities,
     on_attach = on_attach,
-    cmd = {
-      'beancount-langserver',
-      '--stdio'
-    },
     init_options = {
-      journalFile = "/home/orlando/Documents/Notes/journal.beancount",
-      pythonPath = "python3"
+      journal_file = "/home/orlando/Documents/Delta/Areas/Finances/journal.beancount",
     }
   }
 end

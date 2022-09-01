@@ -218,8 +218,24 @@ packer.startup(function()
     ft = {'markdown'}
   }
   use {'blindFS/vim-taskwarrior', fg = {'md', 'vimwiki'}}
-  -- JS
-  use {'mattn/emmet-vim', ft = {'svelte', 'html', 'elixir', 'javascript'}}
+  use {
+    'mattn/emmet-vim',
+    ft = {'svelte', 'html', 'elixir', 'javascript'},
+    config = function()
+      vim.g.user_emmet_settings = {
+        ['javascript.jsx'] = {
+          extends = 'jsx',
+        },
+        elixir = {
+          extends = 'html'
+        },
+        eelixir = {
+          extends = 'html'
+        }
+      }
+      vim.g.user_emmet_mode = 'inv'
+    end
+  }
   use {'MaxMEllon/vim-jsx-pretty', ft = 'javascript'}
 end)
 

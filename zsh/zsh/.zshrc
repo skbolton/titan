@@ -5,7 +5,7 @@
 # └────────────────────┘
 
 # Make sure plugins are along the fpath
-fpath=($ASDF_DIR/completions $ZDOTDIR/plugins $fpath)
+fpath=($ZDOTDIR/plugins $fpath)
 
 #######################################################################
 # Navigation
@@ -179,7 +179,7 @@ tput setaf $color && toilet -F border -t -f pagga "Bit by Bit"
 # HOOKS
 #######################################################################
 # ASDF
-. $XDG_DATA_HOME/asdf/asdf.sh
+. /opt/asdf-vm/asdf.sh
 
 # DIRENV
 eval "$(direnv hook zsh)"
@@ -187,3 +187,4 @@ eval "$(direnv hook zsh)"
 # Prompt
 eval "$(starship init zsh)"
 
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"

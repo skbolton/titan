@@ -180,7 +180,6 @@ tput setaf $color && toilet -F border -t -f pagga "Bit by Bit"
 #######################################################################
 # ASDF
 . $XDG_DATA_HOME/asdf/asdf.sh
-# . $XDG_DATA_HOME/asdf/completions/asdf.bash
 
 # DIRENV
 eval "$(direnv hook zsh)"

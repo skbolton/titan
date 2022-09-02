@@ -42,7 +42,7 @@ opt.showmatch = true
 opt.list = true
 -- list chars for 'hidden' characters
 opt.lcs = "extends:❯,precedes:❮,tab:>-"
-opt.fillchars = { diff = "╱", fold = "╱" }
+opt.fillchars = { diff = "╱", fold = "·" }
 -- alsways show symbol gutter (I hate seeing the editor shift)
 opt.signcolumn = 'yes'
 -- highlight words that match / search

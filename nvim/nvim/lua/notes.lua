@@ -25,10 +25,10 @@ neorg.setup {
     ['core.integrations.nvim-cmp'] = {},
     ['core.norg.concealer'] = {
       config = {
-        icons = {
-          todo = {
-            undone = { icon = " " }
-          }
+        icon_preset = "diamond",
+        dim_code_blocks = {
+          enabled = false,
+          conceal = false
         }
       }
     }

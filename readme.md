@@ -16,7 +16,7 @@ Install dependencies
 
 Clone the repo to the proper place on file system. Salt stack sets up a local fileserver that will pull files from this location.
 
-```
+```bash
 git clone https://github.com/skbolton/titan /srv/titan
 ```
 
@@ -25,12 +25,12 @@ git clone https://github.com/skbolton/titan /srv/titan
 Drop the `titan.conf` file in this repo into the `/etc/salt/minion.d/` directory to configure the minion.
 
 Get just the nvim state
-```
-$ sudo salt-call state.sls nvim
+```bash
+sudo salt-call state.sls nvim
 ```
 
 To apply what salt stack calls the highstate (all the states).
-```
-$ sudo salt-call state.apply
+```bash
+sudo salt-call state.apply
 ```
 

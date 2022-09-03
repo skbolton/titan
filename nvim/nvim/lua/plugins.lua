@@ -27,6 +27,14 @@ packer.startup(function()
   use 'thesis/vim-solidity'
   use {
     'nvim-neorg/neorg',
+    requires = {
+      {
+        'lukas-reineke/headlines.nvim',
+        config = function()
+          require('headlines').setup()
+        end
+      }
+    },
     config = function() require 'notes' end
   }
   use {

@@ -27,7 +27,7 @@ neorg.setup {
       config = {
         icon_preset = "diamond",
         dim_code_blocks = {
-          enabled = false,
+          -- enabled = false,
           conceal = false
         }
       }

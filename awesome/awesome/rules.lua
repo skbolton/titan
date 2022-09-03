@@ -26,6 +26,12 @@ awful.rules.rules = {
     },
     properties = { maximized = false, floating = false, tag = "browser" }
   },
+  {
+    rule = {
+      class = "kitty",
+      properties = { tag = "terminal" }
+    }
+  },
   -- Chat applications
   {
     rule_any = {

@@ -10,5 +10,6 @@ set set-clipboard on
 set -s escape-time 1
 set -g base-index 1
 set -g pane-base-index 1
+set -g renumber-windows on
 set -gw xterm-keys on
 set -g history-limit 10000

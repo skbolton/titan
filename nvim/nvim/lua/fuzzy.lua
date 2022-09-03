@@ -16,6 +16,7 @@ map('n', '<leader>ff', builtin.find_files)
 map('n', '<leader>fr', builtin.buffers)
 map('n', '<leader>nn', '<CMD>ZkNotes<CR>')
 map('n', '<leader>nt', '<CMD>ZkTags<CR>')
+map('n', '<leader>ns', '<CMD>ZkSpells<CR>')
 map('n', '<leader>fi', '<CMD>Telescope symbols<CR>')
 
 telescope.setup{

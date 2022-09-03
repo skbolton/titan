@@ -96,7 +96,20 @@ packer.startup(function()
 
   use {
     'neovim/nvim-lspconfig',
-    requires = {'mickael-menu/zk-nvim'},
+    requires = {
+      {
+        'mickael-menu/zk-nvim',
+        config = function()
+          local zk = require('zk')
+          local commands = require('zk.commands')
+
+          commands.add("ZkSpells", function(options)
+            options = vim.tbl_extend("force", { dir = "Cortex", tags = {"spell"} }, options or {})
+            zk.edit(options, { title = "Spellbook" })
+          end)
+        end
+      }
+    },
     config = function() require('lsp') end,
   }
 

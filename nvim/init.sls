@@ -6,8 +6,10 @@ include:
   - taskwarrior
 
 nvim:
-  pkg.installed:
-    - name: neovim
+  cmd.run:
+    - name: paru -S neovim-nightly-bin --noconfirm --skipreview
+    - runas: {{ grains['user'] }}
+    - unless: paru -Qi neovim-nightly-bin
 
 nvim-python:
   pip.installed: 

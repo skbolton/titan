@@ -31,7 +31,11 @@ packer.startup(function()
       {
         'lukas-reineke/headlines.nvim',
         config = function()
-          require('headlines').setup()
+          require('headlines').setup {
+            markdown = {
+              dash_string = "─"
+            }
+          }
         end
       }
     },

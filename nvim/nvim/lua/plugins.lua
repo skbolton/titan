@@ -153,7 +153,7 @@ packer.startup(function()
   use {
     'glepnir/galaxyline.nvim',
     branch = 'main',
-    config = function() require('neoline') end,
+    config = function() require('rocket-line') end,
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
 

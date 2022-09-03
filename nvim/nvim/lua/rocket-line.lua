@@ -20,10 +20,8 @@ local file_name = function()
   if string.len(file_readonly()) ~= 0 then
     return file .. file_readonly(readonly_icon)
   end
-  if vim.bo.modifiable then
-    if vim.bo.modified then
-      return file .. '  '
-    end
+  if vim.bo.modified then
+    return file .. '  '
   end
   return file .. ' '
 end
@@ -133,7 +131,7 @@ gls.left[4] ={
 }
 
 gls.left[5] = {
-  FileName = {
+  CustomFileName = {
     provider = file_name,
     condition = condition.buffer_not_empty,
     highlight = "Normal"

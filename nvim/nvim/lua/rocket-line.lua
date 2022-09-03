@@ -104,6 +104,7 @@ end
 gls.left[1] = {
   Embark = {
     provider = function() return '  ' end,
+    highlight = 'Identifier',
     separator = ' '
   }
 }
@@ -135,7 +136,7 @@ gls.left[5] = {
   FileName = {
     provider = file_name,
     condition = condition.buffer_not_empty,
-    highlight = "PreProc"
+    highlight = "Normal"
   }
 }
 

@@ -6,10 +6,11 @@ remix-icon:
     - user: {{ grains['user'] }}
 
 roboto-mono:
-  cmd.run:
-    - name: paru -S nerd-fonts-roboto-mono --noconfirm --skipreview
-    - runas: {{ grains['user'] }}
-    - unless: paru -Qi nerd-fonts-roboto-mono
+  file.recurse:
+    - name: {{ pillar['xdg_data_home'] }}/fonts/LigaRobotoMono
+    - source: salt://fonts/LigaRobotoMono
+    - makedirs: True
+    - user: {{ grains['user'] }}
 
 roboto-slab:
   cmd.run:

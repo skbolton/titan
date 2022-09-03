@@ -19,9 +19,20 @@ end
 -- enable snippets and completion goodnes
 local capabilities = cmp_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+local formatting_augrop = vim.api.nvim_create_augroup("LSPFORMATTING", {})
+
 local attach_mappings = function(client, bufnr)
+  -- format on save if client supports it
+  if client.supports_method("textDocument/formatting") then
+    vim.api.nvim_clear_autocmds({ group = formatting_augrop, buffer = bufnr })
+    vim.api.nvim_create_autocmd('BufWritePre', {
+      group = formatting_augrop,
+      buffer = bufnr,
+      callback = function() lsp.buf.format() end
+    })
+  end
+
   local opts = { buffer = bufnr }
-  vim.api.nvim_create_autocmd('BufWritePre', { buffer = bufnr, callback = lsp.buf.formatting_seq_sync })
 
   map('n', '<CR>', vim.lsp.buf.definition, opts)
   map('n', '<C-CR>', definition_in_split, opts)

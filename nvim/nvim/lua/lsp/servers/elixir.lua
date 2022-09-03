@@ -3,7 +3,7 @@ local nvim_lsp = require 'lspconfig'
 local _M = {}
 
 function _M.init(capabilities, on_attach)
-  nvim_lsp.elixirls.setup{
+  return nvim_lsp.elixirls.setup{
     capabilities = capabilities,
     on_attach = on_attach,
     cmd = {

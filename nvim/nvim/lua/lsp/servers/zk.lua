@@ -3,7 +3,7 @@ local zk = require 'zk'
 local _M = {}
 
 function _M.init(capabilities, on_attach)
-  zk.setup {
+  return zk.setup {
     picker = "telescope",
     lsp = {
       config = {

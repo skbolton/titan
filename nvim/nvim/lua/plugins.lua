@@ -165,6 +165,7 @@ packer.startup(function()
 
   use {
     'embark-theme/vim',
+    cond = function() return os.getenv('THEME') == 'embark' end,
     config = function()
       vim.g.embark_terminal_italics = 1
       vim.cmd('colorscheme embark')
@@ -174,6 +175,16 @@ packer.startup(function()
       vim.cmd('hi link TSURI Comment')
     end,
     as = 'embark'
+  }
+  use {
+    'folke/tokyonight.nvim',
+    cond = function()
+      return os.getenv('THEME') == 'tokyonight-day'
+    end,
+    config = function()
+      vim.g.tokyonight_style = "day"
+      vim.cmd('colorscheme tokyonight')
+    end
   }
   use {
     'glepnir/galaxyline.nvim',

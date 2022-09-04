@@ -11,7 +11,7 @@ set -g status-style default
 set -g status-right-length 80
 set -g status-left-length 100
 set -g window-status-separator "  "
-set -g status-bg "black"
+set -g status-bg "default"
 
 #Bars ---------------------------------
 set -g status-left "#[fg=blue]#S #[fg=brightwhite]⎥ "

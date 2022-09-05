@@ -22,4 +22,4 @@ set -g status-right "#[fg=brightwhite] #[push-default]%Y-%m-%d#[fg=brightwhite] 
 set -g status-justify centre
 
 set -g window-status-format "#[fg=brightwhite]#{?window_zoomed_flag,▪#W,#W}"
-set -g window-status-current-format "#[fg=green]#{?window_zoomed_flag,▪#W,#W}"
+set -g window-status-current-format "#[fg=red]#{?window_zoomed_flag,▪#W,#W}"

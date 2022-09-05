@@ -21,6 +21,7 @@ gpgconf --launch gpg-agent
 export EDITOR="nvim"
 export BROWSER="firefox"
 export MANPAGER="nvim +Man!"
+export PAGER=bat
 export LESSHISTFILE="$XDG_DATA_HOME/lesshst"
 
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"

@@ -21,3 +21,10 @@ xprofile:
     - source: salt://xorg/.xprofile
     - user: {{ grains['user'] }}
 
+{% if grains.get('host') == 'neo' %}
+xorg-keyboard:
+  file.managed:
+    - name: /etc/X11/xorg.conf.d/00-keyboard.conf
+    - source: salt://xorg/xorg.conf.d/00-keyboard.conf
+{% endif %}
+  

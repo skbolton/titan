@@ -13,3 +13,8 @@ avatar:
     - source: salt://avatar.png
     - mode: 644
 
+avatar-icon:
+  file.managed:
+    - name: /home/{{ grains['user'] }}/.face.icon
+    - source: salt://avatar.png
+    - mode: 644

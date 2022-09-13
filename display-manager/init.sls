@@ -3,11 +3,10 @@ lightdm:
     - name: lightdm
 
 lightdm-started:
-  service.enabled:
+  service.dead:
     - name: lightdm
-    - enable: True
-    - require:
-      - pkg: lightdm
+    - enable: False
+
 
 lightdm-config:
   file.managed:
@@ -30,4 +29,22 @@ lightdm-osmos:
     - require:
       - pkg: lightdm
   
+sddm: 
+  pkg.installed:
+    - name: sddm
+  service.enabled:
+    - name: sddm
+    - enable: True
 
+sddm-config:
+  file.managed:
+    - name: /etc/sddm.conf.d/sddm.conf
+    - source: salt://display-manager/sddm.conf
+    - makedirs: True
+    - require:
+      - pkg: sddm
+
+sddm-catppuccin-theme:
+  git.cloned:
+    - name: https://github.com/catppuccin/sddm
+    - target: /usr/share/sddm/themes/catppuccin

@@ -29,8 +29,8 @@ awful.rules.rules = {
   {
     rule = {
       class = "kitty",
-      properties = { tag = "terminal" }
-    }
+    },
+    properties = { tag = "terminal" }
   },
   -- Chat applications
   {

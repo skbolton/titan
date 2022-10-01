@@ -2,7 +2,7 @@ name: <%= @settings["name"] %>
 root: <%= @settings["root"] %>
 
 windows:
-  - " ": nvim 
-  - " ":
+  - "": nvim 
+  - "":
     - tmux link-window -s spotify -d
     - tmux link-window -s Notes -d

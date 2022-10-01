@@ -5,11 +5,22 @@ include:
   - tmux
   - taskwarrior
 
-nvim:
+nvim-installed:
   cmd.run:
-    - name: paru -S neovim-nightly-bin --noconfirm --skipreview
+    - name: paru -R neovim-nightly-bin --noconfirm
     - runas: {{ grains['user'] }}
-    - unless: paru -Qi neovim-nightly-bin
+    - onlyif: 
+      - paru -Qi neovim-nightly-bin
+  pkg.installed:
+    - name: neovim
+
+# neovim-nightly-bin:
+#   pkg.uninstalled:
+#     - name: neovim
+#   cmd.run:
+#     - name: paru -S neovim-nightly-bin --noconfirm --skipreview
+#     - runas: {{ grains['user'] }}
+#     - unless: paru -Qi neovim-nightly-bin
 
 nvim-python:
   pip.installed: 

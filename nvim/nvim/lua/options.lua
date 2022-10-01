@@ -57,7 +57,7 @@ opt.inccommand = "nosplit"
 -- Don't show what mode I am in
 -- My statusline will tell me this not the editor
 opt.showmode = false
-opt.cmdheight = 0
+opt.cmdheight = 1
 -- how often to poll for updates
 -- affects things like gutter symbols
 opt.updatetime = 300

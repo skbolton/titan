@@ -46,6 +46,6 @@ local attach_mappings = function(client, bufnr)
   map('n', '<leader>lr', '<CMD>LspRestart<CR>', opts)
 end
 
-for _, language_server in pairs({ elixir, zk, go, beancount }) do
+for _, language_server in pairs({ elixir, zk, go }) do
   language_server.init(capabilities, attach_mappings)
 end

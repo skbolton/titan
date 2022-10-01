@@ -33,7 +33,11 @@ packer.startup(function()
         config = function()
           require('headlines').setup {
             markdown = {
-              dash_string = "─"
+              dash_string = "─",
+              fat_headlines = false
+            },
+            norg = {
+              fat_headlines = false
             }
           }
         end
@@ -185,7 +189,9 @@ packer.startup(function()
       return os.getenv('THEME') == 'tokyonight-day'
     end,
     config = function()
-      vim.g.tokyonight_style = "day"
+      require 'tokyonight'.setup {
+        style = 'day'
+      }
       vim.cmd('colorscheme tokyonight')
     end
   }

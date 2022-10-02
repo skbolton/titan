@@ -103,22 +103,29 @@ packer.startup(function()
   }
 
   use {
-    'neovim/nvim-lspconfig',
-    requires = {
-      {
-        'mickael-menu/zk-nvim',
-        config = function()
-          local zk = require('zk')
-          local commands = require('zk.commands')
+    'mickael-menu/zk-nvim',
+    after = 'nvim-cmp',
+    config = function()
+      local zk = require('zk')
+      local commands = require('zk.commands')
 
-          commands.add("ZkSpells", function(options)
-            options = vim.tbl_extend("force", { dir = "Cortex", tags = {"spell"} }, options or {})
-            zk.edit(options, { title = "Spellbook" })
-          end)
-        end
+      commands.add("ZkSpells", function(options)
+        options = vim.tbl_extend("force", { dir = "Cortex", tags = {"spell"} }, options or {})
+        zk.edit(options, { title = "Spellbook" })
+      end)
+
+      zk.setup {
+        picker = "telescope",
+        lsp = {
+          config = {
+            on_attach = on_attach
+          },
+          auto_attach = {
+            enabled = true
+          }
+        }
       }
-    },
-    config = function() require('lsp') end,
+    end
   }
 
   use {

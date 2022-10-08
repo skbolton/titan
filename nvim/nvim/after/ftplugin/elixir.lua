@@ -4,6 +4,8 @@ local capabilities = require 'lsp_capabilities'()
 
 bmap(0, 'n', '<localleader>d', ':silent !xdg-open https://hexdocs.pm/', {noremap = true})
 
+blocal.foldmethod = 'indent'
+
 local executable = vim.loop.os_homedir() .. "/.local/share/elixir-ls/rel/language_server.sh"
 
 if vim.fn.executable(executable) then

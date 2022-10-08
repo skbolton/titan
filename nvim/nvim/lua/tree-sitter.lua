@@ -1,7 +1,7 @@
 local parser_config = require 'nvim-treesitter.parsers'.get_parser_configs()
 
 require "nvim-treesitter.configs".setup {
-  ensure_installed = {'sql', 'bash', 'beancount', 'eex', 'heex', 'elixir', 'norg', 'markdown', 'markdown_inline', 'yaml'},
+  ensure_installed = {'sql', 'bash', 'beancount', 'dockerfile', 'eex', 'help', 'lua', 'heex', 'elixir', 'norg', 'proto', 'markdown', 'markdown_inline', 'yaml'},
   highlight = {
     enable = true,
     disable = {'elixir'}

@@ -169,6 +169,25 @@ autoload -Uz titan-call
 #######################################################################
 autoload -Uz rem
 
+# git worktree change
+gwc() {
+  local directory=$(git worktree-choose)
+
+  if [[ $directory != "" ]]; then
+    cd $directory
+  fi
+}
+
+# git worktree add
+gwa() {
+  git worktree add "$@" && cd "$1"
+}
+
+# git worktree list
+gwl() {
+  git worktree-choose
+}
+
 #######################################################################
 # Greeting
 #######################################################################

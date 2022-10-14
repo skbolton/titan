@@ -24,6 +24,13 @@ git-branches:
     - mode: keep
     - user: {{ grains['user'] }}
 
+git-worktree-choose:
+  file.managed:
+    - name: /home/{{ grains['user'] }}/.local/bin/git-worktree-choose
+    - source: salt://git/git-worktree-choose
+    - mode: keep
+    - user: {{ grains['user'] }}
+
 git-default-branch:
   file.managed:
     - name: /home/{{ grains['user'] }}/.local/bin/git-default-branch

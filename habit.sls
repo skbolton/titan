@@ -12,7 +12,7 @@ dijo:
 dijo-data:
   file.symlink:
     - name: {{ pillar['xdg_data_home'] }}/dijo
-    - target: /home/{{ grains['user'] }}/Documents/Notes/trackers/dijo
+    - target: /home/{{ grains['user'] }}/Documents/Delta/Dashboards/trackers/dijo
     - force: True
 
 dijo-config:
@@ -21,11 +21,11 @@ dijo-config:
     - makedirs: True
     - contents:
       - "[look]"
-      - true_chr = "●"
-      - false_chr = "○"
-      - future_chr = "◌"
+      - true_chr = "\u25a9"
+      - false_chr = "\u25a7"
+      - future_chr = "\u2027"
       - "[colors]"
       - reached = "cyan"
-      - todo = "magenta"
+      - todo = "red"
       - inactive = "#8A889D"
 

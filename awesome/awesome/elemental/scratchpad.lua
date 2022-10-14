@@ -72,7 +72,7 @@ local monitor_scratch = function(screen_geometry)
   local y = ((screen_geometry.height - height) / 2) + screen_geometry.y
 
   return bling.module.scratchpad:new {
-    command = "kitty --class kitty-monitor bpytop",
+    command = "kitty --class kitty-monitor btop",
     rule = {class = "kitty-monitor"},
     sticky = true,
     autoclose = false,

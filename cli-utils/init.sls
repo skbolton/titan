@@ -10,7 +10,7 @@ ripgrep:
 exa:
   pkg.installed
 
-bpytop:
+btop:
   pkg.installed
 
 skim:

@@ -190,6 +190,7 @@ packer.startup(function()
     end,
     as = 'embark'
   }
+
   use {
     'folke/tokyonight.nvim',
     cond = function()
@@ -205,7 +206,7 @@ packer.startup(function()
   use {
     'glepnir/galaxyline.nvim',
     branch = 'main',
-    config = function() require('rocket-line') end,
+    config = function() require('neoline') end,
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
 

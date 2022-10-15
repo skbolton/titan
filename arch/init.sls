@@ -1,6 +1,3 @@
-include:
-  - crons
-
 pacman-conf:
   file.managed:
     - name: /etc/pacman.conf
@@ -28,7 +25,7 @@ reflector-running:
       - file: reflector-config
 
 pacman-download-updates:
-  cron.present:
+  cron.absent:
     - identifier: "download pacman updates without applying"
     - name: pacman -Syuw --noconfirm
     # every two hours

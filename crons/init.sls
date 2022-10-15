@@ -1,6 +1,5 @@
-cronie: pkg.installed
+cronie: pkg.removed
 
 cron-daemon:
-  service.running:
-    - enable: True
+  service.disabled:
     - name: cronie

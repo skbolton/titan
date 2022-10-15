@@ -3,7 +3,7 @@ local gears = require("gears")
 local bling = require("module.bling")
 local hotkeys_popup = require("awful.hotkeys_popup")
 local scratchpad = require("elemental.scratchpad")
-local machi = require("module.layout-machi")
+-- local machi = require("module.layout-machi")
 
 local super = "Mod4"
 local shift = "Shift"
@@ -72,12 +72,12 @@ local globalkeys = gears.table.join(
     ),
 
     -- TAG KEYS
-    awful.key( { super }, "e",
-      function ()
-        machi.default_editor.start_interactive()
-      end,
-      { description = "Launch Machi", group = "tag" }
-    ),
+    -- awful.key( { super }, "e",
+    --   function ()
+    --     machi.default_editor.start_interactive()
+    --   end,
+    --   { description = "Launch Machi", group = "tag" }
+    -- ),
     -- Increase master width factor
     awful.key({ super }, ".",
       function ()

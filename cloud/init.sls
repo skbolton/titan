@@ -38,5 +38,5 @@ no-insomnia-aur:
 
 insomnia-installed:
   cmd.run:
-    - name: flatpak install flathub rest.insomnia.Insomnia
+    - name: flatpak install -y flathub rest.insomnia.Insomnia
     - runas: {{ grains['user'] }}

@@ -1,0 +1,11 @@
+[Unit]
+Description=Sync Taskwarrior
+Wants=task-sync.timer
+
+[Service]
+Type=oneshot
+ExecStart=task sync
+
+[Install]
+WantedBy=multi-user.target
+

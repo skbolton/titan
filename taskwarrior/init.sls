@@ -1,5 +1,4 @@
 include:
-  - crons
   - lang.python
 
 task:
@@ -50,8 +49,22 @@ timewarrior-taskwarrior-hook:
     - mode: keep
     - user: {{ grains['user'] }}
 
+task-sync-service:
+  file.managed:
+    - name: {{ pillar['xdg_config_home'] }}/systemd/user/task-sync.service
+    - source: salt://taskwarrior/task-sync.service
+    - makedirs: True
+    - user: {{ grains['user'] }}
+
+task-sync-timer:
+  file.managed:
+    - name: {{ pillar['xdg_config_home'] }}/systemd/user/task-sync.timer
+    - source: salt://taskwarrior/task-sync.timer
+    - makedirs: True
+    - user: {{ grains['user'] }}
+
 task-sync-cron:
-  cron.present:
+  cron.absent:
     - identifier: "sync taskwarrior"
     - name: 'source $HOME/.zshenv && task sync'
     # every 10 minutes

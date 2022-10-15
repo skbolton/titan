@@ -18,6 +18,12 @@ roboto-slab:
     - runas: {{ grains['user'] }}
     - unless: paru -Qi ttf-roboto-slab
 
+roboto-mono-nerd-fonts:
+  cmd.run:
+    - name: paru -S nerd-fonts-roboto-mono --noconfirm --skipreview
+    - runas: {{ grains['user'] }}
+    - unless: paru -Qi nerd-fonts-roboto-mono
+
 fira-code:
   cmd.run:
     - name: paru -S ttf-fira-code --noconfirm --skipreview

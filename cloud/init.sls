@@ -4,6 +4,8 @@ include:
 
 docker: pkg.installed
 
+docker-compose: pkg.installed
+
 docker-group:
   group.present:
     - name: docker

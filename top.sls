@@ -16,6 +16,7 @@ base:
     - cli-utils
     - cloud
     - direnv
+    - desktop
     - dunst
     - emacs
     - fonts

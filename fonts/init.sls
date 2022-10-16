@@ -1,3 +1,6 @@
+font-manager:
+  pkg.installed
+
 remix-icon:
   file.managed:
     - name: {{ pillar['xdg_data_home'] }}/fonts/remixicon.ttf

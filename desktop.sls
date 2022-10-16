@@ -1,3 +1,6 @@
+include:
+  - flatpak
+
 nitrogen:
   pkg.installed
 
@@ -8,6 +11,16 @@ nautilus:
   pkg.installed
 
 firefox:
+  pkg.installed
+
+synology-drive:
+  cmd.run:
+    - name: flatpak install -y flathub com.synology.SynologyDrive
+
+flameshot:
+  pkg.installed
+
+btop:
   pkg.installed
 
 catppuccin-gtk:

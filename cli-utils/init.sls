@@ -1,16 +1,7 @@
-include:
-  - flatpak
-
-flameshot:
-  pkg.installed
-
 ripgrep:
   pkg.installed
 
 exa:
-  pkg.installed
-
-btop:
   pkg.installed
 
 skim:
@@ -53,10 +44,6 @@ figlet:
     - name: paru -S figlet --noconfirm --skipreview
     - runas: {{ grains['user'] }}
     - unless: paru -Qi figlet
-
-synology-drive:
-  cmd.run:
-    - name: flatpak install -y flathub com.synology.SynologyDrive
 
 remind: pkg.installed
   

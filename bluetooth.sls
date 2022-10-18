@@ -2,6 +2,12 @@ bluetooth:
   pkg.installed:
     - name: bluez
 
+bluetoothctl:
+  pkg.installed:
+    - name: bluez-utils
+    - require:
+      - pkg: bluetooth
+
 bluetooth-service:
   service.running:
     - name: bluetooth

@@ -188,6 +188,14 @@ gwl() {
   git worktree-choose
 }
 
+# git worktree remove
+gwd() {
+  local choice=$(git worktree-choose)
+  if [[ $choice != "" ]]; then
+    git worktree remove $choice
+  fi
+}
+
 #######################################################################
 # Greeting
 #######################################################################

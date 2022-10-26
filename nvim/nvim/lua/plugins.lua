@@ -41,7 +41,8 @@ packer.startup(function()
             }
           }
         end
-      }
+      },
+      { 'folke/zen-mode.nvim' }
     },
     config = function() require 'notes' end
   }

@@ -22,6 +22,12 @@ neorg.setup {
         engine = 'nvim-cmp'
       }
     },
+    ['core.presenter'] = {
+      config = {
+        zen_mode = 'zen-mode'
+      }
+    },
+    ['core.export'] = {},
     ['core.integrations.nvim-cmp'] = {},
     ['core.norg.concealer'] = {
       config = {

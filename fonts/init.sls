@@ -46,6 +46,24 @@ iosevka:
     - runas: {{ grains['user'] }}
     - unless: paru -Qi ttf-iosevka
 
+iosevka-ss04:
+  cmd.run:
+    - name: paru -S ttf-iosevka-ss04 --noconfirm --skipreview
+    - runas: {{ grains['user'] }}
+    - unless: paru -Qi ttf-iosevka-ss04
+
+iosevka-ss08:
+  cmd.run:
+    - name: paru -S ttf-iosevka-ss08 --noconfirm --skipreview
+    - runas: {{ grains['user'] }}
+    - unless: paru -Qi ttf-iosevka-ss08
+
+iosevka-ss15:
+  cmd.run:
+    - name: paru -S ttf-iosevka-ss15 --noconfirm --skipreview
+    - runas: {{ grains['user'] }}
+    - unless: paru -Qi ttf-iosevka-ss15
+
 iosevka-ss18:
   cmd.run:
     - name: paru -S ttf-iosevka-ss18 --noconfirm --skipreview

@@ -30,7 +30,7 @@ export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
 export SKIM_DEFAULT_COMMAND="rg --files --hidden -g !.git"
 export SKIM_DEFAULT_OPTIONS="--reverse --ansi --color=fg:15,hl:03,hl+:03,matched_bg:-1,bg+:-1,fg+:-1,current_match_bg:-1,cursor:06,spinner:05,info:07,prompt:06"
-export FZF_DEFAULT_OPTS="--reverse --ansi --color=fg:15,hl:3,hl+:3,bg+:-1,fg+:-1,pointer:06,spinner:05,info:7,prompt:6"
+export FZF_DEFAULT_OPTS="--reverse --ansi --color=bg+:-1,fg:15,fg+:-1,prompt:6,header:5,pointer:2,hl:3,hl+:3,spinner:05,info:15,border:15"
 
 # Delta Config
 export ZK_NOTEBOOK_DIR="$HOME/Documents/Notes"

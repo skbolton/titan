@@ -6,7 +6,10 @@ titan-call() {
   # if passed no args then fuzzy search a state to run
   if [ -z "$1" ]; then
     ls $titan \
-      | fzf --header="Run State" --prompt=" " --preview "[[ -d $titan/{} ]] && bat --color always $titan/{}/init.sls || bat --color always $titan/{}" \
+      | fzf --header="Run State" \
+        --header-first \
+        --prompt=" " \
+        --preview "[[ -d $titan/{} ]] && bat --color always $titan/{}/init.sls || bat --color always $titan/{}" \
       | xargs basename -s ".sls" \
       | xargs sudo salt-call state.apply
   else

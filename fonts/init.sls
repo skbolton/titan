@@ -1,6 +1,12 @@
 font-manager:
   pkg.installed
 
+emoji-font:
+  cmd.run:
+    - name: paru -S ttf-twemoji --noconfirm --skipreview
+    - runas: {{ grains['user'] }}
+    - unless: paru -Qi ttf-twemoji
+
 remix-icon:
   file.managed:
     - name: {{ pillar['xdg_data_home'] }}/fonts/remixicon.ttf

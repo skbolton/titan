@@ -17,6 +17,8 @@ map('n', '<leader>fr', builtin.buffers)
 map('n', '<leader>nn', '<CMD>ZkNotes<CR>')
 map('n', '<leader>nt', '<CMD>ZkTags<CR>')
 map('n', '<leader>ns', '<CMD>ZkSpells<CR>')
+map('v', '<leader>zn', ":'<,'>ZkNewFromTitleSelection { dir = 'Cortex' }<CR>")
+map('v', '<leader>zN', ":'<,'>ZkNewFromContentSelection { title = vim.fn.input('Title: '), dir = 'Cortex' }<CR>")
 map('n', '<leader>fi', '<CMD>Telescope symbols<CR>')
 
 telescope.setup{

@@ -63,7 +63,8 @@ awful.rules.rules = {
       class = {
         "morgen",
         "obsidian",
-        "Emacs"
+        "Emacs",
+        "[Ll]ogseq"
       }
     },
     properties = { tag = "explorer" }

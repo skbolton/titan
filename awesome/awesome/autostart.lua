@@ -14,5 +14,6 @@ awful.spawn.with_shell("~/.config/conky/launch.sh")
 -- GUIS
 awful.spawn.once("mailspring")
 awful.spawn.once("slack")
+awful.spawn.once("flatpak run com.logseq.Logseq")
 
 

@@ -7,3 +7,19 @@ if vim.g.started_by_firenvim then
 
   vim.opt.guifont = "Operator Mono Lig Book:h14"
 end
+
+vim.g.firenvim_config = {
+  localSettings = {
+    ['www.notion.so.*'] = {
+      takeover = 'never',
+      priority = 1
+    },
+    ['regexr.com'] = {
+      takeover = 'never',
+      priority = 1
+    },
+    [".*"] = {
+      takeover = 'always'
+    }
+  }
+}

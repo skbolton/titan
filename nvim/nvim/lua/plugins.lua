@@ -216,15 +216,6 @@ packer.startup(function()
     cond = function()
       return vim.g.started_by_nvim
     end,
-    config = function()
-      vim.g.firenvim_config = {
-        localSettings = {
-          [".*"] = {
-            takeover = 'always'
-          }
-        }
-      }
-    end,
     run = function() vim.fn['firenvim#install'](0) end
   }
 

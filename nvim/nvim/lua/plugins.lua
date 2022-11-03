@@ -265,7 +265,7 @@ packer.startup(function()
   use {'blindFS/vim-taskwarrior', fg = {'md', 'vimwiki'}}
   use {
     'mattn/emmet-vim',
-    ft = {'svelte', 'html', 'elixir', 'javascript'},
+    ft = {'svelte', 'html', 'heex', 'elixir', 'javascript'},
     config = function()
       vim.g.user_emmet_settings = {
         ['javascript.jsx'] = {
@@ -275,6 +275,9 @@ packer.startup(function()
           extends = 'html'
         },
         eelixir = {
+          extends = 'html'
+        },
+        heex = {
           extends = 'html'
         }
       }

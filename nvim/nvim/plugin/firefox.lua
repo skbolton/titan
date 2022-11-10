@@ -18,6 +18,10 @@ vim.g.firenvim_config = {
       takeover = 'never',
       priority = 1
     },
+    ['linkedin.*'] = {
+      takeover = 'never',
+      priority = 1
+    },
     [".*"] = {
       takeover = 'always'
     }

@@ -18,10 +18,14 @@ purge-oh-my-zsh:
       - {{ pillar['xdg_config_home'] }}/.oh-my-zsh
       - /home/{{ grains['user'] }}/.oh-my-zsh
 
-zsh-profile:
-  file.managed:
+home-zprofile-missing:
+  file.absent:
     - name: /home/{{ grains['user'] }}/.zprofile
-    - source: salt://zsh/.zprofile
+
+zsh-env:
+  file.managed:
+    - name: /home/{{ grains['user'] }}/.zshenv
+    - source: salt://zsh/.zshenv
     - user: {{ grains['user'] }}
 
 zsh-config:

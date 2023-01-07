@@ -12,11 +12,6 @@ neorg.setup {
         autochdir = true
       }
     },
-    ['core.gtd.base'] = {
-      config = {
-        workspace = "delta"
-      }
-    },
     ['core.norg.completion'] = {
       config = {
         engine = 'nvim-cmp'

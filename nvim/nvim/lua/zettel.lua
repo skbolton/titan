@@ -13,9 +13,3 @@ zk.setup {
     }
   }
 }
-
--- CUSTOM COMMANDS
-commands.add("ZkSpells", function(options)
-  options = vim.tbl_extend("force", { dir = "Ref", tags = {"spell"} }, options or {})
-  zk.edit(options, { title = "Spellbook" })
-end)

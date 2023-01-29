@@ -13,3 +13,8 @@ zk.setup {
     }
   }
 }
+-- CUSTOM COMMANDS
+commands.add("ZkOpenNotes", function(options)
+  options = vim.tbl_extend("force", { excludeHrefs = {os.getenv("ZK_NOTEBOOK_DIR") .. "/Logbook"} }, options or {})
+  zk.edit(options, { title = "Reference" })
+end)

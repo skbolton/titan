@@ -3,4 +3,4 @@ root: ~/Documents/Notes
 attach: false
 
 windows:
-  - " " : nvim +ZkNotes
+  - " " : nvim +ZkOpenNotes

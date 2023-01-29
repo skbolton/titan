@@ -107,25 +107,7 @@ packer.startup(function()
     'mickael-menu/zk-nvim',
     after = 'nvim-cmp',
     config = function()
-      local zk = require('zk')
-      local commands = require('zk.commands')
-
-      commands.add("ZkSpells", function(options)
-        options = vim.tbl_extend("force", { dir = "Cortex", tags = {"spell"} }, options or {})
-        zk.edit(options, { title = "Spellbook" })
-      end)
-
-      zk.setup {
-        picker = "telescope",
-        lsp = {
-          config = {
-            on_attach = on_attach
-          },
-          auto_attach = {
-            enabled = true
-          }
-        }
-      }
+      require 'zettel'
     end
   }
 

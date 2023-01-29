@@ -1,1 +1,1 @@
-require 'tsserver'
+-- require 'tsserver'

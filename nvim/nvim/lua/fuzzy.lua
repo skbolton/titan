@@ -1,9 +1,10 @@
 local telescope = require 'telescope'
 local builtin = require 'telescope.builtin'
+local actions = require 'telescope.actions'
 
 local map = vim.keymap.set
 
-map('n', '<leader>_', builtin.live_grep)
+map('n', '<leader>/', builtin.live_grep)
 map('n', '<leader><leader>', builtin.find_files)
 map('n', '<leader><Backspace>', builtin.buffers)
 map('n', '<leader>ff', builtin.find_files)
@@ -51,7 +52,14 @@ telescope.setup{
       show_all_buffers = true
     },
     live_grep = {
-      theme = "ivy"
+      mappings = {
+        i = {
+          ["<CR>"] = function(prompt)
+            actions.send_to_qflist(prompt)
+            vim.cmd('cfirst')
+          end
+        }
+      }
     },
     git_status = {
       git_icons = {

@@ -25,17 +25,19 @@ report.in.filter = -WAITING status:pending limit:page (+in)
 report.in.labels = ID,Tags,Description
 
 # Next report
-report.next.columns = id,project,priority,tags,due,scheduled,description 
-report.next.labels = ID,Proj,Priority,Tags,Due,Sched,Desc
-# exclude milestones and outcomes
-report.next.filter = status:pending limit:20 -BLOCKED -🏆 -🎯 -SHOP
+report.next.columns = id,project,due,scheduled,description 
+report.next.labels = ID,Proj,Due,Sched,Desc
+# exclude milestones and outcomes, include scheduled shopping list and purchase items
+report.next.filter = status:pending limit:20 -BLOCKED -SHOP -BUY or +SHOP and +SCHEDULED or +BUY and +SCHEDULED
 
 # completed report
 report.completed.sort = project+/,end+
 
 # urgency overrides
 # make daily highlight always highest priority
-urgency.user.tag.💯.coefficient=100
+urgency.user.tag.dh.coefficient=100
+# boost weekly highlight higher as well
+urgency.user.tag.wh.coefficient=50
 urgency.user.tag.in.coefficient=-1
 # just because its a project doesn't make it more important
 urgency.project.coefficient=0
@@ -45,7 +47,7 @@ urgency.scheduled.coefficient=2
 urgency.uda.priority.L.coefficient=0.8
 
 # Theme
-rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.
+rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,uda.,scheduled,due.today,due,blocked,blocking,recurring,tagged
 
 # General decoration
 color.label=
@@ -61,7 +63,7 @@ color.completed=
 color.deleted=
 color.active=black on color2
 color.recurring=
-color.scheduled=yellow
+color.scheduled=cyan
 color.until=
 color.blocked=bold gray10 on gray4
 color.blocking=
@@ -70,16 +72,17 @@ color.blocking=
 color.project.none=
 
 # Priority
-color.uda.priority.H=color3 on color0
+color.uda.priority.H=color11 on color0
+color.uda.priority.M=color3 on color0
 color.uda.priority.L=
-color.uda.priority.M=color11 on color0
 
 # Tags
 color.tag.next=green
 color.tag.in=color15
 color.tag.none=
 color.tagged=
-color.tag.💯=color11
+color.tag.dh=black on color3
+color.tag.wh=black on color11
 
 # Due
 color.due=color14

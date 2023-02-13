@@ -6,6 +6,9 @@ require "nvim-treesitter.configs".setup {
     enable = true,
     disable = {'elixir'}
   },
+  indent = {
+    enable = true
+  },
   playground = {
     enable = true,
     disable = {},

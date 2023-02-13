@@ -86,7 +86,12 @@ packer.startup(function()
   }
   
   -- Editing
-  use 'jiangmiao/auto-pairs'
+  use {
+    'jiangmiao/auto-pairs',
+    config = function()
+      vim.g.AutoPairsMapSpace = 0
+    end
+  }
   use 'tpope/vim-surround'
   use 'tpope/vim-commentary'
   use 'tpope/vim-repeat'

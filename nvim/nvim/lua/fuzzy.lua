@@ -51,16 +51,6 @@ telescope.setup{
     buffers = {
       show_all_buffers = true
     },
-    live_grep = {
-      mappings = {
-        i = {
-          ["<CR>"] = function(prompt)
-            actions.send_to_qflist(prompt)
-            vim.cmd('cfirst')
-          end
-        }
-      }
-    },
     git_status = {
       git_icons = {
         added = "+",

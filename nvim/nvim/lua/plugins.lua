@@ -97,7 +97,12 @@ packer.startup(function()
   use 'tpope/vim-repeat'
   use 'tpope/vim-endwise'
   use 'tpope/vim-speeddating'
-  use 'ggandor/lightspeed.nvim'
+  use {
+    'ggandor/leap.nvim',
+    config = function()
+      require('leap').add_default_mappings()
+    end
+  }
   use 'yuttie/comfortable-motion.vim'
 
   -- Completion, Navigation, Linters, Fixers

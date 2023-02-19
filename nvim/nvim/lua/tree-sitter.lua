@@ -29,7 +29,6 @@ require "nvim-treesitter.configs".setup {
   textobjects = {
     select = {
       enable = true,
-      lookbehind = true,
       keymaps = {
         -- You can use the capture groups defined in textobjects.scm
         ["ic"] = "@comment.inner",

@@ -8,7 +8,7 @@ titan-call() {
     ls $titan \
       | fzf --header="Run State" \
         --header-first \
-        --prompt=" " \
+        --prompt="📦️ " \
         --preview "[[ -d $titan/{} ]] && bat --color always $titan/{}/init.sls || bat --color always $titan/{}" \
       | xargs basename -s ".sls" \
       | xargs sudo salt-call state.apply

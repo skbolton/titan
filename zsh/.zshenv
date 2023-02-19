@@ -72,6 +72,7 @@ export REVIEW_BASE=master
 export ZK_NOTEBOOK_DIR="$HOME/Documents/Notes"
 export REM_FILE="$HOME/Documents/Delta/Dashboards/remind.rem"
 export TIMEWARRIORDB="$HOME/Documents/Delta/Dashboards/trackers/timesheets"
+export HARSHPATH="$HOME/Documents/Delta/Dashboards/trackers/harsh"
 
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 export PASSWORD_STORE_GPG_OPTS="--no-throw-keyids"

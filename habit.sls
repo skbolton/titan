@@ -29,3 +29,8 @@ dijo-config:
       - todo = "red"
       - inactive = "#8A889D"
 
+harsh:
+  cmd.run:
+    - name: paru -S harsh-bin --no-confirm --skipreview
+    - runas: {{ grains['user'] }}
+    - unless: paru -Qi harsh-bin

@@ -8,7 +8,7 @@
         defaultBranch = main
 
 [alias]
-        l = log --date=short --decorate --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]"
+        l = log --date=short --decorate --pretty=format:"%C(yellow)%h\\ %C(green)%ad%C(magenta)%d\\ %Creset%s%C(brightblue)\\ [%cn]"
         dog = log --all --decorate --oneline --graph
         to = "!git checkout $(git branches --no-multi)"
         drop = "!git branch -d $(git branches --multi)"

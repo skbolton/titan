@@ -24,6 +24,7 @@ map('n', '<leader>ns', '<CMD>ZkSpells<CR>')
 map('n', '<leader>n.', '<CMD>ZkBacklinks<CR>')
 map('v', '<leader>zn', ":'<,'>ZkNewFromTitleSelection { dir = 'Logbook' }<CR>")
 map('v', '<leader>zr', ":'<,'>ZkNewFromTitleSelection { dir = 'Ref' }<CR>")
+map('v', '<leader>zz', ":'<,'>ZkNewFromTitleSelection { dir = 'Zettel' }<CR>")
 map('v', '<leader>zN', ":'<,'>ZkNewFromContentSelection { title = vim.fn.input('Title: '), dir = vim.fn.input('Dir: ') }<CR>")
 map('n', '<leader>fi', '<CMD>Telescope symbols<CR>')
 

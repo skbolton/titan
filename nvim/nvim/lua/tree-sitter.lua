@@ -3,8 +3,7 @@ local parser_config = require 'nvim-treesitter.parsers'.get_parser_configs()
 require "nvim-treesitter.configs".setup {
   ensure_installed = "all",
   highlight = {
-    enable = true,
-    disable = {'elixir'}
+    enable = true
   },
   indent = {
     enable = true

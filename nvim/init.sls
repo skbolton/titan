@@ -26,11 +26,9 @@ nvim-python:
   pip.installed: 
     - name: pynvim
 
-vim-packer:
-  git.cloned:
-    - name: https://github.com/wbthomason/packer.nvim
-    - target: {{ pillar['xdg_data_home'] }}/nvim/site/pack/packager/opt/packer.nvim
-    - user: {{ grains['user'] }}
+vim-packer-missing:
+  file.absent:
+    - name: {{ pillar['xdg_data_home'] }}/nvim/site/pack/packager/opt/packer.nvim
 
 old-configs-gone:
   file.absent:
@@ -43,9 +41,7 @@ nvim-config:
     - user: {{ grains['user'] }}
     - force: True
   cmd.run:
-    # Helper to run packer sync to get plugins in right state and then quit
-    - name: nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-    # Help wakatime finds its api key
+    # Helper to run Lazy sync to get plugins in right state and then quit
+    - name: nvim --headless -c 'autocmd User LazySync quitall' -c 'Lazy sync'
     - runas: {{ grains['user'] }}
-    - shell: /bin/zsh
 

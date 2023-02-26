@@ -91,3 +91,7 @@ opt.swapfile = false
 if vim.fn.executable("rg") then
   vim.o.grepprg = "rg --vimgrep --hidden -g !.git"
 end
+
+-- define the leaders
+vim.g.mapleader = " "
+vim.g.maplocalleader = "-"

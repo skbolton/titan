@@ -1,7 +1,4 @@
 local map = vim.keymap.set
--- define the leaders
-vim.g.mapleader = " "
-vim.g.maplocalleader = "-"
 
 map({'n', 'v'}, ';', ':')
 map({'n', 'v'}, ':', ';', { silent = true })

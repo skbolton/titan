@@ -53,8 +53,13 @@ return {
     end
   },
   {
-   'norcalli/nvim-colorizer.lua',
-   config = true
+    'NvChad/nvim-colorizer.lua',
+    opts = {
+      user_default_options = {
+        mode = 'virtualtext',
+        names = false
+      }
+    }
   },
   {
     'glacambre/firenvim',

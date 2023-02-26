@@ -18,7 +18,14 @@ return {
     end,
     config = function()
       require 'tokyonight'.setup {
-        style = 'day'
+        style = 'day',
+        on_highlights = function(hl, c)
+          hl["@text.todo"] = {
+            bg = c.purple,
+            fg = "#000000"
+          }
+        end
+
       }
       vim.cmd('colorscheme tokyonight')
     end

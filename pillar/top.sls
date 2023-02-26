@@ -1,6 +1,8 @@
 base:
   '*':
     - xdg_dirs
-    - taskwarrior
     - go
+  'trinity|neo':
+    - match: pcre
+    - taskwarrior
     - fonts.operator-mono

@@ -1,11 +1,16 @@
 format = """\
   $jobs\
+  $hostname\
   $directory\
   $git_branch\
   $git_status\
   $line_break\
   $character\
 """
+
+[hostname]
+ssh_symbol = "鷺"
+format = "bold bright-yellow"
 
 [git_branch]
 symbol = " "

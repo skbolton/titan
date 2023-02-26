@@ -59,7 +59,7 @@ return {
   {
     'glacambre/firenvim',
     cond = function()
-      return vim.g.started_by_nvim
+      return vim.g.started_by_firenvim
     end,
     build = function() vim.fn['firenvim#install'](0) end
   }

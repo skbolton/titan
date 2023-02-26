@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=workitty
+GenericName=Terminal emulator
+Comment=Fast, feature-rich, GPU based terminal
+TryExec=kitty
+Exec=kitty -c /home/orlando/.config/kitty/work.conf
+Icon=/srv/titan/kitty/kitty-light.png
+Categories=System;TerminalEmulator;

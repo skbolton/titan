@@ -13,6 +13,11 @@ kitty-client-icon:
     - name: /usr/lib/kitty/logo/kitty-128.png
     - source: salt://kitty/kitty-light.png
 
+workitty-desktop:
+  file.managed:
+    - name: /usr/share/applications/kitty-work.desktop
+    - source: salt://kitty/kitty-work.desktop
+
 configs:
   file.recurse:
     - name: {{ pillar['xdg_config_home'] }}/kitty

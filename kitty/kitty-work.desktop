@@ -5,6 +5,6 @@ Name=workitty
 GenericName=Terminal emulator
 Comment=Fast, feature-rich, GPU based terminal
 TryExec=kitty
-Exec=kitty -c /home/orlando/.config/kitty/work.conf
+Exec=kitty -c /home/orlando/.config/kitty/work.conf ssh arch_wsl
 Icon=/srv/titan/kitty/kitty-light.png
 Categories=System;TerminalEmulator;

@@ -4,7 +4,7 @@ return {
     'kristijanhusak/vim-dadbod-ui',
     'kristijanhusak/vim-dadbod-completion'
   },
-  config = function()
+  init = function()
     vim.g.db_ui_use_nerd_fonts = true
     vim.g.db_ui_execute_on_save = false
     vim.g.db_ui_save_location = "./steve_queries"

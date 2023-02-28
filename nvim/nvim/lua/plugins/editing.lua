@@ -1,7 +1,7 @@
 return {
   {
     'jiangmiao/auto-pairs',
-    config = function()
+    init = function()
       vim.g.AutoPairsMapSpace = 0
     end
   },
@@ -21,7 +21,7 @@ return {
   -- Completion, Navigation, Linters, Fixers
   {
     'christoomey/vim-tmux-navigator',
-    config = function ()
+    init = function ()
       vim.g.tmux_navigator_disable_when_zoomed = true
     end
   },
@@ -34,7 +34,7 @@ return {
   {
     'mattn/emmet-vim',
     ft = {'svelte', 'html', 'heex', 'elixir', 'javascript'},
-    config = function()
+    init = function()
       vim.g.user_emmet_settings = {
         ['javascript.jsx'] = {
           extends = 'jsx',

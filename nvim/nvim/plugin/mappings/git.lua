@@ -39,6 +39,7 @@ map('n', '<leader>g<up>', '<CMD>Git push<CR>')
 map('n', '<leader>g<left>', '<CMD>diffget<CR>')
 map('n', '<leader>g<right>', '<CMD>diffget<CR>')
 map('n', '<leader>g<down>', '<CMD>diffput<CR>')
+map('v', '<leader>g<down>', '<CMD>diffput<CR><ESC>')
 
 map('v', '<leader>gv', '<CMD>GBrowse<CR>')
 map('v', '<leader>gV', '<CMD>GBrowse!<CR>')

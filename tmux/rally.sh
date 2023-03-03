@@ -9,4 +9,4 @@ TARGET=$(ls -d ~/Public/* ~/* /srv/* ~/Documents/* | fzf --header-first --header
 NAME=$(basename $TARGET)
 SESSION_NAME=$(echo $NAME | tr [:lower:] [:upper:])
 
-tmuxinator start $NAME || tmuxinator start default name=$SESSION_NAME root=$TARGET
+smug start $NAME -a 2>/dev/null || smug start default name=$SESSION_NAME root=$TARGET -a

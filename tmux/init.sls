@@ -42,6 +42,14 @@ tmuxinator-configs:
     - makedirs: True
     - force: True
 
+smug-configs:
+  file.recurse:
+    - name: {{ pillar['xdg_config_home']}}/smug
+    - source: salt://tmux/smug
+    - user: {{ grains['user'] }}
+    - makedirs: True
+    - force: True
+
 tmux-launcher:
   file.managed:
     - name: /home/{{ grains['user'] }}/.local/bin/rally.sh

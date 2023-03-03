@@ -7,5 +7,5 @@ windows:
       - nvim
   - name: " "
     commands:
-      - clear
+      - tmux link-window -s Notes -d
 

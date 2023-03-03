@@ -38,6 +38,8 @@ git-default-branch:
     - mode: keep
     - user: {{ grains['user'] }}
 
+git-delta: pkg.installed
+
 github-cli: pkg.installed
 
 github-cli-dash:

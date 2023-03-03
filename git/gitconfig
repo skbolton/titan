@@ -32,9 +32,13 @@
         algorithm = histogram
 
 [core]
+        pager = delta
         editor = nvim
         commentChar = "#"
         excludesFile = ~/.config/git/gitignore
+
+[interactive]
+        diffFilter = delta --color-only
 
 [blame]
         date = relative
@@ -54,3 +58,12 @@
 
 [merge]
         conflictstyle = diff3
+
+[delta]
+        navigate = true
+        minus-style = "auto #411E35"
+        plus-style = "auto #133246"
+        light = false
+        side-by-side = true
+        line-numbers = true
+        syntax-theme = base16-256

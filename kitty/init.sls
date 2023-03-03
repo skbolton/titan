@@ -11,7 +11,7 @@ kitty-icon:
 kitty-client-icon:
   file.managed:
     - name: /usr/lib/kitty/logo/kitty-128.png
-    - source: salt://kitty/kitty-light.png
+    - source: salt://kitty/kitty-dark.png
 
 workitty-desktop:
   file.managed:

@@ -66,7 +66,7 @@ export NNN_FIFO=/tmp/nnn.fifo
 # Fallback value when review base is not set
 # This environment sets up what the "master" branch is for a repo
 # in case a repo uses a non standard version
-export REVIEW_BASE=master
+export REVIEW_BASE=main
 
 # Delta Config
 export ZK_NOTEBOOK_DIR="$HOME/Documents/Notes"

@@ -1,6 +1,0 @@
-name: Notes
-root: ~/Documents/Notes
-attach: false
-
-windows:
-  - "🧠" : nvim +ZkOpenNotes

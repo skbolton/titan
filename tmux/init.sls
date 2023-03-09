@@ -30,17 +30,19 @@ tmux-fuzzback:
     - user: {{ grains['user'] }}
 
 tmuxinator:
-  gem.installed:
+  gem.removed:
     - name: tmuxinator
     - user: {{ grains['user'] }}
 
 tmuxinator-configs:
-  file.recurse:
+  file.absent:
     - name: {{ pillar['xdg_config_home'] }}/tmuxinator
-    - source: salt://tmux/tmuxinator/
-    - user: {{ grains['user'] }}
-    - makedirs: True
-    - force: True
+
+smug-installed:
+  cmd.run:
+    - name: paru -S smug --noconfirm --skipreview
+    - runas: {{ grains['user' ]}}
+    - unless: paru -Qi smug
 
 smug-configs:
   file.recurse:

@@ -1,7 +1,0 @@
-name: <%= @settings["name"] %>
-root: <%= @settings["root"] %>
-
-windows:
-  - " ": nvim 
-  - "":
-    - tmux link-window -s Notes -d

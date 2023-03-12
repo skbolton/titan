@@ -18,7 +18,7 @@ nnn-build:
   cmd.run:
     - cwd: {{ pillar['xdg_data_home'] }}/nnn
     - names:
-      - make O_NERD=1 O_NAMEFIRST=1
+      - make O_NAMEFIRST=1 O_EMOJI=1
       - mv nnn /home/{{ grains['user'] }}/.local/bin
       - cp -r plugins {{ pillar['xdg_config_home'] }}/nnn
     - runas: {{ grains['user'] }}

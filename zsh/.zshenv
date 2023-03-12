@@ -56,7 +56,7 @@ export NNN_OPTS="Hd"
 export NNN_TRASH=1
 DOC="$HOME/Documents" NOTE="$DOC/Notes" IN="$NOTE/Inbox"
 export NNN_BMS="a:$HOME/Documents/Archive;i:$IN;d:$DOC/Delta;h:$NOTE/Hightop;D:$HOME/Documents;n:$NOTE;o:$HOME/Downloads;c:$NOTE/Cortex;w:$HOME/Pictures/Wallpapers"
-BLK="00" CHAR="00" DIR="69" EXE="DE" REG="00" HLI="00" SLI="00" MIS="00" ORP="00" FIF="00" SOC="00" UNK="00"
+BLK="00" CHAR="00" DIR="0C" EXE="DE" REG="00" HLI="00" SLI="00" MIS="00" ORP="00" FIF="00" SOC="00" UNK="00"
 export NNN_FCOLORS="$BLK$CHAR$DIR$EXE$REG$HLI$SLI$MIS$ORP$FIF$SOC$UNK"
 export NNN_COLORS="6666"
 export NNN_PLUG="p:preview-tui"

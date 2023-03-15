@@ -12,6 +12,16 @@ return {
     name = 'embark'
   },
   {
+    'sainnhe/everforest',
+    cond = function()
+      return os.getenv('THEME') == 'everforest'
+    end,
+    config = function()
+      vim.g.everforest_background = 'hard'
+      vim.cmd.colorscheme 'everforest'
+    end
+  },
+  {
     'folke/tokyonight.nvim',
     cond = function()
       return os.getenv('THEME') == 'tokyonight-day'

@@ -39,7 +39,7 @@ local bar_themes = {
   "vertbar"  -- 2
 }
 -- select bar theme
-local bar = bar_themes[2]
+local bar = bar_themes[1]
 
 -- Initialization
 -- =======================================================

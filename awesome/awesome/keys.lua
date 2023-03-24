@@ -155,13 +155,13 @@ local globalkeys = gears.table.join(
       ),
 
     -- SCREEN KEYS
-    awful.key({ super }, "]",
+    awful.key({ super }, "[",
       function ()
         awful.screen.focus_relative(1)
       end,
       {description = "focus the next screen", group = "screen"}
     ),
-    awful.key({ super }, "[",
+    awful.key({ super }, "]",
       function ()
         awful.screen.focus_relative(-1)
       end,
@@ -328,10 +328,17 @@ clientbuttons = gears.table.join(
 
 local clientkeys = gears.table.join(
     -- Move focused client to other screen
-    awful.key({ super, alt }, "]",
+    awful.key({ super, alt }, "[",
       function (c)
         -- defaults to next screen
         c:move_to_screen()
+      end,
+      {description = "Move client to other screen", group = "client"}
+    ),
+    awful.key({ super, alt }, "]",
+      function (c)
+        -- defaults to next screen
+        c:move_to_screen(c.screen.index - 1)
       end,
       {description = "Move client to other screen", group = "client"}
     ),

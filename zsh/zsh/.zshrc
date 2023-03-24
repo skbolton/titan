@@ -213,6 +213,9 @@ tput setaf $color && toilet -F border -t -f pagga "Bit by Bit"
 # ASDF
 . /opt/asdf-vm/asdf.sh
 
+# GPG attaching to correct tty
+export GPG_TTY="$(tty)"
+
 # DIRENV
 eval "$(direnv hook zsh)"
 

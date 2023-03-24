@@ -10,6 +10,9 @@ export HISTSIZE=1000000000
 export HISTFILESIZE=1000000000
 export SAVEHIST=1000000000
 
+export GNUPGHOME="$XDG_CONFIG_HOME/gpg"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
 
 # System utilities
 export EDITOR="nvim"

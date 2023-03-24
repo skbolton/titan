@@ -18,15 +18,11 @@ purge-oh-my-zsh:
       - {{ pillar['xdg_config_home'] }}/.oh-my-zsh
       - /home/{{ grains['user'] }}/.oh-my-zsh
 
-home-zprofile-missing:
-  file.absent:
-    - name: /home/{{ grains['user'] }}/.zprofile
-
-zsh-env:
+# Lets all zsh files be in .config/zsh
+zsh-root-env:
   file.managed:
-    - name: /home/{{ grains['user'] }}/.zshenv
-    - source: salt://zsh/.zshenv
-    - user: {{ grains['user'] }}
+    - name: /etc/zsh/zshenv
+    - source: salt://zsh/zsh_root_env
 
 zsh-config:
   file.recurse:

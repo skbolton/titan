@@ -62,7 +62,7 @@ export NNN_BMS="a:$DOC/Archive;d:$DOC/Delta;h:$DOC/Delta/Areas/Home;D:$DOC;n:$NO
 BLK="00" CHAR="00" DIR="0C" EXE="DE" REG="00" HLI="00" SLI="00" MIS="00" ORP="00" FIF="00" SOC="00" UNK="00"
 export NNN_FCOLORS="$BLK$CHAR$DIR$EXE$REG$HLI$SLI$MIS$ORP$FIF$SOC$UNK"
 export NNN_COLORS="6666"
-export NNN_PLUG="p:preview-tui"
+export NNN_PLUG="p:preview-tui;t:tmsu-tag.sh"
 export NNN_FIFO=/tmp/nnn.fifo
 
 # Git helpers

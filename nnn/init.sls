@@ -23,6 +23,19 @@ nnn-build:
       - cp -r plugins {{ pillar['xdg_config_home'] }}/nnn
     - runas: {{ grains['user'] }}
 
+tmsu:
+  cmd.run:
+    - name: paru -S tmsu-bin --no-confirm --skipreview
+    - runas: {{ grains['user'] }}
+    - unless: paru -Qi tmsu-bin
+
+tmsu-tag-nnn-plugin:
+  file.managed:
+    - name: {{ pillar['xdg_config_home']}}/nnn/plugins/tmsu-tag.sh
+    - source: salt://nnn/tmsu-tag.sh
+    - mode: keep
+    - user: {{ grains['user'] }}
+
 nnn-desktop:
   file.managed:
     - name: {{ pillar['xdg_data_home'] }}/applications/nnn.desktop

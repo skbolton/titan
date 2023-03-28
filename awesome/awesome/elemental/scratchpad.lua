@@ -26,7 +26,7 @@ local terminal_scratch = function(screen_geometry)
   local x = (screen_geometry.width - width) / 2
 
   return bling.module.scratchpad:new {
-    command = "kitty --class kitty-scratch --hold",
+    command = "kitty --class kitty-scratch -o enable_audio_bell=yes --hold",
     rule = {class = "kitty-scratch"},
     sticky = true,
     autoclose = false,

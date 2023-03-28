@@ -164,6 +164,13 @@ fi
 
 autoload -Uz titan-call
 
+autoload -Uz add-zsh-hook
+function bell_on_cmd() {
+  echo -ne '\007'
+}
+
+add-zsh-hook precmd bell_on_cmd
+
 #######################################################################
 # FUNCTIONS
 #######################################################################

@@ -1,7 +1,7 @@
 local g = vim.g
 local v = vim.v
 
-g.VimuxOrientation = "h"
+g.VimuxOrientation = "v"
 g.VimuxHeight = "30"
 
 g["test#preserve_screen"] = false

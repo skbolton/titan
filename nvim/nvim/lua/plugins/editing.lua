@@ -67,5 +67,12 @@ return {
       return vim.g.started_by_firenvim
     end,
     build = function() vim.fn['firenvim#install'](0) end
+  },
+  {
+    'jpalardy/vim-slime',
+    init = function()
+      vim.g.slime_target = "tmux"
+      vim.g.slime_default_config = { socket_name = "default", target_pane = "{bottom}" }
+    end
   }
 }

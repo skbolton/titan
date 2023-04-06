@@ -94,4 +94,4 @@ end
 
 -- define the leaders
 vim.g.mapleader = " "
-vim.g.maplocalleader = "-"
+vim.g.maplocalleader = " m"

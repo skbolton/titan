@@ -60,6 +60,14 @@ tmux-launcher:
     - user: {{ grains['user'] }}
     - force: True
 
+elixir-repl:
+  file.managed:
+    - name: /home/{{ grains['user'] }}/.local/bin/elixir_repl.sh
+    - source: salt://tmux/elixir_repl.sh
+    - mode: keep
+    - user: {{ grains['user'] }}
+    - force: True
+
 clickup:
   file.managed:
     - name: /home/{{ grains['user'] }}/.local/bin/clickup.sh

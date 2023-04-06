@@ -1,0 +1,17 @@
+session: PORTAL
+root: ~/Public/pdq-portal
+
+before_start: 
+  - docker-compose up -d
+
+stop:
+  - docker-compose stop
+
+windows:
+  - name: " "
+    commands:
+      - nvim
+  - name: " "
+    commands: 
+      - elixir_repl.sh
+  - name: " "

@@ -112,13 +112,13 @@ local bench_scratch = function(screen_geometry)
 end
 
 local log_scratch = function(screen_geometry)
-  local width = math.min(screen_geometry.width / 3, 1400)
+  local width = 1400
   local height = screen_geometry.height * 0.90
   local x = (screen_geometry.width - width - 20) + screen_geometry.x
   local y = (screen_geometry.height - height) / 2
 
   return bling.module.scratchpad:new{
-      command = "kitty --class kitty-log -d '$/home/{{ grains['user'] }}/Documents/Notes/Journal' --hold zk log ", rule = {class = "kitty-log"},
+      command = "kitty --class kitty-log --hold zk log ", rule = {class = "kitty-log"},
       sticky = false,
       autoclose = false,
       floating = true,

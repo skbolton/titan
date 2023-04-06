@@ -13,5 +13,13 @@ windows:
       - nvim
   - name: " "
     commands: 
-      - elixir_repl.sh
+      - nvim scratchpad.ex
+    layout: main-horizontal
+    panes:
+      - type: vertical
+        commands:
+          - iex -S mix
+      
   - name: " "
+    commands:
+      - nvim +DBUI

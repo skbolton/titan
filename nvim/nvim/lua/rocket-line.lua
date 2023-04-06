@@ -102,7 +102,7 @@ end
 gls.left[1] = {
   Embark = {
     provider = function() return '  ' end,
-    highlight = 'Identifier',
+    highlight = 'Type',
     separator = ' '
   }
 }
@@ -185,7 +185,7 @@ gls.right[3] = {
     separator = ' ',
     highlight = function()
       if condition.check_git_workspace() then
-        return "Identifier"
+        return "Type"
       else
         return "Comment"
       end
@@ -197,7 +197,7 @@ gls.right[4] = {
   GitBranch = {
     provider = 'GitBranch',
     condition = require 'galaxyline.provider_vcs'.check_git_workspace,
-    highlight = "Identifier"
+    highlight = "Type"
   }
 }
 

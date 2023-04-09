@@ -51,7 +51,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     map('n', '<C-CR>', definition_in_split, opts)
     map('n', '<leader>ls', vim.lsp.buf.signature_help, opts)
     map('n', 'K', vim.lsp.buf.hover, opts)
-    map('n', '<leader>lf', vim.lsp.buf.formatting_sync, opts)
     map('n', '<leader>lo', '<CMD>Telescope lsp_document_symbols<cr>', opts)
     map('n', '<leader>li', vim.diagnostic.setloclist, opts)
     map('n', '<leader>lO', '<CMD>Vista<CR>', opts)

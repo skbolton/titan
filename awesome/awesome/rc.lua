@@ -87,11 +87,16 @@ awful.layout.layouts = {
 -- }}}
 
 awful.screen.connect_for_each_screen(function(s)
+  local layout = awful.layout.layouts[1]
+
+  if s.index == 1 then
+    layout = awful.layout.layouts[2]
+  end
     -- Each screen has its own tag table.
     -- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
     awful.tag.add('terminal', {
       icon = icons.get 'terminal',
-      layout = awful.layout.layouts[1],
+      layout = layout,
       master_fill_policy = "expand",
       gap_single_client = true,
       gap = beautiful.useless_gap,
@@ -101,7 +106,7 @@ awful.screen.connect_for_each_screen(function(s)
 
     awful.tag.add("browser", {
       icon = icons.get 'browser',
-      layout = awful.layout.layouts[1],
+      layout = layout,
       master_fill_policy = "expand",
       gap_single_client = true,
       gap = beautiful.useless_gap,
@@ -111,7 +116,7 @@ awful.screen.connect_for_each_screen(function(s)
 
     awful.tag.add("chat", {
       icon = icons.get 'chat',
-      layout = awful.layout.layouts[1],
+      layout = layout,
       master_fill_policy = "expand",
       gap_single_client = true,
       gap = beautiful.useless_gap,
@@ -121,7 +126,7 @@ awful.screen.connect_for_each_screen(function(s)
 
     awful.tag.add("explorer", {
       icon = icons.get 'explorer',
-      layout = awful.layout.layouts[1],
+      layout = layout,
       master_fill_policy = "expand",
       gap_single_client = true,
       gap = beautiful.useless_gap,
@@ -131,7 +136,7 @@ awful.screen.connect_for_each_screen(function(s)
 
     awful.tag.add("music", {
       icon = icons.get 'music',
-      layout = awful.layout.layouts[1],
+      layout = layout,
       master_fill_policy = "expand",
       gap_single_client = true,
       gap = beautiful.useless_gap,
@@ -141,7 +146,7 @@ awful.screen.connect_for_each_screen(function(s)
 
     awful.tag.add("mail", {
       icon = icons.get 'mail',
-      layout = awful.layout.layouts[1],
+      layout = layout,
       master_fill_policy = "expand",
       gap_single_client = true,
       gap = beautiful.useless_gap,

@@ -25,10 +25,7 @@ report.in.filter = -WAITING status:pending limit:page (+in)
 report.in.labels = ID,Tags,Description
 
 # Next report
-report.next.columns = id,project,due,scheduled,description 
-report.next.labels = ID,Proj,Due,Sched,Desc
-# exclude milestones and outcomes, include scheduled shopping list and purchase items
-report.next.filter = status:pending limit:20 -BLOCKED -SHOP -BUY or +SHOP and +SCHEDULED or +BUY and +SCHEDULED
+report.next.filter = status:pending limit:20 -BLOCKED -SHOP -BUY
 
 # completed report
 report.completed.sort = project+/,end+

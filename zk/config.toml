@@ -18,7 +18,7 @@ template = "default.md"
 author = "Stephen"
 
 [format.markdown]
-hashtags = false
+hashtags = true
 colon-tags = true
 link-format = "markdown"
 

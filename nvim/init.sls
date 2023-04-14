@@ -42,6 +42,6 @@ nvim-config:
     - force: True
   cmd.run:
     # Helper to run Lazy sync to get plugins in right state and then quit
-    - name: nvim --headless -c 'autocmd User LazySync quitall' -c 'Lazy sync'
+    - name: nvim --headless -c 'autocmd User LazySync quitall' -c 'Lazy! sync'
     - runas: {{ grains['user'] }}
 

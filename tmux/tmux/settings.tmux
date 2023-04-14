@@ -13,3 +13,6 @@ set -g pane-base-index 1
 set -g renumber-windows on
 set -gw xterm-keys on
 set -g history-limit 10000
+
+set -g monitor-bell off
+# set -g window-status-bell-style ""

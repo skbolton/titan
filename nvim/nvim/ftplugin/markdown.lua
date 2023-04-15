@@ -1,7 +1,7 @@
 local blocal = vim.opt_local
 
 vim.keymap.set('n', '<localleader>r', '<CMD>MarkdownPreview<CR>', { buffer = true })
-blocal.textwidth = 82
+blocal.textwidth = 120
 
 local toggle_todo = function()
   local linenr = vim.api.nvim_win_get_cursor(0)[1]

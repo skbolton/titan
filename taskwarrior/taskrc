@@ -1,5 +1,6 @@
 # aliases
 alias.@ = context
+alias.l = list
 
 data.location=$XDG_DATA_HOME/task
 

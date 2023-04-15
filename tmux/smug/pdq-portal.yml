@@ -16,7 +16,7 @@ windows:
       - nvim scratchpad.ex
     layout: main-horizontal
     panes:
-      - type: vertical
+      - type: horizontal
         commands:
           - iex -S mix
       

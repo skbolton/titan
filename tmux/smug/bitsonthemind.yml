@@ -1,0 +1,14 @@
+session: BOTM
+root: ~/Public/bitsonthemind
+
+windows:
+  - name: " "
+    commands:
+      - nvim
+  - name: "📔"
+    root: "~/Documents/Notes"
+    commands:
+      - nvim +ZkNotes
+  - name: "鷺"
+    commands:
+      - hugo server -w --buildDrafts

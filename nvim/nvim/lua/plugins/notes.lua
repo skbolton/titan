@@ -22,7 +22,7 @@ return {
     opts = {
       load = {
         ['core.defaults'] = {},
-        ['core.norg.dirman'] = {
+        ['core.dirman'] = {
           config = {
             workspaces = {
               delta = "~/Documents/Delta",
@@ -31,7 +31,7 @@ return {
             autochdir = true
           }
         },
-        ['core.norg.completion'] = {
+        ['core.completion'] = {
           config = {
             engine = 'nvim-cmp'
           }
@@ -43,7 +43,7 @@ return {
         },
         ['core.export'] = {},
         ['core.integrations.nvim-cmp'] = {},
-        ['core.norg.concealer'] = {
+        ['core.concealer'] = {
           config = {
             icon_preset = "diamond",
             dim_code_blocks = {

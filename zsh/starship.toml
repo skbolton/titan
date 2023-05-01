@@ -9,11 +9,11 @@ format = """\
 """
 
 [hostname]
-ssh_symbol = "鷺"
+ssh_symbol = "󰐻 "
 style = "bold bright-yellow"
 
 [git_branch]
-symbol = " "
+symbol = "󰊢 "
 style = "purple"
 format = "on [$symbol$branch]($style) "
 
@@ -22,9 +22,9 @@ style = "italic cyan"
 format = "[$path]($style) "
 
 [character]
-success_symbol = "[ ](green)"
-error_symbol = "[ ](yellow)"
-vicmd_symbol = "[ ](green)"
+success_symbol = "[󰇂 ](green)"
+error_symbol = "[󰇂 ](yellow)"
+vicmd_symbol = "[󰇂 ](green)"
 
 [aws]
 disabled = true
